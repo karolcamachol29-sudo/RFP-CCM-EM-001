@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Generador de Documentos Oficiales RFP-CCM-EM-001
+# Generador Automatizado de Documentos Oficiales — RFP-CCM-EM-001
 FECHA=$(date +%Y-%m-%d)
 
 echo "=================================================="
@@ -9,8 +9,9 @@ echo "=================================================="
 echo "1) Nueva Minuta de Reunión"
 echo "2) Nueva Matriz Ponderada de Selección"
 echo "3) Nueva Matriz de Evaluación de Calidad"
+echo "4) Instanciar/Actualizar Matriz RACI"
 echo "=================================================="
-read -p "Selecciona una opción (1-3): " OPCION
+read -p "Selecciona una opción (1-4): " OPCION
 
 case $OPCION in
   1)
@@ -30,6 +31,12 @@ case $OPCION in
     DEST="00_Gestion_Proyecto/Plantillas/${FECHA}_Evaluacion_Calidad_${ENT}_v0.1.md"
     cp 00_Gestion_Proyecto/Plantillas/MATRIZ_EVALUACION_PLANTILLA.md "$DEST"
     echo "✅ Matriz de Evaluación creada exitosamente en: $DEST"
+    ;;
+  4)
+    read -p "Versión de la Matriz RACI (ej. v1.0, v1.1): " VER
+    DEST="00_Gestion_Proyecto/Matriz_RACI/RACI_General_${VER}.md"
+    cp 00_Gestion_Proyecto/Plantillas/MATRIZ_RACI_PLANTILLA.md "$DEST"
+    echo "✅ Matriz RACI activa creada exitosamente en: $DEST"
     ;;
   *)
     echo "❌ Opción no válida."
