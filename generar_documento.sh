@@ -10,8 +10,9 @@ echo "1) Nueva Minuta de Reunión"
 echo "2) Nueva Matriz Ponderada de Selección"
 echo "3) Nueva Matriz de Evaluación de Calidad"
 echo "4) Instanciar/Actualizar Matriz RACI"
+echo "5) Registrar Entrada en la Bitácora Técnica"
 echo "=================================================="
-read -p "Selecciona una opción (1-4): " OPCION
+read -p "Selecciona una opción (1-5): " OPCION
 
 case $OPCION in
   1)
@@ -37,6 +38,16 @@ case $OPCION in
     DEST="00_Gestion_Proyecto/Matriz_RACI/RACI_General_${VER}.md"
     cp 00_Gestion_Proyecto/Plantillas/MATRIZ_RACI_PLANTILLA.md "$DEST"
     echo "✅ Matriz RACI activa creada exitosamente en: $DEST"
+    ;;
+  5)
+    DEST="04_Bitacora/BITACORA_${FECHA}.md"
+    if [ ! -f "$DEST" ]; then
+      cp 00_Gestion_Proyecto/Plantillas/BITACORA_PLANTILLA.md "$DEST"
+      sed -i "s/AAAA-MM-DD/${FECHA}/g" "$DEST"
+      echo "✅ Bitácora del día creada exitosamente en: $DEST"
+    else
+      echo "ℹ️ El archivo de bitácora para hoy ya existe: $DEST"
+    fi
     ;;
   *)
     echo "❌ Opción no válida."
