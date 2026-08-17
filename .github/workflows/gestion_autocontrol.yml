@@ -1,0 +1,96 @@
+name: Sistema de Autocontrol y Validador de Entregables RFP-CCM-EM-001
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  auditoria_y_clasificacion:
+    name: Auditoria Automatizada de Archivos y Versiones
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar Repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Analizar Cambios y Nomenclatura
+        run: |
+          echo "=========================================================="
+          echo "   AUDITORÍA AUTOMÁTICA DE ENTREGABLES - RFP-CCM-EM-001   "
+          echo "=========================================================="
+
+          # Obtener la lista de archivos modificados/añadidos en el commit
+          CHANGED_FILES=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})
+
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "ℹ️ No se detectaron cambios en archivos para auditar."
+            exit 0
+          fi
+
+          ERRORS=0
+
+          for FILE in $CHANGED_FILES; do
+            # Ignorar archivos del sistema git/github o README
+            if [[ "$FILE" =~ ^\.git ]] || [[ "$FILE" == "README.md" ]]; then
+              continue
+            fi
+
+            BASENAME=$(basename "$FILE")
+            DIRNAME=$(dirname "$FILE")
+
+            echo "🔍 Analizando: $FILE"
+
+            # Validar Expresion Regular de Nomenclatura: Ej: E0_DOC_Constitucion_v1.0.pdf
+            REGEX="^(E[0-4]|EF)_(DOC|DWG|SIM|PY|RPT)_[A-Za-z0-9_]+_v[0-9]+\.[0-9]+\.[a-zA-Z0-9]+$"
+
+            if [[ "$BASENAME" =~ $REGEX ]]; then
+              # Extraer token de entregable
+              ENTREGABLE=$(echo "$BASENAME" | cut -d'_' -f1)
+              TIPO=$(echo "$BASENAME" | cut -d'_' -f2)
+              VERSION=$(echo "$BASENAME" | grep -oE "v[0-9]+\.[0-9]+")
+
+              echo "   ✅ Nomenclatura correcta."
+              echo "   📌 Código: $ENTREGABLE | Tipo: $TIPO | Versión: $VERSION"
+
+              # Verificar coincidencia de carpeta destino segun el codigo
+              case $ENTREGABLE in
+                E0)
+                  EXPECTED_DIR="03_Entregables_Finales/E0_Constitucion"
+                  ;;
+                E1)
+                  EXPECTED_DIR="03_Entregables_Finales/E1"
+                  ;;
+                E2)
+                  EXPECTED_DIR="03_Entregables_Finales/E2"
+                  ;;
+                E3)
+                  EXPECTED_DIR="03_Entregables_Finales/E3"
+                  ;;
+                E4)
+                  EXPECTED_DIR="03_Entregables_Finales/E4"
+                  ;;
+                EF)
+                  EXPECTED_DIR="03_Entregables_Finales/EF_Informe_Final"
+                  ;;
+              esac
+
+              if [[ "$DIRNAME" == "$EXPECTED_DIR"* ]]; me
+                echo "   🎯 Ubicación correcta en $EXPECTED_DIR"
+              else
+                echo "   ⚠️ ALERTA DE UBICACIÓN: El archivo $BASENAME pertenece a $ENTREGABLE pero se subió en '$DIRNAME'. Debería estar en '$EXPECTED_DIR'."
+              fi
+
+              # Reportar avance oficial si es versión estable (v1.0, v2.0, etc.)
+              if [[ "$VERSION" =~ v[1-9][0-9]*\.0 ]]; then
+                echo "   🚀 ¡ENTREGABLE OFICIAL DETECTADO! ($ENTREGABLE $VERSION). Listo para marcar tarea como finalizada."
+              fi
+
+            else
+              echo "   ⚠️ AVISO: '$BASENAME' no sigue la codificación estándar [ENTREGABLE]_[TIPO]_[NOMBRE]_v[MAYOR].[MENOR].[EXT]."
+            fi
+            echo "----------------------------------------------------------"
+          done
