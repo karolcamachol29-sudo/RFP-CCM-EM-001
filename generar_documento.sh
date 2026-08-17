@@ -22,13 +22,13 @@ case $OPCION in
     ;;
   2)
     read -p "Nombre corto del análisis (ej. Seleccion_Reactor): " NOMBRE
-    DEST="00_Gestion_Proyecto/Plantillas/${FECHA}_Matriz_Ponderada_${NOMBRE}_v0.1.md"
+    DEST="00_Gestion_Proyecto/Matriz_Ponderada/${FECHA}_Matriz_Ponderada_${NOMBRE}_v0.1.md"
     cp 00_Gestion_Proyecto/Plantillas/MATRIZ_PONDERADA_PLANTILLA.md "$DEST"
     echo "✅ Matriz Ponderada creada exitosamente en: $DEST"
     ;;
   3)
     read -p "Código del Entregable evaluado (ej. E0, E1): " ENT
-    DEST="00_Gestion_Proyecto/Plantillas/${FECHA}_Evaluacion_Calidad_${ENT}_v0.1.md"
+    DEST="00_Gestion_Proyecto/${FECHA}_Evaluacion_Calidad_${ENT}_v0.1.md"
     cp 00_Gestion_Proyecto/Plantillas/MATRIZ_EVALUACION_PLANTILLA.md "$DEST"
     echo "✅ Matriz de Evaluación creada exitosamente en: $DEST"
     ;;
