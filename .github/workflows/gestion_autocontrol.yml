@@ -1,18 +1,4 @@
-name: Sistema de Autocontrol y Validador de Entregables RFP-CCM-EM-001
-
-on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
-
-jobs:
-  auditoria_y_clasificacion:
-    name: Auditoria Automatizada de Archivos y Versiones
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Clonar Repositorio
+- name: Clonar Repositorio
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -78,10 +64,10 @@ jobs:
                   ;;
               esac
 
-              if [[ "$DIRNAME" == "$EXPECTED_DIR"* ]]; me
+              if [[ "$DIRNAME" == "$EXPECTED_DIR"* ]]; then
                 echo "   🎯 Ubicación correcta en $EXPECTED_DIR"
               else
-                echo "   ⚠️ ALERTA DE UBICACIÓN: El archivo $BASENAME pertenece a $ENTREGABLE pero se subió en '$DIRNAME'. Debería estar en '$EXPECTED_DIR'."
+                echo "   ⚠️ ALERTA DE UBICACIÓN: El archivo $BASENAME pertenece a $ENTREGABLE pero se subió en '$DIRNAME'"
               fi
 
               # Reportar avance oficial si es versión estable (v1.0, v2.0, etc.)
@@ -90,7 +76,7 @@ jobs:
               fi
 
             else
-              echo "   ⚠️ AVISO: '$BASENAME' no sigue la codificación estándar [ENTREGABLE]_[TIPO]_[NOMBRE]_v[MAYOR].[MENOR].[EXT]."
+              echo "   ⚠️ AVISO: '$BASENAME' no sigue la codificación estándar [ENTREGABLE]_[TIPO]_[NOMBRE]_v[MAYOR].[MENOR].[ext]"
             fi
             echo "----------------------------------------------------------"
           done
