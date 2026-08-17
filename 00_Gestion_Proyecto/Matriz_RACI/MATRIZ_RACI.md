@@ -1,28 +1,42 @@
-# Matriz RACI — Proyecto RFP-CCM-EM-001
+# Matriz RACI y Backlog General — Proyecto RFP-CCM-EM-001
 
-> **Roles del Proyecto:**
-> * **R — Responsible (Responsable):** Quien realiza el trabajo/actividad.
-> * **A — Accountable (Aprobador):** Único responsable del resultado final y de dar el visto bueno.
-> * **C — Consulted (Consultado):** Experto a quien se le pide opinión o datos técnicos.
-> * **I — Informed (Informado):** Persona a la que se le notifica el avance o decisión.
+> **Roles:** **R** = Responsable | **A** = Aprobador | **C** = Consultado | **I** = Informado  
+> **Campos para Kanban:** `[Código]` | `[Tarea]` | `[Asignado]` | `[Rol RACI]` | `[Entrega Estimada]` | `[Etiquetas]`
 
 ---
 
-## Asignación de Entregables y Responsabilidades
+## 📋 Cuadro General RACI
 
-| Código | Entregable / Tarea Principal | Karoc | Integrante 2 | Integrante 3 | Estado |
-| :---: | :--- | :---: | :---: | :---: | :---: |
-| **E0** | Acta Constitutiva y Estructura Organizacional | **A / R** | C | I | ⏳ En Progreso |
-| **E1** | Balance de Materia y Energía (Simulación DWSIM/BioSTEAM) | A | **R** | C | 📅 Pendiente |
-| **E2** | Diagramas de Proceso e Ingeniería (BFD, PFD, P&ID en Plant 3D) | A | C | **R** | 📅 Pendiente |
-| **E3** | Hojas de Datos, HDS y Especificación de Equipos | A | **R** | C | 📅 Pendiente |
-| **E4** | Evaluación Económica, CAPEX/OPEX y Análisis de Riesgo | **A / R** | C | I | 📅 Pendiente |
-| **EF** | Informe Final Consolidado y Manual Operativo | **A** | **R** | **R** | 📅 Pendiente |
+| Código | Tarea / Entregable | Asignado | RACI | Fecha Límite | Estado |
+| :---: | :--- | :--- | :---: | :---: | :---: |
+| **E0-T1** | Redactar Acta Constitutiva de la empresa | Karoc | **A/R** | 2026-08-24 | ⏳ In Progress |
+| **E0-T2** | Definir Organigrama y Descripción de Puestos | Karoc | **A/R** | 2026-08-26 | 📅 Todo |
+| **E1-T1** | Configurar paquete termodinámico en DWSIM | Integrante 2 | **R** | 2026-09-05 | 📅 Todo |
+| **E1-T2** | Resolver Balance de Materia y Energía | Integrante 2 | **R** | 2026-09-12 | 📅 Todo |
+| **E2-T1** | Modelar BFD y PFD en AutoCAD Plant 3D | Integrante 3 | **R** | 2026-09-20 | 📅 Todo |
+| **E2-T2** | Generar Diagrama DTI / P&ID de instrumentación | Integrante 3 | **R** | 2026-09-28 | 📅 Todo |
 
 ---
 
-## Control de Cambios de la Matriz
+## 🎯 Tasklist para Importación a GitHub Projects
 
-| Versión | Fecha | Modificado por | Descripción del Cambio |
-| :---: | :---: | :--- | :--- |
-| `v1.0` | 2026-08-17 | Karoc | Creación inicial de la estructura de la Matriz RACI |
+- [ ] **[E0-T1] Redactar Acta Constitutiva**
+  - **Asignado:** @Karoc
+  - **RACI:** Accountable / Responsible
+  - **Código Entregable:** `03_Entregables_Finales/E0_Constitucion/E0_DOC_ActaConstitutiva_v1.0.pdf`
+  - **Fecha Límite:** 2026-08-24
+  - **Labels:** `E0`, `Gestion`, `Prioridad-Alta`
+
+- [ ] **[E0-T2] Definir Organigrama y Descripción de Puestos**
+  - **Asignado:** @Karoc
+  - **RACI:** Accountable / Responsible
+  - **Código Entregable:** `03_Entregables_Finales/E0_Constitucion/E0_DOC_Organigrama_v1.0.pdf`
+  - **Fecha Límite:** 2026-08-26
+  - **Labels:** `E0`, `Gestion`
+
+- [ ] **[E1-T1] Configurar paquete termodinámico en DWSIM**
+  - **Asignado:** @Integrante2
+  - **RACI:** Responsible (Aprobador: @Karoc)
+  - **Código Entregable:** `01_Proceso_y_Simulacion/DWSIM/E1_SIM_Termodinamica_v1.0.dwxmz`
+  - **Fecha Límite:** 2026-09-05
+  - **Labels:** `E1`, `Simulacion`, `DWSIM`
