@@ -1,4 +1,16 @@
-- name: Clonar Repositorio
+name: Gestión Autocontrol
+
+on:
+  push:
+    branches: ["*"]
+  pull_request:
+    branches: ["*"]
+
+jobs:
+  autocontrol:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar Repositorio
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
