@@ -35,7 +35,7 @@
 
 ## 🔍 Review / Quality Control
 
-- [ ] **[E1.1] Configuración de Bases de Diseño & Termodinámica**
+ - [x] **[E1.1] Configuración de Bases de Diseño & Termodinámica**
   - **Asignado:** @Cho0bb (Grecia Figueroa)
   - **Fecha Asignación:** 2026-08-17
   - **Entrega Estimada:** 2026-08-25
@@ -43,7 +43,7 @@
     - [ ] `00_Gestion_Proyecto/E1.1_DOC_BasesDiseno_v1.0.pdf`
   - **Etiquetas:** `E1.1`, `DOC`, `HSE`
 
-- [ ] **[E1.2] Simulación de Procesos & Balances de Materia/Energía (DWSIM)**
+ - [x] **[E1.2] Simulación de Procesos & Balances de Materia/Energía (DWSIM)**
   - **Asignado:** @paulina145 (Paulina Mota)
   - **Fecha Asignación:** 2026-08-18
   - **Entrega Estimada:** 2026-08-25
@@ -52,7 +52,7 @@
     - [ ] `03_Entregables_Finales/E1.2_DOC_ReporteSimulacion_v1.0.pdf`
   - **Etiquetas:** `E1.2`, `SIM`, `DOC`, `DWSIM`
 
-- [ ] **[E1.3] Diagramación & Especificación Técnica de Procesos (Plant 3D)**
+ - [x] **[E1.3] Diagramación & Especificación Técnica de Procesos (Plant 3D)**
   - **Asignado:** @GildardoOca25 (Gildardo Ocaña)
   - **Fecha Asignación:** 2026-08-19
   - **Entrega Estimada:** 2026-08-24
