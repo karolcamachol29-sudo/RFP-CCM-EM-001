@@ -147,7 +147,7 @@ jobs:
           echo -e "$VERSION_ALERT_LOG" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
-      - name: Sincronizar Tarjetas y Fechas de Roadmap en GitHub Projects v2
+      - name: Sincronizar Tarjetas y Fechas de Roadmap en GitHub Projects v2 via GraphQL
         if: github.event_name == 'push'
         env:
           GH_TOKEN: ${{ secrets.PAT_PROJECT || secrets.GITHUB_TOKEN }}
@@ -191,6 +191,51 @@ jobs:
           sync_issue "[E1.2] Simulación de Procesos & Balances (DWSIM)" "### 📅 Fecha Asignación: 2026-08-18\n### 🎯 Fecha Límite: 2026-08-25\n**Asignado a:** @paulina145" "@paulina145" "E1.2,SIM,DWSIM" "false"
           sync_issue "[E1.3] Diagramación Plant 3D & Especificación Técnica" "### 📅 Fecha Asignación: 2026-08-19\n### 🎯 Fecha Límite: 2026-08-24\n**Asignado a:** @GildardoOca25" "@GildardoOca25" "E1.3,DWG,CAD" "false"
           sync_issue "[E1.4] Integración Python & Optimización Térmica" "### 📅 Fecha Asignación: 2026-08-20\n### 🎯 Fecha Límite: 2026-08-25\n**Asignado a:** @Karoc" "@Karoc" "E1.4,PY" "false"
+
+          # Automatizar sincronización de fechas Start Date / Target Date en Project V2 via GraphQL
+          python3 -c "
+          import urllib.request, json, os
+
+          token = os.environ.get('GH_TOKEN')
+          if not token:
+              exit(0)
+
+          headers = {'Authorization': f'token {token}', 'Accept': 'application/vnd.github.v3+json'}
+          url = 'https://api.github.com/graphql'
+
+          project_id = 'PVT_kwHOD240784Bgkoq'
+          start_field_id = 'PVTF_lAHOD240784BgkoqzhfjsCk'
+          target_field_id = 'PVTF_lAHOD240784BgkoqzhfjsCo'
+
+          issues = [
+              (1, '2026-08-14', '2026-08-17'),
+              (2, '2026-08-17', '2026-08-25'),
+              (3, '2026-08-18', '2026-08-25'),
+              (4, '2026-08-19', '2026-08-24'),
+              (5, '2026-08-20', '2026-08-25'),
+          ]
+
+          for issue_num, s_date, t_date in issues:
+              try:
+                  q_issue = f'''query {{ repository(owner: \"karolcamachol29-sudo\", name: \"RFP-CCM-EM-001\") {{ issue(number: {issue_num}) {{ id }} }} }}'''
+                  req = urllib.request.Request(url, data=json.dumps({'query': q_issue}).encode(), headers=headers, method='POST')
+                  res = urllib.request.urlopen(req)
+                  issue_node_id = json.loads(res.read())['data']['repository']['issue']['id']
+
+                  m_add = f'''mutation {{ addProjectV2ItemById(input: {{projectId: \"{project_id}\", contentId: \"{issue_node_id}\"}}) {{ item {{ id }} }} }}'''
+                  req_add = urllib.request.Request(url, data=json.dumps({'query': m_add}).encode(), headers=headers, method='POST')
+                  res_add = urllib.request.urlopen(req_add)
+                  item_id = json.loads(res_add.read())['data']['addProjectV2ItemById']['item']['id']
+
+                  m_start = f'''mutation {{ updateProjectV2ItemFieldValue(input: {{ projectId: \"{project_id}\", itemId: \"{item_id}\", fieldId: \"{start_field_id}\", value: {{date: \"{s_date}\"}} }}) {{ projectV2Item {{ id }} }} }}'''
+                  urllib.request.urlopen(urllib.request.Request(url, data=json.dumps({'query': m_start}).encode(), headers=headers, method='POST'))
+
+                  m_target = f'''mutation {{ updateProjectV2ItemFieldValue(input: {{ projectId: \"{project_id}\", itemId: \"{item_id}\", fieldId: \"{target_field_id}\", value: {{date: \"{t_date}\"}} }}) {{ projectV2Item {{ id }} }} }}'''
+                  urllib.request.urlopen(urllib.request.Request(url, data=json.dumps({'query': m_target}).encode(), headers=headers, method='POST'))
+                  print(f'✅ Project V2 Item #{issue_num} GraphQL synced with dates: Start={s_date}, Target={t_date}')
+              except Exception as e:
+                  print(f'Issue #{issue_num} sync info:', e)
+          "
 
       - name: Actualizar Bitácora Técnica Automáticamente
         run: |
