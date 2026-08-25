@@ -108,6 +108,11 @@ jobs:
           echo "   SINCRONIZANDO TAREAS CON GITHUB ISSUES / PROJECTS      "
           echo "=========================================================="
 
+          # Crear etiquetas por defecto si no existen
+          for L in "E0" "E1.1" "E1.2" "E1.3" "E1.4" "DOC" "SIM" "DWG" "PY" "DWSIM" "CAD" "HSE"; do
+            gh label create "$L" --force 2>/dev/null || true
+          done
+
           EXISTING_ISSUES=$(gh issue list --limit 100 --json title,state --jq '.[].title' 2>/dev/null || true)
 
           sync_issue() {
@@ -137,7 +142,7 @@ jobs:
           sync_issue "[E1.1] Configuración de Bases de Diseño & Termodinámica" "Asignado a: @Cho0bb | Asignación: 2026-08-17 | Límite: 2026-08-25" "@Cho0bb" "E1.1,DOC,HSE" "false"
           sync_issue "[E1.2] Simulación de Procesos & Balances (DWSIM)" "Asignado a: @paulina145 | Asignación: 2026-08-18 | Límite: 2026-08-25" "@paulina145" "E1.2,SIM,DWSIM" "false"
           sync_issue "[E1.3] Diagramación Plant 3D & Especificación Técnica" "Asignado a: @GildardoOca25 | Asignación: 2026-08-19 | Límite: 2026-08-24" "@GildardoOca25" "E1.3,DWG,CAD" "false"
-          sync_issue "[E1.4] Integración Python & Optimización Térmica" "Asignado a: @Karoc | Asignación: 2026-08-20 | Límite: 2026-08-25" "@Karoc" "E1.4,PY,Optimizacion" "false"
+          sync_issue "[E1.4] Integración Python & Optimización Térmica" "Asignado a: @Karoc | Asignación: 2026-08-20 | Límite: 2026-08-25" "@Karoc" "E1.4,PY" "false"
 
       - name: Actualizar Bitácora Técnica Automáticamente
         run: |
