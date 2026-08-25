@@ -1,4 +1,4 @@
-name: Gestión Autocontrol, Cierre de Kanban y Bitácora Automática
+name: Gestión Autocontrol, Cierre de Kanban y Sincronización GitHub Projects
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   autocontrol:
@@ -97,6 +98,46 @@ jobs:
           echo "VERSION_ALERT_LOG<<EOF" >> $GITHUB_ENV
           echo -e "$VERSION_ALERT_LOG" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
+
+      - name: Sincronizar Tarjetas en GitHub Issues / GitHub Projects
+        if: github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "=========================================================="
+          echo "   SINCRONIZANDO TAREAS CON GITHUB ISSUES / PROJECTS      "
+          echo "=========================================================="
+
+          EXISTING_ISSUES=$(gh issue list --limit 100 --json title,state --jq '.[].title' 2>/dev/null || true)
+
+          sync_issue() {
+            local title="$1"
+            local body="$2"
+            local assignee="$3"
+            local labels="$4"
+            local is_done="$5"
+
+            local clean_assignee=$(echo "$assignee" | tr -d '@' | cut -d' ' -f1)
+
+            if echo "$EXISTING_ISSUES" | grep -qF "$title"; then
+              echo "   ℹ️ La tarjeta / issue '$title' ya existe en GitHub."
+            else
+              echo "   ✨ Creando Issue en GitHub: '$title' para $clean_assignee"
+              gh issue create --title "$title" --body "$body" --assignee "$clean_assignee" --label "$labels" 2>/dev/null || \
+              gh issue create --title "$title" --body "$body" --label "$labels" 2>/dev/null || true
+            fi
+
+            if [ "$is_done" = "true" ]; then
+              gh issue close --reason "completed" "$title" 2>/dev/null || true
+            fi
+          }
+
+          # Sincronizar entregables oficiales como tarjetas en GitHub Issues/Projects
+          sync_issue "[E0] Redactar Acta Constitutiva y Gestión Inicial" "Asignado a: @Karoc | Asignación: 2026-08-14 | Límite: 2026-08-17" "@Karoc" "E0,DOC" "true"
+          sync_issue "[E1.1] Configuración de Bases de Diseño & Termodinámica" "Asignado a: @Cho0bb | Asignación: 2026-08-17 | Límite: 2026-08-25" "@Cho0bb" "E1.1,DOC,HSE" "false"
+          sync_issue "[E1.2] Simulación de Procesos & Balances (DWSIM)" "Asignado a: @paulina145 | Asignación: 2026-08-18 | Límite: 2026-08-25" "@paulina145" "E1.2,SIM,DWSIM" "false"
+          sync_issue "[E1.3] Diagramación Plant 3D & Especificación Técnica" "Asignado a: @GildardoOca25 | Asignación: 2026-08-19 | Límite: 2026-08-24" "@GildardoOca25" "E1.3,DWG,CAD" "false"
+          sync_issue "[E1.4] Integración Python & Optimización Térmica" "Asignado a: @Karoc | Asignación: 2026-08-20 | Límite: 2026-08-25" "@Karoc" "E1.4,PY,Optimizacion" "false"
 
       - name: Actualizar Bitácora Técnica Automáticamente
         run: |
