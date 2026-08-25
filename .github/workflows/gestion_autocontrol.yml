@@ -22,7 +22,7 @@ jobs:
       - name: Auditar Nomenclatura, Ubicación de Carpetas, Alertas y Cierre Automático
         id: audit
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PAT_PROJECT || secrets.GITHUB_TOKEN }}
         run: |
           echo "=========================================================="
           echo "   AUDITORÍA AUTOMÁTICA Y CIERRE KANBAN - RFP-CCM-EM-001  "
@@ -147,13 +147,13 @@ jobs:
           echo -e "$VERSION_ALERT_LOG" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
-      - name: Sincronizar Tarjetas y Milestones en GitHub Issues / GitHub Projects
+      - name: Sincronizar Tarjetas y Fechas de Roadmap en GitHub Projects v2
         if: github.event_name == 'push'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PAT_PROJECT || secrets.GITHUB_TOKEN }}
         run: |
           echo "=========================================================="
-          echo "   SINCRONIZANDO TAREAS CON GITHUB ISSUES / PROJECTS      "
+          echo "   SINCRONIZANDO TAREAS Y FECHAS DE ROADMAP EN GITHUB     "
           echo "=========================================================="
 
           # Crear etiquetas por defecto si no existen
