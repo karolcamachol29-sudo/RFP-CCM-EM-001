@@ -19,7 +19,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Auditar Nomenclatura, Alertas y Cierre Automático de Tarjetas Kanban
+      - name: Auditar Nomenclatura, Ubicación de Carpetas, Alertas y Cierre Automático
         id: audit
         run: |
           echo "=========================================================="
@@ -57,6 +57,38 @@ jobs:
                 VERSION=$(echo "$BASENAME" | grep -oE "v[0-9]+\.[0-9]+")
                 echo "   ✅ Nomenclatura correcta."
                 echo "   📌 Entregable: $ENTREGABLE | Tipo: $TIPO | Versión: $VERSION"
+
+                # --- VALIDACIÓN DE UBICACIÓN DE CARPETA SEGÚN TIPO ---
+                LOCATION_OK=true
+                EXPECTED_DIR=""
+
+                case "$TIPO" in
+                  SIM|PY)
+                    EXPECTED_DIR="01_Proceso_y_Simulacion"
+                    if [[ ! "$DIRNAME" =~ ^01_Proceso_y_Simulacion ]]; then
+                      LOCATION_OK=false
+                    fi
+                    ;;
+                  DWG)
+                    EXPECTED_DIR="02_Ingenieria_y_Diagramas"
+                    if [[ ! "$DIRNAME" =~ ^02_Ingenieria_y_Diagramas ]]; then
+                      LOCATION_OK=false
+                    fi
+                    ;;
+                  DOC|RPT)
+                    EXPECTED_DIR="03_Entregables_Finales o 00_Gestion_Proyecto"
+                    if [[ ! "$DIRNAME" =~ ^(03_Entregables_Finales|00_Gestion_Proyecto) ]]; then
+                      LOCATION_OK=false
+                    fi
+                    ;;
+                esac
+
+                if [ "$LOCATION_OK" = "false" ]; then
+                  echo "::warning file=$FILE::⚠️ ALERTA DE UBICACIÓN: El archivo '$BASENAME' de tipo '$TIPO' está en '$DIRNAME', pero debe guardarse en '$EXPECTED_DIR'. Por favor muévelo a la carpeta correcta."
+                  VERSION_ALERT_LOG="${VERSION_ALERT_LOG}\n* ⚠️ **ALERTA DE UBICACIÓN EN ${ENTREGABLE}:** El archivo \`${BASENAME}\` está en carpeta incorrecta (\`${DIRNAME}\`). Ubicación esperada: \`${EXPECTED_DIR}\`."
+                else
+                  echo "   📂 Ubicación de carpeta correcta ($DIRNAME)."
+                fi
 
                 # Cierre automático de tarjeta Kanban para CUALQUIER versión entregada (v0.1, v0.2, v1.0, etc.)
                 if [ -f "KANBAN.md" ]; then
