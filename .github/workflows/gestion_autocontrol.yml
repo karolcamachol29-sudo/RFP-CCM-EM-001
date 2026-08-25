@@ -21,6 +21,8 @@ jobs:
 
       - name: Auditar Nomenclatura, Ubicación de Carpetas, Alertas y Cierre Automático
         id: audit
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "=========================================================="
           echo "   AUDITORÍA AUTOMÁTICA Y CIERRE KANBAN - RFP-CCM-EM-001  "
@@ -90,7 +92,7 @@ jobs:
                   echo "   📂 Ubicación de carpeta correcta ($DIRNAME)."
                 fi
 
-                # Cierre automático de tarjeta Kanban para CUALQUIER versión entregada (v0.1, v0.2, v1.0, etc.)
+                # Cierre automático de tarjeta Kanban local KANBAN.md
                 if [ -f "KANBAN.md" ]; then
                   sed -i "/\[${ENTREGABLE}\]/s/- \[ \]/ - \[x\]/" KANBAN.md || true
                   echo "   🎯 Tarjeta [${ENTREGABLE}] marcada como completada en KANBAN.md"
@@ -102,6 +104,13 @@ jobs:
                   sed -i "/\[${ENTREGABLE}\]/s/📅 Todo/✅ Done/" "$MATRIZ_RACI" || true
                   sed -i "/\[${ENTREGABLE}\]/s/⏳ In Progress/✅ Done/" "$MATRIZ_RACI" || true
                   sed -i "/\[${ENTREGABLE}\]/s/🔍 Review \/ QA/✅ Done/" "$MATRIZ_RACI" || true
+                fi
+
+                # Cierre automático del Issue en GitHub Projects Web via GitHub API
+                ISSUE_NUM=$(gh issue list --search "[$ENTREGABLE]" --json number --jq '.[0].number' 2>/dev/null || true)
+                if [ -n "$ISSUE_NUM" ]; then
+                  gh issue close "$ISSUE_NUM" --reason "completed" 2>/dev/null || true
+                  echo "   🎯 Issue #$ISSUE_NUM en GitHub cerrado automáticamente (Done)."
                 fi
 
                 if [[ ! "$VERSION" =~ v1\.0 ]]; then
@@ -119,6 +128,13 @@ jobs:
                   echo "   🎯 Tarjeta [${ENTREGABLE}] marcada como completada en KANBAN.md (pendiente corrección de nombre)."
                 fi
 
+                # Cierre automático del Issue en GitHub Projects Web
+                ISSUE_NUM=$(gh issue list --search "[$ENTREGABLE]" --json number --jq '.[0].number' 2>/dev/null || true)
+                if [ -n "$ISSUE_NUM" ]; then
+                  gh issue close "$ISSUE_NUM" --reason "completed" 2>/dev/null || true
+                  echo "   🎯 Issue #$ISSUE_NUM en GitHub cerrado automáticamente (Done)."
+                fi
+
                 VERSION_ALERT_LOG="${VERSION_ALERT_LOG}\n* ⚠️ **ALERTA DE NOMENCLATURA EN ${ENTREGABLE}:** El archivo \`${BASENAME}\` fue entregado con formato incorrecto de versión/nombre. Se requiere renombrar según el estándar \`vX.X\`."
               fi
             else
@@ -131,7 +147,7 @@ jobs:
           echo -e "$VERSION_ALERT_LOG" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
-      - name: Sincronizar Tarjetas en GitHub Issues / GitHub Projects
+      - name: Sincronizar Tarjetas y Milestones en GitHub Issues / GitHub Projects
         if: github.event_name == 'push'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -160,7 +176,7 @@ jobs:
               echo "   ℹ️ La tarjeta / issue '$title' ya existe en GitHub."
             else
               echo "   ✨ Creando Issue en GitHub: '$title' para $clean_assignee"
-              gh issue create --title "$title" --body "$body" --assignee "$clean_assignee" --label "$labels" 2>/dev/null || \
+              gh issue create --title "$title" --body "$body" --assignee "$clean_assignee" --label "$labels" --milestone "Entrega Etapa 1 — RFP-CCM-EM-001" 2>/dev/null || \
               gh issue create --title "$title" --body "$body" --label "$labels" 2>/dev/null || true
             fi
 
@@ -170,11 +186,11 @@ jobs:
           }
 
           # Sincronizar entregables oficiales como tarjetas en GitHub Issues/Projects
-          sync_issue "[E0] Redactar Acta Constitutiva y Gestión Inicial" "Asignado a: @Karoc | Asignación: 2026-08-14 | Límite: 2026-08-17" "@Karoc" "E0,DOC" "true"
-          sync_issue "[E1.1] Configuración de Bases de Diseño & Termodinámica" "Asignado a: @Cho0bb | Asignación: 2026-08-17 | Límite: 2026-08-25" "@Cho0bb" "E1.1,DOC,HSE" "false"
-          sync_issue "[E1.2] Simulación de Procesos & Balances (DWSIM)" "Asignado a: @paulina145 | Asignación: 2026-08-18 | Límite: 2026-08-25" "@paulina145" "E1.2,SIM,DWSIM" "false"
-          sync_issue "[E1.3] Diagramación Plant 3D & Especificación Técnica" "Asignado a: @GildardoOca25 | Asignación: 2026-08-19 | Límite: 2026-08-24" "@GildardoOca25" "E1.3,DWG,CAD" "false"
-          sync_issue "[E1.4] Integración Python & Optimización Térmica" "Asignado a: @Karoc | Asignación: 2026-08-20 | Límite: 2026-08-25" "@Karoc" "E1.4,PY" "false"
+          sync_issue "[E0] Redactar Acta Constitutiva y Gestión Inicial" "### 📅 Fecha Asignación: 2026-08-14\n### 🎯 Fecha Límite: 2026-08-17\n**Asignado a:** @Karoc" "@Karoc" "E0,DOC" "true"
+          sync_issue "[E1.1] Configuración de Bases de Diseño & Termodinámica" "### 📅 Fecha Asignación: 2026-08-17\n### 🎯 Fecha Límite: 2026-08-25\n**Asignado a:** @Cho0bb" "@Cho0bb" "E1.1,DOC,HSE" "false"
+          sync_issue "[E1.2] Simulación de Procesos & Balances (DWSIM)" "### 📅 Fecha Asignación: 2026-08-18\n### 🎯 Fecha Límite: 2026-08-25\n**Asignado a:** @paulina145" "@paulina145" "E1.2,SIM,DWSIM" "false"
+          sync_issue "[E1.3] Diagramación Plant 3D & Especificación Técnica" "### 📅 Fecha Asignación: 2026-08-19\n### 🎯 Fecha Límite: 2026-08-24\n**Asignado a:** @GildardoOca25" "@GildardoOca25" "E1.3,DWG,CAD" "false"
+          sync_issue "[E1.4] Integración Python & Optimización Térmica" "### 📅 Fecha Asignación: 2026-08-20\n### 🎯 Fecha Límite: 2026-08-25\n**Asignado a:** @Karoc" "@Karoc" "E1.4,PY" "false"
 
       - name: Actualizar Bitácora Técnica Automáticamente
         run: |
