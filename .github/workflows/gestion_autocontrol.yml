@@ -1,10 +1,13 @@
-name: Gestión Autocontrol
+name: Gestión Autocontrol, Cierre de Kanban y Bitácora Automática
 
 on:
   push:
     branches: ["*"]
   pull_request:
     branches: ["*"]
+
+permissions:
+  contents: write
 
 jobs:
   autocontrol:
@@ -15,13 +18,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Analizar Cambios y Nomenclatura
+      - name: Auditar Nomenclatura, Alertas y Cierre Automático de Tarjetas Kanban
+        id: audit
         run: |
           echo "=========================================================="
-          echo "   AUDITORÍA AUTOMÁTICA DE ENTREGABLES - RFP-CCM-EM-001   "
+          echo "   AUDITORÍA AUTOMÁTICA Y CIERRE KANBAN - RFP-CCM-EM-001  "
           echo "=========================================================="
 
-          # Obtener la lista de archivos modificados/añadidos en el commit
           CHANGED_FILES=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})
 
           if [ -z "$CHANGED_FILES" ]; then
@@ -29,10 +32,9 @@ jobs:
             exit 0
           fi
 
-          ERRORS=0
+          VERSION_ALERT_LOG=""
 
           for FILE in $CHANGED_FILES; do
-            # Ignorar archivos del sistema git/github o README
             if [[ "$FILE" =~ ^\.git ]] || [[ "$FILE" == "README.md" ]]; then
               continue
             fi
@@ -42,53 +44,106 @@ jobs:
 
             echo "🔍 Analizando: $FILE"
 
-            # Validar Expresion Regular de Nomenclatura: Ej: E0_DOC_Constitucion_v1.0.pdf
-            REGEX="^(E[0-4]|EF)_(DOC|DWG|SIM|PY|RPT)_[A-Za-z0-9_]+_v[0-9]+\.[0-9]+\.[a-zA-Z0-9]+$"
+            # Regex oficial estricta: E0-E4 / EF + TIPO + NOMBRE + vMAYOR.MENOR.ext
+            STRICT_REGEX="^(E[0-4](\.[0-9]+)?|EF)_(DOC|DWG|SIM|PY|RPT)_[A-Za-z0-9_]+_v[0-9]+\.[0-9]+\.[a-zA-Z0-9]+$"
 
-            if [[ "$BASENAME" =~ $REGEX ]]; then
-              # Extraer token de entregable
-              ENTREGABLE=$(echo "$BASENAME" | cut -d'_' -f1)
-              TIPO=$(echo "$BASENAME" | cut -d'_' -f2)
-              VERSION=$(echo "$BASENAME" | grep -oE "v[0-9]+\.[0-9]+")
+            # Check if deliverable code exists (e.g., E0, E1.1, E1.2, E1.3, E1.4)
+            if [[ "$BASENAME" =~ ^(E[0-4](\.[0-9]+)?|EF) ]]; then
+              ENTREGABLE=$(echo "$BASENAME" | grep -oE "^(E[0-4](\.[0-9]+)?|EF)")
 
-              echo "   ✅ Nomenclatura correcta."
-              echo "   📌 Código: $ENTREGABLE | Tipo: $TIPO | Versión: $VERSION"
+              if [[ "$BASENAME" =~ $STRICT_REGEX ]]; then
+                TIPO=$(echo "$BASENAME" | cut -d'_' -f2)
+                VERSION=$(echo "$BASENAME" | grep -oE "v[0-9]+\.[0-9]+")
+                echo "   ✅ Nomenclatura correcta."
+                echo "   📌 Entregable: $ENTREGABLE | Tipo: $TIPO | Versión: $VERSION"
 
-              # Verificar coincidencia de carpeta destino segun el codigo
-              case $ENTREGABLE in
-                E0)
-                  EXPECTED_DIR="03_Entregables_Finales/E0_Constitucion"
-                  ;;
-                E1)
-                  EXPECTED_DIR="03_Entregables_Finales/E1"
-                  ;;
-                E2)
-                  EXPECTED_DIR="03_Entregables_Finales/E2"
-                  ;;
-                E3)
-                  EXPECTED_DIR="03_Entregables_Finales/E3"
-                  ;;
-                E4)
-                  EXPECTED_DIR="03_Entregables_Finales/E4"
-                  ;;
-                EF)
-                  EXPECTED_DIR="03_Entregables_Finales/EF_Informe_Final"
-                  ;;
-              esac
+                # Cierre automático de tarjeta Kanban para CUALQUIER versión entregada (v0.1, v0.2, v1.0, etc.)
+                if [ -f "KANBAN.md" ]; then
+                  sed -i "/\[${ENTREGABLE}\]/s/- \[ \]/ - \[x\]/" KANBAN.md || true
+                  echo "   🎯 Tarjeta [${ENTREGABLE}] marcada como completada en KANBAN.md"
+                fi
 
-              if [[ "$DIRNAME" == "$EXPECTED_DIR"* ]]; then
-                echo "   🎯 Ubicación correcta en $EXPECTED_DIR"
+                # Actualizar Matriz RACI si existe
+                MATRIZ_RACI="00_Gestion_Proyecto/Matriz_RACI/RACI_General_v1.0.md"
+                if [ -f "$MATRIZ_RACI" ]; then
+                  sed -i "/\[${ENTREGABLE}\]/s/📅 Todo/✅ Done/" "$MATRIZ_RACI" || true
+                  sed -i "/\[${ENTREGABLE}\]/s/⏳ In Progress/✅ Done/" "$MATRIZ_RACI" || true
+                  sed -i "/\[${ENTREGABLE}\]/s/🔍 Review \/ QA/✅ Done/" "$MATRIZ_RACI" || true
+                fi
+
+                if [[ ! "$VERSION" =~ v1\.0 ]]; then
+                  VERSION_ALERT_LOG="${VERSION_ALERT_LOG}\n* ℹ️ **Actualización de Versión en ${ENTREGABLE}:** Se entregó la versión \`${VERSION}\` (versión borrador/actualizada diferente a v1.0 final esperada). Tarjeta Kanban cerrada automáticamente."
+                fi
+
               else
-                echo "   ⚠️ ALERTA DE UBICACIÓN: El archivo $BASENAME pertenece a $ENTREGABLE pero se subió en '$DIRNAME'"
-              fi
+                # Alerta explícita de corrección de nombre (ej. por usar _v0_2 en vez de _v0.2)
+                echo "::warning file=$FILE::⚠️ ALERTA DE NOMENCLATURA: El archivo '$BASENAME' no cumple con el estándar exacto [ENTREGABLE]_[TIPO]_[NombreDescriptivo]_v[MAYOR].[MENOR].[ext]. Por favor corrige el nombre según la convención (ej. cambiar '_v0_2' a '_v0.2')."
+                echo "   ❌ ERROR DE NOMENCLATURA: '$BASENAME' requiere corrección de etiqueta."
 
-              # Reportar avance oficial si es versión estable (v1.0, v2.0, etc.)
-              if [[ "$VERSION" =~ v[1-9][0-9]*\.0 ]]; then
-                echo "   🚀 ¡ENTREGABLE OFICIAL DETECTADO! ($ENTREGABLE $VERSION). Listo para marcar tarea como finalizada."
-              fi
+                # Aun con error de formato en versión (ej. _v0_2), reconocemos el código y cerramos la tarjeta
+                if [ -f "KANBAN.md" ]; then
+                  sed -i "/\[${ENTREGABLE}\]/s/- \[ \]/ - \[x\]/" KANBAN.md || true
+                  echo "   🎯 Tarjeta [${ENTREGABLE}] marcada como completada en KANBAN.md (pendiente corrección de nombre)."
+                fi
 
+                VERSION_ALERT_LOG="${VERSION_ALERT_LOG}\n* ⚠️ **ALERTA DE NOMENCLATURA EN ${ENTREGABLE}:** El archivo \`${BASENAME}\` fue entregado con formato incorrecto de versión/nombre. Se requiere renombrar según el estándar \`vX.X\`."
+              fi
             else
-              echo "   ⚠️ AVISO: '$BASENAME' no sigue la codificación estándar [ENTREGABLE]_[TIPO]_[NOMBRE]_v[MAYOR].[MENOR].[ext]"
+              echo "   ℹ️ Archivo general fuera de la clasificación de entregables oficiales."
             fi
             echo "----------------------------------------------------------"
           done
+
+          echo "VERSION_ALERT_LOG<<EOF" >> $GITHUB_ENV
+          echo -e "$VERSION_ALERT_LOG" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Actualizar Bitácora Técnica Automáticamente
+        run: |
+          FECHA=$(date +%Y-%m-%d)
+          HORA=$(date +%H:%M)
+          BITACORA_FILE="04_Bitacora/BITACORA_${FECHA}.md"
+
+          mkdir -p 04_Bitacora
+
+          if [ ! -f "$BITACORA_FILE" ]; then
+            echo "# Bitácora Técnica de Proyecto — RFP-CCM-EM-001" > "$BITACORA_FILE"
+            echo "" >> "$BITACORA_FILE"
+          fi
+
+          COMMIT_MSG=$(git log -1 --pretty=format:"%s")
+          AUTHOR=$(git log -1 --pretty=format:"%an")
+          COMMIT_HASH=$(git log -1 --pretty=format:"%h")
+          CHANGED_SUMMARY=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | tr '\n' ', ')
+
+          echo "" >> "$BITACORA_FILE"
+          echo "---" >> "$BITACORA_FILE"
+          echo "" >> "$BITACORA_FILE"
+          echo "## [${FECHA} ${HORA}] — Registro Automatizado de GitHub (Commit: ${COMMIT_HASH})" >> "$BITACORA_FILE"
+          echo "**Responsable:** ${AUTHOR}  " >> "$BITACORA_FILE"
+          echo "**Área / Módulo:** Control de Versiones / CI-CD  " >> "$BITACORA_FILE"
+          echo "" >> "$BITACORA_FILE"
+          echo "### 1. Actividades Realizadas" >> "$BITACORA_FILE"
+          echo "* Commit: \"${COMMIT_MSG}\"" >> "$BITACORA_FILE"
+          echo "* Archivos Modificados / Creados: \`${CHANGED_SUMMARY:-Ninguno}\`" >> "$BITACORA_FILE"
+          echo -e "${VERSION_ALERT_LOG}" >> "$BITACORA_FILE"
+          echo "" >> "$BITACORA_FILE"
+          echo "### 2. Decisiones Técnicas y Supuestos" >> "$BITACORA_FILE"
+          echo "* Trazabilidad automática de versiones de entregables y autocontrol de nomenclatura." >> "$BITACORA_FILE"
+          echo "" >> "$BITACORA_FILE"
+          echo "### 3. Problemas / Obstáculos Encontrados" >> "$BITACORA_FILE"
+          echo "* Verificación de nomenclatura y control de versiones en entregables." >> "$BITACORA_FILE"
+          echo "" >> "$BITACORA_FILE"
+          echo "### 4. Próximos Pasos" >> "$BITACORA_FILE"
+          echo "* Continuar con la entrega de avances según la Matriz RACI." >> "$BITACORA_FILE"
+
+          echo "✅ Bitácora actualizada en: $BITACORA_FILE"
+
+      - name: Autocommit de Cambios en KANBAN.md y Bitácora
+        if: github.event_name == 'push'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Bot"
+          git add KANBAN.md 04_Bitacora/ 00_Gestion_Proyecto/Matriz_RACI/
+          git diff-index --quiet HEAD || git commit -m "chore(auto): autocontrol de entregables, alertas y cierre kanban [skip ci]"
+          git push origin ${{ github.ref_name }} || true

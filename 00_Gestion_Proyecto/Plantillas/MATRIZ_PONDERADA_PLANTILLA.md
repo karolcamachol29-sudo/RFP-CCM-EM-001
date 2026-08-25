@@ -1,4 +1,4 @@
-# Matriz Ponderada de Selección Técnica — Proyecto RFP-CCM-EM-001
+# Matriz Ponderada de Selección Técnica — {{NOMBRE_ANALISIS}} (RFP-CCM-EM-001)
 
 > **Instrucciones:**
 > 1. La suma de los **Pesos (%)** de todos los criterios debe ser exactamente **100%**.
@@ -9,7 +9,7 @@
 
 ## 📊 Matriz de Comparación Tecnológica
 
-| Criterio de Evaluación | Peso (%) | Opción A: [Nombre] | Opción A (Pond.) | Opción B: [Nombre] | Opción B (Pond.) | Opción C: [Nombre] | Opción C (Pond.) |
+| Criterio de Evaluación | Peso (%) | Opción A: {{OPCION_A}} | Opción A (Pond.) | Opción B: {{OPCION_B}} | Opción B (Pond.) | Opción C: {{OPCION_C}} | Opción C (Pond.) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Eficiencia de Conversión / Rendimiento** | 25% | 4 | 1.00 | 5 | 1.25 | 3 | 0.75 |
 | **Costo Estimado (CAPEX / OPEX)** | 20% | 3 | 0.60 | 2 | 0.40 | 4 | 0.80 |
@@ -23,7 +23,7 @@
 
 ## 🎯 Conclusión y Alternativa Seleccionada
 
-* **Opción Seleccionada:** [Nombre de la Opción Ganadora]
-* **Justificación Técnica:** Breve resumen sustentado en los puntajes de la matriz.
-* **Aprobado por:** @Karoc
-* **Fecha de Evaluación:** 2026-08-17
+* **Opción Seleccionada:** {{OPCION_SELECCIONADA}}
+* **Justificación Técnica:** {{JUSTIFICACION}}
+* **Aprobado por:** {{EVALUADOR}}
+* **Fecha de Evaluación:** {{FECHA}}

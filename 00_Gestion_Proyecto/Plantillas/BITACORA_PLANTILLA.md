@@ -2,18 +2,18 @@
 
 ---
 
-## [AAAA-MM-DD] — Título / Tema de la Actividad
-**Responsable:** @Karoc / @Integrante  
-**Área / Módulo:** [Ej. 01_Proceso_y_Simulacion/DWSIM]
+## [{{FECHA}}] — {{TITULO}}
+**Responsable:** {{RESPONSABLE}}  
+**Área / Módulo:** {{AREA_MODULO}}
 
 ### 1. Actividades Realizadas
-* 
+{{ACTIVIDADES}}
 
 ### 2. Decisiones Técnicas y Supuestos
-* 
+{{DECISIONES}}
 
 ### 3. Problemas / Obstáculos Encontrados
-* 
+{{OBSTACULOS}}
 
 ### 4. Próximos Pasos
-* 
+{{PROXIMOS_PASOS}}
