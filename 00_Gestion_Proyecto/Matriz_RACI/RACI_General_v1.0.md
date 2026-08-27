@@ -35,14 +35,14 @@
 ## 🔄 Tareas de Integración Interna para Documento Consolidado E1 (Bases de Diseño Preliminares)
 
 > **Fecha Límite:** 2026-08-27 antes de las 16:00 h (4:00 PM)  
-> **Modo de cierre:** Validación vía Git Commit (sin requerir carga de PDF individual adicional).
+> **Modo de cierre:** Cierre manual (sin requerir carga de PDF individual adicional).
 
 | Versión | Tarea de Integración en E1 | Responsable | Modalidad | Fecha Límite | Estado |
 | :---: | :--- | :---: | :---: | :---: | :---: |
-| **v0.0** | Integración del E0 (Constitución de la empresa e identidad corporativa) | @Karoc | Git Commit | 2026-08-27 16:00 | ⏳ In Progress |
-| **v0.1** | Integración del E1.1 (Bases de diseño preliminares y marco normativo) | @Cho0bb | Git Commit | 2026-08-27 16:00 | ⏳ In Progress |
-| **v0.2** | Integración del E1.2 (Balance estequiométrico y marco termodinámico NB-01) | @paulina145 | Git Commit | 2026-08-27 16:00 | ⏳ In Progress |
-| **v0.3** | Integración del E1.3 (Diagrama de Bloques del Proceso BFD v0) | @GildardoOca25 | Git Commit | 2026-08-27 16:00 | ⏳ In Progress |
+| **v0.0** | Integración del E0 (Constitución de la empresa e identidad corporativa) | @Karoc | Cierre manual | 2026-08-27 16:00 | ⏳ In Progress |
+| **v0.1** | Integración del E1.1 (Bases de diseño preliminares y marco normativo) | @Cho0bb | Cierre manual | 2026-08-27 16:00 | ⏳ In Progress |
+| **v0.2** | Integración del E1.2 (Balance estequiométrico y marco termodinámico NB-01) | @paulina145 | Cierre manual | 2026-08-27 16:00 | ⏳ In Progress |
+| **v0.3** | Integración del E1.3 (Diagrama de Bloques del Proceso BFD v0) | @GildardoOca25 | Cierre manual | 2026-08-27 16:00 | ⏳ In Progress |
 
 ---
 

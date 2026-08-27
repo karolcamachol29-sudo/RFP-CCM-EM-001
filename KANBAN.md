@@ -35,28 +35,28 @@
   - **Asignado:** @Karoc (Karol Camacho)
   - **Fecha Asignación:** 2026-08-26
   - **Entrega Estimada:** 2026-08-27 (antes 4:00 PM)
-  - **Modalidad:** Cierre vía Git Commit
+  - **Modalidad:** Cierre manual
   - **Etiquetas:** `E1`, `v0.0`, `Integracion`
 
 - [/] **[E1-v0.1] Integración del E1.1 en Documento Consolidado E1**
   - **Asignado:** @Cho0bb (Grecia Figueroa)
   - **Fecha Asignación:** 2026-08-26
   - **Entrega Estimada:** 2026-08-27 (antes 4:00 PM)
-  - **Modalidad:** Cierre vía Git Commit
+  - **Modalidad:** Cierre manual
   - **Etiquetas:** `E1`, `v0.1`, `Integracion`
 
 - [/] **[E1-v0.2] Integración del E1.2 en Documento Consolidado E1**
   - **Asignado:** @paulina145 (Paulina Mota)
   - **Fecha Asignación:** 2026-08-26
   - **Entrega Estimada:** 2026-08-27 (antes 4:00 PM)
-  - **Modalidad:** Cierre vía Git Commit
+  - **Modalidad:** Cierre manual
   - **Etiquetas:** `E1`, `v0.2`, `Integracion`
 
 - [/] **[E1-v0.3] Integración del E1.3 en Documento Consolidado E1**
   - **Asignado:** @GildardoOca25 (Gildardo Ocaña)
   - **Fecha Asignación:** 2026-08-26
   - **Entrega Estimada:** 2026-08-27 (antes 4:00 PM)
-  - **Modalidad:** Cierre vía Git Commit
+  - **Modalidad:** Cierre manual
   - **Etiquetas:** `E1`, `v0.3`, `Integracion`
 
 ---
