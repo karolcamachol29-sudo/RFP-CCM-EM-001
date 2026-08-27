@@ -32,11 +32,33 @@
     - [ ] `03_Entregables_Finales/E1.4_VID_PitchOptimizacion_v1.0.mp4`
   - **Etiquetas:** `E1.4`, `PY`, `VID`, `Prioridad-Alta`
 
-### 🔄 Subtareas de Integración E1 (Cierre vía Commit — Límite: 27/08/2026 16:00 h / 4:00 PM)
-- [ ] **v0.0 — Integración E0 en Documento E1** (@Karoc)
-- [ ] **v0.1 — Integración E1.1 en Documento E1** (@Cho0bb)
-- [ ] **v0.2 — Integración E1.2 en Documento E1** (@paulina145)
-- [ ] **v0.3 — Integración E1.3 en Documento E1** (@GildardoOca25)
+- [/] **[E1-v0.0] Integración del E0 en Documento Consolidado E1**
+  - **Asignado:** @Karoc (Karol Camacho)
+  - **Fecha Asignación:** 2026-08-26
+  - **Entrega Estimada:** 2026-08-27 (antes 4:00 PM)
+  - **Modalidad:** Cierre vía Git Commit
+  - **Etiquetas:** `E1`, `v0.0`, `Integracion`
+
+- [/] **[E1-v0.1] Integración del E1.1 en Documento Consolidado E1**
+  - **Asignado:** @Cho0bb (Grecia Figueroa)
+  - **Fecha Asignación:** 2026-08-26
+  - **Entrega Estimada:** 2026-08-27 (antes 4:00 PM)
+  - **Modalidad:** Cierre vía Git Commit
+  - **Etiquetas:** `E1`, `v0.1`, `Integracion`
+
+- [/] **[E1-v0.2] Integración del E1.2 en Documento Consolidado E1**
+  - **Asignado:** @paulina145 (Paulina Mota)
+  - **Fecha Asignación:** 2026-08-26
+  - **Entrega Estimada:** 2026-08-27 (antes 4:00 PM)
+  - **Modalidad:** Cierre vía Git Commit
+  - **Etiquetas:** `E1`, `v0.2`, `Integracion`
+
+- [/] **[E1-v0.3] Integración del E1.3 en Documento Consolidado E1**
+  - **Asignado:** @GildardoOca25 (Gildardo Ocaña)
+  - **Fecha Asignación:** 2026-08-26
+  - **Entrega Estimada:** 2026-08-27 (antes 4:00 PM)
+  - **Modalidad:** Cierre vía Git Commit
+  - **Etiquetas:** `E1`, `v0.3`, `Integracion`
 
 ---
 
