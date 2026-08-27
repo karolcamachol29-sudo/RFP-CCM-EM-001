@@ -23,12 +23,12 @@
 
 ## ⏳ In Progress
 
-- [/] **[E1.4] Video Pitch del Proyecto**
+- [/] **[E1.4] Video Pitch del Proyecto (Enlace Drive)**
   - **Asignado:** @Karoc (Karol Camacho)
   - **Fecha Asignación:** 2026-08-20
   - **Entrega Estimada:** 2026-08-25
   - **Archivos Requeridos (1):**
-    - [ ] `03_Entregables_Finales/E1.4_VID_DefensaBases_v0.1.mp4`
+    - [ ] `03_Entregables_Finales/E1.4_VID_EnlacePitch_v1.0.txt` (Contiene enlace al video en Google Drive)
   - **Etiquetas:** `E1.4`, `VID`
 
 - [/] **[E1-v0.0] Integración del E0 en Documento Consolidado E1**

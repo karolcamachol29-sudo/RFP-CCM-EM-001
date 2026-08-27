@@ -28,7 +28,7 @@
 | **E1.1** | Configuración de Bases de Diseño & Termodinámica | @Cho0bb | 1 File (`.pdf`) | `00_Gestion_Proyecto/` | 2026-08-25 | ✅ Done |
 | **E1.2** | Simulación DWSIM & Reporte de Balances | @paulina145 | 2 Files (`.dwxmz`, `.pdf`) | `01_Proceso_y_Simulacion/DWSIM/`, `03_Entregables_Finales/` | 2026-08-25 | ✅ Done |
 | **E1.3** | Diagramación (BFD, PFD, DTI) en Plant 3D | @GildardoOca25 | 2 Files (`.dwg`, `.pdf`) | `02_Ingenieria_y_Diagramas/`, `03_Entregables_Finales/` | 2026-08-24 | ✅ Done |
-| **E1.4** | Video Pitch del Proyecto | @Karoc | 1 File (`.mp4`) | `03_Entregables_Finales/` | 2026-08-25 | ⏳ In Progress |
+| **E1.4** | Video Pitch del Proyecto | @Karoc | 1 File (`.txt` enlace Drive) | `03_Entregables_Finales/` | 2026-08-25 | ⏳ In Progress |
 
 ---
 
@@ -78,11 +78,11 @@
     - [x] Archivo Documento DOC: `03_Entregables_Finales/E1.3_DOC_EspecificacionDiagramas_v1.0.pdf`
   - **Estado:** ✅ Done
 
-- [ ] **[E1.4] Video Pitch del Proyecto**
+- [ ] **[E1.4] Video Pitch del Proyecto (Enlace Drive)**
   - **Asignado a:** @Karoc (Karol Paola Camacho López)
   - **Roles RACI:** R: @Karoc | A: @Karoc | C: @paulina145, @GildardoOca25 | I: @Cho0bb
   - **Archivos Requeridos (1):**
-    - [ ] Archivo Video Pitch: `03_Entregables_Finales/E1.4_VID_DefensaBases_v0.1.mp4`
+    - [ ] Archivo TXT Enlace: `03_Entregables_Finales/E1.4_VID_EnlacePitch_v1.0.txt`
   - **Estado:** ⏳ In Progress
 
 ---
