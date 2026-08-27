@@ -157,7 +157,7 @@ jobs:
           echo "=========================================================="
 
           # Crear etiquetas por defecto si no existen
-          for L in "E0" "E1.1" "E1.2" "E1.3" "E1.4" "E1" "v0.0" "v0.1" "v0.2" "v0.3" "Integracion" "DOC" "SIM" "DWG" "PY" "VID" "DWSIM" "CAD" "HSE"; do
+          for L in "E0" "E1.1" "E1.2" "E1.3" "E1.3.1" "E1.4" "E1" "v0.0" "v0.1" "v0.2" "v0.3" "Integracion" "EQ-01" "DOC" "SIM" "DWG" "PY" "VID" "DWSIM" "CAD" "HSE"; do
             gh label create "$L" --force 2>/dev/null || true
           done
 
@@ -191,7 +191,8 @@ jobs:
           sync_issue "[E1.1] Configuración de Bases de Diseño & Termodinámica" "### 📅 Fecha Asignación: 2026-08-17\n### 🎯 Fecha Límite: 2026-08-25\n**Asignado a:** @Cho0bb" "@Cho0bb" "E1.1,DOC,HSE" "true"
           sync_issue "[E1.2] Simulación de Procesos & Balances (DWSIM)" "### 📅 Fecha Asignación: 2026-08-18\n### 🎯 Fecha Límite: 2026-08-25\n**Asignado a:** @paulina145" "@paulina145" "E1.2,SIM,DWSIM" "true"
           sync_issue "[E1.3] Diagramación Plant 3D & Especificación Técnica" "### 📅 Fecha Asignación: 2026-08-19\n### 🎯 Fecha Límite: 2026-08-24\n**Asignado a:** @GildardoOca25" "@GildardoOca25" "E1.3,DWG,CAD" "true"
-          sync_issue "[E1.4] Video Pitch del Proyecto" "### 📅 Fecha Asignación: 2026-08-20\n### 🎯 Fecha Límite: 2026-08-25\n**Asignado a:** @Karoc" "@Karoc" "E1.4,VID" "false"
+          sync_issue "[E1.3.1] Propuesta preliminar de equipos y parámetros de diseño (EQ-01)" "### 📅 Fecha Asignación: 2026-08-26\n### 🎯 Fecha Límite: 2026-08-28\n**Asignado a:** @Karoc\n**Revisión:** @GildardoOca25\n**Informados:** @paulina145, @Cho0bb" "@Karoc" "E1.3.1,DOC,EQ-01" "false"
+          sync_issue "[E1.4] Video Pitch del Proyecto (Enlace Drive)" "### 📅 Fecha Asignación: 2026-08-20\n### 🎯 Fecha Límite: 2026-08-25\n**Asignado a:** @Karoc" "@Karoc" "E1.4,VID" "false"
 
           # Subtareas de Integración Documento Consolidado E1 (Cierre manual)
           sync_issue "[E1-v0.0] Integración del E0 en Documento Consolidado E1" "### 📅 Fecha Asignación: 2026-08-26\n### 🎯 Fecha Límite: 2026-08-27 16:00\n**Asignado a:** @Karoc\n**Modalidad:** Cierre manual" "@Karoc" "E1,v0.0,Integracion" "false"

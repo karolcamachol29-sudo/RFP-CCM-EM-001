@@ -23,6 +23,16 @@
 
 ## ⏳ In Progress
 
+- [/] **[E1.3.1] Propuesta preliminar de equipos y parámetros de diseño (EQ-01)**
+  - **Asignado:** @Karoc (Karol Camacho)
+  - **Revisión / Consentimiento:** @GildardoOca25 (Gildardo Ocaña)
+  - **Informados:** @paulina145, @Cho0bb
+  - **Fecha Asignación:** 2026-08-26
+  - **Entrega Estimada:** 2026-08-28
+  - **Archivos Requeridos (1):**
+    - [ ] `03_Entregables_Finales/E1.3.1_DOC_PropuestaEquipos_v1.0.pdf`
+  - **Etiquetas:** `E1.3.1`, `DOC`, `EQ-01`
+
 - [/] **[E1.4] Video Pitch del Proyecto (Enlace Drive)**
   - **Asignado:** @Karoc (Karol Camacho)
   - **Fecha Asignación:** 2026-08-20
