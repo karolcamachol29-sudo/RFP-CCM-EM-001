@@ -23,14 +23,13 @@
 
 ## ⏳ In Progress
 
-- [/] **[E1.4] Integración, Optimización con Python & Video Pitch**
+- [/] **[E1.4] Video Pitch del Proyecto**
   - **Asignado:** @Karoc (Karol Camacho)
   - **Fecha Asignación:** 2026-08-20
   - **Entrega Estimada:** 2026-08-25
-  - **Archivos Requeridos (2):**
-    - [ ] `01_Proceso_y_Simulacion/Python/E1.4_PY_Optimizacion_v1.0.py`
-    - [ ] `03_Entregables_Finales/E1.4_VID_PitchOptimizacion_v1.0.mp4`
-  - **Etiquetas:** `E1.4`, `PY`, `VID`, `Prioridad-Alta`
+  - **Archivos Requeridos (1):**
+    - [ ] `03_Entregables_Finales/E1.4_VID_PitchProyecto_v1.0.mp4`
+  - **Etiquetas:** `E1.4`, `VID`
 
 - [/] **[E1-v0.0] Integración del E0 en Documento Consolidado E1**
   - **Asignado:** @Karoc (Karol Camacho)

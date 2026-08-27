@@ -171,9 +171,10 @@ jobs:
             local is_done="$5"
 
             local clean_assignee=$(echo "$assignee" | tr -d '@' | cut -d' ' -f1)
+            local code_prefix=$(echo "$title" | grep -oE "\[[A-Za-z0-9\.-]+\]" || echo "$title")
 
-            if echo "$EXISTING_ISSUES" | grep -qF "$title"; then
-              echo "   ℹ️ La tarjeta / issue '$title' ya existe en GitHub."
+            if echo "$EXISTING_ISSUES" | grep -qF "$code_prefix"; then
+              echo "   ℹ️ La tarjeta / issue con código '$code_prefix' ya existe en GitHub."
             else
               echo "   ✨ Creando Issue en GitHub: '$title' para $clean_assignee"
               gh issue create --title "$title" --body "$body" --assignee "$clean_assignee" --label "$labels" --milestone "Entrega Etapa 1 — RFP-CCM-EM-001" 2>/dev/null || \
@@ -181,7 +182,7 @@ jobs:
             fi
 
             if [ "$is_done" = "true" ]; then
-              gh issue close --reason "completed" "$title" 2>/dev/null || true
+              gh issue close --reason "completed" "$code_prefix" 2>/dev/null || gh issue close --reason "completed" "$title" 2>/dev/null || true
             fi
           }
 
@@ -190,7 +191,7 @@ jobs:
           sync_issue "[E1.1] Configuración de Bases de Diseño & Termodinámica" "### 📅 Fecha Asignación: 2026-08-17\n### 🎯 Fecha Límite: 2026-08-25\n**Asignado a:** @Cho0bb" "@Cho0bb" "E1.1,DOC,HSE" "true"
           sync_issue "[E1.2] Simulación de Procesos & Balances (DWSIM)" "### 📅 Fecha Asignación: 2026-08-18\n### 🎯 Fecha Límite: 2026-08-25\n**Asignado a:** @paulina145" "@paulina145" "E1.2,SIM,DWSIM" "true"
           sync_issue "[E1.3] Diagramación Plant 3D & Especificación Técnica" "### 📅 Fecha Asignación: 2026-08-19\n### 🎯 Fecha Límite: 2026-08-24\n**Asignado a:** @GildardoOca25" "@GildardoOca25" "E1.3,DWG,CAD" "true"
-          sync_issue "[E1.4] Integración Python, Optimización & Video Pitch" "### 📅 Fecha Asignación: 2026-08-20\n### 🎯 Fecha Límite: 2026-08-25\n**Asignado a:** @Karoc" "@Karoc" "E1.4,PY,VID" "false"
+          sync_issue "[E1.4] Video Pitch del Proyecto" "### 📅 Fecha Asignación: 2026-08-20\n### 🎯 Fecha Límite: 2026-08-25\n**Asignado a:** @Karoc" "@Karoc" "E1.4,VID" "false"
 
           # Subtareas de Integración Documento Consolidado E1 (Cierre vía Git Commit)
           sync_issue "[E1-v0.0] Integración del E0 en Documento Consolidado E1" "### 📅 Fecha Asignación: 2026-08-26\n### 🎯 Fecha Límite: 2026-08-27 16:00\n**Asignado a:** @Karoc\n**Modalidad:** Cierre vía Git Commit" "@Karoc" "E1,v0.0,Integracion" "false"
