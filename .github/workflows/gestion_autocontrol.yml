@@ -161,7 +161,7 @@ jobs:
             gh label create "$L" --force 2>/dev/null || true
           done
 
-          EXISTING_ISSUES=$(gh issue list --limit 100 --json title,state --jq '.[].title' 2>/dev/null || true)
+          EXISTING_ISSUES=$(gh issue list --state all --limit 500 --json title --jq '.[].title' 2>/dev/null || true)
 
           sync_issue() {
             local title="$1"
@@ -187,10 +187,10 @@ jobs:
 
           # Sincronizar entregables oficiales como tarjetas en GitHub Issues/Projects
           sync_issue "[E0] Redactar Acta Constitutiva y Gestión Inicial" "### 📅 Fecha Asignación: 2026-08-14\n### 🎯 Fecha Límite: 2026-08-17\n**Asignado a:** @Karoc" "@Karoc" "E0,DOC" "true"
-          sync_issue "[E1.1] Configuración de Bases de Diseño & Termodinámica" "### 📅 Fecha Asignación: 2026-08-17\n### 🎯 Fecha Límite: 2026-08-25\n**Asignado a:** @Cho0bb" "@Cho0bb" "E1.1,DOC,HSE" "false"
-          sync_issue "[E1.2] Simulación de Procesos & Balances (DWSIM)" "### 📅 Fecha Asignación: 2026-08-18\n### 🎯 Fecha Límite: 2026-08-25\n**Asignado a:** @paulina145" "@paulina145" "E1.2,SIM,DWSIM" "false"
-          sync_issue "[E1.3] Diagramación Plant 3D & Especificación Técnica" "### 📅 Fecha Asignación: 2026-08-19\n### 🎯 Fecha Límite: 2026-08-24\n**Asignado a:** @GildardoOca25" "@GildardoOca25" "E1.3,DWG,CAD" "false"
-          sync_issue "[E1.4] Integración Python & Optimización Térmica" "### 📅 Fecha Asignación: 2026-08-20\n### 🎯 Fecha Límite: 2026-08-25\n**Asignado a:** @Karoc" "@Karoc" "E1.4,PY" "false"
+          sync_issue "[E1.1] Configuración de Bases de Diseño & Termodinámica" "### 📅 Fecha Asignación: 2026-08-17\n### 🎯 Fecha Límite: 2026-08-25\n**Asignado a:** @Cho0bb" "@Cho0bb" "E1.1,DOC,HSE" "true"
+          sync_issue "[E1.2] Simulación de Procesos & Balances (DWSIM)" "### 📅 Fecha Asignación: 2026-08-18\n### 🎯 Fecha Límite: 2026-08-25\n**Asignado a:** @paulina145" "@paulina145" "E1.2,SIM,DWSIM" "true"
+          sync_issue "[E1.3] Diagramación Plant 3D & Especificación Técnica" "### 📅 Fecha Asignación: 2026-08-19\n### 🎯 Fecha Límite: 2026-08-24\n**Asignado a:** @GildardoOca25" "@GildardoOca25" "E1.3,DWG,CAD" "true"
+          sync_issue "[E1.4] Integración Python, Optimización & Video Pitch" "### 📅 Fecha Asignación: 2026-08-20\n### 🎯 Fecha Límite: 2026-08-25\n**Asignado a:** @Karoc" "@Karoc" "E1.4,PY,VID" "false"
 
           # Automatizar sincronización de fechas Start Date / Target Date en Project V2 via GraphQL
           python3 -c "
