@@ -171,7 +171,7 @@ jobs:
             local is_done="$5"
 
             local clean_assignee=$(echo "$assignee" | tr -d '@' | cut -d' ' -f1)
-            local code_prefix=$(echo "$title" | grep -oE "\[[A-Za-z0-9\.-]+\]" || echo "$title")
+            local code_prefix=$(echo "$title" | cut -d']' -f1)"]"
 
             if echo "$EXISTING_ISSUES" | grep -qF "$code_prefix"; then
               echo "   ℹ️ La tarjeta / issue con código '$code_prefix' ya existe en GitHub."
