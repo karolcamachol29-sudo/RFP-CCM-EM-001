@@ -82,7 +82,7 @@
   - **Asignado a:** @Karoc (Karol Paola Camacho López)
   - **Roles RACI:** R: @Karoc | A: @Karoc | C: @paulina145, @GildardoOca25 | I: @Cho0bb
   - **Archivos Requeridos (1):**
-    - [ ] Archivo Video Pitch: `03_Entregables_Finales/E1.4_VID_PitchProyecto_v1.0.mp4`
+    - [ ] Archivo Video Pitch: `03_Entregables_Finales/E1.4_VID_DefensaBases_v0.1.mp4`
   - **Estado:** ⏳ In Progress
 
 ---

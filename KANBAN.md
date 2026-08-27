@@ -28,7 +28,7 @@
   - **Fecha Asignación:** 2026-08-20
   - **Entrega Estimada:** 2026-08-25
   - **Archivos Requeridos (1):**
-    - [ ] `03_Entregables_Finales/E1.4_VID_PitchProyecto_v1.0.mp4`
+    - [ ] `03_Entregables_Finales/E1.4_VID_DefensaBases_v0.1.mp4`
   - **Etiquetas:** `E1.4`, `VID`
 
 - [/] **[E1-v0.0] Integración del E0 en Documento Consolidado E1**
