@@ -157,7 +157,7 @@ jobs:
           echo "=========================================================="
 
           # Crear etiquetas por defecto si no existen
-          for L in "E0" "E1.1" "E1.2" "E1.3" "E1.4" "DOC" "SIM" "DWG" "PY" "VID" "DWSIM" "CAD" "HSE"; do
+          for L in "E0" "E1.1" "E1.2" "E1.3" "E1.4" "E1" "v0.0" "v0.1" "v0.2" "v0.3" "Integracion" "DOC" "SIM" "DWG" "PY" "VID" "DWSIM" "CAD" "HSE"; do
             gh label create "$L" --force 2>/dev/null || true
           done
 
