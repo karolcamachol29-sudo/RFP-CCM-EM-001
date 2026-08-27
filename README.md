@@ -26,12 +26,13 @@ $$\text{[Entregable]\_[Tipo]\_[NombreDescriptivo]\_v[Mayor].[Menor].[ext]}$$
 
 * **Entregables Principales:** `E0`, `E1`, `E2`, `E3`, `E4`, `EF`
 * **Subentregables / Desgloses:** `E1.1`, `E1.2`, `E2.1`, `E2.2`, etc.
-* **Tipos permitidos:** `DOC` (Documento), `DWG` (CAD/Diagrama), `SIM` (Simulación), `PY` (Script), `RPT` (Reporte).
+* **Tipos permitidos:** `DOC` (Documento), `DWG` (CAD/Diagrama), `SIM` (Simulación), `PY` (Script), `RPT` (Reporte), `VID` (Video Pitch / Presentación).
 
 ### Ejemplos de Aplicación
 * **Ejemplo Documento:** `E0_DOC_ActaConstitutiva_v1.0.pdf`
 * **Ejemplo Simulación Subentregable:** `E1.1_SIM_ReactoresCSTR_v1.0.dwzx`
 * **Ejemplo Plano Subentregable:** `E2.1_DWG_PFD_Planta_v1.0.dwg`
+* **Ejemplo Video Subentregable:** `E1.4_VID_PitchOptimizacion_v1.0.mp4`
 
 ---
 

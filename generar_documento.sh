@@ -56,6 +56,7 @@ determinar_carpeta_por_tipo() {
     DWG) echo "02_Ingenieria_y_Diagramas" ;;
     DOC) echo "03_Entregables_Finales" ;;
     RPT) echo "03_Entregables_Finales" ;;
+    VID) echo "03_Entregables_Finales" ;;
     *)   echo "03_Entregables_Finales" ;;
   esac
 }
@@ -204,7 +205,8 @@ instanciar_tarea_raci() {
     echo "3) PY (Script Python / Jupyter)"
     echo "4) DWG (Diagrama / CAD Plant 3D)"
     echo "5) RPT (Reporte Técnico)"
-    read -p "Opción (1-5): " tipo_opc
+    echo "6) VID (Video Pitch / Presentación MP4)"
+    read -p "Opción (1-6): " tipo_opc
 
     case "$tipo_opc" in
       1) TIPO="DOC"; EXT="pdf" ;;
@@ -212,6 +214,7 @@ instanciar_tarea_raci() {
       3) TIPO="PY";  EXT="py" ;;
       4) TIPO="DWG"; EXT="dwg" ;;
       5) TIPO="RPT"; EXT="pdf" ;;
+      6) TIPO="VID"; EXT="mp4" ;;
       *) TIPO="DOC"; EXT="pdf" ;;
     esac
 

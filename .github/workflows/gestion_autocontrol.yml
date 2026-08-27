@@ -48,7 +48,7 @@ jobs:
             echo "🔍 Analizando: $FILE"
 
             # Regex oficial estricta: E0-E4 / EF + TIPO + NOMBRE + vMAYOR.MENOR.ext
-            STRICT_REGEX="^(E[0-4](\.[0-9]+)?|EF)_(DOC|DWG|SIM|PY|RPT)_[A-Za-z0-9_]+_v[0-9]+\.[0-9]+\.[a-zA-Z0-9]+$"
+            STRICT_REGEX="^(E[0-4](\.[0-9]+)?|EF)_(DOC|DWG|SIM|PY|RPT|VID)_[A-Za-z0-9_]+_v[0-9]+\.[0-9]+\.[a-zA-Z0-9]+$"
 
             # Check if deliverable code exists (e.g., E0, E1.1, E1.2, E1.3, E1.4)
             if [[ "$BASENAME" =~ ^(E[0-4](\.[0-9]+)?|EF) ]]; then
@@ -77,7 +77,7 @@ jobs:
                       LOCATION_OK=false
                     fi
                     ;;
-                  DOC|RPT)
+                  DOC|RPT|VID)
                     EXPECTED_DIR="03_Entregables_Finales o 00_Gestion_Proyecto"
                     if [[ ! "$DIRNAME" =~ ^(03_Entregables_Finales|00_Gestion_Proyecto) ]]; then
                       LOCATION_OK=false
@@ -157,7 +157,7 @@ jobs:
           echo "=========================================================="
 
           # Crear etiquetas por defecto si no existen
-          for L in "E0" "E1.1" "E1.2" "E1.3" "E1.4" "DOC" "SIM" "DWG" "PY" "DWSIM" "CAD" "HSE"; do
+          for L in "E0" "E1.1" "E1.2" "E1.3" "E1.4" "DOC" "SIM" "DWG" "PY" "VID" "DWSIM" "CAD" "HSE"; do
             gh label create "$L" --force 2>/dev/null || true
           done
 
