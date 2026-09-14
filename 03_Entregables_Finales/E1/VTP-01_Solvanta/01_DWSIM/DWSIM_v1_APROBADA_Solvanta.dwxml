@@ -47877,7 +47877,7 @@
       <ParticleSizeDistributions />
       <SupportsParticleSizeDistributions>false</SupportsParticleSizeDistributions>
       <SupportsRestoreStateAfterError>true</SupportsRestoreStateAfterError>
-      <SelectedEquipmentType />
+      <SelectedEquipmentType>Vertical</SelectedEquipmentType>
       <EquipmentTypes />
       <ComponentDescription>Separador Flash de Efluentes ZLD V-801</ComponentDescription>
       <ComponentName>CS-e9ce90a1-ad7c-4946-a0c8-e90f7744355e</ComponentName>
@@ -47921,11 +47921,62 @@
       <IsInfoCarrierAttached>false</IsInfoCarrierAttached>
       <AttachedInfoCarrierId />
       <InfoCarrierVarType>None</InfoCarrierVarType>
+      <AttachedUtilities />
+      <PropertyPackage>PP-66ac0962-b06b-4cf0-a484-697d5bfd0c7c</PropertyPackage>
+      <AttachedExtensions />
+      <HeadType>Hemispherical</HeadType><CalculateRigorousHeatBalance>false</CalculateRigorousHeatBalance><CalculationMode>Adiabatic</CalculationMode><DimensionRatio>3</DimensionRatio><SurgeFactor>1.2</SurgeFactor><ResidenceTime>5</ResidenceTime><PressureCalculation>Minimum</PressureCalculation><OverrideT>false</OverrideT><OverrideP>false</OverrideP><FlashPressure>1940000</FlashPressure><FlashTemperature>311.884</FlashTemperature><DeltaQ>0</DeltaQ><Dimensions>
+        <Dimension>
+          <Type>DWSIM.SharedClasses.Dimension</Type>
+          <ID>50492128-117c-4153-9d0c-ece03d7a416f</ID>
+          <Name>Diameter</Name>
+          <Value>0</Value>
+          <IsUserDefined>false</IsUserDefined>
+          <UserDefinedValue>0</UserDefinedValue>
+        </Dimension>
+        <Dimension>
+          <Type>DWSIM.SharedClasses.Dimension</Type>
+          <ID>2c815728-b8b8-4172-8462-4a355e3287f4</ID>
+          <Name>Length</Name>
+          <Value>0</Value>
+          <IsUserDefined>false</IsUserDefined>
+          <UserDefinedValue>0</UserDefinedValue>
+        </Dimension>
+      </Dimensions>
       <DynamicProperties>
+        <Property>
+          <Name>Vessel Orientation</Name>
+          <PropertyType>System.Double</PropertyType>
+          <Data>0.0</Data>
+        </Property>
+        <Property>
+          <Name>Operating Pressure</Name>
+          <PropertyType>System.Double</PropertyType>
+          <Data>0.0</Data>
+        </Property>
+        <Property>
+          <Name>Liquid Level</Name>
+          <PropertyType>System.Double</PropertyType>
+          <Data>0.0</Data>
+        </Property>
+        <Property>
+          <Name>Get Volume from Dimensions</Name>
+          <PropertyType>System.Double</PropertyType>
+          <Data>0.0</Data>
+        </Property>
         <Property>
           <Name>Volume</Name>
           <PropertyType>System.Double</PropertyType>
-          <Data>0.1</Data>
+          <Data>1.0</Data>
+        </Property>
+        <Property>
+          <Name>Get Height from Dimensions</Name>
+          <PropertyType>System.Double</PropertyType>
+          <Data>0.0</Data>
+        </Property>
+        <Property>
+          <Name>Height</Name>
+          <PropertyType>System.Double</PropertyType>
+          <Data>2.0</Data>
         </Property>
         <Property>
           <Name>Minimum Pressure</Name>
@@ -47945,31 +47996,91 @@
       </DynamicProperties>
       <DynamicPropertiesDescriptions>
         <Property>
+          <Name>Vessel Orientation</Name>
+          <PropertyType>System.String</PropertyType>
+          <Data>"Vertical or Horizontal (V = 0, H = 1)"</Data>
+        </Property>
+        <Property>
+          <Name>Operating Pressure</Name>
+          <PropertyType>System.String</PropertyType>
+          <Data>"Current Vessel Operating Pressure"</Data>
+        </Property>
+        <Property>
+          <Name>Liquid Level</Name>
+          <PropertyType>System.String</PropertyType>
+          <Data>"Current Liquid Level"</Data>
+        </Property>
+        <Property>
+          <Name>Get Volume from Dimensions</Name>
+          <PropertyType>System.String</PropertyType>
+          <Data>"Calculate volume from dimensions (Diameter, Height and Head Type)"</Data>
+        </Property>
+        <Property>
           <Name>Volume</Name>
           <PropertyType>System.String</PropertyType>
-          <Data>"Internal holdup volume (m3)."</Data>
+          <Data>"Vessel Volume (define if no dimensions set)"</Data>
+        </Property>
+        <Property>
+          <Name>Get Height from Dimensions</Name>
+          <PropertyType>System.String</PropertyType>
+          <Data>"Use Height from Dimensions"</Data>
+        </Property>
+        <Property>
+          <Name>Height</Name>
+          <PropertyType>System.String</PropertyType>
+          <Data>"Available height for liquid (define if no dimensions set)"</Data>
         </Property>
         <Property>
           <Name>Minimum Pressure</Name>
           <PropertyType>System.String</PropertyType>
-          <Data>"Minimum dynamic pressure."</Data>
+          <Data>"Minimum dynamic pressure"</Data>
         </Property>
         <Property>
           <Name>Initialize using Inlet Stream</Name>
           <PropertyType>System.String</PropertyType>
-          <Data>"Initializes volume content from the inlet stream."</Data>
+          <Data>"Initializes the vessel content with information from the inlet stream, if the vessel content is null"</Data>
         </Property>
         <Property>
           <Name>Reset Content</Name>
           <PropertyType>System.String</PropertyType>
-          <Data>"Empties the volume content on the next run."</Data>
+          <Data>"Empties the vessel's content on the next run"</Data>
         </Property>
       </DynamicPropertiesDescriptions>
       <DynamicPropertiesUnitTypes>
         <Property>
+          <Name>Vessel Orientation</Name>
+          <PropertyType>System.Int64</PropertyType>
+          <Data>66</Data>
+        </Property>
+        <Property>
+          <Name>Operating Pressure</Name>
+          <PropertyType>System.Int64</PropertyType>
+          <Data>46</Data>
+        </Property>
+        <Property>
+          <Name>Liquid Level</Name>
+          <PropertyType>System.Int64</PropertyType>
+          <Data>13</Data>
+        </Property>
+        <Property>
+          <Name>Get Volume from Dimensions</Name>
+          <PropertyType>System.Int64</PropertyType>
+          <Data>66</Data>
+        </Property>
+        <Property>
           <Name>Volume</Name>
           <PropertyType>System.Int64</PropertyType>
           <Data>63</Data>
+        </Property>
+        <Property>
+          <Name>Get Height from Dimensions</Name>
+          <PropertyType>System.Int64</PropertyType>
+          <Data>66</Data>
+        </Property>
+        <Property>
+          <Name>Height</Name>
+          <PropertyType>System.Int64</PropertyType>
+          <Data>13</Data>
         </Property>
         <Property>
           <Name>Minimum Pressure</Name>
@@ -47987,11 +48098,7 @@
           <Data>66</Data>
         </Property>
       </DynamicPropertiesUnitTypes>
-      <AttachedUtilities />
-      <PropertyPackage>PP-66ac0962-b06b-4cf0-a484-697d5bfd0c7c</PropertyPackage>
-      <Dimensions />
-      <AttachedExtensions />
-      <HeadType>Hemispherical</HeadType><CalculateRigorousHeatBalance>false</CalculateRigorousHeatBalance><CalculationMode>Adiabatic</CalculationMode><DimensionRatio>3</DimensionRatio><SurgeFactor>1.2</SurgeFactor><ResidenceTime>5</ResidenceTime><PressureCalculation>Minimum</PressureCalculation><OverrideT>false</OverrideT><OverrideP>false</OverrideP><FlashPressure>1940000</FlashPressure><FlashTemperature>311.884</FlashTemperature><DeltaQ>0</DeltaQ></SimulationObject>
+      </SimulationObject>
     <SimulationObject>
       <Type>DWSIM.UnitOperations.UnitOperations.Mixer</Type>
       <ObjectClass>MixersSplitters</ObjectClass>
