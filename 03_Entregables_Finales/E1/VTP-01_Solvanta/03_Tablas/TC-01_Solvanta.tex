@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[letterpaper,top=2.0cm,bottom=2.0cm,left=1.8cm,right=1.8cm]{geometry}
+\usepackage[letterpaper,top=1.8cm,bottom=1.8cm,left=1.6cm,right=1.6cm]{geometry}
 \usepackage{amsmath}
 \usepackage{booktabs}
 \usepackage{tabularx}
@@ -14,7 +14,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \lhead{\small Solvanta Engineering Solutions -- Documento Oficial TC-01}
-\rhead{\small Tablas Maestras de Corrientes de Materia}
+\rhead{\small Tablas Maestras de Corrientes de Materia Estandarizadas}
 \cfoot{\small Página \thepage\ de 2}
 \renewcommand{\headrulewidth}{0.4pt}
 
@@ -22,44 +22,52 @@
 
 \begin{center}
 {\large \textbf{SOLVANTA ENGINEERING SOLUTIONS S.A. DE C.V.}}\\[0.2cm]
-{\Large \textbf{\color{navyblue} DOCUMENTO TC-01: TABLAS DE CORRIENTES DE MATERIA}}\\[0.1cm]
-{\small Planta de Producción de e-Metanol ($30\,000\text{ t/año}$) | Caso Oficial Congelado: \texttt{DWSIM\_v1\_APROBADA\_Solvanta.dwxmz}}
+{\Large \textbf{\color{navyblue} DOCUMENTO TC-01: TABLAS DE CORRIENTES DE MATERIA ESTANDARIZADAS}}\\[0.1cm]
+{\small Planta de Producción de e-Metanol ($30\,000\text{ t/año}$) | Codificación de Tuberías por Áreas Funcionales ($100$ a $800$)}
 \end{center}
 
-\vspace{0.2cm}
-\noindent\textbf{Cuadro TC-01A: Resumen Físico y Termodinámico de Corrientes de Proceso}
+\vspace{0.15cm}
+\noindent\textbf{Cuadro TC-01A: Resumen Físico y Termodinámico de Corrientes de Proceso Normalizadas}
 \begin{center}
 \footnotesize
 \setlength{\tabcolsep}{3.5pt}
-\begin{tabularx}{\textwidth}{lp{4.2cm}crrrrc}
+\begin{tabularx}{\textwidth}{lXcrrrrc}
 \toprule
-\textbf{ID} & \textbf{Descripción} & \textbf{Fase} & \textbf{T ($^\circ$C)} & \textbf{P (bar)} & \textbf{$\dot{m}$ (kg/h)} & \textbf{$\dot{n}$ (kmol/h)} & \textbf{Frac. Vap.} \\
+\textbf{ID} & \textbf{Descripción de Tubería / Proceso} & \textbf{Fase} & \textbf{T ($^\circ$C)} & \textbf{P (bar)} & \textbf{$\dot{m}$ (kg/h)} & \textbf{$\dot{n}$ (kmol/h)} & \textbf{Frac. Vap.} \\
 \midrule
-\texttt{S-01} & Alim. $\text{CO}_2$ de captura & Vapor & 25.0 & 20.00 & $5\,222.4$ & 119.81 & 1.00 \\
-\texttt{S-03\_MK} & Agua fresca externa red & Líquido & 25.0 & 20.00 & $9\,240.9$ & 512.95 & 0.00 \\
-\texttt{S-ZLD\_R} & Retorno agua tratada ZLD & Líquido & 38.7 & 20.00 & $6\,979.3$ & 387.41 & 0.00 \\
-\texttt{S-03} & Agua combinada a caldera & Líquido & 30.9 & 20.00 & $16\,219.9$ & 900.34 & 0.00 \\
-\texttt{S-03B} & Vapor saturado caldera & Vapor & 220.0 & 20.00 & $16\,219.9$ & 900.34 & 1.00 \\
-\texttt{S-04} & Vapor sobrecalentado SOEC & Vapor & 750.0 & 20.00 & $16\,219.9$ & 900.34 & 1.00 \\
-\texttt{S-05} & Oxígeno puro SOEC & Vapor & 31.0 & 19.40 & $10\,083.4$ & 315.12 & 1.00 \\
-\texttt{S-06} & Efluente húmedo SOEC & Vapor & 750.0 & 19.40 & $6\,136.5$ & 900.34 & 1.00 \\
-\texttt{S-07} & Hidrógeno seco a mezcla & Vapor & 38.0 & 19.40 & $1\,312.8$ & 632.58 & 1.00 \\
-\texttt{S-08} & Condensado SOEC a ZLD & Líquido & 38.0 & 19.40 & $4\,823.7$ & 267.76 & 0.00 \\
-\texttt{S-08B} & Syngas fresco combinado & Vapor & 32.7 & 19.40 & $6\,535.2$ & 752.39 & 1.00 \\
-\texttt{S-09} & Syngas comprimido C-301 & Vapor & 212.3 & 75.00 & $6\,535.2$ & 752.39 & 1.00 \\
-\texttt{S-09\_TOT} & Alimentación total R-401 & Vapor & 57.6 & 75.00 & $20\,779.2$ & $7\,153.98$ & 1.00 \\
-\texttt{S-10} & Efluente reacción R-401 & Vapor & 245.0 & 75.00 & $20\,779.2$ & $6\,918.23$ & 1.00 \\
-\texttt{S-REC} & Gas domo flash V-501 & Vapor & 38.0 & 75.00 & $14\,862.8$ & $6\,680.78$ & 1.00 \\
-\texttt{S-12} & Reciclo 96\% a C-601 & Vapor & 43.0 & 75.00 & $14\,268.3$ & $6\,413.54$ & 1.00 \\
-\texttt{S-13} & Purga 4\% a turboexp. & Vapor & 43.0 & 75.00 & 594.5 & 267.23 & 1.00 \\
-\texttt{S-P\_VENT}& Purga venteo tras X-601 & Bifásica & $-145.2$ & 1.10 & 594.5 & 267.23 & 0.98 \\
-\texttt{S-11} & Metanol crudo flash HP & Líquido & 38.0 & 75.00 & $5\,916.5$ & 237.45 & 0.00 \\
-\texttt{S-VENT} & Venteo ligeros V-701 & Vapor & 38.0 & 3.00 & 9.0 & 0.62 & 1.00 \\
-\texttt{S-14} & Metanol crudo a T-701 & Líquido & 38.0 & 3.00 & $5\,925.1$ & 237.61 & 0.00 \\
-\textbf{\texttt{S-15}} & \textbf{e-Metanol Grado AA} & \textbf{Líquido} & \textbf{35.0} & \textbf{1.10} & $\mathbf{3\,755.6}$ & \textbf{117.35} & \textbf{0.00} \\
-\texttt{S-16} & Agua fondo torre a ZLD & Líquido & 103.9 & 1.25 & $2\,169.5$ & 120.26 & 0.00 \\
-\texttt{S-ZLD\_P} & Agua purificada a bomba & Líquido & 38.7 & 19.40 & $6\,979.3$ & 387.41 & 0.00 \\
-\texttt{S-ZLD\_S} & Purga lodos salinos ZLD & Bifásica & 38.7 & 19.40 & 10.8 & 0.69 & 0.01 \\
+\texttt{S-101} & Alim. CO2 de captura & Vapor & 25.0 & 20.00 & $5,222.4$ & $119.81$ & 1.00 \\
+\texttt{S-201} & Agua fresca externa red (make-up) & Líquido & 25.0 & 20.00 & $9,240.9$ & $512.95$ & 0.00 \\
+\texttt{S-202} & Retorno agua tratada ZLD a caldera & Líquido & 38.7 & 20.00 & $6,979.3$ & $387.41$ & 0.00 \\
+\texttt{S-203} & Agua combinada a caldera E-201 & Líquido & 30.9 & 20.00 & $16,219.9$ & $900.34$ & 0.00 \\
+\texttt{S-204} & Vapor saturado caldera E-201 & Vapor & 220.0 & 20.00 & $16,219.9$ & $900.34$ & 1.00 \\
+\texttt{S-205} & Vapor sobrecalentado SOEC E-202 & Vapor & 750.0 & 20.00 & $16,219.9$ & $900.34$ & 1.00 \\
+\texttt{S-206} & Oxígeno puro electrolítico SOEC & Vapor & 31.0 & 19.40 & $10,083.4$ & $315.12$ & 1.00 \\
+\texttt{S-207} & Efluente húmedo SOEC (H2+H2O) & Vapor & 750.0 & 19.40 & $6,136.5$ & $900.34$ & 1.00 \\
+\texttt{S-208} & Efluente SOEC enfriado tras E-203 & Bifásica & 38.0 & 19.40 & $6,136.5$ & $900.34$ & 0.70 \\
+\texttt{S-209} & Hidrógeno seco separado a mezcla & Vapor & 38.0 & 19.40 & $1,312.8$ & $632.58$ & 1.00 \\
+\texttt{S-210} & Condensado SOEC hacia ZLD & Líquido & 38.0 & 19.40 & $4,823.7$ & $267.76$ & 0.00 \\
+\texttt{S-301} & Syngas fresco combinado (CO2+H2) & Vapor & 32.7 & 19.40 & $6,535.2$ & $752.39$ & 1.00 \\
+\texttt{S-302} & Syngas comprimido C-301 a 75 bar & Vapor & 212.3 & 75.00 & $6,535.2$ & $752.39$ & 1.00 \\
+\texttt{S-401} & Alimentación total a reactor R-401 & Vapor & 57.6 & 75.00 & $20,779.2$ & $7,153.98$ & 1.00 \\
+\texttt{S-402} & Efluente de reacción R-401 (tubos) & Vapor & 245.0 & 75.00 & $20,779.2$ & $6,918.23$ & 1.00 \\
+\texttt{S-403} & Efluente tras economizador E-502 & Vapor & 240.4 & 75.00 & $20,779.2$ & $6,918.23$ & 1.00 \\
+\texttt{S-404} & Efluente condensado enfriador E-501 & Bifásica & 38.0 & 75.00 & $20,779.2$ & $6,918.23$ & 0.97 \\
+\texttt{S-501} & Gas domo flash HP V-501 a 38 °C & Vapor & 38.0 & 75.00 & $14,862.8$ & $6,680.78$ & 1.00 \\
+\texttt{S-502} & Gas reciclo sobrecalentado E-503 & Vapor & 43.0 & 75.00 & $14,862.8$ & $6,680.78$ & 1.00 \\
+\texttt{S-503} & Reciclo de gas 96\% a soplador C-501 & Vapor & 43.0 & 75.00 & $14,268.3$ & $6,413.54$ & 1.00 \\
+\texttt{S-504} & Reciclo presurizado retorno R-401 & Vapor & 44.5 & 76.50 & $14,268.3$ & $6,413.54$ & 1.00 \\
+\texttt{S-505} & Purga continua 4\% a turboexpansor & Vapor & 43.0 & 75.00 & $594.5$ & $267.23$ & 1.00 \\
+\texttt{S-506} & Purga venteo expandida tras X-501 & Bifásica & -145.2 & 1.10 & $594.5$ & $267.23$ & 0.98 \\
+\texttt{S-507} & Metanol crudo líquido flash HP V-501 & Líquido & 38.0 & 75.00 & $5,916.5$ & $237.45$ & 0.00 \\
+\texttt{S-601} & Venteo gases ligeros desgasif. V-601 & Vapor & 38.0 & 3.00 & $9.0$ & $0.62$ & 1.00 \\
+\texttt{S-602} & Metanol crudo desgasificado a T-601 & Líquido & 38.0 & 3.00 & $5,925.1$ & $237.61$ & 0.00 \\
+\texttt{S-603} & Destilado domo condensado caliente & Líquido & 65.0 & 1.20 & $3,755.6$ & $117.35$ & 0.00 \\
+\textbf{\texttt{S-604}} & \textbf{e-Metanol Grado AA Comercial} & \textbf{Líquido} & 35.0 & 1.10 & $\mathbf{3,755.6}$ & $\mathbf{117.35}$ & 0.00 \\
+\texttt{S-605} & Agua fondo torre T-601 hacia ZLD & Líquido & 103.9 & 1.25 & $2,169.5$ & $120.26$ & 0.00 \\
+\texttt{S-801} & Agua residual combinada a V-801 & Bifásica & 38.7 & 19.40 & $6,990.2$ & $388.10$ & 0.00 \\
+\texttt{S-802} & Agua clarificada a bomba P-801 & Líquido & 38.7 & 19.40 & $6,979.3$ & $387.41$ & 0.00 \\
+\texttt{S-803} & Retorno agua tratada presurizada & Líquido & 38.7 & 20.00 & $6,979.3$ & $387.41$ & 0.00 \\
+\texttt{S-804} & Purga de lodos salinos ZLD & Bifásica & 38.7 & 19.40 & $10.8$ & $0.69$ & 0.01 \\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -68,48 +76,58 @@
 \noindent\textbf{Cuadro TC-01B: Composición Molar Normalizada ($\sum x_i = 1.0000$)}
 \begin{center}
 \footnotesize
-\setlength{\tabcolsep}{4.5pt}
+\setlength{\tabcolsep}{4.0pt}
 \begin{tabularx}{\textwidth}{lrrrrrrc}
 \toprule
 \textbf{ID Corriente} & \textbf{$x_{\text{H}_2}$} & \textbf{$x_{\text{CO}_2}$} & \textbf{$x_{\text{CO}}$} & \textbf{$x_{\text{H}_2\text{O}}$} & \textbf{$x_{\text{MeOH}}$} & \textbf{$x_{\text{Inertes}}$} & \textbf{$\sum x_i$} \\
 \midrule
-\texttt{S-01} & 0.0000 & 0.9900 & 0.0000 & 0.0000 & 0.0000 & 0.0100 & \textbf{1.0000} \\
-\texttt{S-03\_MK} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & \textbf{1.0000} \\
-\texttt{S-ZLD\_REC} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & \textbf{1.0000} \\
-\texttt{S-03} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & \textbf{1.0000} \\
-\texttt{S-03B} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & \textbf{1.0000} \\
-\texttt{S-04} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & \textbf{1.0000} \\
-\texttt{S-05} & 0.0000 & 0.0000 & 0.0000 & 0.0000 & 0.0000 & $1.0000^*$ & \textbf{1.0000} \\
-\texttt{S-06} & 0.7000 & 0.0000 & 0.0000 & 0.3000 & 0.0000 & 0.0000 & \textbf{1.0000} \\
-\texttt{S-07} & 0.9958 & 0.0000 & 0.0000 & 0.0042 & 0.0000 & 0.0000 & \textbf{1.0000} \\
-\texttt{S-08} & 0.0001 & 0.0000 & 0.0000 & 0.9999 & 0.0000 & 0.0000 & \textbf{1.0000} \\
-\texttt{S-08B} & 0.8378 & 0.1575 & 0.0000 & 0.0031 & 0.0000 & 0.0016 & \textbf{1.0000} \\
-\texttt{S-09} & 0.8378 & 0.1575 & 0.0000 & 0.0031 & 0.0000 & 0.0016 & \textbf{1.0000} \\
-\texttt{S-09\_TOTAL} & 0.7331 & 0.0981 & 0.0000 & 0.0008 & 0.0011 & 0.1669 & \textbf{1.0000} \\
-\texttt{S-10} & 0.6970 & 0.0880 & 0.0000 & 0.0175 & 0.0176 & 0.1799 & \textbf{1.0000} \\
-\texttt{S-REC} & 0.7208 & 0.0911 & 0.0000 & 0.0005 & 0.0012 & 0.1864 & \textbf{1.0000} \\
-\texttt{S-12} & 0.7208 & 0.0911 & 0.0000 & 0.0005 & 0.0012 & 0.1864 & \textbf{1.0000} \\
-\texttt{S-13} & 0.7208 & 0.0911 & 0.0000 & 0.0005 & 0.0012 & 0.1864 & \textbf{1.0000} \\
-\texttt{S-PURGE\_VENT}& 0.7208 & 0.0911 & 0.0000 & 0.0005 & 0.0012 & 0.1864 & \textbf{1.0000} \\
-\texttt{S-11} & 0.0028 & 0.0048 & 0.0000 & 0.5052 & 0.4939 & 0.0003 & \textbf{1.0000} \\
-\texttt{S-VENT} & 0.2542 & 0.7180 & 0.0000 & 0.0012 & 0.0266 & 0.0000 & \textbf{1.0000} \\
-\texttt{S-14} & 0.0000 & 0.0000 & 0.0000 & 0.5061 & 0.4939 & 0.0000 & \textbf{1.0000} \\
-\textbf{\texttt{S-15}} & \textbf{0.0000} & \textbf{0.0000} & \textbf{0.0000} & \textbf{0.0027} & \textbf{0.9973} & \textbf{0.0000} & \textbf{1.0000} \\
-\texttt{S-16} & 0.0000 & 0.0000 & 0.0000 & 0.9990 & 0.0010 & 0.0000 & \textbf{1.0000} \\
-\texttt{S-ZLD\_PUMP} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & \textbf{1.0000} \\
+\texttt{S-101} & 0.0000 & 0.9900 & 0.0000 & 0.0000 & 0.0000 & 0.0100 & 1.0000 \\
+\texttt{S-201} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-202} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-203} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-204} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-205} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-206} & 0.0000 & 0.0000 & 0.0000 & 0.0000 & 0.0000 & 1.0000$^*$ & 1.0000 \\
+\texttt{S-207} & 0.7000 & 0.0000 & 0.0000 & 0.3000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-208} & 0.7000 & 0.0000 & 0.0000 & 0.3000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-209} & 0.9958 & 0.0000 & 0.0000 & 0.0042 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-210} & 0.0001 & 0.0000 & 0.0000 & 0.9999 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-301} & 0.8378 & 0.1575 & 0.0000 & 0.0031 & 0.0000 & 0.0016 & 1.0000 \\
+\texttt{S-302} & 0.8378 & 0.1575 & 0.0000 & 0.0031 & 0.0000 & 0.0016 & 1.0000 \\
+\texttt{S-401} & 0.7331 & 0.0981 & 0.0000 & 0.0008 & 0.0011 & 0.1669 & 1.0000 \\
+\texttt{S-402} & 0.6970 & 0.0880 & 0.0000 & 0.0175 & 0.0176 & 0.1799 & 1.0000 \\
+\texttt{S-403} & 0.6970 & 0.0880 & 0.0000 & 0.0175 & 0.0176 & 0.1799 & 1.0000 \\
+\texttt{S-404} & 0.6970 & 0.0880 & 0.0000 & 0.0175 & 0.0176 & 0.1799 & 1.0000 \\
+\texttt{S-501} & 0.7208 & 0.0911 & 0.0000 & 0.0005 & 0.0012 & 0.1864 & 1.0000 \\
+\texttt{S-502} & 0.7208 & 0.0911 & 0.0000 & 0.0005 & 0.0012 & 0.1864 & 1.0000 \\
+\texttt{S-503} & 0.7208 & 0.0911 & 0.0000 & 0.0005 & 0.0012 & 0.1864 & 1.0000 \\
+\texttt{S-504} & 0.7208 & 0.0911 & 0.0000 & 0.0005 & 0.0012 & 0.1864 & 1.0000 \\
+\texttt{S-505} & 0.7208 & 0.0911 & 0.0000 & 0.0005 & 0.0012 & 0.1864 & 1.0000 \\
+\texttt{S-506} & 0.7208 & 0.0911 & 0.0000 & 0.0005 & 0.0012 & 0.1864 & 1.0000 \\
+\texttt{S-507} & 0.0028 & 0.0048 & 0.0000 & 0.5052 & 0.4939 & 0.0003 & 1.0070 \\
+\texttt{S-601} & 0.2542 & 0.7180 & 0.0000 & 0.0012 & 0.0266 & 0.0000 & 1.0000 \\
+\texttt{S-602} & 0.0000 & 0.0000 & 0.0000 & 0.5061 & 0.4939 & 0.0000 & 1.0000 \\
+\texttt{S-603} & 0.0000 & 0.0000 & 0.0000 & 0.0027 & 0.9973 & 0.0000 & 1.0000 \\
+\textbf{\texttt{S-604}} & 0.0000 & 0.0000 & 0.0000 & 0.0027 & 0.9973 & 0.0000 & $\mathbf{1.0000}$ \\
+\texttt{S-605} & 0.0000 & 0.0000 & 0.0000 & 0.9990 & 0.0010 & 0.0000 & 1.0000 \\
+\texttt{S-801} & 0.0000 & 0.0000 & 0.0000 & 0.9995 & 0.0005 & 0.0000 & 1.0000 \\
+\texttt{S-802} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-803} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-804} & 0.0000 & 0.0000 & 0.0000 & 0.9980 & 0.0020 & 0.0000 & 1.0000 \\
 \bottomrule
 \end{tabularx}
 \end{center}
-\noindent{\footnotesize *En corriente \texttt{S-05}, el componente inerte corresponde a Oxígeno ($\text{O}_2$) puro de grado electrolítico.}
+\noindent{\footnotesize *En corriente \texttt{S-206}, el componente inerte corresponde a Oxígeno ($\text{O}_2$) electrolítico de grado comercial.}
 
-\vspace{0.8cm}
+\vspace{0.6cm}
 \begin{center}
 \footnotesize
 \begin{tabularx}{0.95\textwidth}{XcX}
 \toprule
 \textbf{Aprobación Técnica:} & \textbf{Revisión y Estado:} & \textbf{Fecha de Emisión:} \\
 \midrule
-Ing. Karol Paola Camacho López & Rev. v0.1 (Oficial Congelada) & 14 de septiembre de 2026 \\
+Ing. Karol Paola Camacho López & Rev. v1.0 (Estandarizada por Áreas) & 14 de septiembre de 2026 \\
+Solvanta Engineering Solutions & Caso Oficial Congelado DWSIM v1 & Planta e-Metanol 30 kt/año \\
 \bottomrule
 \end{tabularx}
 \end{center}

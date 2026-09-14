@@ -35,7 +35,7 @@
 \fbox{
     \begin{minipage}[c][3.0cm][c]{5.4cm}
     \centering
-    \includegraphics[width=4.8cm,height=2.6cm,keepaspectratio]{logo_empresa.png}
+    \includegraphics[width=4.8cm,height=2.6cm,keepaspectratio]{../../logo_empresa.png}
     \end{minipage}
 }
 \vspace{1.0cm}
@@ -54,7 +54,7 @@
 \textbf{Código del Documento:} & \texttt{REP-VER-DWSIM-001-v0.1} \\
 \textbf{Archivo Simulación Fuente:} & \texttt{DWSIM\_v1\_APROBADA\_Solvanta.dwxmz} (\texttt{Simulacion\_pruebas.dwxml}) \\
 \textbf{Paquete Termodinámico:} & PRSV2 / PRSV2-VL con corrección de volumen \\
-\textbf{Estatus de Simulación:} & \textbf{APROBADA Y CONGELADA (65 Objetos en Azul)} \\
+\textbf{Estatus de Simulación:} & \textbf{APROBADA Y CONGELADA (68 Objetos en Azul)} \\
 \textbf{Responsable Técnico:} & Ing. Karol Paola Camacho López (Líder de Procesos) \\
 \textbf{Fecha de Validación:} & 14 de septiembre de 2026 \\
 \end{tabular}
@@ -69,15 +69,15 @@ El presente informe documenta la verificación técnica rigurosa del modelo de s
 
 \subsection*{Resumen de Convergencia}
 \begin{itemize}
-    \item \textbf{Objetos en Flowshet:} 65 objetos calculados satisfactoriamente (estado azul), sin inconsistencias matemáticas ni estados no convergidos.
-    \item \textbf{Lazos de Recirculación:} Lazo de reciclo de syngas (\texttt{RCY-601}) y lazo de retorno de agua desmineralizada de celda (\texttt{RCY-801}) convergidos en menos de 10 iteraciones con error $<0.001\%$.
-    \item \textbf{Monotonía de Presión:} Todos los equipos pasivos presentan caídas de presión consistentes ($\Delta P \le 0$). Los únicos incrementos de presión corresponden a equipos activos: compresor de syngas fresco \texttt{C-301} ($20 \to 75\text{ bar}$), soplador de reciclo \texttt{C-601} ($\Delta P = 0.5\text{ bar}$) y bomba multietapa \texttt{P-801} ($19.4 \to 20\text{ bar}$).
+    \item \textbf{Objetos en Flowsheet:} 68 objetos calculados satisfactoriamente (estado azul), sin inconsistencias matemáticas ni estados no convergidos.
+    \item \textbf{Lazos de Recirculación:} Lazo de reciclo de syngas (\texttt{RCY-501}) y lazo de retorno de agua desmineralizada de celda (\texttt{RCY-801}) convergidos con error $<0.001\%$.
+    \item \textbf{Monotonía de Presión:} Todos los equipos pasivos presentan caídas de presión consistentes ($\Delta P \le 0$). Los únicos incrementos de presión corresponden a equipos activos: compresor de syngas fresco \texttt{C-301} ($20 \to 75\text{ bar}$), soplador de reciclo \texttt{C-501} ($\Delta P = 0.5\text{ bar}$) y bomba multietapa \texttt{P-801} ($19.4 \to 20\text{ bar}$).
 \end{itemize}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.85\textwidth]{VTP-01_Solvanta/02_Verificacion/Evidencias/evidencia_01_convergencia_lazos.png}
-\caption{Convergencia logarítmica de errores en lazos de reciclo RCY-601 y RCY-801.}
+\includegraphics[width=0.85\textwidth]{Evidencias/evidencia_01_convergencia_lazos.png}
+\caption{Convergencia logarítmica de errores en lazos de reciclo RCY-501 y RCY-801.}
 \end{figure}
 
 \newpage
@@ -92,14 +92,14 @@ El error relativo global de $0.069\%$ se ubica ampliamente por debajo del umbral
 
 \subsection*{Cierre de Balances Elementales Atómicos}
 \begin{itemize}
-    \item \textbf{Carbono (C):} Entrada $118.61\text{ kmol C/h}$ (corriente \texttt{S-01}) $=$ Salida $118.61\text{ kmol C/h}$ ($117.03\text{ kmol/h}$ en metanol \texttt{S-15} $+$ $1.34\text{ kmol/h}$ en purga \texttt{S-13} $+$ $0.24\text{ kmol/h}$ en venteo \texttt{S-VENT}). \textbf{Error: 0.000\%}.
-    \item \textbf{Hidrógeno (H):} Entrada $1\,025.90\text{ kmol H/h}$ (\texttt{S-03\_MK}) $\approx$ Salida $1\,025.53\text{ kmol H/h}$ ($468.12\text{ kmol/h}$ en metanol $+$ $535.10\text{ kmol/h}$ en purga/venteo/recirculaciones). \textbf{Error: 0.036\%}.
-    \item \textbf{Oxígeno (O):} Entrada $750.17\text{ kmol O/h}$ ($\text{CO}_2 + \text{H}_2\text{O}$) $\approx$ Salida $750.42\text{ kmol O/h}$ ($630.24\text{ kmol/h}$ en $\text{O}_2$ electrolítico \texttt{S-05} $+$ $117.03\text{ kmol/h}$ en metanol $+$ agua de purga). \textbf{Error: 0.033\%}.
+    \item \textbf{Carbono (C):} Entrada $118.61\text{ kmol C/h}$ (corriente \texttt{S-101}) $=$ Salida $118.61\text{ kmol C/h}$ ($117.03\text{ kmol/h}$ en metanol \texttt{S-604} $+$ $1.34\text{ kmol/h}$ en purga \texttt{S-506} $+$ $0.24\text{ kmol/h}$ en venteo \texttt{S-602}). \textbf{Error: 0.000\%}.
+    \item \textbf{Hidrógeno (H):} Entrada $1\,025.90\text{ kmol H/h}$ (\texttt{S-201} makeup) $\approx$ Salida $1\,025.53\text{ kmol H/h}$ ($468.12\text{ kmol/h}$ en metanol $+$ $535.10\text{ kmol/h}$ en purga/venteo/recirculaciones). \textbf{Error: 0.036\%}.
+    \item \textbf{Oxígeno (O):} Entrada $750.17\text{ kmol O/h}$ ($\text{CO}_2 + \text{H}_2\text{O}$) $\approx$ Salida $750.42\text{ kmol O/h}$ ($630.24\text{ kmol/h}$ en $\text{O}_2$ electrolítico \texttt{S-206} $+$ $117.03\text{ kmol/h}$ en metanol $+$ agua de purga \texttt{S-803}). \textbf{Error: 0.033\%}.
 \end{itemize}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.85\textwidth]{VTP-01_Solvanta/02_Verificacion/Evidencias/evidencia_02_balance_materia_elemental.png}
+\includegraphics[width=0.85\textwidth]{Evidencias/evidencia_02_balance_materia_elemental.png}
 \caption{Porcentaje de conservación elemental atómica y másica verificado.}
 \end{figure}
 
@@ -111,15 +111,15 @@ m_{\text{anual}} = (3\,750.0\text{ kg/h}) \times (8\,000\text{ h/año}) = \mathb
 \end{equation*}
 
 \subsection*{Pureza Grado AA (ASTM D1152)}
-El producto en corriente \texttt{S-15} reporta un flujo total de $3\,755.6\text{ kg/h}$, de los cuales $3\,750.0\text{ kg/h}$ corresponden a metanol puro y $5.6\text{ kg/h}$ a trazas de humedad ($0.15\%\text{ p/p}$):
+El producto en corriente \texttt{S-604} reporta un flujo total de $3\,755.6\text{ kg/h}$, de los cuales $3\,750.0\text{ kg/h}$ corresponden a metanol puro y $5.6\text{ kg/h}$ a trazas de humedad ($0.15\%\text{ p/p}$):
 \begin{equation*}
 w_{\text{MeOH,húmedo}} = \frac{3\,750.0\text{ kg/h}}{3\,755.6\text{ kg/h}} = \mathbf{0.9985} \quad (\mathbf{99.85\%}), \qquad w_{\text{MeOH,seco}} = \mathbf{1.0000} \quad (\mathbf{100.00\%})
 \end{equation*}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.85\textwidth]{VTP-01_Solvanta/02_Verificacion/Evidencias/evidencia_03_perfil_destilacion_t701.png}
-\caption{Perfil de concentración y temperatura en columna de destilación T-701.}
+\includegraphics[width=0.85\textwidth]{Evidencias/evidencia_03_perfil_destilacion_t701.png}
+\caption{Perfil de concentración y temperatura en columna de destilación T-601.}
 \end{figure}
 
 \newpage
@@ -132,8 +132,8 @@ A continuación se presenta la lista oficial de verificación firmada por el equ
 \toprule
 \textbf{Núm.} & \textbf{Criterio Evaluado} & \textbf{Sí/No} & \textbf{Evidencia u Observación Técnica} \\
 \midrule
-1 & Todos los equipos calculan sin error. & \textbf{Sí} & 65 objetos en estado azul. \\
-2 & Las recirculaciones convergen de manera estable. & \textbf{Sí} & RCY-601 y RCY-801 con tolerancias $<0.001\%$. \\
+1 & Todos los equipos calculan sin error. & \textbf{Sí} & 68 objetos en estado azul. \\
+2 & Las recirculaciones convergen de manera estable. & \textbf{Sí} & RCY-501 y RCY-801 con tolerancias $<0.001\%$. \\
 3 & No existen presiones negativas. & \textbf{Sí} & Rango $1.10 - 75.0\text{ bar}$. \\
 4 & No existen caudales físicamente imposibles. & \textbf{Sí} & Flujos positivos en todas las fases. \\
 5 & Fases coherentes con $T, P$ y composición. & \textbf{Sí} & Flash-PT y Flash-PH verificados. \\
