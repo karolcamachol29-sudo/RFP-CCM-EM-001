@@ -66050,7 +66050,7 @@ Stage          P           T          mV          wV          mL          wL    
         <Connector IsAttached="true" ConnType="ConIn" AttachedFromObjID="SEP-3a2b9b16-a1ee-4fc0-9442-c14ed9bbcab9" AttachedFromConnIndex="0" AttachedFromEnergyConn="False" />
       </InputConnectors>
       <OutputConnectors>
-        <Connector IsAttached="true" ConnType="ConOut" AttachedToObjID="AQ-60100000-0000-0000-0000-000000000602" AttachedToConnIndex="1" AttachedToEnergyConn="False" />
+        <Connector IsAttached="true" ConnType="ConOut" AttachedToObjID="AQ-60100000-0000-0000-0000-000000000602" AttachedToConnIndex="0" AttachedToEnergyConn="False" />
       </OutputConnectors>
       <EnergyConnector>
         <Connector IsAttached="false" />
@@ -67195,7 +67195,7 @@ Stage          P           T          mV          wV          mL          wL    
       <DrawMode>0</DrawMode>
       <DrawLabel>true</DrawLabel>
       <InputConnectors>
-        <Connector IsAttached="true" ConnType="ConIn" AttachedFromObjID="AQ-60100000-0000-0000-0000-000000000602" AttachedFromConnIndex="1" AttachedFromEnergyConn="False" />
+        <Connector IsAttached="true" ConnType="ConIn" AttachedFromObjID="AQ-60100000-0000-0000-0000-000000000602" AttachedFromConnIndex="0" AttachedFromEnergyConn="False" />
       </InputConnectors>
       <OutputConnectors>
         <Connector IsAttached="true" ConnType="ConOut" AttachedToObjID="DIV-9d84163e-82de-49a8-a101-871909cfda9d" AttachedToConnIndex="0" AttachedToEnergyConn="False" />
