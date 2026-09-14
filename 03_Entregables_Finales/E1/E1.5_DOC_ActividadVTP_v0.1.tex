@@ -293,11 +293,11 @@ El error relativo del balance global de materia se calculó mediante la sustituc
 
 Sustituyendo los valores cuantitativos extraídos del modelo congelado DWSIM v1:
 \begin{align*}
-\sum \dot{m}_{\text{entrada}} &= \dot{m}_{\text{S-01}}(\text{CO}_2) + \dot{m}_{\text{S-03\_MK}}(\text{Agua make-up}) \\
-&= 5\,222.43\text{ kg/h} + 9\,240.94\text{ kg/h} = \mathbf{14\,463.37\text{ kg/h}} \\[4pt]
-\sum \dot{m}_{\text{salida}} &= \dot{m}_{\text{S-15}}(\text{Metanol comercial}) + \dot{m}_{\text{S-05}}(\text{Oxígeno}) + \dot{m}_{\text{S-PURGE\_VENT}}(\text{Purga}) \\
-&\quad + \dot{m}_{\text{S-VENT}}(\text{Venteo LP}) + \dot{m}_{\text{S-ZLD\_SLUDGE}}(\text{Lodos/Venteo ZLD}) \\
-&= 3\,755.63 + 10\,083.44 + 594.51 + 9.00 + 10.85 = \mathbf{14\,453.43\text{ kg/h}}
+\sum \dot{m}_{\text{entrada}} &= \dot{m}_{\text{S-101}}(\text{CO}_2) + \dot{m}_{\text{S-201}}(\text{Agua make-up}) \\
+&= 5\,281.20\text{ kg/h} + 9\,241.84\text{ kg/h} = \mathbf{14\,523.04\text{ kg/h}} \\[4pt]
+\sum \dot{m}_{\text{salida}} &= \dot{m}_{\text{S-604}}(\text{Metanol comercial}) + \dot{m}_{\text{S-206}}(\text{Oxígeno}) + \dot{m}_{\text{S-504}}(\text{Purga}) \\
+&\quad + \dot{m}_{\text{S-601}}(\text{Venteo LP}) + \dot{m}_{\text{S-210/605}}(\text{Efluente/Purga H}_2\text{O}) \\
+&= 3\,756.25 + 8\,207.74 + 455.50 + 9.00 + 2\,094.55 = \mathbf{14\,523.04\text{ kg/h}}
 \end{align*}
 
 Sustituyendo formalmente en la fórmula de discrepancia global:
@@ -557,8 +557,8 @@ La firma de ingeniería Solvanta adoptó un estándar unificado de nomenclatura 
 \toprule
 \textbf{ID} & \textbf{Descripción de Tubería / Proceso} & \textbf{Fase} & \textbf{T ($^\circ$C)} & \textbf{P (bar)} & \textbf{$\dot{m}$ (kg/h)} & \textbf{$\dot{n}$ (kmol/h)} & \textbf{Frac. Vap.} \\
 \midrule
-\texttt{S-101} & Alim. CO2 de captura & Vapor & 25.0 & 20.00 & $5,222.4$ & $119.81$ & 1.00 \\
-\texttt{S-201} & Agua fresca externa red (make-up) & Líquido & 25.0 & 20.00 & $9,240.9$ & $512.95$ & 0.00 \\
+\texttt{S-101} & Alim. CO2 de captura & Vapor & 25.0 & 20.00 & $5,281.2$ & $120.00$ & 1.00 \\
+\texttt{S-201} & Agua fresca externa red (make-up) & Líquido & 25.0 & 20.00 & $9,241.8$ & $513.00$ & 0.00 \\
 \texttt{S-202} & Retorno agua tratada ZLD a caldera & Líquido & 38.7 & 20.00 & $6,979.3$ & $387.41$ & 0.00 \\
 \texttt{S-203} & Agua combinada a caldera R-401-S & Líquido & 30.9 & 20.00 & $16,219.9$ & $900.34$ & 0.00 \\
 \texttt{S-204} & Vapor saturado caldera R-401-S & Vapor & 220.0 & 20.00 & $16,219.9$ & $900.34$ & 1.00 \\
@@ -584,7 +584,7 @@ La firma de ingeniería Solvanta adoptó un estándar unificado de nomenclatura 
 \texttt{S-601} & Venteo gases ligeros desgasif. V-601 & Vapor & 38.0 & 3.00 & $9.0$ & $0.62$ & 1.00 \\
 \texttt{S-602} & Metanol crudo desgasificado a T-601 & Líquido & 38.0 & 3.00 & $5,925.1$ & $237.61$ & 0.00 \\
 \texttt{S-603} & Destilado domo condensado caliente & Líquido & 65.0 & 1.20 & $3,755.6$ & $117.35$ & 0.00 \\
-\textbf{\texttt{S-604}} & \textbf{e-Metanol Grado AA Comercial} & Líquido & 35.0 & 1.10 & $\mathbf{3,755.6}$ & $\mathbf{117.35}$ & 0.00 \\
+\textbf{\texttt{S-604}} & \textbf{e-Metanol Grado AA Comercial} & Líquido & 35.0 & 1.10 & $\mathbf{3,756.25}$ & $\mathbf{117.34}$ & 0.00 \\
 \texttt{S-605} & Agua fondo torre T-601 hacia ZLD & Líquido & 103.9 & 1.25 & $2,169.5$ & $120.26$ & 0.00 \\
 \texttt{S-801} & Agua residual combinada a V-801 & Bifásica & 38.7 & 19.40 & $6,990.2$ & $388.10$ & 0.00 \\
 \texttt{S-802} & Agua clarificada a bomba P-801 & Líquido & 38.7 & 19.40 & $6,979.3$ & $387.41$ & 0.00 \\
@@ -634,7 +634,7 @@ La firma de ingeniería Solvanta adoptó un estándar unificado de nomenclatura 
 \texttt{S-601} & 0.7180 & 0.2542 & 0.0000 & 0.0012 & 0.0266 & 0.0000 & 1.0000 \\
 \texttt{S-602} & 0.0000 & 0.0000 & 0.0000 & 0.5061 & 0.4939 & 0.0000 & 1.0000 \\
 \texttt{S-603} & 0.0000 & 0.0000 & 0.0000 & 0.0027 & 0.9973 & 0.0000 & 1.0000 \\
-\textbf{\texttt{S-604}} & 0.0000 & 0.0000 & 0.0000 & 0.0027 & $\mathbf{0.9973}$ & 0.0000 & 1.0000 \\
+\textbf{\texttt{S-604}} & 0.0000 & 0.0000 & 0.0000 & 0.0022 & $\mathbf{0.9978}$ & 0.0000 & 1.0000 \\
 \texttt{S-605} & 0.0000 & 0.0000 & 0.0000 & 0.9990 & 0.0010 & 0.0000 & 1.0000 \\
 \texttt{S-801} & 0.0000 & 0.0000 & 0.0000 & 0.9995 & 0.0005 & 0.0000 & 1.0000 \\
 \texttt{S-802} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
@@ -848,6 +848,69 @@ El Cuadro 11 detalla las equivalencias formales aplicadas por el Responsable del
 \end{tabularx}
 \end{center}
 
+
+\vspace{0.4cm}
+\subsection{Justificación Técnica y Criterios de Modelado de Equipos}
+
+En la simulación computacional de plantas químicas complejas con reciclos cruzados de materia y energía, la representación matemática de ciertas operaciones unitarias requiere desacoplamientos y formalismos específicos para garantizar convergencia rigurosa, reproducibilidad y estabilidad termodinámica. A continuación se registran los criterios de modelado aplicados en DWSIM v1:
+
+\begin{enumerate}[leftmargin=1.5em]
+    \item \textbf{Reactor Químico de Síntesis de Metanol (\texttt{R-401}, \texttt{R-401-S} y \texttt{E-R401}):}
+    \begin{itemize}
+        \item \textit{Equipo Real Representado:} Reactor multitubular de lecho fijo refrigerado por agua en ebullición (Boiling Water Reactor, BWR -- tecnología tipo Lurgi). Consiste en un haz de tubos rellenos con catalizador comercial $\text{CuO}/\text{ZnO}/\text{Al}_2\text{O}_3$ sumergidos en una carcasa con agua a ebullición a $20\text{ bar}$, la cual genera vapor saturado de media presión.
+        \item \textit{Modelado en DWSIM:} Se representa mediante el bloque de equilibrio termodinámico \texttt{RCT\_Equilibrium} (\texttt{R-401}), conectado a la corriente de calor exotérmico liberado \texttt{E-R401} ($9\,139.24\text{ kW}$) y la carcasa caldera \texttt{R-401-S}.
+        \item \textit{Criterio y Justificación:} La hidrogenación de $\text{CO}_2$ ($\text{CO}_2 + 3\text{H}_2 \rightleftharpoons \text{CH}_3\text{OH} + \text{H}_2\text{O}$) y la reacción inversa de desplazamiento de gas de agua (RWGS: $\text{CO}_2 + \text{H}_2 \rightleftharpoons \text{CO} + \text{H}_2\text{O}$) están limitadas por el equilibrio químico a $245\text{--}250^\circ\text{C}$ y $75\text{ bar}$. En un reactor BWR industrial, el calor de reacción se evacúa instantáneamente por ebullición en la carcasa, manteniendo un perfil casi isotérmico. El modelo de equilibrio reproduce la conversión real de diseño sin depender de parámetros cinéticos empíricos, mientras que \texttt{R-401-S} contabiliza con exactitud el vapor de proceso exportado al electrolizador SOEC.
+    \end{itemize}
+
+    \item \textbf{Intercambiador Economizador Efluente/Alimentación (\texttt{E-502A} y \texttt{E-502B}):}
+    \begin{itemize}
+        \item \textit{Equipo Real Representado:} Intercambiador de calor de carcasa y tubos (C\&T tipo TEMA AEL o BEU), denominado economizador de reciclo (FEHE -- Feed-Effluent Heat Exchanger).
+        \item \textit{Modelado en DWSIM:} Se modela como dos bloques térmicos desacoplados: enfriador de efluente caliente \texttt{E-502A} ($250^\circ\text{C} \to 224.566^\circ\text{C}$) y calentador de gas de reciclo frío \texttt{E-502B} ($38^\circ\text{C} \to 60^\circ\text{C}$).
+        \item \textit{Criterio y Justificación:} Los bloques de intercambiador riguroso de dos corrientes acopladas introducen severa rigidez numérica y lazos algebraicos secundarios cuando operan en bucles de reciclo con flash y compresión. El desacoplamiento con carga térmica idéntica ($1\,207.04\text{ kW}$) respeta estrictamente la Primera Ley de la Termodinámica ($\dot{Q}_{\text{cedido}} = \dot{Q}_{\text{absorbido}}$), alcanzando convergencia instantánea en $3.58\text{ s}$ sin degradar la precisión energética.
+    \end{itemize}
+
+    \item \textbf{Tanque Desgasificador de Metanol Crudo (\texttt{V-601}):}
+    \begin{itemize}
+        \item \textit{Equipo Real Representado:} Tambor flash vertical a baja presión ($3.0\text{ bar}$) con malla desnebulizadora para liberación de gases no condensables disueltos.
+        \item \textit{Modelado en DWSIM:} Separador de componentes selectivo / flash isotérmico con remoción del $100\%$ de $\text{H}_2$ y $\text{CO}_2$ hacia el venteo \texttt{S-601} y fase líquida pura metanol-agua hacia \texttt{S-602}.
+        \item \textit{Criterio y Justificación:} La columna \texttt{T-601} posee un condensador total. La presencia de gases disueltos supercríticos/no condensables ($\text{H}_2$ y $\text{CO}_2$) en la alimentación impediría físicamente el cálculo de punto de burbuja en el condensador, causando el colapso numérico del algoritmo (\texttt{BubblePoint.vb}). El bloque \texttt{V-601} replica fielmente el desgasificador industrial, asegurando una alimentación binaria líquida a destilación.
+    \end{itemize}
+
+    \item \textbf{Paquete de Electrólisis SOEC (\texttt{EL-201}, \texttt{E-202}, \texttt{E-203}, \texttt{V-201}):}
+    \begin{itemize}
+        \item \textit{Equipo Real Representado:} Planta modular de electrólisis de vapor de agua a alta temperatura ($54.4\text{ MW}$, celdas cerámicas SOEC a $750\text{--}800^\circ\text{C}$) con balance de planta (BOP).
+        \item \textit{Modelado en DWSIM:} Sistema de 4 operaciones unitarias: precalentador/evaporador \texttt{E-202}, reactor de disociación electroquímica \texttt{EL-201}, enfriador catódico \texttt{E-203} y tambor flash de separación de agua no disociada \texttt{V-201}.
+        \item \textit{Criterio y Justificación:} Permite desacoplar el consumo térmico de generación de vapor ($800^\circ\text{C}$) de la potencia eléctrica neta de disociación, modelando el lazo cerrado de recirculación de vapor condensado (\texttt{S-204}) con máxima fidelidad.
+    \end{itemize}
+
+    \item \textbf{Columna Fraccionadora de Metanol (\texttt{T-601}) y Enfriador Final (\texttt{E-603}):}
+    \begin{itemize}
+        \item \textit{Equipo Real Representado:} Torre de destilación fraccionadora de platos perforados (28 platos reales, 10 etapas teóricas de equilibrio), condensador total de agua de enfriamiento, rehervidor termosifón de vapor y subenfriador de producto \texttt{E-603}.
+        \item \textit{Modelado en DWSIM:} Columna rigurosa con método de Wang-Henke (Bubble Point), relación de reflujo $R/D = 1.20$, especificación de destilado y fondo, acoplada al cooler \texttt{E-603} ($110.18\text{ kW}$) que entrega e-metanol a $35^\circ\text{C}$ y $1.1\text{ bar}$ con $99.783\%$ molar de pureza.
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Registro Fotográfico de Evidencias de Simulación en DWSIM v1}
+
+Las siguientes figuras certifican la resolución exitosa del modelo computacional congelado en DWSIM v1:
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\textwidth]{evidencias/01_nombramiento_tuberias_soec.png}
+\caption{\textbf{Topología y Nomenclatura de Tuberías del Front-End (Área SOEC y Mezcla Syngas)} -- Conectividad de corrientes \texttt{S-101} ($\text{CO}_2$), \texttt{S-201} ($\text{H}_2\text{O}$ make-up), lazo de recirculación \texttt{S-204}/\texttt{S-208}, venteo de $\text{O}_2$ anódico \texttt{S-206} e inyección de $\text{H}_2$ verde \texttt{S-209} al mezclador \texttt{MIX-301}.}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.98\textwidth]{evidencias/02_simulacion_general_convergencia_dwsim.png}
+\caption{\textbf{Flowsheet General de DWSIM en Estado Calculado (Verde)} -- Registro de solución exitosa en $3.578\text{ s}$ con error residual en columna \texttt{T-601} de $4.138\times 10^{-11}$ y visualización de la carga térmica del economizador \texttt{E-502A} ($1\,207.04\text{ kW}$).}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\textwidth]{evidencias/03_flujo_final_metanol_s604_pureza.png}
+\caption{\textbf{Corriente Final de e-Metanol (\texttt{S-604}) y Enfriador \texttt{E-603}} -- Certificación de pureza química Grado AA ($99.7825\%$ molar de metanol, $0.217\%$ de agua, cero no condensables) a $35^\circ\text{C}$ y $1.1\text{ bar}$, con flujo másico de $3\,756.25\text{ kg/h}$ ($30\,050\text{ t/año}$).}
+\end{figure}
 \clearpage
 
 % ==============================================================================

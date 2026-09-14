@@ -198,7 +198,7 @@ Multiplicando esta receta por nuestra meta de $117.04\,\text{kmol/h}$ de metanol
 \begin{itemize}
     \item \textbf{¿Qué entra y de dónde proviene?:} El agua cruda no entra fría directamente a los electrolizadores. Primero se mezclan en el bloque \texttt{MIX-FEED} dos corrientes presurizadas a $20\,\text{bar}$:
     \begin{enumerate}
-        \item \textbf{Agua fresca de reposición (\texttt{S-03\_MAKEUP}):} $512.95\,\text{kmol/h}$ ($9{,}240.9\,\text{kg/h}$) de agua desmineralizada de red externa a $25\,^\circ\text{C}$.
+        \item \textbf{Agua fresca de reposición (\texttt{S-03\_MAKEUP}):} $513.00\,\text{kmol/h}$ ($9{,}241.8\,\text{kg/h}$) de agua desmineralizada de red externa a $25\,^\circ\text{C}$.
         \item \textbf{Agua reciclada del proceso (\texttt{S-ZLD\_REC}):} $387.41\,\text{kmol/h}$ ($6{,}979.3\,\text{kg/h}$) a $38.7\,^\circ\text{C}$, recuperada por el sistema de Vertido Cero (ZLD) tras ser impulsada a $20\,\text{bar}$ mediante la bomba centrífuga \texttt{P-801}. Esta corriente recupera el vapor no reaccionado del electrolizador (separado en \texttt{V-301}) y el agua coproducida en la reacción de síntesis (fondo de \texttt{T-701}).
     \end{enumerate}
     Ambas se combinan para totalizar $\mathbf{900.34\,\text{kmol/h}}$ ($16{,}219.9\,\text{kg/h}$) de agua líquida a $20.0\,\text{bar}$ y $30.9\,^\circ\text{C}$ en la corriente \texttt{S-03}.
@@ -444,7 +444,7 @@ Al evaluar la ingeniería para una producción continua de $30{,}000\,\text{t/a�
 
 \subsection{Paso 4: La Llegada del CO2 y la Mezcla de Síntesis (\texttt{S-01} y \texttt{MIX-101})}
 \begin{itemize}
-    \item El $\text{CO}_2$ llega directamente en la tubería del proveedor a \textbf{$20\,\text{bar}$} y $25\,^\circ\text{C}$ (\texttt{S-01}: $119.81\,\text{kmol/h} = 5{,}222.4\,\text{kg/h}$), con $99\,\%$ de $\text{CO}_2$ y $1\,\%$ de nitrógeno ($\text{N}_2$) inerte.
+    \item El $\text{CO}_2$ llega directamente en la tubería del proveedor a \textbf{$20\,\text{bar}$} y $25\,^\circ\text{C}$ (\texttt{S-01}: $120.00\,\text{kmol/h} = 5{,}281.2\,\text{kg/h}$), con $99\,\%$ de $\text{CO}_2$ y $1\,\%$ de nitrógeno ($\text{N}_2$) inerte.
     \item \textbf{Decisión de diseño clave:} Al negociar con el proveedor que entregue el gas a $20\,\text{bar}$, \textbf{eliminamos por completo el compresor de entrada \texttt{C-101}}, ahorrando cientos de miles de dólares en inversión y miles de kWh en consumo eléctrico.
     \item En el mezclador \texttt{MIX-101}, unimos el $\text{CO}_2$ (\texttt{S-01}) con el $\text{H}_2$ (\texttt{S-07}). Ambos están a $20\,\text{bar}$, formando el gas de síntesis fresco (\texttt{S-08B}: $752.39\,\text{kmol/h} = 6{,}535.2\,\text{kg/h}$).
 \end{itemize}
@@ -581,8 +581,8 @@ La corriente \texttt{S-15} cumple al $100\,\%$ con la norma internacional \textb
 \textbf{Corriente} & \textbf{Fase} & \textbf{Presión (bar)} & \textbf{Temp. ($^\circ\text{C}$)} & \textbf{Flujo (kmol/h)} & \textbf{Descripción y Masa Horaria} \\
 \midrule
 \endhead
-\texttt{S-01} & Vapor & $20.0$ & $25.0$ & $119.81$ & $\text{CO}_2$ ($99\%$), $\text{N}_2$ ($1\%$) | $5{,}222.4\,\text{kg/h}$ \\
-\texttt{S-03\_MAKEUP} & Líquido & $20.0$ & $25.0$ & $512.95$ & Agua fresca de red externa ($\text{H}_2\text{O}$ $100\%$) | $9{,}240.9\,\text{kg/h}$ \\
+\texttt{S-01} & Vapor & $20.0$ & $25.0$ & $120.00$ & $\text{CO}_2$ ($99\%$), $\text{N}_2$ ($1\%$) | $5{,}281.2\,\text{kg/h}$ \\
+\texttt{S-03\_MAKEUP} & Líquido & $20.0$ & $25.0$ & $513.00$ & Agua fresca de red externa ($\text{H}_2\text{O}$ $100\%$) | $9{,}241.8\,\text{kg/h}$ \\
 \texttt{S-ZLD\_PUMP} & Líquido & $20.0$ & $38.7$ & $387.41$ & Agua recuperada en ZLD tras bomba P-801 | $6{,}979.3\,\text{kg/h}$ \\
 \texttt{S-ZLD\_REC} & Líquido & $20.0$ & $38.7$ & $387.41$ & Retorno estabilizado por bloque RCY-801 | $6{,}979.3\,\text{kg/h}$ \\
 \texttt{S-203} & Líquido & $20.0$ & $30.9$ & $900.34$ & Agua combinada total a caldera R-401-S | $16{,}219.9\,\text{kg/h}$ \\
@@ -812,6 +812,32 @@ Durante la integración numérica del lazo de síntesis en DWSIM, se compararon 
     \end{equation}
     El balance térmico global es $100\,\%$ riguroso y exacto. Al eliminarse el bloque redundante \texttt{RCY-501}, el cálculo del proceso fluye en estricto sentido directo (\textit{feed-forward}) hasta converger limpiamente en \texttt{RCY-601} en sólo 4 a 6 iteraciones de Wegstein ($<5\,\text{segundos}$ totales), garantizando además una alimentación \texttt{S-14} completamente estable hacia la torre \texttt{T-701}.
 \end{enumerate}
+
+
+\subsection{Evidencias Gráficas Oficiales de Simulación y Solución en DWSIM v1}
+
+En estricto apego a las directrices de aseguramiento de calidad y trazabilidad de ingeniería, se incorporan a continuación las capturas directas del software DWSIM v1 que certifican la resolución del proceso, el balance y la pureza del producto:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.88\textwidth]{evidencias/01_nombramiento_tuberias_soec.png}
+\caption{Distribución y nomenclatura oficial de tuberías del front-end en el área SOEC y acondicionamiento de syngas (\texttt{S-101}, \texttt{S-201} a \texttt{S-210} y \texttt{MIX-301}).}
+\label{fig:tuberias_soec}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{evidencias/02_simulacion_general_convergencia_dwsim.png}
+\caption{Flowsheet general en DWSIM resuelto al 100\% en estado verde (tiempo de solución: $3.578\,\text{s}$, residuo de columna \texttt{T-601}: $4.138\times 10^{-11}$).}
+\label{fig:dwsim_flowsheet_verde}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.88\textwidth]{evidencias/03_flujo_final_metanol_s604_pureza.png}
+\caption{Detalle termodinámico e hidráulico de la corriente de e-metanol comercial \texttt{S-604} ($99.7825\%$ molar de metanol, $3\,756.25\,\text{kg/h}$) y enfriador \texttt{E-603}.}
+\label{fig:metanol_s604_pureza}
+\end{figure}
 
 \section{Diccionario de Decisiones de Diseño: ¿De Dónde Salió Cada Elección?}
 % ==============================================================================

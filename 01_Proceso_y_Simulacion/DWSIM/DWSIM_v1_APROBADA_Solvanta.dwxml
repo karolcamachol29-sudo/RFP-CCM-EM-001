@@ -45600,10 +45600,10 @@
             <heatCapacityCp>3.8480028448679944</heatCapacityCp>
             <heatCapacityCv>2.9712138786931694</heatCapacityCv>
             <kinematic_viscosity>1.0635167774026981E-06</kinematic_viscosity>
-            <massflow>2.5669278606635224</massflow>
+            <massflow>2.5671774000000003</massflow>
             <molar_enthalpy>-44662.696878651484</molar_enthalpy>
             <molar_entropy>-121.14299725419491</molar_entropy>
-            <molarflow>142.48614846194576</molarflow>
+            <molarflow>142.5</molarflow>
             <molecularWeight>18.01528</molecularWeight>
             <pressure>2000000</pressure>
             <surfaceTension>0.07206493794888676</surfaceTension>
@@ -45788,11 +45788,11 @@
             <heatCapacityCp>3.8480028448679944</heatCapacityCp>
             <heatCapacityCv>2.9712138786931694</heatCapacityCv>
             <kinematic_viscosity>1.0635167774026981E-06</kinematic_viscosity>
-            <massflow>2.5669278606635224</massflow>
+            <massflow>2.5671774000000003</massflow>
             <massfraction>1</massfraction>
             <molar_enthalpy>-44662.696878651484</molar_enthalpy>
             <molar_entropy>-121.14299725419491</molar_entropy>
-            <molarflow>142.48614846194576</molarflow>
+            <molarflow>142.5</molarflow>
             <molarfraction>1</molarfraction>
             <molecularWeight>18.01528</molecularWeight>
             <pressure>2000000</pressure>
@@ -46157,11 +46157,11 @@
             <heatCapacityCv>2.9712138786931694</heatCapacityCv>
             <jouleThomsonCoefficient>-1.4415336145863276E-10</jouleThomsonCoefficient>
             <kinematic_viscosity>1.0635167774026981E-06</kinematic_viscosity>
-            <massflow>2.5669278606635224</massflow>
+            <massflow>2.5671774000000003</massflow>
             <massfraction>1</massfraction>
             <molar_enthalpy>-44662.696878651484</molar_enthalpy>
             <molar_entropy>-121.14299725419491</molar_entropy>
-            <molarflow>142.48614846194576</molarflow>
+            <molarflow>142.5</molarflow>
             <molarfraction>1</molarfraction>
             <molecularWeight>18.01528</molecularWeight>
             <pressure>2000000</pressure>
@@ -47107,10 +47107,10 @@
             <heatCapacityCp>0.9726144337398345</heatCapacityCp>
             <heatCapacityCv>0.6555857131020171</heatCapacityCv>
             <kinematic_viscosity>3.9884936770340785E-07</kinematic_viscosity>
-            <massflow>1.4506750194282014</massflow>
+            <massflow>1.45835</massflow>
             <molar_enthalpy>-878.2473580468597</molar_enthalpy>
             <molar_entropy>-18.463313756528958</molar_entropy>
-            <molarflow>33.28032888982939</molarflow>
+            <molarflow>33.333333333333336</molarflow>
             <molecularWeight>43.5895638</molecularWeight>
             <pressure>2000000</pressure>
             <surfaceTension>NaN</surfaceTension>
@@ -47294,11 +47294,11 @@
             <heatCapacityCp>0</heatCapacityCp>
             <heatCapacityCv>0</heatCapacityCv>
             <kinematic_viscosity>0</kinematic_viscosity>
-            <massflow>0</massflow>
+            <massflow>1.45835</massflow>
             <massfraction>0</massfraction>
             <molar_enthalpy>NaN</molar_enthalpy>
             <molar_entropy>NaN</molar_entropy>
-            <molarflow>0</molarflow>
+            <molarflow>33.333333333333336</molarflow>
             <molarfraction>0</molarfraction>
             <molecularWeight>NaN</molecularWeight>
             <pressure>2000000</pressure>
@@ -47488,11 +47488,11 @@
             <heatCapacityCv>0.6555857131020171</heatCapacityCv>
             <jouleThomsonCoefficient>2.441991130568207E-09</jouleThomsonCoefficient>
             <kinematic_viscosity>3.9884936770340785E-07</kinematic_viscosity>
-            <massflow>1.4506750194282012</massflow>
+            <massflow>1.45835</massflow>
             <massfraction>1</massfraction>
             <molar_enthalpy>-878.2473580468597</molar_enthalpy>
             <molar_entropy>-18.463313756528958</molar_entropy>
-            <molarflow>33.28032888982939</molarflow>
+            <molarflow>33.333333333333336</molarflow>
             <molarfraction>1</molarfraction>
             <molecularWeight>43.5895638</molecularWeight>
             <pressure>2000000</pressure>
