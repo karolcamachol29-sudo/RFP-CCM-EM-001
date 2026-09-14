@@ -38,8 +38,8 @@
 \texttt{S-101} & Alim. CO2 de captura & Vapor & 25.0 & 20.00 & $5,222.4$ & $119.81$ & 1.00 \\
 \texttt{S-201} & Agua fresca externa red (make-up) & Líquido & 25.0 & 20.00 & $9,240.9$ & $512.95$ & 0.00 \\
 \texttt{S-202} & Retorno agua tratada ZLD a caldera & Líquido & 38.7 & 20.00 & $6,979.3$ & $387.41$ & 0.00 \\
-\texttt{S-203} & Agua combinada a caldera E-201 & Líquido & 30.9 & 20.00 & $16,219.9$ & $900.34$ & 0.00 \\
-\texttt{S-204} & Vapor saturado caldera E-201 & Vapor & 220.0 & 20.00 & $16,219.9$ & $900.34$ & 1.00 \\
+\texttt{S-203} & Agua combinada a caldera R-401-S & Líquido & 30.9 & 20.00 & $16,219.9$ & $900.34$ & 0.00 \\
+\texttt{S-204} & Vapor saturado caldera R-401-S & Vapor & 220.0 & 20.00 & $16,219.9$ & $900.34$ & 1.00 \\
 \texttt{S-205} & Vapor sobrecalentado SOEC E-202 & Vapor & 750.0 & 20.00 & $16,219.9$ & $900.34$ & 1.00 \\
 \texttt{S-206} & Oxígeno puro electrolítico SOEC & Vapor & 31.0 & 19.40 & $10,083.4$ & $315.12$ & 1.00 \\
 \texttt{S-207} & Efluente húmedo SOEC (H2+H2O) & Vapor & 750.0 & 19.40 & $6,136.5$ & $900.34$ & 1.00 \\
@@ -50,13 +50,13 @@
 \texttt{S-302} & Syngas comprimido C-301 a 75 bar & Vapor & 212.3 & 75.00 & $6,535.2$ & $752.39$ & 1.00 \\
 \texttt{S-401} & Alimentación total a reactor R-401 & Vapor & 57.6 & 75.00 & $20,779.2$ & $7,153.98$ & 1.00 \\
 \texttt{S-402} & Efluente de reacción R-401 (tubos) & Vapor & 245.0 & 75.00 & $20,779.2$ & $6,918.23$ & 1.00 \\
-\texttt{S-403} & Efluente tras economizador E-502 & Vapor & 240.4 & 75.00 & $20,779.2$ & $6,918.23$ & 1.00 \\
+\texttt{S-403} & Efluente tras economizador E-502A & Vapor & 224.6 & 75.00 & $20,779.2$ & $6,918.23$ & 1.00 \\
 \texttt{S-404} & Efluente condensado enfriador E-501 & Bifásica & 38.0 & 75.00 & $20,779.2$ & $6,918.23$ & 0.97 \\
 \texttt{S-501} & Gas domo flash HP V-501 a 38 °C & Vapor & 38.0 & 75.00 & $14,862.8$ & $6,680.78$ & 1.00 \\
-\texttt{S-502} & Gas reciclo sobrecalentado E-503 & Vapor & 43.0 & 75.00 & $14,862.8$ & $6,680.78$ & 1.00 \\
-\texttt{S-503} & Reciclo de gas 96\% a soplador C-501 & Vapor & 43.0 & 75.00 & $14,268.3$ & $6,413.54$ & 1.00 \\
-\texttt{S-504} & Reciclo presurizado retorno R-401 & Vapor & 44.5 & 76.50 & $14,268.3$ & $6,413.54$ & 1.00 \\
-\texttt{S-505} & Purga continua 4\% a turboexpansor & Vapor & 43.0 & 75.00 & $594.5$ & $267.23$ & 1.00 \\
+\texttt{S-502} & Gas reciclo sobrecalentado E-502B & Vapor & 60.0 & 75.00 & $14,862.8$ & $6,680.78$ & 1.00 \\
+\texttt{S-503} & Reciclo de gas 96\% a soplador C-501 & Vapor & 60.0 & 75.00 & $14,268.3$ & $6,413.54$ & 1.00 \\
+\texttt{S-504} & Reciclo presurizado retorno R-401 & Vapor & 61.5 & 76.50 & $14,268.3$ & $6,413.54$ & 1.00 \\
+\texttt{S-505} & Purga continua 4\% a turboexpansor & Vapor & 60.0 & 75.00 & $594.5$ & $267.23$ & 1.00 \\
 \texttt{S-506} & Purga venteo expandida tras X-501 & Bifásica & -145.2 & 1.10 & $594.5$ & $267.23$ & 0.98 \\
 \texttt{S-507} & Metanol crudo líquido flash HP V-501 & Líquido & 38.0 & 75.00 & $5,916.5$ & $237.45$ & 0.00 \\
 \texttt{S-601} & Venteo gases ligeros desgasif. V-601 & Vapor & 38.0 & 3.00 & $9.0$ & $0.62$ & 1.00 \\
@@ -108,7 +108,7 @@
 \texttt{S-601} & 0.2542 & 0.7180 & 0.0000 & 0.0012 & 0.0266 & 0.0000 & 1.0000 \\
 \texttt{S-602} & 0.0000 & 0.0000 & 0.0000 & 0.5061 & 0.4939 & 0.0000 & 1.0000 \\
 \texttt{S-603} & 0.0000 & 0.0000 & 0.0000 & 0.0027 & 0.9973 & 0.0000 & 1.0000 \\
-\textbf{\texttt{S-604}} & 0.0000 & 0.0000 & 0.0000 & 0.0027 & 0.9973 & 0.0000 & $\mathbf{1.0000}$ \\
+\textbf{\texttt{S-604}} & 0.0000 & 0.0000 & 0.0000 & 0.0027 & $\mathbf{0.9973}$ & 0.0000 & $\mathbf{1.0000}$ \\
 \texttt{S-605} & 0.0000 & 0.0000 & 0.0000 & 0.9990 & 0.0010 & 0.0000 & 1.0000 \\
 \texttt{S-801} & 0.0000 & 0.0000 & 0.0000 & 0.9995 & 0.0005 & 0.0000 & 1.0000 \\
 \texttt{S-802} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
@@ -119,17 +119,10 @@
 \end{center}
 \noindent{\footnotesize *En corriente \texttt{S-206}, el componente inerte corresponde a Oxígeno ($\text{O}_2$) electrolítico de grado comercial.}
 
-\vspace{0.6cm}
+\vspace{0.4cm}
 \begin{center}
-\footnotesize
-\begin{tabularx}{0.95\textwidth}{XcX}
-\toprule
-\textbf{Aprobación Técnica:} & \textbf{Revisión y Estado:} & \textbf{Fecha de Emisión:} \\
-\midrule
-Ing. Karol Paola Camacho López & Rev. v1.0 (Estandarizada por Áreas) & 14 de septiembre de 2026 \\
-Solvanta Engineering Solutions & Caso Oficial Congelado DWSIM v1 & Planta e-Metanol 30 kt/año \\
-\bottomrule
-\end{tabularx}
+\small
+\textbf{Aprobación Técnica:} Solvanta Engineering Solutions S.A. de C.V. | RFP-CCM-EM-001 | Revisión v0.1 Oficial
 \end{center}
 
 \end{document}
