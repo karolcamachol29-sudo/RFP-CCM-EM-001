@@ -50797,7 +50797,7 @@
       <SupportsRestoreStateAfterError>true</SupportsRestoreStateAfterError>
       <SelectedEquipmentType />
       <EquipmentTypes />
-      <ComponentDescription>Reactor Tubular de Sintesis de Metanol R-401 (245 C, 75 bar, acoplado a Carcasa R-401-S)</ComponentDescription>
+      <ComponentDescription>Reactor R-401 [Tubos Cataliticos]: Sintesis de Metanol (240-245 C, 75 bar, acoplado termicamente a Carcasa R-401-S)</ComponentDescription>
       <ComponentName>RE-e69cd9da-b8e7-4f2d-9d92-a3a2d1dde33c</ComponentName>
       <IsDirty>true</IsDirty>
       <CanUsePreviousResults>true</CanUsePreviousResults>
@@ -52542,7 +52542,7 @@ if flujo_anodico is not None:
       <SupportsParticleSizeDistributions>false</SupportsParticleSizeDistributions>
       <SupportsRestoreStateAfterError>true</SupportsRestoreStateAfterError>
       <SelectedEquipmentType />
-      <ComponentDescription>Generador de Vapor / Carcasa acoplada al Reactor R-401 (20 bar, 220 C)</ComponentDescription>
+      <ComponentDescription>Reactor R-401 [Carcasa Generadora de Vapor]: Caldera BFW a Vapor Saturado 20 bar (220 C) acoplada a R-401</ComponentDescription>
       <ComponentName>AQ-644c9e9b-fa91-45a3-8235-4a35b8211648</ComponentName>
       <IsDirty>true</IsDirty>
       <CanUsePreviousResults>true</CanUsePreviousResults>
@@ -57805,7 +57805,7 @@ Stage          P           T          mV          wV          mL          wL    
       <SupportsParticleSizeDistributions>false</SupportsParticleSizeDistributions>
       <SupportsRestoreStateAfterError>true</SupportsRestoreStateAfterError>
       <SelectedEquipmentType />
-      <ComponentDescription>Economizador de Reciclo E-502A (Lado Caliente: Enfriamiento Efluente R-401 a 224.6 C)</ComponentDescription>
+      <ComponentDescription>Intercambiador Economizador E-502 [Lado Caliente]: Enfriamiento Efluente R-401 a 224.6 C</ComponentDescription>
       <ComponentName>RESF-60100000-0000-0000-0000-000000000601</ComponentName>
       <IsDirty>true</IsDirty>
       <CanUsePreviousResults>true</CanUsePreviousResults>
@@ -58029,7 +58029,7 @@ Stage          P           T          mV          wV          mL          wL    
       <SupportsParticleSizeDistributions>false</SupportsParticleSizeDistributions>
       <SupportsRestoreStateAfterError>true</SupportsRestoreStateAfterError>
       <SelectedEquipmentType />
-      <ComponentDescription>Economizador de Reciclo E-502B (Lado Frio: Precalentamiento Reciclo a 60 C)</ComponentDescription>
+      <ComponentDescription>Intercambiador Economizador E-502 [Lado Frio]: Precalentamiento Gas Reciclo de 38 C a 60 C</ComponentDescription>
       <ComponentName>AQ-60100000-0000-0000-0000-000000000602</ComponentName>
       <IsDirty>true</IsDirty>
       <CanUsePreviousResults>true</CanUsePreviousResults>
