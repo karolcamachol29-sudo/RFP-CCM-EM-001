@@ -58075,7 +58075,7 @@ Stage          P           T          mV          wV          mL          wL    
       <DynamicPropertiesUnitTypes />
       <AttachedUtilities />
     </SimulationObject>
-  <SimulationObject><Type>DWSIM.UnitOperations.Streams.EnergyStream</Type><ObjectClass>Streams</ObjectClass><SupportsDynamicMode>true</SupportsDynamicMode><HasPropertiesForDynamicMode>false</HasPropertiesForDynamicMode><ComponentDescription>Flujo de Energia E-703</ComponentDescription><ComponentName>EN-70300000-0000-0000-0000-000000000703</ComponentName><MobileCompatible>true</MobileCompatible><Name2 /><code>0</code><IsDirty>false</IsDirty><CanUsePreviousResults>false</CanUsePreviousResults><DynamicsSpec>Pressure</DynamicsSpec><DynamicsOnly>false</DynamicsOnly><Visible>true</Visible><OverrideCalculationRoutine>false</OverrideCalculationRoutine><StoreDetailedDebugReport>false</StoreDetailedDebugReport><IsFunctional>true</IsFunctional><PreferredFlashAlgorithmTag /><Calculated>true</Calculated><DebugMode>false</DebugMode><LastUpdated>09/09/2026 22:35:00</LastUpdated><Annotation /><IsAdjustAttached>false</IsAdjustAttached><AttachedAdjustId /><AdjustVarType>Manipulated</AdjustVarType><IsSpecAttached>false</IsSpecAttached><AttachedSpecId /><SpecVarType>Source</SpecVarType><Name>EN-70300000-0000-0000-0000-000000000703</Name><UserDefinedChartNames /><ProductName>Energy Stream</ProductName><ProductDescription>Energy flow from/to Unit Operations</ProductDescription><ProductAuthor>Daniel Wagner</ProductAuthor><ProductContactInfo>https://dwsim.inforside.com.br</ProductContactInfo><ProductPage>https://dwsim.inforside.com.br</ProductPage><ProductVersion>10.2.4.0</ProductVersion><ProductAssembly>DWSIM.SharedClasses</ProductAssembly><IsSource>false</IsSource><IsSink>false</IsSink><EnergyFlow>0.0</EnergyFlow><IsInfoCarrierAttached>false</IsInfoCarrierAttached><AttachedInfoCarrierId /><InfoCarrierVarType>None</InfoCarrierVarType><DynamicProperties /><DynamicPropertiesDescriptions /><DynamicPropertiesUnitTypes /><AttachedUtilities /></SimulationObject></SimulationObjects>
+  </SimulationObjects>
   <Settings>
     <Type>DWSIM.SharedClasses.DWSIM.Flowsheet.FlowsheetVariables</Type>
     <SimulationMode />
@@ -59825,7 +59825,7 @@ Stage          P           T          mV          wV          mL          wL    
         <Connector IsAttached="false" />
         <Connector IsAttached="false" />
         <Connector IsAttached="false" />
-        <Connector IsAttached="true" ConnType="ConEn" AttachedFromObjID="EN-70300000-0000-0000-0000-000000000703" AttachedFromConnIndex="0" AttachedFromEnergyConn="True" />
+        <Connector IsAttached="true" ConnType="ConEn" AttachedFromObjID="EN-70100000-0000-0000-0000-000000000703" AttachedFromConnIndex="0" AttachedFromEnergyConn="True" />
       </InputConnectors>
       <OutputConnectors>
         <Connector IsAttached="true" ConnType="ConOut" AttachedToObjID="MAT-10408406-5d4e-4c0c-8449-9f95d3fca4d6" AttachedToConnIndex="0" AttachedToEnergyConn="False" />
@@ -59931,7 +59931,7 @@ Stage          P           T          mV          wV          mL          wL    
       <Rotation>0</Rotation>
       <DrawMode>0</DrawMode>
       <DrawLabel>true</DrawLabel>
-      <InputConnectors><Connector IsAttached="true" ConnType="ConIn" AttachedFromObjID="MAT-0275e4b1-c2ed-47b8-a5ad-433ec6ded3f0" AttachedFromConnIndex="0" AttachedFromEnergyConn="False" /><Connector IsAttached="false" /><Connector IsAttached="false" /><Connector IsAttached="false" /><Connector IsAttached="false" /><Connector IsAttached="false" /><Connector IsAttached="false" ConnType="ConEn" /></InputConnectors><OutputConnectors><Connector IsAttached="true" ConnType="ConOut" AttachedToObjID="MAT-3aa15085-8985-4439-a000-bd621d242199" AttachedToConnIndex="0" AttachedToEnergyConn="False" /><Connector IsAttached="true" ConnType="ConOut" AttachedToObjID="MAT-09f4f8b5-9d59-4539-8f9d-2bc99d64e394" AttachedToConnIndex="0" AttachedToEnergyConn="False" /><Connector IsAttached="false" /><Connector IsAttached="false" /><Connector IsAttached="false" /></OutputConnectors><EnergyConnector>
+      <InputConnectors><Connector IsAttached="true" ConnType="ConIn" AttachedFromObjID="MAT-0275e4b1-c2ed-47b8-a5ad-433ec6ded3f0" AttachedFromConnIndex="0" AttachedFromEnergyConn="False" /><Connector IsAttached="false" /><Connector IsAttached="false" /><Connector IsAttached="false" /><Connector IsAttached="false" /><Connector IsAttached="false" /><Connector IsAttached="false" /></InputConnectors><OutputConnectors><Connector IsAttached="true" ConnType="ConOut" AttachedToObjID="MAT-3aa15085-8985-4439-a000-bd621d242199" AttachedToConnIndex="0" AttachedToEnergyConn="False" /><Connector IsAttached="true" ConnType="ConOut" AttachedToObjID="MAT-09f4f8b5-9d59-4539-8f9d-2bc99d64e394" AttachedToConnIndex="0" AttachedToEnergyConn="False" /><Connector IsAttached="false" /><Connector IsAttached="false" /><Connector IsAttached="false" /></OutputConnectors><EnergyConnector>
         <Connector IsAttached="false" />
       </EnergyConnector>
       <SpecialConnectors />
@@ -61535,7 +61535,7 @@ Stage          P           T          mV          wV          mL          wL    
       <DrawMode>0</DrawMode>
       <DrawLabel>true</DrawLabel>
       <InputConnectors>
-        <Connector IsAttached="true" ConnType="ConIn" AttachedFromObjID="CS-e9ce90a1-ad7c-4946-a0c8-e90f7744355e" AttachedFromConnIndex="1" AttachedFromEnergyConn="False" />
+        <Connector IsAttached="true" ConnType="ConIn" AttachedFromObjID="CS-e9ce90a1-ad7c-4946-a0c8-e90f7744355e" AttachedFromConnIndex="0" AttachedFromEnergyConn="False" />
       </InputConnectors>
       <OutputConnectors>
         <Connector IsAttached="false" />
@@ -61949,7 +61949,7 @@ Stage          P           T          mV          wV          mL          wL    
       </EnergyConnector>
       <SpecialConnectors />
     </GraphicObject>
-  <GraphicObject><Type>DWSIM.Drawing.SkiaSharp.GraphicObjects.Shapes.EnergyStreamGraphic</Type><SemiTransparent>false</SemiTransparent><LineWidth>1</LineWidth><GradientMode>false</GradientMode><LineColor>#ff4682b4</LineColor><LineColorDark>#fff5f5f5</LineColorDark><Fill>true</Fill><FillColor>#ffd3d3d3</FillColor><FillColorDark>#ffffffff</FillColorDark><FontSize>10</FontSize><OverrideColors>false</OverrideColors><FontStyle>Regular</FontStyle><Calculated>true</Calculated><Active>true</Active><Description>Energy Stream</Description><FlippedH>false</FlippedH><FlippedV>false</FlippedV><IsEnergyStream>true</IsEnergyStream><ObjectType>EnergyStream</ObjectType><Shape>0</Shape><ShapeOverride>DefaultShape</ShapeOverride><Status>Calculated</Status><AutoSize>false</AutoSize><Height>20</Height><IsConnector>false</IsConnector><Name>EN-70300000-0000-0000-0000-000000000703</Name><Tag>E-703</Tag><Width>20</Width><X>640</X><Y>340</Y><Selected>false</Selected><ClipboardData /><Rotation>0</Rotation><DrawMode>0</DrawMode><DrawLabel>true</DrawLabel><InputConnectors><Connector IsAttached="false" /></InputConnectors><OutputConnectors><Connector IsAttached="true" ConnType="ConOut" AttachedToObjID="SEP-c4331e0f-37c7-46be-bc75-e3601c1147f1" AttachedToConnIndex="6" AttachedToEnergyConn="True" /></OutputConnectors><EnergyConnector><Connector IsAttached="false" /></EnergyConnector><SpecialConnectors /></GraphicObject></GraphicObjects>
+  </GraphicObjects>
   <PropertyPackages>
     <PropertyPackage>
       <ID>PP-66ac0962-b06b-4cf0-a484-697d5bfd0c7c</ID>
