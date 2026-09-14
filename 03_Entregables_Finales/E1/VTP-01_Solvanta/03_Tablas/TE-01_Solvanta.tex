@@ -1,0 +1,79 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,top=2.2cm,bottom=2.2cm,left=2.0cm,right=2.0cm]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+
+\definecolor{navyblue}{RGB}{26, 79, 124}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small Solvanta Engineering Solutions -- Documento Oficial TE-01}
+\rhead{\small Tabla Maestra de Energía y Servicios}
+\cfoot{\small Página \thepage\ de 1}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+
+\begin{center}
+{\large \textbf{SOLVANTA ENGINEERING SOLUTIONS S.A. DE C.V.}}\\[0.2cm]
+{\Large \textbf{\color{navyblue} DOCUMENTO TE-01: TABLA MAESTRA DE ENERGÍA Y SERVICIOS}}\\[0.1cm]
+{\small Planta de Producción de e-Metanol ($30\,000\text{ t/año}$) | Base de Cálculo: $8\,000\text{ h/año}$}
+\end{center}
+
+\vspace{0.2cm}
+\noindent\textbf{Convención de Signos Termodinámicos:}
+\begin{itemize}
+    \item $\dot{Q} > 0$: Energía o potencia eléctrica suministrada al proceso.
+    \item $\dot{Q} < 0$: Energía o potencia térmica retirada o cedida por el proceso / Generación eléctrica.
+\end{itemize}
+
+\vspace{0.2cm}
+\begin{center}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabularx}{\textwidth}{llllrrX}
+\toprule
+\textbf{ID Servicio} & \textbf{Equipo} & \textbf{Descripción} & \textbf{Tipo} & \textbf{Carga (kW)} & \textbf{E. anual (MWh)} & \textbf{Observación Técnica} \\
+\midrule
+\texttt{E-SOEC} & \texttt{EL-201} & Potencia SOEC & Electricidad & $+54\,402.00$ & $435\,216.0$ & Red renovable ($52.2\text{ MW}$ DC celdas) \\
+\texttt{E-C301} & \texttt{C-301} & Compresor syngas & Electricidad & $+1\,138.70$ & $9\,109.6$ & Multietapa $20 \to 75\text{ bar}$ \\
+\texttt{E-C601} & \texttt{C-601} & Soplador reciclo & Electricidad & $+150.00$ & $1\,200.0$ & Vence pérdidas en lazo de síntesis \\
+\texttt{E-P801} & \texttt{P-801} & Bomba retorno ZLD & Electricidad & $+0.20$ & $1.6$ & Retorno condensado pulido a $20\text{ bar}$ \\
+\texttt{E-TURB} & \texttt{X-601} & Turboexpansor purga & Gen. Elec. & $\mathbf{-390.43}$ & $\mathbf{-3\,123.4}$ & Recuperación de potencia $75 \to 1.1\text{ bar}$ \\
+\midrule
+\multicolumn{4}{l}{\textbf{Consumo Eléctrico Neto de Planta}} & $\mathbf{+55\,325.47}$ & $\mathbf{442\,603.8}$ & $\approx \mathbf{55.33\text{ MW}}$ neta demandada \\
+\midrule
+\texttt{E-R401} & \texttt{R-401} & Reacción de síntesis & Gen. Térmica & $\mathbf{-9\,139.20}$ & $73\,113.6$ & Calor exotérmico a caldera acoplada \\
+\texttt{E-201} & \texttt{E-201} & Carcasa caldera vapor& Calentamiento & $\mathbf{+9\,139.20}$ & $73\,113.6$ & Absorbe $100\%$ calor exotérmico R-401 \\
+\texttt{E-601} & \texttt{E-601} & Economizador gas-gas & Int. Recup. & $\mathbf{+272.05}$ & $2\,176.4$ & Efluente sobrecalienta gas de reciclo \\
+\texttt{E-202} & \texttt{E-202} & Sobrecalentador vapor& Calentamiento & $+5\,119.20$ & $40\,953.6$ & Vapor saturado $220 \to 750^\circ\text{C}$ \\
+\texttt{E-702} & \texttt{E-702} & Rehervidor T-701 & Calentamiento & $+3\,020.00$ & $24\,160.0$ & Fraccionamiento fondo a $103.9^\circ\text{C}$ \\
+\midrule
+\texttt{E-301} & \texttt{E-301} & Enfriador SOEC & Enfriamiento & $-8\,741.80$ & $69\,934.4$ & Agua de torre $750 \to 38^\circ\text{C}$ \\
+\texttt{E-501} & \texttt{E-501} & Enfriador de síntesis& Enfriamiento & $-13\,952.70$ & $111\,621.6$ & Condensación mezcla cruda metanol \\
+\texttt{E-701} & \texttt{E-701} & Condensador T-701 & Enfriamiento & $-2\,865.00$ & $22\,920.0$ & Condensación total metanol $65.0^\circ\text{C}$ \\
+\texttt{E-704} & \texttt{E-704} & Subenfriador producto& Enfriamiento & $-92.20$ & $737.6$ & Metanol a tanques a $35.0^\circ\text{C}$ \\
+\texttt{E-V701} & \texttt{V-701} & Desgasificador LP & Balance adiab. & $0.00$ & $0.0$ & Flash adiabático $75 \to 3\text{ bar}$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{0.6cm}
+\begin{center}
+\footnotesize
+\begin{tabularx}{0.95\textwidth}{XcX}
+\toprule
+\textbf{Elaboró y Verificó:} & \textbf{Estado de Aprobación:} & \textbf{Fecha de Firma:} \\
+\midrule
+Ing. Karol Paola Camacho López & Documento TE-01 Congelado & 14 de septiembre de 2026 \\
+Solvanta Engineering Solutions & Caso Aprobado DWSIM v1 & Planta e-Metanol 30 kt/año \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\end{document}

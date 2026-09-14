@@ -1,0 +1,30 @@
+# Archivos de respaldo y temporales
+*.bak
+*.tmp
+*~
+*.swp
+
+# Carpetas locales de recursos pesados e iconos
+Recursos_DWSIM_Iconos/
+Capturas_DWSIM/
+Simulaciones_DWSIM/
+
+# Archivos de compilación LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+texput.*
+
+# Entornos Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Sistema operativo
+.DS_Store
+Thumbs.db

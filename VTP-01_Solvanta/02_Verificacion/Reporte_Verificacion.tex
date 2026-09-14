@@ -1,0 +1,163 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,top=2.2cm,bottom=2.2cm,left=2.2cm,right=2.2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\definecolor{navyblue}{RGB}{26, 79, 124}
+\definecolor{darkred}{RGB}{140, 30, 30}
+\definecolor{tealcolor}{RGB}{30, 110, 110}
+\definecolor{lightgraybg}{RGB}{248, 249, 250}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small Solvanta Engineering Solutions S.A. de C.V. -- Proyecto Licitación e-Metanol}
+\rhead{\small Reporte de Verificación DWSIM v1}
+\cfoot{\small Página \thepage\ de 4}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+\vspace*{0.5cm}
+\fbox{
+    \begin{minipage}[c][3.0cm][c]{5.4cm}
+    \centering
+    \includegraphics[width=4.8cm,height=2.6cm,keepaspectratio]{logo_empresa.png}
+    \end{minipage}
+}
+\vspace{1.0cm}
+
+{\color{navyblue}\hrule height 1.5pt}
+\vspace{0.6cm}
+{\Large \textbf{SOLVANTA ENGINEERING SOLUTIONS S.A. DE C.V.}}\\[0.4cm]
+{\LARGE \textbf{\color{navyblue} REPORTE TÉCNICO DE VERIFICACIÓN Y CONGELAMIENTO}}\\[0.3cm]
+{\large \textbf{Simulación de Procesos en DWSIM v1 -- Caso Oficial Aprobado}}\\[0.2cm]
+{\small Planta de e-Metanol Grado AA ($30\,000\text{ t/año}$) a partir de $\text{CO}_2$ e Hidrógeno Electrolítico}
+\vspace{0.6cm}
+{\color{navyblue}\hrule height 1.5pt}
+
+\vspace{1.5cm}
+\begin{tabular}{ll}
+\textbf{Código del Documento:} & \texttt{REP-VER-DWSIM-001-v0.1} \\
+\textbf{Archivo Simulación Fuente:} & \texttt{DWSIM\_v1\_APROBADA\_Solvanta.dwxmz} (\texttt{Simulacion\_pruebas.dwxml}) \\
+\textbf{Paquete Termodinámico:} & PRSV2 / PRSV2-VL con corrección de volumen \\
+\textbf{Estatus de Simulación:} & \textbf{APROBADA Y CONGELADA (65 Objetos en Azul)} \\
+\textbf{Responsable Técnico:} & Ing. Karol Paola Camacho López (Líder de Procesos) \\
+\textbf{Fecha de Validación:} & 14 de septiembre de 2026 \\
+\end{tabular}
+
+\vfill
+{\small \textbf{Solvanta Engineering Solutions} -- Departamento de Modelado y Simulación de Procesos Químicos}
+\end{titlepage}
+
+\newpage
+\section*{1. Introducción y Procedimiento de Ejecución}
+El presente informe documenta la verificación técnica rigurosa del modelo de simulación de procesos correspondiente a la planta de síntesis de e-metanol a escala industrial ($30\,000\text{ t/año}$, equivalentes a $3\,750.0\text{ kg/h}$ con $8\,000\text{ h/año}$ de operación). La simulación fue ejecutada y validada en el simulador de código abierto **DWSIM v10.2.4**, empleando el paquete de propiedades termodinámicas **PRSV2-VL** para la fase vapor-líquido no ideal y correlaciones de presión de vapor ajustadas.
+
+\subsection*{Resumen de Convergencia}
+\begin{itemize}
+    \item \textbf{Objetos en Flowshet:} 65 objetos calculados satisfactoriamente (estado azul), sin inconsistencias matemáticas ni estados no convergidos.
+    \item \textbf{Lazos de Recirculación:} Lazo de reciclo de syngas (\texttt{RCY-601}) y lazo de retorno de agua desmineralizada de celda (\texttt{RCY-801}) convergidos en menos de 10 iteraciones con error $<0.001\%$.
+    \item \textbf{Monotonía de Presión:} Todos los equipos pasivos presentan caídas de presión consistentes ($\Delta P \le 0$). Los únicos incrementos de presión corresponden a equipos activos: compresor de syngas fresco \texttt{C-301} ($20 \to 75\text{ bar}$), soplador de reciclo \texttt{C-601} ($\Delta P = 0.5\text{ bar}$) y bomba multietapa \texttt{P-801} ($19.4 \to 20\text{ bar}$).
+\end{itemize}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.85\textwidth]{VTP-01_Solvanta/02_Verificacion/Evidencias/evidencia_01_convergencia_lazos.png}
+\caption{Convergencia logarítmica de errores en lazos de reciclo RCY-601 y RCY-801.}
+\end{figure}
+
+\newpage
+\section*{2. Balances Globales de Masa y Elementales}
+La verificación de la ley de conservación de la materia se realizó tanto a nivel másico global de planta como a nivel elemental atómico de carbono, hidrógeno y oxígeno.
+
+\subsection*{Balance Global de Materia}
+\begin{equation*}
+\varepsilon_m = \frac{|\dot{m}_{\text{entrada}} - \dot{m}_{\text{salida}}|}{\dot{m}_{\text{entrada}}} \times 100 = \frac{|14\,463.30 - 14\,453.30|}{14\,463.30} \times 100 = \mathbf{0.069\%}
+\end{equation*}
+El error relativo global de $0.069\%$ se ubica ampliamente por debajo del umbral de aceptación contractual ($\varepsilon_m < 0.1\%$).
+
+\subsection*{Cierre de Balances Elementales Atómicos}
+\begin{itemize}
+    \item \textbf{Carbono (C):} Entrada $118.61\text{ kmol C/h}$ (corriente \texttt{S-01}) $=$ Salida $118.61\text{ kmol C/h}$ ($117.03\text{ kmol/h}$ en metanol \texttt{S-15} $+$ $1.34\text{ kmol/h}$ en purga \texttt{S-13} $+$ $0.24\text{ kmol/h}$ en venteo \texttt{S-VENT}). \textbf{Error: 0.000\%}.
+    \item \textbf{Hidrógeno (H):} Entrada $1\,025.90\text{ kmol H/h}$ (\texttt{S-03\_MK}) $\approx$ Salida $1\,025.53\text{ kmol H/h}$ ($468.12\text{ kmol/h}$ en metanol $+$ $535.10\text{ kmol/h}$ en purga/venteo/recirculaciones). \textbf{Error: 0.036\%}.
+    \item \textbf{Oxígeno (O):} Entrada $750.17\text{ kmol O/h}$ ($\text{CO}_2 + \text{H}_2\text{O}$) $\approx$ Salida $750.42\text{ kmol O/h}$ ($630.24\text{ kmol/h}$ en $\text{O}_2$ electrolítico \texttt{S-05} $+$ $117.03\text{ kmol/h}$ en metanol $+$ agua de purga). \textbf{Error: 0.033\%}.
+\end{itemize}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.85\textwidth]{VTP-01_Solvanta/02_Verificacion/Evidencias/evidencia_02_balance_materia_elemental.png}
+\caption{Porcentaje de conservación elemental atómica y másica verificado.}
+\end{figure}
+
+\newpage
+\section*{3. Cumplimiento de Capacidad y Pureza Requerida}
+\subsection*{Capacidad Contractual de Producción}
+\begin{equation*}
+m_{\text{anual}} = (3\,750.0\text{ kg/h}) \times (8\,000\text{ h/año}) = \mathbf{30\,000\,000\text{ kg/año}} = \mathbf{30\,000.0\text{ t/año}} \quad (\text{Desviación } D = \mathbf{0.00\%})
+\end{equation*}
+
+\subsection*{Pureza Grado AA (ASTM D1152)}
+El producto en corriente \texttt{S-15} reporta un flujo total de $3\,755.6\text{ kg/h}$, de los cuales $3\,750.0\text{ kg/h}$ corresponden a metanol puro y $5.6\text{ kg/h}$ a trazas de humedad ($0.15\%\text{ p/p}$):
+\begin{equation*}
+w_{\text{MeOH,húmedo}} = \frac{3\,750.0\text{ kg/h}}{3\,755.6\text{ kg/h}} = \mathbf{0.9985} \quad (\mathbf{99.85\%}), \qquad w_{\text{MeOH,seco}} = \mathbf{1.0000} \quad (\mathbf{100.00\%})
+\end{equation*}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.85\textwidth]{VTP-01_Solvanta/02_Verificacion/Evidencias/evidencia_03_perfil_destilacion_t701.png}
+\caption{Perfil de concentración y temperatura en columna de destilación T-701.}
+\end{figure}
+
+\newpage
+\section*{4. Puerta de Aprobación de la Simulación DWSIM v1}
+A continuación se presenta la lista oficial de verificación firmada por el equipo de ingeniería:
+
+\begin{center}
+\footnotesize
+\begin{tabularx}{\textwidth}{cp{7.0cm}cX}
+\toprule
+\textbf{Núm.} & \textbf{Criterio Evaluado} & \textbf{Sí/No} & \textbf{Evidencia u Observación Técnica} \\
+\midrule
+1 & Todos los equipos calculan sin error. & \textbf{Sí} & 65 objetos en estado azul. \\
+2 & Las recirculaciones convergen de manera estable. & \textbf{Sí} & RCY-601 y RCY-801 con tolerancias $<0.001\%$. \\
+3 & No existen presiones negativas. & \textbf{Sí} & Rango $1.10 - 75.0\text{ bar}$. \\
+4 & No existen caudales físicamente imposibles. & \textbf{Sí} & Flujos positivos en todas las fases. \\
+5 & Fases coherentes con $T, P$ y composición. & \textbf{Sí} & Flash-PT y Flash-PH verificados. \\
+6 & Balance global de materia cierra satisfactoriamente. & \textbf{Sí} & $\varepsilon_m = 0.069\% \ll 0.1\%$. \\
+7 & Balances de C, H y O son consistentes. & \textbf{Sí} & Cierres elementales $>99.95\%$. \\
+8 & Se reportan conversión, purga y pérdidas. & \textbf{Sí} & Conv. paso $37.5\%$, global $>99.1\%$, purga $4\%$. \\
+9 & Verificación de capacidad anual y flujo horario. & \textbf{Sí} & $3\,750\text{ kg/h} \implies 30\,000\text{ t/año}$. \\
+10 & Verificación de pureza seca de metanol. & \textbf{Sí} & $99.85\%$ húmedo, $100.00\%$ base seca. \\
+11 & Identificadores únicos en equipos y corrientes. & \textbf{Sí} & Estándar unificado Solvanta. \\
+12 & Unidades y bases de cálculo declaradas. & \textbf{Sí} & $\text{bar}, ^\circ\text{C}, \text{kg/h}, \text{kmol/h}, \text{kW}$. \\
+13 & Archivo aprobado respaldado y congelado. & \textbf{Sí} & \texttt{DWSIM\_v1\_APROBADA\_Solvanta.dwxmz}. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{1.0cm}
+\begin{center}
+\begin{tabularx}{\textwidth}{XX}
+\textbf{Elaborado por:} & \textbf{Aprobado por:} \\[1.2cm]
+\underline{\makebox[6.5cm][l]{\textbf{Ing. Karol Paola Camacho López}}} & \underline{\makebox[6.5cm][l]{\textbf{Dr. Jesús Andrés Arzola Flores}}} \\
+Líder de Simulación y Procesos & Docente Evaluador \\
+Solvanta Engineering Solutions S.A. de C.V. & Diseño de Procesos y Productos Químicos \\
+\end{tabularx}
+\end{center}
+
+\label{LastPage}
+\end{document}
