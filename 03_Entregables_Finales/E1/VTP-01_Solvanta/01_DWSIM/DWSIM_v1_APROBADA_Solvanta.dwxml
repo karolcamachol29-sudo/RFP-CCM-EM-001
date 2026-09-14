@@ -9179,7 +9179,7 @@
       <EditorState>{"MainSelectedTab":0,"InputCompositionBasis":0,"CompoundsSelectedTab":0,"CompoundsAmountBasis":0,"CompoundsProperty":0,"CompoundsAmountSelectedTab":0,"CompoundsPropertySelectedTab":0,"PhasePropsSelectedTab":0,"MainSelectedTab0":0,"ShowAsPercentage":0}</EditorState>
       <MobileCompatible>true</MobileCompatible>
       <StreamType>Inner</StreamType>
-      <IsDirty>true</IsDirty>
+      <IsDirty>false</IsDirty>
       <CanUsePreviousResults>true</CanUsePreviousResults>
       <DynamicsSpec>Pressure</DynamicsSpec>
       <DynamicsOnly>false</DynamicsOnly>
@@ -48404,7 +48404,7 @@
       <MaximumIterations>50</MaximumIterations>
       <MobileCompatible>true</MobileCompatible>
       <ObjectClass>Logical</ObjectClass>
-      <IsDirty>true</IsDirty>
+      <IsDirty>false</IsDirty>
       <CanUsePreviousResults>true</CanUsePreviousResults>
       <DynamicsSpec>Pressure</DynamicsSpec>
       <DynamicsOnly>false</DynamicsOnly>
@@ -49139,7 +49139,7 @@
       <AttachedExtensions />
     </SimulationObject>
     <SimulationObject>
-      <Type>DWSIM.UnitOperations.UnitOperations.Vessel</Type>
+      <Type>DWSIM.UnitOperations.UnitOperations.ComponentSeparator</Type>
       <ObjectClass>Separators</ObjectClass>
       <MaterialTypes>
         <Item>Steel</Item>
@@ -49184,11 +49184,6 @@
         <CGTC_Definido>0</CGTC_Definido>
         <TipoPerfil>Definir_CGTC</TipoPerfil>
       </ThermalProperties>
-      <WallThickness>0.01</WallThickness>
-      <WallMaterial>Carbon Steel</WallMaterial>
-      <WallTemperature>0</WallTemperature>
-      <HeadType>Hemispherical</HeadType>
-      <CalculateRigorousHeatBalance>false</CalculateRigorousHeatBalance>
       <SupportsDynamicMode>true</SupportsDynamicMode>
       <HasPropertiesForDynamicMode>true</HasPropertiesForDynamicMode>
       <EquipmentTypes>
@@ -49196,15 +49191,6 @@
         <Item>Vertical</Item>
         <Item>Horizontal</Item>
       </EquipmentTypes>
-      <CalculationMode>Adiabatic</CalculationMode>
-      <DimensionRatio>3</DimensionRatio>
-      <SurgeFactor>1.2</SurgeFactor>
-      <ResidenceTime>5</ResidenceTime>
-      <PressureCalculation>Minimum</PressureCalculation>
-      <OverrideT>false</OverrideT>
-      <OverrideP>true</OverrideP>
-      <FlashPressure>300000</FlashPressure>
-      <FlashTemperature>313.15</FlashTemperature>
       <DeltaQ>0</DeltaQ>
       <MobileCompatible>true</MobileCompatible>
       <ExternalSolverID />
@@ -49215,7 +49201,7 @@
       <SelectedEquipmentType>Vertical</SelectedEquipmentType>
       <ComponentDescription>Tanque desgasificador de metanol crudo (75 a 3 bar)</ComponentDescription>
       <ComponentName>SEP-c4331e0f-37c7-46be-bc75-e3601c1147f1</ComponentName>
-      <IsDirty>true</IsDirty>
+      <IsDirty>false</IsDirty>
       <CanUsePreviousResults>true</CanUsePreviousResults>
       <DynamicsSpec>Pressure</DynamicsSpec>
       <DynamicsOnly>false</DynamicsOnly>
@@ -49236,8 +49222,8 @@
       <SpecVarType>Source</SpecVarType>
       <Name>SEP-c4331e0f-37c7-46be-bc75-e3601c1147f1</Name>
       <UserDefinedChartNames />
-      <ProductName>Gas-Liquid Separator</ProductName>
-      <ProductDescription>Fluid phase separator (vapor/liquid)</ProductDescription>
+      <ProductName>Compound Separator</ProductName>
+      <ProductDescription>Model for a hypothetical compound separation process</ProductDescription>
       <ProductAuthor>Daniel Wagner</ProductAuthor>
       <ProductContactInfo>https://dwsim.inforside.com.br</ProductContactInfo>
       <ProductPage>https://dwsim.inforside.com.br</ProductPage>
@@ -49431,7 +49417,7 @@
         </Dimension>
       </Dimensions>
       <AttachedExtensions />
-    </SimulationObject>
+    <SpecifiedStreamIndex>0</SpecifiedStreamIndex><EnergyImb>0.0</EnergyImb><SeparationSpecs><SeparationSpec ID="Water" CompID="Water" SepSpec="PercentInletMassFlow" SpecUnit="%" SpecValue="0.0" /><SeparationSpec ID="Carbon monoxide" CompID="Carbon monoxide" SepSpec="PercentInletMassFlow" SpecUnit="%" SpecValue="100.0" /><SeparationSpec ID="Carbon dioxide" CompID="Carbon dioxide" SepSpec="PercentInletMassFlow" SpecUnit="%" SpecValue="100.0" /><SeparationSpec ID="Hydrogen" CompID="Hydrogen" SepSpec="PercentInletMassFlow" SpecUnit="%" SpecValue="100.0" /><SeparationSpec ID="Oxygen" CompID="Oxygen" SepSpec="PercentInletMassFlow" SpecUnit="%" SpecValue="100.0" /><SeparationSpec ID="Methanol" CompID="Methanol" SepSpec="PercentInletMassFlow" SpecUnit="%" SpecValue="0.04" /></SeparationSpecs></SimulationObject>
     <SimulationObject>
       <Type>DWSIM.UnitOperations.UnitOperations.Expander</Type>
       <ObjectClass>PressureChangers</ObjectClass>
@@ -49768,7 +49754,7 @@
       <MaximumIterations>50</MaximumIterations>
       <MobileCompatible>true</MobileCompatible>
       <ObjectClass>Logical</ObjectClass>
-      <IsDirty>true</IsDirty>
+      <IsDirty>false</IsDirty>
       <CanUsePreviousResults>true</CanUsePreviousResults>
       <DynamicsSpec>Pressure</DynamicsSpec>
       <DynamicsOnly>false</DynamicsOnly>
@@ -59938,7 +59924,7 @@ Stage          P           T          mV          wV          mL          wL    
       <SpecialConnectors />
     </GraphicObject>
     <GraphicObject>
-      <Type>DWSIM.Drawing.SkiaSharp.GraphicObjects.Shapes.VesselGraphic</Type>
+      <Type>DWSIM.Drawing.SkiaSharp.GraphicObjects.Shapes.ComponentSeparatorGraphic</Type>
       <SemiTransparent>false</SemiTransparent>
       <LineWidth>1</LineWidth>
       <GradientMode>true</GradientMode>
@@ -59954,11 +59940,11 @@ Stage          P           T          mV          wV          mL          wL    
       <FontStyle>Bold</FontStyle>
       <Calculated>true</Calculated>
       <Active>true</Active>
-      <Description>Vapor-Liquid Separator</Description>
+      <Description>Tanque desgasificador de metanol crudo (75 a 3 bar)</Description>
       <FlippedH>false</FlippedH>
       <FlippedV>false</FlippedV>
       <IsEnergyStream>false</IsEnergyStream>
-      <ObjectType>Vessel</ObjectType>
+      <ObjectType>ComponentSeparator</ObjectType>
       <Shape>0</Shape>
       <ShapeOverride>DefaultShape</ShapeOverride>
       <Status>Calculated</Status>
@@ -59975,26 +59961,7 @@ Stage          P           T          mV          wV          mL          wL    
       <Rotation>0</Rotation>
       <DrawMode>0</DrawMode>
       <DrawLabel>true</DrawLabel>
-      <InputConnectors>
-        <Connector IsAttached="true" ConnType="ConIn" AttachedFromObjID="MAT-6d56e808-7a01-455d-987c-552d19ce1bc4" AttachedFromConnIndex="0" AttachedFromEnergyConn="False" />
-        <Connector IsAttached="false" />
-        <Connector IsAttached="false" />
-        <Connector IsAttached="false" />
-        <Connector IsAttached="false" />
-        <Connector IsAttached="false" />
-        <Connector IsAttached="true" ConnType="ConEn" AttachedFromObjID="EN-70100000-0000-0000-0000-000000000703" AttachedFromConnIndex="0" AttachedFromEnergyConn="True" />
-      </InputConnectors>
-      <OutputConnectors>
-        <Connector IsAttached="true" ConnType="ConOut" AttachedToObjID="MAT-10408406-5d4e-4c0c-8449-9f95d3fca4d6" AttachedToConnIndex="0" AttachedToEnergyConn="False" />
-        <Connector IsAttached="true" ConnType="ConOut" AttachedToObjID="MAT-cd98ffea-c62d-48eb-b877-2fe1cc1f64a5" AttachedToConnIndex="0" AttachedToEnergyConn="False" />
-        <Connector IsAttached="false" />
-        <Connector IsAttached="false" />
-        <Connector IsAttached="false" />
-      </OutputConnectors>
-      <EnergyConnector>
-        <Connector IsAttached="false" />
-      </EnergyConnector>
-      <SpecialConnectors />
+      <InputConnectors><Connector IsAttached="true" ConnType="ConIn" AttachedFromObjID="MAT-6d56e808-7a01-455d-987c-552d19ce1bc4" AttachedFromConnIndex="0" AttachedFromEnergyConn="False" /></InputConnectors><OutputConnectors><Connector IsAttached="true" ConnType="ConOut" AttachedToObjID="MAT-10408406-5d4e-4c0c-8449-9f95d3fca4d6" AttachedToConnIndex="0" AttachedToEnergyConn="False" /><Connector IsAttached="true" ConnType="ConOut" AttachedToObjID="MAT-cd98ffea-c62d-48eb-b877-2fe1cc1f64a5" AttachedToConnIndex="0" AttachedToEnergyConn="False" /></OutputConnectors><EnergyConnector><Connector IsAttached="false" /></EnergyConnector><SpecialConnectors />
     </GraphicObject>
     <GraphicObject>
       <Type>DWSIM.Drawing.SkiaSharp.GraphicObjects.Shapes.MixerGraphic</Type>
@@ -62329,7 +62296,7 @@ Stage          P           T          mV          wV          mL          wL    
         <Connector IsAttached="false" />
       </InputConnectors>
       <OutputConnectors>
-        <Connector IsAttached="true" ConnType="ConOut" AttachedToObjID="SEP-c4331e0f-37c7-46be-bc75-e3601c1147f1" AttachedToConnIndex="6" AttachedToEnergyConn="False" />
+        <Connector IsAttached="false" />
       </OutputConnectors>
       <EnergyConnector>
         <Connector IsAttached="false" />
