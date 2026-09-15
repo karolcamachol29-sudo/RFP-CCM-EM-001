@@ -58216,7 +58216,7 @@ Stage          P           T          mV          wV          mL          wL    
     <Type>DWSIM.SharedClasses.DWSIM.Flowsheet.FlowsheetVariables</Type>
     <SimulationMode />
     <BackupFileName>simulación 1_backup_20260907_213755.dwbcs</BackupFileName>
-    <FilePath>/home/karoc/Documentos/Antigravity/Proyecto Licitacion/Simulaciones_DWSIM/DWSIM_v1_APROBADA_Solvanta.dwxml</FilePath>
+    <FilePath>/home/karoc/Documentos/Proyecto Licitacion/Simulaciones_DWSIM/DWSIM_v1_APROBADA_Solvanta.dwxml</FilePath>
     <FlowsheetQuickConnect>false</FlowsheetQuickConnect>
     <FlowsheetShowCalculationQueue>false</FlowsheetShowCalculationQueue>
     <FlowsheetShowConsoleWindow>false</FlowsheetShowConsoleWindow>
