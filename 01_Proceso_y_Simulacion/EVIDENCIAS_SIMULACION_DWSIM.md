@@ -43,8 +43,8 @@ La siguiente imagen documenta la distribución física y la nomenclatura normali
 9. **`S-208` (Efluente SOEC enfriado):** Corriente bifásica enfriada a $38.0^\circ\text{C}$ y $19.4\text{ bar}$ que entra al separador flash `V-201`.
 10. **`S-209` (Hidrógeno Verde Separado):** Gas de tope de `V-201` ($633.548\text{ kmol/h}$, $1\,314.77\text{ kg/h}$) con pureza molar de $99.63\%$ hacia el mezclador de syngas `MIX-301`.
 11. **`S-210` (Condensado de vapor no reaccionado):** Fase líquida de fondo de `V-201` ($268.165\text{ kmol/h}$, $4\,831.02\text{ kg/h}$) recirculada hacia la unidad ZLD.
-12. **`S-301` (Syngas fresco combinado):** $754.548\text{ kmol/h}$ ($6\,589.11\text{ kg/h}$) a $32.9^\circ\text{C}$ y $19.4\text{ bar}$ hacia el precalentador `HT-4`.
-13. **`S-302` (Syngas precalentado a succión):** Syngas elevado a $71.7^\circ\text{C}$ en `HT-4` ($250.00\text{ kW}$) ingresando al compresor `C-301`.
+12. **`S-301` (Syngas fresco combinado):** $754.548\text{ kmol/h}$ ($6\,589.11\text{ kg/h}$) a $32.9^\circ\text{C}$ y $19.4\text{ bar}$ hacia el precalentador `E-301`.
+13. **`S-302` (Syngas precalentado a succión):** Syngas elevado a $71.7^\circ\text{C}$ en `E-301` ($250.00\text{ kW}$) ingresando al compresor `C-301`.
 14. **`S-303` (Syngas comprimido):** Descarga de `C-301` a $75.0\text{ bar}$ y $271.0^\circ\text{C}$ ($1\,316.67\text{ kW}$) hacia el bucle de reacción.
 
 ---
@@ -113,9 +113,9 @@ La siguiente captura panorámica del simulador presenta el flowsheet integral en
 ![Flowsheet Completo de la Simulación DWSIM v1](evidencias/04_flowsheet_completo_nomenclatura_dwsim.png)
 
 ### Características Notables de la Arquitectura del Flowsheet:
-- **Estructura Modular por Áreas:** Área 100 (Acondicionamiento $\text{CO}_2$), Área 200 (Generación de $\text{H}_2$ SOEC), Área 300 (Precalentamiento y Compresión de Syngas con `HT-4` y `C-301`), Área 400 (Bucle de Síntesis Exotérmico), Área 500 (Recuperación Térmica y Separación Flash HP), Área 600 (Desgasificación LP y Destilación Fraccionada), Área 800 (Tratamiento ZLD y Reúso de Agua).
+- **Estructura Modular por Áreas:** Área 100 (Acondicionamiento $\text{CO}_2$), Área 200 (Generación de $\text{H}_2$ SOEC), Área 300 (Precalentamiento y Compresión de Syngas con `E-301` y `C-301`), Área 400 (Bucle de Síntesis Exotérmico), Área 500 (Recuperación Térmica y Separación Flash HP), Área 600 (Desgasificación LP y Destilación Fraccionada), Área 800 (Tratamiento ZLD y Reúso de Agua).
 - **Lazos de Reciclo Rigurosos:** `RCY-501` (reciclo de gas no convertido al $96\%$) y `RCY-801` (reciclo de condensado y fondos de torre tratados), ambos en convergencia total.
-- **Trazabilidad Biunívoca:** Cada identificador de corriente (`S-101` a `S-804`) y equipo (`EL-201`, `HT-4`, `C-301`, `R-401`, `V-501`, `C-501`, `X-501`, `T-601`, `V-801`, `P-801`) corresponde de forma idéntica con el Plano de Tuberías e Instrumentación preliminar PFD v0 y las tablas TC-01 / TE-01.
+- **Trazabilidad Biunívoca:** Cada identificador de corriente (`S-101` a `S-804`) y equipo (`EL-201`, `E-301`, `C-301`, `R-401`, `V-501`, `C-501`, `X-501`, `T-601`, `V-801`, `P-801`) corresponde de forma idéntica con el Plano de Tuberías e Instrumentación preliminar PFD v0 y las tablas TC-01 / TE-01.
 
 ---
 
@@ -135,7 +135,7 @@ La siguiente tabla certifica la coincidencia numérica exacta cifra por cifra co
 ## 7. Registro de Representación y Equivalencia de Equipos: DWSIM vs. Planta Real
 
 1. **Reactor Químico de Síntesis de Metanol (`R-401` + `R-401-S` + `E-R401`):** Reactor BWR multitubular tipo Lurgi con tubos catalíticos cargados de $\text{Cu/ZnO/Al}_2\text{O}_3$ y carcasa caldera generando vapor a $20\text{ bar}$ ($12\,335.36\text{ kW}$ exportados a SOEC).
-2. **Precalentador de Syngas Fresco (`HT-4`):** Acondicionador térmico de $250.00\text{ kW}$ que eleva la temperatura del syngas de $32.9^\circ\text{C}$ a $71.7^\circ\text{C}$ para evitar condensación y asegurar compresión en fase vapor en `C-301`.
+2. **Precalentador de Syngas Fresco (`E-301`):** Acondicionador térmico de $250.00\text{ kW}$ que eleva la temperatura del syngas de $32.9^\circ\text{C}$ a $71.7^\circ\text{C}$ para evitar condensación y asegurar compresión en fase vapor en `C-301`.
 3. **Compresor de Syngas (`C-301`):** Compresor multietapa con demanda de $1\,316.67\text{ kW}$ presurizando de $19.4$ a $75.0\text{ bar}$ ($271.0^\circ\text{C}$).
 4. **Intercambiador Economizador Efluente/Alimentación (`E-502A` y `E-502B`):** FEHE de alta presión con carga acoplada de $1\,235.43\text{ kW}$, garantizando gas de reciclo libre de condensado a $60.0^\circ\text{C}$.
 5. **Tanque Desgasificador de Metanol Crudo (`V-601`):** Flash LP que desorbe gases no condensables a $3.0\text{ bar}$ hacia venteo `S-601` ($6.57\text{ kg/h}$), protegiendo la columna `T-601`.

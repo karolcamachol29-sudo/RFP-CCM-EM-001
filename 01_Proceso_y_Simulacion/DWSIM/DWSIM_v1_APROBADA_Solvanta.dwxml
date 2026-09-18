@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <DWSIM_Simulation_Data>
   <GeneralInfo>
     <BuildVersion>10.2.4.0</BuildVersion>
@@ -67918,7 +67918,7 @@ if flujo_anodico is not None:
       <Height>25</Height>
       <IsConnector>false</IsConnector>
       <Name>AQ-51240c4a-4550-4420-b266-369e07b7f7d6</Name>
-      <Tag>HT-4</Tag>
+      <Tag>E-301</Tag>
       <Width>25</Width>
       <X>754.2586</X>
       <Y>492.50543</Y>
