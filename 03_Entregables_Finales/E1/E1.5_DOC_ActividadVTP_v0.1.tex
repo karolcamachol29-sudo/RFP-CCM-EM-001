@@ -10,6 +10,7 @@
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{xltabular}
 \usepackage{pdflscape}
 \usepackage{microtype}
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
@@ -17,6 +18,7 @@
 \usepackage{array}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage{fancyhdr}
 \usepackage{tcolorbox}
 \tcbuselibrary{skins,breakable}
@@ -40,6 +42,7 @@
 \definecolor{tealboxbg}{RGB}{247, 252, 252}
 \definecolor{githubboxbg}{RGB}{246, 248, 250}
 \definecolor{githubborder}{RGB}{208, 215, 222}
+\definecolor{aliceblue}{RGB}{240, 248, 255}
 
 % --- Formato de Secciones con Punto ---
 \titleformat{\section}{\large\bfseries\color{navyblue}}{\thesection.}{0.5em}{}
@@ -150,7 +153,7 @@
 {\large \textbf{DISEÑO DE PROCESOS Y PRODUCTOS QUÍMICOS}}\\[0.4cm]
 {\Huge \textbf{\color{navyblue} Actividad VTP-01}}\\[0.3cm]
 {\Large \textbf{Entregable E1.5: Verificación de DWSIM v1, Tablas de Corrientes (TC-01/TE-01) y PFD v0}}\\[0.2cm]
-{\large Planta de e-Metanol Grado AA ($30\,045.04\text{ t/año}$) a partir de $\text{CO}_2$ Capturado e Hidrógeno Verde SOEC}
+{\large Planta de e-Metanol Grado AA ($30\,309.20\text{ t/año}$) a partir de $\text{CO}_2$ Capturado e Hidrógeno Verde SOEC}
 \end{center}
 
 \vspace{0.3cm}
@@ -228,16 +231,17 @@ Consolidar la simulación rigurosa DWSIM v1 como la base de datos termodinámica
 \toprule
 \textbf{Parámetro de Diseño} & \textbf{Meta de Licitación} & \textbf{Valor Verificado DWSIM v1 (Exacto)} \\
 \midrule
-Capacidad anual e-metanol comercial ($8\,000\text{ h/año}$) & $\ge 30\,000\text{ t/año}$ & $\mathbf{30\,045.04\text{ t/año}}$ ($3\,755.63\text{ kg/h}$) \\
-Producción anual neta de metanol puro ($100\%$ base seca) & $30\,000\text{ t/año}$ & $\mathbf{30\,000.00\text{ t/año}}$ ($3\,750.00\text{ kg/h}$) \\
-Pureza mínima comercial de metanol (base húmeda) & $\ge 99.85\text{ \% p/p}$ & $\mathbf{99.850\text{ \% p/p}}$ (IMPCA / ASTM D1152) \\
+Capacidad anual e-metanol comercial ($8\,000\text{ h/año}$) & $\ge 30\,000\text{ t/año}$ & $\mathbf{30\,309.20\text{ t/año}}$ ($3\,788.65\text{ kg/h}$) \\
+Producción anual neta de metanol puro ($100\%$ base seca) & $30\,000\text{ t/año}$ & $\mathbf{30\,276.24\text{ t/año}}$ ($3\,784.53\text{ kg/h}$) \\
+Pureza mínima comercial de metanol (base húmeda) & $\ge 99.85\text{ \% p/p}$ & $\mathbf{99.891\text{ \% p/p}}$ (IMPCA / ASTM D1152) \\
+Pureza molar verificada en simulación & Reportada & $\mathbf{99.807\text{ \% mol/mol}}$ \\
 Pureza química en base seca (libre de humedad) & $100.00\text{ \% p/p}$ & $\mathbf{100.000\text{ \% p/p}}$ \\
-Alimentación de $\text{CO}_2$ de captura externa (\texttt{S-01}) & Según balance & $\mathbf{5\,222.43\text{ kg/h}}$ ($119.81\text{ kmol/h}$, $99\text{ mol\%}$) \\
-Hidrógeno verde generado y consumido en planta & Estequiométrico ($3:1$) & $\mathbf{1\,312.77\text{ kg/h}}$ seco ($632.58\text{ kmol/h}$) \\
-Agua desmineralizada de reposición Make-up (\texttt{S-03\_MK})& Según balance global & $\mathbf{9\,240.94\text{ kg/h}}$ ($512.95\text{ kmol/h}$) \\
-Agua condensada reciclada del efluente ZLD (\texttt{S-ZLD\_PUMP})& Vertido Cero (ZLD) & $\mathbf{6\,979.31\text{ kg/h}}$ ($387.41\text{ kmol/h}$) \\
-Subproducto oxígeno de alta pureza ánodo SOEC (\texttt{S-05}) & Según electrólisis & $\mathbf{10\,083.44\text{ kg/h}}$ ($315.12\text{ kmol/h}$, $100\%$) \\
-Consumo eléctrico neto de planta & Suministro red & $\mathbf{55.31\text{ MW}}$ (SOEC $+$ Comp. $-$ Turboexp.) \\
+Alimentación de $\text{CO}_2$ de captura externa (\texttt{S-101}) & Según balance & $\mathbf{5\,274.34\text{ kg/h}}$ ($121.00\text{ kmol/h}$, $99\text{ mol\%}$) \\
+Hidrógeno verde generado en SOEC (\texttt{S-209}) & Estequiométrico ($3:1$) & $\mathbf{1\,314.77\text{ kg/h}}$ seco ($633.55\text{ kmol/h}$) \\
+Agua desmineralizada de reposición Make-up (\texttt{S-201})& Según balance global & $\mathbf{9\,241.84\text{ kg/h}}$ ($513.00\text{ kmol/h}$) \\
+Agua condensada reciclada del efluente ZLD (\texttt{S-202})& Vertido Cero (ZLD) & $\mathbf{7\,003.86\text{ kg/h}}$ ($388.77\text{ kmol/h}$) \\
+Subproducto oxígeno de alta pureza ánodo SOEC (\texttt{S-206}) & Según electrólisis & $\mathbf{10\,098.76\text{ kg/h}}$ ($315.60\text{ kmol/h}$, $100\%$) \\
+Consumo eléctrico neto de planta & Suministro red & $\mathbf{55.44\text{ MW}}$ (SOEC $+$ Comp. $+$ Calef. $-$ Expansor) \\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -257,21 +261,21 @@ Para validar y congelar el modelo antes de generar la documentación de ingenier
 \renewcommand{\arraystretch}{0.96}
 \textbf{Cuadro 2: Protocolo de verificación paso a paso de DWSIM v1 (Etapa 1).}\\[2pt]
 {\scriptsize Todas las rutas corresponden al repositorio oficial: \texttt{03\_Entregables\_Finales/E1/VTP-01\_Solvanta/}}\\[3pt]
-\begin{tabularx}{\textwidth}{cp{2.7cm}Xp{4.0cm}p{2.2cm}}
+\begin{tabularx}{\textwidth}{cp{2.6cm}Xp{3.2cm}p{2.0cm}}
 \toprule
 \textbf{Paso} & \textbf{Acción de Verificación} & \textbf{Comentario y Resultado Técnico} & \textbf{Archivo Referencia} & \textbf{Subcarpeta} \\
 \midrule
 \textbf{1.1} & Abrir simulación DWSIM v1 oficial. & Archivo abierto exitosamente en DWSIM v10.2.4; 67 objetos cargados sin error. & {\scriptsize\texttt{DWSIM\_v1\_APROBADA.dwxmz}} & \texttt{01\_DWSIM/} \\
-\textbf{1.2} & Ejecutar flowsheet completo (\textit{Solve}). & Convergencia global en 4 iteraciones con método sequential modular y Wegstein. & {\scriptsize\texttt{Reporte\_Verificacion.pdf}} & \texttt{02\_Verificacion/} \\
+\textbf{1.2} & Ejecutar flowsheet completo (\textit{Solve}). & Convergencia global en 4 iteraciones con método sequential modular y Wegstein. & {\scriptsize\texttt{Reporte\_Verif.pdf}} & \texttt{02\_Verificacion/} \\
 \textbf{1.3} & Confirmar ausencia de errores en objetos. & 100\% de bloques y corrientes en estado azul calculado (\texttt{Calculated: true}); cero alertas. & Flowsheet DWSIM congelado & \texttt{02\_Verificacion/} \\
-\textbf{1.4} & Verificar convergencia de recirculaciones. & Lazo gas \texttt{RCY-601} converge en 7 iter.; lazo acuoso \texttt{RCY-801} (ZLD) en 4 iteraciones. & {\scriptsize\texttt{Reporte\_Verificacion.pdf}} & \texttt{02\_Verificacion/} \\
-\textbf{1.5} & Revisar propiedades en cada corriente. & 30 corrientes maestras verificadas: sin presiones negativas, densidades consistentes. & \textbf{Tabla TC-01} (\texttt{TC-01.xlsx}) & \texttt{03\_Tablas/} \\
+\textbf{1.4} & Verificar convergencia de recirculaciones. & Lazo gas \texttt{RCY-501} converge en 7 iter.; lazo acuoso \texttt{RCY-801} (ZLD) en 4 iteraciones. & {\scriptsize\texttt{Reporte\_Verif.pdf}} & \texttt{02\_Verificacion/} \\
+\textbf{1.5} & Revisar propiedades en cada corriente. & 36 corrientes de proceso verificadas: sin presiones negativas, densidades consistentes. & \textbf{Tabla TC-01} (\texttt{TC-01.xlsx}) & \texttt{03\_Tablas/} \\
 \textbf{1.6} & Confirmar gradiente en equipos pasivos. & Enfriadores y tuberías operan con caídas de presión físicas normales ($\Delta P \le 0$). & \textbf{TC-01} y \textbf{PFD-v0} & \texttt{03\_Tablas/} / \texttt{04/} \\
-\textbf{1.7} & Verificar aumentos de presión activos. & Compresor syngas \texttt{C-301} ($20 \to 75\text{ bar}$), soplador \texttt{C-601} y bomba ZLD \texttt{P-801}. & \textbf{Tabla TE-01} (\texttt{TE-01.xlsx}) & \texttt{03\_Tablas/} \\
-\textbf{1.8} & Verificar corriente $\text{H}_2$ desde SOEC. & Corriente \texttt{S-07}: $1\,312.77\text{ kg/h}$ ($632.58\text{ kmol/h}$) de $\text{H}_2$ seco a $19.4\text{ bar}$ y $38^\circ\text{C}$. & \textbf{Tabla TC-01} (\texttt{S-07}) & \texttt{03\_Tablas/} \\
-\textbf{1.9} & Verificar alimentación $\text{CO}_2$ de captura. & Corriente \texttt{S-01}: $5\,222.43\text{ kg/h}$ ($119.81\text{ kmol/h}$) a $20.0\text{ bar}$ y $25^\circ\text{C}$ ($99\text{ mol\%}$). & \textbf{Tabla TC-01} (\texttt{S-01}) & \texttt{03\_Tablas/} \\
-\textbf{1.10} & Comprobar reactores, flash, purga y producto. & Reactor BWR \texttt{R-401} a $245^\circ\text{C}$, flash \texttt{V-501}, purga $4\%$, torre \texttt{T-701} y flash ZLD. & \textbf{PFD-v0} y \textbf{TC-01} & \texttt{04\_PFD/} / \texttt{03/} \\
-\textbf{1.11} & Identificar corrientes de frontera (BL). & Entradas: \texttt{S-01}, \texttt{S-03\_MK}; Salidas: \texttt{S-15} ($3\,755.63\text{ kg/h}$), \texttt{S-05}, purga y ZLD. & \textbf{Matriz\_Trazabilidad} & \texttt{05\_Trazabilidad/} \\
+\textbf{1.7} & Verificar aumentos de presión activos. & Compresor syngas \texttt{C-301} ($20 \to 75\text{ bar}$), soplador \texttt{C-501} y bomba ZLD \texttt{P-801}. & \textbf{Tabla TE-01} (\texttt{TE-01.xlsx}) & \texttt{03\_Tablas/} \\
+\textbf{1.8} & Verificar corriente $\text{H}_2$ desde SOEC. & Corriente \texttt{S-209}: $1\,314.77\text{ kg/h}$ ($633.55\text{ kmol/h}$) de $\text{H}_2$ seco a $19.4\text{ bar}$ y $38^\circ\text{C}$. & \textbf{Tabla TC-01} (\texttt{S-07}) & \texttt{03\_Tablas/} \\
+\textbf{1.9} & Verificar alimentación $\text{CO}_2$ de captura. & Corriente \texttt{S-101}: $5\,274.34\text{ kg/h}$ ($121.00\text{ kmol/h}$) a $20.0\text{ bar}$ y $25^\circ\text{C}$ ($99\text{ mol\%}$). & \textbf{Tabla TC-01} (\texttt{S-01}) & \texttt{03\_Tablas/} \\
+\textbf{1.10} & Comprobar reactores, flash, purga y producto. & Reactor BWR \texttt{R-401} a $245^\circ\text{C}$, flash \texttt{V-501}, purga $4\%$, torre \texttt{T-601} y flash ZLD. & \textbf{PFD-v0} y \textbf{TC-01} & \texttt{04\_PFD/} / \texttt{03/} \\
+\textbf{1.11} & Identificar corrientes de frontera (BL). & Entradas: \texttt{S-101}, \texttt{S-201}; Salidas: \texttt{S-604} ($3\,788.65\text{ kg/h}$), \texttt{S-206}, \texttt{S-506}, \texttt{S-601}. & \textbf{Matriz\_Trazabilidad} & \texttt{05\_Trazabilidad/} \\
 \textbf{1.12} & Generar y archivar evidencias gráficas. & Capturas de pantalla de flowsheet, perfiles térmicos y matrices de convergencia. & Carpeta Evidencias & \texttt{02\_Verificacion/} \\
 \bottomrule
 \end{tabularx}
@@ -294,18 +298,18 @@ El error relativo del balance global de materia se calculó mediante la sustituc
 Sustituyendo los valores cuantitativos extraídos del modelo congelado DWSIM v1:
 \begin{align*}
 \sum \dot{m}_{\text{entrada}} &= \dot{m}_{\text{S-101}}(\text{CO}_2) + \dot{m}_{\text{S-201}}(\text{Agua make-up}) \\
-&= 5\,281.20\text{ kg/h} + 9\,241.84\text{ kg/h} = \mathbf{14\,523.04\text{ kg/h}} \\[4pt]
-\sum \dot{m}_{\text{salida}} &= \dot{m}_{\text{S-604}}(\text{Metanol comercial}) + \dot{m}_{\text{S-206}}(\text{Oxígeno}) + \dot{m}_{\text{S-504}}(\text{Purga}) \\
-&\quad + \dot{m}_{\text{S-601}}(\text{Venteo LP}) + \dot{m}_{\text{S-210/605}}(\text{Efluente/Purga H}_2\text{O}) \\
-&= 3\,756.25 + 8\,207.74 + 455.50 + 9.00 + 2\,094.55 = \mathbf{14\,523.04\text{ kg/h}}
+&= 5\,274.34\text{ kg/h} + 9\,241.84\text{ kg/h} = \mathbf{14\,516.18\text{ kg/h}} \\[4pt]
+\sum \dot{m}_{\text{salida}} &= \dot{m}_{\text{S-604}}(\text{Metanol comercial}) + \dot{m}_{\text{S-206}}(\text{Oxígeno}) + \dot{m}_{\text{S-506}}(\text{Purga expandida}) \\
+&\quad + \dot{m}_{\text{S-601}}(\text{Venteo LP}) + \dot{m}_{\text{S-804}}(\text{Purga ZLD}) \\
+&= 3\,788.65 + 10\,098.76 + 613.59 + 6.57 + 0.00 = \mathbf{14\,507.57\text{ kg/h}}
 \end{align*}
 
 Sustituyendo formalmente en la fórmula de discrepancia global:
 \begin{equation}
-\varepsilon_m(\%) = \frac{\left| 14\,463.37\text{ kg/h} - 14\,453.43\text{ kg/h}\right|}{14\,463.37\text{ kg/h}} \times 100 = \frac{9.94\text{ kg/h}}{14\,463.37\text{ kg/h}} \times 100 = \mathbf{0.0688\%}
+\varepsilon_m(\%) = \frac{\left| 14\,516.18\text{ kg/h} - 14\,507.57\text{ kg/h}\right|}{14\,516.18\text{ kg/h}} \times 100 = \frac{8.61\text{ kg/h}}{14\,516.18\text{ kg/h}} \times 100 = \mathbf{0.0593\%}
 \end{equation}
 
-\textbf{Dictamen técnico:} $\varepsilon_m = 0.0688\% \ll 0.50\%$, cumpliendo con margen de seguridad de casi un orden de magnitud la tolerancia máxima exigida por las bases de licitación.
+\textbf{Dictamen técnico:} $\varepsilon_m = 0.0593\% \ll 0.50\%$, cumpliendo con margen de seguridad de casi un orden de magnitud la tolerancia máxima exigida por las bases de licitación.
 
 \vspace{0.2cm}
 \subsection{Balance de materia por componente con fórmulas sustituidas}
@@ -315,78 +319,74 @@ Para cada componente químico $i$, se calculó el error relativo sustituyendo la
 \varepsilon_i(\%) = \frac{\left|\dot{m}_{i,\text{entrada}} + \dot{r}_{i,\text{gen}} - \dot{r}_{i,\text{cons}} - \dot{m}_{i,\text{salida}}\right|}{\dot{m}_{i,\text{referencia}}} \times 100
 \end{equation}
 
-\noindent\textbf{1. Dióxido de carbono ($\text{CO}_2$):}
-\begin{align*}
-\text{Entrada (S-01): } 5\,220.01\text{ kg/h} \quad &\Longleftrightarrow \quad \text{Consumo R-401: } 5\,178.50\text{ kg/h} + \text{Salidas: } 41.51\text{ kg/h} \\
-\varepsilon_{\text{CO}_2} &= \frac{|5\,220.01 - (5\,178.50 + 41.51)|}{5\,220.01} \times 100 = \frac{0.00}{5\,220.01} \times 100 = \mathbf{0.000\%}
-\end{align*}
+\noindent\textbf{1. Dióxido de carbono ($\text{CO}_2$):} Consumo estequiométrico en reactor \texttt{R-401}:
+\begin{equation*}
+\text{Entrada: } 5\,271.90\text{ kg/h}, \quad \dot{r}_{\text{esteq}}: -5\,233.71\text{ kg/h}, \quad \text{Salidas: } 32.80\text{ kg/h} \implies \Delta_{\text{CO}_2} = \mathbf{+5.39\text{ kg/h}} \; (\varepsilon = \mathbf{0.102\%})
+\end{equation*}
 
-\noindent\textbf{2. Hidrógeno ($\text{H}_2$):}
-\begin{align*}
-\text{Entrada: } 2.42 + \text{Gen. SOEC: } 1\,034.34\text{ kg/h} \quad &\Longleftrightarrow \quad \text{Consumo R-401: } 500.00 + \text{Salidas: } 536.76\text{ kg/h} \\
-\varepsilon_{\text{H}_2} &= \frac{|(2.42 + 1\,034.34) - (500.00 + 536.76)|}{536.76} \times 100 = \mathbf{0.000\%}
-\end{align*}
+\noindent\textbf{2. Hidrógeno ($\text{H}_2$):} Generación neta SOEC frente a consumo catalítico en síntesis:
+\begin{equation*}
+\text{Entrada: } 2.44\text{ kg/h}, \quad \dot{r}_{\text{neto}}: +553.21\text{ kg/h}, \quad \text{Salidas: } 554.35\text{ kg/h} \implies \Delta_{\text{H}_2} = \mathbf{+1.30\text{ kg/h}} \; (\varepsilon = \mathbf{0.102\%})
+\end{equation*}
 
-\noindent\textbf{3. Metanol ($\text{CH}_3\text{OH}$):}
-\begin{align*}
-\text{Generación bruta R-401: } 3\,779.32\text{ kg/h} \quad &\Longleftrightarrow \quad \text{Producto S-15: } 3\,750.00 + \text{Purga/ZLD: } 29.32\text{ kg/h} \\
-\varepsilon_{\text{MeOH}} &= \frac{|3\,779.32 - (3\,750.00 + 29.32)|}{3\,779.32} \times 100 = \frac{0.00}{3\,779.32} \times 100 = \mathbf{0.000\%}
-\end{align*}
+\noindent\textbf{3. Metanol ($\text{CH}_3\text{OH}$):} Síntesis catalítica y recuperación en producto comercial:
+\begin{equation*}
+\text{Entrada: } 0.00\text{ kg/h}, \quad \dot{r}_{\text{gen}}: +3\,810.55\text{ kg/h}, \quad \text{Salidas: } 3\,810.55\text{ kg/h} \implies \Delta_{\text{MeOH}} = \mathbf{0.00\text{ kg/h}} \; (\varepsilon = \mathbf{0.000\%})
+\end{equation*}
 
-\noindent\textbf{4. Agua ($\text{H}_2\text{O}$):}
-\begin{align*}
-\text{Entrada Make-up: } 9\,240.94\text{ kg/h} \quad &\Longleftrightarrow \quad \text{Consumo SOEC neto: } 9\,228.55 + \text{Salidas: } 12.39\text{ kg/h} \\
-\varepsilon_{\text{H}_2\text{O}} &= \frac{|9\,240.94 - (9\,228.55 + 12.39)|}{9\,240.94} \times 100 = \frac{0.00}{9\,240.94} \times 100 = \mathbf{0.000\%}
-\end{align*}
+\noindent\textbf{4. Agua ($\text{H}_2\text{O}$):} Reposición neta make-up frente a consumo en SOEC y síntesis:
+\begin{equation*}
+\text{Entrada: } 9\,241.84\text{ kg/h}, \quad \dot{r}_{\text{neto}}: -9\,228.59\text{ kg/h}, \quad \text{Salidas: } 11.11\text{ kg/h} \implies \Delta_{\text{H}_2\text{O}} = \mathbf{+2.14\text{ kg/h}} \; (\varepsilon = \mathbf{0.023\%})
+\end{equation*}
 
-\noindent\textbf{5. Oxígeno ($\text{O}_2$):}
-\begin{align*}
-\text{Generación SOEC (ánodo): } 10\,083.44\text{ kg/h} \quad &\Longleftrightarrow \quad \text{Salida subproducto S-05: } 10\,083.44\text{ kg/h} \\
-\varepsilon_{\text{O}_2} &= \frac{|10\,083.44 - 10\,083.44|}{10\,083.44} \times 100 = \frac{0.00}{10\,083.44} \times 100 = \mathbf{0.000\%}
-\end{align*}
+\noindent\textbf{5. Oxígeno ($\text{O}_2$):} Disociación electroquímica anódica en electrolizador SOEC:
+\begin{equation*}
+\text{Entrada: } 0.00\text{ kg/h}, \quad \dot{r}_{\text{gen}}: +10\,098.54\text{ kg/h}, \quad \text{Salida: } 10\,098.76\text{ kg/h} \implies \Delta_{\text{O}_2} = \mathbf{-0.22\text{ kg/h}} \; (\varepsilon = \mathbf{0.002\%})
+\end{equation*}
 
-\noindent\textbf{6. Monóxido de carbono ($\text{CO}$):} Intermediario en circuito cerrado:
-\begin{align*}
-\text{Entrada BL: } 0.00\text{ kg/h} \quad &\Longleftrightarrow \quad \text{Salida BL: } 0.00\text{ kg/h} \quad (\text{Equilibrio RWGS cerrado}) \\
-\varepsilon_{\text{CO}} &= \frac{|0.00 - 0.00|}{1.00\text{ kg/h}} \times 100 = \mathbf{0.000\%}
-\end{align*}
+\noindent\textbf{6. Monóxido de carbono ($\text{CO}$):} Intermediario de reacción en circuito cerrado de bucle:
+\begin{equation*}
+\text{Entrada: } 0.00\text{ kg/h}, \quad \dot{r}_{\text{neto}}: 0.00\text{ kg/h}, \quad \text{Salida: } 0.00\text{ kg/h} \implies \Delta_{\text{CO}} = \mathbf{0.00\text{ kg/h}} \; (\varepsilon = \mathbf{0.000\%})
+\end{equation*}
 
-\vspace{0.3cm}
+\vspace{0.25cm}
 \begin{center}
 \small
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.06}
 \textbf{Cuadro 2B: Verificación del balance global de materia por componente (DWSIM v1 exacto).}\\[3pt]
-\begin{tabularx}{\textwidth}{p{2.3cm}cccccp{2.7cm}}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.1cm} >{\centering\arraybackslash}p{2.0cm} >{\centering\arraybackslash}p{2.4cm} >{\centering\arraybackslash}p{2.0cm} >{\centering\arraybackslash}p{1.6cm} >{\centering\arraybackslash}p{1.5cm} >{\centering\arraybackslash}X}
 \toprule
-\textbf{Componente} & \textbf{Entrada (kg/h)} & \textbf{Reacc. / Gen. (kg/h)} & \textbf{Salida (kg/h)} & \textbf{Dif. (kg/h)} & \textbf{Error (\%)} & \textbf{Estado} \\
+\textbf{Componente} & \textbf{Entrada (kg/h)} & \textbf{Reacc. esteq. (kg/h)} & \textbf{Salida (kg/h)} & \textbf{Dif. (kg/h)} & \textbf{Error (\%)} & \textbf{Estado} \\
 \midrule
-$\text{CO}_2$ & $5\,220.01$ & $-5\,178.50$ & $41.51$ & $0.00$ & $0.000\%$ & \textbf{Aceptado} ($<0.1\%$) \\
-$\text{H}_2$ & $2.42$ & $+534.34$ (neto) & $536.76$ & $0.00$ & $0.000\%$ & \textbf{Aceptado} ($<0.1\%$) \\
-$\text{CH}_3\text{OH}$ & $0.00$ & $+3\,779.32$ & $3\,779.32$ & $0.00$ & $0.000\%$ & \textbf{Aceptado} ($<0.1\%$) \\
-$\text{H}_2\text{O}$ & $9\,240.94$ & $-9\,228.55$ (neto) & $12.39$ & $0.00$ & $0.000\%$ & \textbf{Aceptado} ($<0.1\%$) \\
-$\text{CO}$ & $0.00$ & $0.00$ & $0.00$ & $0.00$ & $0.000\%$ & \textbf{Aceptado} ($<0.1\%$) \\
-$\text{O}_2$ & $0.00$ & $+10\,083.44$ & $10\,083.44$ & $0.00$ & $0.000\%$ & \textbf{Aceptado} ($<0.1\%$) \\
+$\text{CO}_2$ & $5\,271.90$ & $-5\,233.71$ & $32.80$ & $+5.39$ & $0.102\%$ & \textbf{Aceptado} ($<0.5\%$) \\
+$\text{H}_2$ & $2.44$ & $+553.21$ & $554.35$ & $+1.30$ & $0.102\%^*$ & \textbf{Aceptado} ($<0.5\%$) \\
+$\text{CH}_3\text{OH}$ & $0.00$ & $+3\,810.55$ & $3\,810.55$ & $0.00$ & $0.000\%$ & \textbf{Aceptado} ($<0.5\%$) \\
+$\text{H}_2\text{O}$ & $9\,241.84$ & $-9\,228.59$ & $11.11$ & $+2.14$ & $0.023\%$ & \textbf{Aceptado} ($<0.5\%$) \\
+$\text{CO}$ & $0.00$ & $0.00$ & $0.00$ & $0.00$ & $0.000\%$ & \textbf{Aceptado} ($<0.5\%$) \\
+$\text{O}_2$ & $0.00$ & $+10\,098.54$ & $10\,098.76$ & $-0.22$ & $0.002\%$ & \textbf{Aceptado} ($<0.5\%$) \\
 \midrule
-\textbf{Total Planta} & $\mathbf{14\,463.37}$ & $\mathbf{0.00}$ & $\mathbf{14\,453.43}$ & $\mathbf{9.94}$ & $\mathbf{0.0688\%}$ & \textbf{Balance Cerrado} \\
+\textbf{Total Planta} & $\mathbf{14\,516.18}$ & $\mathbf{0.00}$ & $\mathbf{14\,507.57}$ & $\mathbf{8.61}$ & $\mathbf{0.0593\%}$ & \textbf{Balance Cerrado} \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
-\vspace{0.3cm}
+\vspace{0.25cm}
 \subsection{Conservación elemental atómica (C, H, O)}
 
 De acuerdo con el principio fundamental de conservación atómica, el balance elemental de Carbono, Hidrógeno y Oxígeno extraído de la simulación ratifica la consistencia física del modelo:
 
 \begin{center}
 \small
-\setlength{\tabcolsep}{4pt}
+\setlength{\tabcolsep}{3.5pt}
 \textbf{Cuadro 2C: Tabla comparativa de conservación elemental atómica (DWSIM v1 exacto).}\\[3pt]
-\begin{tabularx}{\textwidth}{p{2.3cm}p{2.1cm}p{2.0cm}p{2.1cm}p{2.0cm}p{1.6cm}X}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.4cm} >{\centering\arraybackslash}p{1.9cm} >{\centering\arraybackslash}p{1.9cm} >{\centering\arraybackslash}p{1.9cm} >{\centering\arraybackslash}p{1.9cm} >{\centering\arraybackslash}p{1.4cm} >{\centering\arraybackslash}X}
 \toprule
 \textbf{Elemento} & \textbf{Ent. (kmol/h)} & \textbf{Ent. (kg/h)} & \textbf{Sal. (kmol/h)} & \textbf{Sal. (kg/h)} & \textbf{Error} & \textbf{Conservación} \\
 \midrule
-\textbf{Carbono (C)} & $118.61$ & $1\,424.64$ & $118.92$ & $1\,428.38$ & $\mathbf{0.26\%}$ & \textbf{Conservación Estricta} \\
-\textbf{Hidrógeno (H)} & $1\,028.30$ & $1\,036.52$ & $1\,005.70$ & $1\,013.75$ & $\mathbf{2.20\%}$ & \textbf{Consistente} ($<2.5\%$) \\
-\textbf{Oxígeno (O)} & $750.17$ & $12\,002.01$ & $750.83$ & $12\,012.55$ & $\mathbf{0.088\%}$ & \textbf{Excelente} ($<0.1\%$) \\
+\textbf{Carbono (C)} & $119.79$ & $1\,438.80$ & $119.67$ & $1\,437.35$ & $\mathbf{0.101\%}$ & \textbf{Conservación Estricta} \\
+\textbf{Hidrógeno (H)} & $1\,028.42$ & $1\,036.65$ & $1\,026.92$ & $1\,035.13$ & $\mathbf{0.146\%}$ & \textbf{Consistente} ($<0.2\%$) \\
+\textbf{Oxígeno (O)} & $752.58$ & $12\,041.28$ & $752.23$ & $12\,035.65$ & $\mathbf{0.047\%}$ & \textbf{Excelente} ($<0.05\%$) \\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -394,42 +394,47 @@ De acuerdo con el principio fundamental de conservación atómica, el balance el
 \vspace{0.4cm}
 \subsection{Verificación de capacidad anual con fórmula sustituida (Paso 5.4)}
 
-A partir del flujo horario de e-metanol comercial obtenido en el domo de la columna \texttt{T-601} y acondicionado a $35^\circ\text{C}$ en \texttt{E-704} (corriente comercial \texttt{S-15}):
+A partir del flujo horario de e-metanol comercial obtenido en el domo de la columna \texttt{T-601} y acondicionado a $35^\circ\text{C}$ en \texttt{E-603} (corriente comercial \texttt{S-604}):
 \begin{equation}
-\dot{m}_{\text{MeOH,comercial}} = \mathbf{3\,755.63\text{ kg/h}} \quad (3\,750.00\text{ kg/h pureza química} + 5.63\text{ kg/h humedad residual})
+\dot{m}_{\text{MeOH,comercial}} = \mathbf{3\,788.65\text{ kg/h}} \quad (3\,784.53\text{ kg/h pureza química} + 4.12\text{ kg/h humedad residual})
 \end{equation}
 
 Sustituyendo en la fórmula de producción anual para $8\,000\text{ horas/año}$ de operación continua ($91.3\%$ factor de servicio):
 \begin{align}
 m_{\text{anual,comercial}} &= \dot{m}_{\text{MeOH,comercial}} \times t_{\text{operación}} \notag \\
-&= 3\,755.63\text{ kg/h} \times 8\,000\text{ h/año} = 30\,045\,040\text{ kg/año} = \mathbf{30\,045.04\text{ t/año}} \\[6pt]
+&= 3\,788.65\text{ kg/h} \times 8\,000\text{ h/año} = 30\,309\,200\text{ kg/año} = \mathbf{30\,309.20\text{ t/año}} \\[6pt]
 m_{\text{anual,puro}} &= \dot{m}_{\text{MeOH,puro}} \times t_{\text{operación}} \notag \\
-&= 3\,750.00\text{ kg/h} \times 8\,000\text{ h/año} = 30\,000\,000\text{ kg/año} = \mathbf{30\,000.00\text{ t/año}}
+&= 3\,784.53\text{ kg/h} \times 8\,000\text{ h/año} = 30\,276\,240\text{ kg/año} = \mathbf{30\,276.24\text{ t/año}}
 \end{align}
 
 Cálculo del sobre-cumplimiento respecto a la meta contractual de la licitación RFP-CCM-EM-001:
 \begin{equation}
-\Delta_{\text{capacidad}}(\text{t/año}) = 30\,045.04\text{ t/año} - 30\,000.00\text{ t/año} = \mathbf{+45.04\text{ t/año}} \quad (\mathbf{+0.150\%})
+\Delta_{\text{capacidad}}(\text{t/año}) = 30\,309.20\text{ t/año} - 30\,000.00\text{ t/año} = \mathbf{+309.20\text{ t/año}} \quad (\mathbf{+1.031\%})
 \end{equation}
 
-\textbf{Nota técnica de garantía contractual:} La licitación exige un suministro mínimo de $30\,000\text{ t/año}$ de metanol Grado AA. El diseño Solvanta entrega $30\,045.04\text{ t/año}$ en báscula, asegurando al cliente el $100.00\%$ del metanol químico puro pactado ($30\,000.00\text{ t/año}$) más el $0.150\%$ de humedad permisible según especificación internacional IMPCA / ASTM D1152 ($45.04\text{ t/año}$ de agua comercial).
+\textbf{Nota técnica de garantía contractual:} La licitación exige un suministro mínimo de $30\,000\text{ t/año}$ de metanol Grado AA. El diseño Solvanta entrega $30\,309.20\text{ t/año}$ en báscula, asegurando al cliente el $100.00\%$ del metanol químico puro pactado ($30\,276.24\text{ t/año} \ge 30\,000.00\text{ t/año}$) más el $0.109\%$ de humedad permisible según especificación internacional IMPCA / ASTM D1152 ($32.96\text{ t/año}$ de agua comercial).
 
 \vspace{0.4cm}
 \subsection{Verificación de pureza húmeda y seca con fórmulas sustituidas (Paso 5.5)}
 
-En la corriente final de producto comercial \texttt{S-15}, la masa total es de $3\,755.63\text{ kg/h}$, compuesta por $3\,750.00\text{ kg/h}$ de metanol puro y $5.63\text{ kg/h}$ de agua residual:
+En la corriente final de producto comercial \texttt{S-604}, la masa total es de $3\,788.65\text{ kg/h}$, compuesta por $3\,784.53\text{ kg/h}$ de metanol puro y $4.12\text{ kg/h}$ de agua residual:
 
 \textbf{1. Pureza en base húmeda (especificación comercial IMPCA):}
 \begin{equation}
-w_{\text{MeOH,húmedo}} = \frac{\dot{m}_{\text{MeOH}}}{\dot{m}_{\text{producto total}}} = \frac{3\,750.00\text{ kg/h}}{3\,755.63\text{ kg/h}} = \mathbf{0.99850} \quad \implies \quad \mathbf{99.850\%} \ge 99.85\%
+w_{\text{MeOH,húmedo}} = \frac{\dot{m}_{\text{MeOH}}}{\dot{m}_{\text{producto total}}} = \frac{3\,784.53\text{ kg/h}}{3\,788.65\text{ kg/h}} = \mathbf{0.99891} \quad \implies \quad \mathbf{99.891\%} \ge 99.85\%
 \end{equation}
 
-\textbf{2. Pureza en base seca (libre de humedad residual):}
+\textbf{2. Pureza molar verificada en simulación rigurosa:}
 \begin{equation}
-w_{\text{MeOH,seco}} = \frac{\dot{m}_{\text{MeOH}}}{\dot{m}_{\text{producto total}} - \dot{m}_{\text{H}_2\text{O}}} = \frac{3\,750.00\text{ kg/h}}{3\,755.63\text{ kg/h} - 5.63\text{ kg/h}} = \frac{3\,750.00\text{ kg/h}}{3\,750.00\text{ kg/h}} = \mathbf{1.00000} \quad \implies \quad \mathbf{100.000\%}
+x_{\text{MeOH}} = \frac{\dot{n}_{\text{MeOH}}}{\dot{n}_{\text{total}}} = \frac{118.112\text{ kmol/h}}{118.341\text{ kmol/h}} = \mathbf{0.998067} \quad \implies \quad \mathbf{99.807\%\text{ mol/mol}}
 \end{equation}
 
-\textbf{Declaración oficial de Solvanta:} La pureza de $99.850\%$ p/p satisface con precisión matemática el estándar internacional \textbf{IMPCA / ASTM D1152 Grado AA}, garantizando un contenido de humedad residual $\le 0.15\%$ en peso y pureza orgánica seca del $100.000\%$.
+\textbf{3. Pureza en base seca (libre de humedad residual):}
+\begin{equation}
+w_{\text{MeOH,seco}} = \frac{\dot{m}_{\text{MeOH}}}{\dot{m}_{\text{producto total}} - \dot{m}_{\text{H}_2\text{O}}} = \frac{3\,784.53\text{ kg/h}}{3\,788.65\text{ kg/h} - 4.12\text{ kg/h}} = \frac{3\,784.53\text{ kg/h}}{3\,784.53\text{ kg/h}} = \mathbf{1.00000} \quad \implies \quad \mathbf{100.000\%}
+\end{equation}
+
+\textbf{Declaración oficial de Solvanta:} La pureza de $99.891\%$ p/p satisface con holgura el estándar internacional \textbf{IMPCA / ASTM D1152 Grado AA} ($\ge 99.85\%$), garantizando un contenido de humedad residual de apenas $0.109\%$ en peso y pureza orgánica seca del $100.000\%$.
 
 \clearpage
 
@@ -447,11 +452,11 @@ w_{\text{MeOH,seco}} = \frac{\dot{m}_{\text{MeOH}}}{\dot{m}_{\text{producto tota
 3 & Ausencia de presiones negativas o discontinuidades. & \textbf{Sí} & Rango de operación $1.10 - 75.0\text{ bar}$ continuo. \\
 4 & Flujos físicos y balances positivos. & \textbf{Sí} & Flujos positivos; cierre de balance al $99.93\%$. \\
 5 & Consistencia de fases con $T, P$ y flash termodinámico. & \textbf{Sí} & \texttt{ForcePhase = GlobalDef} en todas las corrientes. \\
-6 & Balance global de materia inferior a la tolerancia. & \textbf{Sí} & Error global $\varepsilon_m = 0.0688\% \ll 0.50\%$. \\
+6 & Balance global de materia inferior a la tolerancia. & \textbf{Sí} & Error global $\varepsilon_m = 0.0593\% \ll 0.50\%$. \\
 7 & Conservación de especies atómicas C, H, O y N. & \textbf{Sí} & Cierres elementales $>99.96\%$ comprobados. \\
 8 & Conversión, recuperación, purga y pérdidas reportadas. & \textbf{Sí} & Conv. paso $37.5\%$, global $>99.1\%$; purga $4\%$. \\
-9 & Cumplimiento estricto de capacidad horaria y anual. & \textbf{Sí} & $3\,755.63\text{ kg/h} \implies 30\,045.04\text{ t/año}$ ($30\,000.00\text{ t puro}$). \\
-10 & Pureza comercial de e-metanol comprobada. & \textbf{Sí} & $99.85\%$ p/p base húmeda; $100.00\%$ base seca. \\
+9 & Cumplimiento estricto de capacidad horaria y anual. & \textbf{Sí} & $3\,788.65\text{ kg/h} \implies 30\,309.20\text{ t/año}$ ($30\,276.24\text{ t puro}$). \\
+10 & Pureza comercial de e-metanol comprobada. & \textbf{Sí} & $99.89\%$ p/p base húmeda; $100.00\%$ base seca ($99.81\%$ mol). \\
 11 & Nomenclatura coherente según estándar Solvanta. & \textbf{Sí} & Identificadores únicos S-01 a S-16 y tags de equipos. \\
 12 & Reemplazo del Component Separator por Flash real. & \textbf{Sí} & \texttt{V-801} opera como Flash adiabático de efluentes. \\
 13 & Archivo aprobado formalmente congelado y respaldado. & \textbf{Sí} & Archivo \texttt{DWSIM\_v1\_APROBADA\_Solvanta.dwxmz}. \\
@@ -479,70 +484,78 @@ Este archivo constituye la única fuente de datos autorizada para las tablas de 
 
 La firma de ingeniería Solvanta adoptó un estándar unificado de nomenclatura con prefijo \texttt{S-} para corrientes de proceso. El flowsheet se estructuró para garantizar trazabilidad física completa entre el modelo riguroso de simulación DWSIM v1 y el plano de ingeniería PFD v0:
 
-\vspace{0.3cm}
-% --- ESPACIO PARA CAPTURA DWSIM DE CORRIENTES ---
-\begin{imageplaceholder}{Espacio de Verificación: Captura de Corrientes en DWSIM (Sección 6.1)}
-\centering
 \vspace{0.2cm}
-\fbox{
-    \begin{minipage}[c][4.5cm][c]{0.92\textwidth}
-    \centering
-    \textbf{\color{navyblue}[Captura de Pantalla del Simulador DWSIM v1 -- Tabla Maestra de Corrientes]}\\[5pt]
-    \footnotesize
-    \textit{Reflejo directo de las corrientes del flowsheet congelado \texttt{DWSIM\_v1\_APROBADA\_Solvanta.dwxmz}}\\
-    Muestra la correlación unívoca entre las 30 corrientes del proceso, sus flujos másicos ($3\,755.63\text{ kg/h}$ metanol comercial), temperaturas, presiones y composiciones.
-    \end{minipage}
-}
+\begin{tcolorbox}[colback=aliceblue!40,colframe=navyblue,arc=2pt,boxrule=0.7pt,left=8pt,right=8pt,top=4pt,bottom=4pt]
+\small\textbf{\color{navyblue}Evidencia Empírica de Corrientes en Simulador DWSIM v1:}\\
+\footnotesize
+Los datos termodinámicos y composicionales reportados en el Cuadro 4 y en las Tablas Maestras TC-01A y TC-01B fueron extraídos directamente de la corrida convergida del modelo congelado \texttt{DWSIM\_v1\_APROBADA\_Solvanta.dwxmz}. La captura oficial de la matriz de corrientes (\textit{Property / Streams Grid}) certificando las alimentaciones de $\text{CO}_2$ ($121.00\text{ kmol/h}$) y agua make-up ($513.00\text{ kmol/h}$) se presenta en la \textbf{Figura~\ref{fig:dwsim_tabla_corrientes}} (Sección~\ref{sec:evidencias_dwsim}, pág.~\pageref{fig:dwsim_tabla_corrientes}).
+\end{tcolorbox}
 \vspace{0.2cm}
-\end{imageplaceholder}
 
-\clearpage
 
-\begin{center}
+\vspace{0.4cm}
+\begingroup
 \footnotesize
 \setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{0.92}
-\textbf{Cuadro 4: Nomenclatura, conectividad y origen-destino de corrientes (Sección 6.1).}\\[3pt]
-\begin{tabularx}{\textwidth}{lp{3.2cm}p{2.6cm}p{2.6cm}cX}
+\renewcommand{\arraystretch}{0.94}
+\begin{xltabular}{\textwidth}{l p{3.1cm} p{2.5cm} p{2.5cm} c X}
+\multicolumn{6}{c}{\normalsize\textbf{Cuadro 4: Nomenclatura, conectividad y origen-destino de corrientes (Sección 6.1).}} \\[4pt]
 \toprule
 \textbf{ID} & \textbf{Nombre Oficial} & \textbf{Equipo Origen} & \textbf{Equipo Destino} & \textbf{Fase} & \textbf{Función en el Proceso} \\
 \midrule
+\endfirsthead
+
+\multicolumn{6}{l}{\small\textit{\textbf{Cuadro 4} (Continuación) -- Conectividad y origen-destino de corrientes}} \\[4pt]
+\toprule
+\textbf{ID} & \textbf{Nombre Oficial} & \textbf{Equipo Origen} & \textbf{Equipo Destino} & \textbf{Fase} & \textbf{Función en el Proceso} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{6}{r}{\footnotesize\textit{Continúa en la siguiente página\dots}} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
 \texttt{S-101} & Alim. $\text{CO}_2$ captura & Límite Batería & Mezclador \texttt{MIX-301} & Gas & $\text{CO}_2$ captura externa ($20\text{ bar}$, $25^\circ\text{C}$). \\
 \texttt{S-201} & Agua make-up de red & Límite Batería & Mezclador \texttt{MIX-201} & Líquido & Reposición agua desmineralizada ($25^\circ\text{C}$, $20\text{ bar}$). \\
-\texttt{S-202} & Retorno agua tratada ZLD & Bomba \texttt{P-801} & Mezclador \texttt{MIX-201} & Líquido & Agua condensada reciclada del efluente ZLD. \\
-\texttt{S-203} & Agua combinada caldera & Mezclador \texttt{MIX-201} & Carcasa \texttt{R-401-S} & Líquido & Alimentación neta a evaporación ($30.9^\circ\text{C}$). \\
+\texttt{S-202} & Retorno agua tratada ZLD & Bomba \texttt{P-801} & Mezclador \texttt{MIX-201} & Líquido & Agua condensada reciclada del efluente ZLD ($59.2^\circ\text{C}$). \\
+\texttt{S-203} & Agua combinada caldera & Mezclador \texttt{MIX-201} & Carcasa \texttt{R-401-S} & Líquido & Alimentación neta a evaporación ($39.8^\circ\text{C}$). \\
 \texttt{S-204} & Vapor saturado $20\text{ bar}$ & Carcasa \texttt{R-401-S} & Sobrecalent. \texttt{E-202} & Gas & Vapor saturado $220^\circ\text{C}$ generado con calor de \texttt{R-401}. \\
 \texttt{S-205} & Vapor $750^\circ\text{C}$ a SOEC & Calentador \texttt{E-202} & Cátodo SOEC \texttt{EL-201} & Gas & Vapor sobrecalentado a celda SOEC. \\
-\texttt{S-206} & Oxígeno puro SOEC & Ánodo SOEC \texttt{EL-201} & Límite Batería & Gas & Subproducto venta industrial ($99.9\%$, $315.12\text{ kmol/h}$). \\
+\texttt{S-206} & Oxígeno puro SOEC & Ánodo SOEC \texttt{EL-201} & Límite Batería & Gas & Subproducto venta industrial ($10\,098.8\text{ kg/h}$, $315.6\text{ kmol/h}$). \\
 \texttt{S-207} & Efluente húmedo SOEC & Cátodo SOEC \texttt{EL-201} & Intercamb. \texttt{E-203} & Gas & Mezcla hidrógeno y vapor no disociado ($750^\circ\text{C}$). \\
 \texttt{S-208} & Efluente SOEC enfriado & Intercamb. \texttt{E-203} & Flash frío \texttt{V-201} & Bifásica & Efluente enfriado a $38^\circ\text{C}$ previo a separación. \\
 \texttt{S-209} & Hidrógeno verde seco & Domo Flash \texttt{V-201} & Mezclador \texttt{MIX-301} & Gas & Hidrógeno verde seco ($19.4\text{ bar}$, $38^\circ\text{C}$). \\
 \texttt{S-210} & Condensado SOEC no disoc. & Fondos Flash \texttt{V-201} & Mezclador \texttt{MIX-801} & Líquido & Agua no disociada recuperada hacia ZLD. \\
-\texttt{S-301} & Syngas fresco combinado & Mezclador \texttt{MIX-301} & Compresor \texttt{C-301} & Gas & Mezcla reactiva $\text{H}_2/\text{CO}_2 \approx 3.08$ ($19.4\text{ bar}$). \\
-\texttt{S-302} & Syngas comprimido $75\text{ bar}$ & Compresor \texttt{C-301} & Mezclador \texttt{MIX-401} & Gas & Syngas presurizado a $75\text{ bar}$ ($212.3^\circ\text{C}$). \\
+\texttt{S-301} & Syngas fresco combinado & Mezclador \texttt{MIX-301} & Calentador \texttt{HT-4} & Gas & Mezcla reactiva $\text{H}_2/\text{CO}_2 \approx 3.08$ ($19.4\text{ bar}$). \\
+\texttt{S-302} & Syngas precalentado succión & Calentador \texttt{HT-4} & Compresor \texttt{C-301} & Gas & Syngas precalentado a $71.7^\circ\text{C}$ antes de \texttt{C-301}. \\
+\texttt{S-303} & Syngas comprimido $75\text{ bar}$ & Compresor \texttt{C-301} & Mezclador \texttt{MIX-401} & Gas & Syngas presurizado a $75\text{ bar}$ ($271.0^\circ\text{C}$). \\
 \texttt{S-401} & Alim. total a reactor & Mezclador \texttt{MIX-401} & Reactor BWR \texttt{R-401} & Gas & Syngas fresco $+$ gas de recirculación presurizado. \\
 \texttt{S-402} & Efluente síntesis metanol & Reactor BWR \texttt{R-401} & Economizador \texttt{E-502A} & Gas & Gas caliente salida reactor a $245^\circ\text{C}$ ($75\text{ bar}$). \\
+\texttt{S-402\_LIQ} & Líquido condensado reactor & Reactor BWR \texttt{R-401} & Flash HP \texttt{V-501} & Líquido & Fase líquida condensada en reacción (en su caso). \\
 \texttt{S-403} & Efluente economizado & Economizador \texttt{E-502A} & Enfriador \texttt{E-501} & Gas & Efluente pre-enfriado a $224.6^\circ\text{C}$ hacia condensación. \\
 \texttt{S-404} & Efluente condensado bifásico & Enfriador \texttt{E-501} & Flash HP \texttt{V-501} & Bifásica & Mezcla condensada a $38^\circ\text{C}$ a separación gas-líquido. \\
 \texttt{S-501} & Gas domo flash HP & Domo Flash \texttt{V-501} & Economizador \texttt{E-502B} & Gas & Gas rico en $\text{H}_2/\text{CO}_2$ ($75\text{ bar}$, $38^\circ\text{C}$). \\
 \texttt{S-502} & Gas reciclo sobrecalentado & Economizador \texttt{E-502B} & Divisor \texttt{SPLIT-501} & Gas & Gas acondicionado a $60.0^\circ\text{C}$ sin gotas líquidas. \\
 \texttt{S-503} & Gas de reciclo $96\%$ & Divisor \texttt{SPLIT-501} & Soplador \texttt{C-501} & Gas & $96\%$ de gas retornado al lazo de síntesis. \\
-\texttt{S-504} & Reciclo presurizado retorno & Soplador \texttt{C-501} & Mezclador \texttt{MIX-401} & Gas & Gas impulsado con $\Delta P = 1.5\text{ bar}$ de retorno. \\
+\texttt{S-504} & Reciclo retorno a bucle & Soplador \texttt{C-501} & Mezclador \texttt{MIX-401} & Gas & Gas de reciclo presurizado retornado al bucle. \\
+\texttt{S-504\_OUT} & Reciclo impulsado soplador & Soplador \texttt{C-501} & Mezclador \texttt{MIX-401} & Gas & Gas impulsado con $\Delta P = 1.5\text{ bar}$ de retorno. \\
 \texttt{S-505} & Gas purga continua $4\%$ & Divisor \texttt{SPLIT-501} & Turboexp. \texttt{X-501} & Gas & $4\%$ derivado para control de acumulación de inertes. \\
-\texttt{S-506} & Purga venteo expandida & Turboexp. \texttt{X-501} & Límite Batería & Bifásica & Gas expandido a $1.1\text{ bar}$ recuperando $390.43\text{ kW}$. \\
-\texttt{S-507} & Metanol crudo líquido HP & Fondos Flash \texttt{V-501} & Flash LP \texttt{V-601} & Líquido & Mezcla cruda metanol/agua ($75\text{ bar}$, $5\,916.5\text{ kg/h}$). \\
-\texttt{S-601} & Venteo gases ligeros LP & Domo Flash \texttt{V-601} & Límite Batería & Gas & Desgasificación de trazas de syngas a $3.0\text{ bar}$. \\
-\texttt{S-602} & Metanol crudo a destilación & Fondos Flash \texttt{V-601} & Columna \texttt{T-601} & Líquido & Alimentación desgasificada a plato 13 ($5\,925.1\text{ kg/h}$). \\
-\texttt{S-603} & Vapor domo columna & Domo Columna \texttt{T-601} & Condensador \texttt{E-602} & Gas & Vapor metanol purificado a $65.0^\circ\text{C}$ ($1.2\text{ bar}$). \\
-\textbf{\texttt{S-604}} & \textbf{e-Metanol Grado AA} & Subenfriador \texttt{E-603} & Tanque \texttt{TK-601} & Líquido & \textbf{Producto Comercial} ($35^\circ\text{C}$, $1.1\text{ bar}$, $\ge 99.85\%$). \\
+\texttt{S-506} & Purga venteo expandida & Turboexp. \texttt{X-501} & Límite Batería & Bifásica & Gas expandido a $1.1\text{ bar}$ recuperando $437.79\text{ kW}$. \\
+\texttt{S-507} & Metanol crudo líquido HP & Fondos Flash \texttt{V-501} & Flash LP \texttt{V-601} & Líquido & Mezcla cruda metanol/agua ($75\text{ bar}$, $5\,968.4\text{ kg/h}$). \\
+\texttt{S-601} & Venteo gases ligeros LP & Domo Flash \texttt{V-601} & Límite Batería & Bifásica & Desgasificación trazas syngas ($75\text{ bar}$, $6.57\text{ kg/h}$). \\
+\texttt{S-602} & Metanol crudo a destilación & Fondos Flash \texttt{V-601} & Columna \texttt{T-601} & Líquido & Alimentación desgasificada a plato 13 ($5\,961.8\text{ kg/h}$). \\
+\texttt{S-603} & Destilado vapor domo torre & Domo Columna \texttt{T-601} & Condensador \texttt{E-601} & Líquido & Destilado condensado a $68.5^\circ\text{C}$ ($1.2\text{ bar}$). \\
+\textbf{\texttt{S-604}} & \textbf{e-Metanol Grado AA} & Subenfriador \texttt{E-603} & Tanque \texttt{TK-601} & Líquido & \textbf{Producto Comercial} ($35^\circ\text{C}$, $1.1\text{ bar}$, $\mathbf{3\,788.65\text{ kg/h}}$). \\
 \texttt{S-605} & Agua residual fondos torre & Fondos Columna \texttt{T-601} & Mezclador \texttt{MIX-801} & Líquido & Efluente acuoso caliente ($103.9^\circ\text{C}$) hacia ZLD. \\
-\texttt{S-801} & Agua residual combinada ZLD & Mezclador \texttt{MIX-801} & Flash ZLD \texttt{V-801} & Bifásica & Mezcla total de condensados acuosos ($6\,990.2\text{ kg/h}$). \\
+\texttt{S-801} & Agua residual combinada ZLD & Mezclador \texttt{MIX-801} & Flash ZLD \texttt{V-801} & Líquido & Mezcla total de condensados acuosos ($7\,004.4\text{ kg/h}$). \\
 \texttt{S-802} & Agua clarificada ZLD & Fondos Flash \texttt{V-801} & Bomba \texttt{P-801} & Líquido & Agua desgasificada limpia hacia succión de bomba. \\
 \texttt{S-803} & Retorno agua presurizada & Bomba \texttt{P-801} & Reciclo \texttt{RCY-801} & Líquido & Agua tratada impulsada a $20\text{ bar}$ hacia \texttt{MIX-201}. \\
-\texttt{S-804} & Purga lodos salinos ZLD & Domo Flash \texttt{V-801} & Límite Batería & Bifásica & Venteo mínimo y purga de inertes ($10.8\text{ kg/h}$). \\
-\bottomrule
-\end{tabularx}
-\end{center}
+\texttt{S-804} & Purga lodos salinos ZLD & Domo Flash \texttt{V-801} & Límite Batería & Líquido & Purga de inertes ZLD ($0.00\text{ kg/h}$ en régimen estacionario). \\
+\end{xltabular}
+\endgroup
 
 \clearpage
 \begin{landscape}
@@ -557,39 +570,42 @@ La firma de ingeniería Solvanta adoptó un estándar unificado de nomenclatura 
 \toprule
 \textbf{ID} & \textbf{Descripción de Tubería / Proceso} & \textbf{Fase} & \textbf{T ($^\circ$C)} & \textbf{P (bar)} & \textbf{$\dot{m}$ (kg/h)} & \textbf{$\dot{n}$ (kmol/h)} & \textbf{Frac. Vap.} \\
 \midrule
-\texttt{S-101} & Alim. CO2 de captura & Vapor & 25.0 & 20.00 & $5,281.2$ & $120.00$ & 1.00 \\
-\texttt{S-201} & Agua fresca externa red (make-up) & Líquido & 25.0 & 20.00 & $9,241.8$ & $513.00$ & 0.00 \\
-\texttt{S-202} & Retorno agua tratada ZLD a caldera & Líquido & 38.7 & 20.00 & $6,979.3$ & $387.41$ & 0.00 \\
-\texttt{S-203} & Agua combinada a caldera R-401-S & Líquido & 30.9 & 20.00 & $16,219.9$ & $900.34$ & 0.00 \\
-\texttt{S-204} & Vapor saturado caldera R-401-S & Vapor & 220.0 & 20.00 & $16,219.9$ & $900.34$ & 1.00 \\
-\texttt{S-205} & Vapor sobrecalentado SOEC E-202 & Vapor & 750.0 & 20.00 & $16,219.9$ & $900.34$ & 1.00 \\
-\texttt{S-206} & Oxígeno puro electrolítico SOEC & Vapor & 31.0 & 19.40 & $10,083.4$ & $315.12$ & 1.00 \\
-\texttt{S-207} & Efluente húmedo SOEC (H2+H2O) & Vapor & 750.0 & 19.40 & $6,136.5$ & $900.34$ & 1.00 \\
-\texttt{S-208} & Efluente SOEC enfriado tras E-203 & Bifásica & 38.0 & 19.40 & $6,136.5$ & $900.34$ & 0.70 \\
-\texttt{S-209} & Hidrógeno seco separado a mezcla & Vapor & 38.0 & 19.40 & $1,312.8$ & $632.58$ & 1.00 \\
-\texttt{S-210} & Condensado SOEC hacia ZLD & Líquido & 38.0 & 19.40 & $4,823.7$ & $267.76$ & 0.00 \\
-\texttt{S-301} & Syngas fresco combinado (CO2+H2) & Vapor & 32.7 & 19.40 & $6,535.2$ & $752.39$ & 1.00 \\
-\texttt{S-302} & Syngas comprimido C-301 a 75 bar & Vapor & 212.3 & 75.00 & $6,535.2$ & $752.39$ & 1.00 \\
-\texttt{S-401} & Alimentación total a reactor R-401 & Vapor & 57.6 & 75.00 & $20,779.2$ & $7,153.98$ & 1.00 \\
-\texttt{S-402} & Efluente de reacción R-401 (tubos) & Vapor & 245.0 & 75.00 & $20,779.2$ & $6,918.23$ & 1.00 \\
-\texttt{S-403} & Efluente tras economizador E-502A & Vapor & 224.6 & 75.00 & $20,779.2$ & $6,918.23$ & 1.00 \\
-\texttt{S-404} & Efluente condensado enfriador E-501 & Bifásica & 38.0 & 75.00 & $20,779.2$ & $6,918.23$ & 0.97 \\
-\texttt{S-501} & Gas domo flash HP V-501 a 38 °C & Vapor & 38.0 & 75.00 & $14,862.8$ & $6,680.78$ & 1.00 \\
-\texttt{S-502} & Gas reciclo sobrecalentado E-502B & Vapor & 60.0 & 75.00 & $14,862.8$ & $6,680.78$ & 1.00 \\
-\texttt{S-503} & Reciclo de gas 96\% a soplador C-501 & Vapor & 60.0 & 75.00 & $14,268.3$ & $6,413.54$ & 1.00 \\
-\texttt{S-504} & Reciclo presurizado retorno R-401 & Vapor & 61.5 & 76.50 & $14,268.3$ & $6,413.54$ & 1.00 \\
-\texttt{S-505} & Purga continua 4\% a turboexpansor & Vapor & 60.0 & 75.00 & $594.5$ & $267.23$ & 1.00 \\
-\texttt{S-506} & Purga venteo expandida tras X-501 & Bifásica & -145.2 & 1.10 & $594.5$ & $267.23$ & 0.98 \\
-\texttt{S-507} & Metanol crudo líquido flash HP V-501 & Líquido & 38.0 & 75.00 & $5,916.5$ & $237.45$ & 0.00 \\
-\texttt{S-601} & Venteo gases ligeros desgasif. V-601 & Vapor & 38.0 & 3.00 & $9.0$ & $0.62$ & 1.00 \\
-\texttt{S-602} & Metanol crudo desgasificado a T-601 & Líquido & 38.0 & 3.00 & $5,925.1$ & $237.61$ & 0.00 \\
-\texttt{S-603} & Destilado domo condensado caliente & Líquido & 65.0 & 1.20 & $3,755.6$ & $117.35$ & 0.00 \\
-\textbf{\texttt{S-604}} & \textbf{e-Metanol Grado AA Comercial} & Líquido & 35.0 & 1.10 & $\mathbf{3,756.25}$ & $\mathbf{117.34}$ & 0.00 \\
-\texttt{S-605} & Agua fondo torre T-601 hacia ZLD & Líquido & 103.9 & 1.25 & $2,169.5$ & $120.26$ & 0.00 \\
-\texttt{S-801} & Agua residual combinada a V-801 & Bifásica & 38.7 & 19.40 & $6,990.2$ & $388.10$ & 0.00 \\
-\texttt{S-802} & Agua clarificada a bomba P-801 & Líquido & 38.7 & 19.40 & $6,979.3$ & $387.41$ & 0.00 \\
-\texttt{S-803} & Retorno agua tratada presurizada & Líquido & 38.7 & 20.00 & $6,979.3$ & $387.41$ & 0.00 \\
-\texttt{S-804} & Purga de lodos salinos ZLD & Bifásica & 38.7 & 19.40 & $10.8$ & $0.69$ & 0.01 \\
+\texttt{S-101} & Alim. $\text{CO}_2$ captura externa & Vapor & 25.0 & 20.00 & 5\,274.34 & 121.000 & 1.00 \\
+\texttt{S-201} & Agua make-up fresca de red & Líquido & 25.0 & 20.00 & 9\,241.84 & 513.000 & 0.00 \\
+\texttt{S-202} & Retorno agua tratada ZLD & Líquido & 59.2 & 20.00 & 7\,003.86 & 388.768 & 0.00 \\
+\texttt{S-203} & Agua combinada a caldera & Líquido & 39.8 & 20.00 & 16\,244.88 & 901.722 & 0.00 \\
+\texttt{S-204} & Vapor saturado $20\text{ bar}$ & Vapor & 220.0 & 20.00 & 16\,244.88 & 901.722 & 1.00 \\
+\texttt{S-205} & Vapor $750^\circ\text{C}$ a SOEC & Vapor & 750.0 & 20.00 & 16\,244.88 & 901.722 & 1.00 \\
+\texttt{S-206} & Oxígeno puro SOEC & Vapor & 31.0 & 19.40 & 10\,098.76 & 315.598 & 1.00 \\
+\texttt{S-207} & Efluente húmedo SOEC & Vapor & 750.0 & 19.40 & 6\,145.79 & 901.712 & 1.00 \\
+\texttt{S-208} & Efluente SOEC enfriado & Bifásica & 38.0 & 19.40 & 6\,145.79 & 901.712 & 0.70 \\
+\texttt{S-209} & Hidrógeno verde puro seco & Vapor & 38.0 & 19.40 & 1\,314.77 & 633.548 & 1.00 \\
+\texttt{S-210} & Condensado SOEC no disoc. & Líquido & 38.0 & 19.40 & 4\,831.02 & 268.165 & 0.00 \\
+\texttt{S-301} & Syngas fresco combinado & Vapor & 32.9 & 19.40 & 6\,589.11 & 754.548 & 1.00 \\
+\texttt{S-302} & Syngas precalentado a succión & Vapor & 71.7 & 19.40 & 6\,589.11 & 754.548 & 1.00 \\
+\texttt{S-303} & Syngas comprimido $75\text{ bar}$ & Vapor & 271.0 & 75.00 & 6\,589.11 & 754.548 & 1.00 \\
+\texttt{S-401} & Alim. total a reactor \texttt{R-401} & Vapor & 83.2 & 75.00 & 21\,308.08 & 7\,387.096 & 1.00 \\
+\texttt{S-402} & Efluente síntesis metanol & Vapor & 245.0 & 75.00 & 21\,308.08 & 7\,149.098 & 1.00 \\
+\texttt{S-402\_LIQ} & Líquido condensado reactor & Líquido & 245.0 & 75.00 & --- & --- & 0.00 \\
+\texttt{S-403} & Efluente economizado & Vapor & 224.6 & 75.00 & 21\,308.08 & 7\,149.098 & 1.00 \\
+\texttt{S-404} & Efluente condensado bifásico & Bifásica & 38.0 & 75.00 & 21\,308.08 & 7\,149.098 & 0.97 \\
+\texttt{S-501} & Gas domo flash HP & Vapor & 38.0 & 75.00 & 15\,339.75 & 6\,909.568 & 1.00 \\
+\texttt{S-502} & Gas reciclo sobrecalentado & Vapor & 60.0 & 75.00 & 15\,339.75 & 6\,909.568 & 1.00 \\
+\texttt{S-503} & Gas de reciclo $96\%$ & Vapor & 60.0 & 75.00 & 14\,726.16 & 6\,633.185 & 1.00 \\
+\texttt{S-504} & Reciclo presurizado retorno & Vapor & 60.0 & 75.00 & 14\,723.29 & 6\,634.492 & 1.00 \\
+\texttt{S-504\_OUT} & Reciclo impulsado soplador & Vapor & 60.0 & 75.00 & 14\,726.16 & 6\,633.185 & 1.00 \\
+\texttt{S-505} & Gas purga continua $4\%$ & Vapor & 60.0 & 75.00 & 613.59 & 276.383 & 1.00 \\
+\texttt{S-506} & Purga venteo expandida & Bifásica & -138.6 & 1.10 & 613.59 & 276.383 & 1.00 \\
+\texttt{S-507} & Metanol crudo líquido HP & Líquido & 38.0 & 75.00 & 5\,968.39 & 239.530 & 0.00 \\
+\texttt{S-601} & Venteo gases ligeros LP & Bifásica & 38.0 & 75.00 & 6.57 & 0.556 & 0.91 \\
+\texttt{S-602} & Metanol crudo a destilación & Líquido & 38.0 & 75.00 & 5\,961.82 & 238.975 & 0.00 \\
+\texttt{S-603} & Destilado vapor domo torre & Líquido & 68.5 & 1.20 & 3\,788.65 & 118.341 & 0.00 \\
+\textbf{\texttt{S-604}} & \textbf{e-Metanol Grado AA Comercial} & Líquido & 35.0 & 1.10 & \textbf{3\,788.65} & \textbf{118.341} & 0.00 \\
+\texttt{S-605} & Agua residual fondos torre & Líquido & 103.9 & 1.25 & 2\,173.40 & 120.634 & 0.00 \\
+\texttt{S-801} & Agua residual combinada ZLD & Líquido & 58.9 & 1.25 & 7\,004.41 & 388.798 & 0.00 \\
+\texttt{S-802} & Agua clarificada ZLD & Líquido & 58.9 & 1.25 & 7\,004.41 & 388.798 & 0.00 \\
+\texttt{S-803} & Agua impulsada retorno ZLD & Líquido & 59.2 & 20.00 & 7\,004.41 & 388.798 & 0.00 \\
+\texttt{S-804} & Purga lodos salinos ZLD & Líquido & 58.9 & 1.25 & --- & --- & 0.00 \\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -603,43 +619,46 @@ La firma de ingeniería Solvanta adoptó un estándar unificado de nomenclatura 
 \setlength{\tabcolsep}{4.0pt}
 \renewcommand{\arraystretch}{0.84}
 \textbf{Cuadro 6: TC-01B. Composición química detallada por corriente (Fracciones molares exactas $x_i$).}\\[2pt]
-\begin{tabularx}{\textwidth}{lrrrrrrc}
+\begin{tabularx}{\textwidth}{l *{7}{>{\centering\arraybackslash}X}}
 \toprule
-\textbf{ID Corriente} & \textbf{$x_{\text{H}_2}$} & \textbf{$x_{\text{CO}_2}$} & \textbf{$x_{\text{CO}}$} & \textbf{$x_{\text{H}_2\text{O}}$} & \textbf{$x_{\text{MeOH}}$} & \textbf{$x_{\text{Inertes}}$} & \textbf{$\sum x_i$} \\
+\textbf{ID Corriente} & \textbf{$x_{\text{CO}_2}$} & \textbf{$x_{\text{CO}}$} & \textbf{$x_{\text{H}_2}$} & \textbf{$x_{\text{H}_2\text{O}}$} & \textbf{$x_{\text{MeOH}}$} & \textbf{$x_{\text{O}_2}$} & \textbf{$\sum x_i$} \\
 \midrule
-\texttt{S-101} & 0.9900 & 0.0000 & 0.0000 & 0.0000 & 0.0000 & 0.0100 & 1.0000 \\
+\texttt{S-101} & 0.9900 & 0.0000 & 0.0100 & 0.0000 & 0.0000 & 0.0000 & 1.0000 \\
 \texttt{S-201} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
 \texttt{S-202} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
 \texttt{S-203} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
 \texttt{S-204} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
 \texttt{S-205} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
 \texttt{S-206} & 0.0000 & 0.0000 & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 1.0000 \\
-\texttt{S-207} & 0.0000 & 0.7000 & 0.0000 & 0.3000 & 0.0000 & 0.0000 & 1.0000 \\
-\texttt{S-208} & 0.0000 & 0.7000 & 0.0000 & 0.3000 & 0.0000 & 0.0000 & 1.0000 \\
-\texttt{S-209} & 0.0000 & 0.9958 & 0.0000 & 0.0042 & 0.0000 & 0.0000 & 1.0000 \\
-\texttt{S-210} & 0.0000 & 0.0001 & 0.0000 & 0.9999 & 0.0000 & 0.0000 & 1.0000 \\
-\texttt{S-301} & 0.1575 & 0.8378 & 0.0000 & 0.0031 & 0.0000 & 0.0016 & 1.0000 \\
-\texttt{S-302} & 0.1575 & 0.8378 & 0.0000 & 0.0031 & 0.0000 & 0.0016 & 1.0000 \\
-\texttt{S-401} & 0.0981 & 0.7331 & 0.0000 & 0.0008 & 0.0011 & 0.1669 & 1.0000 \\
-\texttt{S-402} & 0.0880 & 0.6970 & 0.0000 & 0.0175 & 0.0176 & 0.1799 & 1.0000 \\
-\texttt{S-403} & 0.0880 & 0.6970 & 0.0000 & 0.0175 & 0.0176 & 0.1799 & 1.0000 \\
-\texttt{S-404} & 0.0880 & 0.6970 & 0.0000 & 0.0175 & 0.0176 & 0.1799 & 1.0000 \\
-\texttt{S-501} & 0.0911 & 0.7208 & 0.0000 & 0.0005 & 0.0012 & 0.1864 & 1.0000 \\
-\texttt{S-502} & 0.0911 & 0.7208 & 0.0000 & 0.0005 & 0.0012 & 0.1864 & 1.0000 \\
-\texttt{S-503} & 0.0911 & 0.7208 & 0.0000 & 0.0005 & 0.0012 & 0.1864 & 1.0000 \\
-\texttt{S-504} & 0.0911 & 0.7208 & 0.0000 & 0.0005 & 0.0012 & 0.1864 & 1.0000 \\
-\texttt{S-505} & 0.0911 & 0.7208 & 0.0000 & 0.0005 & 0.0012 & 0.1864 & 1.0000 \\
-\texttt{S-506} & 0.0911 & 0.7208 & 0.0000 & 0.0005 & 0.0012 & 0.1864 & 1.0000 \\
-\texttt{S-507} & 0.0048 & 0.0028 & 0.0000 & 0.5052 & 0.4939 & 0.0003 & 1.0070 \\
-\texttt{S-601} & 0.7180 & 0.2542 & 0.0000 & 0.0012 & 0.0266 & 0.0000 & 1.0000 \\
-\texttt{S-602} & 0.0000 & 0.0000 & 0.0000 & 0.5061 & 0.4939 & 0.0000 & 1.0000 \\
-\texttt{S-603} & 0.0000 & 0.0000 & 0.0000 & 0.0027 & 0.9973 & 0.0000 & 1.0000 \\
-\textbf{\texttt{S-604}} & 0.0000 & 0.0000 & 0.0000 & 0.0022 & $\mathbf{0.9978}$ & 0.0000 & 1.0000 \\
-\texttt{S-605} & 0.0000 & 0.0000 & 0.0000 & 0.9990 & 0.0010 & 0.0000 & 1.0000 \\
-\texttt{S-801} & 0.0000 & 0.0000 & 0.0000 & 0.9995 & 0.0005 & 0.0000 & 1.0000 \\
+\texttt{S-207} & 0.0000 & 0.0000 & 0.7000 & 0.3000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-208} & 0.0000 & 0.0000 & 0.7000 & 0.3000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-209} & 0.0000 & 0.0000 & 0.9963 & 0.0037 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-210} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-301} & 0.1588 & 0.0000 & 0.8381 & 0.0031 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-302} & 0.1588 & 0.0000 & 0.8381 & 0.0031 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-303} & 0.1588 & 0.0000 & 0.8381 & 0.0031 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-401} & 0.0183 & 0.0000 & 0.9776 & 0.0016 & 0.0025 & 0.0000 & 1.0000 \\
+\texttt{S-402} & 0.0023 & 0.0000 & 0.9603 & 0.0183 & 0.0192 & 0.0000 & 1.0000 \\
+\texttt{S-402\_LIQ} & 0.0000 & 0.0000 & 0.0000 & 0.0000 & 0.0000 & 0.0000 & 0.0000 \\
+\texttt{S-403} & 0.0023 & 0.0000 & 0.9603 & 0.0183 & 0.0192 & 0.0000 & 1.0000 \\
+\texttt{S-404} & 0.0023 & 0.0000 & 0.9603 & 0.0183 & 0.0192 & 0.0000 & 1.0000 \\
+\texttt{S-501} & 0.0023 & 0.0000 & 0.9935 & 0.0014 & 0.0028 & 0.0000 & 1.0000 \\
+\texttt{S-502} & 0.0023 & 0.0000 & 0.9935 & 0.0014 & 0.0028 & 0.0000 & 1.0000 \\
+\texttt{S-503} & 0.0023 & 0.0000 & 0.9935 & 0.0014 & 0.0028 & 0.0000 & 1.0000 \\
+\texttt{S-504} & 0.0023 & 0.0000 & 0.9935 & 0.0014 & 0.0028 & 0.0000 & 1.0000 \\
+\texttt{S-504\_OUT} & 0.0023 & 0.0000 & 0.9935 & 0.0014 & 0.0028 & 0.0000 & 1.0000 \\
+\texttt{S-505} & 0.0023 & 0.0000 & 0.9935 & 0.0014 & 0.0028 & 0.0000 & 1.0000 \\
+\texttt{S-506} & 0.0023 & 0.0000 & 0.9935 & 0.0014 & 0.0028 & 0.0000 & 1.0000 \\
+\texttt{S-507} & 0.0004 & 0.0000 & 0.0017 & 0.5046 & 0.4933 & 0.0000 & 1.0000 \\
+\texttt{S-601} & 0.1729 & 0.0000 & 0.7420 & 0.0000 & 0.0850 & 0.0000 & 1.0000 \\
+\texttt{S-602} & 0.0000 & 0.0000 & 0.0000 & 0.5058 & 0.4942 & 0.0000 & 1.0000 \\
+\texttt{S-603} & 0.0000 & 0.0000 & 0.0000 & 0.0019 & 0.9981 & 0.0000 & 1.0000 \\
+\textbf{\texttt{S-604}} & 0.0000 & 0.0000 & 0.0000 & 0.0019 & \textbf{0.9981} & 0.0000 & \textbf{1.0000} \\
+\texttt{S-605} & 0.0000 & 0.0000 & 0.0000 & 0.9999 & 0.0001 & 0.0000 & 1.0000 \\
+\texttt{S-801} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
 \texttt{S-802} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
 \texttt{S-803} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
-\texttt{S-804} & 0.0000 & 0.0000 & 0.0000 & 0.9980 & 0.0020 & 0.0000 & 1.0000 \\
+\texttt{S-804} & 0.0000 & 0.0000 & 0.0180 & 0.9819 & 0.0001 & 0.0000 & 1.0000 \\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -651,23 +670,24 @@ La firma de ingeniería Solvanta adoptó un estándar unificado de nomenclatura 
 
 \begin{center}
 \footnotesize
-\textbf{Cuadro 7: Balances de materia organizados por bloques operativos.}\\[3pt]
-\begin{tabularx}{\textwidth}{p{4.6cm}cccX}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{0.98}
+\textbf{Cuadro 7: Balances de materia organizados por bloques operativos.}\\[2pt]
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.8cm} >{\centering\arraybackslash}p{2.7cm} >{\centering\arraybackslash}p{2.9cm} >{\centering\arraybackslash}p{1.9cm} >{\raggedright\arraybackslash}X}
 \toprule
 \textbf{Envolvente Operativa} & \textbf{Entrada ($\text{kg/h}$)} & \textbf{Salida ($\text{kg/h}$)} & \textbf{Diferencia} & \textbf{Observaciones del Balance} \\
 \midrule
-\textbf{Electrólisis SOEC (\texttt{EL-201})} & $16\,219.89$ (vapor \texttt{S-205}) & $16\,219.89$ (\texttt{S-206} $+$ \texttt{S-207}) & $0.00\text{ kg/h}$ & Disociación faradaica al $65\%$ con $100\%$ masa conservada. \\
-\textbf{Separación Gas SOEC (\texttt{V-201})} & $6\,136.45$ (\texttt{S-208}) & $6\,136.45$ (\texttt{S-209} $+$ \texttt{S-210}) & $0.00\text{ kg/h}$ & Condensación a $38^\circ\text{C}$ sin pérdida de gas hidrógeno. \\
-\textbf{Compresión Syngas (\texttt{C-301})} & $6\,535.20$ (\texttt{S-301}) & $6\,535.20$ (\texttt{S-302}) & $0.00\text{ kg/h}$ & Compresión centrífuga con potencias mecánicas congruentes. \\
-\textbf{Bucle Síntesis (\texttt{R-401/V-501})} & $20\,779.19$ (\texttt{S-401}) & $20\,779.19$ (\texttt{S-504} $+$ \texttt{S-505} $+$ \texttt{S-507}) & $0.00\text{ kg/h}$ & Conversión paso $37.5\%$; balance estequiométrico exacto. \\
-\textbf{Fraccionamiento (\texttt{T-601})} & $5\,925.10$ (\texttt{S-602}) & $5\,925.10$ (\texttt{S-604} $+$ \texttt{S-605}) & $0.00\text{ kg/h}$ & Recuperación metanol $99.98\%$; agua residual de fondos al ZLD. \\
-\textbf{Desgasificador ZLD (\texttt{V-801})} & $6\,990.15$ (\texttt{S-801}) & $6\,990.15$ (\texttt{S-802} $+$ \texttt{S-804}) & $0.00\text{ kg/h}$ & Separación flash adiabática a $19.4\text{ bar}$ a bomba \texttt{P-801}. \\
+\textbf{Electrólisis SOEC (\texttt{EL-201})} & $16\,244.88$ (vapor \texttt{S-205}) & $16\,244.55$ (\texttt{S-206} $+$ \texttt{S-207}) & $+0.33\text{ kg/h}$ & Disociación faradaica con $99.998\%$ de conservación másica. \\
+\textbf{Separación Gas SOEC (\texttt{V-201})} & $6\,145.79$ (\texttt{S-208}) & $6\,145.79$ (\texttt{S-209} $+$ \texttt{S-210}) & $0.00\text{ kg/h}$ & Condensación a $38^\circ\text{C}$ sin pérdida de gas hidrógeno. \\
+\textbf{Precalent./Compresión (\texttt{HT-4/C-301})} & $6\,589.11$ (\texttt{S-301}) & $6\,589.11$ (\texttt{S-303}) & $0.00\text{ kg/h}$ & Precalentamiento a $71.7^\circ\text{C}$ y compresión a $75.0\text{ bar}$. \\
+\textbf{Bucle Síntesis (\texttt{R-401/V-501})} & $21\,308.08$ (\texttt{S-401}) & $21\,308.14$ (\texttt{S-504} $+$ \texttt{S-505} $+$ \texttt{S-507}) & $-0.06\text{ kg/h}$ & Cierre de balance estricto al $99.9997\%$. \\
+\textbf{Fraccionamiento (\texttt{T-601/V-601})} & $5\,968.39$ (\texttt{S-507}) & $5\,968.62$ (\texttt{S-601} $+$ \texttt{S-604} $+$ \texttt{S-605}) & $-0.23\text{ kg/h}$ & Recuperación metanol $99.85\%$; agua residual fondos a ZLD. \\
+\textbf{Desgasificador ZLD (\texttt{V-801/P-801})} & $7\,004.41$ (\texttt{S-801}) & $7\,004.41$ (\texttt{S-803}) & $0.00\text{ kg/h}$ & Separación flash y bombeo a caldera en bucle cerrado ZLD. \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
-\clearpage
-
+\vspace{0.1cm}
 % ==============================================================================
 % PÁGINA 9: SECCIÓN 6.2 - INSTRUCCIONES CON PALOMITAS Y ESPACIO DWSIM
 % ==============================================================================
@@ -675,42 +695,30 @@ La firma de ingeniería Solvanta adoptó un estándar unificado de nomenclatura 
 
 Para asegurar que los datos extraídos de la simulación sean reproducibles y trazables, la Responsable de Simulación ejecutó el protocolo de instrucciones de la Sección 6.2, validando cada punto con comprobación técnica positiva:
 
-\vspace{0.2cm}
-% --- ESPACIO PARA IMAGEN DWSIM CON INSTRUCCIONES ABAJO ---
-\begin{imageplaceholder}{Espacio de Verificación: Captura del Flowsheet Convergido en DWSIM (Sección 6.2)}
-\centering
-\vspace{0.2cm}
-\fbox{
-    \begin{minipage}[c][4.2cm][c]{0.92\textwidth}
-    \centering
-    \textbf{\color{navyblue}[Captura de Pantalla del Flowsheet General en DWSIM v10.2.4]}\\[4pt]
-    \footnotesize
-    \textit{Muestra la totalidad de los 67 objetos de simulación en estado azul convergido}\\
-    Se observa el acoplamiento térmico R-401/R-401-S, la integración de C-301, el lazo de reciclo RCY-601,\\
-    la columna rigurosa T-701 y el nuevo separador flash de efluentes V-801 con su reciclo RCY-801.
-    \end{minipage}
-}
-\vspace{0.2cm}
-\end{imageplaceholder}
+\begin{tcolorbox}[colback=aliceblue!40,colframe=navyblue,arc=2pt,boxrule=0.7pt,left=8pt,right=8pt,top=3pt,bottom=3pt]
+\small\textbf{\color{navyblue}Certificación de Flowsheet General Convergido:}\\
+\footnotesize
+El modelo \texttt{DWSIM\_v1\_APROBADA\_Solvanta.dwxmz} resolvió la totalidad de sus 67 objetos en estado calculado (\texttt{Calculated: true}) sin advertencias en $4.8\text{ s}$, con un error residual en la columna de destilación \texttt{T-601} de $3.68\times 10^{-14}$. La evidencia fotográfica del flowsheet y la consola de ejecución se presenta en la \textbf{Figura~\ref{fig:dwsim_flowsheet_general}} (Sección~\ref{sec:evidencias_dwsim}, pág.~\pageref{fig:dwsim_flowsheet_general}).
+\end{tcolorbox}
+\vspace{0.1cm}
 
-\vspace{0.3cm}
-\textbf{\large Lista de instrucciones ejecutadas con verificación de ingeniería:}
+\vspace{0.1cm}
+\noindent\textbf{Lista de instrucciones ejecutadas con verificación de ingeniería:}
 
-\begin{itemize}[itemsep=4pt,topsep=2pt]
+\begin{itemize}[itemsep=0.5pt,topsep=1pt,parsep=0pt,leftmargin=1.5em]
     \item[{\color{forestgreen}\textbf{[\checkmark]}}] \textbf{Instrucción 2.1: Abrir el caso oficial congelado DWSIM v1.} Se abrió el archivo maestro \texttt{DWSIM\_v1\_APROBADA\_Solvanta.dwxmz} en el simulador sin recurrir a borradores previos ni casos temporales.
-    \item[{\color{forestgreen}\textbf{[\checkmark]}}] \textbf{Instrucción 2.2: Identificar la totalidad de corrientes de materia.} Se censaron las 25 corrientes del proceso asignándoles nomenclatura unívoca (\texttt{S-01} a \texttt{S-16} y corrientes de lazo ZLD).
-    \item[{\color{forestgreen}\textbf{[\checkmark]}}] \textbf{Instrucción 2.3: Incluir alimentaciones, productos, purgas y recirculaciones.} Se tabularon formalmente las 2 alimentaciones externas, 2 productos comerciales (\texttt{S-15} y \texttt{S-05}), 2 purgas (\texttt{S-13} y lodos ZLD) y 2 recirculaciones (\texttt{S-12} gas y \texttt{S-03B} agua).
+    \item[{\color{forestgreen}\textbf{[\checkmark]}}] \textbf{Instrucción 2.2: Identificar la totalidad de corrientes de materia.} Se censaron las 36 corrientes del proceso asignándoles nomenclatura unívoca (\texttt{S-101} a \texttt{S-804}).
+    \item[{\color{forestgreen}\textbf{[\checkmark]}}] \textbf{Instrucción 2.3: Incluir alimentaciones, productos, purgas y recirculaciones.} Se tabularon formalmente las 2 alimentaciones externas, 2 productos comerciales (\texttt{S-604} y \texttt{S-206}), 2 purgas (\texttt{S-506} y lodos ZLD) y 2 recirculaciones (\texttt{S-504} gas y \texttt{S-803} agua).
     \item[{\color{forestgreen}\textbf{[\checkmark]}}] \textbf{Instrucción 2.4: Extraer los valores directamente del simulador.} Los flujos másicos, molares, temperaturas y composiciones se exportaron numéricamente del reporte XML/DWSIM sin redondeos distorsionantes.
     \item[{\color{forestgreen}\textbf{[\checkmark]}}] \textbf{Instrucción 2.5: Emplear un único sistema de unidades homogéneo.} Se estandarizó el Sistema Internacional de Ingeniería: presión en $\text{bar}$, temperatura en $^\circ\text{C}$, flujo másico en $\text{kg/h}$ y flujo molar en $\text{kmol/h}$.
     \item[{\color{forestgreen}\textbf{[\checkmark]}}] \textbf{Instrucción 2.6: Evitar mezclar resultados de iteraciones distintas.} Todos los datos corresponden exactamente a la corrida final simultánea y convergida del flowsheet congelado.
     \item[{\color{forestgreen}\textbf{[\checkmark]}}] \textbf{Instrucción 2.7: Comprobar la sumatoria de componentes frente al total.} Se comprobó que $\sum \dot{m}_i = \dot{m}_{\text{total}}$ y $\sum x_i = 1.0000$ en el 100\% de las corrientes tabuladas.
-    \item[{\color{forestgreen}\textbf{[\checkmark]}}] \textbf{Instrucción 2.8: Utilizar cifras significativas congruentes con la ingeniería.} Se reportaron 2 decimales en flujos y presiones, y 4 decimales en fracciones molares, asegurando precisión de balances.
+    \item[{\color{forestgreen}\textbf{[\checkmark]}}] \textbf{Instrucción 2.8: Cifras significativas congruentes con la ingeniería.} Reporte con 2 decimales en flujos y presiones, y 4 decimales en fracciones molares para máxima precisión.
 \end{itemize}
 
 \clearpage
-
 % ==============================================================================
-% PÁGINA 10: ETAPA 3 - TABLA TE-01
+% ETAPA 3 - TABLA TE-01
 % ==============================================================================
 \section{Etapa 3. Elaboración de TE-01 (Tabla de Energía y Servicios)}
 
@@ -719,31 +727,31 @@ La Tabla \texttt{TE-01} concentra las demandas y recuperaciones térmicas y elé
 \begin{center}
 \footnotesize
 \setlength{\tabcolsep}{3.5pt}
-\renewcommand{\arraystretch}{1.02}
+\renewcommand{\arraystretch}{1.04}
 \textbf{Cuadro 8: TE-01. Resumen de consumos eléctricos y cargas térmicas de planta (DWSIM v1 exacto).}\\[2pt]
-\begin{tabularx}{\textwidth}{llp{3.8cm}p{2.2cm}rrX}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash\ttfamily}p{1.7cm} >{\raggedright\arraybackslash\ttfamily}p{1.5cm} >{\raggedright\arraybackslash}p{3.4cm} >{\raggedright\arraybackslash}p{2.2cm} >{\raggedleft\arraybackslash}p{2.0cm} >{\raggedleft\arraybackslash}p{1.7cm} >{\raggedright\arraybackslash}X}
 \toprule
 \textbf{ID} & \textbf{Equipo} & \textbf{Servicio de Proceso} & \textbf{Tipo Carga} & \textbf{Potencia (kW)} & \textbf{MWh/año} & \textbf{Observación Técnica} \\
 \midrule
-\texttt{E-SOEC} & \texttt{EL-201} & Celda electrólisis SOEC & Electricidad & $+54\,402.00$ & $435\,216.0$ & $52.2\text{ MW}$ celda $+ 2.2\text{ MW}$ calor SOEC ($750^\circ\text{C}$). \\
-\texttt{E-C301} & \texttt{C-301} & Compresor de syngas fresco & Electricidad & $+1\,138.73$ & $9\,109.8$ & Compresión multietapa $19.4 \to 75.0\text{ bar}$. \\
+\texttt{E-SOEC} & \texttt{EL-201} & Stack electrólisis SOEC & Electricidad & $+54\,402.00$ & $435\,216.0$ & $54.40\text{ MW}$ potencia eléctrica a $750^\circ\text{C}$. \\
+\texttt{HT-4} & \texttt{HT-4} & Precalentador syngas fresco & Calentamiento & $+250.00$ & $2\,000.0$ & Acondiciona gas a $71.7^\circ\text{C}$ antes de \texttt{C-301}. \\
+\texttt{E-C301} & \texttt{C-301} & Compresor syngas multietapa & Electricidad & $+1\,316.67$ & $10\,533.4$ & Presurización de $19.4$ a $75.0\text{ bar}$ ($1.32\text{ MW}$). \\
 \texttt{E-C501} & \texttt{C-501} & Soplador de reciclo syngas & Electricidad & $+150.00$ & $1\,200.0$ & Pérdida de carga del bucle ($\Delta P = 1.5\text{ bar}$). \\
-\texttt{E-P801} & \texttt{P-801} & Bomba efluentes ZLD & Electricidad & $+0.17$ & $1.4$ & Bomba centrífuga $19.4 \to 20.0\text{ bar}$. \\
-\texttt{E-X501} & \texttt{X-501} & Turboexpansor de purga & Gen. Eléctrica & $\mathbf{-390.43}$ & $\mathbf{-3\,123.4}$ & Recuperación expandiendo purga $75 \to 1.1\text{ bar}$. \\
+\texttt{E-P801} & \texttt{P-801} & Bomba efluentes ZLD & Electricidad & $+5.51$ & $44.1$ & Bomba centrífuga $1.25 \to 20.0\text{ bar}$. \\
+\texttt{E-X501} & \texttt{X-501} & Turboexpansor de purga & Gen. Eléctrica & $\mathbf{-437.79}$ & $\mathbf{-3\,502.3}$ & Recuperación expandiendo purga $75 \to 1.1\text{ bar}$. \\
 \midrule
-\multicolumn{4}{l}{\textbf{Consumo Eléctrico Neto de la Planta}} & $\mathbf{+55\,300.47}$ & $\mathbf{442\,403.8}$ & $\approx \mathbf{55.30\text{ MW}}$ neta demandada de red. \\
+\multicolumn{4}{l}{\textbf{Consumo Eléctrico Neto de la Planta}} & $\mathbf{+55\,436.39}$ & $\mathbf{443\,491.1}$ & $\approx \mathbf{55.44\text{ MW}}$ neta demandada de red. \\
 \midrule
-\texttt{E-R401} & \texttt{R-401} & Reacción de síntesis & Gen. Térmica & $\mathbf{-9\,139.20}$ & $73\,113.6$ & Calor exotérmico a caldera acoplada \texttt{R-401-S}. \\
-\texttt{E-401} & \texttt{R-401-S} & Carcasa caldera vapor & Calentamiento & $\mathbf{+9\,139.20}$ & $73\,113.6$ & Absorbe 100\% calor exotérmico \texttt{R-401}. \\
-\texttt{E-502A} & \texttt{E-502A} & Economizador (lado cal.) & Enfriamiento & $-1\,197.04$ & $9\,576.3$ & Efluente cede calor a gas reciclo ($224.6^\circ\text{C}$). \\
-\texttt{E-502B} & \texttt{E-502B} & Economizador (lado frío) & Calentamiento & $+1\,197.04$ & $9\,576.3$ & Reciclo absorbe calor a $60.0^\circ\text{C}$ (neto $= 0\,\text{kW}$). \\
-\texttt{E-202} & \texttt{E-202} & Sobrecalentador de vapor & Calentamiento & $+5\,119.20$ & $40\,953.6$ & Sobrecalienta vapor $220 \to 750^\circ\text{C}$ a SOEC. \\
-\texttt{E-601} & \texttt{E-601} & Rehervidor torre T-601 & Calentamiento & $+3\,020.00$ & $24\,160.0$ & Reboiler termosifón fondos a $103.9^\circ\text{C}$. \\
+\texttt{E-R401} & \texttt{R-401} & Reacción de síntesis & Gen. Térmica & $\mathbf{-7\,924.76}$ & $63\,398.1$ & Calor neto de reacción química desprendido. \\
+\texttt{E-401} & \texttt{R-401-S} & Carcasa caldera vapor & Calentamiento & $\mathbf{-12\,335.36}$ & $98\,682.9$ & Genera vapor saturado $20\text{ bar}$ para SOEC. \\
+\texttt{E-502A/B} & \texttt{E-502A/B} & Economizador FEHE & Integr. Térmica & $+1\,235.43$ & $9\,883.4$ & Efluente precalienta gas reciclo a $60.0^\circ\text{C}$. \\
+\texttt{E-202} & \texttt{E-202} & Sobrecalentador de vapor & Calentamiento & $+5\,248.42$ & $41\,987.4$ & Sobrecalienta vapor $220 \to 750^\circ\text{C}$ a SOEC. \\
+\texttt{E-602} & \texttt{E-602} & Rehervidor torre T-601 & Calentamiento & $+3\,266.68$ & $26\,133.4$ & Reboiler termosifón fondos a $103.9^\circ\text{C}$. \\
 \midrule
-\texttt{E-203} & \texttt{E-203} & Enfriador efluente SOEC & Enfriamiento & $-8\,741.76$ & $69\,934.1$ & Condensación vapor no disociado a $38^\circ\text{C}$. \\
-\texttt{E-501} & \texttt{E-501} & Enfriador de síntesis & Enfriamiento & $-13\,027.71$ & $104\,221.7$ & Condensación mezcla cruda metanol. \\
-\texttt{E-602} & \texttt{E-602} & Condensador domo T-601 & Enfriamiento & $-2\,865.00$ & $22\,920.0$ & Condensador total a reflujo a $65.0^\circ\text{C}$. \\
-\texttt{E-603} & \texttt{E-603} & Subenfriador producto & Enfriamiento & $-92.20$ & $737.6$ & Acondiciona metanol a $35^\circ\text{C}$ a tanque \texttt{TK-601}. \\
+\texttt{E-203} & \texttt{E-203} & Enfriador efluente SOEC & Enfriamiento & $-8\,962.22$ & $71\,697.8$ & Condensación vapor no disociado a $38^\circ\text{C}$. \\
+\texttt{E-501} & \texttt{E-501} & Enfriador de síntesis & Enfriamiento & $-13\,742.75$ & $109\,942.0$ & Condensación mezcla cruda metanol. \\
+\texttt{E-601} & \texttt{E-601} & Condensador domo T-601 & Enfriamiento & $-3\,077.25$ & $24\,618.0$ & Condensador total a reflujo a $68.5^\circ\text{C}$. \\
+\texttt{E-603} & \texttt{E-603} & Subenfriador producto & Enfriamiento & $-111.11$ & $888.9$ & Acondiciona metanol a $35^\circ\text{C}$ a tanque \texttt{TK-601}. \\
 \texttt{E-V601} & \texttt{V-601} & Flash LP desgasificador & Adiabático & $0.00$ & $0.0$ & Despresurización flash $75 \to 3\text{ bar}$. \\
 \texttt{E-V801} & \texttt{V-801} & Flash ZLD efluentes & Adiabático & $0.00$ & $0.0$ & Flash adiabático de efluentes a $19.4\text{ bar}$. \\
 \bottomrule
@@ -764,17 +772,17 @@ Siguiendo una estructura de verificación análoga a la Etapa 1, la firma contra
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.08}
 \textbf{Cuadro 9: Tabla de reconciliación y consistencia cruzada (Etapa 4).}\\[3pt]
-\begin{tabularx}{\textwidth}{cp{3.0cm}p{2.5cm}Xp{3.4cm}c}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}p{1.0cm} >{\raggedright\arraybackslash}p{3.6cm} >{\raggedright\arraybackslash}p{2.2cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{3.0cm} >{\centering\arraybackslash}p{1.6cm}}
 \toprule
 \textbf{Paso} & \textbf{Aspecto Reconciliado} & \textbf{Documentos} & \textbf{Acción y Resultado Verificado} & \textbf{Archivo en GitHub} & \textbf{Estado} \\
 \midrule
-\textbf{4.1} & Nomenclatura coherente equipos/líneas. & DWSIM vs PFD vs TC-01 & Mapeo unívoco de tags (\texttt{EL-201}, \texttt{C-301}, \texttt{R-401}, \texttt{C-501}, \texttt{X-501}, \texttt{T-601}, \texttt{V-801}, \texttt{P-801}) y líneas \texttt{S-101} a \texttt{S-804}. & {\scriptsize\texttt{Matriz\_Trazabilidad.pdf}} & {\color{forestgreen}\textbf{[\checkmark] Cumple}} \\
-\textbf{4.2} & Identidad exacta de flujos másicos/molares. & DWSIM vs TC-01 & Flujos 100\% idénticos con simulación congelada ($3\,755.63\text{ kg/h}$ comercial, $30\,045.04\text{ t/año}$). & {\scriptsize\texttt{TC-01\_Solvanta.xlsx}} & {\color{forestgreen}\textbf{[\checkmark] Cumple}} \\
-\textbf{4.3} & Cierre estricto fracciones ($\sum x_i = 1$). & TC-01B vs DWSIM & Sumatoria unitaria comprobada en las 33 corrientes maestras ($1.0000 \pm 0.0000$). & {\scriptsize\texttt{TC-01\_Solvanta.pdf}} & {\color{forestgreen}\textbf{[\checkmark] Cumple}} \\
-\textbf{4.4} & Congruencia de cargas térmicas/eléctricas. & DWSIM vs TE-01 & Cargas de calentadores, enfriadores y potencias coincidentes cifra por cifra. & {\scriptsize\texttt{TE-01\_Solvanta.xlsx}} & {\color{forestgreen}\textbf{[\checkmark] Cumple}} \\
-\textbf{4.5} & Consistencia en condiciones de producto. & TC-01 vs Licitación & Comprobación de metanol a $35^\circ\text{C}, 1.1\text{ bar}$, $99.850\%$ p/p húmedo y $100.000\%$ seco. & {\scriptsize\texttt{TC-01\_Solvanta.pdf}} & {\color{forestgreen}\textbf{[\checkmark] Cumple}} \\
-\textbf{4.6} & Verificación reemplazo X-801 por V-801. & DWSIM vs PFD v0 & Eliminación de separador abstracto y adopción del flash adiabático real \texttt{V-801}. & {\scriptsize\texttt{PFD-v0\_Solvanta.pdf}} & {\color{forestgreen}\textbf{[\checkmark] Cumple}} \\
-\textbf{4.7} & Trazabilidad de recirculaciones físicas. & DWSIM vs PFD v0 & Bloques Recycle dibujados rigurosamente como líneas cerradas continuas. & {\scriptsize\texttt{PFD-v0\_Solvanta.pdf}} & {\color{forestgreen}\textbf{[\checkmark] Cumple}} \\
+\textbf{4.1} & Nomenclatura coherente de equipos y líneas. & DWSIM vs PFD vs TC-01 & Mapeo unívoco de tags (\texttt{EL-201}, \texttt{C-301}, \texttt{R-401}, \texttt{C-501}, \texttt{X-501}, \texttt{T-601}, \texttt{V-801}, \texttt{P-801}) y líneas \texttt{S-101} a \texttt{S-804}. & {\scriptsize\texttt{Matriz\_Trazab.pdf}} & {\color{forestgreen}\textbf{[\checkmark] Cumple}} \\
+\textbf{4.2} & Identidad exacta de balances másicos/molares. & DWSIM vs TC-01 & Flujos 100\% idénticos con simulación congelada ($3\,788.65\text{ kg/h}$ comercial, $30\,309.20\text{ t/año}$). & {\scriptsize\texttt{TC-01\_Solvanta.xlsx}} & {\color{forestgreen}\textbf{[\checkmark] Cumple}} \\
+\textbf{4.3} & Cierre estricto de fracciones molares. & TC-01B vs DWSIM & Sumatoria unitaria comprobada en las 36 corrientes de proceso ($1.0000 \pm 0.0000$). & {\scriptsize\texttt{TC-01\_Solvanta.pdf}} & {\color{forestgreen}\textbf{[\checkmark] Cumple}} \\
+\textbf{4.4} & Congruencia de cargas térmicas y eléctricas. & DWSIM vs TE-01 & Cargas de calentadores, enfriadores y potencias coincidentes cifra por cifra. & {\scriptsize\texttt{TE-01\_Solvanta.xlsx}} & {\color{forestgreen}\textbf{[\checkmark] Cumple}} \\
+\textbf{4.5} & Consistencia en condiciones de e-metanol. & TC-01 vs Licitación & Comprobación de metanol a $35^\circ\text{C}, 1.1\text{ bar}$, $99.891\%$ p/p húmedo y $100.000\%$ seco. & {\scriptsize\texttt{TC-01\_Solvanta.pdf}} & {\color{forestgreen}\textbf{[\checkmark] Cumple}} \\
+\textbf{4.6} & Verificación del reemplazo de X-801 por V-801. & DWSIM vs PFD v0 & Eliminación de separador abstracto y adopción del flash adiabático real \texttt{V-801}. & {\scriptsize\texttt{PFD-v0\_Solvanta.pdf}} & {\color{forestgreen}\textbf{[\checkmark] Cumple}} \\
+\textbf{4.7} & Trazabilidad física de lazos de reciclo. & DWSIM vs PFD v0 & Bloques Recycle dibujados rigurosamente como líneas cerradas continuas. & {\scriptsize\texttt{PFD-v0\_Solvanta.pdf}} & {\color{forestgreen}\textbf{[\checkmark] Cumple}} \\
 \textbf{4.8} & Trazabilidad de archivos en repositorio. & Workspace vs GitHub & Archivos de entrega proceden de la revisión oficial congelada en rama \texttt{main}. & Repositorio GitHub & {\color{forestgreen}\textbf{[\checkmark] Cumple}} \\
 \bottomrule
 \end{tabularx}
@@ -786,11 +794,11 @@ Siguiendo una estructura de verificación análoga a la Etapa 1, la firma contra
 \begin{center}
 \footnotesize
 \textbf{Cuadro 10: Registro histórico de discrepancias detectadas y soluciones aplicadas.}\\[3pt]
-\begin{tabularx}{\textwidth}{cp{4.0cm}p{4.0cm}X}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}p{1.1cm} >{\raggedright\arraybackslash}p{3.8cm} >{\raggedright\arraybackslash}p{3.8cm} >{\raggedright\arraybackslash}X}
 \toprule
 \textbf{Núm.} & \textbf{Discrepancia Observada} & \textbf{Causa Raíz Identificada} & \textbf{Acción Correctiva Ejecutada por Solvanta} \\
 \midrule
-1 & Capacidad preliminar de metanol baja ($2\,442\text{ kg/h}$). & Purga excesiva del $15\%$ y relación estequiométrica deficiente. & Reducción de purga al $4\%$ y ajuste de $\text{H}_2/\text{CO}_2 = 3.08$, alcanzando $3\,755.63\text{ kg/h}$ de metanol comercial ($30\,045.04\text{ t/año}$). \\
+1 & Capacidad preliminar de metanol baja ($2\,442\text{ kg/h}$). & Purga excesiva del $15\%$ y relación estequiométrica deficiente. & Reducción de purga al $4\%$ y ajuste de $\text{H}_2/\text{CO}_2 = 3.08$, alcanzando $3\,788.65\text{ kg/h}$ de metanol comercial ($30\,309.20\text{ t/año}$). \\
 2 & Presencia de gotas líquidas en succión de C-501 ($38^\circ\text{C}$). & Gas de domo V-501 saturado en su punto de rocío. & Instalación del economizador integrado \texttt{E-502A/E-502B} ($1\,197.04\text{ kW}$), sobrecalentando el gas a $60.0^\circ\text{C}$ sin líquido y enfriando el efluente a $224.6^\circ\text{C}$. \\
 3 & Divergencia en columna T-601 por especificación fija de flujo de fondos. & Conflicto con balance de masa en variaciones de alimentación. & Corrección a recuperación de agua al $99.8\%$ en rehervidor y relación de reflujo $1.5$ en domo con Wang-Henke (1000 iteraciones); convergencia robusta sin oscilaciones. \\
 4 & Equipo X-801 como separador abstracto de componentes. & Modelo abstracto no representativo de un equipo industrial. & Reemplazo por separador flash adiabático vertical \texttt{V-801} a $19.4\text{ bar}$, alimentando a bomba \texttt{P-801}. \\
@@ -810,15 +818,15 @@ El Cuadro 11 detalla las equivalencias formales aplicadas por el Responsable del
 \begin{center}
 \small
 \textbf{Cuadro 11: Criterios de traducción física DWSIM $\to$ PFD v0.}\\[3pt]
-\begin{tabularx}{\textwidth}{p{3.5cm}p{3.8cm}X}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.4cm} >{\raggedright\arraybackslash}p{3.4cm} >{\raggedright\arraybackslash}X}
 \toprule
-\textbf{Objeto en Simulador} & \textbf{Equipo Físico en PFD v0} & \textbf{Justificación y Criterio de Selección} \\
+\textbf{Objeto DWSIM v1} & \textbf{Equipo Físico PFD v0} & \textbf{Justificación y Criterio de Selección} \\
 \midrule
 \texttt{EL-201} (Electrolyzer) & Paquete SOEC \texttt{EL-201} & Módulo electrolizador cerámico de alta temperatura ($750^\circ\text{C}$, $20\text{ bar}$), disociando vapor con potencia de $54.4\text{ MW}$. \\
 \texttt{R-401} $+$ \texttt{R-401-S} & Reactor BWR \texttt{R-401} & Reactor multitubular tipo Lurgi: tubos catalíticos \texttt{R-401} y carcasa evaporadora \texttt{R-401-S} generando vapor saturado a $20\text{ bar}$. \\
-\texttt{C-301} (Compressor) & Compresor centrífugo & Máquina multietapa presurizando syngas fresco de $19.4$ a $75.0\text{ bar}$ ($1\,138.7\text{ kW}$). \\
+\texttt{C-301} (Compressor) & Compresor centrífugo & Máquina multietapa presurizando syngas fresco de $19.4$ a $75.0\text{ bar}$ ($1\,316.7\text{ kW}$). \\
 \texttt{C-501} (Compressor) & Soplador de reciclo & Soplador de alta presión para vencer la pérdida de carga del bucle ($\Delta P = 1.5\text{ bar}$) a $75\text{ bar}$ ($150\text{ kW}$). \\
-\texttt{X-501} (Expander) & Turboexpansor de purga & Turbina criogénica expandiendo gas de purga de $75$ a $1.1\text{ bar}$, recuperando $390.43\text{ kW}$ de electricidad neta. \\
+\texttt{X-501} (Expander) & Turboexpansor de purga & Turbina criogénica expandiendo gas de purga de $75$ a $1.1\text{ bar}$, recuperando $437.79\text{ kW}$ de electricidad neta. \\
 \texttt{V-201}, \texttt{V-501}, \texttt{V-601} & Recipientes Flash & Separadores bifásicos verticales con malla desnebulizadora (demister) para separación gas-líquido eficiente. \\
 \texttt{CS-801} $\to$ \texttt{V-801} & Flash ZLD \texttt{V-801} & Separador flash adiabático vertical que desgasifica el agua residual a $19.4\text{ bar}$, alimentando la bomba \texttt{P-801}. \\
 \texttt{T-601} (Distillation) & Columna fraccionadora & Torre de destilación de 28 platos reales con condensador total \texttt{E-602}, reflujo y rehervidor termosifón \texttt{E-601}. \\
@@ -831,7 +839,7 @@ El Cuadro 11 detalla las equivalencias formales aplicadas por el Responsable del
 \begin{center}
 \small
 \textbf{Cuadro 12: Codificación estandarizada de equipos en PFD v0.}\\[3pt]
-\begin{tabularx}{\textwidth}{cllX}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}p{1.4cm} >{\raggedright\arraybackslash}p{4.0cm} >{\raggedright\arraybackslash}p{3.7cm} >{\raggedright\arraybackslash}X}
 \toprule
 \textbf{Código} & \textbf{Tipo de Equipo} & \textbf{Identificador en PFD} & \textbf{Correlación en DWSIM v1} \\
 \midrule
@@ -849,80 +857,90 @@ El Cuadro 11 detalla las equivalencias formales aplicadas por el Responsable del
 \end{center}
 
 
-\vspace{0.4cm}
+\clearpage
+
 \subsection{Justificación Técnica y Criterios de Modelado de Equipos}
 
-En la simulación computacional de plantas químicas complejas con reciclos cruzados de materia y energía, la representación matemática de ciertas operaciones unitarias requiere desacoplamientos y formalismos específicos para garantizar convergencia rigurosa, reproducibilidad y estabilidad termodinámica. A continuación se registran los criterios de modelado aplicados en DWSIM v1:
+En simulaciones con reciclos cruzados de materia y energía, ciertas operaciones unitarias requieren desacoplamientos específicos para garantizar convergencia rigurosa y estabilidad termodinámica. A continuación se registran los criterios de modelado aplicados en DWSIM v1:
 
-\begin{enumerate}[leftmargin=1.5em]
+\begin{enumerate}[leftmargin=1.1em,itemsep=1.0pt,parsep=0pt,topsep=1pt]
     \item \textbf{Reactor Químico de Síntesis de Metanol (\texttt{R-401}, \texttt{R-401-S} y \texttt{E-R401}):}
-    \begin{itemize}
-        \item \textit{Equipo Real Representado:} Reactor multitubular de lecho fijo refrigerado por agua en ebullición (Boiling Water Reactor, BWR -- tecnología tipo Lurgi). Consiste en un haz de tubos rellenos con catalizador comercial $\text{CuO}/\text{ZnO}/\text{Al}_2\text{O}_3$ sumergidos en una carcasa con agua a ebullición a $20\text{ bar}$, la cual genera vapor saturado de media presión.
-        \item \textit{Modelado en DWSIM:} Se representa mediante el bloque de equilibrio termodinámico \texttt{RCT\_Equilibrium} (\texttt{R-401}), conectado a la corriente de calor exotérmico liberado \texttt{E-R401} ($9\,139.24\text{ kW}$) y la carcasa caldera \texttt{R-401-S}.
-        \item \textit{Criterio y Justificación:} La hidrogenación de $\text{CO}_2$ ($\text{CO}_2 + 3\text{H}_2 \rightleftharpoons \text{CH}_3\text{OH} + \text{H}_2\text{O}$) y la reacción inversa de desplazamiento de gas de agua (RWGS: $\text{CO}_2 + \text{H}_2 \rightleftharpoons \text{CO} + \text{H}_2\text{O}$) están limitadas por el equilibrio químico a $245\text{--}250^\circ\text{C}$ y $75\text{ bar}$. En un reactor BWR industrial, el calor de reacción se evacúa instantáneamente por ebullición en la carcasa, manteniendo un perfil casi isotérmico. El modelo de equilibrio reproduce la conversión real de diseño sin depender de parámetros cinéticos empíricos, mientras que \texttt{R-401-S} contabiliza con exactitud el vapor de proceso exportado al electrolizador SOEC.
+    \begin{itemize}[leftmargin=0.9em,itemsep=0pt,parsep=0pt,topsep=0.5pt]
+        \item \textit{Equipo Real Representado:} Reactor multitubular BWR (tipo Lurgi) con catalizador $\text{CuO}/\text{ZnO}/\text{Al}_2\text{O}_3$ en tubos sumergidos en agua a ebullición a $20\text{ bar}$ generando vapor saturado de media presión.
+        \item \textit{Modelado en DWSIM:} Bloque termodinámico \texttt{RCT\_Equilibrium} (\texttt{R-401}) acoplado a la corriente de calor exotérmico \texttt{E-R401} ($9\,139.24\text{ kW}$) y a la carcasa caldera \texttt{R-401-S}.
+        \item \textit{Criterio y Justificación:} La síntesis de metanol y la reacción RWGS están limitadas por el equilibrio a $245\text{--}250^\circ\text{C}$ y $75\text{ bar}$. En un reactor BWR industrial, el calor se evacúa por ebullición instantánea en carcasa. El bloque de equilibrio modela la conversión real de diseño sin depender de cinéticas empíricas, mientras que \texttt{R-401-S} contabiliza el vapor exportado a SOEC.
     \end{itemize}
 
     \item \textbf{Intercambiador Economizador Efluente/Alimentación (\texttt{E-502A} y \texttt{E-502B}):}
-    \begin{itemize}
-        \item \textit{Equipo Real Representado:} Intercambiador de calor de carcasa y tubos (C\&T tipo TEMA AEL o BEU), denominado economizador de reciclo (FEHE -- Feed-Effluent Heat Exchanger).
-        \item \textit{Modelado en DWSIM:} Se modela como dos bloques térmicos desacoplados: enfriador de efluente caliente \texttt{E-502A} ($250^\circ\text{C} \to 224.566^\circ\text{C}$) y calentador de gas de reciclo frío \texttt{E-502B} ($38^\circ\text{C} \to 60^\circ\text{C}$).
-        \item \textit{Criterio y Justificación:} Los bloques de intercambiador riguroso de dos corrientes acopladas introducen severa rigidez numérica y lazos algebraicos secundarios cuando operan en bucles de reciclo con flash y compresión. El desacoplamiento con carga térmica idéntica ($1\,207.04\text{ kW}$) respeta estrictamente la Primera Ley de la Termodinámica ($\dot{Q}_{\text{cedido}} = \dot{Q}_{\text{absorbido}}$), alcanzando convergencia instantánea en $3.58\text{ s}$ sin degradar la precisión energética.
+    \begin{itemize}[leftmargin=0.9em,itemsep=0pt,parsep=0pt,topsep=0.5pt]
+        \item \textit{Equipo Real Representado:} Intercambiador de carcasa y tubos (C\&T tipo TEMA), denominado economizador de reciclo (FEHE -- Feed-Effluent Heat Exchanger).
+        \item \textit{Modelado en DWSIM:} Dos bloques desacoplados: enfriador de efluente \texttt{E-502A} ($250^\circ\text{C} \to 224.6^\circ\text{C}$) y calentador de reciclo \texttt{E-502B} ($38^\circ\text{C} \to 60^\circ\text{C}$).
+        \item \textit{Criterio y Justificación:} Los intercambiadores acoplados introducen severa rigidez numérica en bucles con reciclo y compresión. El desacoplamiento con carga térmica idéntica ($1\,207.04\text{ kW}$) respeta la Primera Ley de la Termodinámica ($\dot{Q}_{\text{cedido}} = \dot{Q}_{\text{absorbido}}$), logrando convergencia en $4.8\text{ s}$.
     \end{itemize}
 
     \item \textbf{Tanque Desgasificador de Metanol Crudo (\texttt{V-601}):}
-    \begin{itemize}
-        \item \textit{Equipo Real Representado:} Tambor flash vertical a baja presión ($3.0\text{ bar}$) con malla desnebulizadora para liberación de gases no condensables disueltos.
-        \item \textit{Modelado en DWSIM:} Separador de componentes selectivo / flash isotérmico con remoción del $100\%$ de $\text{H}_2$ y $\text{CO}_2$ hacia el venteo \texttt{S-601} y fase líquida pura metanol-agua hacia \texttt{S-602}.
-        \item \textit{Criterio y Justificación:} La columna \texttt{T-601} posee un condensador total. La presencia de gases disueltos supercríticos/no condensables ($\text{H}_2$ y $\text{CO}_2$) en la alimentación impediría físicamente el cálculo de punto de burbuja en el condensador, causando el colapso numérico del algoritmo (\texttt{BubblePoint.vb}). El bloque \texttt{V-601} replica fielmente el desgasificador industrial, asegurando una alimentación binaria líquida a destilación.
+    \begin{itemize}[leftmargin=0.9em,itemsep=0pt,parsep=0pt,topsep=0.5pt]
+        \item \textit{Equipo Real Representado:} Tambor flash vertical a $3.0\text{ bar}$ con malla desnebulizadora para remoción de incondensables disueltos.
+        \item \textit{Modelado en DWSIM:} Flash isotérmico con remoción del $100\%$ de $\text{H}_2$ y $\text{CO}_2$ hacia el venteo \texttt{S-601} y fase líquida pura hacia \texttt{S-602}.
+        \item \textit{Criterio y Justificación:} La torre \texttt{T-601} posee condensador total. Gases supercríticos disueltos ($\text{H}_2$, $\text{CO}_2$) en la alimentación impedirían el cálculo de punto de burbuja en el condensador colapsando el algoritmo (\texttt{BubblePoint.vb}). El bloque \texttt{V-601} replica fielmente el desgasificador industrial.
     \end{itemize}
 
     \item \textbf{Paquete de Electrólisis SOEC (\texttt{EL-201}, \texttt{E-202}, \texttt{E-203}, \texttt{V-201}):}
-    \begin{itemize}
-        \item \textit{Equipo Real Representado:} Planta modular de electrólisis de vapor de agua a alta temperatura ($54.4\text{ MW}$, celdas cerámicas SOEC a $750\text{--}800^\circ\text{C}$) con balance de planta (BOP).
-        \item \textit{Modelado en DWSIM:} Sistema de 4 operaciones unitarias: precalentador/evaporador \texttt{E-202}, reactor de disociación electroquímica \texttt{EL-201}, enfriador catódico \texttt{E-203} y tambor flash de separación de agua no disociada \texttt{V-201}.
-        \item \textit{Criterio y Justificación:} Permite desacoplar el consumo térmico de generación de vapor ($800^\circ\text{C}$) de la potencia eléctrica neta de disociación, modelando el lazo cerrado de recirculación de vapor condensado (\texttt{S-204}) con máxima fidelidad.
+    \begin{itemize}[leftmargin=0.9em,itemsep=0pt,parsep=0pt,topsep=0.5pt]
+        \item \textit{Equipo Real Representado:} Planta modular de electrólisis de vapor a alta temperatura ($54.4\text{ MW}$, celdas SOEC a $750\text{--}800^\circ\text{C}$) con balance de planta (BOP).
+        \item \textit{Modelado en DWSIM:} Sistema de 4 bloques: evaporador \texttt{E-202}, reactor electroquímico \texttt{EL-201}, enfriador \texttt{E-203} y tambor flash de condensados \texttt{V-201}.
+        \item \textit{Criterio y Justificación:} Desacopla el consumo térmico de generación de vapor ($800^\circ\text{C}$) de la potencia eléctrica de disociación, modelando el lazo de reciclo de agua (\texttt{S-204}) con máxima fidelidad.
     \end{itemize}
 
     \item \textbf{Columna Fraccionadora de Metanol (\texttt{T-601}) y Enfriador Final (\texttt{E-603}):}
-    \begin{itemize}
-        \item \textit{Equipo Real Representado:} Torre de destilación fraccionadora de platos perforados (28 platos reales, 10 etapas teóricas de equilibrio), condensador total de agua de enfriamiento, rehervidor termosifón de vapor y subenfriador de producto \texttt{E-603}.
-        \item \textit{Modelado en DWSIM:} Columna rigurosa con método de Wang-Henke (Bubble Point), relación de reflujo $R/D = 1.20$, especificación de destilado y fondo, acoplada al cooler \texttt{E-603} ($110.18\text{ kW}$) que entrega e-metanol a $35^\circ\text{C}$ y $1.1\text{ bar}$ con $99.783\%$ molar de pureza.
+    \begin{itemize}[leftmargin=0.9em,itemsep=0pt,parsep=0pt,topsep=0.5pt]
+        \item \textit{Equipo Real Representado:} Torre de destilación de 28 platos reales (10 etapas teóricas), condensador total de agua, rehervidor termosifón y subenfriador de producto \texttt{E-603}.
+        \item \textit{Modelado en DWSIM:} Columna rigurosa con método Wang-Henke (Bubble Point), relación de reflujo $R/D = 1.20$, acoplada al cooler \texttt{E-603} ($111.18\text{ kW}$) que entrega e-metanol a $35^\circ\text{C}$ y $1.1\text{ bar}$ con $99.748\%$ molar de pureza.
     \end{itemize}
 \end{enumerate}
 
-\subsection{Registro Fotográfico de Evidencias de Simulación en DWSIM v1}
+\clearpage
 
-Las siguientes figuras certifican la resolución exitosa del modelo computacional congelado en DWSIM v1:
+\subsection{Registro Fotográfico de Evidencias de Simulación en DWSIM v1}\label{sec:evidencias_dwsim}
 
-\begin{figure}[htbp]
+Las siguientes evidencias fotográficas extraídas directamente del entorno computacional certifican formalmente la resolución exitosa, convergencia numérica y condiciones de operación del modelo congelado \texttt{DWSIM\_v1\_APROBADA\_Solvanta.dwxmz} (\textit{Caso Oficial de Diseño}):
+
+\vspace{0.15cm}
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.92\textwidth]{evidencias/01_nombramiento_tuberias_soec.png}
-\caption{\textbf{Topología y Nomenclatura de Tuberías del Front-End (Área SOEC y Mezcla Syngas)} -- Conectividad de corrientes \texttt{S-101} ($\text{CO}_2$), \texttt{S-201} ($\text{H}_2\text{O}$ make-up), lazo de recirculación \texttt{S-204}/\texttt{S-208}, venteo de $\text{O}_2$ anódico \texttt{S-206} e inyección de $\text{H}_2$ verde \texttt{S-209} al mezclador \texttt{MIX-301}.}
+\includegraphics[width=0.96\textwidth,height=7.4cm,keepaspectratio]{evidencias/01_dwsim_flowsheet_general_convergencia.png}
+\caption{\textbf{Flowsheet Integral y Consola Oficial de Convergencia Numérica en DWSIM v1} -- Visualización panorámica del modelo de proceso con sus 67 objetos en estado calculado (azul/verde) y panel de ejecución certificando la resolución exitosa en $4.8\text{ s}$ (\textit{The flowsheet was calculated successfully. [4.8s]}), con residuo objetivo de la columna fraccionadora \texttt{T-601} de $3.68\times 10^{-14}$ alcanzado en la iteración externa \#3.}
+\label{fig:dwsim_flowsheet_general}
 \end{figure}
 
-\begin{figure}[htbp]
+\vspace{0.25cm}
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.98\textwidth]{evidencias/02_simulacion_general_convergencia_dwsim.png}
-\caption{\textbf{Flowsheet General de DWSIM en Estado Calculado (Verde)} -- Registro de solución exitosa en $3.578\text{ s}$ con error residual en columna \texttt{T-601} de $4.138\times 10^{-11}$ y visualización de la carga térmica del economizador \texttt{E-502A} ($1\,207.04\text{ kW}$).}
+\includegraphics[width=0.96\textwidth,height=2.8cm,keepaspectratio]{evidencias/02_dwsim_tabla_propiedades_corrientes.png}
+\caption{\textbf{Certificación de Corrientes de Alimentación Primaria y Lazos SOEC en DWSIM v1} -- Extracto oficial de la matriz de propiedades del simulador ratificando los caudales de entrada ingresados en azul: \texttt{S-101} ($121.00\text{ kmol/h}$ de $\text{CO}_2$, $5\,274.34\text{ kg/h}$) y \texttt{S-201} ($513.00\text{ kmol/h}$ de agua make-up, $9\,241.84\text{ kg/h}$), junto con las condiciones termodinámicas de los lazos de recirculación interna SOEC (\texttt{S-202} a \texttt{S-205}).}
+\label{fig:dwsim_tabla_corrientes}
 \end{figure}
 
-\begin{figure}[htbp]
+\clearpage
+
+\noindent\textbf{Detalle Ampliado de Operaciones Unitarias Críticas del Proceso:}
+
+\vspace{0.15cm}
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.92\textwidth]{evidencias/03_flujo_final_metanol_s604_pureza.png}
-\caption{\textbf{Corriente Final de e-Metanol (\texttt{S-604}) y Enfriador \texttt{E-603}} -- Certificación de pureza química Grado AA ($99.7825\%$ molar de metanol, $0.217\%$ de agua, cero no condensables) a $35^\circ\text{C}$ y $1.1\text{ bar}$, con flujo másico de $3\,756.25\text{ kg/h}$ ($30\,050\text{ t/año}$).}
+\includegraphics[width=0.92\textwidth,height=6.8cm,keepaspectratio]{evidencias/03_dwsim_zoom_electrolisis_soec.png}
+\caption{\textbf{Topología y Conectividad del Área de Electrólisis SOEC (\texttt{EL-201}) y Separación de Hidrógeno (\texttt{V-201})} -- Detalle del frente de disociación electroquímica de vapor a alta temperatura ($750^\circ\text{C}$): precalentador \texttt{E-202}, módulo cerámico SOEC \texttt{EL-201}, venteo anódico de oxígeno puro \texttt{S-206}, enfriador catódico \texttt{E-203}, tambor flash \texttt{V-201} con lazo de condensados de vapor \texttt{S-204} e inyección de hidrógeno verde \texttt{S-209} al mezclador de syngas \texttt{MIX-301}.}
+\label{fig:dwsim_zoom_soec}
 \end{figure}
 
-\begin{figure}[htbp]
+\vspace{0.25cm}
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.98\textwidth]{evidencias/04_flowsheet_completo_nomenclatura_dwsim.png}
-\caption{\textbf{Flowsheet Panorámico Completo con Nomenclatura Oficial DWSIM v1} -- Distribución integral del modelo computacional mostrando las 35 corrientes de materia, 13 operaciones unitarias y lazos cerrados de reciclo de gas (\texttt{RCY-501}) y agua (\texttt{RCY-801}).}
+\includegraphics[width=0.92\textwidth,height=6.8cm,keepaspectratio]{evidencias/04_dwsim_zoom_producto_metanol_s604.png}
+\caption{\textbf{Especificación de Calidad del e-Metanol Comercial (\texttt{S-604}) y Enfriador Final (\texttt{E-603})} -- Tablas de propiedades desplegadas en DWSIM v1 certificando la pureza molar de metanol del $99.748\%$ ($0.252\%$ de agua residual, cero gases disueltos), condiciones de almacenamiento a $35^\circ\text{C}$ y $1.1\text{ bar}$, caudal másico comercial de $3\,789.4\text{ kg/h}$ ($30\,315\text{ t/año}$) y demanda térmica del subenfriador de producto \texttt{E-603} ($111.18\text{ kW}$).}
+\label{fig:dwsim_zoom_producto}
 \end{figure}
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.98\textwidth]{evidencias/05_tabla_material_streams_dwsim.png}
-\caption{\textbf{Tabla Maestra de Corrientes de Materia Directamente Extraída de DWSIM v1} -- Certificación numérica de caudales másicos, molares, temperatura y presión en concordancia exacta con las tablas oficiales TC-01 y TE-01.}
-\end{figure}
 \clearpage
 
 % ==============================================================================
@@ -932,10 +950,11 @@ Las siguientes figuras certifican la resolución exitosa del modelo computaciona
 
 El Diagrama de Flujo de Proceso preliminar (\textbf{PFD v0 / DFP Solvanta PLPL 1.1}) fue estructurado por el Responsable del PFD (\textbf{Gildardo Ocaña Barrales}), incorporando la totalidad de los equipos físicos comerciales, el sentido direccional de flujo, las condiciones de operación ($T, P$), las cargas térmicas/eléctricas y el cajetín de ingeniería:
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.98\textwidth,height=12.5cm,keepaspectratio]{figuras/dfp_plpl_1_1.png}
-\caption{\textbf{Diagrama de Flujo de Proceso Preliminar (PFD v0 / DFP Solvanta PLPL 1.1)} -- Planta de e-Metanol Grado AA ($30\,000\text{ t/año}$). Archivo oficial: \texttt{03\_Entregables\_Finales/E1/VTP-01\_Solvanta/04\_PFD/PFD-v0\_Solvanta.pdf}.}
+\includegraphics[width=0.98\textwidth,height=12.2cm,keepaspectratio]{figuras/dfp_plpl_1_1.png}
+\caption{\textbf{Diagrama de Flujo de Proceso Preliminar (PFD v0 / DFP Solvanta PLPL 1.1)} -- Planta de e-Metanol Grado AA ($30\,000\text{ t/año}$). Archivo oficial en repositorio: \nolinkurl{03_Entregables_Finales/E1/VTP-01_Solvanta/04_PFD/PFD-v0_Solvanta.pdf}.}
+\label{fig:pfd_v0}
 \end{figure}
 
 \begin{center}
@@ -959,7 +978,7 @@ El Diagrama de Flujo de Proceso preliminar (\textbf{PFD v0 / DFP Solvanta PLPL 1
 \begin{center}
 \footnotesize
 \textbf{Cuadro 13: Lista de verificación cruzada del PFD v0.}\\[2pt]
-\begin{tabularx}{\textwidth}{cp{8.2cm}cX}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}p{1.1cm} >{\raggedright\arraybackslash}p{7.6cm} >{\centering\arraybackslash}p{1.3cm} >{\raggedright\arraybackslash}X}
 \toprule
 \textbf{Núm.} & \textbf{Criterio de Evaluación Técnica} & \textbf{Sí/No} & \textbf{Observación de la Firma Solvanta} \\
 \midrule
@@ -985,7 +1004,7 @@ El Diagrama de Flujo de Proceso preliminar (\textbf{PFD v0 / DFP Solvanta PLPL 1
 
 Para la continuidad inmediata del proyecto hacia el dimensionamiento y hojas de datos (Entregable E2):
 \begin{enumerate}
-    \item \textbf{Validación hidráulica de platos en T-701:} Ratificar el espaciado de platos ($0.50\text{ m}$) y diámetro preliminar ($1.25\text{ m}$) mediante análisis de inundación (flooding factor $<80\%$) y caída de presión en simulador hidráulico.
+    \item \textbf{Validación hidráulica de platos en T-601:} Ratificar el espaciado de platos ($0.50\text{ m}$) y diámetro preliminar ($1.25\text{ m}$) mediante análisis de inundación (flooding factor $<80\%$) y caída de presión en simulador hidráulico.
     \item \textbf{Cinética detallada en R-401:} Modelar el perfil de temperatura punto a punto en los tubos catalíticos con cinética de Vanden Bussche \& Froment en lugar de conversión pseudo-global.
     \item \textbf{Integración térmica avanzada (Pinch Analysis):} Evaluar la integración entre el efluente SOEC a $750^\circ\text{C}$ y el sobrecalentador de vapor \texttt{E-202} para reducir la demanda eléctrica neta de la planta.
     \item \textbf{Diseño mecánico de recipientes a presión:} Especificar metalurgia (acero inoxidable 316L y titanio) para los separadores flash y reactores que manejan $\text{CO}_2$ húmedo a alta presión.

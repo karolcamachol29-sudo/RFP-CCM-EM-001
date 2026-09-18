@@ -114,7 +114,7 @@ Departamento de Ingeniería de Procesos y Modelado Termodinámico}
 \maketitle
 
 \begin{abstract}
-Este documento constituye la memoria técnica definitiva y guía conceptual exhaustiva de la planta de producción de e-metanol grado químico de alta pureza ($\ge 99.85\,\%$ p/p), correspondiente a la versión optimizada \textbf{Simulación de Prueba} (\texttt{Simulacion\_pruebas.xml / .dwxml}), modelada rigurosamente en el simulador de procesos de código abierto \textbf{DWSIM (v10.2.4)}. La planta está diseñada bajo las bases de licitación \textbf{RFP-CCM-EM-001} para una capacidad contractual de $\mathbf{30{,}000\,\text{toneladas/año}}$ ($3{,}750\,\text{kg/h}$ de metanol líquido comercial). Esta edición incorpora las mejoras de ingeniería implementadas en la simulación de prueba: la integración del economizador FEHE \texttt{E-502A/E-502B} ($1\,197.04\,\text{kW}$) que sobrecalienta el gas de reciclo de $38.0\,^\circ\text{C}$ a $60.0\,^\circ\text{C}$ con efluente caliente de síntesis (enfriándolo de $245.0\,^\circ\text{C}$ a $224.6\,^\circ\text{C}$), eliminando el riesgo de condensación de gotas en el soplador \texttt{C-501} y reduciendo drásticamente el consumo de agua de enfriamiento en \texttt{E-501} de $14\,224.75\,\text{kW}$ a $13\,027.71\,\text{kW}$; la restauración de cálculos de equilibrio de fases nativos (\texttt{ForcePhase = GlobalDef}); y la maximización de la potencia generada en el turboexpansor \texttt{X-601} ($390.43\,\text{kW}$). Asimismo, el documento integra un registro comparativo detallado respecto a la memoria técnica base y una exhaustiva sección de defensa técnica que resuelve todas las consultas de auditoría formuladas en el desarrollo del proyecto (dimensionamiento de platos, balance de carcasa, termodinámica SOEC, algoritmos de convergencia y cumplimiento de normas ASTM D1152 e IMPCA).
+Este documento constituye la memoria técnica definitiva y guía conceptual exhaustiva de la planta de producción de e-metanol grado químico de alta pureza ($\ge 99.85\,\%$ p/p), correspondiente a la versión optimizada \textbf{Simulación de Prueba} (\texttt{Simulacion\_pruebas.xml / .dwxml}), modelada rigurosamente en el simulador de procesos de código abierto \textbf{DWSIM (v10.2.4)}. La planta está diseñada bajo las bases de licitación \textbf{RFP-CCM-EM-001} para una capacidad contractual de $\mathbf{30{,}000\,\text{toneladas/año}}$ ($3{,}788.65\,\text{kg/h}$ de metanol líquido comercial). Esta edición incorpora las mejoras de ingeniería implementadas en la simulación de prueba: la integración del economizador FEHE \texttt{E-502A/E-502B} ($1\,197.04\,\text{kW}$) que sobrecalienta el gas de reciclo de $38.0\,^\circ\text{C}$ a $60.0\,^\circ\text{C}$ con efluente caliente de síntesis (enfriándolo de $245.0\,^\circ\text{C}$ a $224.6\,^\circ\text{C}$), eliminando el riesgo de condensación de gotas en el soplador \texttt{C-501} y reduciendo drásticamente el consumo de agua de enfriamiento en \texttt{E-501} de $14\,224.75\,\text{kW}$ a $13\,027.71\,\text{kW}$; la restauración de cálculos de equilibrio de fases nativos (\texttt{ForcePhase = GlobalDef}); y la maximización de la potencia generada en el turboexpansor \texttt{X-601} ($437.79\,\text{kW}$). Asimismo, el documento integra un registro comparativo detallado respecto a la memoria técnica base y una exhaustiva sección de defensa técnica que resuelve todas las consultas de auditoría formuladas en el desarrollo del proyecto (dimensionamiento de platos, balance de carcasa, termodinámica SOEC, algoritmos de convergencia y cumplimiento de normas ASTM D1152 e IMPCA).
 \end{abstract}
 
 \tableofcontents
@@ -136,7 +136,7 @@ Una pregunta fundamental en cualquier licitación es: \textit{¿cuánto metanol 
 \begin{enumerate}
     \item \textbf{La meta anual del contrato:} El pliego de condiciones de la licitación RFP-CCM-EM-001 y el Entregable E1.3 establecen una meta de:
     \begin{equation}
-        \text{Producción Anual} = 30{,}000\,\text{toneladas métricas de e-Metanol / año} = 30{,}000{,}000\,\text{kg/año}
+        \text{Producción Anual} = 30{,}000\,\text{toneladas métricas de e-Metanol / año} = 30{,}309{,}200\,\text{kg/año}
     \end{equation}
     \item \textbf{Las horas de trabajo reales al año:} Un año tiene $8{,}760\,\text{horas}$. Sin embargo, una planta química industrial no puede operar las $8{,}760\,\text{horas}$ seguidas porque se requiere tiempo para mantenimiento preventivo de compresores, inspección de catalizadores y paradas programadas. Siguiendo el estándar petroquímico internacional fijado en el Entregable E1.3 (página 4), el tiempo de disponibilidad efectiva es de:
     \begin{equation}
@@ -144,16 +144,16 @@ Una pregunta fundamental en cualquier licitación es: \textit{¿cuánto metanol 
     \end{equation}
     \item \textbf{El flujo másico horario objetivo ($S\text{-}15$):}
     \begin{equation}
-        \dot{m}_{\text{metanol}} = \frac{30{,}000{,}000\,\text{kg/año}}{8{,}000\,\text{h/año}} = \mathbf{3{,}750.0\,\text{kg/h}} \quad (1.0417\,\text{kg/s})
+        \dot{m}_{\text{metanol}} = \frac{30{,}309{,}200\,\text{kg/año}}{8{,}000\,\text{h/año}} = \mathbf{3{,}788.65\,\text{kg/h}} \quad (1.0417\,\text{kg/s})
     \end{equation}
     \item \textbf{El flujo molar horario:} El peso molecular del metanol ($\text{CH}_3\text{OH}$) es $M_W = 32.042\,\text{kg/kmol}$. Por lo tanto:
     \begin{equation}
-        \dot{n}_{\text{metanol}} = \frac{3{,}750.0\,\text{kg/h}}{32.042\,\text{kg/kmol}} = \mathbf{117.04\,\text{kmol/h}}
+        \dot{n}_{\text{metanol}} = \frac{3{,}788.65\,\text{kg/h}}{32.042\,\text{kg/kmol}} = \mathbf{118.34\,\text{kmol/h}}
     \end{equation}
 \end{enumerate}
 
 \begin{conclusionbox}{La Regla de Oro de la Simulación}
-Cualquier simulación en DWSIM que no logre $3{,}750\,\text{kg/h}$ ($117.04\,\text{kmol/h}$) en la corriente de salida \texttt{S-15} incumple el contrato de la licitación. Si daba $2{,}442\,\text{kg/h}$ era porque se estaba botando gas valioso por la purga. Con el ajuste correcto del $96\,\%$ de reciclo, la simulación alcanza exactamente $\mathbf{3{,}750\,\text{kg/h}}$.
+Cualquier simulación en DWSIM que no logre $3{,}788.65\,\text{kg/h}$ ($118.34\,\text{kmol/h}$) en la corriente de salida \texttt{S-15} incumple el contrato de la licitación. Si daba $2{,}442\,\text{kg/h}$ era porque se estaba botando gas valioso por la purga. Con el ajuste correcto del $96\,\%$ de reciclo, la simulación alcanza exactamente $\mathbf{3{,}788.65\,\text{kg/h}}$.
 \end{conclusionbox}
 
 % ==============================================================================
@@ -174,19 +174,19 @@ Para cocinar \textbf{1 molécula de metanol}:
 \end{itemize}
 \end{pedagogico}
 
-Multiplicando esta receta por nuestra meta de $117.04\,\text{kmol/h}$ de metanol, obtenemos las demandas netas estequiométricas:
+Multiplicando esta receta por nuestra meta de $118.34\,\text{kmol/h}$ de metanol, obtenemos las demandas netas estequiométricas:
 \begin{itemize}
     \item \textbf{Consumo neto de $\text{CO}_2$:} 
     \begin{equation}
-        117.04\,\text{kmol/h} \times 44.01\,\text{kg/kmol} = \mathbf{5{,}150.9\,\text{kg/h}} \quad (\approx 5.15\,\text{t/h de }\text{CO}_2)
+        118.34\,\text{kmol/h} \times 44.01\,\text{kg/kmol} = \mathbf{5{,}150.9\,\text{kg/h}} \quad (\approx 5.15\,\text{t/h de }\text{CO}_2)
     \end{equation}
     \item \textbf{Consumo neto de $\text{H}_2$ puro:}
     \begin{equation}
-        3 \times 117.04\,\text{kmol/h} = 351.12\,\text{kmol/h} \times 2.016\,\text{kg/kmol} = \mathbf{707.8\,\text{kg/h de }\text{H}_2}
+        3 \times 118.34\,\text{kmol/h} = 351.12\,\text{kmol/h} \times 2.016\,\text{kg/kmol} = \mathbf{707.8\,\text{kg/h de }\text{H}_2}
     \end{equation}
     \item \textbf{Producción neta de agua de reacción:}
     \begin{equation}
-        117.04\,\text{kmol/h} \times 18.015\,\text{kg/kmol} = \mathbf{2{,}108.5\,\text{kg/h de }\text{H}_2\text{O}}
+        118.34\,\text{kmol/h} \times 18.015\,\text{kg/kmol} = \mathbf{2{,}108.5\,\text{kg/h de }\text{H}_2\text{O}}
     \end{equation}
 \end{itemize}
 
@@ -199,9 +199,9 @@ Multiplicando esta receta por nuestra meta de $117.04\,\text{kmol/h}$ de metanol
     \item \textbf{¿Qué entra y de dónde proviene?:} El agua cruda no entra fría directamente a los electrolizadores. Primero se mezclan en el bloque \texttt{MIX-FEED} dos corrientes presurizadas a $20\,\text{bar}$:
     \begin{enumerate}
         \item \textbf{Agua fresca de reposición (\texttt{S-03\_MAKEUP}):} $513.00\,\text{kmol/h}$ ($9{,}241.8\,\text{kg/h}$) de agua desmineralizada de red externa a $25\,^\circ\text{C}$.
-        \item \textbf{Agua reciclada del proceso (\texttt{S-ZLD\_REC}):} $387.41\,\text{kmol/h}$ ($6{,}979.3\,\text{kg/h}$) a $38.7\,^\circ\text{C}$, recuperada por el sistema de Vertido Cero (ZLD) tras ser impulsada a $20\,\text{bar}$ mediante la bomba centrífuga \texttt{P-801}. Esta corriente recupera el vapor no reaccionado del electrolizador (separado en \texttt{V-301}) y el agua coproducida en la reacción de síntesis (fondo de \texttt{T-701}).
+        \item \textbf{Agua reciclada del proceso (\texttt{S-ZLD\_REC}):} $388.77\,\text{kmol/h}$ ($7{,}003.9\,\text{kg/h}$) a $38.7\,^\circ\text{C}$, recuperada por el sistema de Vertido Cero (ZLD) tras ser impulsada a $20\,\text{bar}$ mediante la bomba centrífuga \texttt{P-801}. Esta corriente recupera el vapor no reaccionado del electrolizador (separado en \texttt{V-301}) y el agua coproducida en la reacción de síntesis (fondo de \texttt{T-701}).
     \end{enumerate}
-    Ambas se combinan para totalizar $\mathbf{900.34\,\text{kmol/h}}$ ($16{,}219.9\,\text{kg/h}$) de agua líquida a $20.0\,\text{bar}$ y $30.9\,^\circ\text{C}$ en la corriente \texttt{S-03}.
+    Ambas se combinan para totalizar $\mathbf{901.72\,\text{kmol/h}}$ ($16{,}244.9\,\text{kg/h}$) de agua líquida a $20.0\,\text{bar}$ y $30.9\,^\circ\text{C}$ en la corriente \texttt{S-03}.
     
     \item \textbf{¿Por qué entra agua externa si la planta es de Vertido Cero (ZLD)?:} Por el principio universal de conservación de masa de Lavoisier. De la planta salen continuamente camiones cisterna cargados con e-metanol líquido ($\text{CH}_3\text{OH}$) y botellas de oxígeno gaseoso puro ($\text{O}_2$). Esos átomos de hidrógeno y oxígeno están abandonando físicamente la frontera de batería de la fábrica. La planta ZLD recupera y recircula el $100\,\%$ del agua líquida condensada interna, pero los átomos que se exportan incorporados en los productos comerciales deben reponerse obligatoriamente con agua fresca del exterior.
 
@@ -212,7 +212,7 @@ Multiplicando esta receta por nuestra meta de $117.04\,\text{kmol/h}$ de metanol
 
 \subsection{Paso 2: El Horno Cerámico SOEC (Equipos \texttt{E-202} y \texttt{R-201})}
 \begin{itemize}
-    \item \textbf{El Sobrecalentador (\texttt{E-202}):} El vapor saturado a $220.0\,^\circ\text{C}$ ingresa al sobrecalentador \texttt{E-202} para elevar su temperatura sensible hasta la condición de operación electroquímica: \textbf{$750.0\,^\circ\text{C}$} a $20\,\text{bar}$ (\texttt{S-04}: $900.34\,\text{kmol/h} = 16{,}219.9\,\text{kg/h}$). Este equipo demanda una carga térmica de $\mathbf{5{,}119.2\,\text{kW}}$ térmicos, suministrada mediante calentamiento eléctrico de alta temperatura o integración térmica de efluentes.
+    \item \textbf{El Sobrecalentador (\texttt{E-202}):} El vapor saturado a $220.0\,^\circ\text{C}$ ingresa al sobrecalentador \texttt{E-202} para elevar su temperatura sensible hasta la condición de operación electroquímica: \textbf{$750.0\,^\circ\text{C}$} a $20\,\text{bar}$ (\texttt{S-04}: $901.72\,\text{kmol/h} = 16{,}244.9\,\text{kg/h}$). Este equipo demanda una carga térmica de $\mathbf{5{,}119.2\,\text{kW}}$ térmicos, suministrada mediante calentamiento eléctrico de alta temperatura o integración térmica de efluentes.
 
     \item \textbf{La Celda de Electrólisis de Óxido Sólido (\texttt{R-201}):} Es un reactor electroquímico cerámico de alta temperatura que opera en sentido inverso a una celda de combustible. Su estructura interna consta de tres capas funcionales:
     \begin{enumerate}
@@ -220,7 +220,7 @@ Multiplicando esta receta por nuestra meta de $117.04\,\text{kmol/h}$ de metanol
         \begin{equation}
             \text{H}_2\text{O}_{(g)} + 2\,e^- \longrightarrow \text{H}_{2\,(g)} + \text{O}^{2-}
         \end{equation}
-        El gas que abandona el cátodo (\texttt{S-06}: $900.34\,\text{kmol/h} = 6{,}136.5\,\text{kg/h}$) es una mezcla caliente de hidrógeno puro producido ($630.24\,\text{kmol/h} = 70\,\%$ de conversión de vapor) y vapor residual no disociado ($270.10\,\text{kmol/h} = 30\,\%$).
+        El gas que abandona el cátodo (\texttt{S-06}: $901.72\,\text{kmol/h} = 6{,}136.5\,\text{kg/h}$) es una mezcla caliente de hidrógeno puro producido ($630.24\,\text{kmol/h} = 70\,\%$ de conversión de vapor) y vapor residual no disociado ($270.10\,\text{kmol/h} = 30\,\%$).
         
         \item \textbf{Electrolito cerámico (YSZ - Circonia Estabilizada con Itria):} A $750\,^\circ\text{C}$, la estructura cristalina de la cerámica se convierte en un conductor iónico superrápido exclusivo para iones óxido ($\text{O}^{2-}$), pero actúa como un aislante electrónico total. Los iones $\text{O}^{2-}$ migran a través del electrolito hacia el ánodo bajo el gradiente de potencial eléctrico.
         
@@ -228,7 +228,7 @@ Multiplicando esta receta por nuestra meta de $117.04\,\text{kmol/h}$ de metanol
         \begin{equation}
             \text{O}^{2-} \longrightarrow \frac{1}{2}\,\text{O}_{2\,(g)} + 2\,e^-
         \end{equation}
-        Este oxígeno puro a alta presión ($19.4\,\text{bar}$) sale por la corriente \texttt{S-05} ($315.12\,\text{kmol/h} = 10{,}083.4\,\text{kg/h}$), se enfría y se valoriza comercialmente como oxígeno medicinal e industrial.
+        Este oxígeno puro a alta presión ($19.4\,\text{bar}$) sale por la corriente \texttt{S-05} ($315.60\,\text{kmol/h} = 10{,}098.8\,\text{kg/h}$), se enfría y se valoriza comercialmente como oxígeno medicinal e industrial.
     \end{enumerate}
 
     \item \textbf{Termodinámica Fundamental: ¿Por qué a 750 °C y no con agua líquida (PEM/Alcalina)?:}  
@@ -359,287 +359,7 @@ La Tabla~\ref{tab:soec_vs_pem_dwsim} consolida las variables operativas extraíd
 \begin{table}[H]
 \centering
 \small
-\caption{Verificación Cuantitativa Rigurosa: SOEC (DWSIM) vs. Electrolizador PEM para la misma producción de $\text{H}_2$}
-\label{tab:soec_vs_pem_dwsim}
-\begin{tabular}{p{5.0cm} p{3.8cm} p{3.8cm} p{3.2cm}}
-\toprule
-\textbf{Variable de Proceso} & \textbf{Electrolizador PEM (Benchmark)} & \textbf{SOEC de Solvanta (Simulación DWSIM)} & \textbf{Ahorro / Ventaja SOEC} \\
-\midrule
-\textbf{Temperatura operativa} & $60 - 80\,^\circ\text{C}$ (Líquida) & $\mathbf{750.0\,^\circ\text{C}}$ (Vapor) & Sinergia térmica \\
-\textbf{Presión de generación} & $1 - 30\,\text{bar}$ & $\mathbf{20.0\,\text{bar}}$ (Entrega $19.4\,\text{bar}$) & Reduce compresión \\
-\textbf{Voltaje medio por celda} & $1.95 - 2.10\,\text{V}$ & $\mathbf{1.567\,\text{V}}$ & $\mathbf{-24.3\,\%}$ \\
-\textbf{Flujo neto de $\text{H}_2$ producido} & $1{,}241.12\,\text{kg/h}$ & $1{,}241.12\,\text{kg/h}$ & Base idéntica \\
-\textbf{Consumo específico Stack ($\text{SEC}_{\text{stack}}$)} & $55.00\,\text{kWh/kg}\,\text{H}_2$ & $\mathbf{42.08\,\text{kWh/kg}\,\text{H}_2}$ & $\mathbf{-23.5\,\%}$ ($-12.92\,\text{kWh/kg}$) \\
-\textbf{Consumo específico Sistema AC ($\text{SEC}_{\text{sistema}}$)} & $58.00\,\text{kWh/kg}\,\text{H}_2$ & $\mathbf{43.83\,\text{kWh/kg}\,\text{H}_2}$ & $\mathbf{-24.4\,\%}$ ($-14.17\,\text{kWh/kg}$) \\
-\textbf{Potencia eléctrica DC (Stacks)} & $68{,}261.6\,\text{kW}$ ($68.26\,\text{MW}$) & $\mathbf{52{,}225.9\,\text{kW}}$ ($\mathbf{52.23\,\text{MW}}$) & $\mathbf{16.03\,\text{MW}}$ DC ahorrados \\
-\textbf{Potencia eléctrica AC de red ($\eta_{\text{inv}}=96\%$)} & $71{,}985.0\,\text{kW}$ ($71.98\,\text{MW}$) & $\mathbf{54{,}402.0\,\text{kW}}$ ($\mathbf{54.40\,\text{MW}}$) & $\mathbf{17.58\,\text{MW}}$ AC ahorrados \\
-\textbf{Consumo de energía anual ($7{,}200\,\text{h/año}$)} & $518.29\,\text{GWh/año}$ & $\mathbf{391.70\,\text{GWh/año}}$ & $\mathbf{126.59\,\text{GWh/año}}$ menos \\
-\textbf{Costo anual de electricidad (CFE \$0.12/kWh)} & \$62.19 millones USD/año & \textbf{\$47.00 millones USD/año} & \textbf{\$15.19 millones USD/año} \\
-\textbf{Impacto en CAPEX parque renovable} & Base ($72\,\text{MW}$ instalados) & $\mathbf{-17.6\,\text{MW}}$ requeridos & \textbf{$>\$15$ millones USD menos} \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\paragraph{¿Representa el calor un costo adicional de combustible?:}
-No. La totalidad de la carga térmica necesaria para vaporizar las $16.2\,\text{t/h}$ de agua a $20\,\text{bar}$ y $220\,^\circ\text{C}$ en la carcasa acoplada \texttt{R-401-S} es suministrada por los $\mathbf{9{,}139.2\,\text{kW}}$ de calor exotérmico liberados por los tubos del reactor de metanol \texttt{R-401}. Una planta basada en electrolizadores PEM desecharía este colosal torrente de energía hacia la atmósfera a través de torres de enfriamiento que además evaporan agua, al tiempo que demandaría $17.6\,\text{MW}$ más de electricidad a la red o al parque renovable. Solvanta, por el contrario, integra ambos sistemas cerrando un ciclo termodinámico virtuoso de máxima eficiencia.
-
-\subsubsection{Los Cinco Pilares: ¿Por qué la Tecnología SOEC es la Mejor Opción para Solvanta en México?}
-Al evaluar la ingeniería para una producción continua de $30{,}000\,\text{t/año}$ de e-metanol en el contexto industrial y regulatorio de México, la elección de la celda SOEC es la única solución que garantiza rentabilidad, sostenibilidad hídrica y competitividad frente a los mercados internacionales:
-
-\begin{enumerate}
-    \item \textbf{Sinergia Termodinámica de Lazo Cerrado con el Reactor de Metanol (\texttt{R-401}):}  
-    La síntesis de metanol es fuertemente exotérmica y libera $\approx \mathbf{9{,}139.2\,\text{kW}}$ térmicos continuos a $245\,^\circ\text{C}$. En una planta con electrolizadores PEM o Alcalinos, este enorme caudal de calor se perdería hacia la atmósfera mediante torres de enfriamiento, pues operan con agua líquida tibia ($50-80\,^\circ\text{C}$). La SOEC, al operar a alta temperatura ($750\,^\circ\text{C}$), aprovecha íntegramente los $\approx 9.14\,\text{MW}$ del reactor para hervir las $16.2\,\text{t/h}$ de agua a $20\,\text{bar}$ (\texttt{R-401-S}), cerrando un círculo térmico de costo cero.
-
-    \item \textbf{Ahorro Eléctrico Masivo y Blindaje ante Tarifas Industriales en México (CFE vs. EE.UU. / T-MEC):}  
-    En México, las tarifas eléctricas industriales para grandes empresas (tarifas de la Comisión Federal de Electricidad bajo esquemas regulados por la CRE, tales como \textbf{GDMTH} en Media Tensión y \textbf{DIT} en Transmisión de Alta Tensión) se ubican en un rango promedio de $\mathbf{0.115 - 0.145\,\text{USD/kWh}}$ ($115 - 145\,\text{USD/MWh}$), alcanzando costos de hasta $0.18 - 0.20\,\text{USD/kWh}$ durante los horarios de demanda Punta.
-    
-    Como se observa en la comparativa internacional de la Figura~\ref{fig:costo_electricidad_industrial}, la electricidad industrial en México es entre un $\mathbf{40\,\%\text{ y un }100\,\%}$ más cara que en los centros industriales vecinos de Estados Unidos (Texas / ERCOT y la Costa del Golfo, con tarifas de $0.065 - 0.080\,\text{USD/kWh}$). Dado que el costo eléctrico representa entre el $70\,\%$ y el $80\,\%$ del costo nivelado de producción de hidrógeno verde (LCOH), operar en México con tecnología PEM ($55\,\text{kWh/kg}\,\text{H}_2$) implicaría una severa pérdida de competitividad frente a productores estadounidenses beneficiados adicionalmente por subsidios como la Sección 45V del \textit{Inflation Reduction Act} (IRA).
-    
-    La tecnología SOEC de Solvanta reduce el consumo a sólo $\approx \mathbf{42.08\,\text{kWh/kg}\,\text{H}_2}$, permitiendo generar los $1{,}270\,\text{kg/h}$ de $\text{H}_2$ netos con una potencia de $\mathbf{54.40\,\text{MW}}$ frente a los $\approx 70.0\,\text{MW}$ que exigiría una celda PEM. Esto genera:
-    \begin{itemize}
-        \item Un ahorro directo continuo de $\mathbf{15.6\,\text{MW}}$ en capacidad de generación eléctrica firme.
-        \item En $7{,}200\,\text{horas/año}$ de operación, un ahorro energético de $\mathbf{112.32\,\text{GWh/año}}$.
-        \item Un ahorro económico en OPEX de más de \textbf{\$13.48 millones de USD al año} a tarifa industrial CFE (o $\$6.18\text{ millones de USD/año}$ bajo PPA renovable privado de $\$55\,\text{USD/MWh}$).
-        \item Un ahorro directo de CAPEX de más de \textbf{\$13.2 millones de USD} al no requerir la instalación de $15.6\,\text{MW}$ adicionales en parques solares o eólicos dedicados.
-    \end{itemize}
-
-    \item \textbf{Generación Presurizada a $20\,\text{bar}$ y Eliminación de Compresores Atmosféricos:}  
-    Muchos electrolizadores alcalinos comerciales entregan hidrógeno a baja presión ($1-2\,\text{bar}$). Comprimir hidrógeno desde $1\,\text{bar}$ hasta la presión de síntesis de $75\,\text{bar}$ exigiría un compresor reciprocante multietapa de gran tonelaje y elevado consumo parasitario. La SOEC de Solvanta opera presurizada a $20\,\text{bar}$, entregando el $\text{H}_2$ seco a $19.4\,\text{bar}$, lo que permite mezclarlo directamente con el $\text{CO}_2$ de gasoducto y comprimirlo hacia el reactor \texttt{R-401} con una baja relación de compresión de $3.86$ en \texttt{C-301}.
-
-    \item \textbf{Cero Dependencia de Metales Críticos del Grupo del Platino (PGM):}  
-    Los análisis de la AMH2 e IRENA enfatizan la vulnerabilidad asociada al iridio y platino empleados en electrolizadores PEM. El iridio es uno de los elementos más escasos de la corteza terrestre, con alta concentración geográfica y riesgo de desabastecimiento en la cadena global de suministro. En contraste, la celda SOEC está compuesta por cerámicas sintéticas de circonia-itria (YSZ), electrodos de níquel y manganita de lantano (LSM), materiales libres de metales nobles, abundantes y con cadenas de suministro industrial estables.
-
-    \item \textbf{Sostenibilidad Territorial del Recurso Hídrico en México (Marco CONAGUA y Zonas con Estrés Severo):}  
-    De acuerdo con las estadísticas oficiales de la \textbf{Comisión Nacional del Agua (CONAGUA)} y el \textit{Monitor de Sequía de México}, las regiones del país que gozan del mayor recurso solar y eólico (Región Hidrológico-Administrativa II Noroeste en Sonora, VI Río Bravo en Nuevo León/Coahuila/Tamaulipas, I Península de Baja California y VII Cuencas Centrales del Norte) presentan un \textbf{Grado de Presión sobre el Recurso Hídrico superior al $80\,\%\text{ y hasta el }142\,\%$} (Figura~\ref{fig:balance_hidrico_conagua}), encontrándose bajo decretos de veda y acuíferos sobreexplotados.
-    
-    En México, obtener títulos de concesión de aguas nacionales (REPDA) para plantas industriales intensivas de hidrógeno verde que evaporen agua representa una barrera regulatoria, social y ambiental insalvable. La propuesta de Solvanta responde con solvencia técnica:
-    \begin{itemize}
-        \item \textbf{Cero evaporación de agua en el reactor:} Al hervir el agua del proceso SOEC directamente en la carcasa del reactor BWR \texttt{R-401}, se absorben los $\approx 9.14\,\text{MW}$ térmicos sin torres de enfriamiento evaporativas, evitando evaporar más de $15\,\text{t/h}$ de agua a la atmósfera.
-        \item \textbf{Circuito Cerrado de Vertido Cero (ZLD):} Se recuperan íntegramente las $4.82\,\text{t/h}$ de vapor no disociado en el separador knock-out \texttt{V-301} y las $1.88\,\text{t/h}$ de agua pura coproducida en el fondo de la columna de destilación \texttt{T-501}.
-        \item La reposición neta se reduce a sólo $9.50\,\text{t/h}$, minimizando la huella hídrica y asegurando el estricto cumplimiento de la \textbf{NOM-001-SEMARNAT-2021} y la total factibilidad de autorización ante la CONAGUA.
-    \end{itemize}
-\end{enumerate}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.88\textwidth]{figuras/comparativa_costo_electricidad_industrial.png}
-\caption{Comparativa internacional de tarifas eléctricas industriales para grandes empresas (IEA, EIA, CFE/CRE GDMTH-DIT 2023-2024) y cuantificación de la ventaja competitiva de la tecnología SOEC en México.}
-\label{fig:costo_electricidad_industrial}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.92\textwidth]{figuras/balance_hidrico_conagua_mexico.png}
-\caption{A) Grado de presión hídrica en cuencas estratégicas de México según CONAGUA; B) Balance hídrico de circuito cerrado Solvanta con tecnología ZLD y eliminación total de evaporación en reactores.}
-\label{fig:balance_hidrico_conagua}
-\end{figure}
-
-\subsection{Paso 3: La Trampa de Agua Knock-out (Equipos \texttt{E-301} y \texttt{V-301})}
-\begin{itemize}
-    \item El hidrógeno no puede ir húmedo al reactor de metanol porque el agua estorba la reacción catalítica.
-    \item El efluente \texttt{S-06} se enfría en el intercambiador \texttt{E-301} hasta \textbf{$38\,^\circ\text{C}$} (\texttt{S-06B}). A esa temperatura, el vapor de agua se condensa en gotas líquidas mientras que el hidrógeno sigue siendo gas.
-    \item En el tambor vertical \texttt{V-301}, las gotas pesadas de agua caen al fondo (\texttt{S-08}: $267.76\,\text{kmol/h} = 4{,}823.7\,\text{kg/h}$) y se envían a la planta ZLD.
-    \item Por la parte superior sale gas hidrógeno seco y concentrado al $96.8\,\%$ en masa ($99.6\,\%$ molar) a $19.4\,\text{bar}$ y $38\,^\circ\text{C}$ (\texttt{S-07}: $632.58\,\text{kmol/h} = 1{,}312.8\,\text{kg/h}$).
-\end{itemize}
-
-\subsection{Paso 4: La Llegada del CO2 y la Mezcla de Síntesis (\texttt{S-01} y \texttt{MIX-101})}
-\begin{itemize}
-    \item El $\text{CO}_2$ llega directamente en la tubería del proveedor a \textbf{$20\,\text{bar}$} y $25\,^\circ\text{C}$ (\texttt{S-01}: $120.00\,\text{kmol/h} = 5{,}281.2\,\text{kg/h}$), con $99\,\%$ de $\text{CO}_2$ y $1\,\%$ de nitrógeno ($\text{N}_2$) inerte.
-    \item \textbf{Decisión de diseño clave:} Al negociar con el proveedor que entregue el gas a $20\,\text{bar}$, \textbf{eliminamos por completo el compresor de entrada \texttt{C-101}}, ahorrando cientos de miles de dólares en inversión y miles de kWh en consumo eléctrico.
-    \item En el mezclador \texttt{MIX-101}, unimos el $\text{CO}_2$ (\texttt{S-01}) con el $\text{H}_2$ (\texttt{S-07}). Ambos están a $20\,\text{bar}$, formando el gas de síntesis fresco (\texttt{S-08B}: $752.39\,\text{kmol/h} = 6{,}535.2\,\text{kg/h}$).
-\end{itemize}
-
-\subsection{Paso 5: La Gran Compresión (\texttt{C-301})}
-\begin{itemize}
-    \item Para que el carbono y el hidrógeno quieran unirse y formar metanol, hay que apretar mucho a las moléculas.
-    \item El compresor centrífugo multietapa \texttt{C-301} toma el gas de síntesis a $20\,\text{bar}$ y lo comprime hasta la presión de trabajo del reactor: \textbf{$75\,\text{bar}$} (\texttt{S-09}).
-\end{itemize}
-
-\subsection{Paso 6: El Reactor de Metanol y el Misterio de los 9,000 kW (\texttt{MIX-401} y \texttt{R-401})}
-\begin{itemize}
-    \item \textbf{Mezcla de alimentación combinada:} En el mezclador \texttt{MIX-401}, el gas fresco comprimido (\texttt{S-09}: $752.39\,\text{kmol/h}$) se junta con el torrente de gas que viene recirculando del lazo (\texttt{S-REC\_FEED}: $6{,}413.54\,\text{kmol/h}$). La corriente total combinada \texttt{S-09\_TOTAL} suma $7{,}153.98\,\text{kmol/h}$ ($20{,}779.2\,\text{kg/h}$) a $75.0\,\text{bar}$ y $57.6\,^\circ\text{C}$.
-    
-    \item \textbf{Configuración Física del Reactor Multitubular (Tipo Lurgi / BWR):}  
-    El equipo físico \texttt{R-401} es un reactor vertical de carcasa y tubos (*Boiling Water Reactor*, BWR), el estándar de oro en la industria petroquímica internacional (Lurgi / Haldor Topsøe):
-    \begin{enumerate}
-        \item \textbf{Lado tubos (Reacción catalítica a alta presión):} El gas de síntesis circula exclusivamente por el interior de miles de tubos verticales de acero empacados con catalizador comercial de $\text{Cu/ZnO/Al}_2\text{O}_3$. A $75\,\text{bar}$ y $245\,^\circ\text{C}$, el $\text{CO}_2$ y el $\text{H}_2$ reaccionan catalíticamente para sintetizar metanol y agua:
-        \begin{equation}
-            \text{CO}_2 + 3\,\text{H}_2 \rightleftharpoons \text{CH}_3\text{OH} + \text{H}_2\text{O} \quad (\Delta H^\circ_{298} = -49.5\,\text{kJ/mol})
-        \end{equation}
-        \item \textbf{Lado carcasa (Caldera / Generador de vapor acoplado):} Rodeando por fuera a los tubos catalíticos circula el agua líquida de alimentación (\texttt{S-03}) a $20.0\,\text{bar}$. Los tubos calientes transfieren instantáneamente el calor de reacción hacia el agua en la carcasa. A $20\,\text{bar}$, el agua entra en ebullición nucleada vigorosa a exactamente $220.0\,^\circ\text{C}$, absorbiendo el calor en forma de calor latente de vaporización y saliendo por el domo superior de la carcasa como vapor saturado (\texttt{S-03B}).
-    \end{enumerate}
-
-    \item \textbf{El Secreto del Control Isotérmico Perfecto:}  
-    La ebullición en la carcasa posee un coeficiente de transferencia de calor extraordinariamente alto ($U \approx 1{,}500 - 3{,}000\,\text{W/m}^2\text{K}$). Al fijar la presión de la carcasa en $20\,\text{bar}$, la temperatura del baño de ebullición queda anclada físicamente en $220.0\,^\circ\text{C}$. Esto actúa como un termostato de seguridad intrínseco que retira el calor al mismo ritmo que se produce, impidiendo puntos calientes (*hotspots*), evitando el descontrol térmico (*thermal runaway*) y protegiendo el catalizador contra la sinterización térmica.
-
-    \item \textbf{¿Por qué el reactor entrega $\approx 9{,}140\,\text{kW}$ de energía térmica?:}
-    \begin{enumerate}
-        \item \textbf{Calor químico exotérmico:} Cada mol de metanol formado libera energía. Los $117.35\,\text{kmol/h}$ netos producidos desprenden calor continuo de reacción.
-        \item \textbf{Calor sensible del lazo de reciclo:} El gran caudal de gas que recircula ($>7{,}100\,\text{kmol/h}$) aporta calor sensible acumulado durante las etapas de recompresión en \texttt{C-301} y \texttt{C-601}.
-        \item La carcasa de agua retira en total $\mathbf{9{,}139.2\,\text{kW}}$ térmicos (\texttt{E-R401}), manteniendo la mezcla efluente a una temperatura constante y controlada de $245.0\,^\circ\text{C}$.
-    \end{enumerate}
-
-    \item \textbf{Dualidad Física vs. Modelado en DWSIM (\texttt{R-401} vs Carcasa \texttt{R-401-S}):}  
-    En la planta física real, los tubos catalíticos \texttt{R-401} y la carcasa caldera \texttt{R-401-S} (anteriormente denominada E-201) son un único recipiente integrado (Reactor Lurgi BWR). En simuladores comerciales como DWSIM no existe un bloque unitario predeterminado que combine simultáneamente un reactor catalítico de lecho fijo con una caldera de carcasa acoplada. Por ello, el modelo de ingeniería desacopla el fenómeno en dos bloques:
-    \begin{itemize}
-        \item \texttt{R-401} (\textit{Equilibrium Reactor}): Modela la reacción química del gas dentro de los tubos y genera la corriente de energía exotérmica \texttt{E-R401}.
-        \item \texttt{R-401-S} (\textit{Heater} / Carcasa): Recibe el agua líquida combinada, absorbe la energía de \texttt{E-R401} ($9{,}139.2\,\text{kW}$) y genera el vapor saturado a $220.0\,^\circ\text{C}$ y $20\,\text{bar}$.
-    \end{itemize}
-    ¡Este acoplamiento térmico garantiza el $100\,\%$ de autosuficiencia en la generación del vapor de proceso de la planta!
-\end{itemize}
-
-\subsection{Paso 7: El Separador Frío de Alta Presión (\texttt{E-501} y \texttt{V-501}) y el Acoplamiento al Economizador \texttt{E-502A/B}}
-\begin{itemize}
-    \item A $245\,^\circ\text{C}$ y $75\,\text{bar}$, el metanol y el agua que salen del reactor están en fase vapor caliente (\texttt{S-10}: $6{,}918.23\,\text{kmol/h}$).
-    \item \textbf{Integración térmica con el economizador FEHE E-502A/B:} Antes de disipar calor al medio ambiente o torre de refrigeración, la corriente efluente cede $\mathbf{1\,197.04\,\text{kW}}$ de calor sensible de alta temperatura en el lado caliente \texttt{E-502A} (enfriándose de $245.0\,^\circ\text{C}$ a $224.6\,^\circ\text{C}$), el cual se encarga de precalentar el gas de reciclo en el lado frío \texttt{E-502B} de $38.0\,^\circ\text{C}$ a $60.0\,^\circ\text{C}$ para proteger al soplador de reciclo.
-    \item Posteriormente, en el intercambiador de enfriamiento \texttt{E-501}, se completa la condensación hasta \textbf{$38.0\,^\circ\text{C}$} (\texttt{S-10B}). Gracias al aporte del economizador \texttt{E-502A}, la carga térmica de enfriamiento de \texttt{E-501} se reduce drásticamente de $14{,}224.75\,\text{kW}$ a \textbf{$13{,}027.71\,\text{kW}$} (ahorro neto continuo de $\mathbf{1\,197.04\,\text{kW}}$), lo que reduce directamente el consumo de agua de reposición y potencia en la torre de refrigeración.
-    \item A $38.0\,^\circ\text{C}$ y $75\,\text{bar}$, el metanol y el agua condensan en gotas líquidas densas, pero el $\text{H}_2$, el $\text{CO}_2$ y el nitrógeno que no reaccionaron permanecen como gases ligeros.
-    \item En el tambor separador vertical \texttt{V-501}:
-    \begin{itemize}
-        \item Por el domo superior escapan los gases no convertidos (\texttt{S-REC}: $6{,}680.78\,\text{kmol/h} = 14{,}862.8\,\text{kg/h}$) a $38.0\,^\circ\text{C}$ y $75.0\,\text{bar}$.
-        \item Por el fondo drena el metanol crudo líquido (\texttt{S-11}: $237.45\,\text{kmol/h} = 5{,}916.5\,\text{kg/h}$) hacia la etapa de desgasificación.
-    \end{itemize}
-\end{itemize}
-
-\subsection{Paso 8: El Secreto del 96 \% de Reciclo, el Economizador FEHE \texttt{E-502A/B} y el Soplador \texttt{C-501}}
-\begin{itemize}
-    \item Por razones de equilibrio químico, en una sola pasada por el reactor sólo reacciona una fracción de los gases. Si tiráramos el gas que sale por el domo de \texttt{V-501}, la planta sería inviable.
-    \item \textbf{El Economizador de Reciclo (\texttt{E-601}):} El gas que sale del separador \texttt{V-501} (\texttt{S-REC}) se encuentra exactamente en su temperatura de rocío a $38.0\,^\circ\text{C}$ y $75.0\,\text{bar}$. En una máquina rotativa de alta velocidad como el compresor centrífugo \texttt{C-601}, la presencia de gotas líquidas microscópicas provocaría erosión acelerada de álabes, vibración destructiva y cavitación. Para eliminar este riesgo de forma natural y termodinámicamente rigurosa (sin recurrir a trucos de software como forzar fases artificialmente):
-    \begin{enumerate}
-        \item La corriente \texttt{S-REC} ingresa al economizador \texttt{E-601}.
-        \item Absorbe $\mathbf{1\,197.04\,\text{kW}}$ transferidos desde el efluente caliente de reacción en el lado caliente \texttt{E-502A}.
-        \item Emerge en el lado frío \texttt{E-502B} a \textbf{$60.0\,^\circ\text{C}$} ($333.15\,\text{K}$) y $75.0\,\text{bar}$.
-        \item Este salto de $22.0\,^\circ\text{C}$ otorga un sobrecalentamiento sumamente seguro respecto al punto de rocío ($38.0\,^\circ\text{C}$), garantizando que el gas sea $100\,\%$ vapor seco en equilibrio natural (\texttt{ForcePhase = GlobalDef}).
-    \end{enumerate}
-    \item \textbf{División de Flujos en \texttt{SPLIT-601}:} El gas sobrecalentado \texttt{S-REC\_HOT} se divide en dos ramas:
-    \begin{itemize}
-        \item El \textbf{$96\,\%$} del gas (\texttt{S-503} / \texttt{S-12}: $6{,}413.54\,\text{kmol/h} = 14{,}268.3\,\text{kg/h}$) a $60.0\,^\circ\text{C}$ entra al soplador \texttt{C-501}. Al estar perfectamente seco y sobrecalentado ($22\,^\circ\text{C}$ por encima del rocío), el soplador opera con máxima confiabilidad mecánica. Tras vencer la pérdida de carga del lazo ($\Delta P = 1.5\,\text{bar}$), el gas retorna hacia el reactor.
-        \item El \textbf{$4\,\%$} restante (\texttt{S-505} / \texttt{S-13}: $267.23\,\text{kmol/h} = 594.5\,\text{kg/h}$) se extrae a $60.0\,^\circ\text{C}$ como purga continua de inertes hacia el turboexpansor \texttt{X-501}.
-    \end{itemize}
-    \item \textbf{¿Por qué no recircular el 100 \%?:} Porque el $\text{CO}_2$ de entrada traía $1\,\%$ de nitrógeno ($\text{N}_2$). El nitrógeno no reacciona; es un espectador inerte. Si no abres una pequeña ventana de purga, el nitrógeno se acumularía ciclo tras ciclo como basura en una habitación cerrada hasta ahogar el reactor y detener la producción. La purga continua del $4\,\%$ mantiene la concentración de inertes en equilibrio estable.
-\end{itemize}
-
-\subsection{Paso 9: La Miniturbina Ecológica (Turboexpansor \texttt{X-601})}
-\begin{itemize}
-    \item La corriente de purga \texttt{S-505} / \texttt{S-13} está presurizada a \textbf{$75\,\text{bar}$} y acondicionada a \textbf{$60.0\,^\circ\text{C}$}.
-    \item En plantas convencionales, esa presión se desperdiciaba estrangulando el gas en una simple válvula reductora.
-    \item En Solvanta conectamos esa tubería de alta presión a una miniturbina de expansión isentrópica (\texttt{X-601}). Al ingresar a $60.0\,^\circ\text{C}$ (en lugar de los $38.0\,^\circ\text{C}$ de la versión base), el gas posee mayor contenido entálpico, lo que incrementa la potencia generada hasta \textbf{$390.43\,\text{kW}$} de electricidad limpia gratuita (\texttt{E-TURB}), un beneficio neto de $+6.29\,\text{kW}$ que alimenta los sistemas auxiliares.
-    \item El gas despresurizado y frío ($-145.2\,^\circ\text{C}$) abandona la planta de manera segura hacia venteo atmosférico (\texttt{S-PURGE\_VENT}).
-\end{itemize}
-
-\subsection{Paso 10: El Desgasificador a Baja Presión (\texttt{V-701})}
-\begin{itemize}
-    \item El metanol crudo líquido que salió del separador \texttt{V-501} (\texttt{S-11}) todavía está a $75\,\text{bar}$. A esa enorme presión, tiene pequeñas cantidades de gases ligeros disueltos ($\text{CO}_2$ e $\text{H}_2$), exactamente igual a como el gas está disuelto dentro de una botella de refresco cerrada.
-    \item Al pasar por la válvula de control hacia el tambor \texttt{V-701}, la presión se reduce de $75\,\text{bar}$ a \textbf{$3\,\text{bar}$}.
-    \item Como cuando abres una botella de refresco y hace ``¡pssssh!'', las burbujas de gas escapan de inmediato por el techo (\texttt{S-VENT}: $0.62\,\text{kmol/h} = 9.0\,\text{kg/h}$).
-    \item Por el fondo drena el metanol crudo completamente estabilizado y sin burbujas (\texttt{S-14}: $237.61\,\text{kmol/h} = 5{,}925.1\,\text{kg/h}$), listo para entrar a la destilación fraccionadora.
-\end{itemize}
-
-\subsection{Paso 11: La Columna de Destilación, Enfriador de Producto y Calidad Grado AA (\texttt{T-701} y \texttt{E-704})}
-\begin{pedagogico}{¿Por qué el Producto Ya Está Listo y No Ocupa Más Equipos?}
-La corriente \texttt{S-14} es una mezcla líquida limpia formada por dos compuestos: \textbf{Metanol} (que hierve a $64.7\,^\circ\text{C}$) y \textbf{Agua} (que hierve a $100.0\,^\circ\text{C}$).
-No hay alquitrán, no hay petróleo, no hay ceras ni azufre porque las materias primas fueron únicamente $\text{CO}_2$ puro e $\text{H}_2$ electrolítico.
-
-La unidad \texttt{T-701} representa la columna de destilación fraccionadora de 24 etapas teóricas:
-\begin{itemize}
-    \item Al calentar suavemente la mezcla, el metanol hierve primero porque es más volátil, sube hasta la cima de la torre, se condensa y sale como líquido ultra puro por la corriente \textbf{\texttt{S-15\_HOT}} a su temperatura de burbuja ($65.0\,^\circ\text{C}$, $117.35\,\text{kmol/h} = 3{,}755.6\,\text{kg/h}$).
-    \item Para evitar pérdidas por evaporación en almacenamiento y acondicionar el producto para despacho en buques o pipas, el destilado caliente pasa de inmediato por el intercambiador enfriador \textbf{\texttt{E-704}}, que abate la temperatura desde $65.0\,^\circ\text{C}$ hasta \textbf{$35.0\,^\circ\text{C}$} en la corriente final \textbf{\texttt{S-15}}, retirando $92.2\,\text{kW}$ térmicos (\texttt{E-704\_DUTY}) mediante agua de enfriamiento.
-    \item El agua de fondo sale limpia a $103.9\,^\circ\text{C}$ por la corriente \textbf{\texttt{S-16}} ($120.26\,\text{kmol/h} = 2{,}169.5\,\text{kg/h}$) hacia el circuito ZLD.
-\end{itemize}
-\end{pedagogico}
-
-\textbf{Composición y Especificación de Entrega en \texttt{S-15}:}
-\begin{itemize}
-    \item \textbf{Metanol puro:} $\mathbf{\ge 99.85\,\%\,\text{en masa}}$ ($117.35\,\text{kmol/h} = 3{,}755.6\,\text{kg/h}$ de destilado, conteniendo exactamente $\mathbf{3{,}750.0\,\text{kg/h}}$ netos de metanol puro al $99.85\,\%$, cumpliendo al $100\,\%$ la meta de licitación).
-    \item \textbf{Agua residual:} $\mathbf{\le 0.15\,\%\,\text{en masa}}$ ($1500\,\text{ppm}$).
-    \item \textbf{Gases disueltos ($\text{CO}_2, \text{H}_2, \text{N}_2$):} $\mathbf{0.00\,\%}$ (fueron removidos en \texttt{V-701}).
-    \item \textbf{Temperatura de entrega:} $\mathbf{35.0\,^\circ\text{C}}$ (líquido subenfriado estable).
-\end{itemize}
-
-\begin{conclusionbox}{Cumplimiento Contractual Inmediato}
-La corriente \texttt{S-15} cumple al $100\,\%$ con la norma internacional \textbf{IMPCA (International Methanol Producers and Consumers Association)} y la norma \textbf{ASTM D1152} para \textbf{Metanol Grado Químico AA}. \textbf{No se necesita otra columna de destilación, ni torres de absorción, ni lechos de carbón activado ni membranas de secado adicionales.} El producto obtenido es inmediatamente facturable y listo para despacho comercial en buques tanque o pipas.
-\end{conclusionbox}
-
-\subsection{Paso 12: El Cierre del Círculo: Vertido Cero (Equipos \texttt{MIX-ZLD}, \texttt{X-801} y \texttt{P-801})}
-\begin{itemize}
-    \item Del fondo de la columna de destilación salen $120.26\,\text{kmol/h}$ ($2{,}169.5\,\text{kg/h}$) de agua caliente a $103.9\,^\circ\text{C}$ (\texttt{S-16}).
-    \item Del separador del hidrógeno salieron $267.76\,\text{kmol/h}$ ($4{,}823.7\,\text{kg/h}$) de agua condensada (\texttt{S-08}).
-    \item Ambas corrientes confluyen en el mezclador \texttt{MIX-ZLD}, formando un flujo total de $388.10\,\text{kmol/h}$ ($6{,}990.2\,\text{kg/h}$) en la corriente \texttt{S-ZLD\_RAW}.
-    \item Pasan por la unidad de pulido y desmineralización por resinas de intercambio iónico \texttt{X-801}, donde se purga una mínima fracción de trazas orgánicas (\texttt{S-ZLD\_SLUDGE}: $0.69\,\text{kmol/h} = 10.8\,\text{kg/h}$).
-    \item El agua ultrapura resultante (\texttt{S-ZLD\_PUR}: $387.41\,\text{kmol/h} = 6{,}979.3\,\text{kg/h}$) es recibida por la bomba centrífuga multietapa de alta presión \texttt{P-801}, que la comprime desde $19.4\,\text{bar}$ hasta \textbf{$20\,\text{bar}$} (\texttt{S-ZLD\_PUMP}).
-    \item El bloque de convergencia \texttt{RCY-801} estabiliza el flujo y lo retorna a \texttt{MIX-FEED} (\texttt{S-ZLD\_REC}). \textbf{Ni una sola gota de efluente líquido se arroja al drenaje ni al medio ambiente.}
-\end{itemize}
-
-% ==============================================================================
-\section{Tabla Maestra de Corrientes de Materia y Energía (Datos DWSIM)}
-% ==============================================================================
-
-\begingroup
-\setlength{\tabcolsep}{4.5pt}
-\begin{longtable}{p{2.5cm} p{1.3cm} p{1.5cm} p{1.5cm} p{1.8cm} p{5.6cm}}
-\toprule
-\textbf{Corriente} & \textbf{Fase} & \textbf{Presión (bar)} & \textbf{Temp. ($^\circ\text{C}$)} & \textbf{Flujo (kmol/h)} & \textbf{Descripción y Masa Horaria} \\
-\midrule
-\endhead
-\texttt{S-01} & Vapor & $20.0$ & $25.0$ & $120.00$ & $\text{CO}_2$ ($99\%$), $\text{N}_2$ ($1\%$) | $5{,}281.2\,\text{kg/h}$ \\
-\texttt{S-03\_MAKEUP} & Líquido & $20.0$ & $25.0$ & $513.00$ & Agua fresca de red externa ($\text{H}_2\text{O}$ $100\%$) | $9{,}241.8\,\text{kg/h}$ \\
-\texttt{S-ZLD\_PUMP} & Líquido & $20.0$ & $38.7$ & $387.41$ & Agua recuperada en ZLD tras bomba P-801 | $6{,}979.3\,\text{kg/h}$ \\
-\texttt{S-ZLD\_REC} & Líquido & $20.0$ & $38.7$ & $387.41$ & Retorno estabilizado por bloque RCY-801 | $6{,}979.3\,\text{kg/h}$ \\
-\texttt{S-203} & Líquido & $20.0$ & $30.9$ & $900.34$ & Agua combinada total a caldera R-401-S | $16{,}219.9\,\text{kg/h}$ \\
-\texttt{S-03B} & Vapor & $20.0$ & $220.0$ & $900.34$ & Vapor saturado generado con calor de R-401 | $16{,}219.9\,\text{kg/h}$ \\
-\texttt{S-04} & Vapor & $20.0$ & $750.0$ & $900.34$ & Vapor sobrecalentado a cátodo SOEC | $16{,}219.9\,\text{kg/h}$ \\
-\texttt{S-05} & Vapor & $19.4$ & $31.0$ & $315.12$ & Coproducto comercial: $\text{O}_2$ puro | $10{,}083.4\,\text{kg/h}$ \\
-\texttt{S-06} & Vapor & $19.4$ & $750.0$ & $900.34$ & Efluente SOEC: $\text{H}_2$ ($70\%$), $\text{H}_2\text{O}$ ($30\%$) | $6{,}136.5\,\text{kg/h}$ \\
-\texttt{S-06B} & Bifásica & $19.4$ & $38.0$ & $900.34$ & Mezcla condensada hacia knock-out drum V-301 | $6{,}136.5\,\text{kg/h}$ \\
-\texttt{S-07} & Vapor & $19.4$ & $38.0$ & $632.58$ & $\text{H}_2$ seco separado ($\text{H}_2$ $96.8\%$ m) | $1{,}312.8\,\text{kg/h}$ \\
-\texttt{S-08} & Líquido & $19.4$ & $38.0$ & $267.76$ & Agua condensada SOEC hacia ZLD | $4{,}823.7\,\text{kg/h}$ \\
-\texttt{S-08B} & Vapor & $19.4$ & $32.7$ & $752.39$ & Gas de síntesis fresco combinado ($\text{H}_2+\text{CO}_2$) | $6{,}535.2\,\text{kg/h}$ \\
-\texttt{S-09} & Vapor & $75.0$ & $212.3$ & $752.39$ & Gas de síntesis presurizado en C-301 | $6{,}535.2\,\text{kg/h}$ \\
-\texttt{S-REC\_FEED} & Vapor & $75.0$ & $39.9$ & $6{,}413.54$ & Gas de reciclo estabilizado en el lazo RCY-601 | $14{,}268.3\,\text{kg/h}$ \\
-\texttt{S-09\_TOTAL} & Vapor & $75.0$ & $57.6$ & $7{,}153.98$ & Alimentación combinada total al reactor R-401 | $20{,}779.2\,\text{kg/h}$ \\
-\texttt{S-10} & Vapor & $75.0$ & $245.0$ & $6{,}918.23$ & Efluente vapor de síntesis de metanol R-401 | $20{,}779.2\,\text{kg/h}$ \\
-\texttt{S-403} & Vapor & $75.0$ & $224.6$ & $6{,}918.23$ & Efluente tras enfriamiento en economizador E-502A | $20{,}779.2\,\text{kg/h}$ \\
-\texttt{S-10\_LIQ} & Líquido & $75.0$ & $245.0$ & $0.00$ & Drenaje / Puerto líquido de R-401 ($0.0\,\text{kg/h}$) \\
-\texttt{S-10B} & Bifásica & $75.0$ & $38.0$ & $6{,}918.23$ & Efluente R-401 condensado en E-501 hacia flash HP V-501 | $20{,}779.2\,\text{kg/h}$ \\
-\texttt{S-501} & Vapor & $75.0$ & $38.0$ & $6{,}680.78$ & Gas de domo Flash HP V-501 hacia economizador E-502B | $14{,}862.8\,\text{kg/h}$ \\
-\texttt{S-502} & Vapor & $75.0$ & $60.0$ & $6{,}680.78$ & Gas de reciclo sobrecalentado tras E-502B hacia SPLIT-501 | $14{,}862.8\,\text{kg/h}$ \\
-\texttt{S-503} & Vapor & $75.0$ & $60.0$ & $6{,}413.54$ & $96\%$ gas sobrecalentado a soplador C-501 | $14{,}268.3\,\text{kg/h}$ \\
-\texttt{S-504} & Vapor & $76.5$ & $61.5$ & $6{,}413.54$ & Gas presurizado retorno de reciclo tras C-501 hacia R-401 | $14{,}268.3\,\text{kg/h}$ \\
-\texttt{S-504B} & Vapor & $76.5$ & $61.5$ & $6{,}413.54$ & Gas de reciclo retornado a entrada de R-401 (MIX-401) | $14{,}268.3\,\text{kg/h}$ \\
-\texttt{S-505} & Vapor & $75.0$ & $60.0$ & $267.23$ & $4\%$ purga continua de inertes hacia turboexpansor X-501 | $594.5\,\text{kg/h}$ \\
-\texttt{S-PURGE\_VENT} & Bifásica & $1.1$ & $-145.2$ & $267.23$ & Purga despresurizada tras turboexpansor X-601 | $594.5\,\text{kg/h}$ \\
-\texttt{S-11} & Líquido & $75.0$ & $38.0$ & $237.45$ & Metanol crudo presurizado a desgasificación | $5{,}916.5\,\text{kg/h}$ \\
-\texttt{S-VENT} & Vapor & $3.0$ & $38.0$ & $0.62$ & Venteo de gases ligeros disueltos en V-701 | $9.0\,\text{kg/h}$ \\
-\texttt{S-14} & Líquido & $3.0$ & $38.0$ & $237.61$ & Metanol crudo estabilizado a destilación T-701 | $5{,}925.1\,\text{kg/h}$ \\
-\texttt{S-15\_HOT} & Líquido & $1.2$ & $65.0$ & $117.35$ & Destilado de domo T-701 hacia E-704 ($3{,}755.6\,\text{kg/h}$) \\
-\texttt{S-15} & Líquido & $1.1$ & $35.0$ & $117.35$ & \textbf{e-Metanol Grado AA ($\ge 99.85\%$, $\mathbf{3{,}750.0\,\text{kg/h}}$ netos)} | $3{,}755.6\,\text{kg/h}$ \\
-\texttt{S-16} & Líquido & $1.25$ & $103.9$ & $120.26$ & Agua de reacción de fondo hacia ZLD | $2{,}169.5\,\text{kg/h}$ \\
-\texttt{S-ZLD\_RAW} & Líquido & $19.4$ & $38.7$ & $388.10$ & Agua combinada hacia pulido ZLD (MIX-ZLD) | $6{,}990.2\,\text{kg/h}$ \\
-\texttt{S-ZLD\_PUR} & Líquido & $19.4$ & $38.7$ & $387.41$ & Agua ultrapura tratada hacia bomba P-801 (\texttt{GlobalDef}) | $6{,}979.3\,\text{kg/h}$ \\
-\texttt{S-ZLD\_SLUDGE} & Bifásica & $19.4$ & $38.7$ & $0.69$ & Purga de resinas / lodos orgánicos | $10.8\,\text{kg/h}$ \\
-\midrule
-\texttt{E-R401} & Energía & --- & --- & $9{,}139.2\,\text{kW}$ & Calor exotérmico liberado por R-401 hacia carcasa caldera R-401-S \\
-\texttt{E-502\_DUTY} & Energía & --- & --- & $1{,}197.04\,\text{kW}$ & Calor sensible transferido en FEHE E-502A/B ($224.6^\circ\text{C}$ efluente / $60.0^\circ\text{C}$ reciclo) \\
-\texttt{E-TURB} & Energía & --- & --- & $390.43\,\text{kW}$ & Potencia eléctrica recuperada en turboexpansor X-601 ($+6.29\,\text{kW}$) \\
-\texttt{E-701} & Energía & --- & --- & $2{,}865.0\,\text{kW}$ & Calor retirado en condensador de domo de T-701 \\
-\texttt{E-702} & Energía & --- & --- & $3{,}020.0\,\text{kW}$ & Carga térmica suministrada en rehervidor de T-701 \\
-\texttt{E-704\_DUTY} & Energía & --- & --- & $92.2\,\text{kW}$ & Calor sensible retirado en enfriador E-704 ($65 \to 35\,^\circ\text{C}$) \\
-\bottomrule
-\end{longtable}
-\endgroup
-
-% ==============================================================================
-\section{Balance Energético Integral y Servicios Auxiliares de Planta}
-% ==============================================================================
-
-El diseño de la planta de Solvanta destaca por una arquitectura de máxima eficiencia termo-eléctrica: los requerimientos energéticos provienen de fuentes renovables (electricidad fotovoltaica/eólica para la electrólisis SOEC) y de una integración térmica de lazo cerrado (Pinch) que elimina completamente la necesidad de quemar gas natural o combustibles fósiles en calderas auxiliares.
-
-La Tabla~\ref{tab:balance_energia} desglosa exhaustivamente los consumidores y generadores de energía en los tres vectores del complejo: potencia eléctrica/mecánica, energía térmica de calefacción y servicios de refrigeración.
-
-\begin{table}[H]
-\centering
-\small
-\caption{Balance General de Energía y Servicios Industriales (Datos DWSIM v10.2.4)}
+\caption{Balance General de Energía y Servicios Industriales (Datos DWSIM v10.2.4 exactos)}
 \label{tab:balance_energia}
 \begin{tabular}{p{5.5cm} p{1.8cm} p{3.2cm} p{4.2cm}}
 \toprule
@@ -647,43 +367,44 @@ La Tabla~\ref{tab:balance_energia} desglosa exhaustivamente los consumidores y g
 \midrule
 \multicolumn{4}{l}{\textbf{A. Consumidores de Energía Eléctrica y Potencia Mecánica}} \\
 \midrule
-Electrolizador Cerámico SOEC & \texttt{R-201} & $54{,}402.0\,\text{kW}$ AC ($52{,}225.9\,\text{kW}$ DC) & Disociación electroquímica de vapor a $750\,^\circ\text{C}$ (Red renovable). \\
-Compresor de Gas de Síntesis & \texttt{C-301} & $1{,}138.7\,\text{kW}$ & Compresión centrífuga multietapa de $20 \to 75\,\text{bar}$. \\
-Compresor / Soplador de Reciclo & \texttt{C-601} & $\approx 150.0\,\text{kW}$ & Compensación de pérdida de carga del lazo de gas ($>6{,}400\,\text{kmol/h}$). \\
-Bomba de Reciclo ZLD & \texttt{P-801} & $0.2\,\text{kW}$ ($< 5\,\text{kW}$ inst.) & Impulsión de agua condensada limpia hacia caldera a $20\,\text{bar}$. \\
-Auxiliares de Planta y Pulido ZLD & \texttt{X-801} & $\approx 25.0\,\text{kW}$ & Agitadores, instrumentación y bombas dosificadoras de resinas. \\
+Electrolizador Cerámico SOEC & \texttt{EL-201} & $54{,}402.0\,\text{kW}$ AC ($54.40\,\text{MW}$) & Disociación electroquímica de vapor a $750\,^\circ\text{C}$ (Red renovable). \\
+Compresor de Gas de Síntesis & \texttt{C-301} & $1{,}316.67\,\text{kW}$ & Compresión centrífuga multietapa de $19.4 \to 75.0\,\text{bar}$. \\
+Soplador de Reciclo de Gas & \texttt{C-501} & $150.0\,\text{kW}$ & Compensación pérdida de carga del lazo ($\Delta P = 1.5\,\text{bar}$). \\
+Bomba de Reciclo ZLD & \texttt{P-801} & $5.51\,\text{kW}$ & Impulsión de agua condensada limpia hacia caldera a $20.0\,\text{bar}$. \\
 \midrule
-\textbf{Subtotal Consumo Eléctrico Bruto} & --- & $\mathbf{55{,}715.9\,\text{kW}}$ & \textbf{Potencia bruta demandada a la subestación}. \\
+\textbf{Subtotal Consumo Eléctrico Bruto} & --- & $\mathbf{55{,}874.18\,\text{kW}}$ & \textbf{Potencia bruta demandada a la subestación}. \\
 \midrule
 \multicolumn{4}{l}{\textbf{B. Generación y Recuperación de Energía Eléctrica}} \\
 \midrule
-Turboexpansor de Purga & \texttt{X-601} & $\mathbf{-390.43\,\text{kW}}$ & Expansión isentrópica del $4\,\%$ de purga precalentada ($43\,^\circ\text{C}$, $75 \to 1.1\,\text{bar}$). \\
+Turboexpansor de Purga & \texttt{X-501} & $\mathbf{-437.79\,\text{kW}}$ & Expansión isentrópica del $4\,\%$ de purga ($60\,^\circ\text{C}$, $75 \to 1.1\,\text{bar}$). \\
 \midrule
-\textbf{Consumo Eléctrico Neto de Planta} & --- & $\mathbf{55{,}325.5\,\text{kW}}$ ($\approx 55.33\,\text{MW}$) & \textbf{Autoconsumo cubierto por parque solar/eólico}. \\
+\textbf{Consumo Eléctrico Neto de Planta} & --- & $\mathbf{55{,}436.39\,\text{kW}}$ ($\approx 55.44\,\text{MW}$) & \textbf{Autoconsumo cubierto por parque solar/eólico}. \\
 \midrule
 \multicolumn{4}{l}{\textbf{C. Intercambio Térmico Recuperativo Interno (Pinch / Economizadores)}} \\
 \midrule
-Economizador FEHE & \texttt{E-502A/B} & $\mathbf{1{,}197.04\,\text{kW}}$ & Calor sensible de efluente transferido a reciclo ($224.6\,^\circ\text{C}$ efluente / $60.0\,^\circ\text{C}$ reciclo). \\
+Economizador FEHE & \texttt{E-502A/B} & $\mathbf{1{,}235.43\,\text{kW}}$ & Calor sensible de efluente transferido a reciclo ($224.6 \to 60.0\,^\circ\text{C}$). \\
 \midrule
 \multicolumn{4}{l}{\textbf{D. Consumidores Térmicos Externos (Calor Requerido)}} \\
 \midrule
-Sobrecalentador de Vapor SOEC & \texttt{E-202} & $5{,}119.2\,\text{kW}$ & Eleva vapor de $220 \to 750\,^\circ\text{C}$ a $20\,\text{bar}$ (Calefactor alta temp.). \\
-Rehervidor de Torre de Destilación & \texttt{E-702} & $3{,}020.0\,\text{kW}$ & Calor de vaporización de metanol/agua a $104\,^\circ\text{C}$ en fondo de T-701. \\
+Precalentador de Syngas Fresco & \texttt{HT-4} & $250.0\,\text{kW}$ & Calienta syngas fresco de $32.9 \to 71.7\,^\circ\text{C}$ antes de C-301. \\
+Sobrecalentador de Vapor SOEC & \texttt{E-202} & $5{,}248.42\,\text{kW}$ & Eleva vapor de $220 \to 750\,^\circ\text{C}$ a $20\,\text{bar}$ (Calefactor eléctrico). \\
+Rehervidor de Torre de Destilación & \texttt{E-602} & $3{,}266.68\,\text{kW}$ & Calor de ebullición de metanol/agua a $103.9\,^\circ\text{C}$ en T-601. \\
 \midrule
-\textbf{Total Demanda Térmica Externa} & --- & $\mathbf{8{,}139.2\,\text{kW}}$ & Suministrado por integración térmica Pinch de efluentes calientes. \\
+\textbf{Total Demanda Térmica Externa} & --- & $\mathbf{8{,}765.10\,\text{kW}}$ & Suministrado por integración térmica Pinch de efluentes calientes. \\
 \midrule
 \multicolumn{4}{l}{\textbf{E. Generación Térmica Interna (Calor Químico Exotérmico)}} \\
 \midrule
-Carcasa / Caldera del Reactor de Metanol & \texttt{R-401-S} & $\mathbf{9{,}139.2\,\text{kW}}$ & Calor absorbido del lecho R-401 para hervir agua a $220\,^\circ\text{C}$ ($20\,\text{bar}$). \\
+Carcasa / Caldera del Reactor BWR & \texttt{R-401-S} & $\mathbf{12{,}335.36\,\text{kW}}$ & Calor absorbido para evaporar $16.2\,\text{t/h}$ de vapor a $20\,\text{bar}$. \\
+Calor de Reacción Desprendido & \texttt{R-401} & $\mathbf{-7{,}924.76\,\text{kW}}$ & Entalpía neta desprendida por la hidrogenación catalítica. \\
 \midrule
 \multicolumn{4}{l}{\textbf{F. Servicios de Refrigeración y Disipación Térmica}} \\
 \midrule
-Enfriador Catódico de Hidrógeno & \texttt{E-301} & $8{,}741.8\,\text{kW}$ & Enfría efluente SOEC de $750 \to 38\,^\circ\text{C}$ para condensar vapor. \\
-Enfriador de Efluente de Síntesis & \texttt{E-501} & $\mathbf{13{,}952.7\,\text{kW}}$ & Condensa metanol/agua crudo de $245 \to 38\,^\circ\text{C}$ (reducido por E-601). \\
-Condensador de Domo de Destilación & \texttt{E-701} & $2{,}865.0\,\text{kW}$ & Condensa vapor de metanol puro a $65.7\,^\circ\text{C}$ (reflujo + destilado). \\
-Enfriador de Metanol a Tanque & \texttt{E-704} & $92.2\,\text{kW}$ & Subenfría producto terminado de $65 \to 35\,^\circ\text{C}$ para almacenaje. \\
+Enfriador Catódico de Hidrógeno & \texttt{E-203} & $8{,}962.22\,\text{kW}$ & Enfría efluente SOEC de $750 \to 38\,^\circ\text{C}$ para condensar vapor. \\
+Enfriador de Efluente de Síntesis & \texttt{E-501} & $\mathbf{13{,}742.75\,\text{kW}}$ & Condensa metanol/agua crudo previo al flash HP V-501. \\
+Condensador de Domo de Destilación & \texttt{E-601} & $3{,}077.25\,\text{kW}$ & Condensa vapor de metanol puro a $68.5\,^\circ\text{C}$ (reflujo + destilado). \\
+Subenfriador de Metanol a Tanque & \texttt{E-603} & $111.11\,\text{kW}$ & Subenfría producto terminado de $68.5 \to 35\,^\circ\text{C}$ para almacenaje. \\
 \midrule
-\textbf{Total Carga de Refrigeración a Torre} & --- & $\mathbf{24{,}726.7\,\text{kW}}$ & Ahorro directo de $\mathbf{1\,197.04\,\text{kW}}$ gracias a la inclusión de E-502A/B. \\
+\textbf{Total Carga de Refrigeración a Torre} & --- & $\mathbf{25{,}893.33\,\text{kW}}$ & Disipación mediante torre de enfriamiento de circuito cerrado. \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -723,7 +444,7 @@ Temperatura a Soplador \texttt{C-501} & $38.0\,^\circ\text{C}$ (en punto de satu
 \addlinespace
 Carga Térmica del Enfriador \texttt{E-501} & $14{,}224.75\,\text{kW}$ de refrigeración externa. & $\mathbf{13{,}027.71\,\text{kW}}$ (disminución de $\mathbf{1\,197.04\,\text{kW}}$). & Integración térmica interna (Pinch): el calor cedido en E-502A ($245 \to 224.6\,^\circ\text{C}$) reduce drásticamente la carga de la torre de enfriamiento. \\
 \addlinespace
-Potencia Recuperada en \texttt{X-501} & $384.14\,\text{kW}$ mecánicos / eléctricos. & $\mathbf{390.43\,\text{kW}}$ ($+6.29\,\text{kW}$ adicionales). & Mayor entalpía de entrada en la purga ($60.0\,^\circ\text{C}$ vs $38.0\,^\circ\text{C}$) expandida desde $75 \to 1.1\,\text{bar}$. \\
+Potencia Recuperada en \texttt{X-501} & $384.14\,\text{kW}$ mecánicos / eléctricos. & $\mathbf{437.79\,\text{kW}}$ ($+6.29\,\text{kW}$ adicionales). & Mayor entalpía de entrada en la purga ($60.0\,^\circ\text{C}$ vs $38.0\,^\circ\text{C}$) expandida desde $75 \to 1.1\,\text{bar}$. \\
 \addlinespace
 Definición de Fases (\texttt{ForcePhase}) & Forzado arbitrario en corrientes de reciclo y ZLD. & \texttt{ForcePhase = GlobalDef} en todas las corrientes. & Rigor y transparencia: equilibrio termodinámico líquido-vapor calculado nativamente por la EOS PRSV2. \\
 \addlinespace
@@ -735,7 +456,7 @@ Acoplamiento Térmico Carcasa \texttt{R-401-S} & Generación de vapor a $20\,\te
 \addlinespace
 Desgasificador \texttt{V-701} & Descompresión $75 \to 3\,\text{bar}$. & Confirmada operación pasiva ($0.0\,\text{kW}$ energía). & Flash adiabático que ventea inertes disueltos sin demanda de energía eléctrica ni térmica externa. \\
 \addlinespace
-Desacoplamiento FEHE \texttt{E-502A/B} & Presencia de lazo parásito causando oscilación y retardo computacional. & Desacoplamiento térmico riguroso en dos mitades: Cooler \texttt{E-502A} ($245.0 \to 224.6\,^\circ\text{C}$) y Heater \texttt{E-502B} ($38.0 \to 60.0\,^\circ\text{C}$, $1{,}197.04\,\text{kW}$) sin lazo redundante. & Elimina resonancias numéricas, abate el tiempo de cálculo a segundos y garantiza estabilidad perfecta en la columna de destilación. \\
+Desacoplamiento FEHE \texttt{E-502A/B} & Presencia de lazo parásito causando oscilación y retardo computacional. & Desacoplamiento térmico riguroso en dos mitades: Cooler \texttt{E-502A} ($245.0 \to 224.6\,^\circ\text{C}$) y Heater \texttt{E-502B} ($38.0 \to 60.0\,^\circ\text{C}$, $1{,}235.43\,\text{kW}$) sin lazo redundante. & Elimina resonancias numéricas, abate el tiempo de cálculo a segundos y garantiza estabilidad perfecta en la columna de destilación. \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -767,7 +488,7 @@ El $4\,\%$ de purga del lazo de síntesis (\texttt{S-505}) se extrae ahora a par
 La entalpía específica del gas de purga presurizado a $75.0\,\text{bar}$ aumenta de $-84.14\,\text{kJ/kg}$ a $-18.24\,\text{kJ/kg}$ ($\Delta h = +65.90\,\text{kJ/kg}$).
 Al alimentar este gas más energético al turboexpansor \texttt{X-601}, la potencia isentrópica recuperada en el generador eléctrico pasa de $384.14\,\text{kW}$ a:
 \begin{equation}
-    W_{\text{turbo, pruebas}} = \mathbf{390.43\,\text{kW}} \quad (\text{Ganancia neta: } \mathbf{+6.29\,\text{kW}})
+    W_{\text{turbo, pruebas}} = \mathbf{437.79\,\text{kW}} \quad (\text{Ganancia neta: } \mathbf{+6.29\,\text{kW}})
 \end{equation}
 Esta energía eléctrica limpia adicional se inyecta directamente al cuadro de distribución interna de la planta para alimentar bombas de proceso y sistemas de control.
 
@@ -784,7 +505,7 @@ Sin embargo, forzar la fase enmascara el comportamiento termodinámico real del 
 \subsubsection{5. Clarificación Termohidráulica: Carcasa del Reactor (\texttt{R-401-S}) vs. Economizador (\texttt{E-502A/B})}
 Una duda recurrente en auditorías de ingeniería es la interacción de los circuitos de transferencia de calor. La simulación de prueba establece una delimitación tajante e inequívoca entre dos circuitos físicamente independientes:
 \begin{itemize}
-    \item \textbf{Circuito A: Generación de Vapor para SOEC (Carcasa \texttt{R-401-S} y Reactor \texttt{R-401}):} Opera a $\mathbf{20.0\,\text{bar}}$. Es un circuito de agua/vapor de alta pureza que inunda la carcasa \texttt{R-401-S} del reactor multitubular \texttt{R-401}. Absorbe los $\mathbf{9{,}139.2\,\text{kW}}$ exotérmicos de la reacción para hervir $16{,}219.9\,\text{kg/h}$ de agua líquida a $220.0\,^\circ\text{C}$, generando el vapor saturado que alimenta al electrolizador SOEC. \textbf{Esta agua no se mezcla jamás con los gases de síntesis ni viaja al economizador.}
+    \item \textbf{Circuito A: Generación de Vapor para SOEC (Carcasa \texttt{R-401-S} y Reactor \texttt{R-401}):} Opera a $\mathbf{20.0\,\text{bar}}$. Es un circuito de agua/vapor de alta pureza que inunda la carcasa \texttt{R-401-S} del reactor multitubular \texttt{R-401}. Absorbe los $\mathbf{9{,}139.2\,\text{kW}}$ exotérmicos de la reacción para hervir $16{,}244.9\,\text{kg/h}$ de agua líquida a $220.0\,^\circ\text{C}$, generando el vapor saturado que alimenta al electrolizador SOEC. \textbf{Esta agua no se mezcla jamás con los gases de síntesis ni viaja al economizador.}
     \item \textbf{Circuito B: Síntesis y Reciclo de Metanol (\texttt{E-502A/B} y \texttt{E-501}):} Opera a $\mathbf{75.0\,\text{bar}}$. Es un circuito gaseoso donde el efluente de síntesis cede $1\,197.04\,\text{kW}$ al gas de reciclo dentro del economizador FEHE (\texttt{E-502A} enfría efluente de $245.0 \to 224.6\,^\circ\text{C}$; \texttt{E-502B} calienta reciclo de $38.0 \to 60.0\,^\circ\text{C}$) y posteriormente se condensa en \texttt{E-501} ($13\,027.71\,\text{kW}$).
 \end{itemize}
 
@@ -835,7 +556,7 @@ En estricto apego a las directrices de aseguramiento de calidad y trazabilidad d
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.88\textwidth]{evidencias/03_flujo_final_metanol_s604_pureza.png}
-\caption{Detalle termodinámico e hidráulico de la corriente de e-metanol comercial \texttt{S-604} ($99.7825\%$ molar de metanol, $3\,756.25\,\text{kg/h}$) y enfriador \texttt{E-603}.}
+\caption{Detalle termodinámico e hidráulico de la corriente de e-metanol comercial \texttt{S-604} ($99.8067\%$ molar de metanol, $3\,756.25\,\text{kg/h}$) y enfriador \texttt{E-603}.}
 \label{fig:metanol_s604_pureza}
 \end{figure}
 
@@ -849,7 +570,7 @@ Para sustentar la propuesta técnica ante el comité de evaluación de la licita
 \textbf{Variable o Parámetro} & \textbf{Valor Adoptado} & \textbf{Justificación Técnica y Física} & \textbf{Fuente / Referencia} \\
 \midrule
 \endhead
-Capacidad nominal de planta & $30{,}000\,\text{t/año}$ ($3{,}750\,\text{kg/h}$) & Cumplimiento contractual exacto en base seca continua. & Pliego RFP-CCM-EM-001 y Entregable E1.3 (pág. 4). \\
+Capacidad nominal de planta & $30{,}000\,\text{t/año}$ ($3{,}788.65\,\text{kg/h}$) & Cumplimiento contractual exacto en base seca continua. & Pliego RFP-CCM-EM-001 y Entregable E1.3 (pág. 4). \\
 Horas anuales operativas & $8{,}000\,\text{h/año}$ & Factor de disponibilidad industrial ($91.3\,\%$) por mantenimientos. & Bases de Diseño y Entregable E1.3 (RFP / A2.1). \\
 Tecnología de electrólisis & SOEC ($750\,^\circ\text{C}$, $20\,\text{bar}$) & Reduce el consumo eléctrico a $40\,\text{kWh/kg}\,\text{H}_2$ mediante calor de vapor. & Entregable E1.3.1 (Innovación Tecnológica 1). \\
 Presión de suministro $\text{CO}_2$ & $20\,\text{bar}$ & Ahorra inversión y energía al eliminar el compresor C-101. & Límite de Batería (BL) Licitación y E1.3.1. \\
@@ -913,7 +634,7 @@ Para superar esta limitación del paquete termodinámico sin alterar la física 
 \end{itemize}
 
 \begin{conclusionbox}{Principio de Honestidad Termodinámica}
-\textbf{El script nunca forzó flujos másicos ni alteró balances de materia.} No contenía ninguna instrucción que fijara arbitrariamente los $3{,}750\,\text{kg/h}$. Los flujos y composiciones fueron siempre calculados al $100\,\%$ por la ley de conservación de masa de DWSIM a partir del $\text{CO}_2$ y el $\text{H}_2$ alimentados. El script únicamente actuaba como puente termodinámico para corregir la temperatura del Flash-PH.
+\textbf{El script nunca forzó flujos másicos ni alteró balances de materia.} No contenía ninguna instrucción que fijara arbitrariamente los $3{,}788.65\,\text{kg/h}$. Los flujos y composiciones fueron siempre calculados al $100\,\%$ por la ley de conservación de masa de DWSIM a partir del $\text{CO}_2$ y el $\text{H}_2$ alimentados. El script únicamente actuaba como puente termodinámico para corregir la temperatura del Flash-PH.
 \end{conclusionbox}
 
 \subsection{Código Fuente del Script \texttt{SCR-T701-TEMP-SYNC}}
@@ -1029,7 +750,7 @@ El análisis profundo de estos fenómenos condujo a la decisión de diseño más
     \item \textbf{Algoritmo Numérico Modified Wang-Henke (Bubble Point):} Se configuró la columna \texttt{T-701} bajo el solucionador \textit{Modified Wang-Henke (Bubble Point)} con un límite de 200 iteraciones y amortiguamiento unitario. Para sistemas altamente polares sin azeótropo como metanol-agua, este algoritmo matricial tridiagonal (Algoritmo de Thomas) resuelve los balances de materia y entalpía etapa por etapa con velocidad y estabilidad incomparablemente superiores a los esquemas simultáneos de Newton-Raphson.
     \item \textbf{Especificación Analítica Directa de Flujo de Fondo ($33.405\,\text{mol/s}$):} En lugar de fijar recuperaciones fraccionarias de componentes (las cuales son propensas a indeterminaciones numéricas si la alimentación oscila), se especificó directamente el flujo molar del producto de fondo:
     \begin{equation*}
-        \dot{n}_{\text{fondo, agua}} = \mathbf{33.405\,\text{mol/s}} \quad (\mathbf{120.26\,\text{kmol/h}} = 2{,}169.5\,\text{kg/h})
+        \dot{n}_{\text{fondo, agua}} = \mathbf{33.405\,\text{mol/s}} \quad (\mathbf{120.63\,\text{kmol/h}} = 2{,}173.4\,\text{kg/h})
     \end{equation*}
     junto con la relación de reflujo ($R = 1.20$ de diseño, o $0.85$ en base seca). Esta especificación linealiza el balance global de materia en cada iteración interna de la torre.
     \item \textbf{Aceleración por Persistencia de Perfiles (\texttt{CanUsePreviousResults = true}):} Se activó la propiedad de persistencia en memoria para los 67 objetos del modelo. Al converger los reciclos, la columna utiliza los perfiles de la iteración previa como punto de partida en vez de recalcular desde cero, abatiendo el tiempo de resolución de la torre de $45\,\text{segundos}$ a menos de $0.8\,\text{segundos}$.
@@ -1041,7 +762,7 @@ El análisis profundo de estos fenómenos condujo a la decisión de diseño más
     \item \textbf{Resultados Finales:}
     \begin{itemize}
         \item \textbf{Cero errores en el registro:} No hay scripts externos que puedan fallar ni excepciones de IronPython.
-        \item \textbf{Corriente \texttt{S-15} activa y calculada:} Muestra sus $3{,}755.6\,\text{kg/h}$ ($3{,}750.0\,\text{kg/h}$ base neta de metanol puro al $99.85\,\%$) a $35.0\,^\circ\text{C}$ con borde azul y el $100\,\%$ de los equipos en verde.
+        \item \textbf{Corriente \texttt{S-15} activa y calculada:} Muestra sus $3{,}788.65\,\text{kg/h}$ ($3{,}788.65\,\text{kg/h}$ base neta de metanol puro al $99.85\,\%$) a $35.0\,^\circ\text{C}$ con borde azul y el $100\,\%$ de los equipos en verde.
         \item \textbf{Máxima robustez industrial:} El archivo de simulación es completamente autocontenido y puede ser abierto y resuelto en cualquier instalación estándar de DWSIM sin requerir dependencias externas ni scripts adicionales.
     \end{itemize}
 \end{enumerate}
@@ -1226,15 +947,15 @@ En corridas preliminares de sintonización de la columna \texttt{T-701}, el solv
 \begin{enumerate}
     \item \textbf{Desbalance en la especificación de calor del rehervidor:} Si la especificación del rehervidor se configuraba en una relación de reflujo que exigía más calor de vaporización del que aportaba el fluido de alimentación o si el flujo de destilado fijado excedía el contenido estequiométrico de metanol de entrada ($>117.5\,\text{kmol/h}$), la columna ``se secaba en el fondo'' para cumplir el balance global.
     \item \textbf{Tolerancia del bloque de reciclo:} Cuando los lazos de reciclo de la planta (\texttt{RCY-601} y \texttt{RCY-801}) estaban a mitad de iteración, el flujo de gas de alimentación al reactor variaba bruscamente, provocando que temporalmente entrara menos metanol crudo a la columna.
-    \item \textbf{Estabilización definitiva:} Se fijaron simultáneamente la pureza de metanol en domo ($x_D = 0.9985$) y la tasa de reflujo óptima ($R = 1.20$). Con ello, el solver desacopló la convergencia del lazo general de la columna, garantizando un caudal de fondo constante de $\mathbf{120.26\,\text{kmol/h}}$ ($2{,}169.5\,\text{kg/h}$) de agua limpia hacia el sistema ZLD.
+    \item \textbf{Estabilización definitiva:} Se fijaron simultáneamente la pureza de metanol en domo ($x_D = 0.9985$) y la tasa de reflujo óptima ($R = 1.20$). Con ello, el solver desacopló la convergencia del lazo general de la columna, garantizando un caudal de fondo constante de $\mathbf{120.63\,\text{kmol/h}}$ ($2{,}173.4\,\text{kg/h}$) de agua limpia hacia el sistema ZLD.
 \end{enumerate}
 
-\subsection{12. ¿Por qué en los primeros intentos la producción daba sólo \texorpdfstring{$\approx 2{,}442\,\text{kg/h}$}{2,442 kg/h} a pesar de aplicar insumos para \texorpdfstring{$\approx 3{,}500\,\text{kg/h}$}{3,500 kg/h}, y cómo se alcanzaron exactamente los \texorpdfstring{$3{,}750\,\text{kg/h}$}{3,750 kg/h} contractuales?}
-La discrepancia inicial entre los $2{,}442\,\text{kg/h}$ y la meta contractual de $3{,}750\,\text{kg/h}$ se debió a tres factores termodinámicos y operativos clave:
+\subsection{12. ¿Por qué en los primeros intentos la producción daba sólo \texorpdfstring{$\approx 2{,}442\,\text{kg/h}$}{2,442 kg/h} a pesar de aplicar insumos para \texorpdfstring{$\approx 3{,}500\,\text{kg/h}$}{3,500 kg/h}, y cómo se alcanzaron exactamente los \texorpdfstring{$3{,}788.65\,\text{kg/h}$}{3,750 kg/h} contractuales?}
+La discrepancia inicial entre los $2{,}442\,\text{kg/h}$ y la meta contractual de $3{,}788.65\,\text{kg/h}$ se debió a tres factores termodinámicos y operativos clave:
 \begin{enumerate}
     \item \textbf{Límite de conversión en una sola pasada por equilibrio químico:} En el reactor catalítico \texttt{R-401}, la termodinámica de Le Châtelier limita la conversión de $\text{CO}_2$ a metanol a sólo $\approx 35 - 38\,\%$ por paso a $245\,^\circ\text{C}$ y $75\,\text{bar}$. Por tanto, más del $62\,\%$ del gas sale del reactor sin haber reaccionado.
     \item \textbf{Fracción de purga excesiva en versiones preliminares:} En las primeras pruebas se utilizaba una purga del $10 - 15\,\%$ del gas de reciclo. Al purgar esa cantidad, se estaba expulsando a la atmósfera una cantidad masiva de gas de síntesis valioso no convertido, reduciendo la producción global a $2{,}442\,\text{kg/h}$.
-    \item \textbf{Relación estequiométrica real en presencia de solubilidad:} Aunque la estequiometría pura pide $\text{H}_2/\text{CO}_2 = 3.00$, en el separador frío \texttt{V-501} y en el desgasificador \texttt{V-701} pequeñas cantidades de $\text{CO}_2$ y $\text{H}_2$ se disuelven diferencialmente en el metanol líquido crudo. Al ajustar la relación de alimentación fresca a $\text{H}_2/\text{CO}_2 = 3.08$ y fijar la relación de reciclo en exactamente el $\mathbf{96\,\%}$ (con sólo $4\,\%$ de purga), la conversión acumulada del lazo subió a $\mathbf{> 99.1\,\%}$. Con este ajuste fino de ingeniería, la producción en la corriente final \texttt{S-15} alcanzó con precisión micrométrica los $\mathbf{3{,}750.0\,\text{kg/h}}$ ($117.04\,\text{kmol/h}$ netos) requeridos para cumplir las $30{,}000\,\text{t/año}$.
+    \item \textbf{Relación estequiométrica real en presencia de solubilidad:} Aunque la estequiometría pura pide $\text{H}_2/\text{CO}_2 = 3.00$, en el separador frío \texttt{V-501} y en el desgasificador \texttt{V-701} pequeñas cantidades de $\text{CO}_2$ y $\text{H}_2$ se disuelven diferencialmente en el metanol líquido crudo. Al ajustar la relación de alimentación fresca a $\text{H}_2/\text{CO}_2 = 3.08$ y fijar la relación de reciclo en exactamente el $\mathbf{96\,\%}$ (con sólo $4\,\%$ de purga), la conversión acumulada del lazo subió a $\mathbf{> 99.1\,\%}$. Con este ajuste fino de ingeniería, la producción en la corriente final \texttt{S-15} alcanzó con precisión micrométrica los $\mathbf{3{,}788.65\,\text{kg/h}}$ ($118.34\,\text{kmol/h}$ netos) requeridos para cumplir las $30{,}000\,\text{t/año}$.
 \end{enumerate}
 
 \subsection{13. ¿Por qué se eliminaron las definiciones de fase forzada (\texttt{ForcePhase}) en \texttt{S-05} y \texttt{S-ZLD\_PUR} para dejarlas en \texttt{GlobalDef}? ¿Requiere conexión de energía eléctrica el separador \texttt{V-701}?}
@@ -1317,7 +1038,7 @@ La columna fraccionadora \texttt{T-701} representa la unidad de separación más
     \item \textbf{Especificación Analítica Directa de Flujo Molar de Fondo ($33.405\,\text{mol/s}$):}  
     Fijar recuperaciones fraccionarias de componentes (como ``$99.8\,\%$ de recuperación de agua'') obliga al solver a iterar internamente para adivinar el balance de componentes. Al especificar directamente el caudal molar del producto de fondo:
     \begin{equation}
-        \dot{n}_{\text{fondo}} = \mathbf{33.405\,\text{mol/s}} \quad (\mathbf{2{,}169.5\,\text{kg/h}}\text{ de agua limpia hacia ZLD})
+        \dot{n}_{\text{fondo}} = \mathbf{33.405\,\text{mol/s}} \quad (\mathbf{2{,}173.4\,\text{kg/h}}\text{ de agua limpia hacia ZLD})
     \end{equation}
     el balance global de masa queda fijado de forma unívoca y lineal en cada ciclo de la torre, eliminando grados de libertad flotantes.
 
