@@ -124,18 +124,33 @@
         \textbf{Fecha de Emisión:} 21 de Septiembre de 2026 \textbar\ \textbf{Ubicación de Planta:} Complejo Petroquímico Cangrejera, Coatzacoalcos, Ver.
     \end{tcolorbox}
 
-    \vspace{0.6cm}
+    \vspace{0.4cm}
+    \begin{tcolorbox}[colframe=navyblue,colback=white,arc=2mm,boxrule=0.8pt]
+        \centering
+        \textbf{\color{navyblue}\large Repositorio Oficial del Proyecto en GitHub}\\[3pt]
+        \href{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001}{\texttt{\textbf{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001}}}\\[4pt]
+        \footnotesize
+        \textbf{Rama:} \texttt{main} \quad $\bullet$ \quad
+        \textbf{Licitación:} \texttt{RFP-CCM-EM-001} \quad $\bullet$ \quad
+        \textbf{Directorio del Entregable:} \texttt{03\_Entregables\_Finales/E2/LE-01\_Solvanta/}
+    \end{tcolorbox}
+
+    \vspace{0.4cm}
     \textbf{\large EQUIPO DE TRABAJO Y DIRECCIÓN TÉCNICA:}\\[0.25cm]
-    \begin{tabular}{lll}
+    \begin{center}
+    \footnotesize
+    \setlength{\tabcolsep}{4pt}
+    \begin{tabularx}{\textwidth}{>{\bfseries}p{4.3cm} X >{\centering\arraybackslash}p{2.4cm} >{\centering\arraybackslash}p{2.6cm}}
         \toprule
-        \textbf{Puesto / Función Técnica} & \textbf{Ingeniero Responsable} & \textbf{Matrícula / ID} \\
+        \textbf{Puesto en la Empresa} & \textbf{Ingeniero(a) Responsable} & \textbf{Matrícula / ID} & \textbf{Usuario GitHub} \\
         \midrule
-        Líder de Proyecto \& Dirección Técnica & Ing. Karoc Antigravity & FIQ-BUAP-2026-01 \\
-        Especialista en Simulación DWSIM \& Balances & Ing. Especialista en Procesos I & FIQ-BUAP-2026-02 \\
-        Especialista en Equipos Térmicos \& Reactores & Ing. Especialista en Procesos II & FIQ-BUAP-2026-03 \\
-        Aseguramiento de Calidad \& Normatividad & Ing. Control de Calidad \& QA & FIQ-BUAP-2026-04 \\
+        Directora de Proyecto, Python y Optimización & Ing. Karol Paola Camacho López & FIQ--BUAP & \texttt{@Karoc} \\
+        Simulación DWSIM e Instrumentación & Ing. Paulina Mota Macip & FIQ--BUAP & \texttt{@paulina145} \\
+        Ing. de Procesos, Plant 3D y DFP v1 & Ing. Gildardo Ocaña Barrales & FIQ--BUAP & \texttt{@GildardoOca25} \\
+        Evaluación Económica (BioSTEAM) y HSE & Ing. Grecia Figueroa Rincón & FIQ--BUAP & \texttt{@Cho0bb} \\
         \bottomrule
-    \end{tabular}
+    \end{tabularx}
+    \end{center}
 
     \vfill
     {\footnotesize Puebla, Pue. \textbar\ Ciclo Otoño 2026 \textbar\ Solvanta Engineering Solutions S.A. de C.V. \copyright\ Todos los derechos reservados.}
@@ -229,18 +244,19 @@ Para dar cumplimiento a la metodología de aseguramiento de calidad de Solvanta 
 \begin{table}[H]
 \centering
 \small
+\setlength{\tabcolsep}{4pt}
 \caption{\textbf{Distribución del trabajo técnico y cronograma semanal de la firma Solvanta.}} \label{tab:cuadro2}
-\begin{tabularx}{\textwidth}{c p{3.2cm} X p{3.0cm} c}
+\begin{tabularx}{\textwidth}{c p{3.0cm} X p{3.6cm} c}
 \toprule
 \textbf{Día} & \textbf{Etapa Metodológica} & \textbf{Actividades Clave Desarrolladas} & \textbf{Responsable Principal} & \textbf{Estado} \\
 \midrule
-\textbf{Día 1} & Revisión DFP v0 y Delimitación & Evaluación formal del plano preliminar DFP v0, delimitación de límites de batería de los 7 sistemas de proceso (Cuadros LE-01A y LE-01B). & Ing. Procesos I & \textbf{100\%} \\
-\textbf{Día 2} & Lista Maestra y TAGs & Inventario de las 28 unidades físicas del proceso, eliminación de objetos matemáticos de DWSIM, asignación formal de TAGs únicos (Cuadro LE-01C). & Ing. Procesos II & \textbf{100\%} \\
-\textbf{Día 3} & Condiciones de Operación & Calibración termodinámica rigurosa de cada equipo contra las tablas oficiales de materia TC-01 y energía TE-01 de DWSIM v1 (Cuadro LE-01D). & Ing. Simulación & \textbf{100\%} \\
-\textbf{Día 4} & Variables e Indicadores & Identificación de 10 variables de proceso críticas, rangos operativos admisibles, cálculo de KPIs y márgenes de diseño (Cuadros LE-01E y LE-01F). & Líder de Proyecto & \textbf{100\%} \\
-\textbf{Día 5} & Sensibilidad y Alternativas & Integración de estudios de sensibilidad de síntesis y separación, matriz de trazabilidad y evaluación de tecnologías (Cuadros LE-01G, LE-01H y LE-01I). & Ing. Procesos I \& II & \textbf{100\%} \\
-\textbf{Día 6} & Supuestos y Verificación & Declaración de supuestos de base, matriz de información pendiente hacia E2 y verificación integral del plano DFP v1 (Cuadros LE-01J, LE-01K y 15). & Ing. Control Calidad & \textbf{100\%} \\
-\textbf{Día 7} & Cierre y Compilación & Redacción de conclusiones técnicas (Sec. 18), respuestas al cuestionario (Sec. 20), compilación en LaTeX y emisión del paquete de entrega. & Dirección Técnica & \textbf{100\%} \\
+\textbf{Día 1} & Revisión DFP v0 y Delimitación & Evaluación formal del plano preliminar DFP v0, delimitación de límites de batería de los 7 sistemas de proceso (Cuadros LE-01A y LE-01B). & Ing. Gildardo Ocaña Barrales (Ing. Procesos / Plant 3D) & \textbf{100\%} \\
+\textbf{Día 2} & Lista Maestra y TAGs & Inventario de las 28 unidades físicas del proceso, eliminación de objetos matemáticos de DWSIM, asignación formal de TAGs únicos (Cuadro LE-01C). & Ing. Gildardo Ocaña Barrales \& Ing. Karol Camacho & \textbf{100\%} \\
+\textbf{Día 3} & Condiciones de Operación & Calibración termodinámica rigurosa de cada equipo contra las tablas oficiales de materia TC-01 y energía TE-01 de DWSIM v1 (Cuadro LE-01D). & Ing. Paulina Mota Macip (Simulación DWSIM) & \textbf{100\%} \\
+\textbf{Día 4} & Variables e Indicadores & Identificación de 10 variables de proceso críticas, rangos operativos admisibles, cálculo de KPIs y márgenes de diseño (Cuadros LE-01E y LE-01F). & Ing. Karol Paola Camacho López (Dirección Proyecto) & \textbf{100\%} \\
+\textbf{Día 5} & Sensibilidad y Alternativas & Integración de estudios de sensibilidad de síntesis y separación, matriz de trazabilidad y evaluación de tecnologías (Cuadros LE-01G, LE-01H y LE-01I). & Ing. Paulina Mota Macip \& Ing. Gildardo Ocaña & \textbf{100\%} \\
+\textbf{Día 6} & Supuestos y Verificación & Declaración de supuestos de base, matriz de información pendiente hacia E2 y verificación integral del plano DFP v1 (Cuadros LE-01J, LE-01K y 15). & Ing. Grecia Figueroa Rincón (HSE y Calidad) & \textbf{100\%} \\
+\textbf{Día 7} & Cierre y Compilación & Redacción de conclusiones técnicas (Sec. 18), respuestas al cuestionario (Sec. 20), compilación en LaTeX y emisión del paquete de entrega. & Ing. Karol Paola Camacho López (Dirección Técnica) & \textbf{100\%} \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -338,7 +354,9 @@ La codificación de cada unidad física sigue el estándar normalizado \texttt{[
 
 A continuación se presenta el inventario completo de los \textbf{28 equipos de proceso} que conforman la planta de e-metanol Solvanta. Cada equipo cuenta con función técnica definida, asignación unívoca de corrientes de entrada/salida y variable principal de control de proceso.
 
-\begin{xltabular}{\linewidth}{l p{3.6cm} p{5.6cm} p{2.4cm} p{2.4cm} p{4.6cm} c}
+\setlength{\tabcolsep}{3.5pt}
+\small
+\begin{xltabular}{\linewidth}{l >{\raggedright\arraybackslash}p{3.2cm} >{\raggedright\arraybackslash}X >{\centering\arraybackslash}p{2.0cm} >{\centering\arraybackslash}p{2.2cm} >{\raggedright\arraybackslash}p{4.5cm} c}
 \caption{\textbf{LE-01C. Lista maestra de equipos de proceso de la planta Solvanta.}} \label{tab:cuadro6} \\
 \toprule
 \textbf{TAG} & \textbf{Equipo u Operación} & \textbf{Función de Proceso} & \textbf{Entradas} & \textbf{Salidas} & \textbf{Variable Principal de Diseño} & \textbf{Estado} \\
@@ -396,7 +414,9 @@ A continuación se presenta el inventario completo de los \textbf{28 equipos de 
 
 Los datos tabulados a continuación proceden directamente de la convergencia de la simulación rigurosa en \texttt{DWSIM v10.2.4} (paquete termodinámico \textbf{PRSV2-VL}) y coinciden con precisión absoluta con los balances oficiales \texttt{TC-01} y \texttt{TE-01}.
 
-\begin{xltabular}{\linewidth}{l p{3.2cm} c c r r r r r}
+\setlength{\tabcolsep}{3pt}
+\small
+\begin{xltabular}{\linewidth}{l >{\raggedright\arraybackslash}p{2.9cm} c c r r r r >{\raggedleft\arraybackslash}X}
 \caption{\textbf{LE-01D. Condiciones normales de operación de los equipos de proceso.}} \label{tab:cuadro7} \\
 \toprule
 \textbf{TAG} & \textbf{Corriente Entrada} & \textbf{$T_{\text{in}}$ ($^\circ$C)} & \textbf{$T_{\text{out}}$ ($^\circ$C)} & \textbf{$P_{\text{in}}$ (bar)} & \textbf{$P_{\text{out}}$ (bar)} & \textbf{Flujo ($\text{kg/h}$)} & \textbf{Flujo ($\text{kmol/h}$)} & \textbf{Carga $Q$ / Pot. $W$ (kW)} \\
@@ -454,7 +474,9 @@ Los datos tabulados a continuación proceden directamente de la convergencia de 
 
 Las variables de diseño de proceso son aquellos grados de libertad físico-químicos y operacionales que fijan el comportamiento de la planta. No representan meras condiciones puntuales, sino decisiones técnicas que gobiernan los balances, el consumo de energía y la calidad del producto.
 
-\begin{xltabular}{\linewidth}{l p{3.2cm} c c p{2.6cm} p{4.6cm} p{2.6cm} c}
+\setlength{\tabcolsep}{3pt}
+\small
+\begin{xltabular}{\linewidth}{l >{\raggedright\arraybackslash}p{2.7cm} c c >{\raggedright\arraybackslash}p{2.3cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{2.5cm} c}
 \caption{\textbf{LE-01E. Variables críticas de diseño de proceso de la planta Solvanta.}} \label{tab:cuadro8} \\
 \toprule
 \textbf{TAG} & \textbf{Variable de Proceso} & \textbf{Valor Base} & \textbf{Intervalo Admisible} & \textbf{Indicador Afectado} & \textbf{Motivo de Selección Técnica} & \textbf{Fuente de Datos} & \textbf{Estado} \\
@@ -493,8 +515,9 @@ Los indicadores clave de desempeño (KPIs) sintetizan la eficiencia técnica, am
 \begin{table}[H]
 \centering
 \small
+\setlength{\tabcolsep}{3pt}
 \caption{\textbf{LE-01F. Indicadores clave de desempeño de la planta Solvanta.}} \label{tab:cuadro9}
-\begin{tabularx}{\textwidth}{c p{3.4cm} X c c c c}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}p{1.1cm} >{\raggedright\arraybackslash}p{3.2cm} >{\raggedright\arraybackslash}X >{\centering\arraybackslash}p{1.1cm} >{\centering\arraybackslash}p{1.4cm} >{\centering\arraybackslash}p{1.5cm} >{\centering\arraybackslash}p{2.3cm}}
 \toprule
 \textbf{Código} & \textbf{Indicador de Proceso} & \textbf{Definición Operacional} & \textbf{Unidad} & \textbf{Meta de Base} & \textbf{Valor Solvanta} & \textbf{Cumplimiento} \\
 \midrule
@@ -520,7 +543,9 @@ Los indicadores clave de desempeño (KPIs) sintetizan la eficiencia técnica, am
 
 Durante la ingeniería de proceso en \texttt{DWSIM v1}, se ejecutaron estudios de sensibilidad paramétrica sobre las operaciones clave para sustentar las decisiones de diseño adoptadas en el DFP v1. El Cuadro \ref{tab:cuadro10} sintetiza los resultados y trade-offs identificados.
 
-\begin{xltabular}{\linewidth}{l p{3.2cm} c p{3.2cm} p{5.5cm} p{4.6cm}}
+\setlength{\tabcolsep}{3.5pt}
+\small
+\begin{xltabular}{\linewidth}{l >{\raggedright\arraybackslash}p{2.8cm} c >{\raggedright\arraybackslash}p{2.8cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{4.8cm}}
 \caption{\textbf{LE-01G. Integración de los análisis de sensibilidad realizados en DWSIM.}} \label{tab:cuadro10} \\
 \toprule
 \textbf{TAG} & \textbf{Variable Analizada} & \textbf{Intervalo} & \textbf{Indicador Observado} & \textbf{Resultado Principal Identificado} & \textbf{Decisión Incorporada en DFP v1} \\
@@ -605,21 +630,23 @@ La transición hacia la Fase 2 (Ingeniería Básica) requiere complementar los b
 \begin{table}[H]
 \centering
 \small
+\setlength{\tabcolsep}{3.5pt}
 \caption{\textbf{LE-01J. Matriz de información técnica pendiente hacia Fase E2.}} \label{tab:cuadro13}
-\begin{tabularx}{\textwidth}{l p{3.2cm} X p{2.5cm} c c}
+\begin{tabularx}{\textwidth}{l >{\raggedright\arraybackslash}p{2.9cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{2.3cm} c >{\raggedright\arraybackslash}p{2.8cm}}
 \toprule
 \textbf{TAG} & \textbf{Información Faltante} & \textbf{Por Qué se Necesita en Fase E2} & \textbf{Fuente Propuesta} & \textbf{Criticidad} & \textbf{Responsable} \\
 \midrule
-\texttt{EL-201} & Curvas de degradación de stack SOEC ($V\text{-}I$) & Estimar tasa de reemplazo de celdas cerámicas y reposición de electrolito a lo largo de 10 años. & Fabricante (Topsoe / Sunfire) & \textbf{Alta} & Ing. Procesos I \\
-\texttt{R-401} & Cinética de desactivación del catalizador $\text{Cu/ZnO}$ & Diseñar la recarga periódica y prever el incremento gradual de temperatura para compensar pérdida de actividad. & Literatura especializada / Proveedor & \textbf{Alta} & Ing. Procesos II \\
-\texttt{C-301} & Curvas de operación y control de surge (bombeo) & Diseñar las líneas de recirculación de anti-surge y especificación de motores de velocidad variable. & Fabricante de compresores (Elliott / Siemens) & \textbf{Media} & Ing. Mecánico \\
-\texttt{T-601} & Hidráulica y tipo de platos (válvulas vs empaque) & Calcular diámetro exacto de torre, espaciado entre platos y caída de presión real en operación. & Manuales Kister / FRI & \textbf{Alta} & Ing. Procesos I \\
-\texttt{E-502} & Coeficientes globales de transferencia ($U_{\text{calc}}$) & Dimensionamiento de área de intercambio preliminar conforme a estándares TEMA / ASME Sección VIII. & HTRI / Software de diseño térmico & \textbf{Media} & Ing. Procesos II \\
-Sitio & Calidad estacional de agua cruda en Coatzacoalcos & Definir tren de desmineralización por ósmosis inversa para make-up fresca (\texttt{S-201}). & Conagua / Pemex Cangrejera & \textbf{Media} & Ing. Ambiental \\
+\texttt{EL-201} & Curvas de degradación de stack SOEC ($V\text{-}I$) & Estimar tasa de reemplazo de celdas cerámicas y reposición de electrolito a lo largo de 10 años. & Fabricante (Topsoe / Sunfire) & \textbf{Alta} & Ing. Paulina Mota Macip \\
+\texttt{R-401} & Cinética de desactivación del catalizador $\text{Cu/ZnO}$ & Diseñar la recarga periódica y prever el incremento gradual de temperatura para compensar pérdida de actividad. & Literatura especializada / Proveedor & \textbf{Alta} & Ing. Gildardo Ocaña Barrales \\
+\texttt{C-301} & Curvas de operación y control de surge (bombeo) & Diseñar las líneas de recirculación de anti-surge y especificación de motores de velocidad variable. & Fabricante de compresores (Elliott / Siemens) & \textbf{Media} & Ing. Gildardo Ocaña Barrales \\
+\texttt{T-601} & Hidráulica y tipo de platos (válvulas vs empaque) & Calcular diámetro exacto de torre, espaciado entre platos y caída de presión real en operación. & Manuales Kister / FRI & \textbf{Alta} & Ing. Karol Paola Camacho \\
+\texttt{E-502} & Coeficientes globales de transferencia ($U_{\text{calc}}$) & Dimensionamiento de área de intercambio preliminar conforme a estándares TEMA / ASME Sección VIII. & HTRI / Software de diseño térmico & \textbf{Media} & Ing. Paulina Mota Macip \\
+Sitio & Calidad estacional de agua cruda en Coatzacoalcos & Definir tren de desmineralización por ósmosis inversa para make-up fresca (\texttt{S-201}). & Conagua / Pemex Cangrejera & \textbf{Media} & Ing. Grecia Figueroa Rincón \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
+\newpage
 % ==============================================================================
 % SECCIÓN 15: ETAPA 12. REGISTRO DE SUPUESTOS DE BASE (CUADRO 14: LE-01K)
 % ==============================================================================
@@ -630,8 +657,9 @@ El diseño conceptual y la simulación matemática descansan sobre premisas téc
 \begin{table}[H]
 \centering
 \small
+\setlength{\tabcolsep}{3.5pt}
 \caption{\textbf{LE-01K. Registro de supuestos técnicos y verificación de hipótesis.}} \label{tab:cuadro14}
-\begin{tabularx}{\textwidth}{c p{2.6cm} p{2.2cm} X p{3.2cm}}
+\begin{tabularx}{\textwidth}{c >{\raggedright\arraybackslash}p{2.6cm} >{\raggedright\arraybackslash}p{2.2cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{3.2cm}}
 \toprule
 \textbf{Núm.} & \textbf{Supuesto de Diseño} & \textbf{Área de Aplicación} & \textbf{Consecuencia Técnica si Varía} & \textbf{Método de Validación} \\
 \midrule
@@ -825,23 +853,25 @@ A continuación, la firma de ingeniería consultora \textbf{Solvanta Engineering
 
 \vspace{0.6cm}
 % ==============================================================================
-% SECCIÓN 22: HOJA DE FIRMAS CORPORATIVAS Y APROBACIÓN
+% SECCIÓN 22: HOJA DE FIRMAS CORPORATIVAS Y APROBACIÓN TÉCNICA
 % ==============================================================================
 \section{Hoja de Firmas Corporativas y Aprobación Técnica}
 
-El presente expediente técnico de ingeniería correspondiente a la \textbf{Actividad LE-01: Lista Maestra de Equipos y Variables de Proceso (DFP v1)} ha sido elaborado, revisado y validado en estricta observancia de los principios de ingeniería química y buenas prácticas de diseño:
+El presente expediente técnico de ingeniería correspondiente a la \textbf{Actividad LE-01: Lista Maestra de Equipos y Variables de Proceso (DFP v1 / Rev. 1)} ha sido elaborado, revisado y validado en estricta observancia de los principios de ingeniería química, rigor termodinámico y normatividad corporativa por el equipo técnico de Solvanta Engineering Solutions S.A. de C.V.:
 
 \vspace{1.2cm}
 \begin{table}[H]
 \centering
 \begin{tabularx}{\textwidth}{YY}
-\rule{6.5cm}{0.6pt} & \rule{6.5cm}{0.6pt} \\
-\textbf{Ing. Karoc Antigravity} & \textbf{Ing. Especialista en Simulación} \\
-Líder de Proyecto \& Dirección Técnica & Responsable de Balances DWSIM v1 \\
+\rule{6.8cm}{0.6pt} & \rule{6.8cm}{0.6pt} \\
+\textbf{Ing. Karol Paola Camacho López} & \textbf{Ing. Paulina Mota Macip} \\
+Directora de Proyecto, Python y Optimización & Responsable de Simulación de Procesos (DWSIM) \\
+Matrícula: FIQ--BUAP \quad\textbar\quad \texttt{@Karoc} & Matrícula: FIQ--BUAP \quad\textbar\quad \texttt{@paulina145} \\
 Solvanta Engineering Solutions S.A. de C.V. & Solvanta Engineering Solutions S.A. de C.V. \\[1.4cm]
-\rule{6.5cm}{0.6pt} & \rule{6.5cm}{0.6pt} \\
-\textbf{Ing. Especialista en Equipos de Proceso} & \textbf{Ing. Control de Calidad \& QA} \\
-Diseño de Equipos Térmicos y Mecánicos & Aseguramiento y Verificación Normativa \\
+\rule{6.8cm}{0.6pt} & \rule{6.8cm}{0.6pt} \\
+\textbf{Ing. Gildardo Ocaña Barrales} & \textbf{Ing. Grecia Figueroa Rincón} \\
+Responsable de Diagramas e Ing. de Procesos & Responsable de Evaluación Económica y HSE \\
+Matrícula: FIQ--BUAP \quad\textbar\quad \texttt{@GildardoOca25} & Matrícula: FIQ--BUAP \quad\textbar\quad \texttt{@Cho0bb} \\
 Solvanta Engineering Solutions S.A. de C.V. & Solvanta Engineering Solutions S.A. de C.V. \\
 \end{tabularx}
 \end{table}
