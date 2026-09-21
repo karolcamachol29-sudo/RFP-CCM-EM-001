@@ -32,6 +32,7 @@
 | **E1.4** | Video Pitch del Proyecto | @Karoc | 1 File (`.txt` enlace Drive) | `03_Entregables_Finales/` | 2026-08-25 | ⏳ In Progress |
 | **E1.5** | Verificación de Simulación, Tablas (TC-01/TE-01) y PFD (VTP-01) | @Karoc | 3 Files (`.pdf`) | `03_Entregables_Finales/E1/`, `02_Ingenieria_y_Diagramas/` | 2026-09-14 | ✅ Done |
 | **E1.6** | Matriz Integral de Aspectos, Impactos y Requisitos Ambientales (AC-AMB-01) | @Cho0bb | 2 Files (`.pdf`, `.xlsx`) | `03_Entregables_Finales/E1/` | 2026-09-21 | ✅ Done |
+| **E2.1** | Lista Maestra de Equipos, Sensibilidades y DFP v1 (LE-01) | @Karoc | 3 Files (`.pdf`, `.tex`) | `03_Entregables_Finales/E2/` | 2026-09-21 | ✅ Done |
 
 ---
 
@@ -110,6 +111,15 @@
   - **Archivos Requeridos (2):**
     - [x] `03_Entregables_Finales/E1/E1.6_DOC_MatrizAmbiental_v1.0.pdf`
     - [x] `03_Entregables_Finales/E1/AC-AMB-01_Solvanta/AC-AMB-01_XLSX_MatrizAmbiental_v1.0.xlsx`
+  - **Estado:** ✅ Done
+
+- [x] **[E2.1] Lista Maestra de Equipos, Sensibilidades y DFP v1 (Actividad LE-01)**
+  - **Asignado a:** @Karoc (Karol Paola Camacho López) & @paulina145 (Paulina Mota Macip)
+  - **Roles RACI:** R: @Karoc, @paulina145 | A: @Karoc | C: @GildardoOca25, @Cho0bb | I: Dr. Jesús Andrés Arzola Flores
+  - **Archivos Requeridos (3):**
+    - [x] `03_Entregables_Finales/E2/E2.1_DOC_ListaEquipos_v1.0.pdf`
+    - [x] `03_Entregables_Finales/E2/LE-01_Solvanta/LE-01_Solvanta.pdf`
+    - [x] `03_Entregables_Finales/E2/LE-01_Solvanta/DFP-v1_Solvanta.pdf`
   - **Estado:** ✅ Done
 
 ---

@@ -132,3 +132,13 @@
     - [x] `03_Entregables_Finales/E1/AC-AMB-01_Solvanta/AC-AMB-01_XLSX_MatrizAmbiental_v1.0.xlsx`
   - **Etiquetas:** `E1.6`, `DOC`, `AC-AMB-01`, `HSE`
 
+- [x] **[E2.1] Lista Maestra de Equipos, Integración de Sensibilidades y DFP v1 (Actividad LE-01)**
+  - **Asignado:** @Karoc (Karol Camacho) & @paulina145 (Paulina Mota)
+  - **Fecha Asignación:** 2026-09-17
+  - **Entrega Estimada:** 2026-09-21
+  - **Archivos Requeridos (3):**
+    - [x] `03_Entregables_Finales/E2/E2.1_DOC_ListaEquipos_v1.0.pdf`
+    - [x] `03_Entregables_Finales/E2/LE-01_Solvanta/LE-01_Solvanta.pdf`
+    - [x] `03_Entregables_Finales/E2/LE-01_Solvanta/DFP-v1_Solvanta.pdf`
+  - **Etiquetas:** `E2.1`, `DOC`, `LE-01`, `DFP`
+
