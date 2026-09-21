@@ -30,6 +30,8 @@
 | **E1.3** | Diagramación (BFD, PFD, DTI) en Plant 3D | @GildardoOca25 | 2 Files (`.dwg`, `.pdf`) | `02_Ingenieria_y_Diagramas/`, `03_Entregables_Finales/` | 2026-08-24 | ✅ Done |
 | **E1.3.1** | Propuesta preliminar de equipos y parámetros de diseño (EQ-01) | @Karoc | 1 File (`.pdf`) | `03_Entregables_Finales/` | 2026-08-28 | ⏳ In Progress |
 | **E1.4** | Video Pitch del Proyecto | @Karoc | 1 File (`.txt` enlace Drive) | `03_Entregables_Finales/` | 2026-08-25 | ⏳ In Progress |
+| **E1.5** | Verificación de Simulación, Tablas (TC-01/TE-01) y PFD (VTP-01) | @Karoc | 3 Files (`.pdf`) | `03_Entregables_Finales/E1/`, `02_Ingenieria_y_Diagramas/` | 2026-09-14 | ✅ Done |
+| **E1.6** | Matriz Integral de Aspectos, Impactos y Requisitos Ambientales (AC-AMB-01) | @Cho0bb | 2 Files (`.pdf`, `.xlsx`) | `03_Entregables_Finales/E1/` | 2026-09-21 | ✅ Done |
 
 ---
 
@@ -92,6 +94,23 @@
   - **Archivos Requeridos (1):**
     - [ ] Archivo TXT Enlace: `03_Entregables_Finales/E1.4_VID_EnlacePitch_v1.0.txt`
   - **Estado:** ⏳ In Progress
+
+- [x] **[E1.5] Verificación de Simulación, Tablas TC-01/TE-01 y PFD Oficial (VTP-01)**
+  - **Asignado a:** @Karoc (Karol Paola Camacho López) & @GildardoOca25 (Gildardo Ocaña Barrales)
+  - **Roles RACI:** R: @Karoc, @GildardoOca25 | A: @Karoc | C: @paulina145, @Cho0bb | I: Cliente
+  - **Archivos Requeridos (3):**
+    - [x] `03_Entregables_Finales/E1/E1.5_DOC_ActividadVTP_v0.1.pdf`
+    - [x] `03_Entregables_Finales/E1/VTP-01_Solvanta/04_PFD/PFD-v0_Solvanta.pdf`
+    - [x] `02_Ingenieria_y_Diagramas/DFP_PFD/PFD-v0_Solvanta.pdf`
+  - **Estado:** ✅ Done
+
+- [x] **[E1.6] Matriz Integral de Aspectos, Impactos y Requisitos Ambientales (AC-AMB-01)**
+  - **Asignado a:** @Cho0bb (Grecia Figueroa Rincón) & Equipo Solvanta
+  - **Roles RACI:** R: @Cho0bb | A: @Karoc | C: @paulina145, @GildardoOca25 | I: Cliente
+  - **Archivos Requeridos (2):**
+    - [x] `03_Entregables_Finales/E1/E1.6_DOC_MatrizAmbiental_v1.0.pdf`
+    - [x] `03_Entregables_Finales/E1/AC-AMB-01_Solvanta/AC-AMB-01_XLSX_MatrizAmbiental_v1.0.xlsx`
+  - **Estado:** ✅ Done
 
 ---
 

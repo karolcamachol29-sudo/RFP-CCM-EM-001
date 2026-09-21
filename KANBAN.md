@@ -113,3 +113,22 @@
     - [x] `03_Entregables_Finales/E1.3_DOC_EspecificacionDiagramas_v1.0.pdf`
   - **Etiquetas:** `E1.3`, `DWG`, `DOC`, `CAD`
 
+- [x] **[E1.5] Verificación de Simulación, Tablas TC-01/TE-01 y PFD Oficial (VTP-01)**
+  - **Asignado:** @Karoc (Karol Camacho) & @GildardoOca25 (Gildardo Ocaña)
+  - **Fecha Asignación:** 2026-09-10
+  - **Entrega Estimada:** 2026-09-14
+  - **Archivos Requeridos (3):**
+    - [x] `03_Entregables_Finales/E1/E1.5_DOC_ActividadVTP_v0.1.pdf`
+    - [x] `03_Entregables_Finales/E1/VTP-01_Solvanta/04_PFD/PFD-v0_Solvanta.pdf`
+    - [x] `02_Ingenieria_y_Diagramas/DFP_PFD/PFD-v0_Solvanta.pdf`
+  - **Etiquetas:** `E1.5`, `DOC`, `VTP-01`, `DFP`
+
+- [x] **[E1.6] Matriz Integral de Aspectos, Impactos y Requisitos Ambientales (AC-AMB-01)**
+  - **Asignado:** @Cho0bb (Grecia Figueroa) & Equipo Solvanta
+  - **Fecha Asignación:** 2026-09-17
+  - **Entrega Estimada:** 2026-09-21
+  - **Archivos Requeridos (2):**
+    - [x] `03_Entregables_Finales/E1/E1.6_DOC_MatrizAmbiental_v1.0.pdf`
+    - [x] `03_Entregables_Finales/E1/AC-AMB-01_Solvanta/AC-AMB-01_XLSX_MatrizAmbiental_v1.0.xlsx`
+  - **Etiquetas:** `E1.6`, `DOC`, `AC-AMB-01`, `HSE`
+
