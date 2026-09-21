@@ -200,7 +200,7 @@ El propósito técnico de la \textbf{Actividad LE-01} consiste en:
 \end{enumerate}
 \end{propositobox}
 
-\textbf{Solvanta Engineering Solutions S.A. de C.V.} desarrolló el proyecto de diseño básico para la producción de $\mathbf{30\,000\text{ t/año}}$ ($\mathbf{3\,788.65\text{ kg/h}}$ continuos con factor de servicio de $8\,000\text{ h/año}$) de e-metanol con pureza comercial Grado AA ($>99.85\%$ p/p). La instalación se ubica estratégicamente en el Complejo Petroquímico Cangrejera (Coatzacoalcos, Veracruz), aprovechando la disponibilidad de dióxido de carbono capturado de alta pureza ($99.0\%$ molar) procedente de unidades petroquímicas y fuentes de energía renovable para la generación de hidrógeno verde mediante electrólisis de óxido sólido a alta temperatura (SOEC).
+\textbf{Solvanta Engineering Solutions S.A. de C.V.} desarrolló el proyecto de diseño básico para la producción de $\mathbf{30\,000\text{ t/año}}$ ($\mathbf{3\,788.65\text{ kg/h}}$ continuos con factor de servicio de $8\,000\text{ h/año}$) de e-metanol con pureza comercial Grado AA ($>99.85\%$ p/p). La instalación se ubica estratégicamente en el Complejo Petroquímico Cangrejera (Coatzacoalcos, Veracruz), aprovechando la disponibilidad de dióxido de carbono capturado de alta pureza ($99.0\%$ molar) procedente de unidades petroquímicas, el cual es suministrado a límite de batería (\textbf{BL / OSBL}) directamente a $\mathbf{20.0\text{ bar}}$ y $\mathbf{25.0^\circ\text{C}}$ en la corriente \texttt{S-101}, eliminando la necesidad de etapas de compresión y secado in situ en la planta. La fuente de hidrógeno verde proviene de la electrólisis de vapor de óxido sólido a alta temperatura (SOEC) acoplada a la misma cota de presión.
 
 % ==============================================================================
 % SECCIÓN 2: MARCO CONCEPTUAL Y ABREVIATURAS (CUADRO 1)
@@ -302,7 +302,7 @@ Para organizar modularmente la planta y permitir la distribución paralela de ac
 \toprule
 \textbf{Sistema} & \textbf{Nombre del Área} & \textbf{TAGs Principales} & \textbf{Incluye} & \textbf{No Incluye} & \textbf{Justificación de Límites} \\
 \midrule
-\textbf{Área 100} & Recepción y Acond. de $\text{CO}_2$ & \texttt{C-101}, \texttt{E-101}, \texttt{V-101} & Compresión desde $1.013$ a $20\text{ bar}$, enfriamiento y separación de condensados. & Planta de captura externa de $\text{CO}_2$. & Garantiza entrega de $\text{CO}_2$ seco a la misma presión de salida de la electrólisis SOEC. \\
+\textbf{Área 100} & Suministro y Recepción de $\text{CO}_2$ & \texttt{S-101} (Frontera BL) & Recepción a límite de batería de $\text{CO}_2$ capturado a $20.0\text{ bar}$ y $25.0^\circ\text{C}$ ($5\,274.34\text{ kg/h}$). & Compresión in situ (suministro OSBL directo a $20\text{ bar}$). & El $\text{CO}_2$ ingresa acondicionado a $20\text{ bar}$ directamente a \texttt{MIX-301}, eliminando compresión y secado en planta. \\
 \textbf{Área 200} & Generación de $\text{H}_2$ Verde (SOEC) & \texttt{P-201}, \texttt{MIX-201}, \texttt{E-202}, \texttt{EL-201}, \texttt{E-201}, \texttt{E-203}, \texttt{V-201} & Bombeo de agua, sobrecalentamiento a $750^\circ\text{C}$, celdas SOEC, enfriamiento y separación $\text{H}_2/\text{H}_2\text{O}$. & Planta de purificación de agua desmineralizada de red. & Agrupa la tecnología electroquímica a alta temperatura y el acondicionamiento de $\text{H}_2$ a $19.4\text{ bar}$. \\
 \textbf{Área 300} & Compresión y Mezcla de Syngas & \texttt{MIX-301}, \texttt{E-301}, \texttt{C-301} & Mezclador estático de gases frescos, precalentador a succión y compresor centrífugo a $75\text{ bar}$. & Bucle de reciclo de alta presión. & Eleva la presión de reactivos estequiométricos ($M=2.05$) a la presión óptima de síntesis. \\
 \textbf{Área 400} & Síntesis Catalítica de Metanol & \texttt{MIX-401}, \texttt{E-502A/B}, \texttt{R-401}, \texttt{R-401-S} & Mezcla con reciclo, precalentamiento FEHE, reactor multitubular Lurgi BWR y generación de vapor. & Separación de productos condensados. & Contiene la reacción exotérmica principal ($\text{CO}_2+3\text{H}_2 \leftrightarrow \text{CH}_3\text{OH}+\text{H}_2\text{O}$) y el vapor acoplado a SOEC. \\
@@ -329,8 +329,8 @@ La codificación de cada unidad física sigue el estándar normalizado \texttt{[
 \toprule
 \textbf{Prefijo} & \textbf{Familia de Equipo} & \textbf{Descripción Funcional} & \textbf{Ejemplos en Planta Solvanta} \\
 \midrule
-\textbf{C} & Compresores / Sopladores & Elevación de presión de corrientes gaseosas y recirculación & \texttt{C-101}, \texttt{C-301}, \texttt{C-501} \\
-\textbf{E} & Intercambiadores de Calor & Calentadores, enfriadores, condensadores, rehervidores y FEHE & \texttt{E-101}, \texttt{E-202}, \texttt{E-203}, \texttt{E-301}, \texttt{E-501}, \texttt{E-601} \\
+\textbf{C} & Compresores / Sopladores & Elevación de presión de corrientes gaseosas y recirculación & \texttt{C-301}, \texttt{C-501} \\
+\textbf{E} & Intercambiadores de Calor & Calentadores, enfriadores, condensadores, rehervidores y FEHE & \texttt{E-201}, \texttt{E-202}, \texttt{E-203}, \texttt{E-301}, \texttt{E-501}, \texttt{E-601}, \texttt{E-602}, \texttt{E-603} \\
 \textbf{EL / SOEC} & Paquete de Electrólisis & Módulos de celdas de disociación de vapor de agua a alta $T$ & \texttt{EL-201} (\texttt{SOEC-201}) \\
 \textbf{EXP / X} & Turboexpansores & Máquinas de expansión isentrópica para recuperación de potencia & \texttt{EXP-501} (\texttt{X-501}) \\
 \textbf{MIX} & Mezcladores Estáticos & Unión física de corrientes de reactivos, reciclos o agua & \texttt{MIX-201}, \texttt{MIX-301}, \texttt{MIX-401} \\
@@ -339,7 +339,7 @@ La codificación de cada unidad física sigue el estándar normalizado \texttt{[
 \textbf{SPLIT} & Divisores de Flujo & Desvío de fracciones controladas para purga de incondensables & \texttt{SPLIT-501} \\
 \textbf{T} & Columnas de Separación & Torres fraccionadoras de platos o empaque para purificación & \texttt{T-601} (Columna de Destilación) \\
 \textbf{TK} & Tanques de Almacenamiento & Recipientes atmosféricos o presurizados para acumulación & \texttt{TK-601} (Metanol comercial) \\
-\textbf{V} & Recipientes / Separadores & Tambores de separación gas-líquido tipo Knock-Out y flash & \texttt{V-101}, \texttt{V-201}, \texttt{V-501}, \texttt{V-601} \\
+\textbf{V} & Recipientes / Separadores & Tambores de separación gas-líquido tipo Knock-Out y flash & \texttt{V-201}, \texttt{V-501}, \texttt{V-601} \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -369,9 +369,6 @@ A continuación se presenta el inventario completo de los \textbf{28 equipos de 
 \endfoot
 \bottomrule
 \endlastfoot
-\texttt{C-101} & Compresor de $\text{CO}_2$ de Captura & Elevar presión de $\text{CO}_2$ capturado de $1.013$ a $20.0\text{ bar}$. & \texttt{S-100} & \texttt{S-101A} & Presión de descarga y potencia ($W=285.5\text{ kW}$). & Definido \\
-\texttt{E-101} & Interenfriador de $\text{CO}_2$ & Enfriar el $\text{CO}_2$ comprimido de $115^\circ\text{C}$ a $25^\circ\text{C}$ con agua de servicio. & \texttt{S-101A} & \texttt{S-101B} & Temperatura de salida ($25^\circ\text{C}$) y carga térmica. & Definido \\
-\texttt{V-101} & Separador Knock-Out $\text{CO}_2$ & Remover condensados de agua arrastrados en el $\text{CO}_2$ frío. & \texttt{S-101B} & \texttt{S-101}, \texttt{S-COND} & Eficiencia de separación de niebla y nivel. & Definido \\
 \texttt{P-201} & Bomba de Agua Make-up & Presurizar agua fresca de red de $1.013$ a $20.0\text{ bar}$ hacia la caldera. & \texttt{S-200} & \texttt{S-201} & Altura manométrica ($H=195\text{ m}$) y caudal volumétrico. & Definido \\
 \texttt{MIX-201} & Mezclador de Agua a Caldera & Combinar agua fresca de make-up con agua recuperada ZLD. & \texttt{S-201}, \texttt{S-202} & \texttt{S-203} & Temperatura de mezcla resultante ($39.8^\circ\text{C}$). & Definido \\
 \texttt{R-401-S} & Caldera BWR Generadora de Vapor & Generar vapor saturado a $20.0\text{ bar}$ usando calor exotérmico del reactor. & \texttt{S-203} & \texttt{S-204} & Carga térmica transferida ($Q=12\,335.4\text{ kW}$) a $220^\circ\text{C}$. & Definido \\
@@ -429,9 +426,6 @@ Los datos tabulados a continuación proceden directamente de la convergencia de 
 \endfoot
 \bottomrule
 \endlastfoot
-\texttt{C-101} & \texttt{S-100} ($\text{CO}_2$ batería) & 25.0 & 115.0 & 1.013 & 20.00 & 5\,274.34 & 121.000 & $W = +285.50$ \\
-\texttt{E-101} & \texttt{S-101A} ($\text{CO}_2$ comp.) & 115.0 & 25.0 & 20.00 & 20.00 & 5\,274.34 & 121.000 & $Q = -118.20$ \\
-\texttt{V-101} & \texttt{S-101B} ($\text{CO}_2$ frío) & 25.0 & 25.0 & 20.00 & 20.00 & 5\,274.34 & 121.000 & Balance adiabático \\
 \texttt{P-201} & \texttt{S-200} (Agua make-up) & 25.0 & 25.0 & 1.013 & 20.00 & 9\,241.84 & 513.000 & $W = +6.42$ \\
 \texttt{MIX-201} & \texttt{S-201} + \texttt{S-202} & 25.0 / 59.2 & 39.8 & 20.00 & 20.00 & 16\,244.88 & 901.722 & Mezcla adiabática \\
 \texttt{R-401-S} & \texttt{S-203} (Agua mezcla) & 39.8 & 220.0 & 20.00 & 20.00 & 16\,244.88 & 901.722 & $Q = -12\,335.36$ (recuperado) \\
@@ -490,7 +484,7 @@ Las variables de diseño de proceso son aquellos grados de libertad físico-quí
 \bottomrule
 \endlastfoot
 \texttt{EL-201} & Consumo específico SOEC & $3.35\text{ kWh/Nm}^3\text{ H}_2$ & $3.20 - 3.80\text{ kWh/Nm}^3$ & ID-05 (Consumo específico) & Define el $93\%$ del gasto eléctrico de planta. SOEC ahorra $25\%$ vs PEM convencional. & Haldor Topsoe / DWSIM & Analizada \\
-\texttt{C-101} & Presión descarga $\text{CO}_2$ & $20.0\text{ bar}$ & $18.0 - 22.0\text{ bar}$ & ID-05 (Potencia de compresión) & Acoplamiento isobárico con el hidrógeno de salida de celdas SOEC evitando contrapresión. & DWSIM v1 & Analizada \\
+\texttt{S-101} & Presión suministro $\text{CO}_2$ (BL) & $20.0\text{ bar}$ & $18.0 - 22.0\text{ bar}$ & ID-05 (Consumo eléctrico específico) & Suministro isobárico a límite de batería acoplado al $\text{H}_2$ catódico SOEC ($19.4\text{ bar}$), eliminando compresión in situ de $\text{CO}_2$. & Licitación / DWSIM & Analizada \\
 \texttt{MIX-301} & Módulo estequiométrico $M$ & $2.05$ & $2.00 - 2.10$ & ID-03, ID-04 (Conversión) & $M = (y_{\text{H}_2} - y_{\text{CO}_2})/(y_{\text{CO}} + y_{\text{CO}_2})$. Exceso leve evita coquización y favorece equilibrio. & Literatura cinética Lurgi & Analizada \\
 \texttt{C-301} & Presión descarga syngas & $75.0\text{ bar}$ & $60.0 - 85.0\text{ bar}$ & ID-01, ID-05 (Producción/Pot.) & Mayor presión favorece termodinámicamente la síntesis ($\Delta n < 0$) con costo moderado de compresión. & Sensibilidad DWSIM & Analizada \\
 \texttt{E-502} & Temperatura entrada reactor & $210.0^\circ\text{C}$ & $200.0 - 225.0^\circ\text{C}$ & ID-03 (Conversión por paso) & Activación cinética de catalizador $\text{Cu/ZnO/Al}_2\text{O}_3$ garantizando auto-ignición catalítica. & Haldor Topsoe & Analizada \\
@@ -665,7 +659,7 @@ El diseño conceptual y la simulación matemática descansan sobre premisas téc
 1 & Factor de servicio anual de $8\,000\text{ h/año}$ (91.3\%). & Capacidad horaria de todos los equipos. & Si la disponibilidad decae al $80\%$, la capacidad horaria de diseño deberá elevarse a $4\,326\text{ kg/h}$. & Históricos de paros programados en complejos Pemex. \\
 2 & Suministro de $\text{CO}_2$ con pureza de $99.0\%$ molar. & Batería de entrada y acumulación de gases. & Si el $\text{CO}_2$ contiene más de $2\%$ de $\text{N}_2/\text{CH}_4$, la purga en \texttt{SPLIT-501} debe subir a $6\%$. & Análisis cromatográfico de gases de chimenea/captura. \\
 3 & Caída de presión en intercambiadores $\Delta P = 0.5\text{ bar}$. & Hidráulica y potencia de compresión y bombeo. & Una mayor pérdida de carga elevará la potencia de los compresores \texttt{C-301} y \texttt{C-501}. & Verificación hidráulica rigurosa en simulador HTRI. \\
-4 & Eficiencia isentrópica en compresores del $78\%$. & Consumo eléctrico de \texttt{C-101} y \texttt{C-301}. & Menor eficiencia incrementa temperatura de descarga y potencia requerida. & Hojas de datos técnicas de fabricantes de compresores. \\
+4 & Eficiencia isentrópica en compresores del $78\%$. & Consumo eléctrico de \texttt{C-301} y \texttt{C-501}. & Menor eficiencia incrementa temperatura de descarga y potencia requerida. & Hojas de datos técnicas de fabricantes de turbomaquinaria. \\
 5 & Equilibrio termodinámico aproximado en R-401. & Reactor catalítico de metanol. & Si la aproximación cinética difiere, la conversión por paso podría caer de $26.4\%$ a $22\%$. & Validación mediante cinemática rigurosa Graaf/Vanden Bussche. \\
 6 & Eficiencia de etapas en columna \texttt{T-601} del $70\%$. & Número real de platos de destilación. & Determina que las 32 etapas teóricas equivalgan a 46 platos mecánicos reales. & Correlaciones O'Connell para mezclas metanol-agua. \\
 7 & Operación en estado estacionario continuo. & Balances globales de masa y energía. & No modela transitorios de arranque, paro o fluctuación en generación renovable. & Análisis dinámico posterior en ingeniería de detalle. \\
@@ -690,7 +684,7 @@ El plano del Diagrama de Flujo de Proceso (\texttt{DFP-v1\_Solvanta.pdf}) fue au
 \toprule
 \textbf{Núm.} & \textbf{Criterio de Verificación Técnica} & \textbf{Sí / No} & \textbf{Observación de la Firma Solvanta} \\
 \midrule
-1 & Todos los equipos tienen TAG único y normalizado. & \textbf{Sí} & Cada una de las 28 unidades cuenta con su código alfanumérico (\texttt{C-101}, \texttt{EL-201}, etc.). \\
+1 & Todos los equipos tienen TAG único y normalizado. & \textbf{Sí} & Cada una de las 28 unidades cuenta con su código alfanumérico (\texttt{EL-201}, \texttt{C-301}, \texttt{R-401}, etc.). \\
 2 & Las corrientes coinciden plenamente con la tabla \texttt{TC-01}. & \textbf{Sí} & Se verificó coincidencia en flujos, temperaturas y presiones de las corrientes \texttt{S-101} a \texttt{S-804}. \\
 3 & Las cargas energéticas coinciden con la tabla \texttt{TE-01}. & \textbf{Sí} & Se validaron potencias ($54.4\text{ MW}$ SOEC, $1.32\text{ MW}$ \texttt{C-301}) y cargas térmicas. \\
 4 & La recirculación de gas se representa como una línea cerrada. & \textbf{Sí} & El lazo de reciclo retorna desde \texttt{SPLIT-501} a través de \texttt{C-501} al mezclador \texttt{MIX-401}. \\
@@ -803,7 +797,7 @@ A continuación, \textbf{Solvanta Engineering Solutions S.A. de C.V.} responde f
     \textit{Respuesta técnica:} La \textbf{presión de operación en el bucle de síntesis ($P$ en \texttt{R-401} y \texttt{C-301})}. Debido a que la reacción de síntesis de metanol a partir de $\text{CO}_2$ e $\text{H}_2$ conlleva una contracción molar neta ($\Delta n = 1 - (1+3) = -3$ moles netos de reactivos por cada mol de metanol y agua formados, o $\Delta n = -2$ considerando la fase líquida condensada), el principio de Le Chatelier favorece drásticamente la conversión al incrementar la presión de $50$ a $75\text{ bar}$, elevando la producción másica horaria de metanol de $3\,120\text{ kg/h}$ a los $3\,788.65\text{ kg/h}$ de diseño definitivo.
 
     \item \textbf{¿Qué variable presentó el mayor efecto sobre el consumo energético?}\\
-    \textit{Respuesta técnica:} El \textbf{consumo específico del electrolizador SOEC (\texttt{EL-201})}, fijado en $3.35\text{ kWh/Nm}^3\text{ H}_2$ ($54\,402\text{ kW}$ continuos). Representa el $\mathbf{93.4\%}$ del consumo eléctrico total de la planta ($58\,238\text{ kW}$). Cualquier fluctuación en la eficiencia Faradaica o voltaje de celda en el stack SOEC impacta el balance global de planta en un orden de magnitud muy superior al de cualquier compresor mecánico o bomba.
+    \textit{Respuesta técnica:} El \textbf{consumo específico del electrolizador SOEC (\texttt{EL-201})}, fijado en $3.35\text{ kWh/Nm}^3\text{ H}_2$ ($54\,402\text{ kW}$ continuos). Representa el $\mathbf{98.1\%}$ del consumo eléctrico neto total de la planta ($55.44\text{ MWe}$). Cualquier fluctuación en la eficiencia Faradaica o voltaje de celda en el stack SOEC impacta el balance global de planta en un orden de magnitud muy superior al de cualquier compresor mecánico o bomba.
 
     \item \textbf{¿Qué resultado de sensibilidad produjo una modificación en el DFP?}\\
     \textit{Respuesta técnica:} El análisis de sensibilidad térmica en el enfriador \texttt{E-501}. Al evaluar el condensador, se demostró que si la mezcla se enfriaba únicamente a $55^\circ\text{C}$ (temperatura típica de enfriadores por aire en climas tropicales como Coatzacoalcos), se perdían más de $38.5\text{ kg/h}$ de metanol en la corriente gaseosa de purga. Al fijar como decisión de diseño una temperatura de $38.0^\circ\text{C}$ usando agua fría de torre, se logró condensar el $99.85\%$ del metanol generado, lo que justificó añadir formalmente un intercambiador de carcasa y tubos con servicio de agua de enfriamiento (CW) previo al tambor flash \texttt{V-501}.
