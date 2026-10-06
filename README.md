@@ -9,12 +9,18 @@
 | Carpeta / Archivo | Descripción | Uso Principal |
 | :--- | :--- | :--- |
 | **`00_Gestion_Proyecto`** | Minutas, plantillas oficiales, matrices de evaluación, selección y matriz RACI. | Consulta y gestión |
-| **`01_Proceso_y_Simulacion`** | Archivos de DWSIM, BioSTEAM y scripts de Python. | **Zona de Entrega** |
-| **`02_Ingenieria_y_Diagramas`** | Diagramas PFD, P&ID y planos AutoCAD Plant 3D. | **Zona de Entrega** |
-| **`03_Entregables_Finales`** | Documentos formales y versiones finales en PDF (E0-E4, EF). | **Zona de Entrega** |
+| **`01_Proceso_y_Simulacion`** | Modelos convergidos en DWSIM (`.dwxmz`, `.dwxml`), BioSTEAM y memorias descriptivas. | Modelado y simulación |
+| **`02_Ingenieria_y_Diagramas`** | Diagramas de ingeniería (BFD, DFP/PFD, DTI/P&ID `DTI-v0_Solvanta.pdf`), fuentes LaTeX de filosofía de control (`FC-01`), lista de equipos y verificación. | Ingeniería de detalle |
+| **`03_Entregables_Finales`** | Documentos formales y versiones finales en PDF/TXT para cliente y docencia (E0-E4, EF). **Solo archivos finales** (sin `.tex`, `.aux`, `.log` ni `.zip`). | **Entregables Oficiales** |
 | **`04_Bitacora`** | Reportes de avance y diario de trabajo técnico. | Registro individual |
 | **`KANBAN.md`** | Tablero oficial de tareas del proyecto en Markdown. | Seguimiento de flujo |
 | **`generar_documento.sh`** | Script interactivo para generación de documentos y tarjetas. | Automatización |
+
+### 📌 Entregables Clave de Ingeniería de Control y Proceso
+* **DTI Oficial:** `02_Ingenieria_y_Diagramas/DTI_PID/DTI-v0_Solvanta.pdf`
+* **Filosofía de Control Oficial (E2):** `03_Entregables_Finales/E2/FC-01_Solvanta/FC-01_DOC_FilosofiaControl_v1.0.pdf`
+* **Fuente Técnica de Filosofía de Control:** `02_Ingenieria_y_Diagramas/Filosofia_Control/FC-01_DOC_FilosofiaControl_v1.0.tex`
+* **Carpeta Única de Evidencias:** `03_Entregables_Finales/E1/VTP-01_Solvanta/02_Verificacion/Evidencias/`
 
 ---
 

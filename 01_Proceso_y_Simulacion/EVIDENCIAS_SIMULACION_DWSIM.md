@@ -29,7 +29,7 @@ La simulación rigurosa del proceso de producción de e-metanol a partir de $\te
 
 La siguiente imagen documenta la distribución física y la nomenclatura normalizada de tuberías del bloque de electrólisis de vapor a alta temperatura (SOEC) y la zona de acondicionamiento de gas de síntesis fresco:
 
-![Nomenclatura y Topología de Tuberías SOEC](evidencias/01_nombramiento_tuberias_soec.png)
+![Nomenclatura y Topología de Tuberías SOEC](../03_Entregables_Finales/E1/VTP-01_Solvanta/02_Verificacion/Evidencias/01_nombramiento_tuberias_soec.png)
 
 ### Registro de Conectividad de Tuberías Front-End
 1. **`S-101` (Alimentación de $\text{CO}_2$):** Ingresa verticalmente desde el límite de batería a $25.0^\circ\text{C}$ y $20.0\text{ bar}$ con un flujo de $121.000\text{ kmol/h}$ ($5\,274.34\text{ kg/h}$) directo al mezclador de syngas `MIX-301`.
@@ -53,7 +53,7 @@ La siguiente imagen documenta la distribución física y la nomenclatura normali
 
 La captura de pantalla de la interfaz de DWSIM demuestra la convergencia simultánea de todos los bloques del proceso, sin inconsistencias ni errores de cálculo:
 
-![Flowsheet General DWSIM en Estado Verde](evidencias/02_simulacion_general_convergencia_dwsim.png)
+![Flowsheet General DWSIM en Estado Verde](../03_Entregables_Finales/E1/VTP-01_Solvanta/02_Verificacion/Evidencias/02_simulacion_general_convergencia_dwsim.png)
 
 ### Transcripción del Registro de Consola (DWSIM Execution Log)
 ```text
@@ -78,7 +78,7 @@ La captura de pantalla de la interfaz de DWSIM demuestra la convergencia simult�
 
 El tren de purificación y fraccionamiento entrega el e-metanol en la corriente `S-604` cumpliendo rigurosamente la norma técnica internacional Grado AA:
 
-![Flujo Final de Metanol S-604 y Enfriador E-603](evidencias/03_flujo_final_metanol_s604_pureza.png)
+![Flujo Final de Metanol S-604 y Enfriador E-603](../03_Entregables_Finales/E1/VTP-01_Solvanta/02_Verificacion/Evidencias/03_flujo_final_metanol_s604_pureza.png)
 
 ### Caracterización Termodinámica e Hidráulica de `S-604`
 | Propiedad | Valor Reportado por DWSIM | Unidad |
@@ -110,7 +110,7 @@ El tren de purificación y fraccionamiento entrega el e-metanol en la corriente 
 
 La siguiente captura panorámica del simulador presenta el flowsheet integral en operación continua, mostrando la totalidad de los 36 flujos de materia, 14 operaciones unitarias y 2 lazos cerrados de reciclo:
 
-![Flowsheet Completo de la Simulación DWSIM v1](evidencias/04_flowsheet_completo_nomenclatura_dwsim.png)
+![Flowsheet Completo de la Simulación DWSIM v1](../03_Entregables_Finales/E1/VTP-01_Solvanta/02_Verificacion/Evidencias/04_flowsheet_completo_nomenclatura_dwsim.png)
 
 ### Características Notables de la Arquitectura del Flowsheet:
 - **Estructura Modular por Áreas:** Área 100 (Acondicionamiento $\text{CO}_2$), Área 200 (Generación de $\text{H}_2$ SOEC), Área 300 (Precalentamiento y Compresión de Syngas con `E-301` y `C-301`), Área 400 (Bucle de Síntesis Exotérmico), Área 500 (Recuperación Térmica y Separación Flash HP), Área 600 (Desgasificación LP y Destilación Fraccionada), Área 800 (Tratamiento ZLD y Reúso de Agua).
