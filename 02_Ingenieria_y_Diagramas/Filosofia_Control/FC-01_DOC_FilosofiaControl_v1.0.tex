@@ -118,8 +118,9 @@
         \href{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001}{\texttt{\textbf{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001}}}\\[4pt]
         \footnotesize
         \textbf{Rama:} \texttt{main} \quad $\bullet$ \quad
-        \textbf{Licitación:} \texttt{RFP-CCM-EM-001} \quad $\bullet$ \quad
-        \textbf{Directorio del Entregable:} \texttt{03\_Entregables\_Finales/E2/FC-01\_Solvanta/}
+        \textbf{Licitación:} \texttt{RFP-CCM-EM-001}\\[2pt]
+        \textbf{Carpeta del Entregable FC-01:} \texttt{03\_Entregables\_Finales/E2/FC-01\_Solvanta/}\\
+        \textbf{Carpeta del Plano DTI v0.1:} \texttt{02\_Ingenieria\_y\_Diagramas/DTI\_PID/} $\to$ \texttt{DTI-v0\_Solvanta.pdf}
     \end{tcolorbox}
 
     \vspace{0.35cm}
@@ -466,6 +467,36 @@ El ingreso de mayor caudal frío a la torre enfría los platos intermedios. La t
 
 \newpage
 % ==============================================================================
+% 6. DIAGRAMA DE TUBERÍAS E INSTRUMENTACIÓN (DTI v0.1)
+% ==============================================================================
+\section{Diagrama de Tuberías e Instrumentación (DTI v0.1)}
+En cumplimiento de las directrices y requerimientos de ingeniería del proyecto, a continuación se presenta la vista general del Diagrama de Tuberías e Instrumentación preliminar del proceso (\textbf{DTI v0.1}). Este plano refleja la topología física, el conexionado de equipos, las corrientes principales y la instrumentación base sobre la cual se han estructurado los 28 lazos de control primarios de la planta, sirviendo como fundamento directo para la próxima emisión formal del plano (\textbf{DTI v1.0}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figuras/dti_v0_preview.png}
+    \caption{Diagrama de Tuberías e Instrumentación preliminar de la planta de e-metanol (DTI v0.1 - Solvanta Engineering Solutions S.A. de C.V.).}
+    \label{fig:dti_v0}
+\end{figure}
+
+\begin{tcolorbox}[colframe=navyblue,colback=boxbg,arc=2mm,boxrule=0.8pt]
+    \textbf{\color{navyblue}\large Consulta e Inspección del Plano en Alta Resolución Vectorial en GitHub}\\[3pt]
+    Para examinar a detalle todos los tags de instrumentación, diámetros de tuberías, especificaciones de válvulas y balances en alta resolución vectorial (sin pérdida de calidad), acceder al repositorio oficial de GitHub siguiendo la ruta indicada:
+    \vspace{0.15cm}
+    \begin{itemize}
+        \item \textbf{1. Enlace al Repositorio Oficial en GitHub:} \\
+        \href{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001}{\texttt{\textbf{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001}}}
+        \item \textbf{2. Carpeta a la que se debe entrar:} \\
+        \texttt{\textbf{02\_Ingenieria\_y\_Diagramas/DTI\_PID/}}
+        \item \textbf{3. Archivo vectorial en PDF para visualizar o descargar:} \\
+        \href{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/DTI_PID/DTI-v0_Solvanta.pdf}{\texttt{\textbf{DTI-v0\_Solvanta.pdf}}}
+    \end{itemize}
+    \vspace{0.1cm}
+    \footnotesize \textit{Nota de ingeniería de control:} Todas las decisiones de control, lazos en cascada, elementos de protección y simplificaciones técnicas formalizadas en este documento (\textbf{FC-01}) serán plasmadas en la próxima emisión formal del plano (\textbf{DTI v1.0}) posterior a la ejecución de las sesiones de análisis de riesgos HAZOP.
+\end{tcolorbox}
+
+\newpage
+% ==============================================================================
 % 7. ANÁLISIS FINAL
 % ==============================================================================
 \section{Análisis Final}
@@ -511,7 +542,7 @@ La \textbf{pérdida intempestiva del suministro de agua de enfriamiento al conde
     \item \textbf{Acciones de falla segura en válvulas (Fail-Safe):} Etiquetar como Falla Cerrada (FC) las válvulas de reactivos y vapor (\texttt{FV-101}, \texttt{FV-201}, \texttt{TV-602}), y como Falla Abierta (FO) las válvulas de enfriamiento (\texttt{TV-501}), despresurización (\texttt{PV-602}) y bypass anti-surge (\texttt{UCV-301/501}).
 \end{itemize}
 
-\newpage
+\vspace{0.15cm}
 % ==============================================================================
 % 8. CONCLUSIONES
 % ==============================================================================
@@ -522,8 +553,8 @@ El desarrollo de la Filosofía de Control del Proceso (\textbf{FC-01}) para la p
     \item \textbf{Variables más importantes del proceso:} Se identificaron con precisión las variables rectoras de la planta: la temperatura del lecho catalítico en R-401 ($245.0\,^\circ\text{C}$), la presión de operación en el bucle de síntesis ($75.00\,\text{bar}$), la presión diferencial trans-membrana en el módulo SOEC EL-201 ($|\Delta P| < 0.20\,\text{bar}$) y la temperatura de control en el plato sensible 7 de la columna T-601 ($71.2\,^\circ\text{C}$) para asegurar la pureza del destilado $>99.85\,\%\text{ p/p}$.
     \item \textbf{Lazos de control esenciales:} Se estructuraron 28 lazos de control primarios con trazabilidad rigurosa hacia el modelo DWSIM v1, destacando el control de temperatura por ebullición en la chaqueta de R-401, el lazo de relación estequiométrica $M = 2.05$ en MIX-301, el control de potencia eléctrica 100\% modulada por tiristores en E-202/EL-201, y el lazo simplificado de contrapresión de purga en el turboexpansor X-501 (\texttt{PIC-503}).
     \item \textbf{Principales perturbaciones identificadas:} Las perturbaciones de mayor impacto sobre la operación corresponden a la interrupción o calentamiento del agua de refrigeración en E-501, la variabilidad en la generación de hidrógeno del SOEC por fluctuaciones de la red eléctrica renovable, y los cambios de composición o presión en el suministro de $\text{CO}_2$ de captura.
-    \item \textbf{Condiciones de protección e interlocks:} Se definieron los interlocks candidatos esenciales para salvaguardar los equipos críticos (anti-surge en compresores, desconexión de potencia en SOEC ante presión trans-membrana, corte de alimentación fresca en R-401 y salvaguarda de nivel en fondo de columna), los cuales deberán evaluarse y validarse formalmente durante las sesiones de análisis de riesgos HAZOP y diseño de la matriz causa-efecto.
-    \item \textbf{Condiciones para análisis HAZOP:} Se formularon 5 interlocks candidatos preliminares (embalamiento térmico en R-401, sobrepresión del loop de 75 bar, falla trans-membrana en SOEC, blow-by de gas en flash V-501 y surge en compresores C-301/C-501), los cuales deberán ser evaluados y validados formalmente durante las sesiones de análisis de riesgos HAZOP y diseño de la matriz causa-efecto.
+    \item \textbf{Condiciones de protección e interlocks:} Se definieron los interlocks candidatos esenciales para salvaguardar los equipos críticos (anti-surge en compresores, desconexión de potencia en SOEC ante presión trans-membrana, corte de alimentación fresca en R-401 y salvaguarda de nivel en fondo de columna).
+    \item \textbf{Preparación para el análisis de riesgos HAZOP:} La delimitación cuantitativa de variables nominales y contingencias sienta las bases operativas indispensables para las sesiones de análisis HAZOP y el diseño de la matriz causa-efecto del sistema instrumentado de seguridad.
     \item \textbf{Relación vinculante con el futuro DTI v1.0:} La presente filosofía FC-01 constituye la base técnica y conceptual indispensable para la elaboración del plano de tuberías e instrumentación de detalle (\textbf{DTI v1.0}), garantizando que cada instrumento, válvula de control, lazo en cascada y acción de seguridad posea coherencia física y operativa con la simulación aprobada.
 \end{enumerate}
 
@@ -531,6 +562,7 @@ El desarrollo de la Filosofía de Control del Proceso (\textbf{FC-01}) para la p
 % 9. REFERENCIAS
 % ==============================================================================
 \section{Referencias}
+\small
 \begin{enumerate}[label={[\arabic*]}]
     \item \textbf{Seborg, D. E., Edgar, T. F., Mellichamp, D. A., \& Doyle, F. J.} (2016). \textit{Process Dynamics and Control} (4th ed.). John Wiley \& Sons, Hoboken, NJ.
     \item \textbf{Smith, C. A., \& Corripio, A. B.} (2006). \textit{Principles and Practice of Automatic Process Control} (3rd ed.). John Wiley \& Sons.
