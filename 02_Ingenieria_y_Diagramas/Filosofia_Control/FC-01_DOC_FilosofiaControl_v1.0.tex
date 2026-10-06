@@ -1,6 +1,6 @@
 \documentclass[10pt,letterpaper]{article}
 
-% --- Paquetes de tipografía, idioma y márgenes ---
+% - Paquetes de tipografía, idioma y márgenes -
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -11,7 +11,7 @@
 \renewcommand{\listtablename}{Índice de Cuadros}
 \renewcommand{\listfigurename}{Índice de Figuras}
 
-% --- Paquetes matemáticos y tablas ---
+% - Paquetes matemáticos y tablas -
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
 \usepackage{tabularx}
@@ -41,7 +41,7 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{3.0pt}
 
-% --- Definición de Colores Corporativos Solvanta ---
+% - Definición de Colores Corporativos Solvanta -
 \definecolor{navyblue}{RGB}{26, 79, 124}      % #1a4f7c - Título corporativo y líneas
 \definecolor{accentblue}{RGB}{51, 124, 207}   % #337ccf - Subtítulos
 \definecolor{darkred}{RGB}{140, 30, 30}       % Puertas de aprobación / límites
@@ -52,7 +52,7 @@
 \definecolor{tablerowalt}{RGB}{245, 248, 252}
 \definecolor{grayborder}{RGB}{208, 215, 222}
 
-% --- Formato de Secciones con Numeración ---
+% - Formato de Secciones con Numeración -
 \titleformat{\section}{\large\bfseries\color{navyblue}}{\thesection.}{0.5em}{}
 \titleformat{\subsection}{\normalsize\bfseries\color{navyblue}}{\thesubsection.}{0.5em}{}
 \titleformat{\subsubsection}{\small\bfseries\color{accentblue}}{\thesubsubsection.}{0.5em}{}
@@ -60,7 +60,7 @@
 \titlespacing*{\subsection}{0pt}{3pt}{1pt}
 \titlespacing*{\subsubsection}{0pt}{2pt}{1pt}
 
-% --- Formato de Encabezados y Pies de Página ---
+% - Formato de Encabezados y Pies de Página -
 \pagestyle{fancy}
 \fancyhf{}
 \lhead{\small\color{navyblue}\textbf{Solvanta Engineering Solutions} \textbar\ DPyPQ}
@@ -131,10 +131,10 @@
         \toprule
         \textbf{Puesto en la Empresa} & \textbf{Ingeniero(a) Responsable} & \textbf{Matrícula / ID} & \textbf{Usuario GitHub} \\
         \midrule
-        Directora de Proyecto, Python y Optimización & Ing. Karol Paola Camacho López & FIQ--BUAP & \texttt{@Karoc} \\
-        Simulación DWSIM e Instrumentación & Ing. Paulina Mota Macip & FIQ--BUAP & \texttt{@paulina145} \\
-        Ing. de Procesos, Plant 3D y DFP v1 & Ing. Gildardo Ocaña Barrales & FIQ--BUAP & \texttt{@GildardoOca25} \\
-        Evaluación Económica (BioSTEAM) y HSE & Ing. Grecia Figueroa Rincón & FIQ--BUAP & \texttt{@Cho0bb} \\
+        Directora de Proyecto, Python y Optimización & Ing. Karol Paola Camacho López & FIQ-BUAP & \texttt{@Karoc} \\
+        Simulación DWSIM e Instrumentación & Ing. Paulina Mota Macip & FIQ-BUAP & \texttt{@paulina145} \\
+        Ing. de Procesos, Plant 3D y DFP v1 & Ing. Gildardo Ocaña Barrales & FIQ-BUAP & \texttt{@GildardoOca25} \\
+        Evaluación Económica (BioSTEAM) y HSE & Ing. Grecia Figueroa Rincón & FIQ-BUAP & \texttt{@Cho0bb} \\
         \bottomrule
     \end{tabularx}
     \end{center}
@@ -159,7 +159,7 @@ El proceso opera en régimen continuo y se fundamenta en la hidrogenación catal
     \item \textbf{Área 800 (Sistema de Chaqueta y Caldera ZLD):} Regulación de nivel de tambor V-801 y circulación forzada de agua de refrigeración a chaqueta vía bomba P-801 ($16\,244.88\,\text{kg/h}$).
 \end{itemize}
 
-Los puntos de consigna ($SP$), variables manipuladas ($MV$), elementos finales de control ($FCV$), alarmas preventivas e interlocks candidatos provienen rigurosamente de la simulación convergida en DWSIM v1 (\texttt{DWSIM\_v1\_APROBADA\_Solvanta.dwxml}) y de la arquitectura de tuberías del DTI v0.1 (\texttt{DTI-v0\_Solvanta.pdf}), constituyendo la base de diseño para la emisión del DTI v1.0, el análisis HAZOP y la formulación de la matriz causa--efecto.
+Los puntos de consigna ($SP$), variables manipuladas ($MV$), elementos finales de control ($FCV$), alarmas preventivas e interlocks candidatos provienen rigurosamente de la simulación convergida en DWSIM v1 (\texttt{DWSIM\_v1\_APROBADA\_Solvanta.dwxml}) y de la arquitectura de tuberías del DTI v0.1 (\texttt{DTI-v0\_Solvanta.pdf}), constituyendo la base de diseño para la emisión del DTI v1.0, el análisis HAZOP y la formulación de la matriz causa-efecto.
 
 \newpage
 % ==============================================================================
@@ -188,7 +188,7 @@ A continuación se presenta el Cuadro 1 con la totalidad de los 28 lazos de cont
 \color{white}\textbf{Fuente del Dato} \\
 \hline
 \endfirsthead
-\multicolumn{10}{c}{\footnotesize\textit{Continuación del Cuadro \ref{tab:matriz_maestra} -- Matriz Maestra de Filosofía de Control}} \\
+\multicolumn{10}{c}{\footnotesize\textit{Continuación del Cuadro \ref{tab:matriz_maestra} - Matriz Maestra de Filosofía de Control}} \\
 \hline
 \rowcolor{tableheader}
 \color{white}\textbf{Equipo} & 
@@ -209,7 +209,7 @@ A continuación se presenta el Cuadro 1 con la totalidad de los 28 lazos de cont
 \hline
 \endlastfoot
 
-% --- ÁREA 200: SOEC Y GENERACIÓN DE H2 ---
+% - ÁREA 200: SOEC Y GENERACIÓN DE H2 -
 \rowcolor{tablerowalt}\multicolumn{10}{|l|}{\textbf{\color{navyblue}Área 200: Electrólisis SOEC de Alta Temperatura y Generación de $\text{H}_2$ Verde}} \\ \hline
 
 MIX-201 & Flujo de agua make-up S-201 & $9\,241.84\,\text{kg/h}$ ($513\,\text{kmol/h}$) & Apertura de válvula en línea S-201 / \texttt{FV-201} & Variación de presión en red de agua desmineralizada & Si $F < SP$, abre \texttt{FV-201}; si $F > SP$, cierra & \texttt{FAL-201} & Cierre de alimentación por falla de caldera & \texttt{FT-FIC-FCV-201} (A) & DWSIM / Balance \\ \hline
@@ -228,7 +228,7 @@ V-201 & Nivel de líquido condensado (fondo) & $50\,\%$ ($H = 0.5 - 1.2\,\text{m
 
 V-201 & Presión de hidrógeno verde S-209 & $19.40\,\text{bar}$ & Válvula de control de presión a mezcla / \texttt{PV-201} & Variación de succión en compresor C-301 o carga SOEC & Si $P \uparrow$, abre hacia MIX-301; si $P \downarrow$, estrangula & \texttt{PAH-201} ($21\,\text{bar}$) \texttt{PAL-201} ($18\,\text{bar}$) & Venteo seguro a antorcha de hidrógeno si $P > 22\,\text{bar}$ & \texttt{PT-PIC-PCV-201} (A) & DWSIM \\ \hline
 
-% --- ÁREA 300: SYNGAS Y COMPRESIÓN ---
+% - ÁREA 300: SYNGAS Y COMPRESIÓN -
 \rowcolor{tablerowalt}\multicolumn{10}{|l|}{\textbf{\color{navyblue}Área 300: Acondicionamiento y Compresión de Gas de Síntesis Fresco}} \\ \hline
 
 Límite Batería & Flujo de $\text{CO}_2$ capturado S-101 & $5\,274.34\,\text{kg/h}$ ($121\,\text{kmol/h}$) & Apertura de válvula en tubería S-101 / \texttt{FV-101} & Fluctuación de suministro en planta de captura & Si $F < SP$, abre \texttt{FV-101}; si $F > SP$, cierra & \texttt{FAL-101} \texttt{FAH-101} & Cierre de alimentación por paro de emergencia de compresión & \texttt{FT-FIC-FCV-101} (A) & DWSIM / Balance \\ \hline
@@ -241,7 +241,7 @@ C-301 & Presión de descarga syngas S-303 & $75.00\,\text{bar}$ & Velocidad de r
 
 C-301 & Margen de protección anti-surge & Flujo $> 1.15 \times F_{\text{surge}}$ & Válvula de recirculación anti-surge rápida / \texttt{UCV-301} & Reducción súbita de flujo de entrada en S-302 & Si flujo se acerca al límite, abre \texttt{UCV-301} (FO) & \texttt{UAL-301} (Surge) & Apertura total inmediata en falla (Fail-Open) & \texttt{FT-UIC-UCV-301} (A) & Diseño API 617 \\ \hline
 
-% --- ÁREA 400: REACCIÓN Y SÍNTESIS ---
+% - ÁREA 400: REACCIÓN Y SÍNTESIS -
 \rowcolor{tablerowalt}\multicolumn{10}{|l|}{\textbf{\color{navyblue}Área 400: Bucle de Síntesis Exotérmica de e-Metanol}} \\ \hline
 
 E-401 & Temperatura alimentación a R-401 S-401 & $210.0\,^\circ\text{C}$ ($205-215^\circ\text{C}$) & Flujo de efluente caliente de reactor / Bypass \texttt{TV-401} & Variación de temperatura o flujo de reciclo S-504 & Si $T \uparrow$, abre bypass frío; si $T \downarrow$, aumenta paso FEHE & \texttt{TAH-401} ($220^\circ\text{C}$) \texttt{TAL-401} ($195^\circ\text{C}$) & Disparo por baja temperatura para prevenir desactivación & \texttt{TT-TIC-TCV-401} (A) & DWSIM / Cinética \\ \hline
@@ -250,7 +250,7 @@ R-401 & Temperatura de lecho catalítico & $245.0\,^\circ\text{C}$ ($225-250^\ci
 
 R-401 & Presión en chaqueta de vapor & $20.00\,\text{bar}$ & Válvula de control en línea de vapor S-204 / \texttt{PV-401} & Variación en demanda de vapor de SOEC E-202 & Si $P \uparrow$, abre válvula a cabezal; si $P \downarrow$, estrangula & \texttt{PAH-401} ($22\,\text{bar}$) & Venteo a atmósfera vía PSV de caldera a $24\,\text{bar}$ & \texttt{PT-PIC-PCV-401} (A) & DWSIM / Caldera \\ \hline
 
-% --- ÁREA 500: FLASH, RECICLO Y PURGA ---
+% - ÁREA 500: FLASH, RECICLO Y PURGA -
 \rowcolor{tablerowalt}\multicolumn{10}{|l|}{\textbf{\color{navyblue}Área 500: Recuperación Térmica, Separación Flash HP y Reciclo}} \\ \hline
 
 E-501 & Temperatura efluente condensado S-501 & $35.0\,^\circ\text{C}$ & Flujo de agua de enfriamiento / Válvula \texttt{TV-501} & Aumento de temperatura de agua de enfriamiento & Si $T \uparrow$, abre \texttt{TV-501}; si $T \downarrow$, cierra & \texttt{TAH-501} ($40^\circ\text{C}$) & Alarma por baja condensación de metanol hacia V-501 & \texttt{TT-TIC-TCV-501} (A) & DWSIM / VLE \\ \hline
@@ -265,7 +265,7 @@ X-501 & Presión de entrada a turboexpansor S-505 & $75.00\,\text{bar}$ & Válvu
 
 C-501 & Flujo de gas de reciclo presurizado & $14\,723.29\,\text{kg/h}$ & Válvula de aspiración / Velocidad de compresor \texttt{FV-502} & Variación de densidad de gas por composición molar & Si $F \downarrow$, acelera compresor; si $F \uparrow$, desacelera & \texttt{FAL-502} & Apertura inmediata de recirculación anti-surge \texttt{UCV-501} & \texttt{FT-FIC-FCV-502} (A) & DWSIM / Compresor \\ \hline
 
-% --- ÁREA 600: DESGASIFICACIÓN Y DESTILACIÓN ---
+% - ÁREA 600: DESGASIFICACIÓN Y DESTILACIÓN -
 \rowcolor{tablerowalt}\multicolumn{10}{|l|}{\textbf{\color{navyblue}Área 600: Desgasificación LP y Destilación Fraccionada de Metanol}} \\ \hline
 
 V-601 & Presión en tanque desgasificador (CS) & $3.00\,\text{bar}$ & Válvula de venteo de gases desorbidos S-601 / \texttt{PV-601} & Fluctuación de flujo de líquido let-down desde V-501 & Si $P \uparrow$, abre venteo S-601; si $P \downarrow$, cierra & \texttt{PAH-601} ($4.0\,\text{bar}$) & Alivio a sistema de recuperación de gases de venteo & \texttt{PT-PIC-PCV-601} (B) & DWSIM ($6.57\,\text{kg/h}$) \\ \hline
@@ -282,7 +282,7 @@ T-601 & Nivel de líquido en fondo de columna & $50\,\%$ & Caudal de agua residu
 
 E-603 & Temperatura de producto final e-metanol S-604 & $35.0\,^\circ\text{C}$ & Flujo de agua de enfriamiento / Válvula \texttt{TV-603} & Fluctuación en temperatura de agua de torre & Si $T \uparrow$, abre agua de enfriamiento; si $T \downarrow$, estrangula & \texttt{TAH-603} ($40^\circ\text{C}$) & Desvío a recirculación si $T > 45^\circ\text{C}$ para evitar evaporación en tanques & \texttt{TT-TIC-TCV-603} (B) & DWSIM ($111.1\,\text{kW}$) \\ \hline
 
-% --- ÁREA 800: SISTEMA DE CHAQUETA Y CALDERA ---
+% - ÁREA 800: SISTEMA DE CHAQUETA Y CALDERA -
 \rowcolor{tablerowalt}\multicolumn{10}{|l|}{\textbf{\color{navyblue}Área 800: Sistema de Chaqueta y Generación de Vapor (ZLD)}} \\ \hline
 
 V-801 & Nivel de agua en tambor de condensados & $55\,\%$ & Flujo de reposición de agua desmineralizada / \texttt{LV-801} & Variación de evaporación en chaqueta de R-401 & Si $L \downarrow$, abre reposición; si $L \uparrow$, estrangula & \texttt{LAL-801} ($30\%$) \texttt{LAH-801} ($80\%$) & Paro de bomba P-801 por bajo nivel extremo ($<15\%$) para evitar cavitación & \texttt{LT-LIC-LCV-801} (A) & DWSIM / Retorno \\ \hline
@@ -299,42 +299,42 @@ P-801 & Flujo de recirculación de agua a chaqueta & $16\,244.88\,\text{kg/h}$ &
 \section{Descripción Narrativa de la Estrategia de Control por Equipo Principal}
 A continuación se detalla la filosofía de operación y protección de cada equipo mayor de la planta, adoptando la estructura normalizada del documento de referencia docente:
 
-\subsection{EL-201 --- Módulo Electrolítico SOEC de Alta Temperatura}
+\subsection{EL-201 - Módulo Electrolítico SOEC de Alta Temperatura}
 \textbf{Función del equipo:} Descomponer vapor de agua sobrecalentado a $750\,^\circ\text{C}$ y $20\,\text{bar}$ mediante electrólisis de estado sólido, produciendo $633.55\,\text{kmol/h}$ de $\text{H}_2$ verde catódico y $315.60\,\text{kmol/h}$ de $\text{O}_2$ puro anódico de alto valor comercial.
 
 \textbf{Filosofía de control propuesta:} El equipo opera isotérmicamente demandando $54.40\,\text{MW}_e$. La producción de hidrógeno se controla modulando la corriente eléctrica continua (DC) suministrada a las celdas mediante el lazo de potencia \texttt{JT-JIC-JY-201}. Para preservar la integridad mecánica de los electrolitos cerámicos delgados de YSZ, la presión diferencial trans-membrana entre los compartimentos anódico y catódico se mantiene en $|\Delta P| < 0.20\,\text{bar}$ mediante el lazo \texttt{PDT-PDIC-PDCV-201}, actuando sobre la válvula de contrapresión del venteo de oxígeno S-206.
 
 \textbf{Condiciones de alarma o protección relevantes:} Alarma por alta presión diferencial (\texttt{PDAH-201} a $0.40\,\text{bar}$). Interlock crítico: desconexión instantánea de la potencia eléctrica DC y despresurización sincronizada ante $|\Delta P| > 0.50\,\text{bar}$ o por interrupción del flujo de vapor de alimentación S-205.
 
-\subsection{E-202 --- Sobrecalentador Eléctrico de Vapor a SOEC}
+\subsection{E-202 - Sobrecalentador Eléctrico de Vapor a SOEC}
 \textbf{Función del equipo:} Elevar la temperatura del vapor saturado generado en la chaqueta de reacción ($16\,244.88\,\text{kg/h}$) desde $220.0\,^\circ\text{C}$ hasta la temperatura de operación de la celda SOEC ($750.0\,^\circ\text{C}$ a $20\,\text{bar}$).
 
 \textbf{Filosofía de control propuesta:} El calentador es 100\% eléctrico y no utiliza fluidos térmicos auxiliares. La temperatura de salida se mide con \texttt{TT-202} ($750\,^\circ\text{C}$) y se regula mediante el lazo en cascada \texttt{TT-TIC-JIC-202}, el cual modula la potencia de las resistencias calefactoras a través de tiristores SCR (\texttt{TY-202}), complementado con compensación por adelanto (*feedforward*) a partir del caudal de vapor \texttt{FT-205}.
 
 \textbf{Condiciones de alarma o protección relevantes:} Alarma de alta temperatura de elemento (\texttt{TAH-202} a $770\,^\circ\text{C}$) y alarma de bajo flujo (\texttt{FAL-202}). Interlock: corte total de energía eléctrica al calentador si la temperatura supera $780\,^\circ\text{C}$ o si el caudal cae por debajo del 30\% nominal.
 
-\subsection{E-203 y V-201 --- Enfriador y Separador Flash de Hidrógeno}
+\subsection{E-203 y V-201 - Enfriador y Separador Flash de Hidrógeno}
 \textbf{Función del equipo:} Enfriar la mezcla efluente húmeda del cátodo SOEC hasta $38.0\,^\circ\text{C}$ en E-203 para condensar el vapor no convertido ($4\,831.02\,\text{kg/h}$), separando en el recipiente V-201 el hidrógeno verde gaseoso puro ($1\,314.77\,\text{kg/h}$, $99.63\%\text{ mol}$) del agua líquida condensada.
 
 \textbf{Filosofía de control propuesta:} En E-203, el lazo \texttt{TT-TIC-TCV-203} modula el flujo de agua de enfriamiento para garantizar $38.0\,^\circ\text{C}$. En V-201, el nivel de fondo se mantiene en 50\% mediante el lazo \texttt{LT-LIC-LCV-201} sobre la línea de descarga S-210 hacia el sistema ZLD. La presión en el domo se regula con \texttt{PT-PIC-PCV-201} ($19.4\,\text{bar}$) regulando el paso hacia el mezclador de gas de síntesis MIX-301.
 
 \textbf{Condiciones de alarma o protección relevantes:} Alarma de alto nivel (\texttt{LAH-201} al 80\%) para evitar arrastre de agua a MIX-301, y alarma de bajo nivel (\texttt{LAL-201} al 20\%) con interlock de cierre estanco en \texttt{LCV-201} para impedir escape de hidrógeno presurizado a la red de tratamiento de agua.
 
-\subsection{E-301 y C-301 --- Precalentador y Compresor de Gas de Síntesis Fresco}
+\subsection{E-301 y C-301 - Precalentador y Compresor de Gas de Síntesis Fresco}
 \textbf{Función del equipo:} El intercambiador E-301 acondiciona el gas de síntesis fresco de $32.9\,^\circ\text{C}$ a $71.7\,^\circ\text{C}$ ($250\,\text{kW}$) para prevenir condensación de humedad en la succión del compresor centrífugo multietapa C-301, el cual eleva la presión de $19.4\,\text{bar}$ a $75.0\,\text{bar}$ ($1\,316.67\,\text{kW}$).
 
 \textbf{Filosofía de control propuesta:} En E-301, la temperatura en S-302 se mantiene en $71.7\,^\circ\text{C}$ con el lazo \texttt{TT-TIC-TCV-301} modulando el servicio térmico. En C-301, la presión de descarga se mantiene en $75.0\,\text{bar}$ con \texttt{PT-PIC-PCV-301} ajustando la velocidad del compresor o la válvula de recirculación. La protección contra bombeo mecánico se confía al controlador dedicado anti-surge \texttt{FT-UIC-UCV-301}, que modula una válvula de acción rápida con apertura por falla (Fail-Open).
 
 \textbf{Condiciones de alarma o protección relevantes:} Alarma de baja temperatura en succión (\texttt{TAL-301} a $60\,^\circ\text{C}$) con interlock de bloqueo de arranque en C-301. Alarma de alta presión en descarga (\texttt{PAH-301} a $78\,\text{bar}$) con disparo automático por sobrepresión a $80\,\text{bar}$.
 
-\subsection{E-401 y R-401 --- Bucle de Reacción Catalítica y Chaqueta Generadora de Vapor}
+\subsection{E-401 y R-401 - Bucle de Reacción Catalítica y Chaqueta Generadora de Vapor}
 \textbf{Función del equipo:} Precalentar el gas combinado a $210.0\,^\circ\text{C}$ en E-401 y alimentar los tubos catalíticos del reactor de lecho fijo R-401 cargados con catalizador comercial $\text{Cu/ZnO/Al}_2\text{O}_3$, sintetizando metanol y agua ($7\,149.10\,\text{kmol/h}$, $245.0\,^\circ\text{C}$, $75\,\text{bar}$) con desprendimiento exotérmico de $12\,335.36\,\text{kW}$.
 
 \textbf{Filosofía de control propuesta:} El control de temperatura en el lecho catalítico es la variable de mayor jerarquía. Se regula de forma isotérmica aprovechando la ebullición de agua desmineralizada a $20.0\,\text{bar}$ ($212.4\,^\circ\text{C}$) en la chaqueta del reactor acoplada hidráulicamente con el tambor V-801. El lazo \texttt{TT-TIC-402} monitorea el lecho y ajusta en cascada el setpoint de la válvula de contrapresión de vapor de la chaqueta \texttt{PT-PIC-PCV-401}. Variar la presión de saturación ajusta instantáneamente el diferencial térmico $\Delta T$ de transferencia.
 
 \textbf{Condiciones de alarma o protección relevantes:} Alarma de alta temperatura de reacción (\texttt{TAH-402} a $255\,^\circ\text{C}$). Interlock de disparo de emergencia por sobretemperatura (\texttt{TAHH-402} a $265\,^\circ\text{C}$): corte automático de alimentación fresca (\texttt{FV-101} y \texttt{FV-201}, Fail-Closed), despresurización del bucle y apertura de venteo de vapor de caldera.
 
-\subsection{E-501, V-501, C-501 y X-501 --- Condensación, Flash HP, Reciclo y Turboexpansión}
+\subsection{E-501, V-501, C-501 y X-501 - Condensación, Flash HP, Reciclo y Turboexpansión}
 \textbf{Función del equipo:} Condensar el efluente a $35.0\,^\circ\text{C}$ en E-501, separar en V-501 el gas no convertido ($6\,634.49\,\text{kmol/h}$) del metanol crudo líquido ($5\,961.82\,\text{kg/h}$), recircular el 96\% del gas vía C-501 al reactor y expandir la purga del 4\% en la turbina X-501 generando $437.79\,\text{kW}$.
 
 \textbf{Filosofía de control propuesta:}
@@ -347,14 +347,14 @@ A continuación se detalla la filosofía de operación y protección de cada equ
 
 \textbf{Condiciones de alarma o protección relevantes:} Alarma de bajo nivel en V-501 (\texttt{LAL-501} al 25\%) con interlock de cierre estanco de \texttt{LCV-501} ante nivel crítico ($<10\%$) para impedir el paso catastrófico de gas a 75 bar (*blow-by*) a recipientes de baja presión. Alarma de alta presión (\texttt{PAH-501} a $77\,\text{bar}$) y disparo a $80\,\text{bar}$.
 
-\subsection{V-601 --- Tanque Desgasificador de Metanol Crudo (CS)}
+\subsection{V-601 - Tanque Desgasificador de Metanol Crudo (CS)}
 \textbf{Función del equipo:} Recibir el flujo de líquido let-down desde el flash de 75 bar y estabilizarlo a $3.0\,\text{bar}$, desgasificando trazas de $\text{H}_2, \text{CO}_2$ y $\text{CO}$ disueltos ($6.57\,\text{kg/h}$, corriente S-601) para evitar perturbaciones hidrodinámicas en la columna de destilación T-601.
 
 \textbf{Filosofía de control propuesta:} La presión se regula mediante \texttt{PT-PIC-PCV-601} modulando el venteo de gas desorbido S-601. El nivel de líquido se mantiene en 50\% mediante el lazo en cascada \texttt{LT-LIC-FC-601}, ajustando la válvula de control en la línea de alimentación hacia la columna de destilación S-602.
 
 \textbf{Condiciones de alarma o protección relevantes:} Alarma de alto nivel (\texttt{LAH-601} al 75\%) y bajo nivel (\texttt{LAL-601} al 25\%). Alarma de alta presión (\texttt{PAH-601} a $4.0\,\text{bar}$) con desvío seguro a red de recuperación de gases.
 
-\subsection{T-601, E-601, E-602 y E-603 --- Tren de Destilación Fraccionada y Subenfriamiento}
+\subsection{T-601, E-601, E-602 y E-603 - Tren de Destilación Fraccionada y Subenfriamiento}
 \textbf{Función del equipo:} Fraccionar el metanol crudo ($5\,961.82\,\text{kg/h}$) en la columna T-601 para obtener metanol grado AA ($3\,788.65\,\text{kg/h}$, pureza $99.89\,\%\text{ masa}$, $99.81\,\%\text{ mol}$) por el domo y agua residual con trazas mínimas de metanol ($2\,173.40\,\text{kg/h}$) por los fondos.
 
 \textbf{Filosofía de control propuesta:}
@@ -368,7 +368,7 @@ A continuación se detalla la filosofía de operación y protección de cada equ
 
 \textbf{Condiciones de alarma o protección relevantes:} Alarma de alta temperatura en plato de control (\texttt{TAH-602} a $75\,^\circ\text{C}$, indicando arrastre de agua y pérdida de pureza). Interlock: corte automático de vapor vivo a E-602 ante nivel muy bajo en fondo de torre ($<10\%$) para evitar ebullición en seco y daños térmicos.
 
-\subsection{V-801 y P-801 --- Sistema de Circulación de Chaqueta y Retorno de Vapor}
+\subsection{V-801 y P-801 - Sistema de Circulación de Chaqueta y Retorno de Vapor}
 \textbf{Función del equipo:} Separar, almacenar y recircular agua desmineralizada tratada a $58.9\,^\circ\text{C}$ hacia la chaqueta generadora de vapor del reactor R-401, elevando la presión de retorno a $20.0\,\text{bar}$ mediante la bomba P-801 ($16\,244.88\,\text{kg/h}$) para abastecer el ciclo cerrado de refrigeración y exportar vapor saturado al SOEC.
 
 \textbf{Filosofía de control propuesta:} El nivel en V-801 se regula con el lazo \texttt{LT-LIC-LCV-801} dosificando el flujo de reposición de agua tratada. El caudal de descarga de la bomba P-801 hacia la chaqueta se monitorea con \texttt{FT-FIC-FCV-801} y se modula mediante variador de frecuencia (VFD) en el motor de la bomba o válvula en línea.
@@ -543,7 +543,7 @@ El desarrollo de la Filosofía de Control del Proceso (\textbf{FC-01}) para la p
     \item \textbf{Lazos de control esenciales:} Se estructuraron 28 lazos de control primarios con trazabilidad rigurosa hacia el modelo DWSIM v1, destacando el control de temperatura por ebullición en la chaqueta de R-401, el lazo de relación estequiométrica $M = 2.05$ en MIX-301, el control de potencia eléctrica 100\% modulada por tiristores en E-202/EL-201, y el lazo simplificado de contrapresión de purga en el turboexpansor X-501 (\texttt{PIC-503}).
     \item \textbf{Principales perturbaciones identificadas:} Las perturbaciones de mayor impacto sobre la operación corresponden a la interrupción o calentamiento del agua de refrigeración en E-501, la variabilidad en la generación de hidrógeno del SOEC por fluctuaciones de la red eléctrica renovable, y los cambios de composición o presión en el suministro de $\text{CO}_2$ de captura.
     \item \textbf{Alarmas propuestas:} Se definieron umbrales cuantitativos de alarma (bajas y altas) técnicamente justificados para cada lazo, permitiendo alertar oportunamente al operador antes de alcanzar límites de riesgo de seguridad o deterioro de producto.
-    \item \textbf{Condiciones para análisis HAZOP:} Se formularon 5 interlocks candidatos preliminares (embalamiento térmico en R-401, sobrepresión del loop de 75 bar, falla trans-membrana en SOEC, blow-by de gas en flash V-501 y surge en compresores C-301/C-501), los cuales deberán ser evaluados y validados formalmente durante las sesiones de análisis de riesgos HAZOP y diseño de la matriz causa--efecto.
+    \item \textbf{Condiciones para análisis HAZOP:} Se formularon 5 interlocks candidatos preliminares (embalamiento térmico en R-401, sobrepresión del loop de 75 bar, falla trans-membrana en SOEC, blow-by de gas en flash V-501 y surge en compresores C-301/C-501), los cuales deberán ser evaluados y validados formalmente durante las sesiones de análisis de riesgos HAZOP y diseño de la matriz causa-efecto.
     \item \textbf{Relación vinculante con el futuro DTI v1.0:} La presente filosofía FC-01 constituye la base técnica y conceptual indispensable para la elaboración del plano de tuberías e instrumentación de detalle (\textbf{DTI v1.0}), garantizando que cada instrumento, válvula de control, lazo en cascada y acción de seguridad posea coherencia física y operativa con la simulación aprobada.
 \end{enumerate}
 
