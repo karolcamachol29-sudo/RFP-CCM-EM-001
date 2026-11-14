@@ -46,16 +46,7 @@
 
 ## 🔍 4. En revisión (In Review)
 
-- [ ] **[CANVA-REV] Integración de Enlaces de Video del Proyecto Canva**
-  - **Entregable Relacionado:** `00_Gestion_Proyecto/Documentacion/ENLACES_REVISION.txt`
-  - **Responsable Asignado:** @Karoc (Karol Paola Camacho López)
-  - **Cargo Desempeñado:** Dirección del Proyecto
-  - **Integrantes Participantes:** @Karoc, @Cho0bb
-  - **Roles RACI:** R: @Karoc | A: @Karoc | C: @Cho0bb | I: Equipo
-  - **Fecha de Inicio:** 2026-11-14 | **Fecha de Fin:** 2026-11-14 | **Tipo de Fecha:** Verificada
-  - **Duración:** 1 día
-  - **Evidencia / Archivo:** `00_Gestion_Proyecto/Documentacion/ENLACES_REVISION.txt`
-  - **Estado:** 🔍 En revisión (en espera del enlace general de Canva por el usuario para incorporar URLs de RT-02 y RT-03)
+*Actualmente no hay tareas en revisión. Todos los enlaces técnicos y videos institucionales han sido integrados y verificados al 100%.*
 
 ---
 
@@ -65,6 +56,17 @@
 ---
 
 ## ✅ 6. Finalizado (Done)
+
+- [x] **[CANVA-REV] Integración de Enlaces de Video del Proyecto Canva**
+  - **Entregable Relacionado:** `00_Gestion_Proyecto/Documentacion/ENLACES_REVISION.txt`
+  - **Responsable Asignado:** @Karoc (Karol Paola Camacho López)
+  - **Cargo Desempeñado:** Dirección del Proyecto
+  - **Integrantes Participantes:** @Karoc, @Cho0bb, @GildardoOca25, @paulina145
+  - **Roles RACI:** R: @Karoc | A: @Karoc | C: Consorcio | I: Convocante
+  - **Fecha de Inicio:** 2026-11-14 | **Fecha de Fin:** 2026-11-14 | **Tipo de Fecha:** Verificada
+  - **Duración:** 1 día
+  - **Evidencia / Archivo:** `00_Gestion_Proyecto/Documentacion/ENLACES_REVISION.txt`
+  - **Estado:** ✅ Finalizado (URLs incorporadas: E2.2 `https://canva.link/3zrbczmgiyx7lkj` y E3.1 `https://canva.link/tmv6f1e2ydf5ofr`)
 
 - [x] **[E0] Acta Constitutiva e Identidad Corporativa Solvanta**
   - **Entregable Relacionado:** `E0: Constitución y Organización`
@@ -201,6 +203,17 @@
   - **Evidencia / Archivo:** `03_Entregables_Finales/E3_Revisiones_Tecnicas_y_Difusion/RT-02_DOC_PresentacionDiapositivas_v1.0.pdf` (21 láminas)
   - **Estado:** ✅ Finalizado
 
+- [x] **[E2.2] Video Oficial de la Revisión Técnica 02 (RT-02 en Canva)**
+  - **Entregable Relacionado:** `E2.2: Video de Sustentación RT-02`
+  - **Responsables Asignados:** Todo el Consorcio (@Karoc, @paulina145, @GildardoOca25, @Cho0bb)
+  - **Cargos Desempeñados:** Cargos oficiales respectivos en locución y sustentación
+  - **Roles RACI:** R: @Karoc, @paulina145, @GildardoOca25, @Cho0bb | A: @Karoc | C: Consorcio | I: Convocante BUAP
+  - **Fecha de Inicio:** 2026-09-24 | **Fecha de Fin:** 2026-09-28 | **Tipo de Fecha:** Verificada
+  - **Duración:** 5 días
+  - **Evidencia / Archivo:** `03_Entregables_Finales/E2_Ingenieria_Basica_y_Control/E2.2_VID_EnlaceRevisionTecnica02_v1.0.pdf`
+  - **Enlace Cloud:** `https://canva.link/3zrbczmgiyx7lkj`
+  - **Estado:** ✅ Finalizado
+
 - [x] **[FC-01] Filosofía de Control del Proceso de Síntesis y Separación**
   - **Entregable Relacionado:** `FC-01: Filosofía de Control`
   - **Responsable Asignado:** @paulina145 (Paulina Mota Macip)
@@ -323,4 +336,15 @@
   - **Fecha de Inicio:** 2026-11-01 | **Fecha de Fin:** 2026-11-14 | **Tipo de Fecha:** Verificada
   - **Duración:** 14 días
   - **Evidencia / Archivo:** `03_Entregables_Finales/E3_Revisiones_Tecnicas_y_Difusion/RT-03_DOC_PresentacionDiapositivas_v1.0.pdf`
+  - **Estado:** ✅ Finalizado
+
+- [x] **[E3.1] Video Oficial de la Revisión Técnica 03 (RT-03 en Canva)**
+  - **Entregable Relacionado:** `E3.1: Video de Defensa Maestra RT-03`
+  - **Responsables Asignados:** Todo el Consorcio (@Karoc, @GildardoOca25, @paulina145, @Cho0bb)
+  - **Cargos Desempeñados:** Cargos oficiales respectivos en defensa maestra
+  - **Roles RACI:** R: @Karoc, @GildardoOca25, @paulina145, @Cho0bb | A: @Karoc | C: Consorcio | I: Comité Licitación BUAP
+  - **Fecha de Inicio:** 2026-11-01 | **Fecha de Fin:** 2026-11-14 | **Tipo de Fecha:** Verificada
+  - **Duración:** 14 días
+  - **Evidencia / Archivo:** `03_Entregables_Finales/E3_Revisiones_Tecnicas_y_Difusion/E3.1_VID_EnlaceRevisionTecnica03_v1.0.pdf`
+  - **Enlace Cloud:** `https://canva.link/tmv6f1e2ydf5ofr`
   - **Estado:** ✅ Finalizado

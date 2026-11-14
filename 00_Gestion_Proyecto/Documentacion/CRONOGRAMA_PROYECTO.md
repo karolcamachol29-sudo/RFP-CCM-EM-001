@@ -44,6 +44,7 @@ Para garantizar la máxima rigurosidad, trazabilidad histórica y auditoría té
 | **E1.6** | Matriz Ambiental Integral (AC-AMB-01) | 2026-09-17 | 2026-09-21 | **Verificada** | **5 días** | 3.5 d | 0.5 d | 0.5 d | 0.5 d | Grecia Figueroa [Seguridad HSE] |
 | **E2.1** | Lista Maestra Equipos (LE-01) y DFP v1 | 2026-09-17 | 2026-09-24 | **Verificada** | **8 días** | 5.0 d | 1.0 d | 1.0 d | 1.0 d | Gildardo Ocaña & Paulina Mota |
 | **RT-02** | Revisión Técnica 02: Simulación y Control | 2026-09-24 | 2026-09-28 | **Verificada** | **5 días** | 3.0 d | 0.5 d | 1.0 d | 0.5 d | Todo el Consorcio (4 Expositores) |
+| **E2.2** | Video Oficial Revisión Técnica 02 (RT-02 Canva)| 2026-09-24 | 2026-09-28 | **Verificada** | **5 días** | 3.0 d | 0.5 d | 1.0 d | 0.5 d | Todo el Consorcio (4 Expositores) |
 | **FC-01** | Filosofía de Control del Proceso | 2026-10-01 | 2026-10-08 | **Verificada** | **8 días** | 5.0 d | 1.0 d | 1.0 d | 1.0 d | Paulina Mota [Inst. y Control] |
 | **HAZOP** | Expediente de Seguridad HAZOP y MCE-01 | 2026-10-08 | 2026-10-19 | **Verificada** | **12 días**| 7.0 d | 1.5 d | 2.0 d | 1.5 d | Grecia Figueroa [Seguridad HSE] |
 | **PIB-01** | Paquete de Ingeniería Básica del Proceso | 2026-10-20 | 2026-10-28 | **Verificada** | **9 días** | 6.0 d | 1.0 d | 1.0 d | 1.0 d | Karol Camacho [Dirección] |
@@ -56,6 +57,7 @@ Para garantizar la máxima rigurosidad, trazabilidad histórica y auditoría té
 | **E4.7** | RPT Validación y Pruebas Unitarias SOEC | 2026-11-02 | 2026-11-05 | **Verificada** | **4 días** | 2.5 d | 0.5 d | 0.5 d | 0.5 d | Karol Camacho & Paulina Mota |
 | **DIF-01**| Cartel Oficial PyDay (*Excepción Exclusiva*)| 2026-11-03 | 2026-11-06 | **Verificada** | **4 días** | 3.0 d | 0.0 d | 0.5 d | 0.5 d | Karol Camacho & Grecia Figueroa |
 | **RT-03** | Revisión Técnica 03: Guía Maestra y Diap. | 2026-11-01 | 2026-11-14 | **Verificada** | **14 días**| 8.0 d | 2.0 d | 2.0 d | 2.0 d | Todo el Consorcio (4 Expositores) |
+| **E3.1** | Video Oficial Revisión Técnica 03 (RT-03 Canva)| 2026-11-01 | 2026-11-14 | **Verificada** | **14 días**| 8.0 d | 2.0 d | 2.0 d | 2.0 d | Todo el Consorcio (4 Expositores) |
 | **EF** | Informe Final Consolidado de Licitación | 2026-11-10 | 2026-11-14 | **Verificada** | **5 días** | 3.5 d | 0.5 d | 0.5 d | 0.5 d | Karol Camacho & Todo el Consorcio |
 
 ---
@@ -85,6 +87,7 @@ gantt
     section Fase E2: Ingeniería Básica
     E2.1 Lista Maestra Equipos LE-01 / DFP  :done, e21, 2026-09-17, 2026-09-24
     RT-02 Revisión Técnica 02               :done, rt02, 2026-09-24, 2026-09-28
+    E2.2 Video Oficial RT-02 Canva          :done, e22, 2026-09-24, 2026-09-28
     FC-01 Filosofía de Control              :done, fc01, 2026-10-01, 2026-10-08
     AC-HAZOP-01 Estudio de Seguridad        :done, hazop, 2026-10-08, 2026-10-19
     PIB-01 Paquete de Ingeniería Básica     :done, pib, 2026-10-20, 2026-10-28
@@ -101,6 +104,7 @@ gantt
     section Fase E3: Difusión y Revisiones
     DIF-01 Cartel PyDay (Karol & Grecia)    :done, dif01, 2026-11-03, 2026-11-06
     RT-03 Guía Maestra y Diapositivas       :done, rt03, 2026-11-01, 2026-11-14
+    E3.1 Video Oficial RT-03 Canva          :done, e31, 2026-11-01, 2026-11-14
     
     section Fase Final: Cierre Licitación
     EF Informe Final Consolidado Licitación :active, ef, 2026-11-10, 2026-11-14
@@ -440,6 +444,38 @@ Periodo: 2026-09-24 al 2026-09-28 | Duración Total: 5 días
   - Contenido: Mitigación de impactos ambientales, evaluación de toxicidad y respuestas técnicas al jurado.
 
 ====================================================================================================
+ENTREGABLE E2.2 — VIDEO OFICIAL DE LA REVISIÓN TÉCNICA 02 (RT-02 EN CANVA)
+Archivo Oficial: 03_Entregables_Finales/E2_Ingenieria_Basica_y_Control/E2.2_VID_EnlaceRevisionTecnica02_v1.0.pdf
+Enlace Canva: https://canva.link/3zrbczmgiyx7lkj
+Periodo: 2026-09-24 al 2026-09-28 | Duración Total: 5 días
+====================================================================================================
+* SEGMENTO 1: Apertura Ejecutiva, Reciclos y Dirección General (2.0 min)
+  - Responsable: Karol Paola Camacho López (@Karoc)
+  - Cargo Aplicado: Dirección del Proyecto / Ingeniera de Optimización Python
+  - Rol RACI: R (Responsible) / A (Accountable)
+  - Contenido: Presentación del avance de ingeniería básica, balance global H2:CO2 y coordinación.
+* SEGMENTO 2: Simulación Rigurosa en DWSIM y Estrategia de Control (3.0 min)
+  - Responsable: Paulina Mota Macip (@paulina145)
+  - Cargo Aplicado: Simulación / Instrumentación y Control
+  - Rol RACI: R (Responsible) | A: @Karoc
+  - Contenido: Convergencia de flowsheet en DWSIM v8.8, termodinámica PR y lazos de control de lazo cerrado.
+* SEGMENTO 3: Balances de Materia y Especificación de 28 Equipos Mayores LE-01 (2.5 min)
+  - Responsable: Gildardo Ocaña Barrales (@GildardoOca25)
+  - Cargo Aplicado: Ingeniería de Procesos / DTI y P&ID
+  - Rol RACI: R (Responsible) | A: @Karoc
+  - Contenido: Dimensionamiento de intercambiadores, reactores, columnas de destilación y compresores.
+* SEGMENTO 4: Matriz Ambiental AC-AMB-01 y Gestión de Riesgos de Proceso (2.5 min)
+  - Responsable: Grecia Figueroa Rincón (@Cho0bb)
+  - Cargo Aplicado: Especialista en Seguridad HSE / Evaluación Económica
+  - Rol RACI: R (Responsible) | A: @Karoc
+  - Contenido: Indicadores de impacto ambiental, balance de emisiones de CO2 y mitigación operacional.
+* POST-PRODUCCIÓN, EDICIÓN EN CANVA Y FICHA OFICIAL PDF
+  - Responsable: Karol Paola Camacho López (@Karoc)
+  - Cargo Aplicado: Dirección del Proyecto
+  - Rol RACI: R (Responsible) / A (Accountable)
+  - Contenido: Montaje en Canva Video, control de calidad, emisión de ficha con marca de agua institucional.
+
+====================================================================================================
 ENTREGABLE FC-01 — FILOSOFÍA DE CONTROL DEL PROCESO
 Archivo Oficial: 03_Entregables_Finales/E2_Ingenieria_Basica_y_Control/FC-01_DOC_FilosofiaControl_v1.0.pdf
 Periodo: 2026-10-01 al 2026-10-08 | Duración Total: 8 días
@@ -607,6 +643,38 @@ Periodo: 2026-11-01 al 2026-11-14 | Duración Total: 14 días
   - Cargo Aplicado: Ingeniera de Optimización Python / Dirección
   - Rol RACI: R (Responsible) / A (Accountable)
   - Contenido: Defensa del modelo electroquímico en Python, ventaja competitiva de Solvanta y cierre.
+
+====================================================================================================
+ENTREGABLE E3.1 — VIDEO OFICIAL DE LA REVISIÓN TÉCNICA 03 (RT-03 EN CANVA)
+Archivo Oficial: 03_Entregables_Finales/E3_Revisiones_Tecnicas_y_Difusion/E3.1_VID_EnlaceRevisionTecnica03_v1.0.pdf
+Enlace Canva: https://canva.link/tmv6f1e2ydf5ofr
+Periodo: 2026-11-01 al 2026-11-14 | Duración Total: 14 días
+====================================================================================================
+* SEGMENTO 1: Visión Directiva, Estrategia y Optimización SOEC en Python (3.5 min)
+  - Responsable: Karol Paola Camacho López (@Karoc)
+  - Cargo Aplicado: Dirección del Proyecto / Ingeniera de Optimización Python
+  - Rol RACI: R (Responsible) / A (Accountable)
+  - Contenido: Visión integral de licitación, modelo electroquímico en Python y acoplamiento térmico SOEC.
+* SEGMENTO 2: Recorrido Exhaustivo del Paquete DTI v1 y Piping (3.0 min)
+  - Responsable: Gildardo Ocaña Barrales (@GildardoOca25)
+  - Cargo Aplicado: Ingeniería de Procesos / DTI y P&ID
+  - Rol RACI: R (Responsible) | A: @Karoc
+  - Contenido: Presentación del paquete de planos DTI v1 en Plant 3D, líneas de proceso y valvulería.
+* SEGMENTO 3: Lazos de Control Dinámico y Operación en Cascada (3.0 min)
+  - Responsable: Paulina Mota Macip (@paulina145)
+  - Cargo Aplicado: Simulación / Instrumentación y Control
+  - Rol RACI: R (Responsible) | A: @Karoc
+  - Contenido: Lazos de control proporcional-integral, estabilidad dinámica del reactor y análisis de perturbaciones.
+* SEGMENTO 4: Salvaguardas HAZOP MCE-01 y Modelo Económico BioSTEAM (3.5 min)
+  - Responsable: Grecia Figueroa Rincón (@Cho0bb)
+  - Cargo Aplicado: Especialista en Seguridad HSE / Evaluación Económica
+  - Rol RACI: R (Responsible) | A: @Karoc
+  - Contenido: Nodos HAZOP, matriz causa-efecto, Capex/Opex y costo nivelado LCOMe de 492.38 USD/t.
+* POST-PRODUCCIÓN, ENSAMBLE EN CANVA Y EMISIÓN DE FICHA OFICIAL PDF
+  - Responsable: Karol Paola Camacho López (@Karoc)
+  - Cargo Aplicado: Dirección del Proyecto
+  - Rol RACI: R (Responsible) / A (Accountable)
+  - Contenido: Edición técnica en Canva, renderizado en alta definición, verificación de enlace y ficha con marca de agua.
 
 ====================================================================================================
 ENTREGABLE EF — INFORME FINAL CONSOLIDADO DE LICITACIÓN (EXPEDIENTE MAESTRO DE CIERRE)

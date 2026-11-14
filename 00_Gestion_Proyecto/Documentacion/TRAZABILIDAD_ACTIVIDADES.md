@@ -115,6 +115,7 @@ Paquete soec_optimization/ (Python)       Excepción: Karol & Grecia
 | **E2.1-03**| Clasificación de áreas Clase I Div 1/2 | Grecia Figueroa | Seguridad HSE / Economía | Evaluación eléctrica de seguridad | `E2.1_DOC_ListaEquipos_v1.0.pdf` | ✅ Finalizado |
 | **E2.1-04**| Generación automatizada de catálogo en LaTeX | Karol Camacho | Optimización Python / Dir. | Script de cotejo y maquetación | `E2.1_DOC_ListaEquipos_v1.0.pdf` | ✅ Finalizado |
 | **RT-02-01**| Diapositivas oficiales de avance RT-02 | Los 4 Integrantes | Expositores (reparto 23-27%) | 21 láminas foliadas con RACI | `RT-02_DOC_PresentacionDiapositivas_v1.0.pdf`| ✅ Finalizado |
+| **E2.2-01** | Video oficial de sustentación RT-02 en Canva | Los 4 Integrantes (Líder: Karol C.) | Expositores / Dirección | Video HD en Canva y ficha foliada con RACI | `E2.2_VID_EnlaceRevisionTecnica02_v1.0.pdf`| ✅ Finalizado |
 | **FC-01-01**| Lazos de control cascada TIC-101 y regulación | Paulina Mota | Instrumentación y Control | Arquitectura de bucles PID | `FC-01_DOC_FilosofiaControl_v1.0.pdf` | ✅ Finalizado |
 | **FC-01-02**| Conexiones de instrumentos en planos DTI | Gildardo Ocaña | DTI / P&ID / Ing. Procesos | Simbología ANSI/ISA-5.1 en planos | `FC-01_DOC_FilosofiaControl_v1.0.pdf` | ✅ Finalizado |
 | **FC-01-03**| Capas de protección IPL, ESD y SIS SIL-2 | Grecia Figueroa | Especialista en HSE | Matriz de interbloqueos de seguridad | `FC-01_DOC_FilosofiaControl_v1.0.pdf` | ✅ Finalizado |
@@ -137,6 +138,7 @@ Paquete soec_optimization/ (Python)       Excepción: Karol & Grecia
 | **DIF-01-01**| Modelado SOEC, curvas Pareto y diseño gráfico | Karol Camacho | Optimización Python / Dir. | Cartel técnico PyDay BUAP | `DIF-01_DOC_CartelPyDay_v1.0.pdf` | ✅ Finalizado |
 | **DIF-01-02**| Métricas de descarbonización y economía verde | Grecia Figueroa | Evaluación Económica / HSE | Resumen tecno-económico cartel | `DIF-01_DOC_CartelPyDay_v1.0.pdf` | ✅ Finalizado |
 | **RT-03-01**| Diapositivas de defensa técnica final (19 láminas)| Los 4 Integrantes | Expositores multidisciplinarios | Set de diapositivas foliado | `RT-03_DOC_PresentacionDiapositivas_v1.0.pdf`| ✅ Finalizado |
+| **E3.1-01** | Video oficial de defensa maestra RT-03 en Canva | Los 4 Integrantes (Líder: Karol C.) | Expositores / Dirección | Video HD en Canva y ficha foliada con RACI | `E3.1_VID_EnlaceRevisionTecnica03_v1.0.pdf`| ✅ Finalizado |
 | **EF-01** | Tomo I: Bases de Diseño y Gobernanza | Karol Camacho | Dirección del Proyecto | Integración institucional | `EF_Informe_Final/` | ⏳ En proceso |
 | **EF-02** | Tomo II: Memorias de Proceso y Planos Plant 3D | Gildardo Ocaña | Ingeniería de Procesos / DTI | Planos y memorias mecánicas | `EF_Informe_Final/` | ⏳ En proceso |
 | **EF-03** | Tomo III: Balances DWSIM y Control de Proceso | Paulina Mota | Simulación / Control | Simulación y filosofía de control | `EF_Informe_Final/` | ⏳ En proceso |

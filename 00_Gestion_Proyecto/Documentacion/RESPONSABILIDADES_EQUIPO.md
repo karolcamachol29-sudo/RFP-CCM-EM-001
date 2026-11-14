@@ -89,6 +89,7 @@ El proyecto licitatorio `RFP-CCM-EM-001` constituye una obra de ingeniería cole
 | **E1.6** | Matriz de Impacto Ambiental (AC-AMB-01) | Grecia Figueroa Rincón | Especialista en HSE | Karol Paola Camacho López | Dirección del Proyecto |
 | **E2.1** | Lista Maestra de Equipos LE-01 y DFP v1 | Gildardo Ocaña / Paulina Mota / Karol Camacho | Ing. Procesos / Simulación / Python | Karol Paola Camacho López | Dirección del Proyecto |
 | **RT-02** | Revisión Técnica 02: Simulación y Control | Todo el Consorcio (Los 4 Expositores) | Cargos respectivos en exposición | Karol Paola Camacho López | Dirección del Proyecto |
+| **E2.2** | Video Oficial Revisión Técnica 02 (RT-02 Canva)| Todo el Consorcio (Los 4 Expositores) | Cargos respectivos en video | Karol Paola Camacho López | Dirección del Proyecto |
 | **FC-01** | Filosofía de Control del Proceso | Paulina Mota Macip | Instrumentación y Control | Karol Paola Camacho López | Dirección del Proyecto |
 | **HAZOP** | Expediente Integral HAZOP y MCE-01 | Grecia Figueroa Rincón | Especialista en HSE | Karol Paola Camacho López | Dirección del Proyecto |
 | **PIB-01** | Paquete de Ingeniería Básica del Proceso | Karol Camacho / Gildardo / Paulina / Grecia | Dirección y Especialidades Técnicas | Karol Paola Camacho López | Dirección del Proyecto |
@@ -101,6 +102,7 @@ El proyecto licitatorio `RFP-CCM-EM-001` constituye una obra de ingeniería cole
 | **E4.7** | RPT Validación y Pruebas Unitarias SOEC | Karol Camacho / Paulina Mota | Optimización Python / Simulación | Karol Paola Camacho López | Dirección del Proyecto |
 | **DIF-01**| Cartel PyDay (*Excepción Exclusiva*) | Karol Camacho / Grecia Figueroa | Optimización (Py) / Eval. Económica | Karol Paola Camacho López | Dirección del Proyecto |
 | **RT-03** | Revisión Técnica 03: Guía Maestra y Diap. | Todo el Consorcio (Los 4 Expositores) | Cargos respectivos en defensa | Karol Paola Camacho López | Dirección del Proyecto |
+| **E3.1** | Video Oficial Revisión Técnica 03 (RT-03 Canva)| Todo el Consorcio (Los 4 Expositores) | Cargos respectivos en defensa | Karol Paola Camacho López | Dirección del Proyecto |
 | **EF** | Informe Final Consolidado de Licitación | Todo el Consorcio (Tomos I a V) | Dirección y Especialidades Técnicas | Karol Paola Camacho López | Dirección del Proyecto |
 
 ---

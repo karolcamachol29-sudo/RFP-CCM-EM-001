@@ -1,0 +1,18 @@
+https://canva.link/tmv6f1e2ydf5ofr
+
+================================================================================
+GOBERNANZA TÉCNICA Y MATRIZ RACI — ENTREGABLE E3.1 (VIDEO OFICIAL RT-03)
+Consorcio: Solvanta Engineering Solutions S.A. de C.V. | Licitación RFP-CCM-EM-001
+================================================================================
+1. ASIGNACIÓN INSTITUCIONAL DE RESPONSABILIDADES:
+   - Karol Paola Camacho López (Dirección del Proyecto | Optimización Python): Accountable (A) / Responsible (R) - Visión directiva de cierre, modelado numérico SOEC en Python y licitación.
+   - Gildardo Ocaña Barrales (Ingeniería de Procesos | DTI/P&ID): Responsible (R) - Paquete de planos DTI v1 en Plant 3D y especificación de tuberías y válvulas.
+   - Paulina Mota Macip (Simulación | Instrumentación y Control): Responsible (R) - Robustez dinámica ante perturbaciones y lazos de control cascada.
+   - Grecia Figueroa Rincón (Especialista HSE | Evaluación Económica): Responsible (R) - Expediente de seguridad HAZOP (MCE-01) y análisis tecno-económico BioSTEAM.
+
+2. CONDICIÓN DE MARCA Y LICITACIÓN:
+   - Marca Oficial: Solvanta Engineering Solutions S.A. de C.V.
+   - Código de Licitación: RFP-CCM-EM-001 (Circular Carbon México)
+   - Plataforma de Hospedaje Oficial: Canva Video Cloud
+   - Enlace Permanente: https://canva.link/tmv6f1e2ydf5ofr
+================================================================================

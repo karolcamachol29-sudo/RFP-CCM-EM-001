@@ -53,11 +53,13 @@ La presente matriz define las responsabilidades operativas y de aprobación para
 | **E1.5** | Verificación Termodinámica (VTP-01) | **R** [Ing. Procesos] | **C** [Simulación] | **C** [Eval. Económica] | **R / A** [Optimización Py / Dir.] |
 | **E1.6** | Matriz Ambiental (AC-AMB-01) | **C** [Ing. Procesos] | **C** [Simulación] | **R** [Seguridad/HSE] | **A** [Dirección Proyecto] |
 | **E2.1** | Lista Maestra de Equipos (LE-01) | **C** [DTI / P&ID] | **R** [Simulación] | **C** [Eval. Económica] | **R / A** [Optimización Py / Dir.] |
+| **E2.2** | Video Oficial Revisión Técnica 02 (RT-02 Canva) | **R** [Ing. Procesos / DTI] | **R** [Simulación / Control] | **R** [Seguridad / Eval. Econ.] | **R / A** [Dirección / Optimización] |
 | **FC-01** | Filosofía de Control del Proceso | **C** [DTI / P&ID] | **R** [Inst. y Control] | **C** [Seguridad/HSE] | **A** [Dirección Proyecto] |
 | **PIB-01** | Paquete de Ingeniería Básica | **C** [Ing. Procesos] | **C** [Simulación] | **C** [Seguridad/HSE] | **R / A** [Dirección Proyecto] |
 | **AC-HAZOP-01** | Expediente HAZOP y Matriz Causa-Efecto | **C** [DTI / P&ID] | **C** [Inst. y Control] | **R** [Seguridad/HSE] | **A** [Dirección Proyecto / Facil.] |
 | **RT-01** | Revisión Técnica 01 (AR-01: Bases, NB-01 y BFD v0)| **R** [Ing. Procesos / DTI] | **R** [Simulación / Control] | **R** [Seguridad / HSE / Econ.] | **R / A** [Dirección Proyecto] |
 | **RT-02** | Revisión Técnica 02 (Presentación en Diapositivas)| **R** [Ing. Procesos] | **R** [Simulación] | **R** [Seguridad / Eval. Econ.] | **R / A** [Dirección Proyecto] |
+| **E3.1** | Video Oficial Revisión Técnica 03 (RT-03 Canva) | **R** [Ing. Procesos / DTI] | **R** [Simulación / Control] | **R** [Seguridad / Eval. Econ.] | **R / A** [Dirección / Optimización] |
 | **RT-03** | Revisión Técnica 03 (Presentación de Defensa en Diapositivas)| **C** [DTI / P&ID] | **C** [Inst. y Control] | **R** [Eval. Económica] | **R / A** [Optimización Py / Dir.] |
 | **MP-00** | Compendio de Matrices Ponderadas de Selección| **R** [Ing. Procesos / DTI] | **R** [Simulación / Control] | **R** [Seguridad / Economía] | **R / A** [Dirección / Optimización] |
 | **DIF-01**| Cartel PyDay (*Excepción Exclusiva*) | **I** [Ing. Procesos] | **I** [Simulación] | **R** [Evaluación Económica] | **R / A** [Optimización Py / Dir.] |
@@ -143,10 +145,24 @@ La presente matriz define las responsabilidades operativas y de aprobación para
 * **R: Karol Paola Camacho López, Gildardo Ocaña Barrales, Paulina Mota Macip y Grecia Figueroa Rincón** (Elaboración técnica multidisciplinaria de diapositivas de balance, simulación, costos e ingeniería básica).
 * **A: Karol Paola Camacho López** (Dirección del Proyecto). Aprobación y aseguramiento de calidad del archivo de presentación oficial en PDF.
 
+### E2.2: Video Oficial de la Revisión Técnica 02 (RT-02 — Sustentación en Canva)
+* **Código Oficial:** `E2.2` (vinculado a RT-02).
+* **Ficha Oficial Foliada:** `03_Entregables_Finales/E2_Ingenieria_Basica_y_Control/E2.2_VID_EnlaceRevisionTecnica02_v1.0.pdf`
+* **Enlace Cloud:** `https://canva.link/3zrbczmgiyx7lkj`
+* **R:** Los cuatro socios del consorcio participaron en la grabación de sus áreas: Karol Paola Camacho López (Apertura y reciclos), Paulina Mota Macip (DWSIM y control), Gildardo Ocaña Barrales (Balances LE-01) y Grecia Figueroa Rincón (AC-AMB-01 y riesgos).
+* **A:** Karol Paola Camacho López (Dirección del Proyecto). Lideró el ensamble técnico en Canva, edición de audio/video y aprobación final.
+
 ### RT-03: Revisión Técnica 03 (Presentación Oficial de Defensa en Diapositivas PDF)
 * **R: Karol Paola Camacho López** (Dirección del Proyecto / Optimización Python) & **Grecia Figueroa Rincón** (Evaluación Económica / HSE). Elaboraron el set de diapositivas de defensa sobre el modelo SOEC, balance tecno-económico y mitigación de riesgos.
 * **A: Karol Paola Camacho López** (Dirección del Proyecto). Aprobó la versión final de diapositivas para la defensa técnica.
 * **C: Paulina Mota Macip** (Simulación / Control) y **Gildardo Ocaña Barrales** (Ingeniería de Procesos / DTI). Consulta y asesoría técnica especializada.
+
+### E3.1: Video Oficial de la Revisión Técnica 03 (RT-03 — Defensa Maestra en Canva)
+* **Código Oficial:** `E3.1` (vinculado a RT-03).
+* **Ficha Oficial Foliada:** `03_Entregables_Finales/E3_Revisiones_Tecnicas_y_Difusion/E3.1_VID_EnlaceRevisionTecnica03_v1.0.pdf`
+* **Enlace Cloud:** `https://canva.link/tmv6f1e2ydf5ofr`
+* **R:** Los cuatro socios del consorcio sustentaron la defensa técnica: Karol Paola Camacho López (Visión directiva y SOEC Python), Gildardo Ocaña Barrales (DTI v1 y piping), Paulina Mota Macip (Control avanzado) y Grecia Figueroa Rincón (HAZOP MCE-01 y BioSTEAM).
+* **A:** Karol Paola Camacho López (Dirección del Proyecto). Coordinó la post-producción en Canva y emitió la aprobación ejecutiva institucional.
 
 ### DIF-01: Cartel PyDay Puebla (Excepción Exclusiva)
 * **R: Karol Paola Camacho López** (Ingeniera de Optimización Python) & **Grecia Figueroa Rincón** (Evaluación Económica). Karol desarrolló los modelos SOEC en Python, optimizaciones numéricas y gráficos; Grecia estructuró el modelo BioSTEAM y análisis tecno-económico.

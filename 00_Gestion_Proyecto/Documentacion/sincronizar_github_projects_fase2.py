@@ -272,6 +272,22 @@ ACTIVIDADES_PROYECTO = [
         "issue_number": 26
     },
     {
+        "id_actividad": "ACT-E2.2",
+        "titulo": "[E2.2] Video Oficial de la Revisión Técnica 02 (RT-02 en Canva)",
+        "entregable": "E2.2",
+        "responsable": "Todo el Consorcio (Líder: @Karoc)",
+        "cargo": "Dirección / Cargos Oficiales Respectivos",
+        "participantes": "@Karoc, @paulina145, @GildardoOca25, @Cho0bb",
+        "rol_raci": "R: @Karoc, @paulina145, @GildardoOca25, @Cho0bb | A: @Karoc | C: Consorcio | I: Convocante BUAP",
+        "estado": "Finalizado",
+        "fecha_inicio": "2026-09-24",
+        "fecha_fin": "2026-09-28",
+        "duracion_dias": 5,
+        "tipo_fecha": "Verificada",
+        "evidencia": "03_Entregables_Finales/E2_Ingenieria_Basica_y_Control/E2.2_VID_EnlaceRevisionTecnica02_v1.0.pdf",
+        "issue_number": 49
+    },
+    {
         "id_actividad": "ACT-FC-01",
         "titulo": "[FC-01] Filosofía de Control del Proceso de Síntesis y Separación",
         "entregable": "FC-01",
@@ -462,6 +478,38 @@ ACTIVIDADES_PROYECTO = [
         "tipo_fecha": "Verificada",
         "evidencia": "03_Entregables_Finales/E3_Revisiones_Tecnicas_y_Difusion/RT-03_DOC_PresentacionDiapositivas_v1.0.pdf",
         "issue_number": 27
+    },
+    {
+        "id_actividad": "ACT-E3.1",
+        "titulo": "[E3.1] Video Oficial de la Revisión Técnica 03 (RT-03 en Canva)",
+        "entregable": "E3.1",
+        "responsable": "Todo el Consorcio (Líder: @Karoc)",
+        "cargo": "Dirección / Cargos Oficiales Respectivos",
+        "participantes": "@Karoc, @GildardoOca25, @paulina145, @Cho0bb",
+        "rol_raci": "R: @Karoc, @GildardoOca25, @paulina145, @Cho0bb | A: @Karoc | C: Consorcio | I: Comité Licitación BUAP",
+        "estado": "Finalizado",
+        "fecha_inicio": "2026-11-01",
+        "fecha_fin": "2026-11-14",
+        "duracion_dias": 14,
+        "tipo_fecha": "Verificada",
+        "evidencia": "03_Entregables_Finales/E3_Revisiones_Tecnicas_y_Difusion/E3.1_VID_EnlaceRevisionTecnica03_v1.0.pdf",
+        "issue_number": 50
+    },
+    {
+        "id_actividad": "ACT-CANVA-REV",
+        "titulo": "[CANVA-REV] Integración y Centralización de Enlaces Oficiales Canva",
+        "entregable": "ENLACES_REVISION.txt",
+        "responsable": "@Karoc (Karol Paola Camacho López)",
+        "cargo": "Dirección del Proyecto",
+        "participantes": "@Karoc, @Cho0bb, @GildardoOca25, @paulina145",
+        "rol_raci": "R: @Karoc | A: @Karoc | C: Consorcio | I: Convocante",
+        "estado": "Finalizado",
+        "fecha_inicio": "2026-11-14",
+        "fecha_fin": "2026-11-14",
+        "duracion_dias": 1,
+        "tipo_fecha": "Verificada",
+        "evidencia": "00_Gestion_Proyecto/Documentacion/ENLACES_REVISION.txt",
+        "issue_number": 51
     },
     {
         "id_actividad": "ACT-EF",
