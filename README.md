@@ -19,13 +19,13 @@
 
 ## 1. Resumen Ejecutivo del Proyecto
 
-El consorcio licitante **Solvanta Engineering Solutions S.A. de C.V.** presenta el expediente técnico de ingeniería para el concurso licitatorio **RFP-CCM-EM-001**, convocado por la Benemérita Universidad Autónoma de Puebla (BUAP) a través de la Facultad de Ingeniería Química (FIQ).
+El consorcio licitante **Solvanta Engineering Solutions S.A. de C.V.** presenta el expediente técnico de ingeniería para el concurso licitatorio internacional **RFP-CCM-EM-001**, convocado por la entidad **Circular Carbon México, S.A. de C.V.** (evaluado bajo el marco institucional de la Cátedra de Diseño de Procesos y Productos Químicos de la Facultad de Ingeniería Química, BUAP).
 
 El proyecto comprende el diseño conceptual, básico y de detalle para una planta química con capacidad nominal de **30,000 toneladas métricas anuales** de e-metanol grado químico comercial AA (pureza $\ge 99.85\%$ p/p). La arquitectura tecnológica integra:
 - **Electrólisis SOEC de Alta Temperatura (EL-201):** Operación a 800 °C y 20 bar con vapor sobrecalentado y recuperación térmica de efluentes, alcanzando una demanda específica de 32.92 kWh/kg H2 en el Escenario D Óptimo.
 - **Compresión y Síntesis Catalítica (R-401):** Reactor tubular multitubular tipo Lurgi acoplado a caldera generadora de vapor saturado a 20 bar (R-401-S), operando a 75 bar y 245 °C sobre catalizador comercial Cu/ZnO/Al2O3 con módulo estequiométrico $M = 2.05$.
 - **Separación Flash y Fraccionamiento de Alta Pureza (V-501, T-601):** Tren de condensación, flash de alta presión con turboexpansor criogénico de purga (EXP-501, recuperación de 437.8 kW), desgasificación a baja presión y columna de destilación de 34 platos con reflujo térmicamente optimizado.
-- **Seguridad Operativa y Filosofía SIS:** Estudio HAZOP integral sobre 10 nodos de proceso (42 desviaciones analizadas), Matriz Causa-Efecto MCE-01 Rev. 1, 12 cambios de ingeniería incorporados en el plano maestro P&ID DTI v1.0 y cuatro interbloqueos instrumentados de seguridad (I-01 a I-04).
+- **Seguridad Operativa y Filosofía SIS:** Estudio HAZOP integral sobre 10 nodos de proceso (42 desviaciones analizadas), Matriz Causa-Efecto MCE-01 Rev. 1, 12 cambios de ingeniería incorporados en el plano maestro P&ID DTI v1.0 y cuatro interbloqueos instrumentados de seguridad mayores (I-01 a I-04, consolidados en 10 interlocks I-01 a I-10 en la matriz MI-01).
 
 ---
 
