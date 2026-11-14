@@ -49,7 +49,7 @@ La presente matriz define las responsabilidades operativas y de aprobación para
 | **E1.2** | Simulación DWSIM y Balances de Proceso | **C** [Ing. Procesos] | **R** [Simulación] | **C** [Eval. Económica] | **A** [Dirección Proyecto] |
 | **E1.3** | Diagramación (BFD/PFD) en Plant 3D | **R** [Ing. Procesos / DTI] | **C** [Simulación] | **C** [Seguridad/HSE] | **A** [Dirección Proyecto] |
 | **E1.3.1**| Propuesta Preliminar de Equipos (EQ-01) | **C** [Ing. Procesos] | **C** [Simulación] | **I** [Eval. Económica] | **R / A** [Optimización Py / Dir.] |
-| **E1.4** | Video Pitch Técnico del Proyecto | **C** [Ing. Procesos] | **C** [Simulación] | **C** [Eval. Económica] | **R / A** [Dirección Proyecto] |
+| **E1.4** | Video Pitch Técnico del Proyecto | **R** [Ing. Procesos / DTI] | **R** [Simulación / Control] | **R** [Seguridad / Eval. Econ.] | **R / A** [Dirección / Optimización] |
 | **E1.5** | Verificación Termodinámica (VTP-01) | **R** [Ing. Procesos] | **C** [Simulación] | **C** [Eval. Económica] | **R / A** [Optimización Py / Dir.] |
 | **E1.6** | Matriz Ambiental (AC-AMB-01) | **C** [Ing. Procesos] | **C** [Simulación] | **R** [Seguridad/HSE] | **A** [Dirección Proyecto] |
 | **E2.1** | Lista Maestra de Equipos (LE-01) | **C** [DTI / P&ID] | **R** [Simulación] | **C** [Eval. Económica] | **R / A** [Optimización Py / Dir.] |
@@ -61,14 +61,14 @@ La presente matriz define las responsabilidades operativas y de aprobación para
 | **RT-03** | Revisión Técnica 03 (Presentación de Defensa en Diapositivas)| **C** [DTI / P&ID] | **C** [Inst. y Control] | **R** [Eval. Económica] | **R / A** [Optimización Py / Dir.] |
 | **MP-00** | Compendio de Matrices Ponderadas de Selección| **R** [Ing. Procesos / DTI] | **R** [Simulación / Control] | **R** [Seguridad / Economía] | **R / A** [Dirección / Optimización] |
 | **DIF-01**| Cartel PyDay (*Excepción Exclusiva*) | **I** [Ing. Procesos] | **I** [Simulación] | **R** [Evaluación Económica] | **R / A** [Optimización Py / Dir.] |
-| **E4.1** | Auditoría Económica Integral BioSTEAM | **I** [Ing. Procesos] | **C** [Simulación] | **C** [Eval. Económica] | **R / A** [Optimización Py / Dir.] |
-| **E4.2** | Comparativa DWSIM vs BioSTEAM | **I** [Ing. Procesos] | **C** [Simulación] | **C** [Eval. Económica] | **R / A** [Optimización Py / Dir.] |
-| **E4.3** | Desglose de Costos CAPEX / OPEX | **I** [Ing. Procesos] | **I** [Simulación] | **C** [Eval. Económica] | **R / A** [Optimización Py / Dir.] |
-| **E4.4** | Registro de Modificaciones de Ingeniería | **C** [Ing. Procesos] | **C** [Simulación] | **C** [Seguridad/HSE] | **R / A** [Dirección Proyecto] |
-| **E4.5** | Segunda Auditoría BioSTEAM | **I** [Ing. Procesos] | **C** [Simulación] | **C** [Eval. Económica] | **R / A** [Optimización Py / Dir.] |
+| **E4.1** | Auditoría Económica Integral BioSTEAM | **I** [Ing. Procesos] | **C** [Simulación] | **R** [Eval. Económica] | **R / A** [Optimización Py / Dir.] |
+| **E4.2** | Comparativa DWSIM vs BioSTEAM | **I** [Ing. Procesos] | **R** [Simulación] | **C** [Eval. Económica] | **R / A** [Optimización Py / Dir.] |
+| **E4.3** | Desglose de Costos CAPEX / OPEX | **I** [Ing. Procesos] | **I** [Simulación] | **R** [Eval. Económica] | **R / A** [Optimización Py / Dir.] |
+| **E4.4** | Registro de Modificaciones de Ingeniería | **R** [Ing. Procesos] | **C** [Simulación] | **C** [Seguridad/HSE] | **R / A** [Dirección Proyecto] |
+| **E4.5** | Segunda Auditoría BioSTEAM | **I** [Ing. Procesos] | **C** [Simulación] | **R** [Eval. Económica] | **R / A** [Optimización Py / Dir.] |
 | **E4.6** | Auditoría y Optimización SOEC (Python) | **C** [Ing. Procesos] | **C** [Simulación] | **I** [Eval. Económica] | **R / A** [Optimización Py / Dir.] |
-| **E4.7** | Registro de Pruebas y Validación SOEC | **I** [Ing. Procesos] | **C** [Simulación] | **I** [Eval. Económica] | **R / A** [Optimización Py / Dir.] |
-| **EF** | Informe Final Consolidado de Licitación | **C** [Ing. Procesos / DTI] | **C** [Simulación / Control] | **C** [Seguridad / Economía] | **R / A** [Dirección Proyecto] |
+| **E4.7** | Registro de Pruebas y Validación SOEC | **I** [Ing. Procesos] | **R** [Simulación] | **I** [Eval. Económica] | **R / A** [Optimización Py / Dir.] |
+| **EF** | Informe Final Consolidado de Licitación | **R** [Ing. Procesos / DTI] | **R** [Simulación / Control] | **R** [Seguridad / Economía] | **R / A** [Dirección Proyecto] |
 
 ---
 
@@ -98,9 +98,11 @@ La presente matriz define las responsabilidades operativas y de aprobación para
 * **C: Gildardo Ocaña Barrales** y **Paulina Mota Macip**. Validaron los tipos de recipientes y caudales de diseño.
 * **I: Grecia Figueroa Rincón**. Informada de los parámetros de dimensionamiento para costeo futuro.
 
-### E1.4: Video Pitch Técnico del Proyecto
-* **R / A: Karol Paola Camacho López** (Dirección del Proyecto). Diseñó el guion ejecutivo, grabó la presentación audiovisual y coordinó la publicación oficial en Google Drive.
-* **C: Paulina Mota Macip**, **Gildardo Ocaña Barrales**, **Grecia Figueroa Rincón**. Suministraron material visual y síntesis de sus áreas para el pitch.
+### E1.4: Video Pitch Técnico del Proyecto (4 Segmentos Grabados Colegiadamente)
+* **R / A: Karol Paola Camacho López** (Dirección del Proyecto / Ingeniera de Optimización Python). Grabó el Segmento 1 (Introducción ejecutiva, compromiso institucional del consorcio Solvanta y optimización matemática en Python) y lideró la post-producción audiovisual, renderizado final a 1080p y aprobación institucional.
+* **R: Gildardo Ocaña Barrales** (Ingeniería de Procesos / DTI y P&ID). Grabó el Segmento 2 (Arquitectura de la planta, tren de síntesis catalítica y balance estequiométrico de materia).
+* **R: Paulina Mota Macip** (Simulación / Instrumentación y Control). Grabó el Segmento 3 (Demostración interactiva de la simulación convergida en DWSIM, justificación del modelo termodinámico y lazos de control).
+* **R: Grecia Figueroa Rincón** (Especialista en Seguridad, Salud y Medio Ambiente / Evaluación Económica). Grabó el Segmento 4 (Impacto ambiental positivo de la planta verde por captura de CO2, matriz de seguridad operativa y rentabilidad preliminar).
 
 ### E1.5: Verificación Termodinámica (VTP-01)
 * **R: Karol Paola Camacho López** (Optimización Python) & **Gildardo Ocaña Barrales** (Ingeniería de Procesos). Karol ejecutó la verificación termodinámica y redactó el informe LaTeX; Gildardo generó el plano vectorial de alta resolución DFP v1.
@@ -151,11 +153,19 @@ La presente matriz define las responsabilidades operativas y de aprobación para
 * **A: Karol Paola Camacho López** (Dirección del Proyecto). Aprobó la representación y diseño gráfico final.
 * **I: Paulina Mota Macip** y **Gildardo Ocaña Barrales**. Informados como miembros del consorcio institucional (sin participación en diseño ni redacción).
 
-### E4: Auditorías BioSTEAM y Optimización SOEC (E4.1 a E4.7)
-* **R / A: Karol Paola Camacho López** (Ingeniera de Optimización de Procesos / Dirección de Proyecto). Detectó inconsistencias, desarrolló el paquete modular `soec_optimization/`, ejecutó optimizaciones multivariables (OAT, LHS, Morris) y redactó los reportes técnicos.
-* **C: Grecia Figueroa Rincón** (Evaluación Económica) y **Paulina Mota Macip** (Simulación). Grecia validó la auditoría de costos BioSTEAM; Paulina verificó el acoplamiento térmico en DWSIM.
-* **I: Gildardo Ocaña Barrales**. Informado de los balances energéticos resultantes.
+### E4: Suite de Auditorías BioSTEAM, Capex/Opex y Optimización SOEC (E4.1 a E4.7)
+* **E4.1 (Auditoría Económica BioSTEAM):** **R:** Grecia Figueroa Rincón (Evaluación Económica) & Karol Paola Camacho López (Optimización Python). **A:** Karol Camacho. **C:** Gildardo Ocaña, Paulina Mota.
+* **E4.2 (Comparativa DWSIM vs BioSTEAM):** **R:** Paulina Mota Macip (Simulación) & Karol Paola Camacho López (Optimización Python). **A:** Karol Camacho. **C:** Gildardo Ocaña.
+* **E4.3 (Desglose CAPEX / OPEX):** **R:** Grecia Figueroa Rincón (Evaluación Económica) & Karol Paola Camacho López (Dirección). **A:** Karol Camacho. **C:** Consorcio.
+* **E4.4 (Registro de Modificaciones Técnicas):** **R:** Gildardo Ocaña Barrales (Ingeniería de Procesos) & Karol Paola Camacho López (Dirección). **A:** Karol Camacho. **C:** Paulina Mota, Grecia Figueroa.
+* **E4.5 (Segunda Auditoría BioSTEAM LCOMe):** **R:** Grecia Figueroa Rincón (Evaluación Económica) & Karol Paola Camacho López (Optimización Python). **A:** Karol Camacho. **C:** Consorcio.
+* **E4.6 (Auditoría y Optimización SOEC Python):** **R / A:** Karol Paola Camacho López (Ingeniera de Optimización Python / Dirección). **C:** Gildardo Ocaña, Grecia Figueroa.
+* **E4.7 (Registro de Validación y Pruebas SOEC):** **R:** Karol Paola Camacho López (Optimización Python) & Paulina Mota Macip (Simulación). **A:** Karol Camacho. **C:** Consorcio.
 
-### EF: Informe Final Consolidado de la Licitación
-* **R / A: Karol Paola Camacho López** (Dirección del Proyecto). Coordina la integración final del expediente licitatorio completo.
-* **C: Gildardo Ocaña Barrales**, **Paulina Mota Macip**, **Grecia Figueroa Rincón**. Revisión cruzada de sus áreas correspondientes antes del dictamen final.
+### EF: Informe Final Consolidado de la Licitación (Expediente Maestro de Cierre)
+* **Tomo I (Bases de Diseño, Capacidad y Filosofía Consorcio):** **R / A:** Karol Paola Camacho López (Dirección del Proyecto).
+* **Tomo II (Ingeniería de Procesos, Diagramas y Lista de Equipos):** **R:** Gildardo Ocaña Barrales (Ingeniería de Procesos / DTI y P&ID). **A:** Karol Camacho.
+* **Tomo III (Simulación Rigurosa y Filosofía de Control Automático):** **R:** Paulina Mota Macip (Simulación / Instrumentación y Control). **A:** Karol Camacho.
+* **Tomo IV (Seguridad Industrial HAZOP, Matriz Ambiental y Economía):** **R:** Grecia Figueroa Rincón (Seguridad HSE / Evaluación Económica). **A:** Karol Camacho.
+* **Tomo V (Optimización Tecnológica SOEC y Auditorías Python):** **R / A:** Karol Paola Camacho López (Ingeniera de Optimización Python / Dirección).
+* **Aprobación General, Certificación de Calidad y Cierre Contractual:** **A:** Karol Paola Camacho López (Dirección del Proyecto).

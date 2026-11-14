@@ -73,27 +73,35 @@ El proyecto licitatorio `RFP-CCM-EM-001` constituye una obra de ingeniería cole
 
 ---
 
-## 3. Matriz de Roles y Liderazgo por Entregable Oficial
+## 3. Matriz de Roles y Liderazgo por Entregable Oficial y Secciones
 
 | Entregable | Denominación Oficial | Integrante Responsable de Ejecución (R) | Cargo Oficial Desempeñado | Integrante Aprobador (A) | Cargo de Aprobación |
 | :---: | :--- | :--- | :--- | :--- | :--- |
-| **E0** | Acta Constitutiva y Constitución de Empresa | Karol Paola Camacho López | Dirección del Proyecto | Karol Paola Camacho López | Dirección del Proyecto |
-| **E1.1** | Bases de Diseño y Marco Normativo | Grecia Figueroa Rincón | Especialista en HSE | Karol Paola Camacho López | Dirección del Proyecto |
+| **E0** | Acta Constitutiva y Constitución de Empresa | Todo el Consorcio (Líder: Karol Camacho) | Dirección / Cargos respectivos | Karol Paola Camacho López | Dirección del Proyecto |
+| **E1.1** | Bases de Diseño y Marco Normativo (NB-01) | Grecia Figueroa Rincón | Especialista en HSE | Karol Paola Camacho López | Dirección del Proyecto |
 | **E1.2** | Simulación DWSIM y Balances de Proceso | Paulina Mota Macip | Simulación | Karol Paola Camacho López | Dirección del Proyecto |
 | **E1.3** | Diagramación (BFD, PFD) en Plant 3D | Gildardo Ocaña Barrales | Ingeniería de Procesos / DTI | Karol Paola Camacho López | Dirección del Proyecto |
 | **E1.3.1**| Propuesta Preliminar de Equipos (EQ-01) | Karol Paola Camacho López | Ingeniera de Optimización (Python) | Karol Paola Camacho López | Dirección del Proyecto |
-| **E1.4** | Video Pitch Técnico del Proyecto | Karol Paola Camacho López | Dirección del Proyecto | Karol Paola Camacho López | Dirección del Proyecto |
-| **E1.5** | Verificación Termodinámica VTP-01 | Karol Camacho / Gildardo Ocaña | Optimización (Py) / Ing. Procesos | Karol Paola Camacho López | Dirección del Proyecto |
+| **E1.4** | Video Pitch Oficial (4 Segmentos Grabados) | Todo el Consorcio (Los 4 Expositores) | Cargos respectivos en pantalla | Karol Paola Camacho López | Dirección del Proyecto |
+| **RT-01** | Revisión Técnica 01: Defensa Bases (AR-01) | Todo el Consorcio (Los 4 Expositores) | Cargos respectivos en defensa | Karol Paola Camacho López | Dirección del Proyecto |
+| **MP-00** | Compendio de Matrices Ponderadas (MP01-05)| Todo el Consorcio (Líder: Karol Camacho) | Dirección / Cargos respectivos | Karol Paola Camacho López | Dirección del Proyecto |
+| **E1.5** | Verificación Termodinámica VTP-01 y DFP v1 | Paulina Mota / Gildardo Ocaña / Karol Camacho | Simulación / Ing. Procesos / Python | Karol Paola Camacho López | Dirección del Proyecto |
 | **E1.6** | Matriz de Impacto Ambiental (AC-AMB-01) | Grecia Figueroa Rincón | Especialista en HSE | Karol Paola Camacho López | Dirección del Proyecto |
-| **E2.1** | Lista Maestra de Equipos LE-01 y DFP v1 | Karol Camacho / Paulina Mota | Optimización (Py) / Simulación | Karol Paola Camacho López | Dirección del Proyecto |
+| **E2.1** | Lista Maestra de Equipos LE-01 y DFP v1 | Gildardo Ocaña / Paulina Mota / Karol Camacho | Ing. Procesos / Simulación / Python | Karol Paola Camacho López | Dirección del Proyecto |
+| **RT-02** | Revisión Técnica 02: Simulación y Control | Todo el Consorcio (Los 4 Expositores) | Cargos respectivos en exposición | Karol Paola Camacho López | Dirección del Proyecto |
 | **FC-01** | Filosofía de Control del Proceso | Paulina Mota Macip | Instrumentación y Control | Karol Paola Camacho López | Dirección del Proyecto |
-| **PIB-01** | Paquete de Ingeniería Básica del Proceso | Karol Paola Camacho López | Dirección del Proyecto | Karol Paola Camacho López | Dirección del Proyecto |
 | **HAZOP** | Expediente Integral HAZOP y MCE-01 | Grecia Figueroa Rincón | Especialista en HSE | Karol Paola Camacho López | Dirección del Proyecto |
-| **RT-02** | Revisión Técnica 02 (Speech y Diapositivas)| Los 4 Integrantes Solvanta | Cargos respectivos en exposición | Karol Paola Camacho López | Dirección del Proyecto |
-| **RT-03** | Revisión Técnica 03 (Guía Maestra y Speech)| Karol Camacho / Grecia Figueroa | Dirección / Evaluación Económica | Karol Paola Camacho López | Dirección del Proyecto |
+| **PIB-01** | Paquete de Ingeniería Básica del Proceso | Karol Camacho / Gildardo / Paulina / Grecia | Dirección y Especialidades Técnicas | Karol Paola Camacho López | Dirección del Proyecto |
+| **E4.1** | RPT Auditoría Económica Integral BioSTEAM | Grecia Figueroa / Karol Camacho | Evaluación Económica / Python | Karol Paola Camacho López | Dirección del Proyecto |
+| **E4.2** | RPT Comparativa DWSIM vs BioSTEAM | Paulina Mota / Karol Camacho | Simulación / Optimización Python | Karol Paola Camacho López | Dirección del Proyecto |
+| **E4.3** | RPT Desglose Costos CAPEX / OPEX | Grecia Figueroa / Karol Camacho | Evaluación Económica / Dirección | Karol Paola Camacho López | Dirección del Proyecto |
+| **E4.4** | RPT Registro Modificaciones Técnicas | Gildardo Ocaña / Karol Camacho | Ingeniería de Procesos / Dirección | Karol Paola Camacho López | Dirección del Proyecto |
+| **E4.5** | RPT Segunda Auditoría BioSTEAM (LCOMe) | Grecia Figueroa / Karol Camacho | Evaluación Económica / Python | Karol Paola Camacho López | Dirección del Proyecto |
+| **E4.6** | RPT Auditoría y Optimización SOEC Python | Karol Paola Camacho López | Ingeniera de Optimización (Python) | Karol Paola Camacho López | Dirección del Proyecto |
+| **E4.7** | RPT Validación y Pruebas Unitarias SOEC | Karol Camacho / Paulina Mota | Optimización Python / Simulación | Karol Paola Camacho López | Dirección del Proyecto |
 | **DIF-01**| Cartel PyDay (*Excepción Exclusiva*) | Karol Camacho / Grecia Figueroa | Optimización (Py) / Eval. Económica | Karol Paola Camacho López | Dirección del Proyecto |
-| **E4** | Auditorías BioSTEAM y Optimización SOEC | Karol Paola Camacho López | Ingeniera de Optimización (Python) | Karol Paola Camacho López | Dirección del Proyecto |
-| **EF** | Informe Final Consolidado de Licitación | Karol Paola Camacho López | Dirección del Proyecto | Karol Paola Camacho López | Dirección del Proyecto |
+| **RT-03** | Revisión Técnica 03: Guía Maestra y Diap. | Todo el Consorcio (Los 4 Expositores) | Cargos respectivos en defensa | Karol Paola Camacho López | Dirección del Proyecto |
+| **EF** | Informe Final Consolidado de Licitación | Todo el Consorcio (Tomos I a V) | Dirección y Especialidades Técnicas | Karol Paola Camacho López | Dirección del Proyecto |
 
 ---
 

@@ -1,42 +1,54 @@
 # Matriz RACI Individual — Entregable [E1.4]
-**Entregable:** Video Pitch Ejecutivo del Proyecto Solvanta Engineering Solutions  
+**Entregable:** Video Pitch Técnico Oficial del Proyecto Solvanta Engineering Solutions  
 **Código Oficial:** `E1.4`  
-**Archivo Oficial Relacionado:** `03_Entregables_Finales/E1_Bases_y_Verificacion/E1.4_VID_EnlacePitch_v1.0.txt`  
+**Archivo Oficial Relacionado:** `03_Entregables_Finales/E1_Bases_y_Verificacion/E1.4_VID_EnlacePitch_v1.0.pdf`  
 **Consorcio:** Solvanta Engineering Solutions S.A. de C.V. — Licitación RFP-CCM-EM-001  
 **Periodo de Ejecución:** 2026-08-20 al 2026-08-26 (7 días de duración total)  
-**Tipo de Fechas:** Verificada en Git y RACI  
-
+**Tipo de Fechas:** Verificada en Git y Metadatos  
 
 ---
 
-## 1. Asignación General de Roles RACI
+## 1. Asignación General de Roles RACI por Integrante y Cargo
 
-| Integrante | Cargo Oficial Desempeñado | Función RACI | Justificación Técnica de la Asignación |
+En el desarrollo del **Video Pitch Oficial (E1.4)**, los cuatro integrantes del consorcio participaron activamente en la formulación del guion, la exposición ante cámara y la sustentación técnica de sus áreas de especialidad, conforme a sus dos cargos oficiales:
+
+| Integrante | Cargos Oficiales Desempeñados | Función RACI | Justificación Técnica de la Participación en el Video |
 | :--- | :--- | :---: | :--- |
-| **Karol Paola Camacho López** | Dirección del Proyecto | **R** (Responsible) | Ejecutor directo del trabajo técnico, modelado, cálculos o redacción del entregable. |
-| **Karol Paola Camacho López** | Dirección del Proyecto | **A** (Accountable) | Responsable único ante la Dirección de Proyecto, la cátedra y la entidad convocante por la calidad y entrega final. |
-| **Paulina Mota Macip** | Simulación | Consultado (C) | Aportó métricas clave de pureza y eficiencia de conversión. |
-| **Gildardo Ocaña Barrales** | Ingeniería de Procesos | Consultado (C) | Aportó visuales del flowsheet y modelo tridimensional. |
-| **Grecia Figueroa Rincón** | Especialista en Seguridad / Evaluación Económica | Consultado (C) | Aportó argumentos de sustentabilidad y viabilidad económica. |
-| **Comité de Licitación BUAP / DPyPQ** | Convocante | Informado (I) | Recepción del enlace oficial en Google Drive. |
+| **Karol Paola Camacho López** | 1. Dirección del Proyecto<br/>2. Ingeniera de Optimización de Procesos (Python) | **R** (Responsible)<br/>**A** (Accountable) | **Apertura Ejecutiva, Optimización y Edición:** Presentó la visión estratégica del consorcio, el modelo de optimización matemática en Python del electrolizador SOEC, y lideró la post-producción audiovisual, renderizado final y aprobación institucional. |
+| **Gildardo Ocaña Barrales** | 1. Ingeniería de Procesos<br/>2. DTI / P&ID | **R** (Responsible) | **Bloque de Proceso y Diagramas:** Expuso ante cámara la configuración del tren de síntesis catalítica de metanol, los balances de materia preliminares y la arquitectura de límites de batería de la planta. |
+| **Paulina Mota Macip** | 1. Simulación<br/>2. Instrumentación y Control | **R** (Responsible) | **Bloque de Simulación y Control:** Demostró en pantalla el flowsheet convergido en DWSIM, la justificación del modelo Peng-Robinson y la filosofía preliminar de control de temperatura y reciclo. |
+| **Grecia Figueroa Rincón** | 1. Especialista en Seguridad, Salud y Medio Ambiente (HSE)<br/>2. Evaluación Económica | **R** (Responsible) | **Bloque Ambiental, Seguridad y Viabilidad:** Sustentó el impacto positivo de captura de CO2 biogénico, la matriz de seguridad operativa y la rentabilidad financiera preliminar del consorcio. |
+| **Comité de Licitación BUAP / DPyPQ** | Convocante y Jurado Evaluador | **I** (Informed) | Recepción del expediente de video pitch y evaluación de la propuesta técnica. |
 
 ---
 
-## 2. Desglose Cronológico de Actividades del Entregable
+## 2. Desglose WBS por Segmento de Grabación y Responsabilidades
 
-| Actividad del Ciclo de Vida | Fecha Inicio | Fecha Fin | Tipo de Fecha | Responsable | Cargo Desempeñado | Rol RACI |
-| :--- | :---: | :---: | :---: | :--- | :--- | :---: |
-| 1. Definición del concepto ejecutivo y estructuración del speech comercial | 2026-08-20 | 2026-08-21 | Estimada | Karol Camacho | Dirección Proyecto | **R / A** |
-| 2. Recopilación de material gráfico de los cuatro integrantes | 2026-08-21 | 2026-08-23 | Estimada | Todo el equipo | Cargos respectivos | **C** |
-| 3. Grabación y locución del video pitch | 2026-08-23 | 2026-08-25 | Estimada | Karol Camacho | Dirección Proyecto | **R** |
-| 4. Edición audiovisual y post-producción institucional | 2026-08-25 | 2026-08-26 | Verificada | Karol Camacho | Dirección Proyecto | **R** |
-| 5. Carga a Google Drive y verificación de permisos públicos de acceso | 2026-08-26 | 2026-08-26 | Verificada | Karol Camacho | Dirección Proyecto | **R** |
-| 6. Generación del documento de enlace y liberación E1.4 | 2026-08-26 | 2026-08-26 | Verificada | Karol Camacho | Dirección Proyecto | **A** |
+| Segmento Audiovisual | Duración Estimada | Responsable Asignado | Cargo Oficial Aplicado | Rol RACI | Temas Técnicos Desarrollados en el Video |
+| :--- | :---: | :--- | :--- | :---: | :--- |
+| **Segmento 1: Introducción y Optimización** | 1.5 min | Karol Paola Camacho López | Dirección del Proyecto / Ingeniera de Optimización Python | **R / A** | Presentación de Solvanta, alcance de la licitación RFP-CCM-EM-001 y optimización paramétrica en Python. |
+| **Segmento 2: Arquitectura del Proceso** | 1.5 min | Gildardo Ocaña Barrales | Ingeniería de Procesos / DTI y P&ID | **R** | Reacción de hidrogenación de CO2, selección del reactor Lurgi y balances estequiométricos. |
+| **Segmento 3: Simulación DWSIM y Control** | 1.5 min | Paulina Mota Macip | Simulación / Instrumentación y Control | **R** | Demostración del modelo computacional DWSIM, convergencia del bucle de reciclo y estabilidad de lazos. |
+| **Segmento 4: Seguridad, HSE y Economía** | 1.5 min | Grecia Figueroa Rincón | Especialista en Seguridad HSE / Evaluación Económica | **R** | Métricas de descarbonización, mitigación de riesgos de proceso y estimación de costos preliminares. |
+| **Post-Producción y Montaje Final** | — | Karol Paola Camacho López | Dirección del Proyecto | **R / A** | Edición audiovisual, masterización de audio, subtitulado técnico, exportación 1080p y carga segura a Google Drive. |
 
 ---
 
-## 3. Trazabilidad con Archivos y Evidencias en Repositorio
+## 3. Desglose Cronológico de Actividades
 
-* **Documento Oficial Final:** `03_Entregables_Finales/E1_Bases_y_Verificacion/E1.4_VID_EnlacePitch_v1.0.txt`
-* **Control de Tareas:** Tarjeta `[E1.4]` en `KANBAN.md` y sincronización con GitHub Projects.
-* **Registro Histórico:** Inscrito en las actas de bitácora técnica de `04_Bitacora/`.
+| Actividad del Ciclo de Vida | Fecha Inicio | Fecha Fin | Tipo de Fecha | Responsables | Rol RACI |
+| :--- | :---: | :---: | :---: | :--- | :---: |
+| 1. Definición del concepto ejecutivo y estructuración del speech técnico | 2026-08-20 | 2026-08-21 | Estimada | Todo el Consorcio | **R** |
+| 2. Preparación de material gráfico, captures DWSIM y diagramas Plant 3D | 2026-08-21 | 2026-08-23 | Estimada | Gildardo, Paulina, Grecia | **R** |
+| 3. Grabación individual de los 4 segmentos por cada integrante | 2026-08-23 | 2026-08-24 | Verificada | Los 4 integrantes | **R** |
+| 4. Edición audiovisual, musicalización institucional y renderizado final | 2026-08-24 | 2026-08-26 | Verificada | Karol Camacho | **R / A** |
+| 5. Carga a Google Drive, comprobación de permisos y generación de ficha E1.4 | 2026-08-26 | 2026-08-26 | Verificada | Karol Camacho | **R / A** |
+
+---
+
+## 4. Trazabilidad con Archivos y Evidencias en Repositorio
+
+* **Ficha Oficial Foliada:** `03_Entregables_Finales/E1_Bases_y_Verificacion/E1.4_VID_EnlacePitch_v1.0.pdf`
+* **Enlace de Reproducción:** [Video Pitch en Google Drive](https://drive.google.com/file/d/1J0OvkzfonykoZQdn7rbSKxEZQs3v-LDU/view?usp=sharing)
+* **Tablero Kanban:** Tarjetas `[E1.4]` desglosadas por segmentos en `KANBAN.md`.
+* **Bitácora:** Registro histórico de grabaciones en `04_Bitacora/BITACORA_2026-11-14.md`.
