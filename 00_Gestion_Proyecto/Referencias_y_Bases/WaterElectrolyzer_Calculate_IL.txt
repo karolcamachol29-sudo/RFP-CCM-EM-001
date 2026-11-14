@@ -1,0 +1,937 @@
+Calculate ([opt] object args)  cil managed 
+    {
+	.param [1] = nullref
+        // Method begins at RVA 0x2aa1c
+	// Code size 2592 (0xa20)
+	.maxstack 7
+	.locals init (
+		class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream	V_0,
+		class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream	V_1,
+		class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream	V_2,
+		class DWSIM.UnitOperations.Streams.EnergyStream	V_3,
+		class [mscorlib]System.Collections.Generic.List`1<string>	V_4,
+		string	V_5,
+		string	V_6,
+		class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.PropertyPackages.PropertyPackage	V_7,
+		float64	V_8,
+		float64	V_9,
+		float64	V_10,
+		float64	V_11,
+		float64	V_12,
+		float64	V_13,
+		float64	V_14,
+		float64	V_15,
+		float64	V_16,
+		float64	V_17,
+		float64	V_18,
+		float64	V_19,
+		float64	V_20,
+		class [mscorlib]System.Collections.Generic.List`1<float64>	V_21,
+		class [mscorlib]System.Collections.Generic.List`1<float64>	V_22,
+		int32	V_23,
+		int32	V_24,
+		int32	V_25,
+		float64	V_26,
+		float64	V_27,
+		float64	V_28,
+		float64	V_29,
+		float64	V_30,
+		float64	V_31,
+		float64	V_32,
+		float64	V_33,
+		bool	V_34,
+		bool	V_35,
+		bool	V_36,
+		bool	V_37,
+		bool	V_38,
+		bool	V_39,
+		bool	V_40,
+		float64	V_41,
+		valuetype [mscorlib]System.Nullable`1<float64>	V_42,
+		bool	V_43,
+		bool	V_44,
+		float64	V_45,
+		int32	V_46,
+		int32	V_47,
+		bool	V_48,
+		bool	V_49,
+		bool	V_50,
+		bool	V_51,
+		class [mscorlib]System.Collections.Generic.List`1<float64>	V_52,
+		int32	V_53,
+		bool	V_54)
+	IL_0000:  nop 
+	IL_0001:  ldarg.0 
+	IL_0002:  ldc.i4.0 
+	IL_0003:  call class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream class DWSIM.UnitOperations.StreamListExtender::GetInletMaterialStream(class DWSIM.UnitOperations.UnitOperations.UnitOpBaseClass, int32)
+	IL_0008:  stloc.0 
+	IL_0009:  ldarg.0 
+	IL_000a:  ldc.i4.0 
+	IL_000b:  call class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream class DWSIM.UnitOperations.StreamListExtender::GetOutletMaterialStream(class DWSIM.UnitOperations.UnitOperations.UnitOpBaseClass, int32)
+	IL_0010:  stloc.1 
+	IL_0011:  ldarg.0 
+	IL_0012:  ldc.i4.1 
+	IL_0013:  call class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream class DWSIM.UnitOperations.StreamListExtender::GetOutletMaterialStream(class DWSIM.UnitOperations.UnitOperations.UnitOpBaseClass, int32)
+	IL_0018:  stloc.2 
+	IL_0019:  ldloc.2 
+	IL_001a:  ldnull 
+	IL_001b:  ceq 
+	IL_001d:  stloc.s 34
+	IL_001f:  ldloc.s 34
+	IL_0021:  brfalse.s IL_002e
+
+	IL_0023:  ldstr "Please update your model and connect a second outlet stream to this electrolyzer."
+	IL_0028:  newobj instance void class [mscorlib]System.Exception::'.ctor'(string)
+	IL_002d:  throw 
+	IL_002e:  nop 
+	IL_002f:  ldarg.0 
+	IL_0030:  ldc.i4.1 
+	IL_0031:  call class DWSIM.UnitOperations.Streams.EnergyStream class DWSIM.UnitOperations.StreamListExtender::GetInletEnergyStream(class DWSIM.UnitOperations.UnitOperations.UnitOpBaseClass, int32)
+	IL_0036:  stloc.3 
+	IL_0037:  ldloc.0 
+	IL_0038:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2<int32,class [DWSIM.Interfaces]DWSIM.Interfaces.IPhase> class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::get_Phases()
+	IL_003d:  ldc.i4.0 
+	IL_003e:  callvirt instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<int32, class [DWSIM.Interfaces]DWSIM.Interfaces.IPhase>::get_Item(!0)
+	IL_0043:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [DWSIM.Interfaces]DWSIM.Interfaces.ICompound> class [DWSIM.Interfaces]DWSIM.Interfaces.IPhase::get_Compounds()
+	IL_0048:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2/KeyCollection<!0,!1> class [mscorlib]System.Collections.Generic.Dictionary`2<string, class [DWSIM.Interfaces]DWSIM.Interfaces.ICompound>::get_Keys()
+	IL_004d:  call class [mscorlib]System.Collections.Generic.List`1<!!0> class [System.Core]System.Linq.Enumerable::ToList<string> (class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+	IL_0052:  stloc.s 4
+	IL_0054:  ldloc.s 4
+	IL_0056:  ldstr "HeavyWater"
+	IL_005b:  callvirt instance bool class [mscorlib]System.Collections.Generic.List`1<string>::Contains(!0)
+	IL_0060:  stloc.s 35
+	IL_0062:  ldloc.s 35
+	IL_0064:  brfalse.s IL_0097
+
+	IL_0066:  ldloc.s 4
+	IL_0068:  ldstr "Deuterium"
+	IL_006d:  callvirt instance bool class [mscorlib]System.Collections.Generic.List`1<string>::Contains(!0)
+	IL_0072:  ldc.i4.0 
+	IL_0073:  ceq 
+	IL_0075:  stloc.s 36
+	IL_0077:  ldloc.s 36
+	IL_0079:  brfalse.s IL_0086
+
+	IL_007b:  ldstr "Needs Deuterium compound."
+	IL_0080:  newobj instance void class [mscorlib]System.Exception::'.ctor'(string)
+	IL_0085:  throw 
+	IL_0086:  ldstr "HeavyWater"
+	IL_008b:  stloc.s 5
+	IL_008d:  ldstr "Deuterium"
+	IL_0092:  stloc.s 6
+	IL_0094:  nop 
+	IL_0095:  br.s IL_00e7
+
+	IL_0097:  nop 
+	IL_0098:  ldloc.s 4
+	IL_009a:  ldstr "Water"
+	IL_009f:  callvirt instance bool class [mscorlib]System.Collections.Generic.List`1<string>::Contains(!0)
+	IL_00a4:  ldc.i4.0 
+	IL_00a5:  ceq 
+	IL_00a7:  stloc.s 37
+	IL_00a9:  ldloc.s 37
+	IL_00ab:  brfalse.s IL_00b8
+
+	IL_00ad:  ldstr "Needs Water compound."
+	IL_00b2:  newobj instance void class [mscorlib]System.Exception::'.ctor'(string)
+	IL_00b7:  throw 
+	IL_00b8:  ldloc.s 4
+	IL_00ba:  ldstr "Hydrogen"
+	IL_00bf:  callvirt instance bool class [mscorlib]System.Collections.Generic.List`1<string>::Contains(!0)
+	IL_00c4:  ldc.i4.0 
+	IL_00c5:  ceq 
+	IL_00c7:  stloc.s 38
+	IL_00c9:  ldloc.s 38
+	IL_00cb:  brfalse.s IL_00d8
+
+	IL_00cd:  ldstr "Needs Hydrogen compound."
+	IL_00d2:  newobj instance void class [mscorlib]System.Exception::'.ctor'(string)
+	IL_00d7:  throw 
+	IL_00d8:  ldstr "Water"
+	IL_00dd:  stloc.s 5
+	IL_00df:  ldstr "Hydrogen"
+	IL_00e4:  stloc.s 6
+	IL_00e6:  nop 
+	IL_00e7:  ldloc.s 4
+	IL_00e9:  ldstr "Oxygen"
+	IL_00ee:  callvirt instance bool class [mscorlib]System.Collections.Generic.List`1<string>::Contains(!0)
+	IL_00f3:  ldc.i4.0 
+	IL_00f4:  ceq 
+	IL_00f6:  stloc.s 39
+	IL_00f8:  ldloc.s 39
+	IL_00fa:  brfalse.s IL_0107
+
+	IL_00fc:  ldstr "Needs Oxygen compound."
+	IL_0101:  newobj instance void class [mscorlib]System.Exception::'.ctor'(string)
+	IL_0106:  throw 
+	IL_0107:  ldarg.0 
+	IL_0108:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IPropertyPackage class DWSIM.UnitOperations.UnitOperations.UnitOpBaseClass::get_PropertyPackage()
+	IL_010d:  castclass [DWSIM.Thermodynamics]DWSIM.Thermodynamics.PropertyPackages.PropertyPackage
+	IL_0112:  stloc.s 7
+	IL_0114:  ldloc.s 7
+	IL_0116:  ldloc.0 
+	IL_0117:  callvirt instance void class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.PropertyPackages.PropertyPackage::set_CurrentMaterialStream(class [DWSIM.Interfaces]DWSIM.Interfaces.IMaterialStream)
+	IL_011c:  nop 
+	IL_011d:  ldloc.0 
+	IL_011e:  callvirt instance float64 class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::GetTemperature()
+	IL_0123:  stloc.s 8
+	IL_0125:  ldloc.s 7
+	IL_0127:  ldc.r8 298.14999999999998
+	IL_0130:  ldloc.s 8
+	IL_0132:  ldc.i4.3 
+	IL_0133:  newarr [mscorlib]System.String
+	IL_0138:  dup 
+	IL_0139:  ldc.i4.0 
+	IL_013a:  ldloc.s 5
+	IL_013c:  stelem.ref 
+	IL_013d:  dup 
+	IL_013e:  ldc.i4.1 
+	IL_013f:  ldloc.s 6
+	IL_0141:  stelem.ref 
+	IL_0142:  dup 
+	IL_0143:  ldc.i4.2 
+	IL_0144:  ldstr "Oxygen"
+	IL_0149:  stelem.ref 
+	IL_014a:  ldc.i4.3 
+	IL_014b:  newarr [mscorlib]System.Double
+	IL_0150:  dup 
+	IL_0151:  ldtoken field valuetype '<PrivateImplementationDetails>'/'__StaticArrayInitTypeSize=24' '<PrivateImplementationDetails>'::54408D858FA49C65FC39AE5AD2340239E4D453B8613A59261B0B7C7A2B81E7BE
+	IL_0156:  call void class [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::InitializeArray(class [mscorlib]System.Array, valuetype [mscorlib]System.RuntimeFieldHandle)
+	IL_015b:  ldc.i4.0 
+	IL_015c:  ldc.i4.0 
+	IL_015d:  callvirt instance float64 class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.PropertyPackages.PropertyPackage::AUX_DELGig_RT(float64, float64, string[], float64[], int32, bool)
+	IL_0162:  ldc.r8 8.3140000000000001
+	IL_016b:  mul 
+	IL_016c:  ldloc.s 8
+	IL_016e:  mul 
+	IL_016f:  ldc.r8 1000.
+	IL_0178:  div 
+	IL_0179:  stloc.s 9
+	IL_017b:  ldloc.s 7
+	IL_017d:  ldc.r8 298.14999999999998
+	IL_0186:  ldloc.s 8
+	IL_0188:  ldc.i4.3 
+	IL_0189:  newarr [mscorlib]System.String
+	IL_018e:  dup 
+	IL_018f:  ldc.i4.0 
+	IL_0190:  ldloc.s 5
+	IL_0192:  stelem.ref 
+	IL_0193:  dup 
+	IL_0194:  ldc.i4.1 
+	IL_0195:  ldloc.s 6
+	IL_0197:  stelem.ref 
+	IL_0198:  dup 
+	IL_0199:  ldc.i4.2 
+	IL_019a:  ldstr "Oxygen"
+	IL_019f:  stelem.ref 
+	IL_01a0:  ldc.i4.3 
+	IL_01a1:  newarr [mscorlib]System.Double
+	IL_01a6:  dup 
+	IL_01a7:  ldtoken field valuetype '<PrivateImplementationDetails>'/'__StaticArrayInitTypeSize=24' '<PrivateImplementationDetails>'::54408D858FA49C65FC39AE5AD2340239E4D453B8613A59261B0B7C7A2B81E7BE
+	IL_01ac:  call void class [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::InitializeArray(class [mscorlib]System.Array, valuetype [mscorlib]System.RuntimeFieldHandle)
+	IL_01b1:  ldc.i4.0 
+	IL_01b2:  callvirt instance float64 class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.PropertyPackages.PropertyPackage::AUX_DELHig_RT(float64, float64, string[], float64[], int32)
+	IL_01b7:  ldc.r8 8.3140000000000001
+	IL_01c0:  mul 
+	IL_01c1:  ldloc.s 8
+	IL_01c3:  mul 
+	IL_01c4:  ldc.r8 1000.
+	IL_01cd:  div 
+	IL_01ce:  stloc.s 10
+	IL_01d0:  ldloc.0 
+	IL_01d1:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2<int32,class [DWSIM.Interfaces]DWSIM.Interfaces.IPhase> class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::get_Phases()
+	IL_01d6:  ldc.i4.0 
+	IL_01d7:  callvirt instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<int32, class [DWSIM.Interfaces]DWSIM.Interfaces.IPhase>::get_Item(!0)
+	IL_01dc:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [DWSIM.Interfaces]DWSIM.Interfaces.ICompound> class [DWSIM.Interfaces]DWSIM.Interfaces.IPhase::get_Compounds()
+	IL_01e1:  ldloc.s 5
+	IL_01e3:  callvirt instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<string, class [DWSIM.Interfaces]DWSIM.Interfaces.ICompound>::get_Item(!0)
+	IL_01e8:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.ICompoundConstantProperties class [DWSIM.Interfaces]DWSIM.Interfaces.ICompound::get_ConstantProperties()
+	IL_01ed:  callvirt instance float64 class [DWSIM.Interfaces]DWSIM.Interfaces.ICompoundConstantProperties::get_Molar_Weight()
+	IL_01f2:  stloc.s 11
+	IL_01f4:  ldloc.s 7
+	IL_01f6:  ldloc.s 5
+	IL_01f8:  ldloc.s 8
+	IL_01fa:  callvirt instance object class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.PropertyPackages.PropertyPackage::AUX_HVAPi(string, float64)
+	IL_01ff:  ldloc.s 11
+	IL_0201:  box [mscorlib]System.Double
+	IL_0206:  call object class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Operators::MultiplyObject(object, object)
+	IL_020b:  ldc.r8 1000.
+	IL_0214:  box [mscorlib]System.Double
+	IL_0219:  call object class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Operators::DivideObject(object, object)
+	IL_021e:  call float64 class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToDouble(object)
+	IL_0223:  stloc.s 12
+	IL_0225:  ldloc.s 10
+	IL_0227:  ldloc.s 12
+	IL_0229:  add 
+	IL_022a:  stloc.s 10
+	IL_022c:  ldc.r8 -203.60599999999999
+	IL_0235:  ldloc.s 8
+	IL_0237:  ldc.r8 1000.
+	IL_0240:  div 
+	IL_0241:  call float64 class [mscorlib]System.Math::Log(float64)
+	IL_0246:  mul 
+	IL_0247:  ldc.r8 1523.29
+	IL_0250:  ldloc.s 8
+	IL_0252:  mul 
+	IL_0253:  ldc.r8 1000.
+	IL_025c:  div 
+	IL_025d:  add 
+	IL_025e:  ldc.r8 3196.413
+	IL_0267:  ldloc.s 8
+	IL_0269:  ldc.r8 1000.
+	IL_0272:  div 
+	IL_0273:  ldc.r8 2.
+	IL_027c:  call float64 class [mscorlib]System.Math::Pow(float64, float64)
+	IL_0281:  mul 
+	IL_0282:  ldc.r8 2.
+	IL_028b:  div 
+	IL_028c:  sub 
+	IL_028d:  ldc.r8 2474.4549999999999
+	IL_0296:  ldloc.s 8
+	IL_0298:  ldc.r8 1000.
+	IL_02a1:  div 
+	IL_02a2:  ldc.r8 3.
+	IL_02ab:  call float64 class [mscorlib]System.Math::Pow(float64, float64)
+	IL_02b0:  mul 
+	IL_02b1:  ldc.r8 3.
+	IL_02ba:  div 
+	IL_02bb:  add 
+	IL_02bc:  ldc.r8 3.8553259999999998
+	IL_02c5:  ldc.r8 2.
+	IL_02ce:  ldloc.s 8
+	IL_02d0:  ldc.r8 1000.
+	IL_02d9:  div 
+	IL_02da:  ldc.r8 2.
+	IL_02e3:  call float64 class [mscorlib]System.Math::Pow(float64, float64)
+	IL_02e8:  mul 
+	IL_02e9:  div 
+	IL_02ea:  sub 
+	IL_02eb:  ldc.r8 488.71629999999999
+	IL_02f4:  sub 
+	IL_02f5:  stloc.s 13
+	IL_02f7:  ldc.r8 33.066178000000001
+	IL_0300:  ldloc.s 8
+	IL_0302:  ldc.r8 1000.
+	IL_030b:  div 
+	IL_030c:  call float64 class [mscorlib]System.Math::Log(float64)
+	IL_0311:  mul 
+	IL_0312:  ldc.r8 11.363417
+	IL_031b:  ldloc.s 8
+	IL_031d:  mul 
+	IL_031e:  ldc.r8 1000.
+	IL_0327:  div 
+	IL_0328:  sub 
+	IL_0329:  ldc.r8 11.432816000000001
+	IL_0332:  ldloc.s 8
+	IL_0334:  ldc.r8 1000.
+	IL_033d:  div 
+	IL_033e:  ldc.r8 2.
+	IL_0347:  call float64 class [mscorlib]System.Math::Pow(float64, float64)
+	IL_034c:  mul 
+	IL_034d:  ldc.r8 2.
+	IL_0356:  div 
+	IL_0357:  add 
+	IL_0358:  ldc.r8 2.7728739999999998
+	IL_0361:  ldloc.s 8
+	IL_0363:  ldc.r8 1000.
+	IL_036c:  div 
+	IL_036d:  ldc.r8 3.
+	IL_0376:  call float64 class [mscorlib]System.Math::Pow(float64, float64)
+	IL_037b:  mul 
+	IL_037c:  ldc.r8 3.
+	IL_0385:  div 
+	IL_0386:  sub 
+	IL_0387:  ldc.r8 0.158558
+	IL_0390:  ldc.r8 2.
+	IL_0399:  ldloc.s 8
+	IL_039b:  ldc.r8 1000.
+	IL_03a4:  div 
+	IL_03a5:  ldc.r8 2.
+	IL_03ae:  call float64 class [mscorlib]System.Math::Pow(float64, float64)
+	IL_03b3:  mul 
+	IL_03b4:  div 
+	IL_03b5:  add 
+	IL_03b6:  ldc.r8 172.70797400000001
+	IL_03bf:  add 
+	IL_03c0:  stloc.s 14
+	IL_03c2:  ldc.r8 31.322340000000001
+	IL_03cb:  ldloc.s 8
+	IL_03cd:  ldc.r8 1000.
+	IL_03d6:  div 
+	IL_03d7:  call float64 class [mscorlib]System.Math::Log(float64)
+	IL_03dc:  mul 
+	IL_03dd:  ldc.r8 20.235309999999998
+	IL_03e6:  ldloc.s 8
+	IL_03e8:  mul 
+	IL_03e9:  ldc.r8 1000.
+	IL_03f2:  div 
+	IL_03f3:  sub 
+	IL_03f4:  ldc.r8 57.866439999999997
+	IL_03fd:  ldloc.s 8
+	IL_03ff:  ldc.r8 1000.
+	IL_0408:  div 
+	IL_0409:  ldc.r8 2.
+	IL_0412:  call float64 class [mscorlib]System.Math::Pow(float64, float64)
+	IL_0417:  mul 
+	IL_0418:  ldc.r8 2.
+	IL_0421:  div 
+	IL_0422:  add 
+	IL_0423:  ldc.r8 36.506239999999998
+	IL_042c:  ldloc.s 8
+	IL_042e:  ldc.r8 1000.
+	IL_0437:  div 
+	IL_0438:  ldc.r8 3.
+	IL_0441:  call float64 class [mscorlib]System.Math::Pow(float64, float64)
+	IL_0446:  mul 
+	IL_0447:  ldc.r8 3.
+	IL_0450:  div 
+	IL_0451:  sub 
+	IL_0452:  ldc.r8 0.0073740000000000003
+	IL_045b:  ldc.r8 2.
+	IL_0464:  ldloc.s 8
+	IL_0466:  ldc.r8 1000.
+	IL_046f:  div 
+	IL_0470:  ldc.r8 2.
+	IL_0479:  call float64 class [mscorlib]System.Math::Pow(float64, float64)
+	IL_047e:  mul 
+	IL_047f:  div 
+	IL_0480:  add 
+	IL_0481:  ldc.r8 246.7945
+	IL_048a:  add 
+	IL_048b:  stloc.s 15
+	IL_048d:  ldloc.s 10
+	IL_048f:  ldloc.s 8
+	IL_0491:  ldloc.s 13
+	IL_0493:  ldc.r8 0.5
+	IL_049c:  ldloc.s 15
+	IL_049e:  mul 
+	IL_049f:  ldloc.s 14
+	IL_04a1:  add 
+	IL_04a2:  sub 
+	IL_04a3:  mul 
+	IL_04a4:  ldc.r8 1000.
+	IL_04ad:  div 
+	IL_04ae:  add 
+	IL_04af:  stloc.s 9
+	IL_04b1:  ldloc.s 9
+	IL_04b3:  ldc.r8 1000.
+	IL_04bc:  mul 
+	IL_04bd:  ldc.r8 192970.67300000001
+	IL_04c6:  div 
+	IL_04c7:  stloc.s 16
+	IL_04c9:  ldloc.s 10
+	IL_04cb:  ldc.r8 1000.
+	IL_04d4:  mul 
+	IL_04d5:  ldc.r8 192970.67300000001
+	IL_04de:  div 
+	IL_04df:  stloc.s 17
+	IL_04e1:  ldarg.0 
+	IL_04e2:  ldloc.s 17
+	IL_04e4:  call instance void class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::set_ThermoNeutralVoltage(float64)
+	IL_04e9:  nop 
+	IL_04ea:  ldarg.0 
+	IL_04eb:  ldloc.s 16
+	IL_04ed:  call instance void class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::set_ReversibleVoltage(float64)
+	IL_04f2:  nop 
+	IL_04f3:  ldarg.0 
+	IL_04f4:  call instance float64 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_Voltage()
+	IL_04f9:  ldc.r8 0.
+	IL_0502:  cgt 
+	IL_0504:  ldarg.0 
+	IL_0505:  call instance int32 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_NumberOfCells()
+	IL_050a:  ldc.i4.0 
+	IL_050b:  cgt 
+	IL_050d:  and 
+	IL_050e:  stloc.s 40
+	IL_0510:  ldloc.s 40
+	IL_0512:  brfalse IL_060a
+
+	IL_0517:  ldarg.0 
+	IL_0518:  ldloc.3 
+	IL_0519:  callvirt instance valuetype [mscorlib]System.Nullable`1<float64> class DWSIM.UnitOperations.Streams.EnergyStream::get_EnergyFlow()
+	IL_051e:  stloc.s 42
+	IL_0520:  ldloca.s 42
+	IL_0522:  call instance !0 valuetype [mscorlib]System.Nullable`1<float64>::GetValueOrDefault()
+	IL_0527:  ldc.r8 1000.
+	IL_0530:  mul 
+	IL_0531:  ldarg.0 
+	IL_0532:  call instance float64 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_Voltage()
+	IL_0537:  div 
+	IL_0538:  call instance void class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::set_Current(float64)
+	IL_053d:  nop 
+	IL_053e:  ldarg.0 
+	IL_053f:  ldarg.0 
+	IL_0540:  call instance float64 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_Current()
+	IL_0545:  ldc.r8 96485.336500000005
+	IL_054e:  div 
+	IL_054f:  ldarg.0 
+	IL_0550:  call instance int32 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_NumberOfCells()
+	IL_0555:  conv.r8 
+	IL_0556:  mul 
+	IL_0557:  call instance void class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::set_ElectronTransfer(float64)
+	IL_055c:  nop 
+	IL_055d:  ldarg.0 
+	IL_055e:  call instance float64 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_ElectronTransfer()
+	IL_0563:  ldc.r8 4.
+	IL_056c:  div 
+	IL_056d:  ldc.r8 2.
+	IL_0576:  mul 
+	IL_0577:  stloc.s 18
+	IL_0579:  ldarg.0 
+	IL_057a:  call instance float64 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_ElectronTransfer()
+	IL_057f:  ldc.r8 4.
+	IL_0588:  div 
+	IL_0589:  ldc.r8 2.
+	IL_0592:  mul 
+	IL_0593:  stloc.s 19
+	IL_0595:  ldarg.0 
+	IL_0596:  call instance float64 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_ElectronTransfer()
+	IL_059b:  ldc.r8 4.
+	IL_05a4:  div 
+	IL_05a5:  stloc.s 20
+	IL_05a7:  ldarg.0 
+	IL_05a8:  ldarg.0 
+	IL_05a9:  call instance float64 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_Voltage()
+	IL_05ae:  ldarg.0 
+	IL_05af:  call instance int32 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_NumberOfCells()
+	IL_05b4:  conv.r8 
+	IL_05b5:  div 
+	IL_05b6:  call instance void class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::set_CellVoltage(float64)
+	IL_05bb:  nop 
+	IL_05bc:  ldarg.0 
+	IL_05bd:  call instance float64 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_CellVoltage()
+	IL_05c2:  ldloc.s 16
+	IL_05c4:  clt 
+	IL_05c6:  stloc.s 43
+	IL_05c8:  ldloc.s 43
+	IL_05ca:  brfalse.s IL_05d7
+
+	IL_05cc:  ldstr "Total Voltage too low."
+	IL_05d1:  newobj instance void class [mscorlib]System.Exception::'.ctor'(string)
+	IL_05d6:  throw 
+	IL_05d7:  ldarg.0 
+	IL_05d8:  call instance float64 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_CellVoltage()
+	IL_05dd:  ldloc.s 17
+	IL_05df:  sub 
+	IL_05e0:  stloc.s 41
+	IL_05e2:  ldarg.0 
+	IL_05e3:  ldloc.s 41
+	IL_05e5:  ldarg.0 
+	IL_05e6:  call instance float64 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_Current()
+	IL_05eb:  mul 
+	IL_05ec:  ldarg.0 
+	IL_05ed:  call instance int32 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_NumberOfCells()
+	IL_05f2:  conv.r8 
+	IL_05f3:  mul 
+	IL_05f4:  ldc.r8 1000.
+	IL_05fd:  div 
+	IL_05fe:  call instance void class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::set_WasteHeat(float64)
+	IL_0603:  nop 
+	IL_0604:  nop 
+	IL_0605:  br IL_06f8
+
+	IL_060a:  ldarg.0 
+	IL_060b:  call instance float64 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_InputEfficiency()
+	IL_0610:  ldc.r8 0.
+	IL_0619:  cgt 
+	IL_061b:  ldarg.0 
+	IL_061c:  call instance float64 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_InputEfficiency()
+	IL_0621:  ldc.r8 1.
+	IL_062a:  cgt.un 
+	IL_062c:  ldc.i4.0 
+	IL_062d:  ceq 
+	IL_062f:  and 
+	IL_0630:  stloc.s 44
+	IL_0632:  ldloc.s 44
+	IL_0634:  brfalse IL_06e1
+
+	IL_0639:  ldarg.0 
+	IL_063a:  call instance float64 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_InputEfficiency()
+	IL_063f:  ldloc.3 
+	IL_0640:  callvirt instance valuetype [mscorlib]System.Nullable`1<float64> class DWSIM.UnitOperations.Streams.EnergyStream::get_EnergyFlow()
+	IL_0645:  stloc.s 42
+	IL_0647:  ldloca.s 42
+	IL_0649:  call instance !0 valuetype [mscorlib]System.Nullable`1<float64>::GetValueOrDefault()
+	IL_064e:  mul 
+	IL_064f:  stloc.s 45
+	IL_0651:  ldarg.0 
+	IL_0652:  ldc.r8 1.
+	IL_065b:  ldarg.0 
+	IL_065c:  call instance float64 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_InputEfficiency()
+	IL_0661:  sub 
+	IL_0662:  ldloc.3 
+	IL_0663:  callvirt instance valuetype [mscorlib]System.Nullable`1<float64> class DWSIM.UnitOperations.Streams.EnergyStream::get_EnergyFlow()
+	IL_0668:  stloc.s 42
+	IL_066a:  ldloca.s 42
+	IL_066c:  call instance !0 valuetype [mscorlib]System.Nullable`1<float64>::GetValueOrDefault()
+	IL_0671:  mul 
+	IL_0672:  call instance void class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::set_WasteHeat(float64)
+	IL_0677:  nop 
+	IL_0678:  ldloc.s 45
+	IL_067a:  ldloc.s 10
+	IL_067c:  div 
+	IL_067d:  stloc.s 18
+	IL_067f:  ldloc.s 45
+	IL_0681:  ldloc.s 10
+	IL_0683:  div 
+	IL_0684:  stloc.s 19
+	IL_0686:  ldc.r8 0.5
+	IL_068f:  ldloc.s 45
+	IL_0691:  mul 
+	IL_0692:  ldloc.s 10
+	IL_0694:  div 
+	IL_0695:  stloc.s 20
+	IL_0697:  ldarg.0 
+	IL_0698:  ldarg.0 
+	IL_0699:  call instance float64 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_ThermoNeutralVoltage()
+	IL_069e:  ldarg.0 
+	IL_069f:  call instance float64 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_InputEfficiency()
+	IL_06a4:  div 
+	IL_06a5:  call instance void class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::set_CellVoltage(float64)
+	IL_06aa:  nop 
+	IL_06ab:  ldarg.0 
+	IL_06ac:  ldc.r8 0.
+	IL_06b5:  call instance void class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::set_Voltage(float64)
+	IL_06ba:  nop 
+	IL_06bb:  ldarg.0 
+	IL_06bc:  ldc.r8 2.
+	IL_06c5:  ldloc.s 18
+	IL_06c7:  mul 
+	IL_06c8:  call instance void class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::set_ElectronTransfer(float64)
+	IL_06cd:  nop 
+	IL_06ce:  ldarg.0 
+	IL_06cf:  ldc.r8 0.
+	IL_06d8:  call instance void class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::set_Current(float64)
+	IL_06dd:  nop 
+	IL_06de:  nop 
+	IL_06df:  br.s IL_06f8
+
+	IL_06e1:  nop 
+	IL_06e2:  ldstr "Specify total voltage and number of cells or set both to zero and specify efficiency between 0 and 1"
+	IL_06e7:  ldc.i4.0 
+	IL_06e8:  newarr [mscorlib]System.Object
+	IL_06ed:  call string string::Format(string, object[])
+	IL_06f2:  newobj instance void class [mscorlib]System.Exception::'.ctor'(string)
+	IL_06f7:  throw 
+	IL_06f8:  ldarg.0 
+	IL_06f9:  ldloc.3 
+	IL_06fa:  callvirt instance valuetype [mscorlib]System.Nullable`1<float64> class DWSIM.UnitOperations.Streams.EnergyStream::get_EnergyFlow()
+	IL_06ff:  stloc.s 42
+	IL_0701:  ldloca.s 42
+	IL_0703:  call instance !0 valuetype [mscorlib]System.Nullable`1<float64>::GetValueOrDefault()
+	IL_0708:  ldarg.0 
+	IL_0709:  call instance float64 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_WasteHeat()
+	IL_070e:  sub 
+	IL_070f:  ldloc.3 
+	IL_0710:  callvirt instance valuetype [mscorlib]System.Nullable`1<float64> class DWSIM.UnitOperations.Streams.EnergyStream::get_EnergyFlow()
+	IL_0715:  stloc.s 42
+	IL_0717:  ldloca.s 42
+	IL_0719:  call instance !0 valuetype [mscorlib]System.Nullable`1<float64>::GetValueOrDefault()
+	IL_071e:  div 
+	IL_071f:  call instance void class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::set_Efficiency(float64)
+	IL_0724:  nop 
+	IL_0725:  ldloc.0 
+	IL_0726:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2<int32,class [DWSIM.Interfaces]DWSIM.Interfaces.IPhase> class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::get_Phases()
+	IL_072b:  ldc.i4.0 
+	IL_072c:  callvirt instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<int32, class [DWSIM.Interfaces]DWSIM.Interfaces.IPhase>::get_Item(!0)
+	IL_0731:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [DWSIM.Interfaces]DWSIM.Interfaces.ICompound> class [DWSIM.Interfaces]DWSIM.Interfaces.IPhase::get_Compounds()
+	IL_0736:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2/ValueCollection<!0,!1> class [mscorlib]System.Collections.Generic.Dictionary`2<string, class [DWSIM.Interfaces]DWSIM.Interfaces.ICompound>::get_Values()
+	IL_073b:  ldsfld class [mscorlib]System.Func`2<class [DWSIM.Interfaces]DWSIM.Interfaces.ICompound,float64> DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer/_Closure$__::'$I72-0'
+	IL_0740:  brfalse.s IL_0749
+
+	IL_0742:  ldsfld class [mscorlib]System.Func`2<class [DWSIM.Interfaces]DWSIM.Interfaces.ICompound,float64> DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer/_Closure$__::'$I72-0'
+	IL_0747:  br.s IL_075f
+
+	IL_0749:  ldsfld class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer/_Closure$__ DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer/_Closure$__::$I
+	IL_074e:  ldftn instance float64 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer/_Closure$__::'_Lambda$__72-0'(class [DWSIM.Interfaces]DWSIM.Interfaces.ICompound)
+	IL_0754:  newobj instance void class [mscorlib]System.Func`2<class [DWSIM.Interfaces]DWSIM.Interfaces.ICompound, float64>::'.ctor'(object, native int)
+	IL_0759:  dup 
+	IL_075a:  stsfld class [mscorlib]System.Func`2<class [DWSIM.Interfaces]DWSIM.Interfaces.ICompound,float64> DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer/_Closure$__::'$I72-0'
+	IL_075f:  call class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> class [System.Core]System.Linq.Enumerable::Select<class [DWSIM.Interfaces]DWSIM.Interfaces.ICompound, float64> (class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>, class [mscorlib]System.Func`2<!!0,!!1>)
+	IL_0764:  call class [mscorlib]System.Collections.Generic.List`1<!!0> class [System.Core]System.Linq.Enumerable::ToList<float64> (class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>)
+	IL_0769:  stloc.s 21
+	IL_076b:  ldloc.s 21
+	IL_076d:  newobj instance void class [mscorlib]System.Collections.Generic.List`1<float64>::'.ctor'(class [mscorlib]System.Collections.Generic.IEnumerable`1<!0>)
+	IL_0772:  stloc.s 22
+	IL_0774:  ldloc.s 21
+	IL_0776:  callvirt instance int32 class [mscorlib]System.Collections.Generic.List`1<float64>::get_Count()
+	IL_077b:  ldc.i4.1 
+	IL_077c:  sub 
+	IL_077d:  stloc.s 46
+	IL_077f:  ldc.i4.0 
+	IL_0780:  stloc.s 47
+	IL_0782:  br IL_085f
+
+	IL_0787:  ldloc.s 4
+	IL_0789:  ldloc.s 47
+	IL_078b:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<string>::get_Item(int32)
+	IL_0790:  ldloc.s 5
+	IL_0792:  ldc.i4.0 
+	IL_0793:  call int32 class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Operators::CompareString(string, string, bool)
+	IL_0798:  ldc.i4.0 
+	IL_0799:  ceq 
+	IL_079b:  stloc.s 48
+	IL_079d:  ldloc.s 48
+	IL_079f:  brfalse.s IL_07ea
+
+	IL_07a1:  ldloc.s 47
+	IL_07a3:  stloc.s 23
+	IL_07a5:  ldloc.s 22
+	IL_07a7:  ldloc.s 47
+	IL_07a9:  ldloc.s 21
+	IL_07ab:  ldloc.s 47
+	IL_07ad:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<float64>::get_Item(int32)
+	IL_07b2:  ldloc.s 18
+	IL_07b4:  sub 
+	IL_07b5:  callvirt instance void class [mscorlib]System.Collections.Generic.List`1<float64>::set_Item(int32, !0)
+	IL_07ba:  nop 
+	IL_07bb:  ldloc.s 22
+	IL_07bd:  ldloc.s 47
+	IL_07bf:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<float64>::get_Item(int32)
+	IL_07c4:  ldc.r8 0.
+	IL_07cd:  clt 
+	IL_07cf:  stloc.s 49
+	IL_07d1:  ldloc.s 49
+	IL_07d3:  brfalse.s IL_07e7
+
+	IL_07d5:  ldstr "Negative {0} molar flow calculated. Increase water rate in inlet stream or reduce power."
+	IL_07da:  ldloc.s 5
+	IL_07dc:  call string string::Format(string, object)
+	IL_07e1:  newobj instance void class [mscorlib]System.Exception::'.ctor'(string)
+	IL_07e6:  throw 
+	IL_07e7:  nop 
+	IL_07e8:  br.s IL_0859
+
+	IL_07ea:  ldloc.s 4
+	IL_07ec:  ldloc.s 47
+	IL_07ee:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<string>::get_Item(int32)
+	IL_07f3:  ldloc.s 6
+	IL_07f5:  ldc.i4.0 
+	IL_07f6:  call int32 class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Operators::CompareString(string, string, bool)
+	IL_07fb:  ldc.i4.0 
+	IL_07fc:  ceq 
+	IL_07fe:  stloc.s 50
+	IL_0800:  ldloc.s 50
+	IL_0802:  brfalse.s IL_0821
+
+	IL_0804:  ldloc.s 47
+	IL_0806:  stloc.s 24
+	IL_0808:  ldloc.s 22
+	IL_080a:  ldloc.s 47
+	IL_080c:  ldloc.s 21
+	IL_080e:  ldloc.s 47
+	IL_0810:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<float64>::get_Item(int32)
+	IL_0815:  ldloc.s 19
+	IL_0817:  add 
+	IL_0818:  callvirt instance void class [mscorlib]System.Collections.Generic.List`1<float64>::set_Item(int32, !0)
+	IL_081d:  nop 
+	IL_081e:  nop 
+	IL_081f:  br.s IL_0859
+
+	IL_0821:  ldloc.s 4
+	IL_0823:  ldloc.s 47
+	IL_0825:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<string>::get_Item(int32)
+	IL_082a:  ldstr "Oxygen"
+	IL_082f:  ldc.i4.0 
+	IL_0830:  call int32 class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Operators::CompareString(string, string, bool)
+	IL_0835:  ldc.i4.0 
+	IL_0836:  ceq 
+	IL_0838:  stloc.s 51
+	IL_083a:  ldloc.s 51
+	IL_083c:  brfalse.s IL_0859
+
+	IL_083e:  ldloc.s 47
+	IL_0840:  stloc.s 25
+	IL_0842:  ldloc.s 22
+	IL_0844:  ldloc.s 47
+	IL_0846:  ldloc.s 21
+	IL_0848:  ldloc.s 47
+	IL_084a:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<float64>::get_Item(int32)
+	IL_084f:  ldloc.s 20
+	IL_0851:  add 
+	IL_0852:  callvirt instance void class [mscorlib]System.Collections.Generic.List`1<float64>::set_Item(int32, !0)
+	IL_0857:  nop 
+	IL_0858:  nop 
+	IL_0859:  ldloc.s 47
+	IL_085b:  ldc.i4.1 
+	IL_085c:  add 
+	IL_085d:  stloc.s 47
+	IL_085f:  ldloc.s 47
+	IL_0861:  ldloc.s 46
+	IL_0863:  ble IL_0787
+
+	IL_0868:  ldloc.0 
+	IL_0869:  callvirt instance float64 class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::GetPressure()
+	IL_086e:  stloc.s 26
+	IL_0870:  ldloc.s 22
+	IL_0872:  ldloc.s 24
+	IL_0874:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<float64>::get_Item(int32)
+	IL_0879:  stloc.s 27
+	IL_087b:  ldloc.s 7
+	IL_087d:  ldloc.s 5
+	IL_087f:  ldloc.s 8
+	IL_0881:  callvirt instance float64 class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.PropertyPackages.PropertyPackage::AUX_PVAPi(string, float64)
+	IL_0886:  ldloc.s 26
+	IL_0888:  div 
+	IL_0889:  stloc.s 28
+	IL_088b:  ldc.r8 1.
+	IL_0894:  ldloc.s 28
+	IL_0896:  sub 
+	IL_0897:  stloc.s 29
+	IL_0899:  ldloc.s 27
+	IL_089b:  ldloc.s 29
+	IL_089d:  div 
+	IL_089e:  stloc.s 30
+	IL_08a0:  ldloc.s 30
+	IL_08a2:  ldloc.s 27
+	IL_08a4:  sub 
+	IL_08a5:  stloc.s 31
+	IL_08a7:  ldloc.1 
+	IL_08a8:  callvirt instance void class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::Clear()
+	IL_08ad:  nop 
+	IL_08ae:  ldloc.1 
+	IL_08af:  callvirt instance void class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::ClearAllProps()
+	IL_08b4:  nop 
+	IL_08b5:  ldloc.1 
+	IL_08b6:  ldloc.s 6
+	IL_08b8:  ldloc.s 27
+	IL_08ba:  callvirt instance void class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::SetOverallCompoundMolarFlow(string, float64)
+	IL_08bf:  nop 
+	IL_08c0:  ldloc.1 
+	IL_08c1:  ldloc.s 5
+	IL_08c3:  ldloc.s 31
+	IL_08c5:  callvirt instance void class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::SetOverallCompoundMolarFlow(string, float64)
+	IL_08ca:  nop 
+	IL_08cb:  ldloc.1 
+	IL_08cc:  ldloc.s 26
+	IL_08ce:  callvirt instance string class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::SetPressure(float64)
+	IL_08d3:  pop 
+	IL_08d4:  ldloc.1 
+	IL_08d5:  ldloc.s 8
+	IL_08d7:  callvirt instance string class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::SetTemperature(float64)
+	IL_08dc:  pop 
+	IL_08dd:  ldloc.1 
+	IL_08de:  ldstr "PT"
+	IL_08e3:  callvirt instance string class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::SetFlashSpec(string)
+	IL_08e8:  pop 
+	IL_08e9:  ldloc.1 
+	IL_08ea:  ldnull 
+	IL_08eb:  callvirt instance void class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::Calculate(object)
+	IL_08f0:  nop 
+	IL_08f1:  ldloc.1 
+	IL_08f2:  callvirt instance float64 class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::GetMassFlow()
+	IL_08f7:  ldloc.0 
+	IL_08f8:  callvirt instance float64 class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::GetMassFlow()
+	IL_08fd:  div 
+	IL_08fe:  stloc.s 32
+	IL_0900:  ldloc.1 
+	IL_0901:  ldloc.1 
+	IL_0902:  callvirt instance float64 class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::GetMassEnthalpy()
+	IL_0907:  ldarg.0 
+	IL_0908:  call instance float64 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_WasteHeat()
+	IL_090d:  ldloc.s 32
+	IL_090f:  mul 
+	IL_0910:  add 
+	IL_0911:  callvirt instance string class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::SetMassEnthalpy(float64)
+	IL_0916:  pop 
+	IL_0917:  ldloc.1 
+	IL_0918:  ldstr "PH"
+	IL_091d:  callvirt instance string class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::SetFlashSpec(string)
+	IL_0922:  pop 
+	IL_0923:  ldloc.1 
+	IL_0924:  ldc.i4.0 
+	IL_0925:  callvirt instance void class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::set_AtEquilibrium(bool)
+	IL_092a:  nop 
+	IL_092b:  ldloc.s 22
+	IL_092d:  ldloc.s 24
+	IL_092f:  ldc.r8 0.
+	IL_0938:  callvirt instance void class [mscorlib]System.Collections.Generic.List`1<float64>::set_Item(int32, !0)
+	IL_093d:  nop 
+	IL_093e:  ldloc.s 22
+	IL_0940:  dup 
+	IL_0941:  stloc.s 52
+	IL_0943:  ldloc.s 23
+	IL_0945:  dup 
+	IL_0946:  stloc.s 53
+	IL_0948:  ldloc.s 52
+	IL_094a:  ldloc.s 53
+	IL_094c:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<float64>::get_Item(int32)
+	IL_0951:  ldloc.s 31
+	IL_0953:  sub 
+	IL_0954:  callvirt instance void class [mscorlib]System.Collections.Generic.List`1<float64>::set_Item(int32, !0)
+	IL_0959:  nop 
+	IL_095a:  ldloc.s 22
+	IL_095c:  ldloc.s 23
+	IL_095e:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<float64>::get_Item(int32)
+	IL_0963:  ldc.r8 0.
+	IL_096c:  clt 
+	IL_096e:  stloc.s 54
+	IL_0970:  ldloc.s 54
+	IL_0972:  brfalse.s IL_097f
+
+	IL_0974:  ldstr "Negative Water molar flow calculated. Increase water rate in inlet stream or reduce power."
+	IL_0979:  newobj instance void class [mscorlib]System.Exception::'.ctor'(string)
+	IL_097e:  throw 
+	IL_097f:  ldloc.2 
+	IL_0980:  callvirt instance void class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::Clear()
+	IL_0985:  nop 
+	IL_0986:  ldloc.2 
+	IL_0987:  callvirt instance void class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::ClearAllProps()
+	IL_098c:  nop 
+	IL_098d:  ldloc.2 
+	IL_098e:  ldloc.s 22
+	IL_0990:  callvirt instance !0[] class [mscorlib]System.Collections.Generic.List`1<float64>::ToArray()
+	IL_0995:  ldc.r8 1.
+	IL_099e:  ldloc.s 22
+	IL_09a0:  call float64 class [System.Core]System.Linq.Enumerable::Sum(class [mscorlib]System.Collections.Generic.IEnumerable`1<float64>)
+	IL_09a5:  div 
+	IL_09a6:  call float64[] class [DWSIM.ExtensionMethods]DWSIM.ExtensionMethods.SIMDExtenders::MultiplyConstY(float64[], float64)
+	IL_09ab:  callvirt instance void class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::SetOverallComposition(class [mscorlib]System.Array)
+	IL_09b0:  nop 
+	IL_09b1:  ldloc.2 
+	IL_09b2:  ldloc.s 22
+	IL_09b4:  call float64 class [System.Core]System.Linq.Enumerable::Sum(class [mscorlib]System.Collections.Generic.IEnumerable`1<float64>)
+	IL_09b9:  callvirt instance string class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::SetMolarFlow(float64)
+	IL_09be:  pop 
+	IL_09bf:  ldloc.2 
+	IL_09c0:  ldloc.s 26
+	IL_09c2:  callvirt instance string class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::SetPressure(float64)
+	IL_09c7:  pop 
+	IL_09c8:  ldloc.2 
+	IL_09c9:  ldloc.s 8
+	IL_09cb:  callvirt instance string class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::SetTemperature(float64)
+	IL_09d0:  pop 
+	IL_09d1:  ldloc.2 
+	IL_09d2:  ldstr "PT"
+	IL_09d7:  callvirt instance string class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::SetFlashSpec(string)
+	IL_09dc:  pop 
+	IL_09dd:  ldloc.2 
+	IL_09de:  ldnull 
+	IL_09df:  callvirt instance void class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::Calculate(object)
+	IL_09e4:  nop 
+	IL_09e5:  ldloc.2 
+	IL_09e6:  callvirt instance float64 class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::GetMassFlow()
+	IL_09eb:  ldloc.0 
+	IL_09ec:  callvirt instance float64 class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::GetMassFlow()
+	IL_09f1:  div 
+	IL_09f2:  stloc.s 33
+	IL_09f4:  ldloc.2 
+	IL_09f5:  ldloc.2 
+	IL_09f6:  callvirt instance float64 class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::GetMassEnthalpy()
+	IL_09fb:  ldarg.0 
+	IL_09fc:  call instance float64 class DWSIM.UnitOperations.UnitOperations.WaterElectrolyzer::get_WasteHeat()
+	IL_0a01:  ldloc.s 33
+	IL_0a03:  mul 
+	IL_0a04:  add 
+	IL_0a05:  callvirt instance string class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::SetMassEnthalpy(float64)
+	IL_0a0a:  pop 
+	IL_0a0b:  ldloc.2 
+	IL_0a0c:  ldstr "PH"
+	IL_0a11:  callvirt instance string class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::SetFlashSpec(string)
+	IL_0a16:  pop 
+	IL_0a17:  ldloc.2 
+	IL_0a18:  ldc.i4.0 
+	IL_0a19:  callvirt instance void class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream::set_AtEquilibrium(bool)
+	IL_0a1e:  nop 
+	IL_0a1f:  ret 
+    } // end of method WaterElectrol

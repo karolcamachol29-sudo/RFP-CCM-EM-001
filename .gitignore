@@ -1,32 +1,38 @@
-# Archivos de respaldo y temporales
-*.bak
-*.tmp
-*~
-*.swp
+# Gitignore oficial — Repositorio Bidding RFP-CCM-EM-001 (Solvanta)
+# Exclusión de archivos de desarrollo, temporales de compilación y caches
 
-# Carpetas locales de recursos pesados e iconos
-Recursos_DWSIM_Iconos/
-Capturas_DWSIM/
-Simulaciones_DWSIM/
+# Fuentes de ingeniería locales y respaldos
+_auxiliar*/
+*Fuentes*/
+00_Documentos_Internos_Equipo/
+scratch/
+build/
+dist/
 
-# Archivos de compilación LaTeX
+# Entornos virtuales y bytecode Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.ipynb_checkpoints/
+
+# Archivos temporales de compilación LaTeX
 *.aux
 *.log
 *.out
 *.toc
+*.nav
+*.snm
+*.vrb
 *.synctex.gz
 *.fls
 *.fdb_latexmk
-texput.*
 
-# Entornos Python
-.venv/
-venv/
-__pycache__/
-*.pyc
-
-# Sistema operativo
+# Respaldos de editores y sistemas operativos
+*.bak
+*.swp
+*~
 .DS_Store
 Thumbs.db
-*.lot
-*.lof

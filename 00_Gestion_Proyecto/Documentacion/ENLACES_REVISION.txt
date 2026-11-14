@@ -1,0 +1,63 @@
+================================================================================
+  REGISTRO CENTRALIZADO DE ENLACES DE REVISIÓN Y VIDEOS TÉCNICOS
+  PROYECTO: RFP-CCM-EM-001 — PLANTA DE E-METANOL VERDE (SOLVANTA ENGINEERING)
+================================================================================
+
+Empresa: Solvanta Engineering Solutions S.A. de C.V.
+Cliente / Convocante: DPyPQ — FIQ, Benemérita Universidad Autónoma de Puebla (BUAP)
+Fecha de Emisión: 2026-11-14
+Responsable Documental: Karol Paola Camacho López (@Karoc)
+Gestión de Calidad: Dirección de Proyecto & Gestión de Entregables
+
+--------------------------------------------------------------------------------
+1. ENLACES DE VIDEOS DE REVISIÓN Y PITCH DISPONIBLES
+--------------------------------------------------------------------------------
+
+[VIDEO 01]
+- Nombre del Video: Video Pitch Oficial del Proyecto Solvanta — Fase E1
+- Número / Identificación de Revisión: E1.4_VID_Pitch
+- Descripción Breve: Presentación técnica y ejecutiva del proyecto RFP-CCM-EM-001.
+  Expone el modelo de ingeniería de la planta de e-metanol grado AA (30,000 t/año),
+  la integración de electrólisis de alta temperatura SOEC acoplada a fuentes renovables,
+  la captura de CO2 biogénico, síntesis catalítica en reactor tubular y separación ZLD.
+- Enlace Correspondiente:
+  https://drive.google.com/file/d/1J0OvkzfonykoZQdn7rbSKxEZQs3v-LDU/view?usp=sharing
+
+--------------------------------------------------------------------------------
+2. REVISIONES TÉCNICAS DISPONIBLES (DOCUMENTOS Y DIAPOSITIVAS)
+--------------------------------------------------------------------------------
+
+[REVISIÓN TÉCNICA 01 — RT-01 (AR-01)]
+- Identificador de Revisión: RT-01 (AR-01)
+- Documento de Respaldo:
+  * Presentación Diapositivas: 03_Entregables_Finales/E3_Revisiones_Tecnicas_y_Difusion/RT-01_DOC_PresentacionDiapositivas_v1.0.pdf
+- Descripción Breve: Defensa técnica de las Bases de Diseño (A2.1), Balance Estequiométrico Preliminar (NB-01) y Diagrama de Bloques (BFD v0).
+- Estado del Video de Grabación: Vinculado mediante enlace oficial de defensa E1.4 (Google Drive).
+
+[REVISIÓN TÉCNICA 02 — RT-02]
+- Identificador de Revisión: RT-02
+- Documento de Respaldo:
+  * Presentación Diapositivas: 03_Entregables_Finales/E3_Revisiones_Tecnicas_y_Difusion/RT-02_DOC_PresentacionDiapositivas_v1.0.pdf
+- Descripción Breve: Evolución técnica desde RT-01, simulación DWSIM y evaluación ambiental AC-AMB-01.
+- Estado del Video de Grabación: Pendiente de vinculación por el enlace del proyecto Canva.
+
+[REVISIÓN TÉCNICA 03 — RT-03]
+- Identificador de Revisión: RT-03
+- Documento de Respaldo:
+  * Presentación Diapositivas: 03_Entregables_Finales/E3_Revisiones_Tecnicas_y_Difusion/RT-03_DOC_PresentacionDiapositivas_v1.0.pdf
+- Descripción Breve: Defensa técnica avanzada del modelo de optimización SOEC (Python), simulación BioSTEAM y análisis tecno-económico.
+- Estado del Video de Grabación: Pendiente de vinculación por el enlace del proyecto Canva.
+
+--------------------------------------------------------------------------------
+3. ESTADO DE INTEGRACIÓN DE RECURSOS CANVA
+--------------------------------------------------------------------------------
+
+- Estado: PENDIENTE DE ASIGNACIÓN POR EL USUARIO.
+- Nota de Auditoría Documental: Conforme a lo establecido en las especificaciones
+  de la Fase 1, el enlace general del proyecto de Canva será proporcionado por
+  el usuario. Una vez provisto dicho enlace, se extraerán e integrarán de forma
+  inmediata las URL de visualización y edición de los videos de revisión generados
+  en dicha plataforma sin alterar la estructura del registro.
+- Enlace Canva Proyecto: [EN ESPERA DE ENLACE POR EL USUARIO]
+
+================================================================================

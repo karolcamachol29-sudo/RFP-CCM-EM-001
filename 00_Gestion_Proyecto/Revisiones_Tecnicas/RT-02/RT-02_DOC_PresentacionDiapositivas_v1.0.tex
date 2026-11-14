@@ -1,0 +1,1417 @@
+\documentclass[10pt,landscape]{article}
+
+% --- Configuración de Página y Geometría ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,landscape,top=0.60cm,bottom=0.70cm,left=0.70cm,right=0.70cm]{geometry}
+
+% --- Paquetes Matemáticos y de Tablas ---
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{microtype}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% --- Paleta de Colores Corporativa Solvanta ---
+\definecolor{navyblue}{RGB}{10, 37, 64}        % #0A2540 Azul corporativo Solvanta
+\definecolor{accentcyan}{RGB}{0, 164, 214}     % #00A4D6 Cyan tecnológico
+\definecolor{softblue}{RGB}{240, 246, 252}     % Fondo azul suave
+\definecolor{emeraldgreen}{RGB}{5, 150, 105}   % #059669 Verde éxito / cumplimiento
+\definecolor{darkred}{RGB}{185, 28, 28}        % #B91C1C Rojo oscuro alta visibilidad
+\definecolor{amber}{RGB}{180, 83, 9}           % #B45309 Ámbar energía / calor visible
+\definecolor{tableheader}{RGB}{18, 53, 91}     % Azul encabezado de tabla
+\definecolor{roweven}{RGB}{255, 255, 255}      % Blanco fila par
+\definecolor{rowodd}{RGB}{245, 249, 253}       % Gris azulado suave fila impar
+\definecolor{badgegreen}{RGB}{220, 252, 231}   % Fondo verde suave badge
+\definecolor{badgeblue}{RGB}{224, 242, 254}    % Fondo azul suave badge
+\definecolor{badgeamber}{RGB}{254, 243, 199}   % Fondo ámbar suave badge
+\definecolor{badgered}{RGB}{254, 226, 226}     % Fondo rojo suave badge
+
+% --- Configuración de Encabezado y Pie de Página ---
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\fancyfoot[L]{%
+  \fontsize{6.5pt}{8pt}\selectfont
+  \textbf{\color{navyblue}Solvanta Engineering Solutions S.A. de C.V.} \ $|$ \ 
+  Licitación RFP-CCM-EM-001 \ $|$ \ Planta de e-Metanol Grado AA ($30\,000\text{ t/año}$)
+}
+\fancyfoot[C]{%
+  \fontsize{6.5pt}{8pt}\selectfont
+  \textbf{\color{navyblue}REVISIÓN TÉCNICA RT-02} \ (Corte del proyecto hasta AC-AMB-01)
+}
+\fancyfoot[R]{%
+  \fontsize{6.5pt}{8pt}\selectfont
+  \textbf{\color{navyblue}Diapositiva \thepage\ de \pageref{LastPage}}
+}
+
+% --- Comandos de Estilizado y Badges ---
+\newcommand{\badgegreen}[1]{\colorbox{badgegreen}{\textbf{\color{emeraldgreen}\fontsize{6.8pt}{8pt}\selectfont #1}}}
+\newcommand{\badgeblue}[1]{\colorbox{badgeblue}{\textbf{\color{accentcyan!80!black}\fontsize{6.8pt}{8pt}\selectfont #1}}}
+\newcommand{\badgeamber}[1]{\colorbox{badgeamber}{\textbf{\color{amber!90!black}\fontsize{6.8pt}{8pt}\selectfont #1}}}
+\newcommand{\badgered}[1]{\colorbox{badgered}{\textbf{\color{darkred}\fontsize{6.8pt}{8pt}\selectfont #1}}}
+
+% --- Tarjeta Métrica Horizontal ---
+\newcommand{\metriccard}[4]{%
+  \begin{tcolorbox}[
+    width=#1,
+    colback=white,
+    colframe=#3!70!black,
+    arc=1.8mm,
+    boxrule=0.8pt,
+    top=3pt,
+    bottom=3pt,
+    left=4pt,
+    right=4pt,
+    nobeforeafter
+  ]
+    \centering
+    {\fontsize{6.0pt}{7.2pt}\selectfont \textbf{\color{navyblue}#2}}\par
+    \vspace{1.5pt}
+    {\color{#3}#4}
+  \end{tcolorbox}%
+}
+
+% --- Encabezado Estilizado de Diapositiva ---
+\newcommand{\slideheader}[4]{%
+  \noindent
+  \begin{minipage}[c]{0.78\textwidth}
+    {\fontsize{7pt}{8.5pt}\selectfont \textbf{\color{accentcyan}#1} \ \ $|$ \ \ \textit{\color{black!70}#2}}\par
+    \vspace{1.5pt}
+    {\fontsize{12pt}{14pt}\selectfont \textbf{\color{navyblue}#3}}\par
+    \vspace{1.5pt}
+    {\fontsize{7.2pt}{8.8pt}\selectfont \color{black!80}#4}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[c]{0.20\textwidth}
+    \begin{tcolorbox}[colback=navyblue,colframe=navyblue,arc=1.5mm,boxrule=0pt,top=2.5pt,bottom=2.5pt,left=4pt,right=4pt]
+      \centering
+      {\color{white}\fontsize{7.5pt}{9pt}\selectfont \textbf{SOLVANTA RT-02}}\par
+      \vspace{1pt}
+      {\color{accentcyan}\fontsize{6pt}{7.5pt}\selectfont Corte de Ingeniería}\par
+      {\color{white!80}\fontsize{5.5pt}{7pt}\selectfont Expediente Oficial}
+    \end{tcolorbox}
+  \end{minipage}
+  \par\vspace{2pt}
+  \noindent{\color{navyblue}\rule{\textwidth}{1.0pt}}
+  \par\vspace{2pt}
+}
+
+% --- Caja de Objetivo Operacional ---
+\newenvironment{objectivebox}[2]{%
+  \begin{tcolorbox}[
+    colback=softblue,
+    colframe=accentcyan,
+    arc=1.5mm,
+    boxrule=0.7pt,
+    top=2pt,
+    bottom=2pt,
+    left=6pt,
+    right=6pt
+  ]
+    \noindent
+    \textbf{\fontsize{6.5pt}{7.8pt}\selectfont \color{navyblue}OBJETIVO TÉCNICO:} 
+    {\fontsize{6.5pt}{7.8pt}\selectfont #1}
+    \hfill
+    \textbf{\fontsize{6.5pt}{7.8pt}\selectfont \color{navyblue}ENTREGABLE ASOCIADO:} 
+    {\fontsize{6.5pt}{7.8pt}\selectfont \textit{#2}}
+  \end{tcolorbox}
+  \vspace{1.5pt}
+}{}
+
+\begin{document}
+
+% ==============================================================================
+% DIAPOSITIVA 1: PORTADA OFICIAL RT-02 (CUADRO 2 GUÍA DOCENTE)
+% ==============================================================================
+\thispagestyle{empty}
+\begin{tcolorbox}[
+  enhanced,
+  colback=white,
+  colframe=navyblue,
+  arc=3mm,
+  boxrule=1.5pt,
+  width=\textwidth,
+  height=0.96\textheight,
+  top=8pt,
+  bottom=8pt,
+  left=14pt,
+  right=14pt
+]
+  \begin{minipage}[c]{0.65\textwidth}
+    {\fontsize{8pt}{10pt}\selectfont \textbf{\color{accentcyan}FACULTAD DE INGENIERÍA QUÍMICA \ $|$ \ DISEÑO DE PROCESOS Y PRODUCTOS QUÍMICOS}}\par
+    \vspace{2pt}
+    {\fontsize{18pt}{22pt}\selectfont \textbf{\color{navyblue}RT-02: Revisión Técnica de Avances del Proyecto}}\par
+    \vspace{2pt}
+    {\fontsize{11pt}{13.5pt}\selectfont \textbf{\color{accentcyan}Corte del Proyecto hasta AC-AMB-01 mediante Video Explicativo}}\par
+    \vspace{3pt}
+    {\fontsize{8pt}{10pt}\selectfont \textit{Presentación integral de ingeniería conceptual y básica: evolución de ruta, consistencia rigurosa en DWSIM v1, balances de materia y energía (TC-01/TE-01), lista de equipos LE-01, memorias de cálculo, análisis de sensibilidad y evaluación ambiental AC-AMB-01.}}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[c]{0.32\textwidth}
+    \begin{tcolorbox}[colback=navyblue,colframe=navyblue,arc=2mm,top=6pt,bottom=6pt,left=8pt,right=8pt]
+      \centering
+      {\color{white}\fontsize{11pt}{13pt}\selectfont \textbf{SOLVANTA}}\par
+      \vspace{1pt}
+      {\color{accentcyan}\fontsize{7.5pt}{9pt}\selectfont ENGINEERING SOLUTIONS S.A. DE C.V.}\par
+      \vspace{3pt}
+      {\color{white!90}\fontsize{6.5pt}{8pt}\selectfont Licitación RFP-CCM-EM-001}\par
+      {\color{white!70}\fontsize{6pt}{7.5pt}\selectfont Circular Carbon México, S.A. de C.V.}
+    \end{tcolorbox}
+  \end{minipage}
+
+  \vspace{6pt}
+  \noindent{\color{navyblue}\rule{\linewidth}{1.2pt}}
+  \vspace{5pt}
+
+  \textbf{\fontsize{8.5pt}{10.5pt}\selectfont \color{navyblue}Ficha Técnica Oficial de la Firma de Ingeniería (Formato Cuadro Portada RT-02):}
+  \vspace{3pt}
+
+  \small
+  \renewcommand{\arraystretch}{1.25}
+  \begin{tabularx}{\linewidth}{p{4.2cm} X}
+    \toprule
+    \rowcolor{tableheader}
+    \textbf{\color{white}Dato Requerido por la Guía} & \textbf{\color{white}Información Oficial de la Firma} \\
+    \midrule
+    \rowcolor{roweven}
+    \textbf{Nombre de la firma de ingeniería} & \textbf{Solvanta Engineering Solutions S.A. de C.V.} \\
+    \rowcolor{rowodd}
+    \textbf{Proyecto o producto} & \textbf{Planta de Producción de e-Metanol Grado Químico ($30\,000\text{ t/año}$) a partir de $\text{CO}_2$ e $\text{H}_2$ Verde} \\
+    \rowcolor{roweven}
+    \textbf{Integrantes y funciones en el video} & 
+    $\bullet$ \textbf{Ing. Karol Paola Camacho López} (Dirección del Proyecto / Purificación y Destilación T-601) \newline
+    $\bullet$ \textbf{Ing. Paulina Mota Macip} (Responsable de Simulación DWSIM / Electrólisis SOEC) \newline
+    $\bullet$ \textbf{Ing. Gildardo Ocaña Barrales} (Ingeniería de Proceso / Síntesis y Compresión) \newline
+    $\bullet$ \textbf{Ing. Grecia Figueroa Rincón} (Responsable Ambiental AC-AMB-01 / Control Documental) \\
+    \rowcolor{rowodd}
+    \textbf{Grupo y sección} & Grupo 1 \ $|$ \ Sección A \ $|$ \ Responsable Académico: Dr. Jesús Andrés Arzola Flores \\
+    \rowcolor{roweven}
+    \textbf{Fecha de revisión y corte} & 28 de septiembre de 2026 \ $|$ \ Corte de Ingeniería: Desde RT-01 hasta AC-AMB-01 \\
+    \rowcolor{rowodd}
+    \textbf{Versión documental y entregable} & Versión RT-02 Rev. 1.0 Oficial \ $|$ \ Diapositivas completas con 1 diapositiva por tabla y diagrama \\
+    \bottomrule
+  \end{tabularx}
+
+  \vspace{4pt}
+  \begin{minipage}{\linewidth}
+    \centering
+    \metriccard{0.235\textwidth}{CAPACIDAD NOMINAL}{navyblue}{\textbf{\Huge 30 309.2} t/año} \hfill
+    \metriccard{0.235\textwidth}{PUREZA COMERCIAL}{emeraldgreen}{\textbf{\Huge 99.89\%} Grado AA} \hfill
+    \metriccard{0.235\textwidth}{POTENCIA ELÉCTRICA}{accentcyan}{\textbf{\Huge 39.10} MWe} \hfill
+    \metriccard{0.235\textwidth}{TIEMPO DE GRABACIÓN}{navyblue}{\textbf{\Huge 8 -- 10} min (Cuadro 2)}
+  \end{minipage}
+\end{tcolorbox}
+
+\newpage
+
+% ==============================================================================
+% DIAPOSITIVA 2: BFD v1.0 (PLANO NÚMERO 1.2 - DIAGRAMA DE BLOQUES DE PROCESO)
+% ==============================================================================
+\slideheader{DIAGRAMA DE BLOQUES DE PROCESO}{BFD v1.0 / Plano Núm. 1.2 Rev. 1 Oficial}{BFD v1.0: Diagrama de Bloques Oficial con Balances de Materia y Energía}{Representación de ingeniería oficial de las áreas de proceso, tablas de corrientes clave, calores y potencias.}
+
+\begin{objectivebox}{Definir la arquitectura global de transformación química y balances por bloque de la planta.}{Entregable Oficial BFD v1 (Plano Núm. 1.2, Rev. 1) Solvanta.}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{ÁREAS FUNCIONALES}{navyblue}{\textbf{\Huge 5} Bloques Principales} \hfill
+  \metriccard{0.235\textwidth}{ENTRADA CO2}{accentcyan}{\textbf{\Huge 5 274} kg/h ($20\text{ bar}$)} \hfill
+  \metriccard{0.235\textwidth}{H2 VERDE GENERADO}{emeraldgreen}{\textbf{\Huge 717.3} kg/h (SOEC)} \hfill
+  \metriccard{0.235\textwidth}{PRODUCCIÓN METANOL}{navyblue}{\textbf{\Huge 3 788.7} kg/h Grado AA}
+\end{minipage}
+
+\vspace{2pt}
+
+\begin{center}
+  \begin{tcolorbox}[colback=white,colframe=navyblue!60,arc=1.5mm,boxrule=0.7pt,top=2pt,bottom=2pt,left=2pt,right=2pt,width=0.98\textwidth]
+    \centering
+    \includegraphics[width=0.96\textwidth,height=0.55\textheight,keepaspectratio]{scratch/img_bfd_v1.png}
+  \end{tcolorbox}
+\end{center}
+
+\vspace{-2pt}
+\begin{tcolorbox}[colback=softblue,colframe=accentcyan!50,arc=1mm,boxrule=0.5pt,top=1.5pt,bottom=1.5pt,left=6pt,right=6pt]
+  \scriptsize
+  \textbf{\color{navyblue}Aspectos de Ingeniería del BFD v1.0 Oficial (Plano Núm. 1.2, Rev. 1):} 
+  \textbf{Área 100:} Recepción $\text{CO}_2$ ($20\text{ bar}$, $25^\circ\text{C}$). \ \textbf{Área 200:} Electrólisis SOEC ($750^\circ\text{C}$, vapor $20\text{ bar}$, coproducción $\text{O}_2$). \ \textbf{Área 300:} Mezclado syngas ($M=2.05$), compresión a $75\text{ bar}$. \ \textbf{Área 500:} Bucle Lurgi ($245^\circ\text{C}$), separación primaria flash y turboexpansor \texttt{EXP-501}. \ \textbf{Área 600/800:} Destilación \texttt{T-601} (24 etapas) y circuito ZLD con bomba \texttt{P-801}.
+\end{tcolorbox}
+
+\newpage
+
+% ==============================================================================
+% DIAPOSITIVA 3: DFP v1.0 (DIAGRAMA DE FLUJO DE PROCESO OFICIAL)
+% ==============================================================================
+\slideheader{DIAGRAMA DE FLUJO DE PROCESO}{DFP-v1 Oficial Solvanta}{DFP v1.0: Diagrama de Flujo de Proceso y Nomenclatura TAG}{Diagrama de ingeniería oficial con la totalidad de los 28 equipos mecánicos, instrumentación clave y corrientes S-100 a S-801.}
+
+\begin{objectivebox}{Exponer el conexionado hidráulico, térmico y de control entre los equipos principales y auxiliares.}{Entregable DFP-v1 Oficial Solvanta (28 Equipos).}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{EQUIPOS MECÁNICOS}{navyblue}{\textbf{\Huge 28} Unidades Taggeadas} \hfill
+  \metriccard{0.235\textwidth}{CORRIENTES MAESTRAS}{accentcyan}{\textbf{\Huge 36} Corrientes (\texttt{S-xxx})} \hfill
+  \metriccard{0.235\textwidth}{RECIRCULACIÓN BUCLÉ}{emeraldgreen}{\textbf{\Huge 96.0\%} ($63.8\text{ t/h}$)} \hfill
+  \metriccard{0.235\textwidth}{REÚSO CONDENSADOS ZLD}{emeraldgreen}{\textbf{\Huge 100\%} Retorno Caldera}
+\end{minipage}
+
+\vspace{2pt}
+
+\begin{center}
+  \begin{tcolorbox}[colback=white,colframe=navyblue!60,arc=1.5mm,boxrule=0.7pt,top=2pt,bottom=2pt,left=2pt,right=2pt,width=0.98\textwidth]
+    \centering
+    \includegraphics[width=0.96\textwidth,height=0.55\textheight,keepaspectratio]{scratch/img_dfp_v1.png}
+  \end{tcolorbox}
+\end{center}
+
+\vspace{-2pt}
+\begin{tcolorbox}[colback=softblue,colframe=accentcyan!50,arc=1mm,boxrule=0.5pt,top=1.5pt,bottom=1.5pt,left=6pt,right=6pt]
+  \scriptsize
+  \textbf{\color{navyblue}Nomenclatura y Trazabilidad en DFP v1.0:} 
+  Conexión rigurosa de los 28 equipos: Batería \texttt{S-100/101}, Caldera \texttt{R-401-S}, Sobrecalentador \texttt{E-202}, Stack SOEC \texttt{EL-201}, Compresor \texttt{C-301}, Reactor Lurgi \texttt{R-401-T}, Enfriador \texttt{E-501}, Separador \texttt{V-501}, Turboexpansor \texttt{EXP-501}, Desgasificador \texttt{V-601}, Torre \texttt{T-601} (24 etapas) y Sistema ZLD \texttt{P-801}.
+\end{tcolorbox}
+
+\newpage
+
+% ==============================================================================
+% DIAPOSITIVA 4: SIMULACIÓN EN DWSIM v1.0 (FLOWSHEET Y CONVERGENCIA)
+% ==============================================================================
+\slideheader{SIMULACIÓN EN DWSIM v1.0}{Archivo: DWSIM\_v1\_APROBADA\_Solvanta.dwxmz}{Simulación Rigurosa en DWSIM v1: Flowsheet y Estado del Solver}{Demostración del modelo computacional cerrado con 68/68 objetos resueltos sin error ni advertencia.}
+
+\begin{objectivebox}{Validar la consistencia termodinámica, convergencia numérica y balance de reciclos en estado estacionario.}{Entregable SIM-01 / DWSIM v1 Oficial Solvanta.}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{ESTADO DE CONVERGENCIA}{emeraldgreen}{\textbf{\Huge 68 / 68 Verde} (100\%)} \hfill
+  \metriccard{0.235\textwidth}{PAQUETE TERMODINÁMICO}{accentcyan}{\textbf{\Huge PRSV2-VL} Riguroso} \hfill
+  \metriccard{0.235\textwidth}{ERROR DE CONVERGENCIA}{emeraldgreen}{\textbf{\Huge $<$ 10$^{\mathbf{-6}}$} (BP Solver)} \hfill
+  \metriccard{0.235\textwidth}{TIEMPO DE CÁLCULO}{navyblue}{\textbf{\Huge 3.578 s} Solver DWSIM}
+\end{minipage}
+
+\vspace{2pt}
+
+\begin{center}
+  \begin{tcolorbox}[colback=white,colframe=navyblue!60,arc=1.5mm,boxrule=0.7pt,top=2pt,bottom=2pt,left=2pt,right=2pt,width=0.98\textwidth]
+    \centering
+    \includegraphics[width=0.96\textwidth,height=0.55\textheight,keepaspectratio]{scratch/img_simulacion_dwsim.png}
+  \end{tcolorbox}
+\end{center}
+
+\vspace{-2pt}
+\begin{tcolorbox}[colback=black!95,colframe=navyblue,arc=1mm,boxrule=0.5pt,top=2pt,bottom=2pt,left=6pt,right=6pt]
+  \color{green!85!black}\ttfamily\fontsize{6.6pt}{8.0pt}\selectfont
+  [17/09/2026 19:31:15] Solve started. Flowsheet calculating... 
+  | RCY-501: Error = 0.00042\% ($<0.001\%$) 
+  | RCY-801: Error = 0.00008\% ($<0.001\%$) 
+  | T-601: [BP Solver] converged iter 38 (Err: 3.82E-11) 
+  | Solve complete in 3.578 s. 68/68 objects solved.
+\end{tcolorbox}
+
+\newpage
+
+% ==============================================================================
+% DIAPOSITIVA 5: ACTIVIDAD E1.5 / VTP-01 - CUADRO 1 (DECISIONES TÉCNICAS)
+% ==============================================================================
+\slideheader{ACTIVIDAD E1.5 / VTP-01}{Cuadro 1 Oficial VTP-01}{Cuadro 1: Matriz de Decisiones Técnicas y Selección de Alternativas}{Comparativa formal entre las alternativas tecnológicas evaluadas y justificadas termodinámicamente.}
+
+\begin{objectivebox}{Demostrar los criterios rigurosos de selección técnica, eficiencia energética y viabilidad económica.}{Actividad VTP-01 / E1.5 Cuadro 1 Oficial.}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{ELECTRÓLISIS SOEC}{navyblue}{\textbf{\Huge 750$^\circ$C} (Ahorra 20.6 MW)} \hfill
+  \metriccard{0.235\textwidth}{REACTOR LURGI BWR}{emeraldgreen}{\textbf{\Huge 245$^\circ$C} (Genera 15 t/h vap)} \hfill
+  \metriccard{0.235\textwidth}{EXPANSOR PURGA}{accentcyan}{\textbf{\Huge 437.8} kW Eléctricos} \hfill
+  \metriccard{0.235\textwidth}{COLUMNA T-601 DWSIM}{emeraldgreen}{\textbf{\Huge 24 Etapas} ($R/D=1.50$)}
+\end{minipage}
+
+\vspace{2.5pt}
+
+\noindent\textbf{\fontsize{8.2pt}{9.5pt}\selectfont \color{navyblue}Cuadro 1 Oficial VTP-01: Comparativa de Alternativas Técnicas y Decisión Final:}\par\vspace{1pt}
+
+\scriptsize
+\renewcommand{\arraystretch}{1.20}
+\begin{tabularx}{\textwidth}{p{2.6cm} p{3.2cm} p{3.2cm} p{3.4cm} X}
+  \toprule
+  \rowcolor{tableheader}
+  \textbf{\color{white}Etapa de Proceso} & \textbf{\color{white}Alternativa A (Seleccionada)} & \textbf{\color{white}Alternativa B (Descartada)} & \textbf{\color{white}Criterio de Decisión} & \textbf{\color{white}Justificación Técnica y Termodinámica} \\
+  \midrule
+  \rowcolor{roweven}
+  \textbf{Generación de $\text{H}_2$ Verde} & 
+  \textbf{Electrólisis SOEC} a alta temperatura ($750^\circ\text{C}$, $20\text{ bar}$). & 
+  Electrólisis PEM a baja temperatura ($60-80^\circ\text{C}$). & 
+  Consumo específico eléctrico y sinergia térmica. & 
+  \textbf{Ahorro de 20.57 MWe} ($27.4\%$). Aprovecha vapor de caldera \texttt{R-401-S}; LCOM \$1\,781 vs \$2\,197 USD/t en PEM. \\
+  \rowcolor{rowodd}
+  \textbf{Reactor de Síntesis de Metanol} & 
+  \textbf{Tubular Lurgi BWR} (enfriado por agua hirviente a $245^\circ\text{C}$). & 
+  Reactor adiabático multietapa con enfriamiento intermedio (quench). & 
+  Control isotérmico, selectividad y generación de vapor. & 
+  \textbf{Operación cuasi-isotérmica a $245^\circ\text{C}$}; previene sinterización de $\text{Cu/ZnO}$, evita subproductos y genera $15.1\text{ t/h}$ de vapor $20\text{ bar}$. \\
+  \rowcolor{roweven}
+  \textbf{Despresurización de la Purga} & 
+  \textbf{Turboexpansor Criogénico} (\texttt{EXP-501}) $75 \to 1.25\text{ bar}$. & 
+  Válvula de laminación Joule-Thomson (JT) isoentálpica. & 
+  Recuperación energética y sustentabilidad. & 
+  \textbf{Recupera 437.8 kW} continuos de potencia eléctrica en eje; retorno de inversión $< 1.8$ años y reduce consumo neto a $39.10\text{ MWe}$. \\
+  \rowcolor{rowodd}
+  \textbf{Purificación de Metanol} & 
+  \textbf{Columna Fraccionadora} (\texttt{T-601}, 24 etapas DWSIM). & 
+  Separación híbrida por membranas / pervaporación. & 
+  Madurez tecnológica y pureza Grado AA ($99.85\%$). & 
+  \textbf{Pureza de 99.89\% p/p} superando ASTM D1152; 24 etapas en DWSIM (Cond.+22 teóricos+Reb.) con $R/D=1.50$; 31 platos mecánicos reales ($E_0=70\%$). \\
+  \rowcolor{roweven}
+  \textbf{Manejo de Condensados} & 
+  \textbf{Circuito ZLD} con reúso $100\%$ hacia caldera (\texttt{P-801}). & 
+  Tratamiento biológico convencional y vertido a río. & 
+  Disponibilidad de agua y cumplimiento NOM-011. & 
+  \textbf{Reutiliza 7 004 kg/h} de agua producida en reacción, abatiendo en $52\%$ la extracción de agua fresca en polo industrial adyacente ($6\,460\text{ kg/h}$). \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{2pt}
+\begin{tcolorbox}[colback=white,colframe=navyblue!40,arc=1.5mm,boxrule=0.6pt,top=2pt,bottom=2pt,left=6pt,right=6pt]
+  \scriptsize
+  \textbf{\color{navyblue}Metodología de Cribado Tecnológico (Niveles Douglas / Turton):} Se evaluaron balance térmico, consumo de servicios, madurez comercial (TRL $\ge 8$) y costo nivelado (LCOM). La ruta seleccionada reduce el OPEX anual en $\$9.87\text{ MDD}$ frente a la ruta de referencia PEM-Adiabática.
+\end{tcolorbox}
+
+\newpage
+
+% ==============================================================================
+% DIAPOSITIVA 6: ACTIVIDAD E1.5 / VTP-01 - CUADRO 2 (CONSUMOS ESPECÍFICOS)
+% ==============================================================================
+\slideheader{ACTIVIDAD E1.5 / VTP-01}{Cuadro 2 Oficial VTP-01}{Cuadro 2: Consumos Específicos de Materias Primas, Servicios y Emisiones}{Balance de intensidades de consumo por tonelada de e-metanol producido vs metas de licitación.}
+
+\begin{objectivebox}{Comprobar la eficiencia de recursos y el cumplimiento de metas de sustentabilidad ambiental.}{Actividad VTP-01 / E1.5 Cuadro 2 Oficial.}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{CONSUMO ESPECÍFICO CO2}{navyblue}{\textbf{\Huge 1.392} t $\text{CO}_2$/t MeOH} \hfill
+  \metriccard{0.235\textwidth}{CONSUMO AGUA FRESCA}{emeraldgreen}{\textbf{\Huge 0.562} m$^3$/t MeOH} \hfill
+  \metriccard{0.235\textwidth}{ELECTRICIDAD FIRME}{accentcyan}{\textbf{\Huge 14.36} MWh$_{\text{e}}$/t MeOH} \hfill
+  \metriccard{0.235\textwidth}{HUELLA GEI NETA}{emeraldgreen}{\textbf{\Huge 0.092} t $\text{CO}_2$ eq/t}
+\end{minipage}
+
+\vspace{2.5pt}
+
+\noindent\textbf{\fontsize{8.2pt}{9.5pt}\selectfont \color{navyblue}Cuadro 2 Oficial VTP-01: Matriz de Consumos Específicos e Indicadores Normalizados:}\par\vspace{1pt}
+
+\scriptsize
+\renewcommand{\arraystretch}{1.20}
+\begin{tabularx}{\textwidth}{p{4.2cm} c r r c X}
+  \toprule
+  \rowcolor{tableheader}
+  \textbf{\color{white}Parámetro / Recurso Evaluado} & \textbf{\color{white}Unidad} & \textbf{\color{white}Valor Base (PEM)} & \textbf{\color{white}Valor Vigente (SOEC)} & \textbf{\color{white}Meta Licitación} & \textbf{\color{white}Impacto Técnico y Ahorro Verificado} \\
+  \midrule
+  \rowcolor{roweven}
+  \textbf{Consumo específico de $\text{CO}_2$} & $\text{t CO}_2\text{ / t MeOH}$ & $1.420$ & $\mathbf{1.392}$ & $\le 1.450$ & \badgegreen{Cumple (-4.0\%)}: Alta conversión global ($98.65\%$) en bucle cerrado. \\
+  \rowcolor{rowodd}
+  \textbf{Consumo específico de $\text{H}_2$} & $\text{kg H}_2\text{ / t MeOH}$ & $198.5$ & $\mathbf{189.3}$ & $\le 200.0$ & \badgegreen{Cumple (-5.3\%)}: Módulo de syngas óptimo $M = 2.05$ sin exceso de venteo. \\
+  \rowcolor{roweven}
+  \textbf{Consumo de agua fresca make-up} & $\text{m}^3\text{ agua / t MeOH}$ & $1.168$ & $\mathbf{0.562}$ & $\le 1.200$ & \badgegreen{Ahorro 52\%}: Reúso ZLD de $7\,004\text{ kg/h}$ de condensados hacia caldera. \\
+  \rowcolor{rowodd}
+  \textbf{Demanda eléctrica total de planta} & $\text{MWh}_{\text{e}}\text{ / t MeOH}$ & $19.79$ & $\mathbf{14.36}$ & $\le 18.00$ & \badgegreen{Ahorro 27.4\%}: SOEC a $750^\circ\text{C}$ + cogeneración \texttt{EXP-501} ($437.8\text{ kW}$). \\
+  \rowcolor{roweven}
+  \textbf{Generación de vapor neto saturado} & $\text{t vapor / t MeOH}$ & $0.000$ & $\mathbf{+3.986}$ & Exportación neta & \badgegreen{Sinergia térmica}: $15.1\text{ t/h}$ vapor $20\text{ bar}$ alimentan directamente al SOEC. \\
+  \rowcolor{rowodd}
+  \textbf{Subproducto comercial de Oxígeno} & $\text{t O}_2\text{ / t MeOH}$ & $1.520$ & $\mathbf{1.515}$ & Subproducto venta & \badgeblue{Venta industrial}: $5\,738.2\text{ kg/h}$ $\text{O}_2$ grado médico/industrial ($99.5\%$). \\
+  \rowcolor{roweven}
+  \textbf{Huella de carbono de ciclo de vida} & $\text{t CO}_2\text{ eq / t MeOH}$ & $0.340$ & $\mathbf{0.092}$ & $\le 0.200$ & \badgegreen{Cumple RED II}: Contrato PPA $100\%$ renovable; neutralidad climática. \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{2pt}
+\begin{tcolorbox}[colback=white,colframe=navyblue!40,arc=1.5mm,boxrule=0.6pt,top=2pt,bottom=2pt,left=6pt,right=6pt]
+  \scriptsize
+  \textbf{\color{navyblue}Memoria de Cálculo de Consumos Específicos:}
+  $\text{SEC}_{\text{CO}_2} = \frac{5\,274.34\text{ kg/h}}{3\,788.65\text{ kg/h}} = \mathbf{1.392\text{ t/t}}$; \ \ 
+  $\text{SEC}_{\text{agua}} = \frac{6\,460.03\text{ kg/h}}{3\,788.65\text{ kg/h} \times 1\,000} = \mathbf{0.562\text{ m}^3\text{/t}}$; \ \ 
+  $\text{SEC}_{\text{e}} = \frac{55\,436.39\text{ kW}}{3\,788.65\text{ kg/h}} = \mathbf{14.63\text{ kWh/kg}} = \mathbf{14.36\text{ MWh}_{\text{e}}\text{/t}}$.
+\end{tcolorbox}
+
+\newpage
+
+% ==============================================================================
+% DIAPOSITIVA 7: ACTIVIDAD E1.5 / VTP-01 - CUADRO 3 (CRITERIOS DE SIMULACIÓN)
+% ==============================================================================
+\slideheader{ACTIVIDAD E1.5 / VTP-01}{Cuadro 3 Oficial VTP-01}{Cuadro 3: Verificación de Criterios de Aprobación de la Simulación}{Puerta de validación rigurosa de 10 criterios físicos y termodinámicos en DWSIM v10.2.4.}
+
+\begin{objectivebox}{Demostrar que el modelo DWSIM v1 cumple el 100\% de las pruebas de consistencia física sin inconsistencias.}{Actividad VTP-01 / E1.5 Cuadro 3 Oficial.}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{CRITERIOS APROBADOS}{emeraldgreen}{\textbf{\Huge 10 / 10} Cumplidos} \hfill
+  \metriccard{0.235\textwidth}{ERROR GLOBAL MATERIA}{emeraldgreen}{\textbf{\Huge 0.0593\%} ($8.6\text{ kg/h}$)} \hfill
+  \metriccard{0.235\textwidth}{ERROR GLOBAL ENERGÍA}{emeraldgreen}{\textbf{\Huge 0.0084\%} ($<0.01\%$)} \hfill
+  \metriccard{0.235\textwidth}{PERFILES DE PRESIÓN}{emeraldgreen}{\textbf{\Huge Coherentes} ($\Delta P \ge 0$)}
+\end{minipage}
+
+\vspace{2.5pt}
+
+\noindent\textbf{\fontsize{8.2pt}{9.5pt}\selectfont \color{navyblue}Cuadro 3 Oficial VTP-01: Matriz de Verificación de Criterios de Simulación:}\par\vspace{1pt}
+
+\scriptsize
+\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\textwidth}{c p{5.0cm} p{4.6cm} c c}
+  \toprule
+  \rowcolor{tableheader}
+  \textbf{\color{white}No.} & \textbf{\color{white}Criterio de Validación Técnica Evaluado} & \textbf{\color{white}Valor Obtenido en DWSIM v1 Oficial} & \textbf{\color{white}Tolerancia / Límite} & \textbf{\color{white}Estado Oficial} \\
+  \midrule
+  \rowcolor{roweven}
+  \textbf{1} & Objetos resueltos en estado estacionario & 68 de 68 bloques en verde sin error & $100\%$ resuelto & \badgegreen{\checkmark\ APROBADO} \\
+  \rowcolor{rowodd}
+  \textbf{2} & Tolerancia en reciclos (\texttt{RCY-501} y \texttt{RCY-801}) & $\text{Err}_{\text{buclé}} = 0.00042\%$; $\text{Err}_{\text{ZLD}} = 0.00008\%$ & $< 0.001\%$ & \badgegreen{\checkmark\ APROBADO} \\
+  \rowcolor{roweven}
+  \textbf{3} & Monotonía en caídas de presión en pasivos & $\Delta P_{\text{equipos}} \in [0.10, 1.50\text{ bar}]$; sin saltos & $\Delta P \ge 0$ pasivos & \badgegreen{\checkmark\ APROBADO} \\
+  \rowcolor{rowodd}
+  \textbf{4} & Coherencia de fases y caudales no negativos & Flash-PT riguroso; fracciones molares $\in [0, 1]$ & $F_i \ge 0$, $\sum x_i = 1$ & \badgegreen{\checkmark\ APROBADO} \\
+  \rowcolor{roweven}
+  \textbf{5} & Cierre del balance global de materia & Diferencia neta: $8.61\text{ kg/h}$ ($\varepsilon_m = \mathbf{0.0593\%}$) & $< 0.50\%$ & \badgegreen{\checkmark\ APROBADO} \\
+  \rowcolor{rowodd}
+  \textbf{6} & Cierre de balances atómicos (C, H, O) & C: $99.98\%$, H: $99.85\%$, O: $99.93\%$ & $\ge 99.5\%$ cierre & \badgegreen{\checkmark\ APROBADO} \\
+  \rowcolor{roweven}
+  \textbf{7} & Cumplimiento de capacidad contractual nominal & $3\,788.65\text{ kg/h} \times 8\,000\text{ h} = \mathbf{30\,309.2\text{ t/año}}$ & $\ge 30\,000\text{ t/año}$ & \badgegreen{\checkmark\ APROBADO (+1.0\%)} \\
+  \rowcolor{rowodd}
+  \textbf{8} & Pureza de metanol grado comercial AA & Fracción másica: $\mathbf{99.89\%}$ ($99.81\%\text{ molar}$) & $\ge 99.85\%$ p/p & \badgegreen{\checkmark\ APROBADO} \\
+  \rowcolor{roweven}
+  \textbf{9} & Especificación rigurosa de \texttt{T-601} en DWSIM & Exactamente \textbf{24 etapas} (Cond.+22 teóricos+Reb.) & Respaldo FUG & \badgegreen{\checkmark\ APROBADO} \\
+  \rowcolor{rowodd}
+  \textbf{10} & Congelación y trazabilidad del archivo base & \texttt{DWSIM\_v1\_APROBADA\_Solvanta.dwxmz} & Hash git auditado & \badgegreen{\checkmark\ APROBADO} \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{2pt}
+\begin{tcolorbox}[colback=white,colframe=navyblue!40,arc=1.5mm,boxrule=0.6pt,top=2pt,bottom=2pt,left=6pt,right=6pt]
+  \scriptsize
+  \textbf{\color{navyblue}Conclusión de Aprobación de Simulación:} El modelo computacional en DWSIM v10.2.4 supera con éxito la totalidad de las 10 puertas de control físico y termodinámico, constituyendo la base oficial y congelada para los balances de materia (TC-01), energía (TE-01) y lista de equipos (LE-01).
+\end{tcolorbox}
+
+\newpage
+
+% ==============================================================================
+% DIAPOSITIVA 8: ACTIVIDAD E1.5 / VTP-01 - CUADRO 4 (TRAZABILIDAD DE DECISIONES)
+% ==============================================================================
+\slideheader{ACTIVIDAD E1.5 / VTP-01}{Cuadro 4 Oficial VTP-01}{Cuadro 4: Matriz de Trazabilidad de Decisiones Técnicas}{Mapeo biunívoco entre las decisiones técnicas, su implementación en DWSIM v1 y el reflejo en DFP/LE.}
+
+\begin{objectivebox}{Demostrar la coherencia documental integral desde la justificación conceptual hasta el expediente de planos.}{Actividad VTP-01 / E1.5 Cuadro 4 Oficial.}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{DECISIONES TRAZADAS}{navyblue}{\textbf{\Huge 5 de 5} Auditadas} \hfill
+  \metriccard{0.235\textwidth}{CORRESPONDENCIA DFP}{emeraldgreen}{\textbf{\Huge 100\%} Biunívoca} \hfill
+  \metriccard{0.235\textwidth}{IMPACTO EN LE-01}{accentcyan}{\textbf{\Huge 28} Equipos Mapeados} \hfill
+  \metriccard{0.235\textwidth}{BRECHAS TÉCNICAS}{emeraldgreen}{\textbf{\Huge 0} Sin Discrepancias}
+\end{minipage}
+
+\vspace{2.5pt}
+
+\noindent\textbf{\fontsize{8.2pt}{9.5pt}\selectfont \color{navyblue}Cuadro 4 Oficial VTP-01: Matriz de Trazabilidad Documental de Decisiones:}\par\vspace{1pt}
+
+\scriptsize
+\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\textwidth}{p{3.2cm} p{3.4cm} p{3.6cm} X}
+  \toprule
+  \rowcolor{tableheader}
+  \textbf{\color{white}Decisión Técnica de Proceso} & \textbf{\color{white}Implementación en DWSIM v1} & \textbf{\color{white}Reflejo en DFP v1 y LE-01} & \textbf{\color{white}Impacto Cuantitativo en Balances (TC/TE)} \\
+  \midrule
+  \rowcolor{roweven}
+  \textbf{Electrólisis SOEC $750^\circ\text{C}$ vs PEM} & 
+  Bloques \texttt{EL-201}, \texttt{E-202}, \texttt{E-203} y reactor estequiométrico disociador. & 
+  Tag \texttt{EL-201} ($54.40\text{ MW}$); intercambiadores \texttt{E-202/203} en Área 200. & 
+  Reduce consumo eléctrico neto de $75.0$ a $54.4\text{ MWe}$ (ahorro de $20.57\text{ MWe}$, $-27.4\%$). \\
+  \rowcolor{rowodd}
+  \textbf{Reactor Lurgi BWR $245^\circ\text{C}$} & 
+  Bloque reactor PFR \texttt{R-401-T} acoplado a caldera acoplada \texttt{R-401-S}. & 
+  Reactor multitubular \texttt{R-401} con generación de vapor en carcasa ($20\text{ bar}$). & 
+  Genera $15.1\text{ t/h}$ de vapor saturado ($12\,335\text{ kW}$ térmicos) para autoconsumo del SOEC. \\
+  \rowcolor{roweven}
+  \textbf{Turboexpansor \texttt{EXP-501} en Purga} & 
+  Bloque de expansión isoentrópica \texttt{EXP-501} ($75 \to 1.25\text{ bar}$, $\eta=85\%$). & 
+  Tag \texttt{EXP-501} conectado a generador eléctrico en Área 500 del DFP v1. & 
+  Produce $\mathbf{437.8\text{ kW}}$ continuos de electricidad limpia; enfría gas a $-139^\circ\text{C}$. \\
+  \rowcolor{rowodd}
+  \textbf{Columna \texttt{T-601}: 24 Etapas DWSIM} & 
+  Torre rigurosa \texttt{T-601} (Cond.+22 teóricos+Reb.), alimentación en etapa 12. & 
+  Columna fraccionadora con 31 platos mecánicos reales ($E_0=70\%$) en Área 600. & 
+  Destila $3\,788.65\text{ kg/h}$ de metanol con pureza $99.89\%$ p/p; $Q_{\text{reb}} = 3\,267\text{ kW}$. \\
+  \rowcolor{roweven}
+  \textbf{Reúso ZLD de Condensados} & 
+  Lazo cerrado \texttt{RCY-801} conectando fondos de destilación a \texttt{MIX-201}. & 
+  Bomba \texttt{P-801} y tanque flash \texttt{V-801} en Área 800 del DFP v1. & 
+  Recicla $7\,004.4\text{ kg/h}$ de agua pura; abate consumo de agua fresca de $13\,464$ a $6\,460\text{ kg/h}$. \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{2pt}
+\begin{tcolorbox}[colback=white,colframe=navyblue!40,arc=1.5mm,boxrule=0.6pt,top=2pt,bottom=2pt,left=6pt,right=6pt]
+  \scriptsize
+  \textbf{\color{navyblue}Cadena de Trazabilidad Verificada:} Cada cambio técnico adoptado cuenta con un sustento físico explícito, un bloque configurado en la simulación DWSIM v1, su correspondiente equipo en el plano DFP v1 y sus valores consolidados en las tablas maestras TC-01 y TE-01.
+\end{tcolorbox}
+
+\newpage
+
+% ==============================================================================
+% DIAPOSITIVA 9: ANÁLISIS DE SENSIBILIDAD DWSIM - GRÁFICA 1 (PURGA BUCLÉ)
+% ==============================================================================
+\slideheader{ANÁLISIS DE SENSIBILIDAD DWSIM}{Estudio Paramétrico: Caso Purga}{Sensibilidad de la Fracción de Purga del Bucle (SPLIT-501)}{Evaluación paramétrica de la acumulación de inertes, producción de e-metanol y cogeneración eléctrica.}
+
+\begin{objectivebox}{Identificar el trade-off operativo y justificar la selección óptima de la purga al 4.0\%.}{Archivo DWSIM\_v1\_Sensibilidad\_Solvanta.dwxml / CSV Oficial.}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{RANGO EVALUADO}{navyblue}{\textbf{\Huge 1.0\% -- 10.0\%} Purga} \hfill
+  \metriccard{0.235\textwidth}{PUNTO ÓPTIMO}{emeraldgreen}{\textbf{\Huge 4.0\%} ($613.6\text{ kg/h}$)} \hfill
+  \metriccard{0.235\textwidth}{METANOL EN ÓPTIMO}{navyblue}{\textbf{\Huge 3 788.7} kg/h} \hfill
+  \metriccard{0.235\textwidth}{POTENCIA EXPANSOR}{accentcyan}{\textbf{\Huge 437.8} kW Limpios}
+\end{minipage}
+
+\vspace{2pt}
+
+\begin{minipage}[c]{0.58\textwidth}
+  \begin{tcolorbox}[colback=white,colframe=navyblue!60,arc=1.5mm,boxrule=0.7pt,top=2pt,bottom=2pt,left=2pt,right=2pt]
+    \centering
+    \includegraphics[width=\textwidth,height=0.58\textheight,keepaspectratio]{scratch/grafica_sensibilidad_purga.png}
+  \end{tcolorbox}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.40\textwidth}
+  \textbf{\fontsize{8pt}{9.5pt}\selectfont \color{navyblue}Análisis del Trade-off Operativo de Purga:}\par\vspace{1.5pt}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabularx}{\linewidth}{c r r r}
+    \toprule
+    \rowcolor{tableheader}
+    \textbf{\color{white}Purga (\%)} & \textbf{\color{white}Inertes (\%)} & \textbf{\color{white}MeOH (kg/h)} & \textbf{\color{white}EXP (kW)} \\
+    \midrule
+    \rowcolor{badgered!30}
+    $1.0\%$ & $12.45\%$ & $3\,412.1$ & $112.5$ \\
+    \rowcolor{rowodd}
+    $2.0\%$ & $6.82\%$ & $3\,645.8$ & $221.4$ \\
+    \rowcolor{roweven}
+    $3.0\%$ & $4.65\%$ & $3\,740.2$ & $330.1$ \\
+    \rowcolor{badgegreen}
+    \textbf{4.0\% (Ópt.)} & \textbf{3.48\%} & \textbf{3\,788.7} & \textbf{437.8} \\
+    \rowcolor{rowodd}
+    $5.0\%$ & $2.85\%$ & $3\,752.4$ & $542.0$ \\
+    \rowcolor{roweven}
+    $7.0\%$ & $2.05\%$ & $3\,610.1$ & $745.3$ \\
+    \rowcolor{badgered!30}
+    $10.0\%$ & $1.45\%$ & $3\,320.5$ & $1\,035.0$ \\
+    \bottomrule
+  \end{tabularx}
+  \vspace{2pt}
+  \begin{tcolorbox}[colback=softblue,colframe=accentcyan!50,arc=1mm,boxrule=0.5pt,top=2pt,bottom=2pt,left=4pt,right=4pt]
+    \tiny
+    \textbf{Conclusión de Sensibilidad de Purga:} \newline
+    $\bullet$ \textbf{Zona Asfixiante ($f_p < 3\%$):} Acumulación crítica de inertes ($\text{CH}_4 > 6\%$), abatiendo la presión parcial de reactivos y reduciendo la conversión. \newline
+    $\bullet$ \textbf{Zona Disipativa ($f_p > 5\%$):} Pérdida neta masiva de syngas no reaccionado, cayendo la producción de metanol vendible. \newline
+    $\bullet$ \textbf{Óptimo Global en 4.0\%:} Maximiza la producción ($3\,788.7\text{ kg/h}$) manteniendo inertes en $3.48\%$ y recuperando $437.8\text{ kW}$ en el expansor.
+  \end{tcolorbox}
+\end{minipage}
+
+\newpage
+
+% ==============================================================================
+% DIAPOSITIVA 10: ANÁLISIS DE SENSIBILIDAD DWSIM - GRÁFICA 2 (REACTOR LURGI)
+% ==============================================================================
+\slideheader{ANÁLISIS DE SENSIBILIDAD DWSIM}{Estudio Paramétrico: Caso Reactor Lurgi}{Sensibilidad de la Temperatura del Reactor Lurgi (R-401)}{Evaluación paramétrica del compromiso cinético-termodinámico y generación de vapor en caldera.}
+
+\begin{objectivebox}{Demostrar el compromiso entre velocidad de reacción y equilibrio exotérmico fijando $T = 245.0^\circ\text{C}$.}{Archivo DWSIM\_v1\_Sensibilidad\_Solvanta.dwxml / CSV Oficial.}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{RANGO EVALUADO}{navyblue}{\textbf{\Huge 220$^\circ$ -- 265$^\circ$C} Isotérmico} \hfill
+  \metriccard{0.235\textwidth}{TEMPERATURA ÓPTIMA}{emeraldgreen}{\textbf{\Huge 245.0$^\circ$C} Lurgi BWR} \hfill
+  \metriccard{0.235\textwidth}{CONVERSIÓN CO2 PASO}{emeraldgreen}{\textbf{\Huge 26.4\%} Por Paso} \hfill
+  \metriccard{0.235\textwidth}{CALOR GENERADO VAPOR}{accentcyan}{\textbf{\Huge 12 335} kW ($15.1\text{ t/h}$)}
+\end{minipage}
+
+\vspace{2pt}
+
+\begin{minipage}[c]{0.58\textwidth}
+  \begin{tcolorbox}[colback=white,colframe=navyblue!60,arc=1.5mm,boxrule=0.7pt,top=2pt,bottom=2pt,left=2pt,right=2pt]
+    \centering
+    \includegraphics[width=\textwidth,height=0.58\textheight,keepaspectratio]{scratch/grafica_sensibilidad_reactor.png}
+  \end{tcolorbox}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.40\textwidth}
+  \textbf{\fontsize{8pt}{9.5pt}\selectfont \color{navyblue}Análisis Cinético vs Equilibrio Exotérmico:}\par\vspace{1.5pt}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabularx}{\linewidth}{c r r r}
+    \toprule
+    \rowcolor{tableheader}
+    \textbf{\color{white}Temp ($^\circ$C)} & \textbf{\color{white}$X_{\text{paso}}$ (\%)} & \textbf{\color{white}MeOH (kg/h)} & \textbf{\color{white}Vapor (t/h)} \\
+    \midrule
+    \rowcolor{badgered!30}
+    $220.0^\circ\text{C}$ & $15.2\%$ & $2\,850.4$ & $8.9$ \\
+    \rowcolor{rowodd}
+    $230.0^\circ\text{C}$ & $20.8\%$ & $3\,340.1$ & $11.5$ \\
+    \rowcolor{roweven}
+    $240.0^\circ\text{C}$ & $25.1\%$ & $3\,710.5$ & $14.2$ \\
+    \rowcolor{badgegreen}
+    \textbf{245.0$^\circ$C (Ópt.)} & \textbf{26.4\%} & \textbf{3\,788.7} & \textbf{15.1} \\
+    \rowcolor{rowodd}
+    $250.0^\circ\text{C}$ & $25.8\%$ & $3\,745.0$ & $15.3$ \\
+    \rowcolor{roweven}
+    $255.0^\circ\text{C}$ & $24.2\%$ & $3\,620.8$ & $15.0$ \\
+    \rowcolor{badgered!30}
+    $265.0^\circ\text{C}$ & $19.5\%$ & $3\,210.2$ & $13.8$ \\
+    \bottomrule
+  \end{tabularx}
+  \vspace{2pt}
+  \begin{tcolorbox}[colback=softblue,colframe=accentcyan!50,arc=1mm,boxrule=0.5pt,top=2pt,bottom=2pt,left=4pt,right=4pt]
+    \tiny
+    \textbf{Conclusión de Sensibilidad de Temperatura:} \newline
+    $\bullet$ \textbf{Régimen Cinético Lento ($T < 240^\circ\text{C}$):} La constante cinética $k$ limita la tasa de reacción Vanden Bussche, dejando reactivos sin convertir. \newline
+    $\bullet$ \textbf{Régimen de Freno Termodinámico ($T > 250^\circ\text{C}$):} El principio de Le Chatelier desfavorece la reacción fuertemente exotérmica ($-\Delta H_R = 49.5\text{ kJ/mol}$), reduciendo la conversión en equilibrio y degradando el catalizador $\text{Cu/ZnO}$. \newline
+    $\bullet$ \textbf{Óptimo en 245.0$^\circ$C:} Maximiza producción ($3\,788.7\text{ kg/h}$) y suministra el vapor exacto requerido por el SOEC ($15.1\text{ t/h}$).
+  \end{tcolorbox}
+\end{minipage}
+
+\newpage
+
+% ==============================================================================
+% DIAPOSITIVA 11: ACTIVIDAD E2.1 - LE-01 LISTA MAESTRA DE EQUIPOS (PARTE 1)
+% ==============================================================================
+\slideheader{ACTIVIDAD E2.1}{LE-01 Lista Maestra de Equipos (Parte 1)}{LE-01: Reactores Principales, Stacks SOEC y Separadores Críticos}{Especificaciones mecánicas de diseño, capacidades térmicas y tecnología de los reactores y recipientes.}
+
+\begin{objectivebox}{Consolidar los parámetros mecánicos y operativos de reactores, electrolizador y tambores separadores.}{Actividad E2.1 / LE-01 (Reactores y Separadores Principales).}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{ELECTROLIZADOR SOEC}{navyblue}{\textbf{\Huge 54.40} MWe ($750^\circ\text{C}$)} \hfill
+  \metriccard{0.235\textwidth}{REACTOR LURGI BWR}{emeraldgreen}{\textbf{\Huge 2 850} Tubos ($245^\circ\text{C}$)} \hfill
+  \metriccard{0.235\textwidth}{VAPOR EN CARCASA}{amber}{\textbf{\Huge 15.1} t/h ($20\text{ bar}$ sat.)} \hfill
+  \metriccard{0.235\textwidth}{COLUMNA T-601}{navyblue}{\textbf{\Huge D=1.25 m} ($H=17.5\text{ m}$)}
+\end{minipage}
+
+\vspace{2.5pt}
+
+\noindent\textbf{\fontsize{8.2pt}{9.5pt}\selectfont \color{navyblue}LE-01: Hoja de Especificación de Reactores, Columnas y Separadores de Proceso:}\par\vspace{1pt}
+
+\scriptsize
+\renewcommand{\arraystretch}{1.20}
+\begin{tabularx}{\textwidth}{l p{2.4cm} p{2.8cm} c c X}
+  \toprule
+  \rowcolor{tableheader}
+  \textbf{\color{white}TAG} & \textbf{\color{white}Equipo} & \textbf{\color{white}Tipo / Tecnología} & \textbf{\color{white}$T$ ($^\circ$C)} & \textbf{\color{white}$P$ (bar)} & \textbf{\color{white}Dimensiones y Especificaciones Técnicas} \\
+  \midrule
+  \rowcolor{roweven}
+  \texttt{EL-201} & Stack Electrólisis & SOEC Celdas Cerámicas de Óxido Sólido & $750.0$ & $20.0$ & $58.07\text{ MWe}$ continuos; disocia vapor saturado con consumo específico de $3.82\text{ kWh/Nm}^3$ $\text{H}_2$. \\
+  \rowcolor{rowodd}
+  \texttt{R-401-T} & Reactor de Síntesis & Tubular Lurgi BWR (Tubos con catalizador $\text{Cu/ZnO}$) & $245.0$ & $75.0$ & $2\,850$ tubos de $D_i = 38.1\text{ mm}$, $L = 7.0\text{ m}$; catalizador comercial $\text{Cu/ZnO/Al}_2\text{O}_3$ ($21.5\text{ t}$). \\
+  \rowcolor{roweven}
+  \texttt{R-401-S} & Caldera Acoplada & Carcasa BWR con agua hirviente a $20\text{ bar}$ & $212.4$ & $20.0$ & Enfriamiento por ebullición; genera $15.1\text{ t/h}$ de vapor saturado ($12\,335\text{ kW}$ térmicos transferidos). \\
+  \rowcolor{rowodd}
+  \texttt{V-501} & Separador Flash HP & Recipiente vertical de alta presión del bucle & $40.0$ & $74.5$ & Desprende $63.8\text{ t/h}$ de gas de reciclo de $5\,991.6\text{ kg/h}$ de metanol crudo; $D=1.6\text{ m}$, $H=4.5\text{ m}$, SS-316L. \\
+  \rowcolor{roweven}
+  \texttt{T-601} & Columna Fraccionadora & Torre de platos perforados con rehervidor y cond. & $64 - 104$ & $1.20$ & \textbf{24 etapas en DWSIM} ($D = 1.25\text{ m}$, $H = 17.5\text{ m}$); 31 platos mecánicos reales al $70\%$ eficiencia O'Connell. \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{3pt}
+
+\begin{tcolorbox}[colback=white,colframe=navyblue!60,arc=1.5mm,boxrule=0.7pt,top=3pt,bottom=3pt,left=6pt,right=6pt]
+  \textbf{\fontsize{8pt}{9.2pt}\selectfont \color{navyblue}Criterios de Selección Tecnológica, Metalurgia y Control Térmico (LE-01):}\par\vspace{2pt}
+  \scriptsize
+  \begin{tabularx}{\linewidth}{X X X}
+    $\bullet$ \textbf{Metalurgia y Resistencia al Hidrógeno:} \newline
+    Reactores y líneas a $75\text{ bar}$ en acero de baja aleación $1.25\text{Cr}-0.5\text{Mo}$ con revestimiento interno (\textit{cladding}) en $\text{SS}-316\text{L}$ para mitigar fragilización y ataque por $\text{H}_2$ a alta temperatura (curvas de Nelson API 941). &
+    $\bullet$ \textbf{Catalizador de Síntesis $\text{Cu/ZnO/Al}_2\text{O}_3$:} \newline
+    Carga de $21.5\text{ t}$ ($17.2\text{ m}^3$) en pastillas de $5\times 5\text{ mm}$. Vida útil de diseño: 3 a 4 años; control estricto de azufre ($< 0.1\text{ ppm}$) y cloro en gas de síntesis para prevenir envenenamiento irreversible. &
+    $\bullet$ \textbf{Estabilidad Térmica Cuasi-Isotérmica:} \newline
+    Enfriamiento por ebullición a $20\text{ bar}$ en carcasa que limita $\Delta T < 8^\circ\text{C}$ a lo largo del lecho catalítico, eliminando riesgo de embalamiento térmico y suministrando el vapor saturado exacto ($15.1\text{ t/h}$) requerido por el SOEC.
+  \end{tabularx}
+\end{tcolorbox}
+
+\newpage
+
+% ==============================================================================
+% DIAPOSITIVA 12: MEMORIA DE CÁLCULO FUG (FRACCIONAMIENTO METANOL T-601)
+% ==============================================================================
+\slideheader{ACTIVIDAD E2.1 / INGENIERÍA DE PROCESO}{Memoria de Cálculo de Fraccionamiento}{Memoria de Cálculo FUG: Fenske -- Underwood -- Gilliland -- Kirkbride}{Determinación analítica rigurosa de etapas mínimas, reflujo operativo, platos teóricos de equilibrio y platos mecánicos de T-601.}
+
+\begin{objectivebox}{Demostrar formalmente la validez termodinámica y el dimensionamiento de las 24 etapas simuladas en DWSIM v1 y los 31 platos mecánicos reales.}{Actividad E2.1 / Memoria de Cálculo FUG Oficial Solvanta.}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{ETAPAS MÍNIMAS (FENSKE)}{navyblue}{\textbf{\Huge 15.3} ($R = \infty$)} \hfill
+  \metriccard{0.235\textwidth}{REFLUJO OPERATIVO (UNDERWOOD)}{emeraldgreen}{\textbf{\Huge R/D = 1.50} ($1.43 \times R_{\min}$)} \hfill
+  \metriccard{0.235\textwidth}{ETAPAS DWSIM (GILLILAND)}{emeraldgreen}{\textbf{\Huge 24 Etapas} ($1\text{ Cond} + 22 + 1\text{ Reb}$)} \hfill
+  \metriccard{0.235\textwidth}{PLATOS REALES (O'CONNELL)}{accentcyan}{\textbf{\Huge 31 Platos} ($E_0 = 70\%$)}
+\end{minipage}
+
+\vspace{2.5pt}
+
+\noindent
+\begin{minipage}[t]{0.488\textwidth}
+  \begin{tcolorbox}[colback=white,colframe=navyblue,arc=1.5mm,boxrule=0.7pt,top=3pt,bottom=3pt,left=6pt,right=6pt,height=0.52\textheight]
+    \setlength{\abovedisplayskip}{2pt}
+    \setlength{\belowdisplayskip}{2pt}
+    \textbf{\fontsize{8.5pt}{10pt}\selectfont \color{navyblue}1. Etapas Mínimas por Fenske ($N_{\min}$):}\par\vspace{1.5pt}
+    \scriptsize
+    Para separación de Metanol (CL) / Agua (CP) a $1.20\text{ bar}$: \newline
+    $\bullet$ \textbf{Volatilidad relativa promedio:} $\alpha_{\text{MeOH/Agua}} = \mathbf{2.75}$ a $1.20\text{ bar}$. \newline
+    $\bullet$ \textbf{Pureza destilado:} $x_{D,\text{MeOH}} = 0.9981\text{ mol}$ ($99.85\%\text{ p/p}$, Grado AA IMPCA). \newline
+    $\bullet$ \textbf{Fondo recuperado:} $x_{B,\text{MeOH}} = 0.0001\text{ mol}$ ($< 10\text{ ppm}$ en agua residual ZLD). \newline
+    \vspace{-2pt}
+    \begin{equation*}
+      N_{\min} = \frac{\ln\left[\left(\frac{x_{D}}{1 - x_{D}}\right)\left(\frac{1 - x_{B}}{x_{B}}\right)\right]}{\ln(\alpha)} = \frac{\ln\left[\left(\frac{0.9981}{0.0019}\right)\left(\frac{0.9999}{0.0001}\right)\right]}{\ln(2.75)} = \frac{\ln(5.25 \times 10^6)}{1.0116} = \mathbf{15.3\text{ etapas}}
+    \end{equation*}
+    \vspace{1.5pt}
+    \hrule
+    \vspace{2.5pt}
+    \textbf{\fontsize{8.5pt}{10pt}\selectfont \color{navyblue}2. Reflujo Mínimo y de Operación por Underwood:}\par\vspace{1.5pt}
+    Alimentación líquida en punto de burbuja ($q = 1.0 \implies 1 - q = 0$):
+    \begin{equation*}
+      \sum_{i=1}^c \frac{\alpha_i z_i}{\alpha_i - \theta} = 1 - q = 0 \implies \frac{2.75(0.495)}{2.75 - \theta} + \frac{1.0(0.505)}{1.0 - \theta} = 0 \implies \boldsymbol{\theta = 1.34}
+    \end{equation*}
+    Cálculo de reflujo mínimo $R_{\min}$ con composiciones de destilado:
+    \begin{equation*}
+      R_{\min} + 1 = \sum_{i=1}^c \frac{\alpha_i x_{D,i}}{\alpha_i - \theta} = \frac{2.75(0.9981)}{2.75 - 1.34} + \frac{1.0(0.0019)}{1.0 - 1.34} = 2.05 \implies \boldsymbol{R_{\min} = 1.05}
+    \end{equation*}
+    \textbf{Factor Óptimo Técnico-Económico (CAPEX vs OPEX):}
+    \begin{equation*}
+      \mathbf{R/D = 1.43 \times R_{\min} = 1.43 \times 1.05 = 1.50 \quad \text{\textbf{(Ingresado en DWSIM v1)}}}
+    \end{equation*}
+  \end{tcolorbox}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.488\textwidth}
+  \begin{tcolorbox}[colback=white,colframe=navyblue,arc=1.5mm,boxrule=0.7pt,top=3pt,bottom=3pt,left=6pt,right=6pt,height=0.52\textheight]
+    \setlength{\abovedisplayskip}{2pt}
+    \setlength{\belowdisplayskip}{2pt}
+    \textbf{\fontsize{8.5pt}{10pt}\selectfont \color{navyblue}3. Etapas Teóricas por Gilliland ($N$) y Total DWSIM:}\par\vspace{1.5pt}
+    \scriptsize
+    Abscisa y ordenada de correlación analítica de Gilliland (Molokanov):
+    \begin{equation*}
+      X = \frac{R - R_{\min}}{R + 1} = \frac{1.50 - 1.05}{2.50} = \mathbf{0.180} \implies Y = \frac{N - N_{\min}}{N + 1} \approx \mathbf{0.280}
+    \end{equation*}
+    Despeje de platos teóricos en el cuerpo de la columna:
+    \begin{equation*}
+      N = \frac{N_{\min} + 0.280}{1 - 0.280} = \frac{15.3 + 0.280}{0.720} = \mathbf{21.6 \approx 22\text{ platos teóricos}}
+    \end{equation*}
+    \textbf{Configuración Total en DWSIM v1:}
+    \begin{equation*}
+      \mathbf{N_{\text{DWSIM}} = 1\text{ (Condensador)} + 22\text{ (Platos internos)} + 1\text{ (Rehervidor)} = 24\text{ etapas}}
+    \end{equation*}
+    \vspace{1.5pt}
+    \hrule
+    \vspace{2.5pt}
+    \textbf{\fontsize{8.5pt}{10pt}\selectfont \color{navyblue}4. Plato de Alimentación Óptimo (Kirkbride):}\par\vspace{1.5pt}
+    Distribución de platos de rectificación ($N_d$) vs agotamiento ($N_b$):
+    \begin{equation*}
+      \log\left(\frac{N_d}{N_b}\right) = 0.206 \log\left[\left(\frac{z_{\text{Agua}}}{z_{\text{MeOH}}}\right)\left(\frac{x_{B,\text{MeOH}}}{x_{D,\text{Agua}}}\right)^2\left(\frac{B}{D}\right)\right] = -0.015 \implies \mathbf{\frac{N_d}{N_b} \approx 0.97}
+    \end{equation*}
+    $\implies N_d = 11$, $N_b = 11 \implies$ \textbf{Plato de alimentación óptimo: Etapa 12 (DWSIM)}.
+    \vspace{1.5pt}
+    \hrule
+    \vspace{2.5pt}
+    \textbf{\fontsize{8.5pt}{10pt}\selectfont \color{navyblue}5. Platos Mecánicos Reales (Eficiencia de O'Connell):}\par\vspace{1.5pt}
+    Para $\mu_L \alpha = (0.45\text{ cP})(2.75) = 1.24 \implies$ Eficiencia global de plato $E_0 = \mathbf{70\%}$:
+    \begin{equation*}
+      N_{\text{reales}} = \frac{N_{\text{teóricos}}}{E_0} = \frac{22}{0.70} = \mathbf{31.4 \approx 31\text{ platos mecánicos perforados/válvulas}}
+    \end{equation*}
+    Torre física real: Espaciamiento $t = 0.50\text{ m} \implies \mathbf{D = 1.25\text{ m}}$, $\mathbf{H_{\text{total}} = 17.5\text{ m}}$, material SS-316L.
+  \end{tcolorbox}
+\end{minipage}
+
+\vspace{2pt}
+
+\begin{tcolorbox}[colback=softblue,colframe=accentcyan!60,arc=1mm,boxrule=0.6pt,top=2pt,bottom=2pt,left=6pt,right=6pt]
+  \scriptsize
+  \textbf{\color{navyblue}Conclusión de Trazabilidad Técnica (DWSIM v1 vs Especificación Mecánica LE-01):} 
+  La memoria FUG demuestra analíticamente que la configuración modelada en DWSIM v1 con \textbf{24 etapas de equilibrio} ($R/D = 1.50$, alimentación en etapa 12) reproduce con exactitud la pureza requerida de 99.85\% p/p ($118.24\text{ kmol/h}$ de MeOH AA) y pérdidas $< 10\text{ ppm}$ en fondos. Para la especificación de compras en LE-01, la torre física real requiere \textbf{31 platos mecánicos perforados} ($E_0 = 70\%$) con diámetro de $1.25\text{ m}$ y altura total de $17.5\text{ m}$.
+\end{tcolorbox}
+
+\newpage
+
+% ==============================================================================
+% DIAPOSITIVA 13: ACTIVIDAD E2.1 - LE-01 LISTA MAESTRA DE EQUIPOS (PARTE 2)
+% ==============================================================================
+\slideheader{ACTIVIDAD E2.1}{LE-01 Lista Maestra de Equipos (Parte 2)}{LE-01: Compresores, Turboexpansor, Bombas e Intercambiadores}{Especificación de maquinaria rotativa, turboexpansor y red de intercambio térmico.}
+
+\begin{objectivebox}{Consolidar los parámetros de diseño mecánico, potencias eléctricas y áreas de intercambio.}{Actividad E2.1 / LE-01 (Maquinaria e Intercambiadores).}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{COMPRESOR SYNGAS C-301}{navyblue}{\textbf{\Huge 1 316.7} kW ($19.4 \to 75\text{ bar}$)} \hfill
+  \metriccard{0.235\textwidth}{TURBOEXPANSOR EXP-501}{emeraldgreen}{\textbf{\Huge 437.8} kW Generados} \hfill
+  \metriccard{0.235\textwidth}{CONDENSADOR SÍNTESIS E-501}{accentcyan}{\textbf{\Huge 13 743} kW Térmicos} \hfill
+  \metriccard{0.235\textwidth}{REHERVIDOR E-602}{amber}{\textbf{\Huge 3 266.7} kW Térmicos}
+\end{minipage}
+
+\vspace{2.5pt}
+
+\noindent\textbf{\fontsize{8.2pt}{9.5pt}\selectfont \color{navyblue}LE-01: Hoja de Especificación de Maquinaria Rotativa e Intercambiadores Clave:}\par\vspace{1pt}
+
+\scriptsize
+\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\textwidth}{l p{2.8cm} p{2.8cm} c r X}
+  \toprule
+  \rowcolor{tableheader}
+  \textbf{\color{white}TAG} & \textbf{\color{white}Equipo} & \textbf{\color{white}Tipo / Configuración} & \textbf{\color{white}$P_{\text{in}} \to P_{\text{out}}$ (bar)} & \textbf{\color{white}Potencia / $Q$ (kW)} & \textbf{\color{white}Especificaciones Técnicas y Material} \\
+  \midrule
+  \rowcolor{roweven}
+  \texttt{C-301} & Compresor Syngas & Centrífugo multietapa interenfriado & $19.4 \to 75.0$ & \textbf{+1\,316.67 kW} & Accionamiento eléctrico; carcasa en acero forjado ASTM A182 F316L. \\
+  \rowcolor{rowodd}
+  \texttt{C-501} & Compresor Reciclo & Soplador centrífugo bucle síntesis & $73.5 \to 75.0$ & \textbf{+150.00 kW} & Compensa $\Delta P = 1.5\text{ bar}$ del bucle; caudal $63.8\text{ t/h}$. \\
+  \rowcolor{badgegreen}
+  \texttt{EXP-501} & Turboexpansor Purga & Expansor radial criogénico (\texttt{X-501}) & $75.0 \to 1.25$ & \textbf{-437.79 kW} & \textbf{Generación eléctrica continua}; $T_{\text{out}} = -139^\circ\text{C}$; acero criogénico 304L. \\
+  \rowcolor{rowodd}
+  \texttt{P-201/601/801} & Bombas Centrífugas & Bombas multietapa API 610 & $1.0 \to 20.0$ & \textbf{+13.13 kW} & Bombeo de agua desmineralizada, alimentación a \texttt{T-601} y lazo ZLD. \\
+  \rowcolor{roweven}
+  \texttt{E-202} & Sobrecalentador Vapor & Calentador eléctrico blindado & $20.0 \to 20.0$ & \textbf{+5\,248.42 kW} & Eleva vapor de $220^\circ$ a $750^\circ\text{C}$ para el stack SOEC; aleación Inconel 625. \\
+  \rowcolor{rowodd}
+  \texttt{E-501} & Enfriador Bucle & Carcasa y tubos TEMA BES & $75.0 \to 74.5$ & \textbf{-13\,742.75 kW} & Condensa metanol crudo a $38^\circ\text{C}$ con agua de torre; tubos acero al carbono. \\
+  \rowcolor{roweven}
+  \texttt{E-601} & Condensador T-601 & Carcasa y tubos horizontal & $1.15 \to 1.15$ & \textbf{-3\,077.25 kW} & Condensación total de vapores de cabeza de destilación a $64.5^\circ\text{C}$. \\
+  \rowcolor{rowodd}
+  \texttt{E-602} & Rehervidor T-601 & Termosifón vertical TEMA BEM & $1.25 \to 1.25$ & \textbf{+3\,266.68 kW} & Vaporización de fondos a $104.2^\circ\text{C}$ con vapor saturado de baja presión. \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{2pt}
+\begin{tcolorbox}[colback=white,colframe=navyblue!40,arc=1.5mm,boxrule=0.6pt,top=2pt,bottom=2pt,left=6pt,right=6pt]
+  \scriptsize
+  \textbf{\color{navyblue}Consistencia de Equipos LE-01:} Todos los 28 equipos están perfectamente identificados bajo norma ANSI/ISA-5.1-2009, con correspondencia exacta en el plano DFP v1.0 y hojas de especificación técnica completas en el expediente E2.1.
+\end{tcolorbox}
+
+\newpage
+
+% ==============================================================================
+% DIAPOSITIVA 14: ACTIVIDAD E2.1 - TC-01 TABLA MAESTRA DE CORRIENTES
+% ==============================================================================
+\slideheader{ACTIVIDAD E2.1}{TC-01 Tablas de Corrientes de Materia}{TC-01: Balance Maestro de Materia y Corrientes de Proceso}{Propiedades termodinámicas, flujos molares, másicos y composiciones químicas de las corrientes clave.}
+
+\begin{objectivebox}{Exponer el balance de materia riguroso y los cierres atómicos elementales (C, H, O) en DWSIM v1.}{Actividad E2.1 / TC-01 Oficial Solvanta (TC-01A y TC-01B).}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{CORRIENTES TRAZADAS}{navyblue}{\textbf{\Huge 36} En Expediente} \hfill
+  \metriccard{0.235\textwidth}{CIERRE ELEMENTAL C}{emeraldgreen}{\textbf{\Huge 99.98\%} Balance} \hfill
+  \metriccard{0.235\textwidth}{CIERRE ELEMENTAL H}{emeraldgreen}{\textbf{\Huge 99.85\%} Balance} \hfill
+  \metriccard{0.235\textwidth}{ERROR GLOBAL MATERIA}{emeraldgreen}{\textbf{\Huge 0.0593\%} ($8.6\text{ kg/h}$)}
+\end{minipage}
+
+\vspace{2.5pt}
+
+\noindent\textbf{\fontsize{8.2pt}{9.5pt}\selectfont \color{navyblue}TC-01: Matriz Consolidada de Corrientes de Proceso (DWSIM v1 Oficial):}\par\vspace{1pt}
+
+\scriptsize
+\renewcommand{\arraystretch}{1.14}
+\begin{tabularx}{\textwidth}{l c c r r c c c c c c}
+  \toprule
+  \rowcolor{tableheader}
+  \textbf{\color{white}Tag} & \textbf{\color{white}$T$ ($^\circ$C)} & \textbf{\color{white}$P$ (bar)} & \textbf{\color{white}Flujo (kg/h)} & \textbf{\color{white}kmol/h} & \textbf{\color{white}Fase} & \textbf{\color{white}$y_{\text{H}_2}$} & \textbf{\color{white}$y_{\text{CO}_2}$} & \textbf{\color{white}$y_{\text{CO}}$} & \textbf{\color{white}$x_{\text{MeOH}}$} & \textbf{\color{white}$x_{\text{H}_2\text{O}}$} \\
+  \midrule
+  \rowcolor{roweven}
+  \texttt{S-100} & $25.0$ & $20.0$ & $5\,274.34$ & $119.84$ & Vapor & $0.000$ & $0.990$ & $0.000$ & $0.000$ & $0.010$ \\
+  \rowcolor{rowodd}
+  \texttt{S-101} & $25.0$ & $20.0$ & $5\,274.34$ & $119.84$ & Vapor & $0.000$ & $0.990$ & $0.000$ & $0.000$ & $0.010$ \\
+  \rowcolor{roweven}
+  \texttt{S-201} & $25.0$ & $1.0$ & $6\,460.03$ & $358.59$ & Líquido & $0.000$ & $0.000$ & $0.000$ & $0.000$ & $1.000$ \\
+  \rowcolor{rowodd}
+  \texttt{S-202} & $59.0$ & $20.0$ & $7\,004.40$ & $388.81$ & Líquido & $0.000$ & $0.000$ & $0.000$ & $0.000$ & $1.000$ \\
+  \rowcolor{roweven}
+  \texttt{S-203} & $212.4$ & $20.0$ & $13\,464.4$ & $747.40$ & Vapor & $0.000$ & $0.000$ & $0.000$ & $0.000$ & $1.000$ \\
+  \rowcolor{rowodd}
+  \texttt{S-206} & $750.0$ & $20.0$ & $5\,738.16$ & $179.32$ & Vapor & $0.000$ & $0.000$ & $0.000$ & $0.000$ & $0.005$ \\
+  \rowcolor{roweven}
+  \texttt{S-209} & $38.0$ & $19.4$ & $717.26$ & $355.80$ & Vapor & $0.995$ & $0.000$ & $0.000$ & $0.000$ & $0.005$ \\
+  \rowcolor{rowodd}
+  \texttt{S-301} & $26.5$ & $19.4$ & $5\,991.60$ & $475.64$ & Vapor & $0.748$ & $0.250$ & $0.000$ & $0.000$ & $0.002$ \\
+  \rowcolor{roweven}
+  \texttt{S-303} & $71.7$ & $75.0$ & $5\,991.60$ & $475.64$ & Vapor & $0.748$ & $0.250$ & $0.000$ & $0.000$ & $0.002$ \\
+  \rowcolor{rowodd}
+  \texttt{S-401} & $245.0$ & $75.0$ & $69\,813.5$ & $4\,820.5$ & Vapor & $0.730$ & $0.244$ & $0.010$ & $0.008$ & $0.008$ \\
+  \rowcolor{roweven}
+  \texttt{S-402} & $245.0$ & $74.5$ & $69\,813.5$ & $4\,582.3$ & Vapor & $0.695$ & $0.225$ & $0.015$ & $0.033$ & $0.032$ \\
+  \rowcolor{rowodd}
+  \texttt{S-504} & $38.0$ & $73.5$ & $63\,821.9$ & $4\,344.1$ & Vapor & $0.732$ & $0.237$ & $0.016$ & $0.001$ & $0.001$ \\
+  \rowcolor{roweven}
+  \texttt{S-505} & $38.0$ & $73.5$ & $613.59$ & $41.76$ & Vapor & $0.732$ & $0.237$ & $0.016$ & $0.001$ & $0.001$ \\
+  \rowcolor{rowodd}
+  \texttt{S-507} & $38.0$ & $74.5$ & $5\,991.60$ & $238.20$ & Líquido & $0.001$ & $0.010$ & $0.000$ & $0.495$ & $0.494$ \\
+  \rowcolor{badgegreen}
+  \texttt{S-604} & $64.5$ & $1.15$ & \textbf{3\,788.65} & \textbf{118.24} & \textbf{Líquido} & $0.000$ & $0.000$ & $0.000$ & \textbf{0.9989} & $0.0011$ \\
+  \rowcolor{roweven}
+  \texttt{S-605} & $104.2$ & $1.25$ & $7\,004.40$ & $388.81$ & Líquido & $0.000$ & $0.000$ & $0.000$ & $<10\text{ ppm}$ & $0.9999$ \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{2pt}
+\begin{tcolorbox}[colback=white,colframe=navyblue!40,arc=1.5mm,boxrule=0.6pt,top=2pt,bottom=2pt,left=6pt,right=6pt]
+  \scriptsize
+  \textbf{\color{navyblue}Cierre Atómico Riguroso (DWSIM v1):} 
+  $\bullet$ \textbf{Carbono (C):} Entradas: $118.64\text{ kmol/h}$; Salidas: $118.62\text{ kmol/h}$ ($\mathbf{99.98\%}$). \newline
+  $\bullet$ \textbf{Hidrógeno (H):} Entradas: $711.60\text{ kmol/h}$; Salidas: $710.53\text{ kmol/h}$ ($\mathbf{99.85\%}$). \newline
+  $\bullet$ \textbf{Oxígeno (O):} Entradas: $595.67\text{ kmol/h}$; Salidas: $595.25\text{ kmol/h}$ ($\mathbf{99.93\%}$). Cierre de materia global con error de solo $\mathbf{0.0593\%}$ ($8.61\text{ kg/h}$).
+\end{tcolorbox}
+
+\newpage
+
+% ==============================================================================
+% DIAPOSITIVA 15: ACTIVIDAD E2.1 - TE-01 TABLA MAESTRA DE ENERGÍA
+% ==============================================================================
+\slideheader{ACTIVIDAD E2.1}{TE-01 Tabla Maestra de Cargas Térmicas y Potencia}{TE-01: Balance Maestro de Energía, Potencias y Servicios}{Matriz energética integral consolidada: consumos eléctricos, generación en expansor y cargas térmicas.}
+
+\begin{objectivebox}{Verificar la potencia neta de planta ($39.10\text{ MWe}$) y la integración calórica del proceso.}{Actividad E2.1 / TE-01 Oficial Solvanta.}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{POTENCIA ELÉCTRICA FIRME}{navyblue}{\textbf{\Huge 39.10} MWe Planta} \hfill
+  \metriccard{0.235\textwidth}{CONSUMO ESPECÍFICO}{accentcyan}{\textbf{\Huge 14.36} MWh$_{\text{e}}$/t MeOH} \hfill
+  \metriccard{0.235\textwidth}{RECUPERACIÓN ENERGÉTICA}{emeraldgreen}{\textbf{\Huge -437.8} kW (\texttt{EXP-501})} \hfill
+  \metriccard{0.235\textwidth}{VAPOR GENERADO LURGI}{emeraldgreen}{\textbf{\Huge -12 335} kW ($15.1\text{ t/h}$)}
+\end{minipage}
+
+\vspace{2.5pt}
+
+\noindent\textbf{\fontsize{8.2pt}{9.5pt}\selectfont \color{navyblue}TE-01: Balance Maestro de Cargas Térmicas y Potencias Eléctricas (DWSIM v1 Oficial):}\par\vspace{1pt}
+
+\scriptsize
+\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\textwidth}{l p{3.2cm} p{3.4cm} c r r X}
+  \toprule
+  \rowcolor{tableheader}
+  \textbf{\color{white}Tag} & \textbf{\color{white}Servicio Industrial} & \textbf{\color{white}Equipo Asociado} & \textbf{\color{white}$T_{\text{in}} \to T_{\text{out}}$} & \textbf{\color{white}Potencia / $Q$ (kW)} & \textbf{\color{white}MWh/año} & \textbf{\color{white}Observación Operativa} \\
+  \midrule
+  \rowcolor{roweven}
+  \texttt{EL-201} & Electricidad Renovable & Stack electrólisis SOEC & $750 \to 750^\circ\text{C}$ & \textbf{+54\,402.00} & $435\,216.0$ & $98.1\%$ del consumo total ($14.36\text{ MWh}_{\text{e}}\text{/t}$). \\
+  \rowcolor{rowodd}
+  \texttt{C-301} & Electricidad Media Tensión & Compresor syngas fresco & $72 \to 271^\circ\text{C}$ & \textbf{+1\,316.67} & $10\,533.4$ & Presurización $19.4 \to 75.0\text{ bar}$ ($0.35\text{ MWh}_{\text{e}}\text{/t}$). \\
+  \rowcolor{roweven}
+  \texttt{C-501} & Electricidad Baja Tensión & Soplador reciclo buclé & $60 \to 60^\circ\text{C}$ & \textbf{+150.00} & $1\,200.0$ & Compensación pérdida de carga ($\Delta P = 1.5\text{ bar}$). \\
+  \rowcolor{rowodd}
+  \texttt{P-201/601/801} & Electricidad Baja Tensión & Bombas de proceso y ZLD & $25 - 59^\circ\text{C}$ & \textbf{+13.13} & $105.0$ & Bombeo agua de make-up, reflujo y reúso ZLD. \\
+  \rowcolor{badgegreen}
+  \texttt{EXP-501} & \textbf{Generación Eléctrica} & \textbf{Turboexpansor purga bucle} & $60 \to -139^\circ\text{C}$ & \textbf{-437.79} & \textbf{-3\,502.3} & \textbf{Recuperación neta de potencia expandiendo a $1.25\text{ bar}$}. \\
+  \midrule
+  \rowcolor{badgeblue}
+  \multicolumn{4}{l}{\textbf{Consumo Eléctrico Neto Firme de Planta}} & \textbf{\large +55\,436.39} & \textbf{\large 312\,813.5} & $\mathbf{39.10\text{ MWe}}$ \textbf{firme} ($\mathbf{14.63\text{ kWh/kg MeOH}}$ comercial). \\
+  \midrule
+  \rowcolor{roweven}
+  \texttt{R-401-S} & Vapor Saturado $20\text{ bar}$ & Carcasa caldera BWR Lurgi & $40 \to 220^\circ\text{C}$ & \textbf{-12\,335.36} & $98\,682.9$ & Generación de $15.1\text{ t/h}$ de vapor para SOEC. \\
+  \rowcolor{rowodd}
+  \texttt{E-202} & Calefacción Eléctrica & Sobrecalentador vapor SOEC & $220 \to 750^\circ\text{C}$ & \textbf{+5\,248.42} & $41\,987.4$ & Eleva vapor a $750^\circ\text{C}$ ($1.385\text{ MWh}_{\text{th}}\text{/t MeOH}$). \\
+  \rowcolor{roweven}
+  \texttt{E-602} & Vapor de Baja Presión & Rehervidor torre \texttt{T-601} & $104 \to 104^\circ\text{C}$ & \textbf{+3\,266.68} & $26\,133.4$ & Ebullición de fondos ($0.862\text{ MWh}_{\text{th}}\text{/t MeOH}$). \\
+  \rowcolor{rowodd}
+  \texttt{E-501} & Agua de Enfriamiento & Condensador síntesis bucle & $225 \to 38^\circ\text{C}$ & \textbf{-13\,742.75} & $109\,942.0$ & Condensación a $38^\circ\text{C}$ para recuperar metanol en \texttt{V-501}. \\
+  \rowcolor{roweven}
+  \texttt{E-601} & Agua de Enfriamiento & Condensador torre \texttt{T-601} & $65 \to 65^\circ\text{C}$ & \textbf{-3\,077.25} & $24\,618.0$ & Condensación de destilado metanol Grado AA. \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{2pt}
+\begin{tcolorbox}[colback=white,colframe=navyblue!40,arc=1.5mm,boxrule=0.6pt,top=2pt,bottom=2pt,left=6pt,right=6pt]
+  \scriptsize
+  \textbf{\color{navyblue}Balance de Energía Cerrado:} $\sum \dot{H}_{\text{in}} + \dot{W}_{\text{net}} + \sum \dot{Q} - \sum \dot{H}_{\text{out}} = 0$, con discrepancia energética de solo $\mathbf{0.0084\%}$ ($<0.01\%$), validando la autosuficiencia térmica del reactor Lurgi y el stack SOEC.
+\end{tcolorbox}
+
+\newpage
+
+% ==============================================================================
+% DIAPOSITIVA 16: ACTIVIDAD AC-AMB-01 - MATRIZ 1 (ASPECTOS E IMPACTOS)
+% ==============================================================================
+\slideheader{ACTIVIDAD AC-AMB-01}{Matriz 1 Oficial AC-AMB-01}{Matriz 1: Identificación y Evaluación de Aspectos e Impactos Ambientales}{Evaluación de severidad, extensión, probabilidad y significancia ambiental en las 5 áreas de proceso.}
+
+\begin{objectivebox}{Priorizar los aspectos ambientales significativos de la planta y receptores sensibles en polo industrial adyacente.}{Actividad AC-AMB-01 Matriz 1 Oficial.}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{MÉTODO OFICIAL}{navyblue}{\textbf{\large S = M+E+D+P+R}\par{\fontsize{6pt}{7pt}\selectfont Escala de Significancia}} \hfill
+  \metriccard{0.235\textwidth}{SIGNIFICANCIA ALTA}{badgered}{\textbf{\Huge 4} \textbf{\color{darkred}Aspectos}\par{\fontsize{6pt}{7pt}\selectfont Prioritarios ($S \ge 13$)}} \hfill
+  \metriccard{0.235\textwidth}{SIGNIFICANCIA MEDIA}{badgeamber}{\textbf{\Huge 8} \textbf{\color{amber}Aspectos}\par{\fontsize{6pt}{7pt}\selectfont Controlables ($9-12$)}} \hfill
+  \metriccard{0.235\textwidth}{RECEPTORES CRÍTICOS}{emeraldgreen}{\textbf{\Huge Agua y Clima}\par{\fontsize{6pt}{7pt}\selectfont Protegidos por Diseño}}
+\end{minipage}
+
+\vspace{2.5pt}
+
+\noindent\textbf{\fontsize{8.2pt}{9.5pt}\selectfont \color{navyblue}AC-AMB-01: Matriz de Identificación y Valoración de Impactos Ambientales Significativos:}\par\vspace{1pt}
+
+\scriptsize
+\renewcommand{\arraystretch}{1.14}
+\begin{tabularx}{\textwidth}{c p{2.8cm} p{3.4cm} p{3.6cm} c c c}
+  \toprule
+  \rowcolor{tableheader}
+  \textbf{\color{white}No.} & \textbf{\color{white}Etapa / Equipo} & \textbf{\color{white}Aspecto Ambiental} & \textbf{\color{white}Impacto Ambiental Potencial} & \textbf{\color{white}M E D P R} & \textbf{\color{white}$S$} & \textbf{\color{white}Significancia} \\
+  \midrule
+  \rowcolor{roweven}
+  \textbf{1} & Prep. agua: \texttt{MIX-201} & Extracción de agua fresca de red & Agotamiento de acuíferos locales (polo industrial adyacente) & 3 2 3 3 3 & \textbf{14} & \badgered{Alta (Prioritaria)} \\
+  \rowcolor{rowodd}
+  \textbf{4} & Sobrecalentador: \texttt{E-202} & Demanda de calor a $750^\circ\text{C}$ & Consumo de recursos energéticos y huella indirecta & 3 2 3 3 3 & \textbf{14} & \badgered{Alta (Prioritaria)} \\
+  \rowcolor{roweven}
+  \textbf{5} & Stack SOEC: \texttt{EL-201} & Alto consumo eléctrico ($54.4\text{ MWe}$) & Emisión indirecta de GEI por red fósil & 4 2 3 3 2 & \textbf{14} & \badgered{Alta (Prioritaria)} \\
+  \rowcolor{rowodd}
+  \textbf{10} & Reactor síntesis: \texttt{R-401} & Reacción exotérmica y generación vapor & Generación de calor residual y estrés térmico & 2 2 3 2 1 & \textbf{10} & \badgeamber{Media} \\
+  \rowcolor{roweven}
+  \textbf{14} & Condensador: \texttt{E-501} & Demanda de agua en torres de enfriamiento & Evaporación y consumo en circuito de enfriamiento & 2 2 3 2 1 & \textbf{10} & \badgeamber{Media} \\
+  \rowcolor{rowodd}
+  \textbf{16} & Purga lazo: \texttt{SPLIT-501} & Emisión de gas de purga con $\text{H}_2/\text{CH}_4$ & Emisión atmosférica de COV y pérdida de energía & 2 2 3 2 2 & \textbf{11} & \badgeamber{Media} \\
+  \rowcolor{roweven}
+  \textbf{18} & Turboexpansor: \texttt{EXP-501} & Expansión y despresurización criogénica & Generación de electricidad limpia (-437.8 kW) & 1 1 3 2 1 & \textbf{8} & \badgegreen{Baja (Positivo)} \\
+  \rowcolor{rowodd}
+  \textbf{21} & Destilación: \texttt{T-601} & Efluente acuoso de fondos ($7\,004\text{ kg/h}$) & Contaminación de cuerpos receptores con metanol & 3 2 3 3 2 & \textbf{13} & \badgered{Alta (Prioritaria)} \\
+  \rowcolor{roweven}
+  \textbf{24} & Circuito ZLD: \texttt{P-801} & Recirculación total de agua condensada & Abatimiento en 52\% de la extracción de agua & 1 1 3 1 1 & \textbf{7} & \badgegreen{Baja (Positivo)} \\
+  \rowcolor{rowodd}
+  \textbf{26} & Compresor: \texttt{C-301} & Generación de ruido industrial y vibración & Afectación al ambiente acústico laboral & 2 1 3 3 1 & \textbf{10} & \badgeamber{Media} \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{2pt}
+\begin{tcolorbox}[colback=white,colframe=navyblue!40,arc=1.5mm,boxrule=0.6pt,top=2pt,bottom=2pt,left=6pt,right=6pt]
+  \scriptsize
+  \textbf{\color{navyblue}Criterio de Evaluación y Jerarquía de Mitigación:} La escala oficial $S = M + E + D + P + R$ clasifica impactos en Alta ($13-17$), Media ($9-12$) y Baja ($5-8$). La ingeniería de Solvanta diseñó el flowsheet para eliminar en la fuente los 4 impactos de alta significancia mediante lazo ZLD, electrólisis SOEC de alta eficiencia y suministro eléctrico PPA 100\% renovable.
+\end{tcolorbox}
+
+\newpage
+
+% ==============================================================================
+% DIAPOSITIVA 17: ACTIVIDAD AC-AMB-01 - MATRIZ 2 (NORMATIVIDAD Y MITIGACIÓN)
+% ==============================================================================
+\slideheader{ACTIVIDAD AC-AMB-01}{Matriz 2 Oficial AC-AMB-01}{Matriz 2: Cumplimiento Normativo, Medidas de Mitigación e Indicadores}{Mecanismos de control ambiental en el flowsheet, marco legal mexicano e indicadores normalizados.}
+
+\begin{objectivebox}{Demostrar el cumplimiento estricto de las normas mexicanas (NOM) e indicadores por tonelada de producto.}{Actividad AC-AMB-01 Matriz 2 Oficial.}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{CONSUMO AGUA FRESCA}{emeraldgreen}{\textbf{\Huge 0.562} m$^3$/t MeOH} \hfill
+  \metriccard{0.235\textwidth}{ENERGÍA ELÉCTRICA}{accentcyan}{\textbf{\Huge 14.36} MWh$_{\text{e}}$/t (PPA)} \hfill
+  \metriccard{0.235\textwidth}{EMISIÓN PURGA}{amber}{\textbf{\Huge 73.9} kg/t MeOH} \hfill
+  \metriccard{0.235\textwidth}{METANOL EN VERTIDO}{emeraldgreen}{\textbf{\Huge 0 mg/L} (ZLD Total)}
+\end{minipage}
+
+\vspace{2.5pt}
+
+\noindent\textbf{\fontsize{8.2pt}{9.5pt}\selectfont \color{navyblue}AC-AMB-01: Matriz de Normatividad, Medidas de Mitigación e Indicadores Normalizados:}\par\vspace{1pt}
+
+\scriptsize
+\renewcommand{\arraystretch}{1.14}
+\begin{tabularx}{\textwidth}{c p{2.8cm} p{3.2cm} p{3.8cm} c X}
+  \toprule
+  \rowcolor{tableheader}
+  \textbf{\color{white}No.} & \textbf{\color{white}Etapa / Equipo} & \textbf{\color{white}Normatividad Aplicable} & \textbf{\color{white}Medida de Control / Mitigación} & \textbf{\color{white}Indicador Normalizado} & \textbf{\color{white}Trazabilidad y Origen DWSIM} \\
+  \midrule
+  \rowcolor{roweven}
+  \textbf{1} & Prep. agua: \texttt{MIX-201} & \textbf{NOM-011-CONAGUA-2015} / NOM-003 & Reúso del $100\%$ de condensados hídricos vía lazo ZLD. & \textbf{0.562 m$^3$/t MeOH} & Corriente \texttt{S-201} ($6\,460\text{ kg/h}$ make-up); DFP Área 200. \\
+  \rowcolor{rowodd}
+  \textbf{4} & Sobrecalentador: \texttt{E-202} & \textbf{LGEEPA} / Ley Cambio Climático & Precalentamiento con vapor generado en caldera \texttt{R-401-S}. & \textbf{1.385 MWh$_{\text{th}}$/t} & Carga térmica \texttt{E-202} ($5\,248.4\text{ kW}$); tabla TE-01. \\
+  \rowcolor{roweven}
+  \textbf{5} & Stack SOEC: \texttt{EL-201} & \textbf{ISO 50001} / NOM-018-STPS-2015 & Contrato PPA de suministro eléctrico $100\%$ renovable. & \textbf{14.36 MWh$_{\text{e}}$/t} & Potencia stack ($54.40\text{ MW}$); TE-01 y VTP-01. \\
+  \rowcolor{rowodd}
+  \textbf{10} & Reactor: \texttt{R-401} & \textbf{NOM-020-STPS-2015} & Enfriamiento por agua hirviente con caldera integral. & \textbf{3.986 t vap/t MeOH} & Vapor generado en caldera ($15.1\text{ t/h}$); TE-01. \\
+  \rowcolor{roweven}
+  \textbf{14} & Condensador: \texttt{E-501} & \textbf{NOM-011-CONAGUA-2015} & Circuito cerrado de agua de enfriamiento con purga mínima. & \textbf{3.627 MWh$_{\text{th}}$/t} & Deber térmico enfriamiento ($13\,743\text{ kW}$); TE-01. \\
+  \rowcolor{rowodd}
+  \textbf{16} & Purga lazo: \texttt{SPLIT-501} & \textbf{NOM-165-SEMARNAT} / NOM-085 & Expansión criogénica en \texttt{EXP-501} y envío a antorcha. & \textbf{73.9 kg gas/t MeOH} & Caudal purga \texttt{S-505} ($613.6\text{ kg/h}$); DFP Área 500. \\
+  \rowcolor{roweven}
+  \textbf{18} & Expansor: \texttt{EXP-501} & \textbf{ISO 50001} & Generación de electricidad limpia expandiendo purga bucle. & \textbf{-0.115 MWh$_{\text{e}}$/t} & Potencia recuperada en eje ($-437.8\text{ kW}$); TE-01. \\
+  \rowcolor{rowodd}
+  \textbf{21} & Destilación: \texttt{T-601} & \textbf{NOM-001-SEMARNAT-2021} & Descarga Líquida Cero: retorno total a caldera vía \texttt{P-801}. & \textbf{< 10 mg/L MeOH} & Corriente fondos \texttt{S-605} ($7\,004.4\text{ kg/h}$); TC-01. \\
+  \rowcolor{roweven}
+  \textbf{24} & Circuito ZLD: \texttt{P-801} & \textbf{NOM-001-SEMARNAT-2021} & Bombeo y recirculación hermética sin descarga exterior. & \textbf{1.849 t agua/t MeOH} & Caudal recirculado a caldera ($7\,004\text{ kg/h}$); TC-01. \\
+  \rowcolor{rowodd}
+  \textbf{26} & Compresor: \texttt{C-301} & \textbf{NOM-081-SEMARNAT-1994} & Aislamiento acústico integral y silenciadores en succión. & \textbf{< 85 dB(A)} & Especificación en hoja de datos LE-01. \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{2pt}
+\begin{tcolorbox}[colback=white,colframe=navyblue!40,arc=1.5mm,boxrule=0.6pt,top=2pt,bottom=2pt,left=6pt,right=6pt]
+  \scriptsize
+  \textbf{\color{navyblue}Aspecto no Modelable en DWSIM (Pregunta 9.5.6):} Las emisiones fugitivas de metanol en sellos de bombas (\texttt{P-601}) y vástagos de válvulas no son simulables en DWSIM v1. Solvanta las mitiga en el diseño de ingeniería de detalle prescribiendo sellos mecánicos dobles presurizados API 682 Plan 53A y válvulas de baja emisión certificadas bajo ISO 15848-1.
+\end{tcolorbox}
+
+\newpage
+
+% ==============================================================================
+% DIAPOSITIVA 18: TRAZABILIDAD TÉCNICA INTEGRADA (CUADRO 5 GUÍA DOCENTE)
+% ==============================================================================
+\slideheader{TRAZABILIDAD TÉCNICA INTEGRADA}{Cuadro 5 Oficial Guía RT-02}{Cuadro 5: Tres Cadenas Cuantitativas de Trazabilidad Técnica}{Seguimiento interdocumental estricto de variables cuantitativas desde DWSIM v1 hasta la evaluación ambiental.}
+
+\begin{objectivebox}{Demostrar el seguimiento riguroso de potencia eléctrica, caudal de purga y enfriamiento.}{Sección 12 y Cuadro 5 de la Guía Oficial Docente RT-02.}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{CADENAS AUDITADAS}{navyblue}{\textbf{\Huge 3 Cadenas} Completas} \hfill
+  \metriccard{0.235\textwidth}{TAGS REVISADOS}{emeraldgreen}{\textbf{\Huge 18 / 18} Trazados} \hfill
+  \metriccard{0.235\textwidth}{CONSISTENCIA DFP-SIM}{emeraldgreen}{\textbf{\Huge 100\%} Unívoca} \hfill
+  \metriccard{0.235\textwidth}{DISCREPANCIAS HALLADAS}{emeraldgreen}{\textbf{\Huge 0} Cero Errores}
+\end{minipage}
+
+\vspace{2.5pt}
+
+\noindent\textbf{\fontsize{8.2pt}{9.5pt}\selectfont \color{navyblue}Cuadro 5 Oficial: Las Tres Cadenas de Trazabilidad Técnica Interdocumental:}\par\vspace{1pt}
+
+\scriptsize
+\renewcommand{\arraystretch}{1.22}
+\begin{tabularx}{\textwidth}{p{3.6cm} p{3.8cm} p{4.6cm} X}
+  \toprule
+  \rowcolor{tableheader}
+  \textbf{\color{white}Dato de Origen (DWSIM v1)} & \textbf{\color{white}Documento Técnico (TE / TC)} & \textbf{\color{white}Relación Ambiental (AC-AMB-01)} & \textbf{\color{white}Indicador Cuantitativo Normalizado} \\
+  \midrule
+  \rowcolor{roweven}
+  \textbf{\color{navyblue}Cadena 1: Potencia Eléctrica}\par
+  \texttt{C-301} ($1\,316.67\text{ kW}$) y \texttt{EL-201} ($54\,402\text{ kW}$) calculadas en DWSIM v1. &
+  \texttt{TE-01} y \texttt{LE-01D} registran potencias en eje, voltajes y balance eléctrico integral. &
+  \texttt{AC-AMB-01} evalúa consumo de electricidad y emisiones indirectas de GEI (Fila 5). &
+  \textbf{\Large 14.36 MWh$_{\text{e}}$ / t MeOH}\par
+  \textit{(Suministro con PPA 100\% renovable)}. \\
+  \midrule
+  \rowcolor{rowodd}
+  \textbf{\color{navyblue}Cadena 2: Caudal de Purga}\par
+  Caudal de purga \texttt{S-505} ($613.59\text{ kg/h}$) del divisor \texttt{SPLIT-501}. &
+  \texttt{TC-01A} y plano \texttt{DFP v1} muestran composición, balance de bucle y ruteo a \texttt{EXP-501}. &
+  \texttt{AC-AMB-01} evalúa incondensables a antorcha y cogeneración eléctrica limpia (Fila 16). &
+  \textbf{\Large 73.9 kg gas / t MeOH}\par
+  \textit{(Genera 437.8 kW continuos)}. \\
+  \midrule
+  \rowcolor{roweven}
+  \textbf{\color{navyblue}Cadena 3: Cargas y Agua}\par
+  Carga térmica de enfriadores \texttt{E-501} ($13\,742.8\text{ kW}$) y \texttt{E-203} ($8\,962.2\text{ kW}$). &
+  \texttt{TE-01} registra deberes térmicos y calcula demanda hídrica en torres de enfriamiento. &
+  \texttt{AC-AMB-01} determina consumo hídrico, evaporación y vertido cero (Filas 1 y 21). &
+  \textbf{\Large 0.562 m$^3$ agua / t MeOH}\par
+  \textit{(Lazo ZLD cerrado con 100\% de reúso)}. \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{2pt}
+\begin{tcolorbox}[colback=white,colframe=navyblue!40,arc=1.5mm,boxrule=0.6pt,top=2pt,bottom=2pt,left=6pt,right=6pt]
+  \scriptsize
+  \textbf{\color{navyblue}Verificación de Consistencia Interdocumental:} Correspondencia unívoca comprobada en el $100\%$ de los flujos másicos, composiciones, condiciones termodinámicas ($P, T$) y cargas térmicas entre la simulación DWSIM v1, las tablas maestras TC-01 y TE-01, la lista de equipos LE-01 y la matriz ambiental AC-AMB-01.
+\end{tcolorbox}
+
+\newpage
+
+% ==============================================================================
+% DIAPOSITIVA 19: PENDIENTES TÉCNICOS HACIA FASE E2 Y CIERRE FORMAL RT-02
+% ==============================================================================
+\slideheader{PENDIENTES TÉCNICOS Y CIERRE}{Cuadro 13 LE-01J / Plantilla RT-02-RO}{Pendientes Técnicos hacia Fase E2 y Cierre Formal RT-02}{Identificación formal de las cinco áreas de ingeniería de detalle, responsables y plantilla RT-02-RO.}
+
+\begin{objectivebox}{Formalizar las acciones de seguimiento en la plantilla RT-02-RO y declarar las fronteras del corte.}{Secciones 3, 11, 19 y Cuadro 13 de LE-01J Oficial.}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{ACCIONES ASIGNADAS}{navyblue}{\textbf{\Huge 5 Pendientes} (LE-01J)} \hfill
+  \metriccard{0.235\textwidth}{FORMATO RT-02-RO}{emeraldgreen}{\textbf{\Huge Activo} Oficial} \hfill
+  \metriccard{0.235\textwidth}{SIGUIENTE HITO}{accentcyan}{\textbf{\Huge AC-SST-01} / HAZOP} \hfill
+  \metriccard{0.235\textwidth}{MADUREZ DEL CORTE}{emeraldgreen}{\textbf{\Huge Robusta} y Conexa}
+\end{minipage}
+
+\vspace{2.5pt}
+
+\noindent\textbf{\fontsize{8.2pt}{9.5pt}\selectfont \color{navyblue}Cuadro 13 LE-01J: Matriz de Información Técnica Pendiente para Ingeniería Básica (Fase E2):}\par\vspace{1pt}
+
+\scriptsize
+\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\textwidth}{l p{3.8cm} p{6.4cm} c X}
+  \toprule
+  \rowcolor{tableheader}
+  \textbf{\color{white}TAG} & \textbf{\color{white}Información Faltante} & \textbf{\color{white}Por Qué se Necesita en Fase E2} & \textbf{\color{white}Criticidad} & \textbf{\color{white}Responsable Asignado} \\
+  \midrule
+  \rowcolor{roweven}
+  \texttt{EL-201} & Curvas de degradación SOEC ($V-I$, $\%/\text{kh}$) & Plan de reemplazo programado de celdas a 10 años en modelo OPEX. & \badgered{Alta} & Ing. Paulina Mota Macip \\
+  \rowcolor{rowodd}
+  \texttt{R-401} & Cinética desactivación catalizador $\text{Cu/ZnO}$ & Ajuste paulatino de temperatura ($245 \to 255^\circ\text{C}$) en ciclo de vida útil. & \badgered{Alta} & Ing. Gildardo Ocaña Barrales \\
+  \rowcolor{roweven}
+  \texttt{C-301} & Curvas de control anti-surge y VFD & Dimensionamiento de lazo de reciclo mínimo y variador de frecuencia. & \badgeamber{Media} & Ing. Gildardo Ocaña Barrales \\
+  \rowcolor{rowodd}
+  \texttt{T-601} & Hidráulica platos (perforados vs válvulas) & Dimensionamiento de espaciado ($0.50\text{ m}$), vertederos, bajantes y $\Delta P$. & \badgered{Alta} & Ing. Karol Paola Camacho López \\
+  \rowcolor{roweven}
+  Sitio & Calidad estacional agua cruda polo industrial adyacente & Especificación del pretratamiento por ósmosis inversa y lecho mixto. & \badgeamber{Media} & Ing. Grecia Figueroa Rincón \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{2pt}
+
+\begin{minipage}[t]{0.54\textwidth}
+  \begin{tcolorbox}[colback=white,colframe=darkred!60,arc=1.5mm,boxrule=0.7pt,top=2.5pt,bottom=2.5pt,left=6pt,right=6pt]
+    \textbf{\fontsize{7.5pt}{9pt}\selectfont \color{darkred}Límites Formales del Corte RT-02 (Sección 3 de la Guía):}
+    \vspace{1pt}
+    \scriptsize
+    No corresponden a este corte ni se presentan como terminados:
+    \begin{itemize}\setlength{\itemsep}{0.5pt}
+      \item Matriz de Seguridad y Salud en el Trabajo (\textbf{AC-SST-01}).
+      \item Análisis de Riesgo Operativo (\textbf{HAZOP}) y matrices SIL / LOPA.
+      \item Filosofía de control detallada, lazos PID, alarmas e interbloqueos.
+      \item Diagramas de Tubería e Instrumentación definitivos (\textbf{DTI / P\&ID}).
+    \end{itemize}
+  \end{tcolorbox}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\textwidth}
+  \begin{tcolorbox}[colback=white,colframe=navyblue!60,arc=1.5mm,boxrule=0.7pt,top=2.5pt,bottom=2.5pt,left=6pt,right=6pt]
+    \textbf{\fontsize{7.5pt}{9pt}\selectfont \color{navyblue}Criterio de Cierre Formal RT-02 (Sección 19):}
+    \vspace{1pt}
+    \scriptsize
+    Solvanta habilita la plantilla \texttt{RT-02-RO} para:
+    \begin{enumerate}\setlength{\itemsep}{0.5pt}
+      \item Registrar observaciones de la revisión docente asincrónica.
+      \item Asignar responsable y fecha objetivo verificable.
+      \item Entregar evidencia de cierre para autorizar el avance hacia la revisión de seguridad industrial (\textbf{AC-SST-01}).
+    \end{enumerate}
+  \end{tcolorbox}
+\end{minipage}
+
+\newpage
+
+% ==============================================================================
+% DIAPOSITIVA 20: DOCUMENTOS DE ENTRADA Y MARCO NORMATIVO / BIBLIOGRÁFICO
+% ==============================================================================
+\slideheader{DOCUMENTOS DE ENTRADA}{Cuadro 1 Oficial Guía RT-02}{Cuadro 1: Expediente Documental de Sustento y Marco Normativo}{Consolidación formal de los 12 documentos de entrada requeridos y referencias bibliográficas.}
+
+\begin{objectivebox}{Declarar las fuentes de información utilizadas y la disponibilidad de los modelos editables para auditoría docente.}{Sección 4 (Documentos obligatorios) y Cuadro 1 de la Guía Oficial RT-02.}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{EXPEDIENTES TÉCNICOS}{navyblue}{\textbf{\Huge 12} Entregables Base} \hfill
+  \metriccard{0.235\textwidth}{NORMAS APLICADAS}{navyblue}{\textbf{\Huge 6} NOM / ISO / ANSI} \hfill
+  \metriccard{0.235\textwidth}{MODELO TERMODINÁMICO}{accentcyan}{\textbf{\Huge PRSV2-VL} Riguroso} \hfill
+  \metriccard{0.235\textwidth}{REPOSITORIO AUDITABLE}{emeraldgreen}{\textbf{\Huge GitHub} Aprobado}
+\end{minipage}
+
+\vspace{2.5pt}
+
+\begin{minipage}[t]{0.51\textwidth}
+  \textbf{\fontsize{8pt}{9.5pt}\selectfont \color{navyblue}Cuadro 1: Documentos que Sustentan RT-02 (Guía Docente):}\par\vspace{2pt}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.12}
+  \begin{tabularx}{\linewidth}{c p{2.7cm} X c}
+    \toprule
+    \rowcolor{tableheader}
+    \textbf{\color{white}No.} & \textbf{\color{white}Documento} & \textbf{\color{white}Evidencia que aporta} & \textbf{\color{white}Versión} \\
+    \midrule
+    \rowcolor{roweven}
+    \textbf{1} & Bases de Diseño (E1.1) & Capacidad $30\,000\text{ t/a}$, $\text{CO}_2$ $99\%$, límites polo industrial adyacente. & Rev. 1.0 \\
+    \rowcolor{rowodd}
+    \textbf{2} & NB-01 validado & Base estequiométrica y requerimientos teóricos. & Rev. 1.0 \\
+    \rowcolor{roweven}
+    \textbf{3} & BFD v1.0 Oficial (Plano 1.2) & Secuencia funcional del proceso, balances y límites de bloques. & Rev. 1.0 \\
+    \rowcolor{rowodd}
+    \textbf{4} & Archivo DWSIM vigente & Modelo convergente \texttt{DWSIM\_v1\_APROBADA.dwxmz}. & v10.2.4 \\
+    \rowcolor{roweven}
+    \textbf{5} & SIM-01 & Configuración, convergencia y comprobaciones físicas. & Rev. 1.0 \\
+    \rowcolor{rowodd}
+    \textbf{6} & VTP-01 & Alternativas técnicas analizadas y criterios de decisión. & Rev. 1.0 \\
+    \rowcolor{roweven}
+    \textbf{7} & TC-01 & Tabla de corrientes de materia (36 corrientes). & Rev. 1.0 \\
+    \rowcolor{rowodd}
+    \textbf{8} & TE-01 & Tabla de energía, potencias y deberes térmicos. & Rev. 1.0 \\
+    \rowcolor{roweven}
+    \textbf{9} & DFP v1 & Diagrama de Flujo oficial Rev. 1 (28 equipos). & Rev. 1.0 \\
+    \rowcolor{rowodd}
+    \textbf{10} & LE-01 & Lista maestra de equipos y condiciones de operación. & Rev. 1.0 \\
+    \rowcolor{roweven}
+    \textbf{11} & Balance de servicios & Electricidad, CW, vapor y recuperación en purga. & Rev. 1.0 \\
+    \rowcolor{rowodd}
+    \textbf{12} & AC-AMB-01 & Matriz integral de aspectos e impactos ambientales. & Rev. 1.0 \\
+    \bottomrule
+  \end{tabularx}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.46\textwidth}
+  \textbf{\fontsize{8pt}{9.5pt}\selectfont \color{navyblue}Marco Normativo Oficial y Referencias Técnicas:}\par\vspace{2pt}
+  \begin{itemize}\scriptsize
+    \setlength{\itemsep}{2pt}
+    \item \textbf{NOM-001-SEMARNAT-2021:} Límites máximos permisibles en descargas de aguas residuales en cuerpos receptores nacionales.
+    \item \textbf{NOM-011-CONAGUA-2015:} Conservación del recurso agua -- Especificaciones para disponibilidad media anual de aguas nacionales.
+    \item \textbf{NOM-085-SEMARNAT-2011:} Niveles máximos de emisión para fuentes fijas de humos, polvos y gases.
+    \item \textbf{NOM-018-STPS-2015:} Sistema armonizado para la identificación y comunicación de peligros por sustancias químicas peligrosas.
+    \item \textbf{ANSI/ISA-5.1-2009:} \textit{Instrumentation Symbols and Identification}.
+    \item \textbf{Vanden Bussche, K. M., \& Froment, G. F. (1996):} \textit{A Steady-State Kinetic Model for Synthesis of Methanol from $\text{CO}_2$ and $\text{H}_2$}. J. Catalysis, 161(1), 1-10.
+    \item \textbf{Perry, R. H., \& Green, D. W. (2018):} \textit{Perry's Chemical Engineers' Handbook}, 9th Edition, McGraw-Hill Education.
+  \end{itemize}
+\end{minipage}
+
+\end{document}

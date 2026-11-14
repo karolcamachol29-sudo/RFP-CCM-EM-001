@@ -1,0 +1,1628 @@
+=== Page 1 ===
+Benemérita Universidad Autónoma de Puebla
+Facultad de Ingeniería Química
+Licenciatura en Ingeniería Química
+Diseño de Procesos y Productos Quími-
+cos
+Manual de clase, diseño, simulación y optimización de procesos químicos
+Autor Dr. Jesús Andrés Arzola Flores
+AsignaturaDiseño de Procesos y Productos Químicos
+CódigoISIQ-204
+Modalidad Curso integrador basado en proyectos, simulación y licitación
+tecnológica
+Duración16 semanas·4 horas por semana·64 horas
+Dr. Jesús Andrés Arzola Flores
+Profesor Investigador
+Facultad de Ingeniería Química
+Benemérita Universidad Autónoma de Puebla
+Manual académico para uso en la asignatura Diseño de Procesos y Productos Químicos.
+
+=== Page 2 ===
+Presentación
+Este manual constituye el documento rector de la asignaturaDiseño de Procesos y Productos
+Químicos.
+El curso se estructura como una experiencia integradora de ingeniería en la que los estudiantes
+desarrollarán, durante todo el semestre, el diseño conceptual de un proceso químico bajo una dinámica
+delicitación tecnológica.
+La metodología integra:
+▶ diseño conceptual de procesos;
+▶ síntesis de sistemas de reacción;
+▶ síntesis de secuencias de separación;
+▶ integración reacción–separación–reciclo;
+▶ integración energética;
+▶ evaluación económica;
+▶ optimización;
+▶ simulación de procesos mediante DWSIM;
+▶ programación y análisis mediante Python;
+▶ evaluación tecnoeconómica mediante BioSTEAM;
+▶ elaboración de Diagramas de Bloques del Proceso;
+▶ elaboración de Diagramas de Flujo de Proceso (DFP/PFD);
+▶ elaboración de Diagramas de Tuberías e Instrumentación (DTI/P&ID);
+▶ elaboración profesional de diagramas mediante AutoCAD Plant 3D;
+▶ aplicación de estándares ISO para diagramación de procesos;
+▶ instrumentación y control de procesos;
+▶ simulación de lazos de control mediante Python;
+▶ utilización crítica de herramientas de inteligencia artificial;
+▶ comunicación técnica y presentación de propuestas ante especialistas externos.
+El manual será construido progresivamente durante el curso. Cada capítulo corresponderá a una etapa
+del proyecto, una metodología de diseño, una herramienta computacional o un documento técnico
+necesario para desarrollar la propuesta final.
+i
+
+=== Page 3 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+Dr. Jesús Andrés Arzola Flores
+Facultad de Ingeniería Química
+Benemérita Universidad Autónoma de Puebla
+Facultad de Ingeniería Química Páginaii
+
+=== Page 4 ===
+Índice general
+Presentación i
+1. Solicitud de Propuesta: Proyecto e-Metanol 1
+1.1. Carta de invitación . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+1.2. Antecedentes y problemática . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+1.3. Objeto de la licitación . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.4. Principio de libertad de diseño . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+1.5. Alcance de los trabajos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+1.6. Exclusiones del alcance . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+1.7. Reacciones químicas consideradas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+1.7.1. Reacción principal . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+1.7.2. Reacción secundaria . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+1.8. Bases preliminares de diseño . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+1.9. Áreas funcionales del proceso . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+1.10.Arquitectura digital y herramientas profesionales . . . . . . . . . . . . . . . . . . . . . 7
+1.11. Flujo digital de trabajo . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+1.12. Comparación obligatoria de alternativas . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+1.13. Configuración de referencia proporcionada por el licitante . . . . . . . . . . . . . . . . 8
+1.14. Estándares y software para los diagramas de ingeniería . . . . . . . . . . . . . . . . . . 9
+1.15. Diagrama de Bloques del Proceso . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+1.16. Diagrama de Flujo de Proceso . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+1.17. Diagrama de Tuberías e Instrumentación . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+1.17.1. Filosofía básica de instrumentación y control . . . . . . . . . . . . . . . . . . . 11
+1.17.2. Notebook de Python para instrumentación y control . . . . . . . . . . . . . . . 12
+1.17.3. Ganancias y sintonización de los controladores . . . . . . . . . . . . . . . . . . 12
+1.17.4. Simulación dinámica de los lazos de control . . . . . . . . . . . . . . . . . . . . 13
+1.18. Evolución de los diagramas y modelos . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+iii
+
+=== Page 5 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+1.19. Organización de las empresas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+1.20. Entregables contractuales . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+1.21. Calendario general del proyecto . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+1.22. Rutina semanal . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+1.23. Órdenes de cambio . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+1.24. Control documental . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+1.25. Uso de inteligencia artificial . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+1.26. Indicadores de desempeño . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+1.27. Criterios de evaluación de la licitación . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+1.28. Evaluación académica . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+1.29. Contenido de la propuesta final . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+1.30. Pitch tecnológico . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+1.31.Adjudicación de la licitación . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+1.32.Aceptación de participación . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+2. Anexo Técnico A: Bases de Diseño del Proceso de e-Metanol 22
+2.1. Propósito del Anexo Técnico . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+2.2. Filosofía general de las bases de diseño . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+2.3. Límites generales del sistema . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+2.4. Capacidad nominal de la planta . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+2.5. Especificación del producto . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+2.6. Benchmark estequiométrico . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+2.7. Corriente de dióxido de carbono . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+2.7.1. Presencia de nitrógeno . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+2.8. Suministro de hidrógeno renovable . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+2.9. Modelado obligatorio de la electrólisis . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+2.9.1. Modelo obligatorio en Python . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+2.9.2. Consumo de agua para electrólisis . . . . . . . . . . . . . . . . . . . . . . . . . 29
+2.10. Sistema de reacción . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+2.10.1. Síntesis de metanol . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+2.10.2. Reacción inversa de desplazamiento de gas de agua . . . . . . . . . . . . . . . . 30
+2.11.Ventana de operación del sistema de síntesis . . . . . . . . . . . . . . . . . . . . . . . . 30
+2.12. Conversión, reciclo y purga . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+2.13. Sistema de separación y purificación . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+2.14. Selección del modelo termodinámico . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
+Facultad de Ingeniería Química Páginaiv
+
+=== Page 6 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+2.15. Servicios auxiliares . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
+2.16. Base económica del proyecto . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+2.17. Indicadores económicos mínimos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+2.18. Escenarios económicos obligatorios . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 34
+2.19. Criterios ambientales . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 34
+2.20. Criterios generales de seguridad . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35
+2.21.Variables fijas del proyecto . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35
+2.22.Variables de diseño . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36
+2.23. Herramientas obligatorias por área . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+2.24. Restricciones generales de la licitación . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+2.25. Consistencia entre modelos y documentos . . . . . . . . . . . . . . . . . . . . . . . . . 38
+2.26. Criterios mínimos para considerar una solución válida . . . . . . . . . . . . . . . . . . 38
+2.27. Matriz general de libertad de diseño . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39
+2.28. Entregable asociado al Anexo Técnico A . . . . . . . . . . . . . . . . . . . . . . . . . . 39
+2.29. Cierre de las bases de diseño . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+Facultad de Ingeniería Química Páginav
+
+=== Page 7 ===
+Solicitud de Propuesta: Proyecto
+e-Metanol
+RFP-CCM-EM-001
+Proyecto:
+Diseño conceptual y optimización de una planta de e-metanol a partir deCO2 capturado e
+hidrógeno renovable.
+Entidad licitante:
+Circular Carbon México, S.A. de C.V.
+Modalidad:
+Licitación tecnológica académica por equipos.
+Duración:
+16 semanas, con cuatro sesiones de una hora por semana.
+1.1 Carta de invitación
+A las empresas de ingeniería participantes:
+Circular Carbon México, S.A. de C.V. invita a las empresas preseleccionadas a presentar una propuesta
+para desarrollar la ingeniería conceptual de una planta de producción de e-metanol a partir de dióxido
+de carbono capturado e hidrógeno renovable.
+La propuesta deberá integrar criterios:
+▶ técnicos;
+▶ económicos;
+▶ energéticos;
+▶ ambientales;
+▶ de seguridad;
+▶ de operabilidad;
+▶ de instrumentación;
+▶ de control;
+1
+
+=== Page 8 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+▶ de innovación.
+La presente Solicitud de Propuesta constituye el documento rector del proyecto semestral.
+Cada empresa deberá demostrar la solidez de sus decisiones mediante:
+▶ cálculos reproducibles;
+▶ simulación en DWSIM;
+▶ análisis y optimización mediante Python;
+▶ evaluación tecnoeconómica con BioSTEAM;
+▶ elaboración del Diagrama de Bloques del Proceso;
+▶ elaboración del DFP/PFD;
+▶ elaboración del DTI/P&ID;
+▶ simulación de lazos básicos de control mediante Python;
+▶ defensa oral ante un comité evaluador.
+Atentamente,
+Dirección del Proyecto
+Circular Carbon México, S.A. de C.V.
+1.2 Antecedentes y problemática
+La transformación de la industria química hacia esquemas de menor intensidad de carbono exige
+desarrollar tecnologías capaces de aprovechar corrientes de CO2 y convertirlas en productos de valor.
+El metanol constituye una materia prima de importancia para la industria química y puede emplearse
+también como combustible, precursor químico y vector energético.
+La producción de metanol mediante hidrogenación deCO2 utilizando hidrógeno obtenido a partir de
+electricidad renovable permite estudiar de manera integrada:
+▶ reacción química;
+▶ equilibrio;
+▶ compresión;
+▶ transferencia de calor;
+▶ separación;
+▶ destilación;
+▶ reciclo;
+▶ purga;
+▶ integración energética;
+Facultad de Ingeniería Química Página 2
+
+=== Page 9 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+▶ economía del proceso;
+▶ huella de carbono;
+▶ instrumentación;
+▶ control;
+▶ optimización.
+Reto central
+Determinar la mejor configuracióntécnica, económica, energética, ambiental y operativa-
+mente defendiblepara producir e-metanol a partir deCO2 capturado e hidrógeno renovable,
+cumpliendo las especificaciones establecidas por la entidad licitante.
+1.3 Objeto de la licitación
+El objetivo de la licitación es seleccionar la propuesta de ingeniería conceptual que presente el mayor
+valor integral para la entidad licitante.
+La adjudicación considerará:
+▶ cumplimiento técnico;
+▶ viabilidad económica;
+▶ eficiencia energética;
+▶ desempeño ambiental;
+▶ seguridad;
+▶ operabilidad;
+▶ calidad de la simulación;
+▶ consistencia de los cálculos;
+▶ calidad del BFD;
+▶ calidad del DFP;
+▶ calidad del DTI;
+▶ calidad de la estrategia de instrumentación y control;
+▶ innovación;
+▶ capacidad para comparar alternativas;
+▶ calidad de la defensa técnica.
+1.4 Principio de libertad de diseño
+Facultad de Ingeniería Química Página 3
+
+=== Page 10 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+Principio rector de la licitación
+La entidad licitante establece lasespecificaciones de alimentación, capacidad, producto y
+desempeño, perono prescribe una única configuración del proceso.
+Cada empresa será responsable de proponer, comparar, justificar y defender su propia solución de
+ingeniería.
+Por tanto, los equipos podrán obtener configuraciones diferentes aun cuando todos trabajen con las
+mismas bases de diseño.
+1.5 Alcance de los trabajos
+Las empresas participantes deberán:
+1. Definir y justificar las bases de diseño.
+2. Analizar diferentes rutas tecnológicas.
+3. Elaborar el Diagrama de Bloques del Proceso.
+4. Diseñar conceptualmente el sistema de reacción.
+5. Diseñar el sistema de separación.
+6. Diseñar la estrategia de reciclo y purga.
+7. Construir y converger una simulación integral en DWSIM.
+8. Evaluar al menos tres alternativas de diseño u operación.
+9. Elaborar balances de materia y energía.
+10. Elaborar una tabla de corrientes.
+11. Dimensionar preliminarmente los equipos principales.
+12. Elaborar el DFP/PFD.
+13. Elaborar el DTI/P&ID.
+14. Proponer una estrategia básica de instrumentación y control.
+15. Simular mediante Python los lazos básicos de control seleccionados.
+16. Determinar y documentar las ganancias de los controladores.
+17. Proponer una estrategia de integración energética.
+18. Estimar CAPEX y OPEX.
+19. Evaluar la rentabilidad del proyecto.
+20. Construir modelos de análisis y optimización mediante Python.
+21. Desarrollar una evaluación tecnoeconómica mediante BioSTEAM.
+22. Evaluar indicadores ambientales.
+Facultad de Ingeniería Química Página 4
+
+=== Page 11 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+23. Analizar riesgos relevantes.
+24. Presentar y defender la propuesta mediante un pitch tecnológico.
+1.6 Exclusiones del alcance
+No será necesario desarrollar:
+▶ ingeniería civil de detalle;
+▶ ingeniería estructural de detalle;
+▶ ingeniería eléctrica de detalle;
+▶ planos constructivos;
+▶ especificaciones de compra definitivas;
+▶ modelado electroquímico detallado del electrolizador;
+▶ simulación rigurosa de la captura de CO2 mediante electrolitos;
+▶ sistemas instrumentados de seguridad de detalle;
+▶ trámites reales de permisos;
+▶ manifestaciones reales de impacto ambiental.
+El DTI tendrá alcance deingeniería básica con propósito académico-profesional.
+1.7 Reacciones químicas consideradas
+1.7.1 Reacción principal
+CO2 + 3 H2−−⇀↽−−CH3OH + H2O(1.1)
+1.7.2 Reacción secundaria
+CO2 + H2−−⇀↽−−CO + H2O(1.2)
+Las empresas deberán justificar el modelo de reacción seleccionado y señalar explícitamente sus
+limitaciones.
+1.8 Bases preliminares de diseño
+Facultad de Ingeniería Química Página 5
+
+=== Page 12 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+Parámetro Base inicial Observaciones
+Capacidad nominal 30000 t/año de meta-
+nol
+Base inicial de diseño.
+Disponibilidad anual 8000 h/año Base para producción anual y eva-
+luación económica.
+Pureza mínima 99.5% masa de
+CH3OH
+Especificación obligatoria del pro-
+ducto.
+Alimentación de CO2 ≥98% mol Corriente previamente acondiciona-
+da.
+Hidrógeno Producido mediante
+electrólisis
+Se tratará inicialmente como módu-
+lo de suministro.
+Relación inicial H2/CO2 3.1 mol/mol Variable susceptible de optimiza-
+ción.
+Presión inicial de síntesis 50–80 bar Intervalo preliminar de explora-
+ción.
+Temperatura inicial 220–280°C Intervalo preliminar de explora-
+ción.
+Vida económica 20 años Base inicial para evaluación finan-
+ciera.
+Alcance Ingeniería conceptual No incluye ingeniería de detalle.
+Los valores definitivos de composición de corrientes, condiciones de alimentación, precios, costos
+de servicios, propiedades, factores económicos y restricciones serán establecidos posteriormente en
+elAnexo Técnico A: Bases de Diseño del Proceso.
+1.9 Áreas funcionales del proceso
+Área Denominación Contenido
+Área 100 Suministro y acondiciona-
+miento de CO2
+Recepción, secado simplificado, compresión y
+almacenamiento intermedio.
+Área 200 Producción de hidrógeno Electrólisis, consumo de agua, consumo eléc-
+trico y compresión.
+Área 300 Preparación de alimentación Mezcla, ajuste de relación molar y precalen-
+tamiento.
+Área 400 Síntesis de metanol Reactor, equilibrio, conversión, remoción de
+calor y comparación de configuraciones.
+Área 500 Separación primaria Enfriamiento, condensación, flash, reciclo y
+purga.
+Área 600 Purificación Separación metanol–agua hasta alcanzar la
+especificación.
+Área 700 Integración energética y ser-
+vicios
+Recuperación de calor, utilidades y balance
+energético.
+Facultad de Ingeniería Química Página 6
+
+=== Page 13 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+1.10 Arquitectura digital y herramientas profesionales
+El proyecto integrará herramientas computacionales y de ingeniería con funciones complementarias.
+Herramienta Función Evidencia
+DWSIM Simulación principal del proceso: pro-
+piedades, reacción, compresión, trans-
+ferencia de calor, flash, destilación,
+reciclo y convergencia.
+Archivo de simulación convergido y
+documentado.
+Python Balances preliminares, automatiza-
+ción, análisis paramétrico, sensibilidad,
+optimización, simulación dinámica e
+instrumentación y control.
+Notebooks reproducibles y documenta-
+dos.
+BioSTEAM Evaluación tecnoeconómica, escenarios
+y modelos complementarios.
+Notebook reproducible con supuestos
+e indicadores.
+AutoCAD
+Plant 3D
+Elaboración profesional del Diagrama
+de Bloques, DFP/PFD y DTI/P&ID.
+Archivos editables y versiones finales
+en PDF.
+1.11 Flujo digital de trabajo
+DWSIM
+Simulación
+Python
+Análisis, control
+y optimización
+BioSTEAM
+TEA y escenarios
+AutoCAD Plant 3D
+BFD + DFP + DTI
+Pitch
+Defensa
+1.12 Comparación obligatoria de alternativas
+Cada empresa deberá evaluar al menostres alternativasantes de seleccionar su configuración final.
+Las alternativas podrán diferir en:
+Decisión Alternativas Indicadores
+Sistema de reacción Un reactor, reactores en serie, enfria-
+miento intermedio, diferentes modelos
+de reactor.
+Conversión, selectividad,
+energía, tamaño y costo.
+Condiciones de sínte-
+sis
+Temperatura, presión y relación
+H2/CO2.
+Conversión, compresión y
+energía.
+Reciclo y purga Diferentes relaciones de reciclo y frac-
+ciones de purga.
+Conversión global, pérdidas y
+energía.
+Separación primaria Flash simple o configuraciones alter-
+nativas.
+Recuperación, consumo ener-
+gético y estabilidad.
+Facultad de Ingeniería Química Página 7
+
+=== Page 14 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+Decisión Alternativas Indicadores
+Purificación Número de columnas, etapas, reflujo
+y condiciones de operación.
+Pureza, recuperación, energía
+y costo.
+Compresión Una etapa o compresión multietapa
+con enfriamiento.
+Trabajo, CAPEX y operabili-
+dad.
+Integración energéti-
+ca
+Sin integración, integración parcial o
+red optimizada.
+Servicios, ahorro energético y
+economía.
+Instrumentación y
+control
+Retroalimentación, prealimentación,
+cascada o estrategias combinadas.
+Estabilidad, seguimiento,
+rechazo de perturbaciones y
+desempeño dinámico.
+Optimización Costo, energía, emisiones o enfoque
+multiobjetivo.
+Función objetivo y restriccio-
+nes.
+1.13 Configuración de referencia proporcionada por el licitante
+La entidad licitante mostrará durante el desarrollo del curso unaposible configuración de referencia
+del proceso de producción de e-metanol.
+Esta configuración tendrá como finalidad:
+▶ mostrar una posible estructura del proceso;
+▶ facilitar la interpretación de las bases de diseño;
+▶ servir como apoyo para la introducción a DWSIM;
+▶ proporcionar un ejemplo inicial de integración de operaciones unitarias;
+▶ permitir la validación de balances preliminares;
+▶ establecer un punto de comparación común para las empresas participantes.
+Carácter de la configuración de referencia
+La configuración mostrada por la entidad licitanteno constituye la solución oficial, la
+solución óptima ni una configuración obligatoria.
+Cada empresa deberá desarrollar, comparar y defender sus propias alternativas de diseño.
+La propuesta podrá modificar, entre otros aspectos:
+▶ el sistema de reacción;
+▶ la secuencia de separación;
+▶ las condiciones de operación;
+▶ la estrategia de reciclo;
+▶ la fracción de purga;
+▶ el sistema de compresión;
+▶ la integración energética;
+▶ la instrumentación;
+Facultad de Ingeniería Química Página 8
+
+=== Page 15 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+▶ la filosofía de control;
+▶ la configuración global del proceso.
+Toda modificación deberá estar sustentada mediante resultados técnicos cuantitativos.
+1.14 Estándares y software para los diagramas de ingeniería
+Todos los diagramas de ingeniería desarrollados durante el proyecto deberán realizarse siguiendo
+criterios normalizados de representación técnica.
+Será obligatorio desarrollar:
+1. Diagrama de Bloques del Proceso (BFD);
+2. Diagrama de Flujo de Proceso (DFP/PFD);
+3. Diagrama de Tuberías e Instrumentación (DTI/P&ID).
+Los diagramas deberán elaborarse bajoestándares ISO aplicables a la representación de
+procesos químicos y petroquímicos.
+Se considerará como referencia principal la familiaISO 10628, así como los criterios adicionales
+establecidos por el docente para garantizar uniformidad en la identificación de equipos, corrientes,
+símbolos, tuberías y elementos de proceso.
+Software profesional obligatorio
+Los Diagramas de Bloques, Diagramas de Flujo de Proceso y Diagramas de Tuberías e Instru-
+mentación deberán desarrollarse empleando:
+AutoCAD Plant 3D
+Cada empresa deberá conservar y entregar:
+▶ archivos editables;
+▶ archivos PDF;
+▶ versiones incorporadas al expediente técnico.
+1.15 Diagrama de Bloques del Proceso
+ElDiagrama de Bloques del Proceso (BFD)representará la primera aproximación estructural al
+diseño.
+Deberá mostrar como mínimo:
+▶ etapas principales del proceso;
+▶ materias primas;
+▶ productos;
+Facultad de Ingeniería Química Página 9
+
+=== Page 16 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+▶ subproductos;
+▶ corrientes principales;
+▶ corrientes de reciclo relevantes;
+▶ relaciones entre las diferentes áreas funcionales del proceso.
+1.16 Diagrama de Flujo de Proceso
+Cada empresa deberá desarrollar unDiagrama de Flujo de Proceso (DFP/PFD)coherente con
+su simulación.
+El DFP deberá incluir como mínimo:
+▶ identificación de equipos;
+▶ numeración de corrientes;
+▶ dirección de flujo;
+▶ principales servicios;
+▶ reciclos;
+▶ purgas;
+▶ mezcladores;
+▶ separadores;
+▶ columnas;
+▶ reactores;
+▶ intercambiadores;
+▶ bombas;
+▶ compresores;
+▶ condiciones principales de operación;
+▶ tabla de corrientes;
+▶ correspondencia con el modelo DWSIM.
+1.17 Diagrama de Tuberías e Instrumentación
+Cada empresa deberá desarrollar unDiagrama de Tuberías e Instrumentación (DTI/P&ID).
+El DTI deberá incluir como mínimo:
+▶ equipos principales;
+▶ líneas de proceso;
+▶ líneas de servicios;
+Facultad de Ingeniería Química Página 10
+
+=== Page 17 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+▶ identificación de tuberías;
+▶ válvulas manuales;
+▶ válvulas de control;
+▶ instrumentos;
+▶ transmisores;
+▶ indicadores;
+▶ controladores;
+▶ elementos finales de control;
+▶ lazos de flujo;
+▶ lazos de presión;
+▶ lazos de temperatura;
+▶ lazos de nivel;
+▶ lazos de composición cuando resulten pertinentes;
+▶ purgas;
+▶ venteos;
+▶ drenajes;
+▶ elementos básicos de alivio;
+▶ filosofía básica de control.
+1.17.1 Filosofía básica de instrumentación y control
+Cada empresa deberá proponer unafilosofía básica de instrumentación y controlpara las
+operaciones más importantes de su propuesta.
+Se deberán identificar las principales:
+▶ variables controladas;
+▶ variables manipuladas;
+▶ perturbaciones;
+▶ variables medidas;
+▶ elementos finales de control.
+Los equipos podrán utilizar estrategias tales como:
+▶ control por retroalimentación (feedback);
+▶ control por prealimentación (feedforward);
+▶ control en cascada;
+▶ control combinado retroalimentación–prealimentación;
+Facultad de Ingeniería Química Página 11
+
+=== Page 18 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+▶ estrategias combinadas con control en cascada;
+▶ otras estrategias que puedan justificarse técnicamente.
+1.17.2 Notebook de Python para instrumentación y control
+Cada empresa deberá entregar unNotebook de Python específico para la simulación de los
+lazos básicos de control del proceso.
+El Notebook deberá estar relacionado directamente con los lazos representados en el DTI.
+Como mínimo deberá contener:
+1. identificación del proceso o equipo controlado;
+2. identificación de la variable controlada;
+3. identificación de la variable manipulada;
+4. identificación de las perturbaciones;
+5. representación del modelo dinámico empleado;
+6. función de transferencia, cuando sea aplicable;
+7. descripción de la estrategia de control;
+8. estructura del lazo;
+9. selección del tipo de controlador;
+10. metodología de sintonización;
+11. ganancias del controlador;
+12. simulación dinámica;
+13. respuesta ante cambios del punto de ajuste;
+14. respuesta ante perturbaciones;
+15. análisis e interpretación de resultados.
+1.17.3 Ganancias y sintonización de los controladores
+Las empresas deberán reportar explícitamente en el Notebook las ganancias utilizadas en cada
+controlador.
+Dependiendo de la estructura seleccionada podrán documentarse parámetros tales como:
+Kc (1.3)
+τI (1.4)
+τD (1.5)
+Facultad de Ingeniería Química Página 12
+
+=== Page 19 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+o, de manera equivalente:
+KP, K I, K D (1.6)
+Los valores deberán acompañarse de unajustificación del método de sintonización empleado.
+No será suficiente presentar únicamente las ganancias finales.
+1.17.4 Simulación dinámica de los lazos de control
+El Notebook deberá mostrar gráficamente el comportamiento dinámico de los lazos seleccionados.
+Como mínimo se deberán presentar:
+▶ punto de ajuste;
+▶ variable controlada;
+▶ variable manipulada;
+▶ señal del controlador;
+▶ comportamiento ante cambios de referencia;
+▶ comportamiento ante perturbaciones.
+Cuando corresponda podrán utilizarse indicadores de desempeño tales como:
+▶ sobreimpulso;
+▶ tiempo de subida;
+▶ tiempo de establecimiento;
+▶ error en estado estacionario;
+▶ integral del error;
+▶ capacidad de rechazo de perturbaciones.
+Consistencia entre DTI y Notebook de Python
+Los lazos principales representados en el DTI deberán ser consistentes con los lazos analizados en
+el Notebook de Python.
+Las etiquetas, variables controladas, variables manipuladas, estrategias y controladores deberán
+mantener correspondencia entre ambos documentos.
+1.18 Evolución de los diagramas y modelos
+Los diagramas deberán evolucionar conjuntamente con la simulación y el diseño del sistema de control.
+Facultad de Ingeniería Química Página 13
+
+=== Page 20 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+BFD DWSIM
+inicial
+DFP
+v0
+DWSIM
+integrado
+DFP
+v1
+DTI
+v0
+Python
+controlOptimización
+DFP + DTI
+finales
+1.19 Organización de las empresas
+Cada equipo funcionará como una empresa de ingeniería.
+Deberá establecer:
+▶ nombre;
+▶ logotipo;
+▶ misión;
+▶ organigrama;
+▶ distribución de responsabilidades;
+▶ estrategia de trabajo;
+▶ código de conducta;
+▶ control documental.
+Se sugieren las siguientes funciones:
+▶ Dirección del proyecto.
+▶ Ingeniería de procesos.
+▶ Ingeniería de simulación.
+▶ Ingeniería de reacción.
+▶ Ingeniería de separación.
+▶ Integración energética.
+▶ Evaluación económica.
+▶ Análisis ambiental.
+▶ Instrumentación y control.
+▶ Diagramación con AutoCAD Plant 3D.
+▶ Gestión documental.
+▶ Comunicación técnica.
+Facultad de Ingeniería Química Página 14
+
+=== Page 21 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+1.20 Entregables contractuales
+Código Entregable Contenido Formato Sem.
+E0 Constitución de
+la empresa
+Nombre, logotipo, organigrama,
+funciones y plan de trabajo.
+PDF 1
+E1 Bases de diseño Problema, alcance, supuestos, rutas
+tecnológicas, BFD y alternativas
+iniciales.
+PDF + Plant
+3D
+3
+E2 Sistema de reac-
+ción
+Estequiometría, equilibrio, alterna-
+tivas, sensibilidad y diseño prelimi-
+nar.
+PDF + Python
++ DWSIM
+6
+E3 Sistema de sepa-
+ración
+Flash, reciclo, purga, destilación,
+alternativas y energía.
+PDF + DWSIM 9
+E4 Proceso integra-
+do
+Simulación convergida, DFP preli-
+minar, balances y tabla de corrien-
+tes.
+PDF + DWSIM
++ Plant 3D
+11
+E5 Integración ener-
+gética, instrumen-
+tación y control
+Integración térmica, DTI prelimi-
+nar, filosofía de control y Notebook
+de Python.
+PDF + Python
++ Plant 3D
+13
+E6 Tecnoeconomía y
+optimización
+CAPEX, OPEX, sensibilidad, opti-
+mización y BioSTEAM.
+PDF + note-
+books
+15
+EF Propuesta final Expediente técnico, BFD, DFP,
+DTI, simulación, control, TEA y
+pitch.
+Paquete digital 16
+1.21 Calendario general del proyecto
+El curso tendrá una duración de16 semanas.
+Cada semana comprenderácuatro sesiones de una hora, para un total de64 horas.
+Sem. Tema Trabajo Hito
+1 Lanzamiento Presentación de la licitación, formación de em-
+presas y revisión del RFP.
+E0
+2 Metodología de diseño Necesidad del cliente, alcance, ambiente, seguri-
+dad y ética.
+E1
+3 Síntesis preliminar Rutas tecnológicas, heurísticas, BFD y alternati-
+vas.
+E1
+4 Sistema de reacción Estequiometría, equilibrio, conversión y selectivi-
+dad.
+E2
+5 Diseño de reactores Modelos, temperatura, presión y relación
+H2/CO2.
+E2
+6 Evaluación del reactor DWSIM, Python, sensibilidad y selección. E2
+7 Síntesis de separaciones Condensación, flash y estructuras de separación. E3
+Facultad de Ingeniería Química Página 15
+
+=== Page 22 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+Sem. Tema Trabajo Hito
+8 Reciclo y purga Convergencia, inertes y recuperación de reacti-
+vos.
+E3
+9 Purificación Destilación, pureza y energía. E3
+10 Integración del proceso Construcción del flowsheet completo, DFP y
+revisión con AutoCAD Plant 3D.
+E4
+11 Diseño integrado Balances, tabla de corrientes y revisión técnica. E4
+12 Integración energética Recuperación de calor e introducción al DTI. E5
+13 Instrumentación y con-
+trol
+DTI, estrategias de control, sintonización y No-
+tebook de Python.
+E5
+14 Economía CAPEX, OPEX y BioSTEAM. E6
+15 Optimización Sensibilidad, optimización y selección final. E6
+16 Pitch tecnológico Defensa ante jurado y adjudicación. EF
+1.22 Rutina semanal
+Cada semana se organizará de acuerdo con la siguiente estructura:
+Sesión Propósito Resultado
+Día 1 Reunión técnica. Introducción concep-
+tual y definición del problema.
+Conceptos y criterios de decisión.
+Día 2 Taller guiado. Cálculos, simulación, programación o
+diagramación.
+Día 3Estudio de ingeniería por equipos. Avance del proyecto.
+Día 4 Revisión técnica. Retroalimentación, bitácora y plan de
+acción.
+1.23 Órdenes de cambio
+Durante el semestre la entidad licitante podrá emitirórdenes de cambio.
+Estas podrán modificar:
+▶ capacidad;
+▶ precio de la electricidad;
+▶ composición del CO2;
+▶ disponibilidad de hidrógeno;
+▶ restricciones ambientales;
+▶ consumo de agua;
+▶ pureza requerida;
+▶ condiciones de operación;
+▶ restricciones económicas;
+Facultad de Ingeniería Química Página 16
+
+=== Page 23 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+▶ requisitos de seguridad;
+▶ requisitos de instrumentación y control.
+Cada empresa deberá evaluar el impacto de las modificaciones en su diseño.
+1.24 Control documental
+Cada empresa deberá mantener:
+▶ bitácora del proyecto;
+▶ registro de decisiones;
+▶ control de versiones;
+▶ registro de modificaciones;
+▶ fuentes de información;
+▶ supuestos;
+▶ archivos de simulación DWSIM;
+▶ archivos de AutoCAD Plant 3D;
+▶ notebooks de Python;
+▶ modelos de BioSTEAM.
+Principio de trazabilidad
+Toda cifra relevante deberá poder rastrearse hasta:
+▶ una ecuación;
+▶ una fuente;
+▶ un supuesto explícito;
+▶ un cálculo reproducible;
+▶ un resultado de simulación;
+▶ una decisión técnica documentada.
+1.25 Uso de inteligencia artificial
+La inteligencia artificial podrá utilizarse como herramienta de apoyo para:
+▶ búsqueda inicial de alternativas;
+▶ exploración de conceptos;
+▶ programación;
+▶ revisión de código;
+Facultad de Ingeniería Química Página 17
+
+=== Page 24 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+▶ estructuración de información;
+▶ documentación;
+▶ generación de hipótesis;
+▶ análisis crítico.
+Sin embargo:
+Regla de uso de inteligencia artificial
+Toda decisión técnica asistida por inteligencia artificial deberá serverificada, documentada y
+defendida por el equipo.
+Una respuesta generada por IA no será considerada evidencia técnica por sí misma.
+1.26 Indicadores de desempeño
+Las propuestas deberán reportar como mínimo:
+▶ producción anual de metanol;
+▶ pureza;
+▶ conversión por paso de CO2;
+▶ conversión global;
+▶ relación de reciclo;
+▶ fracción de purga;
+▶ consumo eléctrico;
+▶ consumo térmico;
+▶ consumo de agua;
+▶ CAPEX;
+▶ OPEX;
+▶ costo unitario de producción;
+▶ VAN;
+▶ TIR;
+▶ periodo de recuperación;
+▶ emisiones de CO2-equivalente;
+▶ desempeño de los principales lazos de control;
+▶ principales riesgos;
+▶ salvaguardas propuestas.
+Facultad de Ingeniería Química Página 18
+
+=== Page 25 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+1.27 Criterios de evaluación de la licitación
+Dimensión Criterios Peso
+Solidez técnica Balances, selección de equipos, cumplimiento de capacidad y
+pureza, consistencia del diseño, BFD, DFP y DTI.
+25%
+Simulación y repro-
+ducibilidad
+DWSIM, Python, BioSTEAM y trazabilidad. 15%
+Economía CAPEX, OPEX, rentabilidad y sensibilidad. 15%
+Energía y ambiente Integración térmica, servicios, agua y huella de carbono. 15%
+Seguridad, control y
+operabilidad
+Riesgos, instrumentación, estrategias de control y desempeño
+dinámico.
+10%
+Innovación Alternativas, diferenciación y mejoras. 10%
+Comunicación Calidad del expediente, pitch y defensa. 10%
+1.28 Evaluación académica
+La evaluación general de la asignatura será:
+Componente Porcentaje Aplicación
+Proyecto de ingeniería 30% Licitación, expediente técnico, BFD, DFP, DTI, con-
+trol y pitch.
+Exámenes y revisiones técni-
+cas
+40% Evaluaciones individuales y defensas parciales.
+Tareas e investigaciones 20% Entregables parciales.
+Ejercicios 10% DWSIM, Python, BioSTEAM, AutoCAD Plant 3D y
+control de procesos.
+1.29 Contenido de la propuesta final
+El expediente final deberá contener:
+1. Resumen ejecutivo.
+2. Bases de diseño.
+3. Selección tecnológica.
+4. Comparación de alternativas.
+5. Diagrama de Bloques del Proceso.
+6. DFP/PFD final.
+7. DTI/P&ID final.
+8. Balances de materia.
+9. Balances de energía.
+10. Tabla de corrientes.
+Facultad de Ingeniería Química Página 19
+
+=== Page 26 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+11. Sistema de reacción.
+12. Sistema de separación.
+13. Reciclo y purga.
+14. Integración energética.
+15. Dimensionamiento preliminar.
+16. Filosofía básica de instrumentación y control.
+17. Notebook de Python para instrumentación y control.
+18. Ganancias y parámetros de sintonización de los controladores.
+19. Simulación dinámica de los lazos de control.
+20. Evaluación económica.
+21. Evaluación tecnoeconómica con BioSTEAM.
+22. Evaluación ambiental.
+23. Evaluación de seguridad.
+24. Análisis de sensibilidad.
+25. Optimización.
+26. Conclusiones.
+27. Limitaciones.
+28. Recomendaciones.
+29. Referencias.
+30. Declaración de uso de inteligencia artificial.
+1.30 Pitch tecnológico
+La defensa final tendrá las siguientes características:
+Elemento Requisito
+Presentación 15 minutos.
+Preguntas Hasta 10 minutos.
+Audiencia Docentes, investigadores, empresarios e invitados.
+Participación Todos los integrantes deberán participar o responder preguntas.
+Contenido Problema, solución, alternativas, evidencia técnica, simulación, instrumenta-
+ción, control, economía, impacto, innovación y propuesta de valor.
+Objetivo Convencer al comité de que la empresa presenta la mejor alternativa para adju-
+dicar la licitación.
+Facultad de Ingeniería Química Página 20
+
+=== Page 27 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+1.31 Adjudicación de la licitación
+La adjudicación tendrá carácter académico y simbólico.
+La propuesta ganadora será aquella que alcance la mejor valoración integral del comité.
+Criterio de adjudicación
+El menor costo no garantiza la adjudicación.
+La propuesta seleccionada deberá demostrar el mejor equilibrio entre:
+▶ factibilidad técnica;
+▶ desempeño económico;
+▶ eficiencia energética;
+▶ desempeño ambiental;
+▶ seguridad;
+▶ operabilidad;
+▶ desempeño del sistema de control;
+▶ innovación;
+▶ calidad de la documentación;
+▶ calidad de la defensa.
+1.32 Aceptación de participación
+La firma de este apartado representa el compromiso de la empresa participante con las bases de la
+licitación, la integridad académica y la trazabilidad de sus resultados.
+Nombre de la empresa:
+Representante:
+Integrantes:
+Firma del representante:
+Fecha:
+Facultad de Ingeniería Química Página 21
+
+=== Page 28 ===
+Anexo Técnico A: Bases de Diseño del
+Proceso de e-Metanol
+Documento AT-A-CCM-EM-001
+Proyecto:
+Diseño conceptual y optimización de una planta de e-metanol a partir deCO2 capturado e
+hidrógeno renovable.
+Entidad licitante:
+Circular Carbon México, S.A. de C.V.
+Documento:
+Anexo Técnico A – Bases de Diseño del Proceso.
+Estado:
+Base contractual académica para el desarrollo de las propuestas de ingeniería.
+Alcance:
+Ingeniería conceptual.
+2.1 Propósito del Anexo Técnico
+El presente Anexo Técnico establece lasbases de diseño comunesque deberán utilizar todas las
+empresas participantes en la licitación académica.
+Su propósito es garantizar que las diferentes propuestas sean desarrolladas a partir de condiciones
+de partida comparables, permitiendo que las diferencias entre las soluciones sean resultado de las
+decisiones de ingeniería adoptadas por cada empresa.
+Las bases aquí establecidas definen:
+▶ capacidad nominal de producción;
+▶ tiempo anual de operación;
+▶ características de las materias primas;
+▶ condiciones de suministro de CO2;
+▶ condiciones de suministro de hidrógeno;
+▶ límites generales de operación;
+22
+
+=== Page 29 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+▶ especificaciones del producto;
+▶ servicios auxiliares disponibles;
+▶ criterios económicos comunes;
+▶ restricciones de diseño;
+▶ variables que permanecerán fijas;
+▶ variables que podrán ser optimizadas;
+▶ escenarios mínimos de evaluación.
+Jerarquía de la información
+Las condiciones establecidas en esteAnexo Técnico Aprevalecen sobre las bases preliminares
+indicadas en el Capítulo 1 cuando exista alguna diferencia entre ambos documentos.
+Las modificaciones posteriores únicamente serán válidas cuando sean emitidas formalmente por la
+entidad licitante mediante una orden de cambio o una revisión del presente Anexo Técnico.
+2.2 Filosofía general de las bases de diseño
+La licitación se desarrollará bajo el principio de:
+Mismas condiciones de partida+diferentes decisiones de ingeniería (2.1)
+Por tanto, la entidad licitante proporcionará las condiciones de alimentación, capacidad, producto,
+restricciones y criterios comunes.
+Cada empresa deberá determinar la configuración de proceso que considere más conveniente dentro de
+dichas restricciones.
+El objetivo del proyectono consiste en reproducir una única simulación.
+El objetivo consiste en analizar diferentes alternativas y demostrar, mediante evidencia técnica,
+económica, energética y ambiental, por qué una determinada configuración representa una solución
+adecuada al problema.
+2.3 Límites generales del sistema
+El sistema de estudio comprenderá desde la recepción de las corrientes acondicionadas deCO2 e
+hidrógeno hasta la obtención del producto e-metanol dentro de especificación.
+El límite conceptual principal será:
+CO2 acondicionado+H 2 renovable−→e-Metanol (2.2)
+El proceso podrá incluir:
+▶ acondicionamiento de alimentaciones;
+Facultad de Ingeniería Química Página 23
+
+=== Page 30 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+▶ compresión;
+▶ mezcla;
+▶ precalentamiento;
+▶ sistema de reacción;
+▶ enfriamiento;
+▶ condensación;
+▶ separación gas–líquido;
+▶ reciclo;
+▶ purga;
+▶ purificación;
+▶ integración energética;
+▶ servicios auxiliares;
+▶ instrumentación;
+▶ control.
+2.4 Capacidad nominal de la planta
+La capacidad contractual de producción será:
+30 000t/año de producto e-metanol (2.3)
+La planta operará:
+8 000h/año (2.4)
+Por tanto, la producción nominal media requerida será:
+˙mproducto = 30 000
+8 000 = 3.75t/h (2.5)
+Condición obligatoria de capacidad
+Las empresas no podrán disminuir la capacidad nominal de la planta como estrategia para reducir
+el consumo energético, el CAPEX o el OPEX.
+La propuesta deberá demostrar una producción anual de al menos:
+30 000t/año
+de producto que cumpla con las especificaciones establecidas en este Anexo Técnico.
+Facultad de Ingeniería Química Página 24
+
+=== Page 31 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+2.5 Especificación del producto
+El producto principal seráe-metanol.
+La especificación mínima requerida será:
+Propiedad Especificación Condición
+Producción anual≥30 000t/año Obligatoria
+Metanol en base seca ≥99.85% masa Obligatoria
+Contenido de agua≤0.10% masa Obligatoria
+Temperatura de producto ≤40°C Salida de batería
+Presión de producto 1–2 bar Salida de batería
+La concentración de metanol en base seca deberá satisfacer:
+xMeOH,dry≥99.85 %(2.6)
+mientras que el contenido máximo de agua será:
+xH2O≤0.10 %(2.7)
+2.6 Benchmark estequiométrico
+La reacción global principal considerada es:
+CO2 + 3 H2−−⇀↽−−CH3OH + H2O(2.8)
+Para una producción de:
+30 000t/año
+de producto con una fracción másica de metanol de 0.9985, la producción equivalente de metanol puro
+será aproximadamente:
+mMeOH,puro = 30 000(0.9985)(2.9)
+mMeOH,puro = 29 955t/año (2.10)
+A partir de la estequiometría de la reacción principal, el consumo mínimo teórico deCO2 será
+aproximadamente:
+mCO2,teórico≈41 143t/año (2.11)
+equivalente a:
+Facultad de Ingeniería Química Página 25
+
+=== Page 32 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+˙mCO2,teórico≈5.143t/h (2.12)
+El consumo mínimo teórico de hidrógeno será:
+mH2,teórico≈5 654t/año (2.13)
+equivalente a:
+˙mH2,teórico≈0.707t/h (2.14)
+Uso del benchmark estequiométrico
+Los valores anterioresno representan los caudales definitivos de alimentación de la
+planta.
+Constituyen únicamente un límite estequiométrico de referencia que deberá utilizarse para verificar
+la consistencia de los balances realizados por cada empresa.
+Los consumos reales podrán ser superiores debido a:
+▶ conversión incompleta por paso;
+▶ reacción secundaria;
+▶ purga;
+▶ pérdidas de hidrógeno;
+▶ pérdidas de carbono;
+▶ restricciones de operación.
+2.7 Corriente de dióxido de carbono
+La captura rigurosa de CO2 no formará parte del alcance obligatoriodel proyecto.
+La planta recibirá una corriente previamente:
+▶ capturada;
+▶ purificada;
+▶ seca;
+▶ acondicionada;
+▶ parcialmente presurizada.
+Las condiciones contractuales de suministro serán:
+Variable Valor Condición
+CO2 99.0% mol Fijo
+N2 1.0% mol Fijo
+Facultad de Ingeniería Química Página 26
+
+=== Page 33 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+Variable Valor Condición
+Agua Despreciable Corriente seca
+Temperatura 25°C Fija
+Presión 20 bar Fija
+Estado Gas Condición de suministro
+2.7.1 Presencia de nitrógeno
+La presencia de 1.0% mol deN2 se incorpora deliberadamente como una condición de diseño del
+proyecto.
+El nitrógeno será considerado un componenteinerteen el sistema de síntesis.
+Su presencia permitirá analizar fenómenos como:
+▶ acumulación de inertes;
+▶ necesidad de purga;
+▶ pérdidas de reactivos en la purga;
+▶ efecto del reciclo;
+▶ consumo adicional de compresión;
+▶ estabilidad del lazo de síntesis.
+La composición establecida para la corriente deCO2 constituye unacondición contractual
+didáctica.
+No pretende representar de manera universal la composición de todas las corrientes industriales
+de dióxido de carbono.
+2.8 Suministro de hidrógeno renovable
+El hidrógeno utilizado en el proceso deberá considerarse producido mediante electrólisis de agua
+empleando electricidad renovable.
+Para el caso base se adoptará conceptualmente una tecnología de electrólisis tipo PEM.
+Las condiciones de suministro al proceso serán:
+Variable Valor Condición
+Tecnología de referencia PEM Caso contractual
+Pureza del hidrógeno 99.99% mol Fija
+Temperatura 25°C Fija
+Presión de suministro 30 bar Fija
+Consumo eléctrico base 57.5 kWh/kg H 2 Modelo contractual
+Consumo de agua desmineraliza-
+da
+10 kg H2O/kg H2 Modelo contractual
+Facultad de Ingeniería Química Página 27
+
+=== Page 34 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+Variable Valor Condición
+Crédito económico por O2 0 USD Caso base
+2.9 Modelado obligatorio de la electrólisis
+La producción de hidrógeno deberá formar parte de los balances energéticos, económicos y ambientales
+del proyecto.
+Sin embargo, el modelado detallado del electrolizadorno será obligatorio dentro de DWSIM.
+Criterio de compatibilidad con DWSIM
+Todas las actividades obligatorias del proyecto deberán poder realizarse utilizando laversión
+gratuita de DWSIM.
+El proyecto no dependerá de funciones exclusivas de versiones de pago o de herramientas adicionales
+no disponibles para todos los estudiantes.
+Por esta razón, la modelación de la electrólisis seráobligatoria mediante Python.
+La incorporación de un electrolizador directamente en DWSIM seráopcionalcuando la versión
+gratuita instalada disponga de la operación unitaria correspondiente.
+2.9.1 Modelo obligatorio en Python
+El Notebook de Python deberá calcular, como mínimo:
+▶ producción requerida de hidrógeno;
+▶ consumo eléctrico;
+▶ consumo de agua desmineralizada;
+▶ producción teórica de oxígeno;
+▶ costo de la electricidad;
+▶ costo del agua;
+▶ consumo específico de energía;
+▶ contribución de la producción de hidrógeno al OPEX total.
+El consumo eléctrico se calculará inicialmente mediante:
+Eel =m H2 (SEC H2)(2.15)
+donde:
+SEC H2 = 57.5 kWh
+kg H2
+(2.16)
+Por tanto, utilizando el benchmark estequiométrico:
+Facultad de Ingeniería Química Página 28
+
+=== Page 35 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+Eel≈325GWh/año (2.17)
+y la potencia eléctrica promedio equivalente será:
+Pel = Eel
+8 000 (2.18)
+Pel≈40.6MW (2.19)
+El valor de 40.6 MW es únicamente una referencia de orden de magnitud basada en el consumo
+estequiométrico mínimo de hidrógeno.
+La potencia real deberá determinarse a partir del consumo de hidrógeno obtenido por cada
+empresa en su diseño final.
+2.9.2 Consumo de agua para electrólisis
+La base contractual será:
+10kg H2O
+kg H2
+(2.20)
+Utilizando el benchmark de hidrógeno, el consumo de agua de referencia será aproximadamente:
+mH2O = 10m H2 (2.21)
+mH2O≈56 540t/año (2.22)
+Para efectos preliminares, podrá considerarse una densidad del agua próxima a:
+1 000kg/m 3
+por lo que el consumo volumétrico será del orden de:
+VH2O≈56 500m 3/año (2.23)
+2.10 Sistema de reacción
+El sistema de reacción deberá considerar, como mínimo, las siguientes reacciones:
+2.10.1 Síntesis de metanol
+CO2 + 3 H2−−⇀↽−−CH3OH + H2O(2.24)
+Facultad de Ingeniería Química Página 29
+
+=== Page 36 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+2.10.2 Reacción inversa de desplazamiento de gas de agua
+CO2 + H2−−⇀↽−−CO + H2O(2.25)
+Las empresas deberán justificar:
+▶ modelo de reactor;
+▶ modelo de reacción;
+▶ temperatura;
+▶ presión;
+▶ relación molar de reactivos;
+▶ estrategia de remoción de calor;
+▶ número de reactores;
+▶ configuración del sistema de reacción.
+2.11 Ventana de operación del sistema de síntesis
+La entidad licitante establece la siguiente ventana preliminar de diseño:
+Variable Intervalo Clasificación
+Relación molar H2/CO2 3.0–3.5 Variable de diseño
+Valor inicial sugerido 3.1 Caso de referencia
+Presión de síntesis 50–80 bar Variable de diseño
+Temperatura de entrada 220–280°C Variable de diseño
+Presión máxima del estudio 90 bar Restricción
+Temperatura máxima del estu-
+dio
+300°C Restricción
+Número de reactores Libre Decisión de ingeniería
+Enfriamiento intermedio Permitido Decisión de ingeniería
+Reciclo Obligatorio analizar Decisión de diseño
+Purga Variable Decisión de diseño
+Condiciones de diseño frente a condiciones óptimas
+Los intervalos anterioresno representan condiciones óptimas.
+Constituyen únicamente el espacio inicial permitido para el estudio.
+Cada empresa deberá determinar y justificar sus propias condiciones de operación dentro de las
+restricciones establecidas.
+2.12 Conversión, reciclo y purga
+No se establecerá una conversión por paso obligatoria.
+Facultad de Ingeniería Química Página 30
+
+=== Page 37 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+Cada empresa deberá determinar la conversión obtenida por su configuración y calcular:
+▶ conversión de CO2 por paso;
+▶ conversión global de CO2;
+▶ selectividad;
+▶ producción de CO;
+▶ relación de reciclo;
+▶ fracción de purga;
+▶ pérdida de hidrógeno en la purga;
+▶ pérdida de carbono en la purga;
+▶ acumulación de inertes.
+La conversión global podrá expresarse como:
+XCO2,global = nCO2,fresco−n CO2,salida del sistema
+nCO2,fresco
+(2.26)
+Condición de convergencia
+Todos los lazos de reciclo incluidos en la propuesta final deberán alcanzar una solución convergida.
+No se aceptará como diseño final una simulación en la que el reciclo permanezca abierto únicamente
+para facilitar la convergencia.
+2.13 Sistema de separación y purificación
+La configuración de separación será unadecisión de ingeniería de cada empresa.
+Como mínimo deberá estudiarse la separación de:
+▶ gases no reaccionados;
+▶ metanol;
+▶ agua;
+▶ nitrógeno;
+▶ monóxido de carbono;
+▶ hidrógeno residual;
+▶ dióxido de carbono residual.
+Las empresas podrán evaluar:
+▶ enfriamiento;
+▶ condensación;
+Facultad de Ingeniería Química Página 31
+
+=== Page 38 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+▶ separación flash;
+▶ múltiples etapas de separación;
+▶ reciclo de gases;
+▶ purga;
+▶ destilación;
+▶ otras operaciones justificadas técnicamente.
+2.14 Selección del modelo termodinámico
+La entidad licitanteno impondrá un único paquete termodinámico.
+Cada empresa deberá seleccionar y justificar los modelos termodinámicos utilizados en cada sección
+del proceso.
+La selección deberá considerar:
+▶ presión;
+▶ temperatura;
+▶ composición;
+▶ equilibrio vapor–líquido;
+▶ presencia de componentes polares;
+▶ región de síntesis;
+▶ sistema metanol–agua;
+▶ disponibilidad del modelo en la versión gratuita de DWSIM.
+Criterio de selección termodinámica
+No será válida la selección de un paquete termodinámico únicamente porque permita que la
+simulación converja.
+La empresa deberá justificar su selección mediante:
+▶ fundamentos termodinámicos;
+▶ literatura técnica;
+▶ comparación con información de referencia;
+▶ análisis de las limitaciones del modelo.
+2.15 Servicios auxiliares
+Para permitir la comparación económica y energética entre propuestas se utilizarán las siguientes bases
+comunes:
+Facultad de Ingeniería Química Página 32
+
+=== Page 39 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+Servicio Condición Costo base
+Electricidad Suministro renovable 60 USD/MWh
+Agua desmineralizada Suministro a planta 1.00 USD/m3
+Agua de enfriamiento 30–40°C 0.05 USD/m 3
+Agua helada 5–15°C A estimar
+Vapor de baja presión 3 bar 12 USD/GJ equivalente
+Vapor de media presión 10 bar 12 USD/GJ equivalente
+2.16 Base económica del proyecto
+Las empresas deberán desarrollar su evaluación económica utilizando una base común.
+Parámetro Caso base Observación
+Moneda USD 2026 Base común
+Vida económica 20 años Fija
+Tasa de descuento 10% Fija
+Periodo de construcción 2 años Base económica
+Valor residual 0% Caso base
+Base fiscal Antes de impuestos Comparación académica
+Electricidad 60 USD/MWh Caso nominal
+CO2 acondicionado 50 USD/t Costo contractual
+Precio de venta del e-metanol 900 USD/t Caso nominal
+Crédito por oxígeno 0 USD/t Caso base
+Los valores económicos establecidos en este Anexo constituyenvalores contractuales didácticos
+del proyecto.
+Su propósito principal es permitir la comparación entre propuestas bajo una misma base económica.
+2.17 Indicadores económicos mínimos
+Todas las empresas deberán determinar, como mínimo:
+▶ CAPEX;
+▶ OPEX;
+▶ costo anual de electricidad;
+▶ costo anual de CO2;
+▶ costo anual de agua;
+▶ costo de servicios;
+▶ costo de producción de metanol;
+▶ ingresos anuales;
+Facultad de Ingeniería Química Página 33
+
+=== Page 40 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+▶ flujo de efectivo;
+▶ Valor Actual Neto;
+▶ Tasa Interna de Retorno;
+▶ periodo de recuperación;
+▶ costo unitario de producción.
+2.18 Escenarios económicos obligatorios
+Todas las empresas deberán evaluar, como mínimo, tres escenarios relacionados con el precio de la
+electricidad.
+Escenario Electricidad Interpretación
+A 30 USD/MWh Electricidad favorable
+B 60 USD/MWh Caso nominal
+C 100 USD/MWh Electricidad desfavorable
+Además, se deberá realizar un análisis de sensibilidad del precio del CO2 en el intervalo:
+25≤C CO2≤100USD/t (2.27)
+y del precio de venta del metanol en:
+700≤P MeOH≤1 200USD/t (2.28)
+2.19 Criterios ambientales
+Las empresas deberán cuantificar, como mínimo:
+▶ consumo de CO2;
+▶ consumo de hidrógeno;
+▶ consumo eléctrico;
+▶ consumo de agua;
+▶ pérdidas de carbono;
+▶ pérdidas de hidrógeno;
+▶ corrientes de purga;
+▶ emisiones directas relevantes;
+▶ producción de oxígeno;
+▶ intensidad material del proceso.
+Facultad de Ingeniería Química Página 34
+
+=== Page 41 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+El indicador específico de consumo de CO2 deberá expresarse como:
+ICO2 = mCO2,consumido
+mMeOH,producido
+(2.29)
+y el consumo eléctrico específico como:
+IE = Etotal
+mMeOH,producido
+(2.30)
+2.20 Criterios generales de seguridad
+Todas las propuestas deberán considerar, como mínimo, los riesgos asociados con:
+▶ almacenamiento y manejo de hidrógeno;
+▶ operación a alta presión;
+▶ presencia de metanol;
+▶ presencia de monóxido de carbono;
+▶ presencia de dióxido de carbono;
+▶ corrientes calientes;
+▶ compresores;
+▶ equipos presurizados;
+▶ venteos;
+▶ purgas;
+▶ presencia de oxígeno cuando se modele la electrólisis.
+Las empresas deberán proponer medidas básicas de:
+▶ prevención;
+▶ detección;
+▶ control;
+▶ aislamiento;
+▶ alivio;
+▶ operación segura.
+2.21 Variables fijas del proyecto
+Las siguientes condiciones deberán mantenerse comunes para todas las empresas:
+Facultad de Ingeniería Química Página 35
+
+=== Page 42 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+Variable Condición
+Producto e-Metanol
+Capacidad 30000 t/año
+Horas de operación 8000 h/año
+Composición de CO2 99.0% mol CO2 + 1.0% mol N2
+Temperatura de CO2 25°C
+Presión de CO2 20 bar
+Pureza de H2 99.99% mol
+Temperatura de H2 25°C
+Presión de H2 30 bar
+Pureza mínima de producto 99.85% masa en base seca
+Contenido máximo de agua 0.10% masa
+Vida económica 20 años
+Tasa de descuento 10%
+Moneda USD 2026
+2.22 Variables de diseño
+Las siguientes variables podrán ser modificadas y optimizadas por las empresas:
+▶ relación H2/CO2;
+▶ presión del reactor;
+▶ temperatura del reactor;
+▶ número de reactores;
+▶ tipo de modelo de reactor;
+▶ configuración del sistema de reacción;
+▶ estrategia de enfriamiento;
+▶ configuración de compresión;
+▶ número de etapas de compresión;
+▶ temperatura de condensación;
+▶ configuración de separación;
+▶ relación de reciclo;
+▶ fracción de purga;
+▶ diseño de la purificación;
+▶ número de etapas de destilación;
+▶ relación de reflujo;
+▶ presión de destilación;
+▶ integración energética;
+Facultad de Ingeniería Química Página 36
+
+=== Page 43 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+▶ filosofía de instrumentación;
+▶ estrategia de control;
+▶ ganancias de los controladores;
+▶ variables seleccionadas para optimización.
+2.23 Herramientas obligatorias por área
+Actividad Herramienta principal Condición
+Simulación del proceso DWSIM gratuito Obligatorio
+Electrólisis Python Obligatorio
+Electrolizador en DW-
+SIM
+DWSIM Opcional
+Balances preliminares Python Obligatorio
+Sensibilidad Python Obligatorio
+Optimización Python Obligatorio
+Instrumentación y con-
+trol
+Python Obligatorio
+Evaluación tecnoeconó-
+mica
+BioSTEAM Obligatorio según alcance defini-
+do
+BFD AutoCAD Plant 3D Obligatorio
+DFP/PFD AutoCAD Plant 3D Obligatorio
+DTI/P&ID AutoCAD Plant 3D Obligatorio
+2.24 Restricciones generales de la licitación
+No estará permitido:
+▶ reducir arbitrariamente la capacidad de la planta;
+▶ modificar la composición de las alimentaciones sin autorización;
+▶ modificar los precios contractuales del caso nominal;
+▶ ignorar las corrientes de purga;
+▶ ignorar las pérdidas de hidrógeno;
+▶ ignorar las pérdidas de carbono;
+▶ presentar reciclos no convergidos;
+▶ reportar un producto fuera de especificación;
+▶ utilizar operaciones obligatorias que únicamente estén disponibles en versiones de pago de DWSIM;
+▶ seleccionar modelos termodinámicos sin justificación;
+▶ utilizar ganancias de controladores sin documentar su método de sintonización;
+▶ presentar diagramas que no correspondan con la simulación final.
+Facultad de Ingeniería Química Página 37
+
+=== Page 44 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+2.25 Consistencia entre modelos y documentos
+Toda propuesta deberá mantener consistencia entre:
+DWSIM↔Python↔BioSTEAM↔BFD↔DFP↔DTI (2.31)
+Esto significa que:
+▶ los equipos representados en el DFP deberán corresponder con la simulación;
+▶ los caudales del DFP deberán corresponder con los resultados de DWSIM;
+▶ los equipos del DTI deberán corresponder con el DFP;
+▶ los lazos de control simulados en Python deberán corresponder con los representados en el DTI;
+▶ los consumos utilizados en BioSTEAM deberán corresponder con los balances del proceso;
+▶ las variables utilizadas en la optimización deberán corresponder con variables reales del modelo.
+2.26 Criterios mínimos para considerar una solución válida
+Una propuesta será considerada técnicamente válida cuando cumpla simultáneamente con los siguientes
+requisitos:
+1. Producción anual≥30 000t/año.
+2. Producto dentro de especificación.
+3. Balance global de materia consistente.
+4. Balance de energía consistente.
+5. Reciclos convergidos.
+6. Purga cuantificada.
+7. Pérdidas de hidrógeno cuantificadas.
+8. Pérdidas de carbono cuantificadas.
+9. Consumo eléctrico determinado.
+10. Consumo de agua determinado.
+11. Evaluación económica completa.
+12. Análisis de al menos tres alternativas.
+13. Evaluación de los tres escenarios eléctricos.
+14. DFP consistente con DWSIM.
+15. DTI consistente con el DFP.
+16. Notebook de control consistente con el DTI.
+17. Resultados reproducibles.
+Facultad de Ingeniería Química Página 38
+
+=== Page 45 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+2.27 Matriz general de libertad de diseño
+Elemento Condición Responsable
+Capacidad Fija Entidad licitante
+Composición de alimentación Fija Entidad licitante
+Especificación del producto Fija Entidad licitante
+Condiciones de suministro Fijas Entidad licitante
+Precios nominales Fijos Entidad licitante
+Configuración del proceso Libre Empresa participante
+Tipo de reactor Libre Empresa participante
+Condiciones de reacción Variables Empresa participante
+Reciclo Variable Empresa participante
+Purga Variable Empresa participante
+Separación Libre Empresa participante
+Purificación Libre Empresa participante
+Integración energética Libre Empresa participante
+Paquete termodinámico Justificable Empresa participante
+Estrategia de control Libre Empresa participante
+Ganancias de control A determinar Empresa participante
+Función de optimización A justificar Empresa participante
+2.28 Entregable asociado al Anexo Técnico A
+Cada empresa deberá elaborar unaHoja de Bases de Diseñoa partir de la información establecida
+en este capítulo.
+La hoja deberá clasificar cada parámetro como:
+▶ dato proporcionado por la entidad licitante;
+▶ supuesto de ingeniería;
+▶ variable de diseño;
+▶ restricción;
+▶ variable de optimización;
+▶ resultado de simulación.
+Regla para los supuestos de ingeniería
+Cuando una empresa requiera un dato que no haya sido establecido por la entidad licitante, podrá
+introducir un supuesto de ingeniería.
+Todo supuesto deberá:
+1. declararse explícitamente;
+2. incluir unidades;
+Facultad de Ingeniería Química Página 39
+
+=== Page 46 ===
+Diseño de Procesos y Productos Químicos Dr. Jesús Andrés Arzola Flores
+3. indicar su origen;
+4. justificar su valor;
+5. analizar su impacto cuando sea significativo.
+2.29 Cierre de las bases de diseño
+El presente Anexo Técnico constituye el punto de partida común para el desarrollo de las diferentes
+propuestas.
+A partir de estas condiciones, cada empresa deberá transformar:
+Bases de diseño (2.32)
+en:
+Alternativas de proceso (2.33)
+posteriormente en:
+Modelos cuantitativos (2.34)
+y finalmente en:
+Una propuesta de ingeniería defendible (2.35)
+Pregunta que deberá responder cada empresa
+¿Cómo debe configurarse y operarse la planta para producir e-metanol cumpliendo
+las especificaciones del licitante y, al mismo tiempo, alcanzar el mejor equilibrio
+entre desempeño técnico, consumo energético, costo, impacto ambiental, seguridad y
+operabilidad?
+Facultad de Ingeniería Química Página 40
+

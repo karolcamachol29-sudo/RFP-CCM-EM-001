@@ -1,0 +1,27 @@
+=== Page 1 ===
+H ₂
+Calor Exotérmico
+(240 °C)
+Vapor ~200-220 °C
+Vapor 750 °C
+Líquidos (MeOH + H ₂ O)
+Reciclo
+Gases no reaccionados
+H ₂  Reciclo
+ELECTRICIDAD RENOVABLE
+SOEC
+(~750 °C)
+ CO ₂  CAPTURADO
+COMPRESIÓN
+REACTOR DE SÍNTESIS
+REBOILER / PRECALENTADOR
+Agua de alimentación
+SUPERHEATER ELECTRICIDAD
+(~220 →  750 °C)
+CONDENSACIÓN / FLASH
+DESTILACIÓN
+e-METANOL (IMPCA)
+ AGUA RECUPERADA
+SEPARACIÓN DE H ₂
+PURGA / MICRO-TURBINA
+

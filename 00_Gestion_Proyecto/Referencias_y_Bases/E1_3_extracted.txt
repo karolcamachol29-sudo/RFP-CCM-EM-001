@@ -1,0 +1,823 @@
+--- PAGE 1 ---
+BENEM´ERITA UNIVERSIDAD AUT ´ONOMA DE PUEBLA
+FACULTAD DE INGENIER´IA QU´IMICA
+DISE˜NO DE PROCESOS Y PRODUCTOS QU ´IMICOS
+SOL VANTA ENGINEERING SOLUTIONS
+S´INTESIS CONCEPTUAL DEL
+PROCESO Y DIAGRAMA DE BLOQUES
+Entregable E1.3
+EQUIPO DE TRABAJO
+Gildardo Oca˜ na Barrales|Paulina Mota Macip
+Grecia Figueroa Rinc´ on|Karol Paola Camacho L´ opez
+Fecha de emisi´ on:27 de agosto de 2026
+--- PAGE 2 ---
+SOL VANTA|Engineering SolutionsRFP-CCM-EM-001|Entregable E1.3
+´Indice
+1. Introducci´ on 2
+2. Datos de dise˜ no (Electr´ olisis) 2
+3. Datos de dise˜ no (Celdas SOEC) 3
+4. Corrientes Conocidas (Electr´ olisis) 4
+5. Corrientes Conocidas (Celdas SOEC) 5
+6. Tabla de bloques funcionales (Electr´ olisis) 6
+7. Tabla de bloques funcionales (Celdas SOEC - Corregido) 7
+8. Construcci´ on del BFD en AutoCAD Plant 3D 9
+9. Registro de bloques del BFD (Electr´ olisis) 9
+10.Registro de bloques del BFD (Celdas SOEC - Corregido) 10
+11.Registro de corrientes del BFD (Electr´ olisis) 11
+12.Registro de corrientes del BFD (Celdas SOEC - Corregido) 12
+13.Preguntas de revisi´ on del equipo 12
+14.Propuesta de Innovaci´ on Tecnol´ ogica: Integraci´ on de Celdas SOEC 14
+14.1. Fundamentaci´ on Termodin´ amica y Reducci´ on de OPEX . . . . . . . . . . . . . . . . . . 14
+14.2. Acoplamiento T´ ermico con el Reactor de S ´ ıntesis . . . . . . . . . . . . . . . . . . . . . 14
+14.3. Circuito Cerrado de Agua y Vertido Cero (ZLD) . . . . . . . . . . . . . . . . . . . . . . 14
+14.4. Recuperaci´ on Energ´ etica por Turboexpansi´ on de N2 . . . . . . . . . . . . . . . . . . . . 14
+15.Preguntas t´ ecnicas pendientes 15
+16.Conclusi´ on 15
+S´INTESIS CONCEPTUAL Y DIAGRAMA DE BLOQUESP´ agina 1
+--- PAGE 3 ---
+SOL VANTA|Engineering SolutionsRFP-CCM-EM-001|Entregable E1.3
+1 Introducci´ on
+S ´ ıntesis Conceptual del Proceso y Diagrama de Bloques
+Arquitectura Funcional de la Planta de e-Metanol
+Proyecto:Dise˜ no conceptual de una planta de e-metanol a partir de CO 2 capturado e hidr´ ogeno
+renovable
+El presente documento constituye elEntregable E1.3: S ´ ıntesis Conceptual del Proceso y Diagrama
+de Bloques, desarrollado por la empresaSolvanta Engineering Solutions S.A. de C.V.para la licitaci´ on
+RFP-CCM-EM-001promovida por Circular Carbon M´ exico, S.A. de C.V.
+A diferencia de la caracterizaci´ on termodin´ amica previa, este entregable aborda la estructuraci´ on
+topol´ ogica y funcional de la planta. Se establece la delimitaci´ on de los bloques de proceso, la conectividad
+secuencial de las corrientes de materia y energ ´ ıa, y la definici´ on del Diagrama de Bloques de Proceso
+(BFD) construido en AutoCAD Plant 3D bajo la tecnolog ´ ıa base de electr´ olisis PEM.
+Asimismo, con el prop´ osito de ofrecer una propuesta tecnoecon´ omica altamente competitiva, el
+documento introduce la formulaci´ on de unaPropuesta de Innovaci´ on Tecnol´ ogicabasada en la
+integraci´ on de celdas de electr´ olisis de ´ oxido s´ olido (SOEC) a alta temperatura (750◦C), procesando
+electr´ olisis de vapor pura (H2O→H 2 + 1
+2O2), acoplada t´ ermicamente a la reacci´ on de s ´ ıntesis, con
+circuito cerrado de agua Vertido Cero (ZLD) y recuperaci´ on de energ ´ ıa por turboexpansi´ on del gas de
+purga rico en nitr´ ogeno (N2).
+2 Datos de dise˜ no (Electr´ olisis)
+Informaci´ on Disponible / Caso Base Contractual Fuente
+Producto objetivo: e-metanol RFP / A2.1
+Capacidad nominal:30 000t/a˜ no RFP / A2.1
+Pureza m ´ ınima del producto: 99.5 % masa(≥99,85 %masa seca) RFP / A2.1
+Materia prima carbonosa: CO 2 capturado (99 %mol CO 2,1 %mol N 2) RFP / A2.1
+Tecnolog ´ ıa de electr´ olisis de referencia: PEM (Proton Exchange Membrane) RFP / A2.1
+Relaci´ on inicial H2/CO2 = 3,1mol/mol RFP / NB-01
+Demanda preliminar de CO 2, H 2 y agua NB-01
+Producci´ on te´ orica de O2 coproducto NB-01
+Existencia probable de gases no convertidos An´ alisis de proceso
+3 Datos de dise˜ no (Celdas SOEC)
+S´INTESIS CONCEPTUAL Y DIAGRAMA DE BLOQUESP´ agina 2
+--- PAGE 4 ---
+SOL VANTA|Engineering SolutionsRFP-CCM-EM-001|Entregable E1.3
+Informaci´ on Disponible / Propuesta de Innovaci´ on SOEC Fuente / Base
+T´ ecnica
+Producto objetivo: e-Metanol Refinado Grado AA (≥99,5 %wt en masa) RFP / A2.1
+Capacidad nominal:30 000t/a˜ no (3 750kg/h a8 000h/a˜ no) RFP / A2.1
+Materia prima carbonosa: CO 2 capturado (99 %mol CO 2,1 %mol N 2
+inerte)
+RFP / A2.1
+Tecnolog ´ ıa de electr´ olisis de alta temperatura: SOEC (Solid Oxide
+Electrolyzer Cell)
+Propuesta Innovaci´ on
+Solvanta
+Operaci´ on cat´ odica SOEC: Electr´ olisis de vapor a750◦C y20bar
+(H2O→H 2 + 1
+2O2)
+Balances
+Termodin´ amicos
+Consumo el´ ectrico espec ´ ıfico SOEC:40,0–42,0kWh/kg H2 (Ahorro
+27 %–30 % vs. PEM)
+∆H= ∆G+T∆S
+Acoplamiento t´ ermico con reactor: Vapor generado a200–220 ◦C por
+reacci´ on exot´ ermica (240◦C)
+ReboilerE-201/
+Reactor
+Manejo integral h ´ ıdrico: Circuito Cerrado con 100 % Reciclo
+Estequiom´ etrico (Vertido Cero / ZLD)
+Secci´ on 14.3 /
+Innovaci´ on H ´ ıdrica
+Recuperaci´ on energ´ etica de purga:Turboexpansor de Purga de N2
+(73bar→1,1bar)
+Secci´ on 14.4 /
+Generaci´ on Auxiliar
+Producci´ on te´ orica de coproducto: O2 puro an´ odico comercial Balances NB-01 /
+SOEC
+S´INTESIS CONCEPTUAL Y DIAGRAMA DE BLOQUESP´ agina 3
+--- PAGE 5 ---
+SOL VANTA|Engineering SolutionsRFP-CCM-EM-001|Entregable E1.3
+4 Corrientes Conocidas (Electr´ olisis)
+ID Corriente Tipo ¿De d´ onde proviene o hacia d´ onde va?
+C-01 CO2 Entrada Proviene del suministro externo (captura de carbono)
+y entra al bloque de recepci´ on y acondicionamiento.
+C-02 Agua Entrada Proviene del suministro externo de agua y entra al
+sistema de electr´ olisis.
+C-03 Electricidad Servicio Servicio externo suministrado directamente a la
+unidad de electr´ olisis.
+C-04 H2 Intermedia Proviene de la unidad de electr´ olisis y se dirige hacia
+la preparaci´ on y mezcla de alimentaci´ on.
+C-05 O2 Coproducto / salida Se genera como coproducto en el electr´ olisis y sale
+hacia el almacenamiento o l ´ ımite de bater ´ ıa.
+C-06 Mezcla de alimentaci´ on Intermedia Proviene del mezclador de reactivos y se dirige hacia
+el sistema de compresi´ on y s ´ ıntesis.
+C-07 Efluente de s ´ ıntesis Intermedia Proviene del reactor de s ´ ıntesis y se dirige hacia la
+secci´ on de separaci´ on primaria.
+C-08 Metanol crudo Intermedia Proviene de la separaci´ on primaria y se dirige hacia
+la secci´ on de estabilizaci´ on y purificaci´ on.
+C-09 Metanol producto Producto Proviene del tren de purificaci´ on y se dirige hacia el
+almacenamiento como producto final comercial.
+C-10 Gas no convertido Intermedia Proviene de la separaci´ on primaria y se dirige al
+sistema de manejo de gases.
+C-11 Reciclo Intermedia Proviene del sistema de manejo de gases y se
+reintroduce al lazo de reacci´ on.
+C-12 Purga Salida Se extrae del lazo de reciclo y sale del proceso para
+evitar la acumulaci´ on de gases inertes.
+S´INTESIS CONCEPTUAL Y DIAGRAMA DE BLOQUESP´ agina 4
+--- PAGE 6 ---
+SOL VANTA|Engineering SolutionsRFP-CCM-EM-001|Entregable E1.3
+5 Corrientes Conocidas (Celdas SOEC)
+ID Corriente Tipo ¿De d´ onde proviene o hacia d´ onde va?
+C-01 CO2 de Alimentaci´ on Entrada Proviene del suministro externo (99 % CO2, 1 % N2)
+y entra a acondicionamiento y compresi´ on (B-01).
+C-02 Agua de Reposici´ on
+M ´ ınima
+Entrada Suministro de agua desmineralizada de
+compensaci´ on hacia el circuito cerrado ZLD (B-12).
+C-03 Electricidad y Calor
+(750 ◦C)
+Servicio Servicios de potencia el´ ectrica DC y
+sobrecalentamiento suministrados al SOEC (B-02 /
+B-03).
+C-04 H2 Seco Acondicionado Intermedia Proviene de la separaci´ on deH2 cat´ odico (20bar) y
+se dirige a compresi´ on de gas de s ´ ıntesis (B-05).
+C-05 O2 Coproducto Puro Salida Se genera en el ´ anodo de la celda SOEC (B-03) y
+sale hacia almacenamiento de coproducto comercial.
+C-06 Gas de S ´ ıntesis
+Comprimido
+Intermedia Proviene del compresor multietapa de s ´ ıntesis
+(75bar) y se dirige al reactor de metanol (B-06).
+C-07 Efluente de S ´ ıntesis
+(240 ◦C)
+Intermedia Proviene del reactor catal ´ ıtico (B-06) y se dirige
+hacia el condensador y flash primario (B-07).
+C-08 Metanol Crudo y Agua
+(75 bar)
+Intermedia Proviene de la condensaci´ on flash (B-07) y se dirige
+a desgasificaci´ on y estabilizaci´ on (B-09).
+C-09 e-Metanol Refinado Grado
+AA
+Producto Proviene de la columna de destilaci´ on (B-10) hacia
+tanques de almacenamiento (B-11).
+C-10 Gases No Convertidos del
+Lazo
+Intermedia Proviene de la separaci´ on flash (B-07) y se dirige al
+manejo de reciclo y purga (B-08).
+C-11 Agua Purificada
+Recirculada ZLD
+Intermedia Condensados tratados por lecho mixto (B-12)
+reinyectados100 %al generador de vapor (B-02).
+C-12 Reciclo de Gas a S ´ ıntesis Intermedia Reactivos no convertidos (H 2/CO2) recomprimidos
+a75bar reintroducidos al reactor (B-06).
+C-13 Purga Presurizada de
+N2
+Intermedia /
+Salida
+Purga rica en N 2 (73bar) enviada al
+turboexpansor (B-13) generando potencia y
+venteo a 1,1 bar.
+S´INTESIS CONCEPTUAL Y DIAGRAMA DE BLOQUESP´ agina 5
+--- PAGE 7 ---
+SOL VANTA|Engineering SolutionsRFP-CCM-EM-001|Entregable E1.3
+6 Tabla de bloques funcionales (Electr´ olisis)
+ID Funci´ on Requerida Entrada(s) Salida(s) ¿Por qu´ e es necesaria? Pregunta pendiente
+BF-01 Recepci´ on y
+acondicionamiento
+de CO 2
+CO2 (C-01) CO2
+acondicionado
+Permite eliminar impurezas y
+ajustar las condiciones de
+presi´ on del di´ oxido de carbono
+capturado antes de su mezcla.
+¿Qu´ e nivel de presi´ on
+y pureza inicial posee
+la fuente de CO 2?
+BF-02 Producci´ on de H2
+mediante
+electr´ olisis
+Agua (C-02) /
+Electricidad
+(C-03)
+H2 (C-04), O 2
+(C-05)
+Genera el hidr´ ogeno renovable
+necesario para la hidrogenaci´ on
+catal ´ ıtica a partir de la divisi´ on
+electroqu ´ ımica del agua.
+¿Qu´ e tecnolog ´ ıa de
+electr´ olisis operar´ a en
+el caso base (PEM)?
+BF-03 Preparaci´ on y
+mezcla de
+alimentaci´ on
+CO2
+acondicionado,
+H2 (C-04)
+Mezcla de
+alimentaci´ on
+(C-06)
+Homogeniza y ajusta la relaci´ on
+molar estequiom´ etrica inicial de
+dise˜ no (H2/CO2 = 3,1).
+¿Se utilizar´ a un
+mezclador est´ atico
+previo a la compresi´ on
+del gas?
+BF-04 Compresi´ on de gas
+de s ´ ıntesis
+Mezcla de
+alimentaci´ on
+(C-06)
+Gas de s ´ ıntesis
+comprimido
+Eleva la presi´ on de la mezcla
+gaseosa hasta las altas presiones
+requeridas por el lazo de
+reacci´ on de s ´ ıntesis.
+¿Cu´ antas etapas de
+compresi´ on con
+interenfriamiento ser´ an
+necesarias?
+BF-05 S ´ ıntesis de metanol Gas de s ´ ıntesis
+comprimido,
+Reciclo (C-11)
+Efluente de
+s ´ ıntesis (C-07)
+Contiene el catalizador
+heterog´ eneo donde ocurre la
+conversi´ on exot´ ermica hacia
+metanol crudo y vapor de agua.
+¿Cu´ al ser´ a la
+temperatura ´ optima
+de operaci´ on del
+reactor tubular?
+BF-06 Separaci´ on primaria
+(Condensaci´ on
+Flash)
+Efluente de
+s ´ ıntesis (C-07)
+Metanol crudo
+(C-08), Gas no
+convertido
+(C-10)
+Enfr ´ ıa el efluente para separar
+las fases condensables (l ´ ıquidos)
+de los gases no reaccionados del
+lazo.
+¿A qu´ e temperatura
+del tanque flash se
+maximiza la
+recuperaci´ on de
+l ´ ıquido?
+BF-07 Manejo, reciclo y
+purga de gases
+Gas no
+convertido
+(C-10)
+Reciclo (C-11),
+Purga (C-12)
+Reintroduce los reactivos no
+consumidos al lazo de reacci´ on y
+expulsa una fracci´ on para evitar
+la acumulaci´ on de inertes.
+¿Qu´ e porcentaje de
+purga optimiza el
+balance de inertes en
+el sistema?
+BF-08 Despresurizaci´ on y
+estabilizaci´ on
+Metanol crudo
+(C-08)
+Metanol
+semi-purificado
+Reduce la presi´ on del metanol
+l ´ ıquido para despojar los gases
+ligeros disueltos residuales antes
+de la columna.
+¿Se requiere una
+columna estabilizadora
+dedicada o un simple
+tanque de venteo?
+BF-09 Purificaci´ on de
+metanol
+Metanol
+semi-purificado
+Metanol
+producto (C-09)
+Emplea columnas de destilaci´ on
+fraccionada para eliminar el
+agua y subproductos hasta
+alcanzar la pureza comercial
+(≥99,5 %).
+¿Cu´ antas columnas
+integrar´ a el tren de
+purificaci´ on definitivo?
+BF-10 Almacenamiento y
+despacho del
+producto
+Metanol
+producto (C-09)
+Producto
+Comercial
+(S-10)
+Almacena de forma segura el
+e-metanol bajo especificaciones
+comerciales antes de su
+comercializaci´ on o transporte.
+¿Cu´ al ser´ a la
+capacidad de
+almacenamiento
+requerida en d ´ ıas de
+inventario?
+S´INTESIS CONCEPTUAL Y DIAGRAMA DE BLOQUESP´ agina 6
+--- PAGE 8 ---
+SOL VANTA|Engineering SolutionsRFP-CCM-EM-001|Entregable E1.3
+7 Tabla de bloques funcionales (Celdas SOEC - Corregido)
+ID Bloque
+Definitivo
+Entrada(s) Salida(s) ¿Por qu´ e es
+necesario?
+Pregunta o
+decisi´ on fijada
+B-01 Acondicionamiento
+y Compresi´ on de
+CO2
+CO2 capturado
+(1,1 bar)
+CO2 seco a 20
+bar
+Elimina trazas de
+humedad y azufre,
+elevando la presi´ on al
+nivel de entrega del H2.
+Operaci´ on a 20 bar
+con lecho guardi´ an
+de ZnO y
+compresi´ on de 2
+etapas.
+B-02 Generaci´ on y So-
+brecalentamiento
+de Vapor
+Agua ZLD (20
+bar), Calor de
+reaction
+Vapor a 750
+°C (20 bar)
+Evapora agua de reciclo
+ZLD a 220°C con calor
+del reactor y
+sobrecalienta a 750°C.
+Integra el Reboiler
+E-201acoplado a
+la carcasa del
+reactor de s ´ ıntesis.
+B-03 Electr´ olisis SOEC
+de Alta
+Temperatura
+Vapor a 750
+°C, Electricidad
+DC
+Efluente
+h´ umedo
+(H2 +H 2O),
+O2 puro
+Disocia
+electroqu ´ ımicamente el
+agua a 750°C
+produciendo H 2 con
+reducidos consumos
+espec ´ ıficos.
+Consumo objetivo
+∼
+41,0kWh/kg H 2.
+Reciclo cat´ odico
+intrapaquete de
+5-10 % H2.
+B-04 Enfriamiento y
+Separaci´ on de H2
+Efluente
+h´ umedo SOEC
+H2 seco (20
+bar),
+Condensado
+Enfr ´ ıa a 38°C, separa
+el H 2 seco para s ´ ıntesis
+y env ´ ıa condensado
+acuoso al sistema ZLD.
+Recupera
+condensado libre
+de sales y seca el
+H2 previo a la
+compresi´ on de
+s ´ ıntesis.
+B-05 Compresi´ on de
+Gas de S ´ ıntesis
+H2 seco (20
+bar), CO 2 seco
+(20 bar)
+Gas de s ´ ıntesis
+a 75 bar
+Mezcla H 2 y CO 2
+(H2/CO2 = 3,0) y
+eleva la presi´ on a 75 bar
+para el lazo de reacci´ on.
+Compresor
+centr ´ ıfugo
+multietapa con
+interenfriamiento.
+B-06 Reactor de
+S ´ ıntesis de
+Metanol
+Gas de s ´ ıntesis
+(75 bar),
+Reciclo
+Efluente a 240
+°C (75 bar),
+Vapor
+Conversi´ on catal ´ ıtica
+exot´ ermica sobre
+CuO/ZnO/Al 2O3
+generando vapor de
+proceso para SOEC.
+Reactor
+multitubular
+isot´ ermico a 240
+°C enfriado por
+ebullici´ on de agua.
+B-07 Enfriamiento y
+Separaci´ on Flash
+HP
+Efluente de
+s ´ ıntesis
+Metanol crudo
+(75 bar), Gases
+lazo
+Enfr ´ ıa a 38°C y separa
+la fase l ´ ıquida
+condensada de los
+reactivos
+incondensables.
+Tambor separador
+vertical a 75 bar
+equipado con
+demister de alta
+eficiencia.
+B-08 Manejo de
+Reciclo y Purga
+del Lazo
+Gases
+incondensables
+(73 bar)
+Reciclo (75
+bar), Purga N 2
+(73 bar)
+Recomprime el 95 % de
+reactivos al reactor y
+purga el 5 %
+presurizado para
+controlar elN 2 inerte.
+Mantiene la presi´ on
+del lazo mediante
+compresor soplador
+C-601.
+S´INTESIS CONCEPTUAL Y DIAGRAMA DE BLOQUESP´ agina 7
+--- PAGE 9 ---
+SOL VANTA|Engineering SolutionsRFP-CCM-EM-001|Entregable E1.3
+ID Bloque
+Definitivo
+Entrada(s) Salida(s) ¿Por qu´ e es
+necesario?
+Pregunta o
+decisi´ on fijada
+B-09 Desgasificaci´ on y
+Estabilizaci´ on
+Metanol crudo
+(75 bar)
+Metanol crudo
+(3 bar), Vapor
+flash
+Despresuriza el metanol
+crudo a 3 bar para
+remover CO 2 y gases
+disueltos antes de
+destilar.
+Previene cavitaci´ on
+en bombas y
+desgasifica el
+metanol crudo
+acumulado.
+B-10 Purificaci´ on por
+Destilaci´ on
+Metanol crudo
+(3 bar)
+e-Metanol
+Grado AA,
+Agua fondo
+Destilaci´ on fraccionada
+(22-26 platos) para
+separar metanol
+(≥99,5 %wt) de agua
+de reacci´ on.
+Separaci´ on de alta
+pureza comercial;
+agua de fondo
+purgada al sistema
+ZLD.
+B-11 Almacenamiento
+y Despacho
+e-Metanol
+Grado AA
+e-Metanol
+comercial
+Almacenamiento seguro
+del e-metanol refinado
+en tanques bajo
+colch´ on de nitr´ ogeno.
+Capacidad de
+inventario
+calculada para
+15-30 d ´ ıas de
+operaci´ on
+continua.
+B-12 Tratamiento y
+Reciclo H ´ ıdrico
+ZLD
+Condensados
+SOEC y de
+destilaci´ on
+Agua
+purificada ZLD
+(20 bar)
+Purifica condensados
+h ´ ıdricos mediante lecho
+mixto para recircular
+100 % al generador de
+vapor.
+Garantiza el
+concepto de
+Vertido Cero
+(ZLD) eliminando
+vertidos l ´ ıquidos.
+B-13 Recuperaci´ on por
+Turboexpansi´ on
+de N 2
+Purga
+presurizada N 2
+(73 bar)
+Potencia el´ ec.,
+Gas a 1,1 bar
+Expansi´ on isoentr´ opica
+de la purga presurizada
+en turboexpansor
+recuperando 50-150 kW
+el´ ec.
+Despresuriza la
+purga inerte antes
+de su emisi´ on
+limpia por
+chimenea
+atmosf´ erica.
+S´INTESIS CONCEPTUAL Y DIAGRAMA DE BLOQUESP´ agina 8
+--- PAGE 10 ---
+SOL VANTA|Engineering SolutionsRFP-CCM-EM-001|Entregable E1.3
+8 Construcci´ on del BFD en AutoCAD Plant 3D
+El Diagrama de Bloques del Proceso (BFD) oficial del caso base ha sido modelado en el softwareAutoCAD
+Plant 3D, implementando la arquitectura conceptual con tecnolog ´ ıa de electr´ olisis PEM. Puedes consultar el
+repositorio de archivos editables y esquemas t´ ecnicos en el siguiente enlace:aqu ´ ı.
+Asimismo, se presenta el Diagrama de Bloques del Proceso (BFD) definitivo implementando la tecnolog ´ ıa de
+celdas de electr´ olisis SOEC de alta temperatura bajo la arquitectura maestra de 13 bloques funcionales. Puedes
+consultar el repositorio de archivos editables y esquemas t´ ecnicos en el siguiente enlace:aqu ´ ı.
+9 Registro de bloques del BFD (Electr´ olisis)
+Bloque Nombre colocado en el BFD Funci´ on principal
+B-01 Recepci´ on y acondicionamiento de
+CO2
+Elimina impurezas y ajusta las condiciones de presi´ on del
+di´ oxido de carbono capturado antes de enviarlo al
+mezclador.
+B-02 Producci´ on de H2 mediante
+electr´ olisis (PEM)
+Genera hidr´ ogeno renovable a partir de la divisi´ on
+electroqu ´ ımica del agua utilizando electricidad y generando
+ox ´ ıgeno como coproducto.
+B-03 Preparaci´ on y mezcla de alimentaci´ on Homogeniza y ajusta la relaci´ on molar estequiom´ etrica
+inicial de dise˜ no (H2/CO2 = 3,1) entre los reactivos.
+B-04 Compresi´ on de gas de s ´ ıntesis Eleva la presi´ on de la mezcla gaseosa de alimentaci´ on hasta
+las condiciones de alta presi´ on requeridas por el lazo de
+reacci´ on.
+B-05 S ´ ıntesis de metanol Contiene el catalizador heterog´ eneo donde ocurre la
+conversi´ on qu ´ ımica exot´ ermica del gas de s ´ ıntesis hacia
+metanol crudo y vapor de agua.
+B-06 Separaci´ on primaria (Condensaci´ on
+Flash)
+Enfr ´ ıa el efluente de reacci´ on para separar las fases
+condensables l ´ ıquidas de los gases no convertidos del lazo.
+B-07 Manejo, reciclo y purga de gases Reintroduce los reactivos no consumidos de vuelta al lazo
+de reacci´ on y expulsa una fracci´ on controlada para evitar la
+acumulaci´ on de inertes.
+B-08 Despresurizaci´ on y estabilizaci´ on Reduce la presi´ on del metanol l ´ ıquido para despojar los
+gases ligeros disueltos residuales antes de su purificaci´ on.
+B-09 Purificaci´ on de metanol Emplea un tren de destilaci´ on fraccionada para eliminar el
+agua y subproductos hasta alcanzar la especificaci´ on de
+pureza comercial (≥99,5 %).
+B-10 Almacenamiento y despacho del
+producto
+Almacena de forma segura el e-metanol bajo
+especificaciones comerciales antes de su comercializaci´ on o
+transporte final.
+S´INTESIS CONCEPTUAL Y DIAGRAMA DE BLOQUESP´ agina 9
+--- PAGE 11 ---
+SOL VANTA|Engineering SolutionsRFP-CCM-EM-001|Entregable E1.3
+10 Registro de bloques del BFD (Celdas SOEC - Corregido)
+Bloque Nombre Colocado en el BFD Funci´ on Principal Representada
+B-01 Acondicionamiento y Compresi´ on
+de CO 2
+Desulfura, seca y comprime el CO 2 capturado desde 1,1 bar
+hasta 20 bar.
+B-02 Generaci´ on y Sobrecalentamiento
+de Vapor
+Evapora agua ZLD a 220°C con calor del reactor y
+sobrecalienta a 750°C (20 bar).
+B-03 Electr´ olisis SOEC de Alta
+Temperatura
+Disocia electroqu ´ ımicamente el vapor a 750°C produciendo
+H2 cat´ odico y O2 an´ odico.
+B-04 Enfriamiento y Separaci´ on de H2 Enfr ´ ıa a 38°C, separa H2 seco a 20 bar y direcciona
+condensados acuosos a ZLD.
+B-05 Compresi´ on de Gas de S ´ ıntesis Mezcla H 2 seco y CO 2 seco (relaci´ on 3,0) y comprime la
+mezcla de 20 bar a 75 bar.
+B-06 Reactor de S ´ ıntesis de Metanol Reacci´ on exot´ ermicaCO2 + 3H2 ⇌CH 3OH+H 2Oa 240
+°C/75 bar; genera vapor.
+B-07 Enfriamiento y Separaci´ on Flash HP Condensa metanol/agua a 38°C y 75 bar, separ´ andolos de
+reactivos incondensables.
+B-08 Manejo de Reciclo y Purga del Lazo Recomprime el 95 % del gas de reciclo a 75 bar y retira purga
+presurizada de N 2 al 5 %.
+B-09 Desgasificaci´ on y Estabilizaci´ on Despresuriza metanol crudo a 3 bar liberando CO 2 disuelto
+previo a destilaci´ on.
+B-10 Purificaci´ on por Destilaci´ on Tren de destilaci´ on (22-26 platos) obteniendo e-metanol
+≥99,5 %wt y agua de fondo.
+B-11 Almacenamiento y Despacho Tanques de almacenamiento de e-metanol refinado bajo
+colch´ on de nitr´ ogeno.
+B-12 Tratamiento y Reciclo H ´ ıdrico ZLD Trata condensados por lecho mixto reinyectando 100 % del
+agua purificada al Bloque 2.
+B-13 Recuperaci´ on por Turboexpansi´ on
+de N 2
+Expande purga de N 2 (73 a 1,1 bar) generando 50-150 kW
+el´ ec. antes del venteo.
+S´INTESIS CONCEPTUAL Y DIAGRAMA DE BLOQUESP´ agina 10
+--- PAGE 12 ---
+SOL VANTA|Engineering SolutionsRFP-CCM-EM-001|Entregable E1.3
+11 Registro de corrientes del BFD (Electr´ olisis)
+ID Origen Destino Corriente principal
+S-01 Suministro externo B-01 (Recepci´ on y
+acondicionamiento)
+CO2 de alimentaci´ on
+S-02 Suministro externo B-02 (Electr´ olisis PEM) Agua de proceso
+S-03 Suministro externo B-02 (Electr´ olisis PEM) Electricidad (Servicio auxiliar)
+S-04 B-02 (Electr´ olisis PEM) B-03 (Preparaci´ on y mezcla) Hidr´ ogeno (H2)
+S-05 B-02 (Electr´ olisis PEM) L ´ ımite de bater ´ ıa /
+Almacenamiento
+Ox ´ ıgeno (O2 coproducto)
+S-06 B-03 (Mezcla) B-04 (Compresi´ on) Mezcla de alimentaci´ on (CO2 +H 2)
+S-07 B-04 (Compresi´ on) B-05 (S ´ ıntesis de metanol) Gas de s ´ ıntesis comprimido
+S-08 B-05 (S ´ ıntesis) B-06 (Separaci´ on primaria) Efluente de s ´ ıntesis
+S-09 B-09 (Purificaci´ on) B-10 (Almacenamiento) Metanol producto (≥99,5 %)
+S-10 B-10 (Almacenamiento) Despacho comercial Producto comercial de e-metanol
+S´INTESIS CONCEPTUAL Y DIAGRAMA DE BLOQUESP´ agina 11
+--- PAGE 13 ---
+SOL VANTA|Engineering SolutionsRFP-CCM-EM-001|Entregable E1.3
+12 Registro de corrientes del BFD (Celdas SOEC - Corregido)
+ID Origen Destino Corriente principal
+S-01 Suministro externo
+(Captura)
+B-01 (Acondicionamiento
+CO2)
+CO2 capturado (1,1 bar, 99 % CO 2,
+1 % N2)
+S-02 B-01 (Acondicionamiento) B-05 (Compresi´ on de S ´ ıntesis)CO2 seco y purificado (20 bar)
+S-03 Suministro externo / B-12 B-02 (Generaci´ on de Vapor) Agua de reciclo ZLD + Reposici´ on
+(20 bar)
+S-04 B-02 (Generaci´ on de Vapor) B-03 (Electr´ olisis SOEC) Vapor sobrecalentado a 750°C (20
+bar)
+S-05 B-03 (Electr´ olisis SOEC) L ´ ımite de Bater ´ ıa / Tanques Ox ´ ıgeno (O2 an´ odico puro
+coproducto)
+S-06 B-03 (Electr´ olisis SOEC) B-04 (Enfriamiento y Sep. H2) Efluente cat´ odico h´ umedo
+(H2 +H 2O, 750°C)
+S-07 B-04 (Enfriamiento H 2) B-05 (Compresi´ on de S ´ ıntesis)H2 seco acondicionado (20 bar, 38
+°C)
+S-08 B-04 / B-10 B-12 (Tratamiento ZLD) Condensados acuosos de SOEC y
+destilaci´ on
+S-09 B-05 (Compresi´ on) B-06 (Reactor de S ´ ıntesis) Gas de s ´ ıntesis comprimido
+(H2/CO2 = 3,0, 75 bar)
+S-10 B-06 (Reactor S ´ ıntesis) B-07 (Separaci´ on Flash HP) Efluente de s ´ ıntesis de metanol (240
+°C, 75 bar)
+S-11 B-07 (Separaci´ on Flash HP) B-09 (Desgasificaci´ on) Metanol crudo l ´ ıquido presurizado (75
+bar)
+S-12 B-08 (Manejo de Reciclo) B-06 (Reactor de S ´ ıntesis) Gas de reciclo recomprimido (75 bar)
+S-13 B-08 (Manejo de Purga) B-13 (Turboexpansor N 2) Purga presurizada rica en N2 (73 bar,
+38°C)
+S-14 B-09 (Desgasificaci´ on) B-10 (Destilaci´ on) Metanol crudo estabilizado (3 bar)
+S-15 B-10 (Destilaci´ on) B-11 (Almacenamiento) e-Metanol producto refinado Grado
+AA (≥99,5 %wt)
+S-16 B-13 (Turboexpansor) Red El´ ectrica Auxiliar / Vent Potencia el´ ectrica (50-150 kW) +
+Gas a 1,1 bar
+13 Preguntas de revisi´ on del equipo
+1. ¿C´ omo entra elCO2 al proceso y qu´ e funci´ on debe realizarse antes de ingresarlo al lazo de s ´ ıntesis?
+El di´ oxido de carbono ingresa mediante una fuente de suministro externo (captura de CO2) a 1,1 bar a trav´ es
+de la corriente S-01. Antes de ser mezclado con el H2, pasa por una funci´ on de acondicionamiento y compresi´ on
+(Bloque 1), la cual elimina trazas de humedad y compuestos de azufre ( H2S/COS ) en lechos guardianes de
+ZnOy eleva su presi´ on a 20 bar.
+S´INTESIS CONCEPTUAL Y DIAGRAMA DE BLOQUESP´ agina 12
+--- PAGE 14 ---
+SOL VANTA|Engineering SolutionsRFP-CCM-EM-001|Entregable E1.3
+2. ¿C´ omo se produce el hidr´ ogeno renovable y qu´ e corriente secundaria se genera?
+El hidr´ ogeno renovable se produce mediante electr´ olisis de vapor a alta temperatura en celdas SOEC a 750°C y
+20 bar (Bloque 3), alimentadas con vapor sobrecalentado generado con calor de reacci´ on del reactor de s ´ ıntesis
+(Bloque 2). Como corriente secundaria an´ odica se genera ox ´ ıgeno puro (O2), el cual sale del proceso como
+coproducto comercial (S-05).
+3. ¿Existe un bloque independiente de mezclado cat´ odico en la secci´ on SOEC?
+No. La recirculaci´ on de una peque˜ na fracci´ on deH2 reductor (5-10 % mol) para proteger el c´ ermet de n ´ ıquel
+(Ni-YSZ) del c´ atodo se realiza dentro de los colectores de alimentaci´ on del paquete SOEC intrapaquete. Por lo
+tanto, no se requiere ni se representa un bloque unitario de mezclado cat´ odico independiente en el BFD. La
+mezcla de H2 seco (20 bar) y CO2 seco (20 bar) se lleva a cabo en la succi´ on del compresor de gas de s ´ ıntesis
+(Bloque 5).
+4. ¿Qu´ e funci´ on debe existir despu´ es de la s ´ ıntesis para separar producto de gases no convertidos?
+Se requiere un enfriamiento y separaci´ on flash de alta presi´ on a 38°C y 75 bar (Bloque 7), la cual enfr ´ ıa el
+efluente de reacci´ on para condensar y separar la fase l ´ ıquida (metanol crudo y agua) de los gases no convertidos
+incondensables del lazo.
+5. ¿Qu´ e ocurre conceptualmente con los gases que no reaccionan en el lazo de s ´ ıntesis?
+Los gases no convertidos se dirigen al bloque de manejo de reciclo y purga (Bloque 8), donde el 95 % del
+volumen se recomprime y recircula al reactor de s ´ ıntesis (Bloque 6), mientras que una purga del 5 % a 73 bar,
+rica en nitr´ ogeno inerte (N2), se env ´ ıa al Bloque 13 para recuperar energ ´ ıa.
+6. ¿Qu´ e funci´ on permite alcanzar la especificaci´ on de pureza del metanol?
+La funci´ on encargada es la purificaci´ on de metanol por destilaci´ on fraccionada en una columna de 22 a 26 platos
+(Bloque 10), la cual elimina el agua de reacci´ on y subproductos ligeros hasta alcanzar y superar la especificaci´ on
+comercial Grado AA (≥99,5 %wt en masa).
+S´INTESIS CONCEPTUAL Y DIAGRAMA DE BLOQUESP´ agina 13
+--- PAGE 15 ---
+SOL VANTA|Engineering SolutionsRFP-CCM-EM-001|Entregable E1.3
+14 Propuesta de Innovaci´ on Tecnol´ ogica: Integraci´ on de Celdas SOEC
+En estricto apego al Principio de Libertad de Dise˜ no consagrado en las bases de la licitaci´ on RFP-CCM-EM-001,
+Solvanta Engineering Solutions propone ante la entidad licitante evaluar el desarrollo complementario del proyecto
+mediante la sustituci´ on progresiva de la electr´ olisis de referencia PEM por unaArquitectura de Celdas de
+Electr´ olisis de´Oxido S´ olido (SOEC) a Alta Temperatura (750◦C).
+14.1 Fundamentaci´ on Termodin´ amica y Reducci´ on de OPEX
+La electr´ olisis a alta temperatura aprovecha energ ´ ıa t´ ermica de proceso para suministrar parte de la entalp ´ ıa de
+disociaci´ on del agua (∆H = ∆G +T ∆S), reduciendo sustancialmente la demanda de energ ´ ıa el´ ectrica espec ´ ıfica
+(∆G). Mientras que los sistemas PEM operan a baja temperatura (50 –80 ◦C), las celdas SOEC operan a750 ◦C con
+consumos optimizados del orden de40 ,0–42,0 kWh/kg H 2 (meta de dise˜ no:∼ 41,0 kWh/kg H 2), lo que representa
+unareducci´ on neta del 27 % al 30 % en el consumo de energ ´ ıa el´ ectrica del proceso.
+14.2 Acoplamiento T´ ermico con el Reactor de S ´ ıntesis
+La s ´ ıntesis catal ´ ıtica de metanol es una reacci´ on fuertemente exot´ ermica:
+CO2 + 3H 2 ⇌CH 3OH+H 2O(∆H ◦
+298K =−49,5kJ/mol)
+El calor liberado en el reactor tubular a240 ◦C y75 bar se recupera en la carcasa del reactor / Reboiler E-201
+(Bloque 2) para evaporar el agua de reciclo ZLD a220 ◦C (20 bar). Posteriormente, un sobrecalentador eleva la
+temperatura del vapor a750 ◦C para alimentar el c´ atodo del SOEC (Bloque 3). Este acoplamiento elimina el costo
+el´ ectrico del cambio de fase h ´ ıdrico.
+14.3 Circuito Cerrado de Agua y Vertido Cero (ZLD)
+El condensado acuoso del SOEC (Bloque 4) y el agua estequiom´ etrica de reacci´ on recuperada por el fondo de
+la columna de destilaci´ on (Bloque 10) se dirigen al sistema de Tratamiento y Reciclo H ´ ıdrico ZLD (Bloque 12).
+Tras un proceso de desgasificaci´ on y pulido en lecho mixto de resinas desmineralizadoras ( X-801), el 100 % del
+agua se recircula a 20 bar al generador de vapor (Bloque 2), logrando un esquema deVertido Cero (Zero Liquid
+Discharge - ZLD)sin efluentes contaminantes.
+14.4 Recuperaci´ on Energ´ etica por Turboexpansi´ on de N2
+La acumulaci´ on delN2 inerte (procedente del 1 % mol del CO 2 de entrada) en el lazo de s ´ ıntesis se controla
+mediante una purga continua a 73 bar (Bloque 8). Esta corriente presurizada se env ´ ıa al Turboexpansor de Purga
+de N2 (X-601, Bloque 13), convirtiendo la energ ´ ıa de presi´ on en 50 a 150 kW de potencia el´ ectrica auxiliar antes
+de descargar el gas de purga limpio a 1,1 bar a la atm´ osfera.
+15 Preguntas t´ ecnicas pendientes
+S´INTESIS CONCEPTUAL Y DIAGRAMA DE BLOQUESP´ agina 14
+--- PAGE 16 ---
+SOL VANTA|Engineering SolutionsRFP-CCM-EM-001|Entregable E1.3
+No. Pregunta T´ ecnica Pendiente de Ingenier ´ ıa
+1 ¿Cu´ al es la densidad de corriente ´ optima (A/cm2) y tasa de degradaci´ on anual (%/1000 h) de los
+stacks SOEC para maximizar el VAN del proyecto a 20 a˜ nos?
+2 ¿Qu´ e porcentaje exacto de reciclo intrapaquete de H2 (5 % a 10 % mol) al c´ atodo del SOEC garantiza la
+atm´ osfera reductora sin impactar el balance t´ ermico del stack?
+3 ¿Qu´ e eficiencia isentr´ ofica (ηs≈82–85 %) y potencia neta (kW) entregar´ a el turboexpansor
+X-601con la purga de N 2 a73bar?
+4 ¿Qu´ e tasa de reemplazo de resinas en el lecho mixto desmineralizadorX-801se requiere para
+mantener la calidad de agua de alimentaci´ on al SOEC (<0,1ppm metanol)?
+5 ¿Cu´ al es la viabilidad tecnoecon´ omica cuantitativa (VAN, TIR y LCOE en USD/t metanol) de migrar del
+caso base PEM a la propuesta de integraci´ on t´ ermica con SOEC de alta temperatura?
+16 Conclusi´ on
+Con el desarrollo de este Diagrama de Bloques (BFD) congelado en 13 bloques funcionales definitivos, se
+estructuran rigurosamente las bases del proceso de producci´ on de e-metanol. Desde el acondicionamiento del
+CO 2 y la electr´ olisis de vapor a alta temperatura SOEC a 750°C, pasando por la s ´ ıntesis catal ´ ıtica a 75 bar, la
+desgasificaci´ on y purificaci´ on por destilaci´ on, hasta la integraci´ on del circuito ZLD y el turboexpansor de purga de
+N2, cada bloque cumple estrictamente con las leyes termodin´ amicas y las reglas del dise˜ no conceptual.
+Asimismo, establecer formalmente la comparativa entre elCaso Base PEMy laPropuesta de Innovaci´ on
+SOECposiciona aSolvanta Engineering Solutions S.A. de C.V.a la vanguardia de la licitaci´ on RFP-CCM-EM-
+001, proporcionando una hoja de ruta clara para el desarrollo de los modelos de simulaci´ on rigurosa en DWSIM,
+Python y BioSTEAM.
+S´INTESIS CONCEPTUAL Y DIAGRAMA DE BLOQUESP´ agina 15

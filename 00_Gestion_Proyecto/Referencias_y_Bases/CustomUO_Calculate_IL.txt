@@ -1,0 +1,3352 @@
+Calculate ()  cil managed 
+    {
+        // Method begins at RVA 0x6268
+	// Code size 1750 (0x6d6)
+	.maxstack 4
+	.locals init (
+		bool	V_0,
+		class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptSource	V_1,
+		int32	V_2,
+		string	V_3,
+		int32	V_4,
+		int32	V_5,
+		int32	V_6,
+		int32	V_7,
+		int32	V_8,
+		int32	V_9,
+		int32	V_10,
+		int32	V_11,
+		class [mscorlib]System.Exception	V_12,
+		class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ExceptionOperations	V_13,
+		int32	V_14,
+		int32	V_15,
+		int32	V_16,
+		int32	V_17,
+		int32	V_18,
+		int32	V_19,
+		int32	V_20,
+		int32	V_21,
+		object	V_22,
+		bool	V_23,
+		class [mscorlib]System.Exception	V_24,
+		class [Python.Runtime]Python.Runtime.Py/GILState	V_25,
+		class [Python.Runtime]Python.Runtime.PyDict	V_26,
+		object	V_27,
+		string	V_28,
+		int32	V_29,
+		string	V_30,
+		int32	V_31,
+		int32	V_32,
+		int32	V_33,
+		int32	V_34,
+		int32	V_35,
+		int32	V_36,
+		int32	V_37,
+		int32	V_38,
+		class [mscorlib]System.Exception	V_39)
+	IL_0000:  nop 
+	IL_0001:  ldarg.0 
+	IL_0002:  ldarg.0 
+	IL_0003:  call instance class [CapeOpen]CapeOpen.ParameterCollection class [CapeOpen]CapeOpen.CapeObjectBase::get_Parameters()
+	IL_0008:  ldc.i4.8 
+	IL_0009:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.CapeParameter>::get_Item(int32)
+	IL_000e:  castclass [CapeOpen]CapeOpen.OptionParameter
+	IL_0013:  callvirt instance string class [CapeOpen]CapeOpen.OptionParameter::get_Value()
+	IL_0018:  stfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_interpreter
+	IL_001d:  ldarg.0 
+	IL_001e:  ldarg.0 
+	IL_001f:  call instance class [CapeOpen]CapeOpen.ParameterCollection class [CapeOpen]CapeOpen.CapeObjectBase::get_Parameters()
+	IL_0024:  ldc.i4.s 0x09
+	IL_0026:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.CapeParameter>::get_Item(int32)
+	IL_002b:  castclass [CapeOpen]CapeOpen.OptionParameter
+	IL_0030:  callvirt instance string class [CapeOpen]CapeOpen.OptionParameter::get_Value()
+	IL_0035:  stfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_pythonpath
+	IL_003a:  ldarg.0 
+	IL_003b:  ldfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_interpreter
+	IL_0040:  ldstr "IronPython"
+	IL_0045:  ldc.i4.0 
+	IL_0046:  call int32 class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Operators::CompareString(string, string, bool)
+	IL_004b:  ldc.i4.0 
+	IL_004c:  ceq 
+	IL_004e:  stloc.0 
+	IL_004f:  ldloc.0 
+	IL_0050:  brfalse IL_0402
+
+	.try { // 1
+	  .try { // 0
+	    IL_0055:  nop 
+	    IL_0056:  ldarg.0 
+	    IL_0057:  call class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine class [IronPython]IronPython.Hosting.Python::CreateEngine()
+	    IL_005c:  stfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::engine
+	    IL_0061:  ldarg.0 
+	    IL_0062:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::engine
+	    IL_0067:  callvirt instance class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptRuntime class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine::get_Runtime()
+	    IL_006c:  ldtoken [mscorlib]System.String
+	    IL_0071:  call class [mscorlib]System.Type class [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+	    IL_0076:  callvirt instance class [mscorlib]System.Reflection.Assembly class [mscorlib]System.Type::get_Assembly()
+	    IL_007b:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptRuntime::LoadAssembly(class [mscorlib]System.Reflection.Assembly)
+	    IL_0080:  nop 
+	    IL_0081:  ldarg.0 
+	    IL_0082:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::engine
+	    IL_0087:  callvirt instance class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptRuntime class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine::get_Runtime()
+	    IL_008c:  ldtoken CAPEOPEN110.ICapeIdentification
+	    IL_0091:  call class [mscorlib]System.Type class [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+	    IL_0096:  callvirt instance class [mscorlib]System.Reflection.Assembly class [mscorlib]System.Type::get_Assembly()
+	    IL_009b:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptRuntime::LoadAssembly(class [mscorlib]System.Reflection.Assembly)
+	    IL_00a0:  nop 
+	    IL_00a1:  ldarg.0 
+	    IL_00a2:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::engine
+	    IL_00a7:  callvirt instance class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptRuntime class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine::get_Runtime()
+	    IL_00ac:  ldtoken [CapeOpen]CapeOpen.ICapeIdentification
+	    IL_00b1:  call class [mscorlib]System.Type class [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+	    IL_00b6:  callvirt instance class [mscorlib]System.Reflection.Assembly class [mscorlib]System.Type::get_Assembly()
+	    IL_00bb:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptRuntime::LoadAssembly(class [mscorlib]System.Reflection.Assembly)
+	    IL_00c0:  nop 
+	    IL_00c1:  ldarg.0 
+	    IL_00c2:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::engine
+	    IL_00c7:  callvirt instance class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptRuntime class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine::get_Runtime()
+	    IL_00cc:  call class [mscorlib]System.Reflection.Assembly class [mscorlib]System.Reflection.Assembly::GetExecutingAssembly()
+	    IL_00d1:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptRuntime::LoadAssembly(class [mscorlib]System.Reflection.Assembly)
+	    IL_00d6:  nop 
+	    IL_00d7:  ldarg.0 
+	    IL_00d8:  ldarg.0 
+	    IL_00d9:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::engine
+	    IL_00de:  callvirt instance class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine::CreateScope()
+	    IL_00e3:  stfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::scope
+	    IL_00e8:  ldarg.0 
+	    IL_00e9:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::scope
+	    IL_00ee:  ldstr "pme"
+	    IL_00f3:  ldarg.0 
+	    IL_00f4:  ldfld object DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CapeOpenBase::_sctxt
+	    IL_00f9:  call object class [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::GetObjectValue(object)
+	    IL_00fe:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	    IL_0103:  nop 
+	    IL_0104:  ldarg.0 
+	    IL_0105:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::scope
+	    IL_010a:  ldstr "this"
+	    IL_010f:  ldarg.0 
+	    IL_0110:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	    IL_0115:  nop 
+	    IL_0116:  ldc.i4.0 
+	    IL_0117:  stloc.2 
+	    IL_0118:  ldarg.0 
+	    IL_0119:  ldfld int32 DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_inletmaterialports
+	    IL_011e:  stloc.s 4
+	    IL_0120:  ldc.i4.1 
+	    IL_0121:  stloc.s 5
+	    IL_0123:  br.s IL_0162
+
+	    IL_0125:  ldarg.0 
+	    IL_0126:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::scope
+	    IL_012b:  ldstr "ims"
+	    IL_0130:  ldloc.s 5
+	    IL_0132:  call string class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+	    IL_0137:  call string string::Concat(string, string)
+	    IL_013c:  ldarg.0 
+	    IL_013d:  call instance class [CapeOpen]CapeOpen.PortCollection class [CapeOpen]CapeOpen.CapeUnitBase::get_Ports()
+	    IL_0142:  ldloc.2 
+	    IL_0143:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.UnitPort>::get_Item(int32)
+	    IL_0148:  callvirt instance object class [CapeOpen]CapeOpen.UnitPort::get_connectedObject()
+	    IL_014d:  isinst [CapeOpen]CapeOpen.ICapeThermoMaterialObject
+	    IL_0152:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	    IL_0157:  nop 
+	    IL_0158:  ldloc.2 
+	    IL_0159:  ldc.i4.1 
+	    IL_015a:  add 
+	    IL_015b:  stloc.2 
+	    IL_015c:  ldloc.s 5
+	    IL_015e:  ldc.i4.1 
+	    IL_015f:  add 
+	    IL_0160:  stloc.s 5
+	    IL_0162:  ldloc.s 5
+	    IL_0164:  ldloc.s 4
+	    IL_0166:  ble.s IL_0125
+
+	    IL_0168:  ldarg.0 
+	    IL_0169:  ldfld int32 DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_inletenergyports
+	    IL_016e:  stloc.s 6
+	    IL_0170:  ldc.i4.1 
+	    IL_0171:  stloc.s 7
+	    IL_0173:  br.s IL_01b2
+
+	    IL_0175:  ldarg.0 
+	    IL_0176:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::scope
+	    IL_017b:  ldstr "ies"
+	    IL_0180:  ldloc.s 7
+	    IL_0182:  call string class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+	    IL_0187:  call string string::Concat(string, string)
+	    IL_018c:  ldarg.0 
+	    IL_018d:  call instance class [CapeOpen]CapeOpen.PortCollection class [CapeOpen]CapeOpen.CapeUnitBase::get_Ports()
+	    IL_0192:  ldloc.2 
+	    IL_0193:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.UnitPort>::get_Item(int32)
+	    IL_0198:  callvirt instance object class [CapeOpen]CapeOpen.UnitPort::get_connectedObject()
+	    IL_019d:  isinst [CapeOpen]CapeOpen.ICapeCollection
+	    IL_01a2:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	    IL_01a7:  nop 
+	    IL_01a8:  ldloc.2 
+	    IL_01a9:  ldc.i4.1 
+	    IL_01aa:  add 
+	    IL_01ab:  stloc.2 
+	    IL_01ac:  ldloc.s 7
+	    IL_01ae:  ldc.i4.1 
+	    IL_01af:  add 
+	    IL_01b0:  stloc.s 7
+	    IL_01b2:  ldloc.s 7
+	    IL_01b4:  ldloc.s 6
+	    IL_01b6:  ble.s IL_0175
+
+	    IL_01b8:  ldarg.0 
+	    IL_01b9:  ldfld int32 DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_outletmaterialports
+	    IL_01be:  stloc.s 8
+	    IL_01c0:  ldc.i4.1 
+	    IL_01c1:  stloc.s 9
+	    IL_01c3:  br.s IL_0202
+
+	    IL_01c5:  ldarg.0 
+	    IL_01c6:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::scope
+	    IL_01cb:  ldstr "oms"
+	    IL_01d0:  ldloc.s 9
+	    IL_01d2:  call string class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+	    IL_01d7:  call string string::Concat(string, string)
+	    IL_01dc:  ldarg.0 
+	    IL_01dd:  call instance class [CapeOpen]CapeOpen.PortCollection class [CapeOpen]CapeOpen.CapeUnitBase::get_Ports()
+	    IL_01e2:  ldloc.2 
+	    IL_01e3:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.UnitPort>::get_Item(int32)
+	    IL_01e8:  callvirt instance object class [CapeOpen]CapeOpen.UnitPort::get_connectedObject()
+	    IL_01ed:  isinst [CapeOpen]CapeOpen.ICapeThermoMaterialObject
+	    IL_01f2:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	    IL_01f7:  nop 
+	    IL_01f8:  ldloc.2 
+	    IL_01f9:  ldc.i4.1 
+	    IL_01fa:  add 
+	    IL_01fb:  stloc.2 
+	    IL_01fc:  ldloc.s 9
+	    IL_01fe:  ldc.i4.1 
+	    IL_01ff:  add 
+	    IL_0200:  stloc.s 9
+	    IL_0202:  ldloc.s 9
+	    IL_0204:  ldloc.s 8
+	    IL_0206:  ble.s IL_01c5
+
+	    IL_0208:  ldarg.0 
+	    IL_0209:  ldfld int32 DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_outletenergyports
+	    IL_020e:  stloc.s 10
+	    IL_0210:  ldc.i4.1 
+	    IL_0211:  stloc.s 11
+	    IL_0213:  br.s IL_0252
+
+	    IL_0215:  ldarg.0 
+	    IL_0216:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::scope
+	    IL_021b:  ldstr "oes"
+	    IL_0220:  ldloc.s 11
+	    IL_0222:  call string class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+	    IL_0227:  call string string::Concat(string, string)
+	    IL_022c:  ldarg.0 
+	    IL_022d:  call instance class [CapeOpen]CapeOpen.PortCollection class [CapeOpen]CapeOpen.CapeUnitBase::get_Ports()
+	    IL_0232:  ldloc.2 
+	    IL_0233:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.UnitPort>::get_Item(int32)
+	    IL_0238:  callvirt instance object class [CapeOpen]CapeOpen.UnitPort::get_connectedObject()
+	    IL_023d:  isinst [CapeOpen]CapeOpen.ICapeCollection
+	    IL_0242:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	    IL_0247:  nop 
+	    IL_0248:  ldloc.2 
+	    IL_0249:  ldc.i4.1 
+	    IL_024a:  add 
+	    IL_024b:  stloc.2 
+	    IL_024c:  ldloc.s 11
+	    IL_024e:  ldc.i4.1 
+	    IL_024f:  add 
+	    IL_0250:  stloc.s 11
+	    IL_0252:  ldloc.s 11
+	    IL_0254:  ldloc.s 10
+	    IL_0256:  ble.s IL_0215
+
+	    IL_0258:  ldstr ""
+	    IL_025d:  stloc.3 
+	    IL_025e:  ldloc.3 
+	    IL_025f:  ldarg.0 
+	    IL_0260:  call instance class [CapeOpen]CapeOpen.ParameterCollection class [CapeOpen]CapeOpen.CapeObjectBase::get_Parameters()
+	    IL_0265:  ldc.i4.0 
+	    IL_0266:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.CapeParameter>::get_Item(int32)
+	    IL_026b:  castclass [CapeOpen]CapeOpen.OptionParameter
+	    IL_0270:  callvirt instance string class [CapeOpen]CapeOpen.OptionParameter::get_Value()
+	    IL_0275:  call string string::Concat(string, string)
+	    IL_027a:  stloc.3 
+	    IL_027b:  ldarg.0 
+	    IL_027c:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::engine
+	    IL_0281:  ldloc.3 
+	    IL_0282:  ldc.i4.2 
+	    IL_0283:  callvirt instance class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptSource class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine::CreateScriptSourceFromString(string, valuetype [Microsoft.Scripting]Microsoft.Scripting.SourceCodeKind)
+	    IL_0288:  stloc.1 
+	    IL_0289:  ldloc.1 
+	    IL_028a:  ldarg.0 
+	    IL_028b:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::scope
+	    IL_0290:  callvirt instance object class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptSource::Execute(class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope)
+	    IL_0295:  pop 
+	    IL_0296:  ldarg.0 
+	    IL_0297:  ldstr "Script executed succesfully."
+	    IL_029c:  stfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_lastrun
+	    IL_02a1:  leave.s IL_030d
+
+	  } // end .try 0
+	  catch class [mscorlib]System.Exception { // 0
+	    IL_02a3:  dup 
+	    IL_02a4:  call void class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::SetProjectError(class [mscorlib]System.Exception)
+	    IL_02a9:  stloc.s 12
+	    IL_02ab:  nop 
+	    IL_02ac:  ldarg.0 
+	    IL_02ad:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::engine
+	    IL_02b2:  ldc.i4.0 
+	    IL_02b3:  newarr [mscorlib]System.Object
+	    IL_02b8:  callvirt instance !!0 class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine::GetService<class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ExceptionOperations> (object[])
+	    IL_02bd:  stloc.s 13
+	    IL_02bf:  ldarg.0 
+	    IL_02c0:  ldnull 
+	    IL_02c1:  stfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::engine
+	    IL_02c6:  ldarg.0 
+	    IL_02c7:  ldnull 
+	    IL_02c8:  stfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::scope
+	    IL_02cd:  ldnull 
+	    IL_02ce:  stloc.1 
+	    IL_02cf:  ldarg.0 
+	    IL_02d0:  ldstr "Error executing script: "
+	    IL_02d5:  ldloc.s 13
+	    IL_02d7:  ldloc.s 12
+	    IL_02d9:  callvirt instance string class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ExceptionOperations::FormatException(class [mscorlib]System.Exception)
+	    IL_02de:  callvirt instance string string::ToString()
+	    IL_02e3:  call string string::Concat(string, string)
+	    IL_02e8:  stfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_lastrun
+	    IL_02ed:  ldarg.0 
+	    IL_02ee:  ldfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_lastrun
+	    IL_02f3:  ldarg.0 
+	    IL_02f4:  call instance string class [CapeOpen]CapeOpen.CapeIdentification::get_ComponentName()
+	    IL_02f9:  call valuetype [System.Windows.Forms]System.Windows.Forms.DialogResult class [System.Windows.Forms]System.Windows.Forms.MessageBox::Show(string, string)
+	    IL_02fe:  pop 
+	    IL_02ff:  ldarg.0 
+	    IL_0300:  ldfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_lastrun
+	    IL_0305:  ldloc.s 12
+	    IL_0307:  newobj instance void class [CapeOpen]CapeOpen.CapeSolvingErrorException::'.ctor'(string, class [mscorlib]System.Exception)
+	    IL_030c:  throw 
+	  } // end handler 0
+	  IL_030d:  leave IL_03fb
+
+	} // end .try 1
+	finally  { // 1
+	  IL_0312:  nop 
+	  IL_0313:  ldarg.0 
+	  IL_0314:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::scope
+	  IL_0319:  ldstr "pme"
+	  IL_031e:  callvirt instance bool class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::RemoveVariable(string)
+	  IL_0323:  pop 
+	  IL_0324:  ldarg.0 
+	  IL_0325:  ldfld int32 DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_inletmaterialports
+	  IL_032a:  stloc.s 14
+	  IL_032c:  ldc.i4.1 
+	  IL_032d:  stloc.s 15
+	  IL_032f:  br.s IL_0348
+
+	  IL_0331:  ldarg.0 
+	  IL_0332:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::scope
+	  IL_0337:  ldstr "ims"
+	  IL_033c:  callvirt instance bool class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::RemoveVariable(string)
+	  IL_0341:  pop 
+	  IL_0342:  ldloc.s 15
+	  IL_0344:  ldc.i4.1 
+	  IL_0345:  add 
+	  IL_0346:  stloc.s 15
+	  IL_0348:  ldloc.s 15
+	  IL_034a:  ldloc.s 14
+	  IL_034c:  ble.s IL_0331
+
+	  IL_034e:  ldarg.0 
+	  IL_034f:  ldfld int32 DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_inletenergyports
+	  IL_0354:  stloc.s 16
+	  IL_0356:  ldc.i4.1 
+	  IL_0357:  stloc.s 17
+	  IL_0359:  br.s IL_0372
+
+	  IL_035b:  ldarg.0 
+	  IL_035c:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::scope
+	  IL_0361:  ldstr "ies"
+	  IL_0366:  callvirt instance bool class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::RemoveVariable(string)
+	  IL_036b:  pop 
+	  IL_036c:  ldloc.s 17
+	  IL_036e:  ldc.i4.1 
+	  IL_036f:  add 
+	  IL_0370:  stloc.s 17
+	  IL_0372:  ldloc.s 17
+	  IL_0374:  ldloc.s 16
+	  IL_0376:  ble.s IL_035b
+
+	  IL_0378:  ldarg.0 
+	  IL_0379:  ldfld int32 DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_outletmaterialports
+	  IL_037e:  stloc.s 18
+	  IL_0380:  ldc.i4.1 
+	  IL_0381:  stloc.s 19
+	  IL_0383:  br.s IL_039c
+
+	  IL_0385:  ldarg.0 
+	  IL_0386:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::scope
+	  IL_038b:  ldstr "oms"
+	  IL_0390:  callvirt instance bool class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::RemoveVariable(string)
+	  IL_0395:  pop 
+	  IL_0396:  ldloc.s 19
+	  IL_0398:  ldc.i4.1 
+	  IL_0399:  add 
+	  IL_039a:  stloc.s 19
+	  IL_039c:  ldloc.s 19
+	  IL_039e:  ldloc.s 18
+	  IL_03a0:  ble.s IL_0385
+
+	  IL_03a2:  ldarg.0 
+	  IL_03a3:  ldfld int32 DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_outletenergyports
+	  IL_03a8:  stloc.s 20
+	  IL_03aa:  ldc.i4.1 
+	  IL_03ab:  stloc.s 21
+	  IL_03ad:  br.s IL_03c6
+
+	  IL_03af:  ldarg.0 
+	  IL_03b0:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::scope
+	  IL_03b5:  ldstr "oes"
+	  IL_03ba:  callvirt instance bool class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::RemoveVariable(string)
+	  IL_03bf:  pop 
+	  IL_03c0:  ldloc.s 21
+	  IL_03c2:  ldc.i4.1 
+	  IL_03c3:  add 
+	  IL_03c4:  stloc.s 21
+	  IL_03c6:  ldloc.s 21
+	  IL_03c8:  ldloc.s 20
+	  IL_03ca:  ble.s IL_03af
+
+	  IL_03cc:  ldarg.0 
+	  IL_03cd:  ldnull 
+	  IL_03ce:  stfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::engine
+	  IL_03d3:  ldarg.0 
+	  IL_03d4:  ldnull 
+	  IL_03d5:  stfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::scope
+	  IL_03da:  ldnull 
+	  IL_03db:  stloc.1 
+	  IL_03dc:  ldarg.0 
+	  IL_03dd:  ldfld object DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CapeOpenBase::_sctxt
+	  IL_03e2:  isinst [mscorlib]System.IDisposable
+	  IL_03e7:  dup 
+	  IL_03e8:  brtrue.s IL_03ed
+
+	  IL_03ea:  pop 
+	  IL_03eb:  br.s IL_03f3
+
+	  IL_03ed:  callvirt instance void class [mscorlib]System.IDisposable::Dispose()
+	  IL_03f2:  nop 
+	  IL_03f3:  ldarg.0 
+	  IL_03f4:  ldnull 
+	  IL_03f5:  stfld object DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CapeOpenBase::_sctxt
+	  IL_03fa:  endfinally 
+	} // end handler 1
+	IL_03fb:  nop 
+	IL_03fc:  nop 
+	IL_03fd:  br IL_06d5
+
+	IL_0402:  nop 
+	IL_0403:  nop 
+	IL_0404:  ldsfld object DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::Lock
+	IL_0409:  stloc.s 22
+	IL_040b:  ldloc.s 22
+	IL_040d:  call void class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ObjectFlowControl::CheckForSyncLockOnValueType(object)
+	IL_0412:  nop 
+	IL_0413:  ldc.i4.0 
+	IL_0414:  stloc.s 23
+	.try { // 6
+	  IL_0416:  ldloc.s 22
+	  IL_0418:  ldloca.s 23
+	  IL_041a:  call void class [mscorlib]System.Threading.Monitor::Enter(object, [out] bool&)
+	  IL_041f:  nop 
+	  .try { // 2
+	    IL_0420:  nop 
+	    IL_0421:  ldstr ""
+	    IL_0426:  call void class [DWSIM.GlobalSettings]DWSIM.GlobalSettings.Settings::InitializePythonEnvironment(string)
+	    IL_042b:  nop 
+	    IL_042c:  leave.s IL_046e
+
+	  } // end .try 2
+	  catch class [mscorlib]System.Exception { // 2
+	    IL_042e:  dup 
+	    IL_042f:  call void class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::SetProjectError(class [mscorlib]System.Exception)
+	    IL_0434:  stloc.s 24
+	    IL_0436:  nop 
+	    IL_0437:  ldarg.0 
+	    IL_0438:  ldstr "Error executing script: "
+	    IL_043d:  ldloc.s 24
+	    IL_043f:  callvirt instance string class [mscorlib]System.Exception::ToString()
+	    IL_0444:  call string string::Concat(string, string)
+	    IL_0449:  stfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_lastrun
+	    IL_044e:  ldarg.0 
+	    IL_044f:  ldfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_lastrun
+	    IL_0454:  ldarg.0 
+	    IL_0455:  call instance string class [CapeOpen]CapeOpen.CapeIdentification::get_ComponentName()
+	    IL_045a:  call valuetype [System.Windows.Forms]System.Windows.Forms.DialogResult class [System.Windows.Forms]System.Windows.Forms.MessageBox::Show(string, string)
+	    IL_045f:  pop 
+	    IL_0460:  ldarg.0 
+	    IL_0461:  ldfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_lastrun
+	    IL_0466:  ldloc.s 24
+	    IL_0468:  newobj instance void class [CapeOpen]CapeOpen.CapeSolvingErrorException::'.ctor'(string, class [mscorlib]System.Exception)
+	    IL_046d:  throw 
+	  } // end handler 2
+	  IL_046e:  nop 
+	  IL_046f:  nop 
+	  IL_0470:  call class [Python.Runtime]Python.Runtime.Py/GILState class [Python.Runtime]Python.Runtime.Py::GIL()
+	  IL_0475:  stloc.s 25
+	  .try { // 5
+	    .try { // 4
+	      .try { // 3
+	        IL_0477:  nop 
+	        IL_0478:  newobj instance void class [Python.Runtime]Python.Runtime.PyDict::'.ctor'()
+	        IL_047d:  stloc.s 26
+	        IL_047f:  ldstr "sys"
+	        IL_0484:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.Py::Import(string)
+	        IL_0489:  stloc.s 27
+	        IL_048b:  ldstr "import sys\r\nfrom io import BytesIO as StringIO\r\nsys.stdout = mystdout = StringIO()\r\nsys.stdout.flush()\r\nsys.stderr = mystderr = StringIO()\r\nsys.stderr.flush()"
+	        IL_0490:  stloc.s 28
+	        IL_0492:  ldloc.s 28
+	        IL_0494:  call int32 class [Python.Runtime]Python.Runtime.PythonEngine::RunSimpleString(string)
+	        IL_0499:  pop 
+	        IL_049a:  ldloc.s 26
+	        IL_049c:  ldstr "pme"
+	        IL_04a1:  ldarg.0 
+	        IL_04a2:  ldfld object DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CapeOpenBase::_sctxt
+	        IL_04a7:  isinst [CapeOpen]CapeOpen.ICapeSimulationContext
+	        IL_04ac:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_04b1:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_04b6:  nop 
+	        IL_04b7:  ldloc.s 26
+	        IL_04b9:  ldstr "this"
+	        IL_04be:  ldarg.0 
+	        IL_04bf:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_04c4:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_04c9:  nop 
+	        IL_04ca:  ldc.i4.0 
+	        IL_04cb:  stloc.s 29
+	        IL_04cd:  ldarg.0 
+	        IL_04ce:  ldfld int32 DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_inletmaterialports
+	        IL_04d3:  stloc.s 31
+	        IL_04d5:  ldc.i4.1 
+	        IL_04d6:  stloc.s 32
+	        IL_04d8:  br.s IL_051b
+
+	        IL_04da:  ldloc.s 26
+	        IL_04dc:  ldstr "ims"
+	        IL_04e1:  ldloc.s 32
+	        IL_04e3:  call string class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+	        IL_04e8:  call string string::Concat(string, string)
+	        IL_04ed:  ldarg.0 
+	        IL_04ee:  call instance class [CapeOpen]CapeOpen.PortCollection class [CapeOpen]CapeOpen.CapeUnitBase::get_Ports()
+	        IL_04f3:  ldloc.s 29
+	        IL_04f5:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.UnitPort>::get_Item(int32)
+	        IL_04fa:  callvirt instance object class [CapeOpen]CapeOpen.UnitPort::get_connectedObject()
+	        IL_04ff:  isinst [CapeOpen]CapeOpen.ICapeThermoMaterialObject
+	        IL_0504:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0509:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_050e:  nop 
+	        IL_050f:  ldloc.s 29
+	        IL_0511:  ldc.i4.1 
+	        IL_0512:  add 
+	        IL_0513:  stloc.s 29
+	        IL_0515:  ldloc.s 32
+	        IL_0517:  ldc.i4.1 
+	        IL_0518:  add 
+	        IL_0519:  stloc.s 32
+	        IL_051b:  ldloc.s 32
+	        IL_051d:  ldloc.s 31
+	        IL_051f:  ble.s IL_04da
+
+	        IL_0521:  ldarg.0 
+	        IL_0522:  ldfld int32 DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_inletenergyports
+	        IL_0527:  stloc.s 33
+	        IL_0529:  ldc.i4.1 
+	        IL_052a:  stloc.s 34
+	        IL_052c:  br.s IL_056f
+
+	        IL_052e:  ldloc.s 26
+	        IL_0530:  ldstr "ies"
+	        IL_0535:  ldloc.s 34
+	        IL_0537:  call string class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+	        IL_053c:  call string string::Concat(string, string)
+	        IL_0541:  ldarg.0 
+	        IL_0542:  call instance class [CapeOpen]CapeOpen.PortCollection class [CapeOpen]CapeOpen.CapeUnitBase::get_Ports()
+	        IL_0547:  ldloc.s 29
+	        IL_0549:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.UnitPort>::get_Item(int32)
+	        IL_054e:  callvirt instance object class [CapeOpen]CapeOpen.UnitPort::get_connectedObject()
+	        IL_0553:  isinst [CapeOpen]CapeOpen.ICapeCollection
+	        IL_0558:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_055d:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0562:  nop 
+	        IL_0563:  ldloc.s 29
+	        IL_0565:  ldc.i4.1 
+	        IL_0566:  add 
+	        IL_0567:  stloc.s 29
+	        IL_0569:  ldloc.s 34
+	        IL_056b:  ldc.i4.1 
+	        IL_056c:  add 
+	        IL_056d:  stloc.s 34
+	        IL_056f:  ldloc.s 34
+	        IL_0571:  ldloc.s 33
+	        IL_0573:  ble.s IL_052e
+
+	        IL_0575:  ldarg.0 
+	        IL_0576:  ldfld int32 DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_outletmaterialports
+	        IL_057b:  stloc.s 35
+	        IL_057d:  ldc.i4.1 
+	        IL_057e:  stloc.s 36
+	        IL_0580:  br.s IL_05c3
+
+	        IL_0582:  ldloc.s 26
+	        IL_0584:  ldstr "oms"
+	        IL_0589:  ldloc.s 36
+	        IL_058b:  call string class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+	        IL_0590:  call string string::Concat(string, string)
+	        IL_0595:  ldarg.0 
+	        IL_0596:  call instance class [CapeOpen]CapeOpen.PortCollection class [CapeOpen]CapeOpen.CapeUnitBase::get_Ports()
+	        IL_059b:  ldloc.s 29
+	        IL_059d:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.UnitPort>::get_Item(int32)
+	        IL_05a2:  callvirt instance object class [CapeOpen]CapeOpen.UnitPort::get_connectedObject()
+	        IL_05a7:  isinst [CapeOpen]CapeOpen.ICapeThermoMaterialObject
+	        IL_05ac:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_05b1:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_05b6:  nop 
+	        IL_05b7:  ldloc.s 29
+	        IL_05b9:  ldc.i4.1 
+	        IL_05ba:  add 
+	        IL_05bb:  stloc.s 29
+	        IL_05bd:  ldloc.s 36
+	        IL_05bf:  ldc.i4.1 
+	        IL_05c0:  add 
+	        IL_05c1:  stloc.s 36
+	        IL_05c3:  ldloc.s 36
+	        IL_05c5:  ldloc.s 35
+	        IL_05c7:  ble.s IL_0582
+
+	        IL_05c9:  ldarg.0 
+	        IL_05ca:  ldfld int32 DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_outletenergyports
+	        IL_05cf:  stloc.s 37
+	        IL_05d1:  ldc.i4.1 
+	        IL_05d2:  stloc.s 38
+	        IL_05d4:  br.s IL_0617
+
+	        IL_05d6:  ldloc.s 26
+	        IL_05d8:  ldstr "oes"
+	        IL_05dd:  ldloc.s 38
+	        IL_05df:  call string class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+	        IL_05e4:  call string string::Concat(string, string)
+	        IL_05e9:  ldarg.0 
+	        IL_05ea:  call instance class [CapeOpen]CapeOpen.PortCollection class [CapeOpen]CapeOpen.CapeUnitBase::get_Ports()
+	        IL_05ef:  ldloc.s 29
+	        IL_05f1:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.UnitPort>::get_Item(int32)
+	        IL_05f6:  callvirt instance object class [CapeOpen]CapeOpen.UnitPort::get_connectedObject()
+	        IL_05fb:  isinst [CapeOpen]CapeOpen.ICapeCollection
+	        IL_0600:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0605:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_060a:  nop 
+	        IL_060b:  ldloc.s 29
+	        IL_060d:  ldc.i4.1 
+	        IL_060e:  add 
+	        IL_060f:  stloc.s 29
+	        IL_0611:  ldloc.s 38
+	        IL_0613:  ldc.i4.1 
+	        IL_0614:  add 
+	        IL_0615:  stloc.s 38
+	        IL_0617:  ldloc.s 38
+	        IL_0619:  ldloc.s 37
+	        IL_061b:  ble.s IL_05d6
+
+	        IL_061d:  ldstr ""
+	        IL_0622:  stloc.s 30
+	        IL_0624:  ldloc.s 30
+	        IL_0626:  ldarg.0 
+	        IL_0627:  call instance class [CapeOpen]CapeOpen.ParameterCollection class [CapeOpen]CapeOpen.CapeObjectBase::get_Parameters()
+	        IL_062c:  ldc.i4.0 
+	        IL_062d:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.CapeParameter>::get_Item(int32)
+	        IL_0632:  castclass [CapeOpen]CapeOpen.OptionParameter
+	        IL_0637:  callvirt instance string class [CapeOpen]CapeOpen.OptionParameter::get_Value()
+	        IL_063c:  call string string::Concat(string, string)
+	        IL_0641:  stloc.s 30
+	        IL_0643:  ldloc.s 30
+	        IL_0645:  ldnull 
+	        IL_0646:  ldloc.s 26
+	        IL_0648:  call void class [Python.Runtime]Python.Runtime.PythonEngine::Exec(string, class [Python.Runtime]Python.Runtime.PyDict, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_064d:  nop 
+	        IL_064e:  leave.s IL_0690
+
+	      } // end .try 3
+	      catch class [mscorlib]System.Exception { // 3
+	        IL_0650:  dup 
+	        IL_0651:  call void class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::SetProjectError(class [mscorlib]System.Exception)
+	        IL_0656:  stloc.s 39
+	        IL_0658:  nop 
+	        IL_0659:  ldarg.0 
+	        IL_065a:  ldstr "Error executing script: "
+	        IL_065f:  ldloc.s 39
+	        IL_0661:  callvirt instance string class [mscorlib]System.Exception::ToString()
+	        IL_0666:  call string string::Concat(string, string)
+	        IL_066b:  stfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_lastrun
+	        IL_0670:  ldarg.0 
+	        IL_0671:  ldfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_lastrun
+	        IL_0676:  ldarg.0 
+	        IL_0677:  call instance string class [CapeOpen]CapeOpen.CapeIdentification::get_ComponentName()
+	        IL_067c:  call valuetype [System.Windows.Forms]System.Windows.Forms.DialogResult class [System.Windows.Forms]System.Windows.Forms.MessageBox::Show(string, string)
+	        IL_0681:  pop 
+	        IL_0682:  ldarg.0 
+	        IL_0683:  ldfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_lastrun
+	        IL_0688:  ldloc.s 39
+	        IL_068a:  newobj instance void class [CapeOpen]CapeOpen.CapeSolvingErrorException::'.ctor'(string, class [mscorlib]System.Exception)
+	        IL_068f:  throw 
+	      } // end handler 3
+	      IL_0690:  leave.s IL_06b2
+
+	    } // end .try 4
+	    finally  { // 4
+	      IL_0692:  nop 
+	      IL_0693:  ldarg.0 
+	      IL_0694:  ldfld object DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CapeOpenBase::_sctxt
+	      IL_0699:  isinst [mscorlib]System.IDisposable
+	      IL_069e:  dup 
+	      IL_069f:  brtrue.s IL_06a4
+
+	      IL_06a1:  pop 
+	      IL_06a2:  br.s IL_06aa
+
+	      IL_06a4:  callvirt instance void class [mscorlib]System.IDisposable::Dispose()
+	      IL_06a9:  nop 
+	      IL_06aa:  ldarg.0 
+	      IL_06ab:  ldnull 
+	      IL_06ac:  stfld object DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CapeOpenBase::_sctxt
+	      IL_06b1:  endfinally 
+	    } // end handler 4
+	    IL_06b2:  nop 
+	    IL_06b3:  leave.s IL_06c3
+
+	  } // end .try 5
+	  finally  { // 5
+	    IL_06b5:  nop 
+	    IL_06b6:  ldloc.s 25
+	    IL_06b8:  brfalse.s IL_06c2
+
+	    IL_06ba:  ldloc.s 25
+	    IL_06bc:  callvirt instance void class [mscorlib]System.IDisposable::Dispose()
+	    IL_06c1:  nop 
+	    IL_06c2:  endfinally 
+	  } // end handler 5
+	  IL_06c3:  leave.s IL_06d3
+
+	} // end .try 6
+	finally  { // 6
+	  IL_06c5:  ldloc.s 23
+	  IL_06c7:  brfalse.s IL_06d1
+
+	  IL_06c9:  ldloc.s 22
+	  IL_06cb:  call void class [mscorlib]System.Threading.Monitor::Exit(object)
+	  IL_06d0:  nop 
+	  IL_06d1:  nop 
+	  IL_06d2:  endfinally 
+	} // end handler 6
+	IL_06d3:  nop 
+	IL_06d4:  nop 
+	IL_06d5:  ret 
+    } // end of method CO_CustomUO::Calculate
+
+    // method line 332
+    .method public virtual hidebysig strict 
+           instance default void Edit ()  cil managed 
+    {
+        // Method begins at RVA 0x69f8
+	// Code size 436 (0x1b4)
+	.maxstack 3
+	.locals init (
+		class DWSIM.UnitOperations.EditingForm_CustomUO_ScriptEditor	V_0,
+		class DWSIM.UnitOperations.EditingForm_CustomUO_ScriptEditor	V_1)
+	IL_0000:  nop 
+	IL_0001:  newobj instance void class DWSIM.UnitOperations.EditingForm_CustomUO_ScriptEditor::'.ctor'()
+	IL_0006:  stloc.0 
+	IL_0007:  nop 
+	IL_0008:  ldloc.0 
+	IL_0009:  stloc.1 
+	IL_000a:  ldloc.1 
+	IL_000b:  ldc.i4.1 
+	IL_000c:  stfld bool DWSIM.UnitOperations.EditingForm_CustomUO_ScriptEditor::CAPEOPEN
+	IL_0011:  ldarg.0 
+	IL_0012:  ldarg.0 
+	IL_0013:  call instance class [CapeOpen]CapeOpen.ParameterCollection class [CapeOpen]CapeOpen.CapeObjectBase::get_Parameters()
+	IL_0018:  ldc.i4.1 
+	IL_0019:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.CapeParameter>::get_Item(int32)
+	IL_001e:  castclass [CapeOpen]CapeOpen.OptionParameter
+	IL_0023:  callvirt instance string class [CapeOpen]CapeOpen.OptionParameter::get_Value()
+	IL_0028:  stfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_fontname
+	IL_002d:  ldarg.0 
+	IL_002e:  ldarg.0 
+	IL_002f:  call instance class [CapeOpen]CapeOpen.ParameterCollection class [CapeOpen]CapeOpen.CapeObjectBase::get_Parameters()
+	IL_0034:  ldc.i4.2 
+	IL_0035:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.CapeParameter>::get_Item(int32)
+	IL_003a:  castclass [CapeOpen]CapeOpen.OptionParameter
+	IL_003f:  callvirt instance string class [CapeOpen]CapeOpen.OptionParameter::get_Value()
+	IL_0044:  call int32 class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToInteger(string)
+	IL_0049:  stfld int32 DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_fontsize
+	IL_004e:  ldarg.0 
+	IL_004f:  ldarg.0 
+	IL_0050:  call instance class [CapeOpen]CapeOpen.ParameterCollection class [CapeOpen]CapeOpen.CapeObjectBase::get_Parameters()
+	IL_0055:  ldc.i4.8 
+	IL_0056:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.CapeParameter>::get_Item(int32)
+	IL_005b:  castclass [CapeOpen]CapeOpen.OptionParameter
+	IL_0060:  callvirt instance string class [CapeOpen]CapeOpen.OptionParameter::get_Value()
+	IL_0065:  stfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_interpreter
+	IL_006a:  ldarg.0 
+	IL_006b:  ldarg.0 
+	IL_006c:  call instance class [CapeOpen]CapeOpen.ParameterCollection class [CapeOpen]CapeOpen.CapeObjectBase::get_Parameters()
+	IL_0071:  ldc.i4.s 0x09
+	IL_0073:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.CapeParameter>::get_Item(int32)
+	IL_0078:  castclass [CapeOpen]CapeOpen.OptionParameter
+	IL_007d:  callvirt instance string class [CapeOpen]CapeOpen.OptionParameter::get_Value()
+	IL_0082:  stfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_pythonpath
+	IL_0087:  ldloc.1 
+	IL_0088:  ldarg.0 
+	IL_0089:  ldfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_fontname
+	IL_008e:  stfld string DWSIM.UnitOperations.EditingForm_CustomUO_ScriptEditor::FontName
+	IL_0093:  ldloc.1 
+	IL_0094:  ldarg.0 
+	IL_0095:  ldfld int32 DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_fontsize
+	IL_009a:  stfld int32 DWSIM.UnitOperations.EditingForm_CustomUO_ScriptEditor::FontSize
+	IL_009f:  ldloc.1 
+	IL_00a0:  callvirt instance class [ScintillaNET]ScintillaNET.Scintilla class DWSIM.UnitOperations.EditingForm_CustomUO_ScriptEditor::get_txtScript()
+	IL_00a5:  ldarg.0 
+	IL_00a6:  call instance class [CapeOpen]CapeOpen.ParameterCollection class [CapeOpen]CapeOpen.CapeObjectBase::get_Parameters()
+	IL_00ab:  ldc.i4.0 
+	IL_00ac:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.CapeParameter>::get_Item(int32)
+	IL_00b1:  castclass [CapeOpen]CapeOpen.OptionParameter
+	IL_00b6:  callvirt instance string class [CapeOpen]CapeOpen.OptionParameter::get_Value()
+	IL_00bb:  callvirt instance void class [ScintillaNET]ScintillaNET.Scintilla::set_Text(string)
+	IL_00c0:  nop 
+	IL_00c1:  ldloc.1 
+	IL_00c2:  ldarg.0 
+	IL_00c3:  ldfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_interpreter
+	IL_00c8:  stfld string DWSIM.UnitOperations.EditingForm_CustomUO_ScriptEditor::interpreter
+	IL_00cd:  ldloc.1 
+	IL_00ce:  ldarg.0 
+	IL_00cf:  ldfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_pythonpath
+	IL_00d4:  stfld string DWSIM.UnitOperations.EditingForm_CustomUO_ScriptEditor::pythonpath
+	IL_00d9:  ldloc.1 
+	IL_00da:  callvirt instance valuetype [System.Windows.Forms]System.Windows.Forms.DialogResult class [System.Windows.Forms]System.Windows.Forms.Form::ShowDialog()
+	IL_00df:  pop 
+	IL_00e0:  ldarg.0 
+	IL_00e1:  ldloc.1 
+	IL_00e2:  ldfld string DWSIM.UnitOperations.EditingForm_CustomUO_ScriptEditor::FontName
+	IL_00e7:  stfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_fontname
+	IL_00ec:  ldarg.0 
+	IL_00ed:  ldloc.1 
+	IL_00ee:  ldfld int32 DWSIM.UnitOperations.EditingForm_CustomUO_ScriptEditor::FontSize
+	IL_00f3:  stfld int32 DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_fontsize
+	IL_00f8:  ldarg.0 
+	IL_00f9:  ldloc.1 
+	IL_00fa:  ldfld string DWSIM.UnitOperations.EditingForm_CustomUO_ScriptEditor::interpreter
+	IL_00ff:  stfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_interpreter
+	IL_0104:  ldarg.0 
+	IL_0105:  ldloc.1 
+	IL_0106:  ldfld string DWSIM.UnitOperations.EditingForm_CustomUO_ScriptEditor::pythonpath
+	IL_010b:  stfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_pythonpath
+	IL_0110:  ldarg.0 
+	IL_0111:  call instance class [CapeOpen]CapeOpen.ParameterCollection class [CapeOpen]CapeOpen.CapeObjectBase::get_Parameters()
+	IL_0116:  ldc.i4.1 
+	IL_0117:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.CapeParameter>::get_Item(int32)
+	IL_011c:  castclass [CapeOpen]CapeOpen.OptionParameter
+	IL_0121:  ldarg.0 
+	IL_0122:  ldfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_fontname
+	IL_0127:  callvirt instance void class [CapeOpen]CapeOpen.OptionParameter::set_Value(string)
+	IL_012c:  nop 
+	IL_012d:  ldarg.0 
+	IL_012e:  call instance class [CapeOpen]CapeOpen.ParameterCollection class [CapeOpen]CapeOpen.CapeObjectBase::get_Parameters()
+	IL_0133:  ldc.i4.2 
+	IL_0134:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.CapeParameter>::get_Item(int32)
+	IL_0139:  castclass [CapeOpen]CapeOpen.OptionParameter
+	IL_013e:  ldarg.0 
+	IL_013f:  ldfld int32 DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_fontsize
+	IL_0144:  call string class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+	IL_0149:  callvirt instance void class [CapeOpen]CapeOpen.OptionParameter::set_Value(string)
+	IL_014e:  nop 
+	IL_014f:  ldarg.0 
+	IL_0150:  call instance class [CapeOpen]CapeOpen.ParameterCollection class [CapeOpen]CapeOpen.CapeObjectBase::get_Parameters()
+	IL_0155:  ldc.i4.0 
+	IL_0156:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.CapeParameter>::get_Item(int32)
+	IL_015b:  castclass [CapeOpen]CapeOpen.OptionParameter
+	IL_0160:  ldloc.1 
+	IL_0161:  ldfld string DWSIM.UnitOperations.EditingForm_CustomUO_ScriptEditor::scripttext
+	IL_0166:  callvirt instance void class [CapeOpen]CapeOpen.OptionParameter::set_Value(string)
+	IL_016b:  nop 
+	IL_016c:  ldarg.0 
+	IL_016d:  call instance class [CapeOpen]CapeOpen.ParameterCollection class [CapeOpen]CapeOpen.CapeObjectBase::get_Parameters()
+	IL_0172:  ldc.i4.8 
+	IL_0173:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.CapeParameter>::get_Item(int32)
+	IL_0178:  castclass [CapeOpen]CapeOpen.OptionParameter
+	IL_017d:  ldloc.1 
+	IL_017e:  ldfld string DWSIM.UnitOperations.EditingForm_CustomUO_ScriptEditor::interpreter
+	IL_0183:  callvirt instance void class [CapeOpen]CapeOpen.OptionParameter::set_Value(string)
+	IL_0188:  nop 
+	IL_0189:  ldarg.0 
+	IL_018a:  call instance class [CapeOpen]CapeOpen.ParameterCollection class [CapeOpen]CapeOpen.CapeObjectBase::get_Parameters()
+	IL_018f:  ldc.i4.s 0x09
+	IL_0191:  callvirt instance !0 class [mscorlib]System.Collections.ObjectModel.Collection`1<class [CapeOpen]CapeOpen.CapeParameter>::get_Item(int32)
+	IL_0196:  castclass [CapeOpen]CapeOpen.OptionParameter
+	IL_019b:  ldloc.1 
+	IL_019c:  ldfld string DWSIM.UnitOperations.EditingForm_CustomUO_ScriptEditor::pythonpath
+	IL_01a1:  callvirt instance void class [CapeOpen]CapeOpen.OptionParameter::set_Value(string)
+	IL_01a6:  nop 
+	IL_01a7:  nop 
+	IL_01a8:  ldnull 
+	IL_01a9:  stloc.1 
+	IL_01aa:  ldloc.0 
+	IL_01ab:  callvirt instance void class [System]System.ComponentModel.Component::Dispose()
+	IL_01b0:  nop 
+	IL_01b1:  ldnull 
+	IL_01b2:  stloc.0 
+	IL_01b3:  ret 
+    } // end of method CO_CustomUO::Edit
+
+    // method line 333
+    .method public virtual hidebysig strict 
+           instance default void ProduceReport (string& report)  cil managed 
+    {
+        // Method begins at RVA 0x6bb8
+	// Code size 10 (0xa)
+	.maxstack 8
+	IL_0000:  nop 
+	IL_0001:  ldarg.1 
+	IL_0002:  ldarg.0 
+	IL_0003:  ldfld string DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::_lastrun
+	IL_0008:  stind.ref 
+	IL_0009:  ret 
+    } // end of method CO_CustomUO::ProduceReport
+
+	.property instance bool HighlightSpaces ()
+	{
+		.get instance default bool DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::get_HighlightSpaces () 
+		.set instance default void DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO::set_HighlightSpaces (bool AutoPropertyValue) 
+	}
+  } // end of class DWSIM.UnitOperations.UnitOperations.CAPEOPENWrappers.CO_CustomUO
+  	extends DWSIM.UnitOperations.UnitOperations.UnitOpBaseClass
+  {
+    .field  private  valuetype [DWSIM.Interfaces]DWSIM.Interfaces.Enums.SimulationObjectClass _ObjectClass
+    .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+    .custom instance void class [mscorlib]System.Diagnostics.DebuggerBrowsableAttribute::'.ctor'(valuetype [mscorlib]System.Diagnostics.DebuggerBrowsableState) =  (01 00 00 00 00 00 00 00 ) // ........
+
+    .field  private  bool _SupportsDynamicMode
+    .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+    .custom instance void class [mscorlib]System.Diagnostics.DebuggerBrowsableAttribute::'.ctor'(valuetype [mscorlib]System.Diagnostics.DebuggerBrowsableState) =  (01 00 00 00 00 00 00 00 ) // ........
+
+    .field  private  bool _HasPropertiesForDynamicMode
+    .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+    .custom instance void class [mscorlib]System.Diagnostics.DebuggerBrowsableAttribute::'.ctor'(valuetype [mscorlib]System.Diagnostics.DebuggerBrowsableState) =  (01 00 00 00 00 00 00 00 ) // ........
+
+    .field  public notserialized  class DWSIM.UnitOperations.EditingForm_CustomUO f
+    .custom instance void class [System.Xml]System.Xml.Serialization.XmlIgnoreAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+    .field  public notserialized  class DWSIM.UnitOperations.EditingForm_CustomUO_ScriptEditor fs
+    .custom instance void class [System.Xml]System.Xml.Serialization.XmlIgnoreAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+    .field  public notserialized  class DWSIM.UnitOperations.EditingForm_CustomUO_ScriptEditor_Mono fsmono
+    .custom instance void class [System.Xml]System.Xml.Serialization.XmlIgnoreAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+    .field  private notserialized  class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine engine
+    .custom instance void class [System.Xml]System.Xml.Serialization.XmlIgnoreAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+    .field  private notserialized  class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope scope
+    .custom instance void class [System.Xml]System.Xml.Serialization.XmlIgnoreAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+    .field  private  string _scripttext
+    .field  private  string[] _includes
+    .field  private  string _fontname
+    .field  private  int32 _fontsize
+    .field  private static  object Lock
+    .field  private  bool _HighlightSpaces
+    .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+    .custom instance void class [mscorlib]System.Diagnostics.DebuggerBrowsableAttribute::'.ctor'(valuetype [mscorlib]System.Diagnostics.DebuggerBrowsableState) =  (01 00 00 00 00 00 00 00 ) // ........
+
+    .field  private  bool _HighlightTabs
+    .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+    .custom instance void class [mscorlib]System.Diagnostics.DebuggerBrowsableAttribute::'.ctor'(valuetype [mscorlib]System.Diagnostics.DebuggerBrowsableState) =  (01 00 00 00 00 00 00 00 ) // ........
+
+    .field  private  class [mscorlib]System.Collections.Generic.Dictionary`2<string,string> _InputStringVariables
+    .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+    .custom instance void class [mscorlib]System.Diagnostics.DebuggerBrowsableAttribute::'.ctor'(valuetype [mscorlib]System.Diagnostics.DebuggerBrowsableState) =  (01 00 00 00 00 00 00 00 ) // ........
+
+    .field  private  class [mscorlib]System.Collections.Generic.Dictionary`2<string,float64> _InputVariables
+    .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+    .custom instance void class [mscorlib]System.Diagnostics.DebuggerBrowsableAttribute::'.ctor'(valuetype [mscorlib]System.Diagnostics.DebuggerBrowsableState) =  (01 00 00 00 00 00 00 00 ) // ........
+
+    .field  private  class [mscorlib]System.Collections.Generic.Dictionary`2<string,float64> _OutputVariables
+    .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+    .custom instance void class [mscorlib]System.Diagnostics.DebuggerBrowsableAttribute::'.ctor'(valuetype [mscorlib]System.Diagnostics.DebuggerBrowsableState) =  (01 00 00 00 00 00 00 00 ) // ........
+
+    .field  private  string _EmbeddedImageData
+    .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+    .custom instance void class [mscorlib]System.Diagnostics.DebuggerBrowsableAttribute::'.ctor'(valuetype [mscorlib]System.Diagnostics.DebuggerBrowsableState) =  (01 00 00 00 00 00 00 00 ) // ........
+
+    .field  private  bool _UseEmbeddedImage
+    .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+    .custom instance void class [mscorlib]System.Diagnostics.DebuggerBrowsableAttribute::'.ctor'(valuetype [mscorlib]System.Diagnostics.DebuggerBrowsableState) =  (01 00 00 00 00 00 00 00 ) // ........
+
+    .field  private  valuetype DWSIM.UnitOperations.UnitOperations.CustomUO/PythonExecutionEngine _ExecutionEngine
+    .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+    .custom instance void class [mscorlib]System.Diagnostics.DebuggerBrowsableAttribute::'.ctor'(valuetype [mscorlib]System.Diagnostics.DebuggerBrowsableState) =  (01 00 00 00 00 00 00 00 ) // ........
+
+
+    // method line 1488
+    .method private static specialname rtspecialname 
+           default void '.cctor' ()  cil managed 
+    {
+        // Method begins at RVA 0x2decb
+	// Code size 16 (0x10)
+	.maxstack 8
+	IL_0000:  newobj instance void object::'.ctor'()
+	IL_0005:  call object class [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::GetObjectValue(object)
+	IL_000a:  stsfld object DWSIM.UnitOperations.UnitOperations.CustomUO::Lock
+	IL_000f:  ret 
+    } // end of method CustomUO::.cctor
+
+    // method line 1489
+    .method public virtual hidebysig specialname strict 
+           instance default valuetype [DWSIM.Interfaces]DWSIM.Interfaces.Enums.SimulationObjectClass get_ObjectClass ()  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x2dedc
+	// Code size 9 (0x9)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldfld valuetype [DWSIM.Interfaces]DWSIM.Interfaces.Enums.SimulationObjectClass DWSIM.UnitOperations.UnitOperations.CustomUO::_ObjectClass
+	IL_0006:  br.s IL_0008
+
+	IL_0008:  ret 
+    } // end of method CustomUO::get_ObjectClass
+
+    // method line 1490
+    .method public virtual hidebysig specialname strict 
+           instance default void set_ObjectClass (valuetype [DWSIM.Interfaces]DWSIM.Interfaces.Enums.SimulationObjectClass AutoPropertyValue)  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x2dee6
+	// Code size 8 (0x8)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldarg.1 
+	IL_0002:  stfld valuetype [DWSIM.Interfaces]DWSIM.Interfaces.Enums.SimulationObjectClass DWSIM.UnitOperations.UnitOperations.CustomUO::_ObjectClass
+	IL_0007:  ret 
+    } // end of method CustomUO::set_ObjectClass
+
+    // method line 1491
+    .method public virtual hidebysig specialname strict 
+           instance default bool get_SupportsDynamicMode ()  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x2deef
+	// Code size 9 (0x9)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldfld bool DWSIM.UnitOperations.UnitOperations.CustomUO::_SupportsDynamicMode
+	IL_0006:  br.s IL_0008
+
+	IL_0008:  ret 
+    } // end of method CustomUO::get_SupportsDynamicMode
+
+    // method line 1492
+    .method public virtual hidebysig specialname strict 
+           instance default bool get_HasPropertiesForDynamicMode ()  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x2def9
+	// Code size 9 (0x9)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldfld bool DWSIM.UnitOperations.UnitOperations.CustomUO::_HasPropertiesForDynamicMode
+	IL_0006:  br.s IL_0008
+
+	IL_0008:  ret 
+    } // end of method CustomUO::get_HasPropertiesForDynamicMode
+
+    // method line 1493
+    .method public specialname 
+           instance default bool get_HighlightSpaces ()  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x2df03
+	// Code size 9 (0x9)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldfld bool DWSIM.UnitOperations.UnitOperations.CustomUO::_HighlightSpaces
+	IL_0006:  br.s IL_0008
+
+	IL_0008:  ret 
+    } // end of method CustomUO::get_HighlightSpaces
+
+    // method line 1494
+    .method public specialname 
+           instance default void set_HighlightSpaces (bool AutoPropertyValue)  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x2df0d
+	// Code size 8 (0x8)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldarg.1 
+	IL_0002:  stfld bool DWSIM.UnitOperations.UnitOperations.CustomUO::_HighlightSpaces
+	IL_0007:  ret 
+    } // end of method CustomUO::set_HighlightSpaces
+
+    // method line 1495
+    .method public specialname 
+           instance default bool get_HighlightTabs ()  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x2df16
+	// Code size 9 (0x9)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldfld bool DWSIM.UnitOperations.UnitOperations.CustomUO::_HighlightTabs
+	IL_0006:  br.s IL_0008
+
+	IL_0008:  ret 
+    } // end of method CustomUO::get_HighlightTabs
+
+    // method line 1496
+    .method public specialname 
+           instance default void set_HighlightTabs (bool AutoPropertyValue)  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x2df20
+	// Code size 8 (0x8)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldarg.1 
+	IL_0002:  stfld bool DWSIM.UnitOperations.UnitOperations.CustomUO::_HighlightTabs
+	IL_0007:  ret 
+    } // end of method CustomUO::set_HighlightTabs
+
+    // method line 1497
+    .method public specialname 
+           instance default class [mscorlib]System.Collections.Generic.Dictionary`2<string, string> get_InputStringVariables ()  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x2df29
+	// Code size 9 (0x9)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldfld class [mscorlib]System.Collections.Generic.Dictionary`2<string,string> DWSIM.UnitOperations.UnitOperations.CustomUO::_InputStringVariables
+	IL_0006:  br.s IL_0008
+
+	IL_0008:  ret 
+    } // end of method CustomUO::get_InputStringVariables
+
+    // method line 1498
+    .method public specialname 
+           instance default void set_InputStringVariables (class [mscorlib]System.Collections.Generic.Dictionary`2<string, string> AutoPropertyValue)  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x2df33
+	// Code size 8 (0x8)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldarg.1 
+	IL_0002:  stfld class [mscorlib]System.Collections.Generic.Dictionary`2<string,string> DWSIM.UnitOperations.UnitOperations.CustomUO::_InputStringVariables
+	IL_0007:  ret 
+    } // end of method CustomUO::set_InputStringVariables
+
+    // method line 1499
+    .method public specialname 
+           instance default class [mscorlib]System.Collections.Generic.Dictionary`2<string, float64> get_InputVariables ()  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x2df3c
+	// Code size 9 (0x9)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldfld class [mscorlib]System.Collections.Generic.Dictionary`2<string,float64> DWSIM.UnitOperations.UnitOperations.CustomUO::_InputVariables
+	IL_0006:  br.s IL_0008
+
+	IL_0008:  ret 
+    } // end of method CustomUO::get_InputVariables
+
+    // method line 1500
+    .method public specialname 
+           instance default void set_InputVariables (class [mscorlib]System.Collections.Generic.Dictionary`2<string, float64> AutoPropertyValue)  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x2df46
+	// Code size 8 (0x8)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldarg.1 
+	IL_0002:  stfld class [mscorlib]System.Collections.Generic.Dictionary`2<string,float64> DWSIM.UnitOperations.UnitOperations.CustomUO::_InputVariables
+	IL_0007:  ret 
+    } // end of method CustomUO::set_InputVariables
+
+    // method line 1501
+    .method public specialname 
+           instance default class [mscorlib]System.Collections.Generic.Dictionary`2<string, float64> get_OutputVariables ()  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x2df4f
+	// Code size 9 (0x9)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldfld class [mscorlib]System.Collections.Generic.Dictionary`2<string,float64> DWSIM.UnitOperations.UnitOperations.CustomUO::_OutputVariables
+	IL_0006:  br.s IL_0008
+
+	IL_0008:  ret 
+    } // end of method CustomUO::get_OutputVariables
+
+    // method line 1502
+    .method public specialname 
+           instance default void set_OutputVariables (class [mscorlib]System.Collections.Generic.Dictionary`2<string, float64> AutoPropertyValue)  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x2df59
+	// Code size 8 (0x8)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldarg.1 
+	IL_0002:  stfld class [mscorlib]System.Collections.Generic.Dictionary`2<string,float64> DWSIM.UnitOperations.UnitOperations.CustomUO::_OutputVariables
+	IL_0007:  ret 
+    } // end of method CustomUO::set_OutputVariables
+
+    // method line 1503
+    .method public specialname 
+           instance default string get_EmbeddedImageData ()  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x2df62
+	// Code size 9 (0x9)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldfld string DWSIM.UnitOperations.UnitOperations.CustomUO::_EmbeddedImageData
+	IL_0006:  br.s IL_0008
+
+	IL_0008:  ret 
+    } // end of method CustomUO::get_EmbeddedImageData
+
+    // method line 1504
+    .method public specialname 
+           instance default void set_EmbeddedImageData (string AutoPropertyValue)  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x2df6c
+	// Code size 8 (0x8)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldarg.1 
+	IL_0002:  stfld string DWSIM.UnitOperations.UnitOperations.CustomUO::_EmbeddedImageData
+	IL_0007:  ret 
+    } // end of method CustomUO::set_EmbeddedImageData
+
+    // method line 1505
+    .method public specialname 
+           instance default bool get_UseEmbeddedImage ()  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x2df75
+	// Code size 9 (0x9)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldfld bool DWSIM.UnitOperations.UnitOperations.CustomUO::_UseEmbeddedImage
+	IL_0006:  br.s IL_0008
+
+	IL_0008:  ret 
+    } // end of method CustomUO::get_UseEmbeddedImage
+
+    // method line 1506
+    .method public specialname 
+           instance default void set_UseEmbeddedImage (bool AutoPropertyValue)  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x2df7f
+	// Code size 8 (0x8)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldarg.1 
+	IL_0002:  stfld bool DWSIM.UnitOperations.UnitOperations.CustomUO::_UseEmbeddedImage
+	IL_0007:  ret 
+    } // end of method CustomUO::set_UseEmbeddedImage
+
+    // method line 1507
+    .method public specialname 
+           instance default valuetype DWSIM.UnitOperations.UnitOperations.CustomUO/PythonExecutionEngine get_ExecutionEngine ()  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x2df88
+	// Code size 9 (0x9)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldfld valuetype DWSIM.UnitOperations.UnitOperations.CustomUO/PythonExecutionEngine DWSIM.UnitOperations.UnitOperations.CustomUO::_ExecutionEngine
+	IL_0006:  br.s IL_0008
+
+	IL_0008:  ret 
+    } // end of method CustomUO::get_ExecutionEngine
+
+    // method line 1508
+    .method public specialname 
+           instance default void set_ExecutionEngine (valuetype DWSIM.UnitOperations.UnitOperations.CustomUO/PythonExecutionEngine AutoPropertyValue)  cil managed 
+    {
+        .custom instance void class [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+        // Method begins at RVA 0x2df92
+	// Code size 8 (0x8)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldarg.1 
+	IL_0002:  stfld valuetype DWSIM.UnitOperations.UnitOperations.CustomUO/PythonExecutionEngine DWSIM.UnitOperations.UnitOperations.CustomUO::_ExecutionEngine
+	IL_0007:  ret 
+    } // end of method CustomUO::set_ExecutionEngine
+
+    // method line 1509
+    .method public specialname 
+           instance default string get_FontName ()  cil managed 
+    {
+        // Method begins at RVA 0x2df9c
+	// Code size 12 (0xc)
+	.maxstack 1
+	.locals init (
+		string	V_0)
+	IL_0000:  nop 
+	IL_0001:  ldarg.0 
+	IL_0002:  ldfld string DWSIM.UnitOperations.UnitOperations.CustomUO::_fontname
+	IL_0007:  stloc.0 
+	IL_0008:  br.s IL_000a
+
+	IL_000a:  ldloc.0 
+	IL_000b:  ret 
+    } // end of method CustomUO::get_FontName
+
+    // method line 1510
+    .method public specialname 
+           instance default void set_FontName (string 'value')  cil managed 
+    {
+        // Method begins at RVA 0x2dfb4
+	// Code size 9 (0x9)
+	.maxstack 8
+	IL_0000:  nop 
+	IL_0001:  ldarg.0 
+	IL_0002:  ldarg.1 
+	IL_0003:  stfld string DWSIM.UnitOperations.UnitOperations.CustomUO::_fontname
+	IL_0008:  ret 
+    } // end of method CustomUO::set_FontName
+
+    // method line 1511
+    .method public specialname 
+           instance default int32 get_FontSize ()  cil managed 
+    {
+        // Method begins at RVA 0x2dfc0
+	// Code size 12 (0xc)
+	.maxstack 1
+	.locals init (
+		int32	V_0)
+	IL_0000:  nop 
+	IL_0001:  ldarg.0 
+	IL_0002:  ldfld int32 DWSIM.UnitOperations.UnitOperations.CustomUO::_fontsize
+	IL_0007:  stloc.0 
+	IL_0008:  br.s IL_000a
+
+	IL_000a:  ldloc.0 
+	IL_000b:  ret 
+    } // end of method CustomUO::get_FontSize
+
+    // method line 1512
+    .method public specialname 
+           instance default void set_FontSize (int32 'value')  cil managed 
+    {
+        // Method begins at RVA 0x2dfd8
+	// Code size 9 (0x9)
+	.maxstack 8
+	IL_0000:  nop 
+	IL_0001:  ldarg.0 
+	IL_0002:  ldarg.1 
+	IL_0003:  stfld int32 DWSIM.UnitOperations.UnitOperations.CustomUO::_fontsize
+	IL_0008:  ret 
+    } // end of method CustomUO::set_FontSize
+
+    // method line 1513
+    .method public specialname 
+           instance default string[] get_Includes ()  cil managed 
+    {
+        // Method begins at RVA 0x2dfe4
+	// Code size 12 (0xc)
+	.maxstack 1
+	.locals init (
+		string[]	V_0)
+	IL_0000:  nop 
+	IL_0001:  ldarg.0 
+	IL_0002:  ldfld string[] DWSIM.UnitOperations.UnitOperations.CustomUO::_includes
+	IL_0007:  stloc.0 
+	IL_0008:  br.s IL_000a
+
+	IL_000a:  ldloc.0 
+	IL_000b:  ret 
+    } // end of method CustomUO::get_Includes
+
+    // method line 1514
+    .method public specialname 
+           instance default void set_Includes (string[] 'value')  cil managed 
+    {
+        // Method begins at RVA 0x2dffc
+	// Code size 9 (0x9)
+	.maxstack 8
+	IL_0000:  nop 
+	IL_0001:  ldarg.0 
+	IL_0002:  ldarg.1 
+	IL_0003:  stfld string[] DWSIM.UnitOperations.UnitOperations.CustomUO::_includes
+	IL_0008:  ret 
+    } // end of method CustomUO::set_Includes
+
+    // method line 1515
+    .method public specialname 
+           instance default string get_ScriptText ()  cil managed 
+    {
+        // Method begins at RVA 0x2e008
+	// Code size 12 (0xc)
+	.maxstack 1
+	.locals init (
+		string	V_0)
+	IL_0000:  nop 
+	IL_0001:  ldarg.0 
+	IL_0002:  ldfld string DWSIM.UnitOperations.UnitOperations.CustomUO::_scripttext
+	IL_0007:  stloc.0 
+	IL_0008:  br.s IL_000a
+
+	IL_000a:  ldloc.0 
+	IL_000b:  ret 
+    } // end of method CustomUO::get_ScriptText
+
+    // method line 1516
+    .method public specialname 
+           instance default void set_ScriptText (string 'value')  cil managed 
+    {
+        // Method begins at RVA 0x2e020
+	// Code size 9 (0x9)
+	.maxstack 8
+	IL_0000:  nop 
+	IL_0001:  ldarg.0 
+	IL_0002:  ldarg.1 
+	IL_0003:  stfld string DWSIM.UnitOperations.UnitOperations.CustomUO::_scripttext
+	IL_0008:  ret 
+    } // end of method CustomUO::set_ScriptText
+
+    // method line 1517
+    .method public specialname rtspecialname 
+           instance default void '.ctor' ()  cil managed 
+    {
+        // Method begins at RVA 0x2e02c
+	// Code size 202 (0xca)
+	.maxstack 2
+	IL_0000:  nop 
+	IL_0001:  ldarg.0 
+	IL_0002:  call instance void class DWSIM.UnitOperations.UnitOperations.UnitOpBaseClass::'.ctor'()
+	IL_0007:  nop 
+	IL_0008:  ldarg.0 
+	IL_0009:  ldc.i4.s 0x09
+	IL_000b:  callvirt instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_ObjectClass(valuetype [DWSIM.Interfaces]DWSIM.Interfaces.Enums.SimulationObjectClass)
+	IL_0010:  nop 
+	IL_0011:  ldarg.0 
+	IL_0012:  ldc.i4.1 
+	IL_0013:  stfld bool DWSIM.UnitOperations.UnitOperations.CustomUO::_SupportsDynamicMode
+	IL_0018:  ldarg.0 
+	IL_0019:  ldc.i4.0 
+	IL_001a:  stfld bool DWSIM.UnitOperations.UnitOperations.CustomUO::_HasPropertiesForDynamicMode
+	IL_001f:  ldarg.0 
+	IL_0020:  ldstr ""
+	IL_0025:  stfld string DWSIM.UnitOperations.UnitOperations.CustomUO::_scripttext
+	IL_002a:  ldarg.0 
+	IL_002b:  ldstr "Consolas"
+	IL_0030:  stfld string DWSIM.UnitOperations.UnitOperations.CustomUO::_fontname
+	IL_0035:  ldarg.0 
+	IL_0036:  ldc.i4.s 0x0a
+	IL_0038:  stfld int32 DWSIM.UnitOperations.UnitOperations.CustomUO::_fontsize
+	IL_003d:  ldarg.0 
+	IL_003e:  ldc.i4.0 
+	IL_003f:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_HighlightSpaces(bool)
+	IL_0044:  nop 
+	IL_0045:  ldarg.0 
+	IL_0046:  ldc.i4.0 
+	IL_0047:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_HighlightTabs(bool)
+	IL_004c:  nop 
+	IL_004d:  ldarg.0 
+	IL_004e:  newobj instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string, string>::'.ctor'()
+	IL_0053:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_InputStringVariables(class [mscorlib]System.Collections.Generic.Dictionary`2<string,string>)
+	IL_0058:  nop 
+	IL_0059:  ldarg.0 
+	IL_005a:  newobj instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string, float64>::'.ctor'()
+	IL_005f:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_InputVariables(class [mscorlib]System.Collections.Generic.Dictionary`2<string,float64>)
+	IL_0064:  nop 
+	IL_0065:  ldarg.0 
+	IL_0066:  newobj instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string, float64>::'.ctor'()
+	IL_006b:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_OutputVariables(class [mscorlib]System.Collections.Generic.Dictionary`2<string,float64>)
+	IL_0070:  nop 
+	IL_0071:  ldarg.0 
+	IL_0072:  ldstr ""
+	IL_0077:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_EmbeddedImageData(string)
+	IL_007c:  nop 
+	IL_007d:  ldarg.0 
+	IL_007e:  ldc.i4.0 
+	IL_007f:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_UseEmbeddedImage(bool)
+	IL_0084:  nop 
+	IL_0085:  ldarg.0 
+	IL_0086:  ldc.i4.0 
+	IL_0087:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_ExecutionEngine(valuetype DWSIM.UnitOperations.UnitOperations.CustomUO/PythonExecutionEngine)
+	IL_008c:  nop 
+	IL_008d:  ldarg.0 
+	IL_008e:  ldstr "Python UO"
+	IL_0093:  callvirt instance void class DWSIM.UnitOperations.UnitOperations.UnitOpBaseClass::set_ComponentName(string)
+	IL_0098:  nop 
+	IL_0099:  ldarg.0 
+	IL_009a:  ldstr "Python Scripting Unit Operation"
+	IL_009f:  callvirt instance void class DWSIM.UnitOperations.UnitOperations.UnitOpBaseClass::set_ComponentDescription(string)
+	IL_00a4:  nop 
+	IL_00a5:  ldarg.0 
+	IL_00a6:  newobj instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string, float64>::'.ctor'()
+	IL_00ab:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_InputVariables(class [mscorlib]System.Collections.Generic.Dictionary`2<string,float64>)
+	IL_00b0:  nop 
+	IL_00b1:  ldarg.0 
+	IL_00b2:  newobj instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string, string>::'.ctor'()
+	IL_00b7:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_InputStringVariables(class [mscorlib]System.Collections.Generic.Dictionary`2<string,string>)
+	IL_00bc:  nop 
+	IL_00bd:  ldarg.0 
+	IL_00be:  newobj instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string, float64>::'.ctor'()
+	IL_00c3:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_OutputVariables(class [mscorlib]System.Collections.Generic.Dictionary`2<string,float64>)
+	IL_00c8:  nop 
+	IL_00c9:  ret 
+    } // end of method CustomUO::.ctor
+
+    // method line 1518
+    .method public specialname rtspecialname 
+           instance default void '.ctor' (string name, string description)  cil managed 
+    {
+        // Method begins at RVA 0x2e104
+	// Code size 201 (0xc9)
+	.maxstack 2
+	IL_0000:  nop 
+	IL_0001:  ldarg.0 
+	IL_0002:  call instance void class DWSIM.UnitOperations.UnitOperations.UnitOpBaseClass::'.ctor'()
+	IL_0007:  nop 
+	IL_0008:  ldarg.0 
+	IL_0009:  ldc.i4.s 0x09
+	IL_000b:  callvirt instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_ObjectClass(valuetype [DWSIM.Interfaces]DWSIM.Interfaces.Enums.SimulationObjectClass)
+	IL_0010:  nop 
+	IL_0011:  ldarg.0 
+	IL_0012:  ldc.i4.1 
+	IL_0013:  stfld bool DWSIM.UnitOperations.UnitOperations.CustomUO::_SupportsDynamicMode
+	IL_0018:  ldarg.0 
+	IL_0019:  ldc.i4.0 
+	IL_001a:  stfld bool DWSIM.UnitOperations.UnitOperations.CustomUO::_HasPropertiesForDynamicMode
+	IL_001f:  ldarg.0 
+	IL_0020:  ldstr ""
+	IL_0025:  stfld string DWSIM.UnitOperations.UnitOperations.CustomUO::_scripttext
+	IL_002a:  ldarg.0 
+	IL_002b:  ldstr "Consolas"
+	IL_0030:  stfld string DWSIM.UnitOperations.UnitOperations.CustomUO::_fontname
+	IL_0035:  ldarg.0 
+	IL_0036:  ldc.i4.s 0x0a
+	IL_0038:  stfld int32 DWSIM.UnitOperations.UnitOperations.CustomUO::_fontsize
+	IL_003d:  ldarg.0 
+	IL_003e:  ldc.i4.0 
+	IL_003f:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_HighlightSpaces(bool)
+	IL_0044:  nop 
+	IL_0045:  ldarg.0 
+	IL_0046:  ldc.i4.0 
+	IL_0047:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_HighlightTabs(bool)
+	IL_004c:  nop 
+	IL_004d:  ldarg.0 
+	IL_004e:  newobj instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string, string>::'.ctor'()
+	IL_0053:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_InputStringVariables(class [mscorlib]System.Collections.Generic.Dictionary`2<string,string>)
+	IL_0058:  nop 
+	IL_0059:  ldarg.0 
+	IL_005a:  newobj instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string, float64>::'.ctor'()
+	IL_005f:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_InputVariables(class [mscorlib]System.Collections.Generic.Dictionary`2<string,float64>)
+	IL_0064:  nop 
+	IL_0065:  ldarg.0 
+	IL_0066:  newobj instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string, float64>::'.ctor'()
+	IL_006b:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_OutputVariables(class [mscorlib]System.Collections.Generic.Dictionary`2<string,float64>)
+	IL_0070:  nop 
+	IL_0071:  ldarg.0 
+	IL_0072:  ldstr ""
+	IL_0077:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_EmbeddedImageData(string)
+	IL_007c:  nop 
+	IL_007d:  ldarg.0 
+	IL_007e:  ldc.i4.0 
+	IL_007f:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_UseEmbeddedImage(bool)
+	IL_0084:  nop 
+	IL_0085:  ldarg.0 
+	IL_0086:  ldc.i4.0 
+	IL_0087:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_ExecutionEngine(valuetype DWSIM.UnitOperations.UnitOperations.CustomUO/PythonExecutionEngine)
+	IL_008c:  nop 
+	IL_008d:  ldarg.0 
+	IL_008e:  call instance void class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::CreateNew()
+	IL_0093:  nop 
+	IL_0094:  ldarg.0 
+	IL_0095:  newobj instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string, float64>::'.ctor'()
+	IL_009a:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_InputVariables(class [mscorlib]System.Collections.Generic.Dictionary`2<string,float64>)
+	IL_009f:  nop 
+	IL_00a0:  ldarg.0 
+	IL_00a1:  newobj instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string, string>::'.ctor'()
+	IL_00a6:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_InputStringVariables(class [mscorlib]System.Collections.Generic.Dictionary`2<string,string>)
+	IL_00ab:  nop 
+	IL_00ac:  ldarg.0 
+	IL_00ad:  newobj instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string, float64>::'.ctor'()
+	IL_00b2:  call instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::set_OutputVariables(class [mscorlib]System.Collections.Generic.Dictionary`2<string,float64>)
+	IL_00b7:  nop 
+	IL_00b8:  ldarg.0 
+	IL_00b9:  ldarg.1 
+	IL_00ba:  callvirt instance void class DWSIM.UnitOperations.UnitOperations.UnitOpBaseClass::set_ComponentName(string)
+	IL_00bf:  nop 
+	IL_00c0:  ldarg.0 
+	IL_00c1:  ldarg.2 
+	IL_00c2:  callvirt instance void class DWSIM.UnitOperations.UnitOperations.UnitOpBaseClass::set_ComponentDescription(string)
+	IL_00c7:  nop 
+	IL_00c8:  ret 
+    } // end of method CustomUO::.ctor
+
+    // method line 1519
+    .method public virtual hidebysig strict 
+           instance default object CloneXML ()  cil managed 
+    {
+        // Method begins at RVA 0x2e1dc
+	// Code size 26 (0x1a)
+	.maxstack 2
+	.locals init (
+		object	V_0,
+		class [DWSIM.Interfaces]DWSIM.Interfaces.ICustomXMLSerialization	V_1)
+	IL_0000:  nop 
+	IL_0001:  newobj instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::'.ctor'()
+	IL_0006:  stloc.1 
+	IL_0007:  ldloc.1 
+	IL_0008:  ldarg.0 
+	IL_0009:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XElement> class DWSIM.UnitOperations.UnitOperations.CustomUO::SaveData()
+	IL_000e:  callvirt instance bool class [DWSIM.Interfaces]DWSIM.Interfaces.ICustomXMLSerialization::LoadData(class [mscorlib]System.Collections.Generic.List`1<class [System.Xml.Linq]System.Xml.Linq.XElement>)
+	IL_0013:  pop 
+	IL_0014:  ldloc.1 
+	IL_0015:  stloc.0 
+	IL_0016:  br.s IL_0018
+
+	IL_0018:  ldloc.0 
+	IL_0019:  ret 
+    } // end of method CustomUO::CloneXML
+
+    // method line 1520
+    .method public virtual hidebysig strict 
+           instance default object CloneJSON ()  cil managed 
+    {
+        // Method begins at RVA 0x2e204
+	// Code size 17 (0x11)
+	.maxstack 1
+	.locals init (
+		object	V_0)
+	IL_0000:  nop 
+	IL_0001:  ldarg.0 
+	IL_0002:  call string class [Newtonsoft.Json]Newtonsoft.Json.JsonConvert::SerializeObject(object)
+	IL_0007:  call !!0 class [Newtonsoft.Json]Newtonsoft.Json.JsonConvert::DeserializeObject<class DWSIM.UnitOperations.UnitOperations.CustomUO> (string)
+	IL_000c:  stloc.0 
+	IL_000d:  br.s IL_000f
+
+	IL_000f:  ldloc.0 
+	IL_0010:  ret 
+    } // end of method CustomUO::CloneJSON
+
+    // method line 1521
+    .method public virtual hidebysig strict 
+           instance default void RunDynamicModel ()  cil managed 
+    {
+        // Method begins at RVA 0x2e221
+	// Code size 10 (0xa)
+	.maxstack 8
+	IL_0000:  nop 
+	IL_0001:  ldarg.0 
+	IL_0002:  ldnull 
+	IL_0003:  callvirt instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::Calculate(object)
+	IL_0008:  nop 
+	IL_0009:  ret 
+    } // end of method CustomUO::RunDynamicModel
+
+    // method line 1522
+    .method public virtual hidebysig strict 
+           instance default void Calculate ([opt] object args)  cil managed 
+    {
+	.param [1] = nullref
+        // Method begins at RVA 0x2e22c
+	// Code size 3957 (0xf75)
+	.maxstack 8
+	.locals init (
+		class [DWSIM.Inspector]DWSIM.Inspector.InspectorItem	V_0,
+		class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream	V_1,
+		class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream	V_2,
+		class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream	V_3,
+		class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream	V_4,
+		class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream	V_5,
+		class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream	V_6,
+		class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream	V_7,
+		class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream	V_8,
+		class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream	V_9,
+		class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream	V_10,
+		class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream	V_11,
+		class [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream	V_12,
+		class DWSIM.UnitOperations.Streams.EnergyStream	V_13,
+		class DWSIM.UnitOperations.Streams.EnergyStream	V_14,
+		string	V_15,
+		bool	V_16,
+		bool	V_17,
+		bool	V_18,
+		bool	V_19,
+		bool	V_20,
+		bool	V_21,
+		bool	V_22,
+		bool	V_23,
+		bool	V_24,
+		bool	V_25,
+		bool	V_26,
+		bool	V_27,
+		bool	V_28,
+		bool	V_29,
+		bool	V_30,
+		string[]	V_31,
+		int32	V_32,
+		string	V_33,
+		bool	V_34,
+		bool	V_35,
+		class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptSource	V_36,
+		valuetype [mscorlib]System.Collections.Generic.Dictionary`2/Enumerator<string, string>	V_37,
+		valuetype [mscorlib]System.Collections.Generic.KeyValuePair`2<string, string>	V_38,
+		bool	V_39,
+		valuetype [mscorlib]System.Collections.Generic.Dictionary`2/Enumerator<string, float64>	V_40,
+		valuetype [mscorlib]System.Collections.Generic.KeyValuePair`2<string, float64>	V_41,
+		bool	V_42,
+		bool	V_43,
+		bool	V_44,
+		bool	V_45,
+		bool	V_46,
+		bool	V_47,
+		bool	V_48,
+		bool	V_49,
+		bool	V_50,
+		bool	V_51,
+		bool	V_52,
+		bool	V_53,
+		bool	V_54,
+		bool	V_55,
+		bool	V_56,
+		class [mscorlib]System.Collections.Generic.IEnumerator`1<string>	V_57,
+		string	V_58,
+		bool	V_59,
+		bool	V_60,
+		class [mscorlib]System.Exception	V_61,
+		class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ExceptionOperations	V_62,
+		string	V_63,
+		object	V_64,
+		bool	V_65,
+		class [Python.Runtime]Python.Runtime.Py/GILState	V_66,
+		object	V_67,
+		string	V_68,
+		class [Python.Runtime]Python.Runtime.PyDict	V_69,
+		class [Python.Runtime]Python.Runtime.PyObject	V_70,
+		int32	V_71,
+		valuetype [mscorlib]System.Collections.Generic.Dictionary`2/Enumerator<string, string>	V_72,
+		valuetype [mscorlib]System.Collections.Generic.KeyValuePair`2<string, string>	V_73,
+		bool	V_74,
+		valuetype [mscorlib]System.Collections.Generic.Dictionary`2/Enumerator<string, float64>	V_75,
+		valuetype [mscorlib]System.Collections.Generic.KeyValuePair`2<string, float64>	V_76,
+		bool	V_77,
+		bool	V_78,
+		bool	V_79,
+		bool	V_80,
+		bool	V_81,
+		bool	V_82,
+		bool	V_83,
+		bool	V_84,
+		bool	V_85,
+		bool	V_86,
+		bool	V_87,
+		bool	V_88,
+		bool	V_89,
+		bool	V_90,
+		bool	V_91,
+		bool	V_92,
+		class [Python.Runtime]Python.Runtime.PyIter	V_93,
+		class [Python.Runtime]Python.Runtime.PyObject	V_94,
+		string	V_95,
+		bool	V_96,
+		float64	V_97,
+		bool	V_98,
+		class [mscorlib]System.Exception	V_99,
+		bool	V_100)
+	IL_0000:  nop 
+	IL_0001:  ldstr "Calculate"
+	IL_0006:  ldstr "C:\\Users\\Daniel\\source\\repos\\DanWBR\\dwsim\\DWSIM.UnitOperations\\UnitOperations\\PythonScriptUO.vb"
+	IL_000b:  ldc.i4 156
+	IL_0010:  call class [DWSIM.Inspector]DWSIM.Inspector.InspectorItem class [DWSIM.Inspector]DWSIM.Inspector.Host::GetNewInspectorItem(string, string, int32)
+	IL_0015:  stloc.0 
+	IL_0016:  ldloc.0 
+	IL_0017:  ldstr ""
+	IL_001c:  ldstr "Calculate"
+	IL_0021:  ldarg.0 
+	IL_0022:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_0027:  brtrue.s IL_0030
+
+	IL_0029:  ldstr "Temporary Object"
+	IL_002e:  br.s IL_003b
+
+	IL_0030:  ldarg.0 
+	IL_0031:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_0036:  callvirt instance string class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_Tag()
+	IL_003b:  ldstr " ("
+	IL_0040:  ldarg.0 
+	IL_0041:  callvirt instance string class DWSIM.UnitOperations.UnitOperations.CustomUO::GetDisplayName()
+	IL_0046:  ldstr ")"
+	IL_004b:  call string string::Concat(string, string, string, string)
+	IL_0050:  ldarg.0 
+	IL_0051:  callvirt instance string class DWSIM.UnitOperations.UnitOperations.CustomUO::GetDisplayName()
+	IL_0056:  ldstr " Calculation Routine"
+	IL_005b:  call string string::Concat(string, string)
+	IL_0060:  ldc.i4.1 
+	IL_0061:  call void class [DWSIM.Inspector]DWSIM.Inspector.Host::CheckAndAdd(class [DWSIM.Inspector]DWSIM.Inspector.InspectorItem, string, string, string, string, bool)
+	IL_0066:  nop 
+	IL_0067:  ldloc.0 
+	IL_0068:  brtrue.s IL_006c
+
+	IL_006a:  br.s IL_0073
+
+	IL_006c:  ldloc.0 
+	IL_006d:  call void class [DWSIM.Inspector]DWSIM.Inspector.InspectorExtensions::SetCurrent(class [DWSIM.Inspector]DWSIM.Inspector.InspectorItem)
+	IL_0072:  nop 
+	IL_0073:  ldarg.0 
+	IL_0074:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_0079:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_InputConnectors()
+	IL_007e:  ldc.i4.0 
+	IL_007f:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_0084:  callvirt instance bool class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_IsAttached()
+	IL_0089:  stloc.s 16
+	IL_008b:  ldloc.s 16
+	IL_008d:  brfalse.s IL_00c8
+
+	IL_008f:  ldarg.0 
+	IL_0090:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_FlowSheet()
+	IL_0095:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject> class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet::get_SimulationObjects()
+	IL_009a:  ldarg.0 
+	IL_009b:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_00a0:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_InputConnectors()
+	IL_00a5:  ldc.i4.0 
+	IL_00a6:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_00ab:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_AttachedConnector()
+	IL_00b0:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject::get_AttachedFrom()
+	IL_00b5:  callvirt instance string class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_Name()
+	IL_00ba:  callvirt instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<string, class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject>::get_Item(!0)
+	IL_00bf:  castclass [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream
+	IL_00c4:  stloc.1 
+	IL_00c5:  nop 
+	IL_00c6:  br.s IL_00cc
+
+	IL_00c8:  nop 
+	IL_00c9:  ldnull 
+	IL_00ca:  stloc.1 
+	IL_00cb:  nop 
+	IL_00cc:  ldarg.0 
+	IL_00cd:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_00d2:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_InputConnectors()
+	IL_00d7:  ldc.i4.1 
+	IL_00d8:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_00dd:  callvirt instance bool class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_IsAttached()
+	IL_00e2:  stloc.s 17
+	IL_00e4:  ldloc.s 17
+	IL_00e6:  brfalse.s IL_0121
+
+	IL_00e8:  ldarg.0 
+	IL_00e9:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_FlowSheet()
+	IL_00ee:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject> class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet::get_SimulationObjects()
+	IL_00f3:  ldarg.0 
+	IL_00f4:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_00f9:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_InputConnectors()
+	IL_00fe:  ldc.i4.1 
+	IL_00ff:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_0104:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_AttachedConnector()
+	IL_0109:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject::get_AttachedFrom()
+	IL_010e:  callvirt instance string class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_Name()
+	IL_0113:  callvirt instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<string, class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject>::get_Item(!0)
+	IL_0118:  castclass [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream
+	IL_011d:  stloc.2 
+	IL_011e:  nop 
+	IL_011f:  br.s IL_0125
+
+	IL_0121:  nop 
+	IL_0122:  ldnull 
+	IL_0123:  stloc.2 
+	IL_0124:  nop 
+	IL_0125:  ldarg.0 
+	IL_0126:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_012b:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_InputConnectors()
+	IL_0130:  ldc.i4.2 
+	IL_0131:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_0136:  callvirt instance bool class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_IsAttached()
+	IL_013b:  stloc.s 18
+	IL_013d:  ldloc.s 18
+	IL_013f:  brfalse.s IL_017a
+
+	IL_0141:  ldarg.0 
+	IL_0142:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_FlowSheet()
+	IL_0147:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject> class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet::get_SimulationObjects()
+	IL_014c:  ldarg.0 
+	IL_014d:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_0152:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_InputConnectors()
+	IL_0157:  ldc.i4.2 
+	IL_0158:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_015d:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_AttachedConnector()
+	IL_0162:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject::get_AttachedFrom()
+	IL_0167:  callvirt instance string class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_Name()
+	IL_016c:  callvirt instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<string, class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject>::get_Item(!0)
+	IL_0171:  castclass [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream
+	IL_0176:  stloc.3 
+	IL_0177:  nop 
+	IL_0178:  br.s IL_017e
+
+	IL_017a:  nop 
+	IL_017b:  ldnull 
+	IL_017c:  stloc.3 
+	IL_017d:  nop 
+	IL_017e:  ldarg.0 
+	IL_017f:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_0184:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_InputConnectors()
+	IL_0189:  ldc.i4.4 
+	IL_018a:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_018f:  callvirt instance bool class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_IsAttached()
+	IL_0194:  stloc.s 19
+	IL_0196:  ldloc.s 19
+	IL_0198:  brfalse.s IL_01d4
+
+	IL_019a:  ldarg.0 
+	IL_019b:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_FlowSheet()
+	IL_01a0:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject> class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet::get_SimulationObjects()
+	IL_01a5:  ldarg.0 
+	IL_01a6:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_01ab:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_InputConnectors()
+	IL_01b0:  ldc.i4.4 
+	IL_01b1:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_01b6:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_AttachedConnector()
+	IL_01bb:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject::get_AttachedFrom()
+	IL_01c0:  callvirt instance string class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_Name()
+	IL_01c5:  callvirt instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<string, class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject>::get_Item(!0)
+	IL_01ca:  castclass [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream
+	IL_01cf:  stloc.s 4
+	IL_01d1:  nop 
+	IL_01d2:  br.s IL_01d9
+
+	IL_01d4:  nop 
+	IL_01d5:  ldnull 
+	IL_01d6:  stloc.s 4
+	IL_01d8:  nop 
+	IL_01d9:  ldarg.0 
+	IL_01da:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_01df:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_InputConnectors()
+	IL_01e4:  ldc.i4.5 
+	IL_01e5:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_01ea:  callvirt instance bool class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_IsAttached()
+	IL_01ef:  stloc.s 20
+	IL_01f1:  ldloc.s 20
+	IL_01f3:  brfalse.s IL_022f
+
+	IL_01f5:  ldarg.0 
+	IL_01f6:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_FlowSheet()
+	IL_01fb:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject> class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet::get_SimulationObjects()
+	IL_0200:  ldarg.0 
+	IL_0201:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_0206:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_InputConnectors()
+	IL_020b:  ldc.i4.5 
+	IL_020c:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_0211:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_AttachedConnector()
+	IL_0216:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject::get_AttachedFrom()
+	IL_021b:  callvirt instance string class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_Name()
+	IL_0220:  callvirt instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<string, class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject>::get_Item(!0)
+	IL_0225:  castclass [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream
+	IL_022a:  stloc.s 5
+	IL_022c:  nop 
+	IL_022d:  br.s IL_0234
+
+	IL_022f:  nop 
+	IL_0230:  ldnull 
+	IL_0231:  stloc.s 5
+	IL_0233:  nop 
+	IL_0234:  ldarg.0 
+	IL_0235:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_023a:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_InputConnectors()
+	IL_023f:  ldc.i4.6 
+	IL_0240:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_0245:  callvirt instance bool class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_IsAttached()
+	IL_024a:  stloc.s 21
+	IL_024c:  ldloc.s 21
+	IL_024e:  brfalse.s IL_028a
+
+	IL_0250:  ldarg.0 
+	IL_0251:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_FlowSheet()
+	IL_0256:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject> class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet::get_SimulationObjects()
+	IL_025b:  ldarg.0 
+	IL_025c:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_0261:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_InputConnectors()
+	IL_0266:  ldc.i4.6 
+	IL_0267:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_026c:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_AttachedConnector()
+	IL_0271:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject::get_AttachedFrom()
+	IL_0276:  callvirt instance string class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_Name()
+	IL_027b:  callvirt instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<string, class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject>::get_Item(!0)
+	IL_0280:  castclass [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream
+	IL_0285:  stloc.s 6
+	IL_0287:  nop 
+	IL_0288:  br.s IL_028f
+
+	IL_028a:  nop 
+	IL_028b:  ldnull 
+	IL_028c:  stloc.s 6
+	IL_028e:  nop 
+	IL_028f:  ldarg.0 
+	IL_0290:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_0295:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_OutputConnectors()
+	IL_029a:  ldc.i4.0 
+	IL_029b:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_02a0:  callvirt instance bool class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_IsAttached()
+	IL_02a5:  stloc.s 22
+	IL_02a7:  ldloc.s 22
+	IL_02a9:  brfalse.s IL_02e5
+
+	IL_02ab:  ldarg.0 
+	IL_02ac:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_FlowSheet()
+	IL_02b1:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject> class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet::get_SimulationObjects()
+	IL_02b6:  ldarg.0 
+	IL_02b7:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_02bc:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_OutputConnectors()
+	IL_02c1:  ldc.i4.0 
+	IL_02c2:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_02c7:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_AttachedConnector()
+	IL_02cc:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject::get_AttachedTo()
+	IL_02d1:  callvirt instance string class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_Name()
+	IL_02d6:  callvirt instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<string, class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject>::get_Item(!0)
+	IL_02db:  castclass [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream
+	IL_02e0:  stloc.s 7
+	IL_02e2:  nop 
+	IL_02e3:  br.s IL_02ea
+
+	IL_02e5:  nop 
+	IL_02e6:  ldnull 
+	IL_02e7:  stloc.s 7
+	IL_02e9:  nop 
+	IL_02ea:  ldarg.0 
+	IL_02eb:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_02f0:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_OutputConnectors()
+	IL_02f5:  ldc.i4.1 
+	IL_02f6:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_02fb:  callvirt instance bool class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_IsAttached()
+	IL_0300:  stloc.s 23
+	IL_0302:  ldloc.s 23
+	IL_0304:  brfalse.s IL_0340
+
+	IL_0306:  ldarg.0 
+	IL_0307:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_FlowSheet()
+	IL_030c:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject> class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet::get_SimulationObjects()
+	IL_0311:  ldarg.0 
+	IL_0312:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_0317:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_OutputConnectors()
+	IL_031c:  ldc.i4.1 
+	IL_031d:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_0322:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_AttachedConnector()
+	IL_0327:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject::get_AttachedTo()
+	IL_032c:  callvirt instance string class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_Name()
+	IL_0331:  callvirt instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<string, class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject>::get_Item(!0)
+	IL_0336:  castclass [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream
+	IL_033b:  stloc.s 8
+	IL_033d:  nop 
+	IL_033e:  br.s IL_0345
+
+	IL_0340:  nop 
+	IL_0341:  ldnull 
+	IL_0342:  stloc.s 8
+	IL_0344:  nop 
+	IL_0345:  ldarg.0 
+	IL_0346:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_034b:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_OutputConnectors()
+	IL_0350:  ldc.i4.2 
+	IL_0351:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_0356:  callvirt instance bool class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_IsAttached()
+	IL_035b:  stloc.s 24
+	IL_035d:  ldloc.s 24
+	IL_035f:  brfalse.s IL_039b
+
+	IL_0361:  ldarg.0 
+	IL_0362:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_FlowSheet()
+	IL_0367:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject> class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet::get_SimulationObjects()
+	IL_036c:  ldarg.0 
+	IL_036d:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_0372:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_OutputConnectors()
+	IL_0377:  ldc.i4.2 
+	IL_0378:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_037d:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_AttachedConnector()
+	IL_0382:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject::get_AttachedTo()
+	IL_0387:  callvirt instance string class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_Name()
+	IL_038c:  callvirt instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<string, class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject>::get_Item(!0)
+	IL_0391:  castclass [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream
+	IL_0396:  stloc.s 9
+	IL_0398:  nop 
+	IL_0399:  br.s IL_03a0
+
+	IL_039b:  nop 
+	IL_039c:  ldnull 
+	IL_039d:  stloc.s 9
+	IL_039f:  nop 
+	IL_03a0:  ldarg.0 
+	IL_03a1:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_03a6:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_OutputConnectors()
+	IL_03ab:  ldc.i4.4 
+	IL_03ac:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_03b1:  callvirt instance bool class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_IsAttached()
+	IL_03b6:  stloc.s 25
+	IL_03b8:  ldloc.s 25
+	IL_03ba:  brfalse.s IL_03f6
+
+	IL_03bc:  ldarg.0 
+	IL_03bd:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_FlowSheet()
+	IL_03c2:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject> class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet::get_SimulationObjects()
+	IL_03c7:  ldarg.0 
+	IL_03c8:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_03cd:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_OutputConnectors()
+	IL_03d2:  ldc.i4.4 
+	IL_03d3:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_03d8:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_AttachedConnector()
+	IL_03dd:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject::get_AttachedTo()
+	IL_03e2:  callvirt instance string class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_Name()
+	IL_03e7:  callvirt instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<string, class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject>::get_Item(!0)
+	IL_03ec:  castclass [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream
+	IL_03f1:  stloc.s 10
+	IL_03f3:  nop 
+	IL_03f4:  br.s IL_03fb
+
+	IL_03f6:  nop 
+	IL_03f7:  ldnull 
+	IL_03f8:  stloc.s 10
+	IL_03fa:  nop 
+	IL_03fb:  ldarg.0 
+	IL_03fc:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_0401:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_OutputConnectors()
+	IL_0406:  ldc.i4.5 
+	IL_0407:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_040c:  callvirt instance bool class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_IsAttached()
+	IL_0411:  stloc.s 26
+	IL_0413:  ldloc.s 26
+	IL_0415:  brfalse.s IL_0451
+
+	IL_0417:  ldarg.0 
+	IL_0418:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_FlowSheet()
+	IL_041d:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject> class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet::get_SimulationObjects()
+	IL_0422:  ldarg.0 
+	IL_0423:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_0428:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_OutputConnectors()
+	IL_042d:  ldc.i4.5 
+	IL_042e:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_0433:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_AttachedConnector()
+	IL_0438:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject::get_AttachedTo()
+	IL_043d:  callvirt instance string class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_Name()
+	IL_0442:  callvirt instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<string, class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject>::get_Item(!0)
+	IL_0447:  castclass [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream
+	IL_044c:  stloc.s 11
+	IL_044e:  nop 
+	IL_044f:  br.s IL_0456
+
+	IL_0451:  nop 
+	IL_0452:  ldnull 
+	IL_0453:  stloc.s 11
+	IL_0455:  nop 
+	IL_0456:  ldarg.0 
+	IL_0457:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_045c:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_OutputConnectors()
+	IL_0461:  ldc.i4.6 
+	IL_0462:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_0467:  callvirt instance bool class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_IsAttached()
+	IL_046c:  stloc.s 27
+	IL_046e:  ldloc.s 27
+	IL_0470:  brfalse.s IL_04ac
+
+	IL_0472:  ldarg.0 
+	IL_0473:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_FlowSheet()
+	IL_0478:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject> class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet::get_SimulationObjects()
+	IL_047d:  ldarg.0 
+	IL_047e:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_0483:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_OutputConnectors()
+	IL_0488:  ldc.i4.6 
+	IL_0489:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_048e:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_AttachedConnector()
+	IL_0493:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject::get_AttachedTo()
+	IL_0498:  callvirt instance string class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_Name()
+	IL_049d:  callvirt instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<string, class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject>::get_Item(!0)
+	IL_04a2:  castclass [DWSIM.Thermodynamics]DWSIM.Thermodynamics.Streams.MaterialStream
+	IL_04a7:  stloc.s 12
+	IL_04a9:  nop 
+	IL_04aa:  br.s IL_04b1
+
+	IL_04ac:  nop 
+	IL_04ad:  ldnull 
+	IL_04ae:  stloc.s 12
+	IL_04b0:  nop 
+	IL_04b1:  ldarg.0 
+	IL_04b2:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_04b7:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_InputConnectors()
+	IL_04bc:  ldc.i4.3 
+	IL_04bd:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_04c2:  callvirt instance bool class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_IsAttached()
+	IL_04c7:  stloc.s 28
+	IL_04c9:  ldloc.s 28
+	IL_04cb:  brfalse.s IL_0507
+
+	IL_04cd:  ldarg.0 
+	IL_04ce:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_FlowSheet()
+	IL_04d3:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject> class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet::get_SimulationObjects()
+	IL_04d8:  ldarg.0 
+	IL_04d9:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_04de:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_InputConnectors()
+	IL_04e3:  ldc.i4.3 
+	IL_04e4:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_04e9:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_AttachedConnector()
+	IL_04ee:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject::get_AttachedFrom()
+	IL_04f3:  callvirt instance string class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_Name()
+	IL_04f8:  callvirt instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<string, class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject>::get_Item(!0)
+	IL_04fd:  castclass DWSIM.UnitOperations.Streams.EnergyStream
+	IL_0502:  stloc.s 13
+	IL_0504:  nop 
+	IL_0505:  br.s IL_050c
+
+	IL_0507:  nop 
+	IL_0508:  ldnull 
+	IL_0509:  stloc.s 13
+	IL_050b:  nop 
+	IL_050c:  ldarg.0 
+	IL_050d:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_0512:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_OutputConnectors()
+	IL_0517:  ldc.i4.3 
+	IL_0518:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_051d:  callvirt instance bool class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_IsAttached()
+	IL_0522:  stloc.s 29
+	IL_0524:  ldloc.s 29
+	IL_0526:  brfalse.s IL_0562
+
+	IL_0528:  ldarg.0 
+	IL_0529:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_FlowSheet()
+	IL_052e:  callvirt instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject> class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet::get_SimulationObjects()
+	IL_0533:  ldarg.0 
+	IL_0534:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_0539:  callvirt instance class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint> class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_OutputConnectors()
+	IL_053e:  ldc.i4.3 
+	IL_053f:  callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint>::get_Item(int32)
+	IL_0544:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectionPoint::get_AttachedConnector()
+	IL_0549:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.Interfaces]DWSIM.Interfaces.IConnectorGraphicObject::get_AttachedTo()
+	IL_054e:  callvirt instance string class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_Name()
+	IL_0553:  callvirt instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<string, class [DWSIM.Interfaces]DWSIM.Interfaces.ISimulationObject>::get_Item(!0)
+	IL_0558:  castclass DWSIM.UnitOperations.Streams.EnergyStream
+	IL_055d:  stloc.s 14
+	IL_055f:  nop 
+	IL_0560:  br.s IL_0567
+
+	IL_0562:  nop 
+	IL_0563:  ldnull 
+	IL_0564:  stloc.s 14
+	IL_0566:  nop 
+	IL_0567:  ldstr ""
+	IL_056c:  stloc.s 15
+	IL_056e:  ldarg.0 
+	IL_056f:  call instance string[] class DWSIM.UnitOperations.UnitOperations.CustomUO::get_Includes()
+	IL_0574:  ldnull 
+	IL_0575:  cgt.un 
+	IL_0577:  stloc.s 30
+	IL_0579:  ldloc.s 30
+	IL_057b:  brfalse.s IL_05bc
+
+	IL_057d:  ldarg.0 
+	IL_057e:  call instance string[] class DWSIM.UnitOperations.UnitOperations.CustomUO::get_Includes()
+	IL_0583:  stloc.s 31
+	IL_0585:  ldc.i4.0 
+	IL_0586:  stloc.s 32
+	IL_0588:  br.s IL_05ad
+
+	IL_058a:  ldloc.s 31
+	IL_058c:  ldloc.s 32
+	IL_058e:  ldelem.ref 
+	IL_058f:  stloc.s 33
+	IL_0591:  ldloc.s 15
+	IL_0593:  ldloc.s 33
+	IL_0595:  call string class [mscorlib]System.IO.File::ReadAllText(string)
+	IL_059a:  ldstr "\r\n"
+	IL_059f:  call string string::Concat(string, string, string)
+	IL_05a4:  stloc.s 15
+	IL_05a6:  nop 
+	IL_05a7:  ldloc.s 32
+	IL_05a9:  ldc.i4.1 
+	IL_05aa:  add.ovf 
+	IL_05ab:  stloc.s 32
+	IL_05ad:  ldloc.s 32
+	IL_05af:  ldloc.s 31
+	IL_05b1:  ldlen 
+	IL_05b2:  conv.i4 
+	IL_05b3:  clt 
+	IL_05b5:  stloc.s 34
+	IL_05b7:  ldloc.s 34
+	IL_05b9:  brtrue.s IL_058a
+
+	IL_05bb:  nop 
+	IL_05bc:  nop 
+	IL_05bd:  ldloc.s 15
+	IL_05bf:  ldarg.0 
+	IL_05c0:  call instance string class DWSIM.UnitOperations.UnitOperations.CustomUO::get_ScriptText()
+	IL_05c5:  call string string::Concat(string, string)
+	IL_05ca:  stloc.s 15
+	IL_05cc:  ldarg.0 
+	IL_05cd:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_FlowSheet()
+	IL_05d2:  callvirt instance class [mscorlib]System.Action`1<string> class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet::get_PythonPreprocessor()
+	IL_05d7:  dup 
+	IL_05d8:  brtrue.s IL_05dd
+
+	IL_05da:  pop 
+	IL_05db:  br.s IL_05e5
+
+	IL_05dd:  ldloc.s 15
+	IL_05df:  callvirt instance void class [mscorlib]System.Action`1<string>::Invoke(!0)
+	IL_05e4:  nop 
+	IL_05e5:  ldarg.0 
+	IL_05e6:  call instance valuetype DWSIM.UnitOperations.UnitOperations.CustomUO/PythonExecutionEngine class DWSIM.UnitOperations.UnitOperations.CustomUO::get_ExecutionEngine()
+	IL_05eb:  ldc.i4.0 
+	IL_05ec:  ceq 
+	IL_05ee:  stloc.s 35
+	IL_05f0:  ldloc.s 35
+	IL_05f2:  brfalse IL_0a9d
+
+	IL_05f7:  ldarg.0 
+	IL_05f8:  call class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine class [IronPython]IronPython.Hosting.Python::CreateEngine()
+	IL_05fd:  stfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine DWSIM.UnitOperations.UnitOperations.CustomUO::engine
+	IL_0602:  ldarg.0 
+	IL_0603:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine DWSIM.UnitOperations.UnitOperations.CustomUO::engine
+	IL_0608:  callvirt instance class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptRuntime class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine::get_Runtime()
+	IL_060d:  ldtoken [mscorlib]System.String
+	IL_0612:  call class [mscorlib]System.Type class [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+	IL_0617:  callvirt instance class [mscorlib]System.Reflection.Assembly class [mscorlib]System.Type::get_Assembly()
+	IL_061c:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptRuntime::LoadAssembly(class [mscorlib]System.Reflection.Assembly)
+	IL_0621:  nop 
+	IL_0622:  ldarg.0 
+	IL_0623:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine DWSIM.UnitOperations.UnitOperations.CustomUO::engine
+	IL_0628:  callvirt instance class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptRuntime class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine::get_Runtime()
+	IL_062d:  ldtoken [DWSIM.Thermodynamics]DWSIM.Thermodynamics.BaseClasses.ConstantProperties
+	IL_0632:  call class [mscorlib]System.Type class [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+	IL_0637:  callvirt instance class [mscorlib]System.Reflection.Assembly class [mscorlib]System.Type::get_Assembly()
+	IL_063c:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptRuntime::LoadAssembly(class [mscorlib]System.Reflection.Assembly)
+	IL_0641:  nop 
+	IL_0642:  ldarg.0 
+	IL_0643:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine DWSIM.UnitOperations.UnitOperations.CustomUO::engine
+	IL_0648:  callvirt instance class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptRuntime class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine::get_Runtime()
+	IL_064d:  ldtoken [DWSIM.Drawing.SkiaSharp]DWSIM.Drawing.SkiaSharp.GraphicObjects.GraphicObject
+	IL_0652:  call class [mscorlib]System.Type class [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+	IL_0657:  callvirt instance class [mscorlib]System.Reflection.Assembly class [mscorlib]System.Type::get_Assembly()
+	IL_065c:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptRuntime::LoadAssembly(class [mscorlib]System.Reflection.Assembly)
+	IL_0661:  nop 
+	IL_0662:  ldarg.0 
+	IL_0663:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine DWSIM.UnitOperations.UnitOperations.CustomUO::engine
+	IL_0668:  callvirt instance class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptRuntime class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine::get_Runtime()
+	IL_066d:  ldtoken [DWSIM.Drawing.SkiaSharp]DWSIM.Drawing.SkiaSharp.GraphicsSurface
+	IL_0672:  call class [mscorlib]System.Type class [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+	IL_0677:  callvirt instance class [mscorlib]System.Reflection.Assembly class [mscorlib]System.Type::get_Assembly()
+	IL_067c:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptRuntime::LoadAssembly(class [mscorlib]System.Reflection.Assembly)
+	IL_0681:  nop 
+	IL_0682:  ldarg.0 
+	IL_0683:  ldarg.0 
+	IL_0684:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine DWSIM.UnitOperations.UnitOperations.CustomUO::engine
+	IL_0689:  callvirt instance class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine::CreateScope()
+	IL_068e:  stfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_0693:  ldarg.0 
+	IL_0694:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_0699:  ldstr "Flowsheet"
+	IL_069e:  ldarg.0 
+	IL_069f:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_FlowSheet()
+	IL_06a4:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	IL_06a9:  nop 
+	IL_06aa:  ldarg.0 
+	IL_06ab:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_06b0:  ldstr "Me"
+	IL_06b5:  ldarg.0 
+	IL_06b6:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	IL_06bb:  nop 
+	IL_06bc:  ldarg.0 
+	IL_06bd:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_06c2:  ldstr "This"
+	IL_06c7:  ldarg.0 
+	IL_06c8:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	IL_06cd:  nop 
+	IL_06ce:  ldarg.0 
+	IL_06cf:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_06d4:  ldstr "flowsheet"
+	IL_06d9:  ldarg.0 
+	IL_06da:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_FlowSheet()
+	IL_06df:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	IL_06e4:  nop 
+	IL_06e5:  ldarg.0 
+	IL_06e6:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_06eb:  ldstr "me"
+	IL_06f0:  ldarg.0 
+	IL_06f1:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	IL_06f6:  nop 
+	IL_06f7:  ldarg.0 
+	IL_06f8:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_06fd:  ldstr "this"
+	IL_0702:  ldarg.0 
+	IL_0703:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	IL_0708:  nop 
+	.try { // 0
+	  IL_0709:  ldarg.0 
+	  IL_070a:  call instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,string> class DWSIM.UnitOperations.UnitOperations.CustomUO::get_InputStringVariables()
+	  IL_070f:  callvirt instance valuetype [mscorlib]System.Collections.Generic.Dictionary`2/Enumerator<!0,!1> class [mscorlib]System.Collections.Generic.Dictionary`2<string, string>::GetEnumerator()
+	  IL_0714:  stloc.s 37
+	  IL_0716:  br.s IL_073c
+
+	  IL_0718:  ldloca.s 37
+	  IL_071a:  call instance valuetype [mscorlib]System.Collections.Generic.KeyValuePair`2<!0,!1> valuetype [mscorlib]System.Collections.Generic.Dictionary`2/Enumerator<string, string>::get_Current()
+	  IL_071f:  stloc.s 38
+	  IL_0721:  ldarg.0 
+	  IL_0722:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	  IL_0727:  ldloca.s 38
+	  IL_0729:  call instance !0 valuetype [mscorlib]System.Collections.Generic.KeyValuePair`2<string, string>::get_Key()
+	  IL_072e:  ldloca.s 38
+	  IL_0730:  call instance !1 valuetype [mscorlib]System.Collections.Generic.KeyValuePair`2<string, string>::get_Value()
+	  IL_0735:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	  IL_073a:  nop 
+	  IL_073b:  nop 
+	  IL_073c:  ldloca.s 37
+	  IL_073e:  call instance bool valuetype [mscorlib]System.Collections.Generic.Dictionary`2/Enumerator<string, string>::MoveNext()
+	  IL_0743:  stloc.s 39
+	  IL_0745:  ldloc.s 39
+	  IL_0747:  brtrue.s IL_0718
+
+	  IL_0749:  leave.s IL_075a
+
+	} // end .try 0
+	finally  { // 0
+	  IL_074b:  ldloca.s 37
+	  IL_074d:  constrained. valuetype [mscorlib]System.Collections.Generic.Dictionary`2/Enumerator<string,string>
+	  IL_0753:  callvirt instance void class [mscorlib]System.IDisposable::Dispose()
+	  IL_0758:  nop 
+	  IL_0759:  endfinally 
+	} // end handler 0
+	IL_075a:  nop 
+	.try { // 1
+	  IL_075b:  ldarg.0 
+	  IL_075c:  call instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,float64> class DWSIM.UnitOperations.UnitOperations.CustomUO::get_InputVariables()
+	  IL_0761:  callvirt instance valuetype [mscorlib]System.Collections.Generic.Dictionary`2/Enumerator<!0,!1> class [mscorlib]System.Collections.Generic.Dictionary`2<string, float64>::GetEnumerator()
+	  IL_0766:  stloc.s 40
+	  IL_0768:  br.s IL_0793
+
+	  IL_076a:  ldloca.s 40
+	  IL_076c:  call instance valuetype [mscorlib]System.Collections.Generic.KeyValuePair`2<!0,!1> valuetype [mscorlib]System.Collections.Generic.Dictionary`2/Enumerator<string, float64>::get_Current()
+	  IL_0771:  stloc.s 41
+	  IL_0773:  ldarg.0 
+	  IL_0774:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	  IL_0779:  ldloca.s 41
+	  IL_077b:  call instance !0 valuetype [mscorlib]System.Collections.Generic.KeyValuePair`2<string, float64>::get_Key()
+	  IL_0780:  ldloca.s 41
+	  IL_0782:  call instance !1 valuetype [mscorlib]System.Collections.Generic.KeyValuePair`2<string, float64>::get_Value()
+	  IL_0787:  box [mscorlib]System.Double
+	  IL_078c:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	  IL_0791:  nop 
+	  IL_0792:  nop 
+	  IL_0793:  ldloca.s 40
+	  IL_0795:  call instance bool valuetype [mscorlib]System.Collections.Generic.Dictionary`2/Enumerator<string, float64>::MoveNext()
+	  IL_079a:  stloc.s 42
+	  IL_079c:  ldloc.s 42
+	  IL_079e:  brtrue.s IL_076a
+
+	  IL_07a0:  leave.s IL_07b1
+
+	} // end .try 1
+	finally  { // 1
+	  IL_07a2:  ldloca.s 40
+	  IL_07a4:  constrained. valuetype [mscorlib]System.Collections.Generic.Dictionary`2/Enumerator<string,float64>
+	  IL_07aa:  callvirt instance void class [mscorlib]System.IDisposable::Dispose()
+	  IL_07af:  nop 
+	  IL_07b0:  endfinally 
+	} // end handler 1
+	IL_07b1:  ldloc.1 
+	IL_07b2:  ldnull 
+	IL_07b3:  cgt.un 
+	IL_07b5:  stloc.s 43
+	IL_07b7:  ldloc.s 43
+	IL_07b9:  brfalse.s IL_07cd
+
+	IL_07bb:  ldarg.0 
+	IL_07bc:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_07c1:  ldstr "ims1"
+	IL_07c6:  ldloc.1 
+	IL_07c7:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	IL_07cc:  nop 
+	IL_07cd:  ldloc.2 
+	IL_07ce:  ldnull 
+	IL_07cf:  cgt.un 
+	IL_07d1:  stloc.s 44
+	IL_07d3:  ldloc.s 44
+	IL_07d5:  brfalse.s IL_07e9
+
+	IL_07d7:  ldarg.0 
+	IL_07d8:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_07dd:  ldstr "ims2"
+	IL_07e2:  ldloc.2 
+	IL_07e3:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	IL_07e8:  nop 
+	IL_07e9:  ldloc.3 
+	IL_07ea:  ldnull 
+	IL_07eb:  cgt.un 
+	IL_07ed:  stloc.s 45
+	IL_07ef:  ldloc.s 45
+	IL_07f1:  brfalse.s IL_0805
+
+	IL_07f3:  ldarg.0 
+	IL_07f4:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_07f9:  ldstr "ims3"
+	IL_07fe:  ldloc.3 
+	IL_07ff:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	IL_0804:  nop 
+	IL_0805:  ldloc.s 4
+	IL_0807:  ldnull 
+	IL_0808:  cgt.un 
+	IL_080a:  stloc.s 46
+	IL_080c:  ldloc.s 46
+	IL_080e:  brfalse.s IL_0823
+
+	IL_0810:  ldarg.0 
+	IL_0811:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_0816:  ldstr "ims4"
+	IL_081b:  ldloc.s 4
+	IL_081d:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	IL_0822:  nop 
+	IL_0823:  ldloc.s 5
+	IL_0825:  ldnull 
+	IL_0826:  cgt.un 
+	IL_0828:  stloc.s 47
+	IL_082a:  ldloc.s 47
+	IL_082c:  brfalse.s IL_0841
+
+	IL_082e:  ldarg.0 
+	IL_082f:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_0834:  ldstr "ims5"
+	IL_0839:  ldloc.s 5
+	IL_083b:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	IL_0840:  nop 
+	IL_0841:  ldloc.s 6
+	IL_0843:  ldnull 
+	IL_0844:  cgt.un 
+	IL_0846:  stloc.s 48
+	IL_0848:  ldloc.s 48
+	IL_084a:  brfalse.s IL_085f
+
+	IL_084c:  ldarg.0 
+	IL_084d:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_0852:  ldstr "ims6"
+	IL_0857:  ldloc.s 6
+	IL_0859:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	IL_085e:  nop 
+	IL_085f:  ldloc.s 7
+	IL_0861:  ldnull 
+	IL_0862:  cgt.un 
+	IL_0864:  stloc.s 49
+	IL_0866:  ldloc.s 49
+	IL_0868:  brfalse.s IL_087d
+
+	IL_086a:  ldarg.0 
+	IL_086b:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_0870:  ldstr "oms1"
+	IL_0875:  ldloc.s 7
+	IL_0877:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	IL_087c:  nop 
+	IL_087d:  ldloc.s 8
+	IL_087f:  ldnull 
+	IL_0880:  cgt.un 
+	IL_0882:  stloc.s 50
+	IL_0884:  ldloc.s 50
+	IL_0886:  brfalse.s IL_089b
+
+	IL_0888:  ldarg.0 
+	IL_0889:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_088e:  ldstr "oms2"
+	IL_0893:  ldloc.s 8
+	IL_0895:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	IL_089a:  nop 
+	IL_089b:  ldloc.s 9
+	IL_089d:  ldnull 
+	IL_089e:  cgt.un 
+	IL_08a0:  stloc.s 51
+	IL_08a2:  ldloc.s 51
+	IL_08a4:  brfalse.s IL_08b9
+
+	IL_08a6:  ldarg.0 
+	IL_08a7:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_08ac:  ldstr "oms3"
+	IL_08b1:  ldloc.s 9
+	IL_08b3:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	IL_08b8:  nop 
+	IL_08b9:  ldloc.s 10
+	IL_08bb:  ldnull 
+	IL_08bc:  cgt.un 
+	IL_08be:  stloc.s 52
+	IL_08c0:  ldloc.s 52
+	IL_08c2:  brfalse.s IL_08d7
+
+	IL_08c4:  ldarg.0 
+	IL_08c5:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_08ca:  ldstr "oms4"
+	IL_08cf:  ldloc.s 10
+	IL_08d1:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	IL_08d6:  nop 
+	IL_08d7:  ldloc.s 11
+	IL_08d9:  ldnull 
+	IL_08da:  cgt.un 
+	IL_08dc:  stloc.s 53
+	IL_08de:  ldloc.s 53
+	IL_08e0:  brfalse.s IL_08f5
+
+	IL_08e2:  ldarg.0 
+	IL_08e3:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_08e8:  ldstr "oms5"
+	IL_08ed:  ldloc.s 11
+	IL_08ef:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	IL_08f4:  nop 
+	IL_08f5:  ldloc.s 12
+	IL_08f7:  ldnull 
+	IL_08f8:  cgt.un 
+	IL_08fa:  stloc.s 54
+	IL_08fc:  ldloc.s 54
+	IL_08fe:  brfalse.s IL_0913
+
+	IL_0900:  ldarg.0 
+	IL_0901:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_0906:  ldstr "oms6"
+	IL_090b:  ldloc.s 12
+	IL_090d:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	IL_0912:  nop 
+	IL_0913:  ldloc.s 13
+	IL_0915:  ldnull 
+	IL_0916:  cgt.un 
+	IL_0918:  stloc.s 55
+	IL_091a:  ldloc.s 55
+	IL_091c:  brfalse.s IL_0931
+
+	IL_091e:  ldarg.0 
+	IL_091f:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_0924:  ldstr "ies1"
+	IL_0929:  ldloc.s 13
+	IL_092b:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	IL_0930:  nop 
+	IL_0931:  ldloc.s 14
+	IL_0933:  ldnull 
+	IL_0934:  cgt.un 
+	IL_0936:  stloc.s 56
+	IL_0938:  ldloc.s 56
+	IL_093a:  brfalse.s IL_094f
+
+	IL_093c:  ldarg.0 
+	IL_093d:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	IL_0942:  ldstr "oes1"
+	IL_0947:  ldloc.s 14
+	IL_0949:  callvirt instance void class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::SetVariable(string, object)
+	IL_094e:  nop 
+	IL_094f:  ldarg.0 
+	IL_0950:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine DWSIM.UnitOperations.UnitOperations.CustomUO::engine
+	IL_0955:  ldloc.s 15
+	IL_0957:  ldc.i4.2 
+	IL_0958:  callvirt instance class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptSource class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine::CreateScriptSourceFromString(string, valuetype [Microsoft.Scripting]Microsoft.Scripting.SourceCodeKind)
+	IL_095d:  stloc.s 36
+	.try { // 4
+	  .try { // 3
+	    IL_095f:  nop 
+	    IL_0960:  ldarg.0 
+	    IL_0961:  ldstr ""
+	    IL_0966:  callvirt instance void class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::set_ErrorMessage(string)
+	    IL_096b:  nop 
+	    IL_096c:  ldloc.s 36
+	    IL_096e:  ldarg.0 
+	    IL_096f:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	    IL_0974:  callvirt instance object class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptSource::Execute(class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope)
+	    IL_0979:  pop 
+	    IL_097a:  ldarg.0 
+	    IL_097b:  call instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,float64> class DWSIM.UnitOperations.UnitOperations.CustomUO::get_OutputVariables()
+	    IL_0980:  callvirt instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string, float64>::Clear()
+	    IL_0985:  nop 
+	    .try { // 2
+	      IL_0986:  ldarg.0 
+	      IL_0987:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	      IL_098c:  callvirt instance class [mscorlib]System.Collections.Generic.IEnumerable`1<string> class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::GetVariableNames()
+	      IL_0991:  callvirt instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<string>::GetEnumerator()
+	      IL_0996:  stloc.s 57
+	      IL_0998:  br.s IL_09f5
+
+	      IL_099a:  ldloc.s 57
+	      IL_099c:  callvirt instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<string>::get_Current()
+	      IL_09a1:  stloc.s 58
+	      IL_09a3:  ldarg.0 
+	      IL_09a4:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	      IL_09a9:  ldloc.s 58
+	      IL_09ab:  callvirt instance object class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::GetVariable(string)
+	      IL_09b0:  isinst [mscorlib]System.Double
+	      IL_09b5:  ldnull 
+	      IL_09b6:  cgt.un 
+	      IL_09b8:  ldarg.0 
+	      IL_09b9:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	      IL_09be:  ldloc.s 58
+	      IL_09c0:  callvirt instance object class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::GetVariable(string)
+	      IL_09c5:  isinst [mscorlib]System.Int32
+	      IL_09ca:  ldnull 
+	      IL_09cb:  cgt.un 
+	      IL_09cd:  or 
+	      IL_09ce:  stloc.s 59
+	      IL_09d0:  ldloc.s 59
+	      IL_09d2:  brfalse.s IL_09f4
+
+	      IL_09d4:  ldarg.0 
+	      IL_09d5:  call instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,float64> class DWSIM.UnitOperations.UnitOperations.CustomUO::get_OutputVariables()
+	      IL_09da:  ldloc.s 58
+	      IL_09dc:  ldarg.0 
+	      IL_09dd:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	      IL_09e2:  ldloc.s 58
+	      IL_09e4:  callvirt instance object class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope::GetVariable(string)
+	      IL_09e9:  call float64 class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToDouble(object)
+	      IL_09ee:  callvirt instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string, float64>::Add(!0, !1)
+	      IL_09f3:  nop 
+	      IL_09f4:  nop 
+	      IL_09f5:  ldloc.s 57
+	      IL_09f7:  callvirt instance bool class [mscorlib]System.Collections.IEnumerator::MoveNext()
+	      IL_09fc:  stloc.s 60
+	      IL_09fe:  ldloc.s 60
+	      IL_0a00:  brtrue.s IL_099a
+
+	      IL_0a02:  leave.s IL_0a11
+
+	    } // end .try 2
+	    finally  { // 2
+	      IL_0a04:  ldloc.s 57
+	      IL_0a06:  brfalse.s IL_0a10
+
+	      IL_0a08:  ldloc.s 57
+	      IL_0a0a:  callvirt instance void class [mscorlib]System.IDisposable::Dispose()
+	      IL_0a0f:  nop 
+	      IL_0a10:  endfinally 
+	    } // end handler 2
+	    IL_0a11:  leave.s IL_0a81
+
+	  } // end .try 3
+	  catch class [mscorlib]System.Exception { // 3
+	    IL_0a13:  dup 
+	    IL_0a14:  call void class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::SetProjectError(class [mscorlib]System.Exception)
+	    IL_0a19:  stloc.s 61
+	    IL_0a1b:  nop 
+	    IL_0a1c:  ldarg.0 
+	    IL_0a1d:  ldfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine DWSIM.UnitOperations.UnitOperations.CustomUO::engine
+	    IL_0a22:  ldc.i4.0 
+	    IL_0a23:  newarr [mscorlib]System.Object
+	    IL_0a28:  callvirt instance !!0 class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine::GetService<class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ExceptionOperations> (object[])
+	    IL_0a2d:  stloc.s 62
+	    IL_0a2f:  ldarg.0 
+	    IL_0a30:  ldloc.s 62
+	    IL_0a32:  ldloc.s 61
+	    IL_0a34:  callvirt instance string class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ExceptionOperations::FormatException(class [mscorlib]System.Exception)
+	    IL_0a39:  callvirt instance string string::ToString()
+	    IL_0a3e:  callvirt instance void class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::set_ErrorMessage(string)
+	    IL_0a43:  nop 
+	    IL_0a44:  ldarg.0 
+	    IL_0a45:  callvirt instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::DeCalculate()
+	    IL_0a4a:  nop 
+	    IL_0a4b:  ldarg.0 
+	    IL_0a4c:  ldnull 
+	    IL_0a4d:  stfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine DWSIM.UnitOperations.UnitOperations.CustomUO::engine
+	    IL_0a52:  ldarg.0 
+	    IL_0a53:  ldnull 
+	    IL_0a54:  stfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	    IL_0a59:  ldnull 
+	    IL_0a5a:  stloc.s 36
+	    IL_0a5c:  ldstr "Python Script error: {1}"
+	    IL_0a61:  ldarg.0 
+	    IL_0a62:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	    IL_0a67:  callvirt instance string class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::get_Tag()
+	    IL_0a6c:  ldarg.0 
+	    IL_0a6d:  callvirt instance string class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_ErrorMessage()
+	    IL_0a72:  call string string::Format(string, object, object)
+	    IL_0a77:  stloc.s 63
+	    IL_0a79:  ldloc.s 63
+	    IL_0a7b:  newobj instance void class [mscorlib]System.Exception::'.ctor'(string)
+	    IL_0a80:  throw 
+	  } // end handler 3
+	  IL_0a81:  leave.s IL_0a96
+
+	} // end .try 4
+	finally  { // 4
+	  IL_0a83:  nop 
+	  IL_0a84:  ldarg.0 
+	  IL_0a85:  ldnull 
+	  IL_0a86:  stfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptEngine DWSIM.UnitOperations.UnitOperations.CustomUO::engine
+	  IL_0a8b:  ldarg.0 
+	  IL_0a8c:  ldnull 
+	  IL_0a8d:  stfld class [Microsoft.Scripting]Microsoft.Scripting.Hosting.ScriptScope DWSIM.UnitOperations.UnitOperations.CustomUO::scope
+	  IL_0a92:  ldnull 
+	  IL_0a93:  stloc.s 36
+	  IL_0a95:  endfinally 
+	} // end handler 4
+	IL_0a96:  nop 
+	IL_0a97:  nop 
+	IL_0a98:  br IL_0f4d
+
+	IL_0a9d:  nop 
+	IL_0a9e:  nop 
+	IL_0a9f:  ldsfld object DWSIM.UnitOperations.UnitOperations.CustomUO::Lock
+	IL_0aa4:  stloc.s 64
+	IL_0aa6:  ldloc.s 64
+	IL_0aa8:  call void class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ObjectFlowControl::CheckForSyncLockOnValueType(object)
+	IL_0aad:  nop 
+	IL_0aae:  ldc.i4.0 
+	IL_0aaf:  stloc.s 65
+	.try { // 11
+	  IL_0ab1:  ldloc.s 64
+	  IL_0ab3:  ldloca.s 65
+	  IL_0ab5:  call void class [mscorlib]System.Threading.Monitor::Enter(object, [out] bool&)
+	  IL_0aba:  nop 
+	  IL_0abb:  ldstr ""
+	  IL_0ac0:  call void class [DWSIM.GlobalSettings]DWSIM.GlobalSettings.Settings::InitializePythonEnvironment(string)
+	  IL_0ac5:  nop 
+	  IL_0ac6:  nop 
+	  IL_0ac7:  call class [Python.Runtime]Python.Runtime.Py/GILState class [Python.Runtime]Python.Runtime.Py::GIL()
+	  IL_0acc:  stloc.s 66
+	  .try { // 10
+	    .try { // 9
+	      .try { // 8
+	        IL_0ace:  nop 
+	        IL_0acf:  ldstr "sys"
+	        IL_0ad4:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.Py::Import(string)
+	        IL_0ad9:  stloc.s 67
+	        IL_0adb:  ldstr "import sys\r\nfrom io import BytesIO as StringIO\r\nsys.stdout = mystdout = StringIO()\r\nsys.stdout.flush()\r\nsys.stderr = mystderr = StringIO()\r\nsys.stderr.flush()"
+	        IL_0ae0:  stloc.s 68
+	        IL_0ae2:  ldloc.s 68
+	        IL_0ae4:  call int32 class [Python.Runtime]Python.Runtime.PythonEngine::RunSimpleString(string)
+	        IL_0ae9:  pop 
+	        IL_0aea:  ldarg.0 
+	        IL_0aeb:  ldstr ""
+	        IL_0af0:  callvirt instance void class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::set_ErrorMessage(string)
+	        IL_0af5:  nop 
+	        IL_0af6:  newobj instance void class [Python.Runtime]Python.Runtime.PyDict::'.ctor'()
+	        IL_0afb:  stloc.s 69
+	        IL_0afd:  ldloc.s 69
+	        IL_0aff:  ldstr "Flowsheet"
+	        IL_0b04:  ldarg.0 
+	        IL_0b05:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_FlowSheet()
+	        IL_0b0a:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0b0f:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0b14:  nop 
+	        IL_0b15:  ldloc.s 69
+	        IL_0b17:  ldstr "Me"
+	        IL_0b1c:  ldarg.0 
+	        IL_0b1d:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0b22:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0b27:  nop 
+	        IL_0b28:  ldloc.s 69
+	        IL_0b2a:  ldstr "This"
+	        IL_0b2f:  ldarg.0 
+	        IL_0b30:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0b35:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0b3a:  nop 
+	        IL_0b3b:  ldloc.s 69
+	        IL_0b3d:  ldstr "flowsheet"
+	        IL_0b42:  ldarg.0 
+	        IL_0b43:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_FlowSheet()
+	        IL_0b48:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0b4d:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0b52:  nop 
+	        IL_0b53:  ldloc.s 69
+	        IL_0b55:  ldstr "me"
+	        IL_0b5a:  ldarg.0 
+	        IL_0b5b:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0b60:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0b65:  nop 
+	        IL_0b66:  ldloc.s 69
+	        IL_0b68:  ldstr "this"
+	        IL_0b6d:  ldarg.0 
+	        IL_0b6e:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0b73:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0b78:  nop 
+	        IL_0b79:  ldnull 
+	        IL_0b7a:  stloc.s 70
+	        .try { // 5
+	          IL_0b7c:  ldarg.0 
+	          IL_0b7d:  call instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,string> class DWSIM.UnitOperations.UnitOperations.CustomUO::get_InputStringVariables()
+	          IL_0b82:  callvirt instance valuetype [mscorlib]System.Collections.Generic.Dictionary`2/Enumerator<!0,!1> class [mscorlib]System.Collections.Generic.Dictionary`2<string, string>::GetEnumerator()
+	          IL_0b87:  stloc.s 72
+	          IL_0b89:  br.s IL_0bb0
+
+	          IL_0b8b:  ldloca.s 72
+	          IL_0b8d:  call instance valuetype [mscorlib]System.Collections.Generic.KeyValuePair`2<!0,!1> valuetype [mscorlib]System.Collections.Generic.Dictionary`2/Enumerator<string, string>::get_Current()
+	          IL_0b92:  stloc.s 73
+	          IL_0b94:  ldloc.s 69
+	          IL_0b96:  ldloca.s 73
+	          IL_0b98:  call instance !0 valuetype [mscorlib]System.Collections.Generic.KeyValuePair`2<string, string>::get_Key()
+	          IL_0b9d:  ldloca.s 73
+	          IL_0b9f:  call instance !1 valuetype [mscorlib]System.Collections.Generic.KeyValuePair`2<string, string>::get_Value()
+	          IL_0ba4:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	          IL_0ba9:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	          IL_0bae:  nop 
+	          IL_0baf:  nop 
+	          IL_0bb0:  ldloca.s 72
+	          IL_0bb2:  call instance bool valuetype [mscorlib]System.Collections.Generic.Dictionary`2/Enumerator<string, string>::MoveNext()
+	          IL_0bb7:  stloc.s 74
+	          IL_0bb9:  ldloc.s 74
+	          IL_0bbb:  brtrue.s IL_0b8b
+
+	          IL_0bbd:  leave.s IL_0bce
+
+	        } // end .try 5
+	        finally  { // 5
+	          IL_0bbf:  ldloca.s 72
+	          IL_0bc1:  constrained. valuetype [mscorlib]System.Collections.Generic.Dictionary`2/Enumerator<string,string>
+	          IL_0bc7:  callvirt instance void class [mscorlib]System.IDisposable::Dispose()
+	          IL_0bcc:  nop 
+	          IL_0bcd:  endfinally 
+	        } // end handler 5
+	        IL_0bce:  nop 
+	        .try { // 6
+	          IL_0bcf:  ldarg.0 
+	          IL_0bd0:  call instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,float64> class DWSIM.UnitOperations.UnitOperations.CustomUO::get_InputVariables()
+	          IL_0bd5:  callvirt instance valuetype [mscorlib]System.Collections.Generic.Dictionary`2/Enumerator<!0,!1> class [mscorlib]System.Collections.Generic.Dictionary`2<string, float64>::GetEnumerator()
+	          IL_0bda:  stloc.s 75
+	          IL_0bdc:  br.s IL_0c08
+
+	          IL_0bde:  ldloca.s 75
+	          IL_0be0:  call instance valuetype [mscorlib]System.Collections.Generic.KeyValuePair`2<!0,!1> valuetype [mscorlib]System.Collections.Generic.Dictionary`2/Enumerator<string, float64>::get_Current()
+	          IL_0be5:  stloc.s 76
+	          IL_0be7:  ldloc.s 69
+	          IL_0be9:  ldloca.s 76
+	          IL_0beb:  call instance !0 valuetype [mscorlib]System.Collections.Generic.KeyValuePair`2<string, float64>::get_Key()
+	          IL_0bf0:  ldloca.s 76
+	          IL_0bf2:  call instance !1 valuetype [mscorlib]System.Collections.Generic.KeyValuePair`2<string, float64>::get_Value()
+	          IL_0bf7:  box [mscorlib]System.Double
+	          IL_0bfc:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	          IL_0c01:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	          IL_0c06:  nop 
+	          IL_0c07:  nop 
+	          IL_0c08:  ldloca.s 75
+	          IL_0c0a:  call instance bool valuetype [mscorlib]System.Collections.Generic.Dictionary`2/Enumerator<string, float64>::MoveNext()
+	          IL_0c0f:  stloc.s 77
+	          IL_0c11:  ldloc.s 77
+	          IL_0c13:  brtrue.s IL_0bde
+
+	          IL_0c15:  leave.s IL_0c26
+
+	        } // end .try 6
+	        finally  { // 6
+	          IL_0c17:  ldloca.s 75
+	          IL_0c19:  constrained. valuetype [mscorlib]System.Collections.Generic.Dictionary`2/Enumerator<string,float64>
+	          IL_0c1f:  callvirt instance void class [mscorlib]System.IDisposable::Dispose()
+	          IL_0c24:  nop 
+	          IL_0c25:  endfinally 
+	        } // end handler 6
+	        IL_0c26:  ldloc.1 
+	        IL_0c27:  ldnull 
+	        IL_0c28:  cgt.un 
+	        IL_0c2a:  stloc.s 78
+	        IL_0c2c:  ldloc.s 78
+	        IL_0c2e:  brfalse.s IL_0c43
+
+	        IL_0c30:  ldloc.s 69
+	        IL_0c32:  ldstr "ims1"
+	        IL_0c37:  ldloc.1 
+	        IL_0c38:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0c3d:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0c42:  nop 
+	        IL_0c43:  ldloc.2 
+	        IL_0c44:  ldnull 
+	        IL_0c45:  cgt.un 
+	        IL_0c47:  stloc.s 79
+	        IL_0c49:  ldloc.s 79
+	        IL_0c4b:  brfalse.s IL_0c60
+
+	        IL_0c4d:  ldloc.s 69
+	        IL_0c4f:  ldstr "ims2"
+	        IL_0c54:  ldloc.2 
+	        IL_0c55:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0c5a:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0c5f:  nop 
+	        IL_0c60:  ldloc.3 
+	        IL_0c61:  ldnull 
+	        IL_0c62:  cgt.un 
+	        IL_0c64:  stloc.s 80
+	        IL_0c66:  ldloc.s 80
+	        IL_0c68:  brfalse.s IL_0c7d
+
+	        IL_0c6a:  ldloc.s 69
+	        IL_0c6c:  ldstr "ims3"
+	        IL_0c71:  ldloc.3 
+	        IL_0c72:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0c77:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0c7c:  nop 
+	        IL_0c7d:  ldloc.s 4
+	        IL_0c7f:  ldnull 
+	        IL_0c80:  cgt.un 
+	        IL_0c82:  stloc.s 81
+	        IL_0c84:  ldloc.s 81
+	        IL_0c86:  brfalse.s IL_0c9c
+
+	        IL_0c88:  ldloc.s 69
+	        IL_0c8a:  ldstr "ims4"
+	        IL_0c8f:  ldloc.s 4
+	        IL_0c91:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0c96:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0c9b:  nop 
+	        IL_0c9c:  ldloc.s 5
+	        IL_0c9e:  ldnull 
+	        IL_0c9f:  cgt.un 
+	        IL_0ca1:  stloc.s 82
+	        IL_0ca3:  ldloc.s 82
+	        IL_0ca5:  brfalse.s IL_0cbb
+
+	        IL_0ca7:  ldloc.s 69
+	        IL_0ca9:  ldstr "ims5"
+	        IL_0cae:  ldloc.s 5
+	        IL_0cb0:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0cb5:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0cba:  nop 
+	        IL_0cbb:  ldloc.s 6
+	        IL_0cbd:  ldnull 
+	        IL_0cbe:  cgt.un 
+	        IL_0cc0:  stloc.s 83
+	        IL_0cc2:  ldloc.s 83
+	        IL_0cc4:  brfalse.s IL_0cda
+
+	        IL_0cc6:  ldloc.s 69
+	        IL_0cc8:  ldstr "ims6"
+	        IL_0ccd:  ldloc.s 6
+	        IL_0ccf:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0cd4:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0cd9:  nop 
+	        IL_0cda:  ldloc.s 7
+	        IL_0cdc:  ldnull 
+	        IL_0cdd:  cgt.un 
+	        IL_0cdf:  stloc.s 84
+	        IL_0ce1:  ldloc.s 84
+	        IL_0ce3:  brfalse.s IL_0cf9
+
+	        IL_0ce5:  ldloc.s 69
+	        IL_0ce7:  ldstr "oms1"
+	        IL_0cec:  ldloc.s 7
+	        IL_0cee:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0cf3:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0cf8:  nop 
+	        IL_0cf9:  ldloc.s 8
+	        IL_0cfb:  ldnull 
+	        IL_0cfc:  cgt.un 
+	        IL_0cfe:  stloc.s 85
+	        IL_0d00:  ldloc.s 85
+	        IL_0d02:  brfalse.s IL_0d18
+
+	        IL_0d04:  ldloc.s 69
+	        IL_0d06:  ldstr "oms2"
+	        IL_0d0b:  ldloc.s 8
+	        IL_0d0d:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0d12:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0d17:  nop 
+	        IL_0d18:  ldloc.s 9
+	        IL_0d1a:  ldnull 
+	        IL_0d1b:  cgt.un 
+	        IL_0d1d:  stloc.s 86
+	        IL_0d1f:  ldloc.s 86
+	        IL_0d21:  brfalse.s IL_0d37
+
+	        IL_0d23:  ldloc.s 69
+	        IL_0d25:  ldstr "oms3"
+	        IL_0d2a:  ldloc.s 9
+	        IL_0d2c:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0d31:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0d36:  nop 
+	        IL_0d37:  ldloc.s 10
+	        IL_0d39:  ldnull 
+	        IL_0d3a:  cgt.un 
+	        IL_0d3c:  stloc.s 87
+	        IL_0d3e:  ldloc.s 87
+	        IL_0d40:  brfalse.s IL_0d56
+
+	        IL_0d42:  ldloc.s 69
+	        IL_0d44:  ldstr "oms4"
+	        IL_0d49:  ldloc.s 10
+	        IL_0d4b:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0d50:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0d55:  nop 
+	        IL_0d56:  ldloc.s 11
+	        IL_0d58:  ldnull 
+	        IL_0d59:  cgt.un 
+	        IL_0d5b:  stloc.s 88
+	        IL_0d5d:  ldloc.s 88
+	        IL_0d5f:  brfalse.s IL_0d75
+
+	        IL_0d61:  ldloc.s 69
+	        IL_0d63:  ldstr "oms5"
+	        IL_0d68:  ldloc.s 11
+	        IL_0d6a:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0d6f:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0d74:  nop 
+	        IL_0d75:  ldloc.s 12
+	        IL_0d77:  ldnull 
+	        IL_0d78:  cgt.un 
+	        IL_0d7a:  stloc.s 89
+	        IL_0d7c:  ldloc.s 89
+	        IL_0d7e:  brfalse.s IL_0d94
+
+	        IL_0d80:  ldloc.s 69
+	        IL_0d82:  ldstr "oms6"
+	        IL_0d87:  ldloc.s 12
+	        IL_0d89:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0d8e:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0d93:  nop 
+	        IL_0d94:  ldloc.s 13
+	        IL_0d96:  ldnull 
+	        IL_0d97:  cgt.un 
+	        IL_0d99:  stloc.s 90
+	        IL_0d9b:  ldloc.s 90
+	        IL_0d9d:  brfalse.s IL_0db3
+
+	        IL_0d9f:  ldloc.s 69
+	        IL_0da1:  ldstr "ies1"
+	        IL_0da6:  ldloc.s 13
+	        IL_0da8:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0dad:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0db2:  nop 
+	        IL_0db3:  ldloc.s 14
+	        IL_0db5:  ldnull 
+	        IL_0db6:  cgt.un 
+	        IL_0db8:  stloc.s 91
+	        IL_0dba:  ldloc.s 91
+	        IL_0dbc:  brfalse.s IL_0dd2
+
+	        IL_0dbe:  ldloc.s 69
+	        IL_0dc0:  ldstr "oes1"
+	        IL_0dc5:  ldloc.s 14
+	        IL_0dc7:  call class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.ConverterExtension::ToPython(object)
+	        IL_0dcc:  callvirt instance void class [Python.Runtime]Python.Runtime.PyObject::SetItem(string, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0dd1:  nop 
+	        IL_0dd2:  ldloc.s 15
+	        IL_0dd4:  ldnull 
+	        IL_0dd5:  ldloc.s 69
+	        IL_0dd7:  call void class [Python.Runtime]Python.Runtime.PythonEngine::Exec(string, class [Python.Runtime]Python.Runtime.PyDict, class [Python.Runtime]Python.Runtime.PyObject)
+	        IL_0ddc:  nop 
+	        IL_0ddd:  call bool class [DWSIM.GlobalSettings]DWSIM.GlobalSettings.Settings::IsRunningOnMono()
+	        IL_0de2:  ldc.i4.0 
+	        IL_0de3:  ceq 
+	        IL_0de5:  stloc.s 92
+	        IL_0de7:  ldloc.s 92
+	        IL_0de9:  brfalse.s IL_0e2d
+
+	        IL_0deb:  ldarg.0 
+	        IL_0dec:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_FlowSheet()
+	        IL_0df1:  ldloc.s 67
+	        IL_0df3:  ldnull 
+	        IL_0df4:  ldstr "stdout"
+	        IL_0df9:  ldc.i4.0 
+	        IL_0dfa:  newarr [mscorlib]System.Object
+	        IL_0dff:  ldnull 
+	        IL_0e00:  ldnull 
+	        IL_0e01:  ldnull 
+	        IL_0e02:  call object class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.NewLateBinding::LateGet(object, class [mscorlib]System.Type, string, object[], string[], class [mscorlib]System.Type[], bool[])
+	        IL_0e07:  ldnull 
+	        IL_0e08:  ldstr "getvalue"
+	        IL_0e0d:  ldc.i4.0 
+	        IL_0e0e:  newarr [mscorlib]System.Object
+	        IL_0e13:  ldnull 
+	        IL_0e14:  ldnull 
+	        IL_0e15:  ldnull 
+	        IL_0e16:  call object class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.NewLateBinding::LateGet(object, class [mscorlib]System.Type, string, object[], string[], class [mscorlib]System.Type[], bool[])
+	        IL_0e1b:  callvirt instance string object::ToString()
+	        IL_0e20:  ldc.i4.0 
+	        IL_0e21:  ldstr ""
+	        IL_0e26:  callvirt instance void class [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet::ShowMessage(string, valuetype [DWSIM.Interfaces]DWSIM.Interfaces.IFlowsheet/MessageType, string)
+	        IL_0e2b:  nop 
+	        IL_0e2c:  nop 
+	        IL_0e2d:  nop 
+	        IL_0e2e:  ldarg.0 
+	        IL_0e2f:  call instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,float64> class DWSIM.UnitOperations.UnitOperations.CustomUO::get_OutputVariables()
+	        IL_0e34:  callvirt instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string, float64>::Clear()
+	        IL_0e39:  nop 
+	        IL_0e3a:  ldc.i4.0 
+	        IL_0e3b:  stloc.s 71
+	        .try { // 7
+	          IL_0e3d:  ldloc.s 69
+	          IL_0e3f:  callvirt instance class [Python.Runtime]Python.Runtime.PyIterable class [Python.Runtime]Python.Runtime.PyDict::Items()
+	          IL_0e44:  callvirt instance class [Python.Runtime]Python.Runtime.PyIter class [Python.Runtime]Python.Runtime.PyIterable::GetEnumerator()
+	          IL_0e49:  stloc.s 93
+	          IL_0e4b:  br.s IL_0ebb
+
+	          IL_0e4d:  ldloc.s 93
+	          IL_0e4f:  callvirt instance class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.PyIter::get_Current()
+	          IL_0e54:  stloc.s 94
+	          IL_0e56:  ldloc.s 69
+	          IL_0e58:  callvirt instance class [Python.Runtime]Python.Runtime.PyIterable class [Python.Runtime]Python.Runtime.PyDict::Values()
+	          IL_0e5d:  ldloc.s 71
+	          IL_0e5f:  callvirt instance class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.PyObject::get_Item(int32)
+	          IL_0e64:  callvirt instance string class [Python.Runtime]Python.Runtime.PyObject::ToString()
+	          IL_0e69:  stloc.s 95
+	          IL_0e6b:  ldloc.s 95
+	          IL_0e6d:  ldc.i4 511
+	          IL_0e72:  call class [mscorlib]System.Globalization.CultureInfo class [mscorlib]System.Globalization.CultureInfo::get_InvariantCulture()
+	          IL_0e77:  ldloca.s 97
+	          IL_0e79:  initobj [mscorlib]System.Double
+	          IL_0e7f:  ldloca.s 97
+	          IL_0e81:  call bool float64::TryParse(string, valuetype [mscorlib]System.Globalization.NumberStyles, class [mscorlib]System.IFormatProvider, [out] float64&)
+	          IL_0e86:  stloc.s 96
+	          IL_0e88:  ldloc.s 96
+	          IL_0e8a:  brfalse.s IL_0eb3
+
+	          IL_0e8c:  ldarg.0 
+	          IL_0e8d:  call instance class [mscorlib]System.Collections.Generic.Dictionary`2<string,float64> class DWSIM.UnitOperations.UnitOperations.CustomUO::get_OutputVariables()
+	          IL_0e92:  ldloc.s 69
+	          IL_0e94:  callvirt instance class [Python.Runtime]Python.Runtime.PyIterable class [Python.Runtime]Python.Runtime.PyDict::Keys()
+	          IL_0e99:  ldloc.s 71
+	          IL_0e9b:  callvirt instance class [Python.Runtime]Python.Runtime.PyObject class [Python.Runtime]Python.Runtime.PyObject::get_Item(int32)
+	          IL_0ea0:  callvirt instance string class [Python.Runtime]Python.Runtime.PyObject::ToString()
+	          IL_0ea5:  ldloc.s 95
+	          IL_0ea7:  call float64 class [DWSIM.ExtensionMethods]DWSIM.ExtensionMethods.General::ToDoubleFromInvariant(string)
+	          IL_0eac:  callvirt instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string, float64>::Add(!0, !1)
+	          IL_0eb1:  nop 
+	          IL_0eb2:  nop 
+	          IL_0eb3:  nop 
+	          IL_0eb4:  ldloc.s 71
+	          IL_0eb6:  ldc.i4.1 
+	          IL_0eb7:  add 
+	          IL_0eb8:  stloc.s 71
+	          IL_0eba:  nop 
+	          IL_0ebb:  ldloc.s 93
+	          IL_0ebd:  callvirt instance bool class [Python.Runtime]Python.Runtime.PyIter::MoveNext()
+	          IL_0ec2:  stloc.s 98
+	          IL_0ec4:  ldloc.s 98
+	          IL_0ec6:  brtrue.s IL_0e4d
+
+	          IL_0ec8:  leave.s IL_0ed7
+
+	        } // end .try 7
+	        finally  { // 7
+	          IL_0eca:  ldloc.s 93
+	          IL_0ecc:  brfalse.s IL_0ed6
+
+	          IL_0ece:  ldloc.s 93
+	          IL_0ed0:  callvirt instance void class [mscorlib]System.IDisposable::Dispose()
+	          IL_0ed5:  nop 
+	          IL_0ed6:  endfinally 
+	        } // end handler 7
+	        IL_0ed7:  leave.s IL_0f26
+
+	      } // end .try 8
+	      catch class [mscorlib]System.Exception { // 8
+	        IL_0ed9:  dup 
+	        IL_0eda:  call void class [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::SetProjectError(class [mscorlib]System.Exception)
+	        IL_0edf:  stloc.s 99
+	        IL_0ee1:  nop 
+	        IL_0ee2:  ldarg.0 
+	        IL_0ee3:  ldloc.s 99
+	        IL_0ee5:  callvirt instance string class [mscorlib]System.Exception::get_Message()
+	        IL_0eea:  callvirt instance void class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::set_ErrorMessage(string)
+	        IL_0eef:  nop 
+	        IL_0ef0:  ldarg.0 
+	        IL_0ef1:  callvirt instance void class DWSIM.UnitOperations.UnitOperations.CustomUO::DeCalculate()
+	        IL_0ef6:  nop 
+	        IL_0ef7:  ldloc.s 99
+	        IL_0ef9:  callvirt instance string class [mscorlib]System.Exception::get_Message()
+	        IL_0efe:  ldstr "\r\n"
+	        IL_0f03:  ldloc.s 99
+	        IL_0f05:  callvirt instance string class [mscorlib]System.Exception::get_StackTrace()
+	        IL_0f0a:  ldstr "\\n"
+	        IL_0f0f:  ldstr "\r\n"
+	        IL_0f14:  callvirt instance string string::Replace(string, string)
+	        IL_0f19:  call string string::Concat(string, string, string)
+	        IL_0f1e:  ldloc.s 99
+	        IL_0f20:  newobj instance void class [mscorlib]System.Exception::'.ctor'(string, class [mscorlib]System.Exception)
+	        IL_0f25:  throw 
+	      } // end handler 8
+	      IL_0f26:  leave.s IL_0f2a
+
+	    } // end .try 9
+	    finally  { // 9
+	      IL_0f28:  nop 
+	      IL_0f29:  endfinally 
+	    } // end handler 9
+	    IL_0f2a:  nop 
+	    IL_0f2b:  leave.s IL_0f3b
+
+	  } // end .try 10
+	  finally  { // 10
+	    IL_0f2d:  nop 
+	    IL_0f2e:  ldloc.s 66
+	    IL_0f30:  brfalse.s IL_0f3a
+
+	    IL_0f32:  ldloc.s 66
+	    IL_0f34:  callvirt instance void class [mscorlib]System.IDisposable::Dispose()
+	    IL_0f39:  nop 
+	    IL_0f3a:  endfinally 
+	  } // end handler 10
+	  IL_0f3b:  leave.s IL_0f4b
+
+	} // end .try 11
+	finally  { // 11
+	  IL_0f3d:  ldloc.s 65
+	  IL_0f3f:  brfalse.s IL_0f49
+
+	  IL_0f41:  ldloc.s 64
+	  IL_0f43:  call void class [mscorlib]System.Threading.Monitor::Exit(object)
+	  IL_0f48:  nop 
+	  IL_0f49:  nop 
+	  IL_0f4a:  endfinally 
+	} // end handler 11
+	IL_0f4b:  nop 
+	IL_0f4c:  nop 
+	IL_0f4d:  ldloc.s 14
+	IL_0f4f:  ldnull 
+	IL_0f50:  cgt.un 
+	IL_0f52:  stloc.s 100
+	IL_0f54:  ldloc.s 100
+	IL_0f56:  brfalse.s IL_0f67
+
+	IL_0f58:  ldloc.s 14
+	IL_0f5a:  callvirt instance class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject class [DWSIM.SharedClasses]DWSIM.SharedClasses.UnitOperations.BaseClass::get_GraphicObject()
+	IL_0f5f:  ldc.i4.1 
+	IL_0f60:  callvirt instance void class [DWSIM.Interfaces]DWSIM.Interfaces.IGraphicObject::set_Calculated(bool)
+	IL_0f65:  nop 
+	IL_0f66:  nop 
+	IL_0f67:  nop 
+	IL_0f68:  ldloc.0 
+	IL_0f69:  brtrue.s IL_0f6d
+
+	IL_0f6b:  br.s IL_0f74
+
+	IL_0f6d:  ldloc.0 
+	IL_0f6e:  call instance void class [DWSIM.Inspector]DWSIM.Inspector.InspectorItem::Close()
+	IL_0f73:  nop 
+	IL_0f74:  ret 
+    } // end of method CustomUO::Cal

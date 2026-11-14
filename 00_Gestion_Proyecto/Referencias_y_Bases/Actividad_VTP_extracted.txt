@@ -1,0 +1,596 @@
+
+
+=== PAGE 1 ===
+
+LOGOTIPO DE LA
+FIRMA
+Guardar como:
+logo_empresa.png
+DISEÑO DE PROCESOS Y PRODUCTOS QUÍMICOS
+Actividad VTP-01
+Verificación de la simulación, tablas de corrientes y elaboración del
+PFD v0
+Planta de e-metanol a partir de CO 2 capturado e hidrógeno renovable
+Firma de ingeniería:
+Integrantes:
+Responsable de
+simulación:
+Responsable del PFD:
+Grupo:
+F echa de entrega:
+Docente: Dr. Jesús Andrés Arzola Flores
+
+=== PAGE 2 ===
+
+Diseño de Procesos y Productos Químicos Actividad VTP-01
+1. Identificación de la actividad
+ClaveVTP-01
+NombreVerificación de DWSIM v1, elaboración de tablas de corrientes y
+construcción del PFD v0
+ModalidadTrabajo colaborativo por firma de ingeniería
+SoftwareDWSIM, versión gratuita y de código abierto
+AntecedenteArchivo DWSIM v1 desarrollado por la firma
+Productos DWSIM v1 aprobada, TC-01, TE-01, matriz de trazabilidad y PFD v0
+Propósito de la actividad
+Transformar la simulación DWSIM v1 en documentación preliminar de ingeniería consistente.
+La firma deberá verificar el modelo, congelar un caso aprobado, extraer y reconciliar sus resultados,
+elaborar las tablas de corrientes de materia y energía, y representar la configuración física del
+proceso mediante un diagrama de flujo de proceso PFD v0.
+2. Resultados de aprendizaje
+Al finalizar esta actividad, el estudiante será capaz de:
+1. Comprobar la convergencia y consistencia física de una simulación de procesos.
+2. Realizar balances globales y por componentes a partir de los resultados del simulador.
+3. Verificar el cumplimiento de la capacidad y pureza solicitadas.
+4. Estructurar tablas de corrientes de materia y energía.
+5. Traducir los objetos de DWSIM a equipos y líneas físicamente realizables.
+6. Elaborar un PFD con identificación, condiciones de operación y trazabilidad.
+7. Detectar y documentar discrepancias entre la simulación y los documentos de diseño.
+3. Situación de partida
+Cada firma de ingeniería dispone de una simulación DWSIM v1 desarrollada a partir de:
+A2.1→NB-01→BFD v0→AR-01→DWSIM v0→BFD v1→DWSIM v1.
+DWSIM v1 representa la propuesta mejorada del proceso. Sin embargo, antes de utilizar sus resultados
+para elaborar documentación de ingeniería, la simulación deberá ser verificada, aprobada y congelada.
+La secuencia de esta actividad será:
+Verificar→Congelar→Tabular→Reconciliar→Representar
+Página 1 de 18
+
+=== PAGE 3 ===
+
+Diseño de Procesos y Productos Químicos Actividad VTP-01
+4. Base de verificación
+La firma utilizará los siguientes valores de referencia:
+Cuadro 1: Metas del caso de diseño.
+Indicador Meta
+Producción anual de producto30 000 t/año
+Tiempo anual de operación8 000 h/año
+Flujo de producto3 750 kg/h
+Metanol puro requerido3 744.4 kg/h
+Flujo molar de metanol116.86 kmol/h
+Pureza seca de metanol99.85 %
+Estado de cálculo Equipos y
+recirculaciones
+convergidos
+La producción horaria equivalente se calcula como:
+˙mproducto = 30 000 000 kg/año
+8 000 h/año = 3 750 kg/h.(1)
+El flujo másico mínimo de metanol puro es:
+˙mMeOH = 3 750(0.9985) = 3 744.4 kg/h.(2)
+El flujo molar correspondiente es:
+˙nMeOH = 3 744.4 kg/h
+32.04 kg/kmol = 116.86 kmol/h.(3)
+Puerta de aprobación
+No se elaborarán las tablas definitivas ni el PFD v0 mientras existan equipos sin converger,
+presiones negativas, caudales físicamente imposibles, corrientes sin identificar o discrepancias de
+balance sin explicar.
+Si una meta contractual no se cumple, la firma deberá declararlo y cuantificar la desviación. Los
+datos no deberán modificarse para ocultar un incumplimiento.
+5. Etapa 1. Verificación de DWSIM v1
+5.1. Ejecución completa del modelo
+La firma deberá realizar el siguiente procedimiento:
+1.1Abrir el archivo:
+Página 2 de 18
+
+=== PAGE 4 ===
+
+Diseño de Procesos y Productos Químicos Actividad VTP-01
+DWSIM_v1_NombreFirma.dwxmz
+1.2Ejecutar el flowsheet completo.
+1.3Confirmar que no existan mensajes de error en los objetos de simulación.
+1.4Verificar que las recirculaciones hayan convergido.
+1.5Revisar en cada corriente:
+temperatura;
+presión;
+flujo másico;
+flujo molar;
+composición;
+fase;
+fracción de vapor.
+1.6Confirmar que la presión disminuya o permanezca constante a través de equipos pasivos.
+1.7Verificar que cualquier aumento de presión esté asociado con una bomba o un compresor.
+1.8Verificar la corriente de hidrógeno procedente de la celda electrolítica.
+1.9Verificar la alimentación de CO2, incluyendo la humedad e impurezas consideradas.
+1.10 Comprobar el funcionamiento del reactor, los enfriadores, los separadores, la purga, la recirculación
+y la corriente de producto.
+1.11Identificar las corrientes que cruzan los límites generales del proceso.
+1.12Guardar capturas de pantalla como evidencia.
+5.2. Balance global de materia
+El error relativo del balance global se calculará mediante:
+εm( %) =|∑︁ ˙mentrada−∑︁ ˙msalida|∑︁ ˙mentrada
+(100).(4)
+Registrar los resultados:
+5.3. Balance por componentes
+Para cada componentei, la firma comprobará:
+εi( %) =|∑︁ ˙ni,entrada−∑︁ ˙ni,salida−˙ni,reacción|∑︁ ˙ni,entrada
+(100).(5)
+Los balances deberán incluir, como mínimo:
+Página 3 de 18
+
+=== PAGE 5 ===
+
+Diseño de Procesos y Productos Químicos Actividad VTP-01
+Cuadro 2: Verificación del balance global de materia.
+Parámetro Resultado
+Flujo másico total de entrada kg/h
+Flujo másico total de salida kg/h
+Diferencia absoluta kg/h
+Error relativo %
+Resultado Aceptado / No
+aceptado
+hidrógeno;
+dióxido de carbono;
+monóxido de carbono;
+agua;
+metanol;
+oxígeno producido en la electrólisis;
+impurezas incluidas en el modelo.
+También se deberá verificar la conservación de los elementos:
+C,H,O.
+5.4. Verificación de la producción
+La producción anual se determinará mediante:
+manual = ˙mproducto (8 000 h/año).(6)
+La desviación respecto de la meta será:
+Dproducción( %) = manual−30 000 t/año
+30 000 t/año (100).(7)
+5.5. Verificación de la pureza
+La pureza másica húmeda del producto es:
+wMeOH,húmedo = ˙mMeOH
+˙mproducto
+.(8)
+La pureza seca se determinará mediante:
+Página 4 de 18
+
+=== PAGE 6 ===
+
+Diseño de Procesos y Productos Químicos Actividad VTP-01
+wMeOH,seco = ˙mMeOH
+˙mproducto−˙mH2O
+.(9)
+La firma deberá indicar expresamente si la meta de99.85 %corresponde a:
+fracción molar;
+fracción másica;
+base húmeda;
+base seca.
+5.6. Lista de verificación
+Cuadro 3: Puerta de aprobación de DWSIM v1.
+Núm. Criterio Sí/No Evidencia u
+observación
+1 Todos los equipos calculan sin error.
+2 Las recirculaciones convergen de manera estable.
+3 No existen presiones negativas.
+4 No existen caudales físicamente imposibles.
+5 Las fases son coherentes con la temperatura,
+presión y composición.
+6 El balance global de materia cierra
+satisfactoriamente.
+7 Los balances de carbono, hidrógeno y oxígeno
+son consistentes.
+8 Se reportan conversión, recuperación, purga y
+pérdidas.
+9 Se verifican la capacidad anual y el flujo horario
+de producto.
+10 Se verifica la pureza seca de metanol.
+11 Todas las corrientes y equipos tienen un
+identificador único.
+12 Las unidades y la base de cálculo están
+declaradas.
+13 El archivo aprobado fue respaldado y congelado.
+5.7. Congelamiento del caso aprobado
+Una vez que la simulación haya superado la puerta de verificación, guardar una copia con el nombre:
+DWSIM_v1_APROBADA_NombreFirma.dwxmz
+Página 5 de 18
+
+=== PAGE 7 ===
+
+Diseño de Procesos y Productos Químicos Actividad VTP-01
+Este archivo constituirá el caso oficial para elaborar las tablas de corrientes y el PFD v0.
+No deberá modificarse después de su aprobación.
+Si posteriormente se requiere un cambio, se deberá crear una nueva revisión:
+DWSIM_v1_REV01_NombreFirma.dwxmz
+6. Etapa 2. Elaboración de TC-01
+TC-01 será la tabla oficial de corrientes de materia del proceso.
+6.1. Numeración de corrientes
+La firma deberá asignar un identificador único a cada corriente.
+Se recomienda emplear la siguiente estructura:
+101,102,103, . . .
+o bien:
+S-101, S-102, S-103, . . .
+El mismo identificador deberá utilizarse en:
+DWSIM v1;
+TC-01;
+PFD v0;
+cálculos de balance;
+memorias técnicas posteriores.
+6.2. Instrucciones
+2.1Abrir el caso aprobado de DWSIM v1.
+2.2Identificar todas las corrientes de materia.
+2.3Incluir:
+alimentaciones;
+productos;
+subproductos;
+purgas;
+recirculaciones;
+Página 6 de 18
+
+=== PAGE 8 ===
+
+Diseño de Procesos y Productos Químicos Actividad VTP-01
+corrientes intermedias;
+salidas de gases;
+salidas acuosas.
+2.4Extraer los valores directamente del caso aprobado.
+2.5Utilizar un mismo sistema de unidades.
+2.6No mezclar resultados procedentes de diferentes iteraciones.
+2.7Revisar que la suma de los flujos de los componentes coincida con el flujo total.
+2.8Utilizar un número razonable de cifras significativas.
+6.3. TC-01A. Resumen de corrientes
+Cuadro 4: TC-01A. Resumen de corrientes de materia.
+ID Descripción F aseT( ◦C)P(bar)˙m
+(kg/h)
+˙n
+(kmol/h)
+F rac.
+vapor
+6.4. TC-01B. Composición de corrientes
+La composición deberá expresarse en una base claramente declarada:
+fracción molar;
+fracción másica;
+flujo molar por componente; o
+Página 7 de 18
+
+=== PAGE 9 ===
+
+Diseño de Procesos y Productos Químicos Actividad VTP-01
+flujo másico por componente.
+Cuadro 5: TC-01B. Composición molar de corrientes.
+IDx H2 xCO2 xCO xH2O xMeOH
+∑︁ xi
+Si el modelo contiene otros componentes, deberán agregarse nuevas columnas.
+7. Etapa 3. Elaboración de TE-01
+TE-01 será la tabla de corrientes de energía y servicios del proceso.
+7.1. Instrucciones
+3.1Identificar todos los equipos con consumo o liberación de energía.
+3.2Identificar las corrientes de energía utilizadas en DWSIM.
+3.3Incluir, como mínimo:
+celda electrolítica;
+compresores;
+calentadores;
+enfriadores;
+condensadores;
+rehervidores;
+bombas;
+columnas de separación.
+3.4Clasificar cada carga como:
+Página 8 de 18
+
+=== PAGE 10 ===
+
+Diseño de Procesos y Productos Químicos Actividad VTP-01
+electricidad;
+calentamiento;
+enfriamiento.
+3.5Declarar la convención de signos utilizada.
+3.6Registrar las condiciones de entrada y salida asociadas con cada servicio.
+Se recomienda utilizar la convención:
+˙Q >0 :energía suministrada al proceso
+˙Q <0 :energía retirada del proceso
+La energía anual se calculará mediante:
+Eanual =
+⃓⃓⃓ ˙Q
+⃓⃓⃓ (8 000 h/año).(10)
+Si la carga se expresa en kW:
+Eanual (MWh/año) =
+⃓⃓⃓ ˙Q
+⃓⃓⃓ (8 000)
+1 000 .(11)
+7.2. Formato TE-01
+Cuadro 6: TE-01. Resumen de energía y servicios.
+ID Equipo Servicio Tipo Carga
+(k W)
+Energía
+anual
+(MWh/año)
+Observación
+Página 9 de 18
+
+=== PAGE 11 ===
+
+Diseño de Procesos y Productos Químicos Actividad VTP-01
+8. Etapa 4. Reconciliación de la información
+Antes de elaborar el PFD v0, la firma deberá revisar la consistencia de las tablas.
+8.1. Comprobaciones obligatorias
+a) Verificar que:
+∑︂
+i
+xi = 1.0000
+en cada corriente, considerando el redondeo utilizado.
+b) Comprobar que el flujo total sea igual a la suma de los flujos de los componentes.
+c) Verificar que los valores de alimentación coincidan con DWSIM v1.
+d) Verificar que los valores del producto coincidan con los utilizados para evaluar la licitación.
+e) Comprobar que TC-01 contenga todas las corrientes que cruzan los límites de cada equipo.
+f) Comprobar que TE-01 contenga todas las corrientes de energía relevantes.
+g) Verificar que todos los datos procedan de la misma revisión congelada.
+h) Identificar valores redondeados, estimados o pendientes de validación.
+Cuadro 7: Registro de discrepancias.
+Núm. Discrepancia encontrada Causa Acción correctiva
+1
+2
+3
+4
+9. Etapa 5. Elaboración del PFD v0
+El PFD v0 será una representación física preliminar del proceso.
+No deberá ser solamente una captura de pantalla del flowsheet de DWSIM.
+Página 10 de 18
+
+=== PAGE 12 ===
+
+Diseño de Procesos y Productos Químicos Actividad VTP-01
+9.1. Contenido mínimo
+El PFD v0 deberá mostrar:
+equipos principales;
+identificación única de los equipos;
+líneas principales de proceso;
+números de corrientes;
+flechas que indiquen la dirección del flujo;
+alimentaciones;
+productos;
+subproductos;
+purgas;
+recirculaciones;
+temperatura de las corrientes principales;
+presión de las corrientes principales;
+flujo de las corrientes principales;
+servicios principales;
+leyenda;
+notas generales;
+base de diseño;
+cajetín;
+fecha y número de revisión.
+9.2. Identificación de equipos
+Se recomienda emplear el siguiente sistema:
+Cada identificador deberá ser único.
+9.3. Traducción de objetos de DWSIM
+Página 11 de 18
+
+=== PAGE 13 ===
+
+Diseño de Procesos y Productos Químicos Actividad VTP-01
+Cuadro 8: Identificación preliminar de equipos.
+Código Tipo de equipo Ejemplo
+EL Electrolizador EL-101
+C Compresor C-101
+E Intercambiador de calor E-101
+R Reactor R-101
+V Recipiente o separador V-101
+T Columna de separación T-101
+P Bomba P-101
+TK Tanque de almacenamiento TK-101
+Cuadro 9: Traducción de objetos de DWSIM al PFD v0.
+Objeto en
+DWSIM
+Representación en
+PFD
+Criterio
+Water Electrolyzer Paquete de electrólisis Mostrar la alimentación de agua, el
+consumo de electricidad y las salidas
+de H2 y O2.
+Compressor Compresor Mostrar la potencia y las condiciones
+principales de entrada y salida.
+Heater o Cooler Intercambiador de calor Indicar el servicio, la carga térmica y
+las condiciones principales.
+Mixer Mezclador o unión de
+líneas
+Representarlo como equipo solamente
+si existe físicamente en el diseño.
+Conversion Reactor Reactor de síntesis Identificar la reacción, conversión o
+base de cálculo utilizada.
+Separator o Flash Recipiente separador Mostrar claramente las salidas de
+vapor y líquido.
+Splitter Derivación o purga Representar una división de flujo,
+válvula o derivación de acuerdo con el
+diseño físico.
+Recycle Línea de retorno No deberá dibujarse como un equipo
+independiente.
+Component
+Separator
+Tecnología física de
+separación
+Deberá sustituirse por destilación,
+absorción, membrana u otra
+operación físicamente justificable.
+Valve Válvula reductora Mostrar la caída de presión cuando
+sea relevante para el proceso.
+Página 12 de 18
+
+=== PAGE 14 ===
+
+Diseño de Procesos y Productos Químicos Actividad VTP-01
+Puerta de aprobación
+El bloqueComponent Separatores una herramienta matemática del simulador. No representa
+automáticamente un equipo industrial.
+Antes de incorporarlo al PFD, la firma deberá proponer la tecnología física que realizará la
+separación.
+9.4. Información que no corresponde al PFD v0
+El PFD v0 no deberá incluir todavía el detalle propio de un P&ID o DTI, como:
+lazos completos de control;
+numeración exhaustiva de instrumentos;
+identificación de todas las válvulas;
+clases de tubería;
+diámetros definitivos de tubería;
+accesorios menores;
+señales eléctricas o neumáticas;
+sistemas de seguridad instrumentada.
+Estos elementos se incorporarán posteriormente, cuando el diseño de proceso y el dimensionamiento de
+equipos se encuentren suficientemente desarrollados.
+10. Etapa 6. Verificación del PFD v0
+Una vez elaborado el PFD v0, la firma deberá realizar una revisión cruzada.
+10.1. Lista de verificación del PFD
+Cuadro 10: Lista de verificación del PFD v0.
+Núm. Criterio Sí/No Observación
+1 Todos los equipos principales están representados.
+2 Todos los equipos tienen identificador único.
+3 Las líneas tienen flechas de dirección.
+4 Todas las corrientes relevantes están numeradas.
+5 Los números de corriente coinciden con TC-01.
+6 Las cargas de energía pueden localizarse en TE-01.
+7 Las alimentaciones y productos están identificados.
+Página 13 de 18
+
+=== PAGE 15 ===
+
+Diseño de Procesos y Productos Químicos Actividad VTP-01
+Núm. Criterio Sí/No Observación
+8 La purga y la recirculación están representadas.
+9 El objeto Recycle no aparece como equipo.
+10 El separador por componentes fue traducido a una
+tecnología física.
+11 Los valores de temperatura, presión y flujo
+coinciden con DWSIM v1.
+12 El documento incluye cajetín, fecha y revisión.
+13 El PFD es legible y utiliza una nomenclatura
+coherente.
+11. Etapa 7. Matriz de trazabilidad
+Cada corriente y equipo deberá poder localizarse en todos los documentos correspondientes.
+Cuadro 11: Matriz de consistencia y trazabilidad.
+ID DWSIM v1 TC-01 o TE-01 PFD v0 Resultado de
+revisión
+Si se encuentra una discrepancia, la firma deberá:
+1. identificar el documento donde se originó;
+2. verificar el valor en DWSIM v1;
+3. corregir la tabla o el PFD;
+4. documentar la modificación;
+5. actualizar el número de revisión.
+Página 14 de 18
+
+=== PAGE 16 ===
+
+Diseño de Procesos y Productos Químicos Actividad VTP-01
+12. Entregables
+Producto de entrega
+La firma entregará un expediente digital con los siguientes documentos:
+1. Archivo aprobado:
+DWSIM_v1_APROBADA_NombreFirma.dwxmz
+2. Reporte de verificación de DWSIM v1.
+3. Lista de verificación firmada.
+4. Evidencia de convergencia.
+5. Cálculo del balance global de materia.
+6. Balance por componentes.
+7. Verificación de producción y pureza.
+8. Tabla de corrientes de materia:
+TC-01_NombreFirma.pdf
+9. Tabla de energía y servicios:
+TE-01_NombreFirma.pdf
+10. Diagrama de flujo de proceso:
+PFD-v0_NombreFirma.pdf
+11. Archivos editables de TC-01, TE-01 y PFD v0.
+12. Matriz de trazabilidad.
+13. Lista de asuntos pendientes para la siguiente revisión.
+13. Estructura del expediente
+Se recomienda organizar la carpeta de entrega de la siguiente manera:
+VTP-01_NombreFirma/
+|
+|-- 01_DWSIM/
+| |-- DWSIM_v1_APROBADA_NombreFirma.dwxmz
+|
+Página 15 de 18
+
+=== PAGE 17 ===
+
+Diseño de Procesos y Productos Químicos Actividad VTP-01
+|-- 02_Verificacion/
+| |-- Reporte_Verificacion.pdf
+| |-- Evidencias/
+|
+|-- 03_Tablas/
+| |-- TC-01_NombreFirma.pdf
+| |-- TC-01_NombreFirma.xlsx
+| |-- TE-01_NombreFirma.pdf
+| |-- TE-01_NombreFirma.xlsx
+|
+|-- 04_PFD/
+| |-- PFD-v0_NombreFirma.pdf
+| |-- PFD-v0_NombreFirma_EDITABLE
+|
+|-- 05_Trazabilidad/
+|-- Matriz_Trazabilidad.pdf
+14. Criterios de aceptación
+El expediente se considerará técnicamente aceptable cuando:
+DWSIM v1 se encuentre convergida;
+no existan errores físicos sin explicar;
+los balances estén documentados;
+las metas de producción y pureza estén calculadas;
+TC-01 incluya todas las corrientes relevantes;
+TE-01 incluya todas las demandas de energía;
+las tablas sean legibles y reproducibles;
+los identificadores coincidan entre los documentos;
+el PFD represente equipos físicamente realizables;
+las purgas y recirculaciones estén claramente identificadas;
+toda desviación o supuesto se encuentre declarado;
+la revisión del documento esté identificada.
+15. Rúbrica de evaluación
+16. Preguntas de cierre
+Cada firma responderá en un máximo de una página:
+Página 16 de 18
+
+=== PAGE 18 ===
+
+Diseño de Procesos y Productos Químicos Actividad VTP-01
+Cuadro 12: Distribución de la calificación.
+Criterio Ponderación
+Verificación y congelamiento de DWSIM v1 20 %
+TC-01: tabla de corrientes de materia 20 %
+TE-01: tabla de energía y servicios 15 %
+Calidad técnica y gráfica del PFD v0 25 %
+Consistencia y trazabilidad entre documentos 15 %
+Orden, nomenclatura y presentación del expediente 5 %
+T otal 100 %
+1. ¿Qué inconsistencia fue detectada durante la verificación de DWSIM v1?
+2. ¿Cómo se resolvió o documentó dicha inconsistencia?
+3. ¿Qué dato del PFD v0 depende de un supuesto que todavía debe validarse?
+4. ¿Qué objeto de DWSIM requirió una traducción especial para representarlo físicamente?
+5. ¿Qué tecnología física se propuso para sustituir al separador por componentes?
+6. ¿Cuál es la principal pérdida de metanol identificada en el proceso?
+7. ¿Qué equipo presenta la mayor demanda energética?
+8. ¿Qué equipos deberán dimensionarse primero y por qué?
+17. Siguiente etapa del proyecto
+Una vez aprobado el expediente VTP-01, la firma podrá avanzar hacia:
+1. elaboración de la lista de equipos;
+2. definición de parámetros de diseño;
+3. elaboración de hojas de datos preliminares;
+4. dimensionamiento de equipos principales;
+5. estimación del consumo de servicios;
+6. estimación preliminar de costos;
+7. actualización del PFD a una nueva revisión.
+Por lo tanto, la continuidad del proyecto será:
+Página 17 de 18
+
+=== PAGE 19 ===
+
+Diseño de Procesos y Productos Químicos Actividad VTP-01
+DWSIM v1 aprobada→TC-01 y TE-01
+→PFD v0
+→Lista de equipos
+→Hojas de datos
+→Dimensionamiento
+La simulación aprobada constituye la fuente de datos. Las tablas organizan los resultados. El PFD transforma
+esos resultados en documentación de ingeniería.
+Página 18 de 18
