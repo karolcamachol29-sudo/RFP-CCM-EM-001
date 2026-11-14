@@ -7,7 +7,7 @@
 ### Licitación Internacional RFP-CCM-EM-001
 **Planta de Producción de e-Metanol Grado Químico AA (30,000 t/año) a partir de CO2 Capturado y H2 Verde (Celdas SOEC)**
 
-[![CI/CD Autocontrol](https://github.com/Karoc/RFP-CCM-EM-001/actions/workflows/gestion_autocontrol.yml/badge.svg)](https://github.com/Karoc/RFP-CCM-EM-001/actions)
+[![CI/CD Autocontrol](https://img.shields.io/github/actions/workflow/status/karolcamachol29-sudo/RFP-CCM-EM-001/gestion_autocontrol.yml?label=CI%2FCD%20Autocontrol&logo=githubactions&logoColor=white&style=flat)](https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/actions/workflows/gestion_autocontrol.yml)
 [![Deliverables](https://img.shields.io/badge/Entregables-26%20Finales%20PDF-0B2545?style=flat&logo=adobeacrobatreader)](03_Entregables_Finales/)
 [![Governance](https://img.shields.io/badge/Gobernanza-RACI%20Completa-134074?style=flat)](00_Gestion_Proyecto/Matriz_RACI/MATRIZ_RACI_GENERAL.md)
 [![Stack](https://img.shields.io/badge/Stack-Python%20%7C%20DWSIM%20%7C%20Plant%203D%20%7C%20LaTeX-0077B6?style=flat)](01_Proceso_y_Simulacion/)
