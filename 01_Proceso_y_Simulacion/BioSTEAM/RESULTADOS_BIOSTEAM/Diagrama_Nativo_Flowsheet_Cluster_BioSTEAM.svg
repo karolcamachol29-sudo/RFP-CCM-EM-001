@@ -1,0 +1,367 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="2974pt" height="283pt" viewBox="0.00 0.00 2973.87 282.50">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 278.5)">
+<ns0:title>%3</ns0:title>
+<ns0:polygon fill="#000000" stroke="transparent" points="-4,4 -4,-278.5 2969.87,-278.5 2969.87,4 -4,4" />
+
+<ns0:g id="edge9" class="edge">
+<ns0:title>7695512219280:e-&gt;7695512219259:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-dasharray="5,2" d="M342.82,-122.5C388.76,-122.5 440.21,-122.5 481.27,-122.5" />
+<ns0:polygon fill="#98a2ad" stroke="#98a2ad" points="481.47,-126 491.47,-122.5 481.47,-119 481.47,-126" />
+<ns0:g id="a_edge9-label"><ns0:a ns1:title="(empty)">
+<ns0:text text-anchor="middle" x="417.32" y="-126.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> S202 Agua Mezclada</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge10" class="edge">
+<ns0:title>7695512219259:c-&gt;7695512219301:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-dasharray="5,2" d="M625.81,-124.14C663.94,-125.09 711.32,-126.26 747.23,-127.16" />
+<ns0:polygon fill="#98a2ad" stroke="#98a2ad" points="747.43,-130.66 757.52,-127.41 747.61,-123.66 747.43,-130.66" />
+<ns0:g id="a_edge10-label"><ns0:a ns1:title="(empty)">
+<ns0:text text-anchor="middle" x="691.82" y="-146.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> S204 Vapor</ns0:text>
+<ns0:text text-anchor="middle" x="691.82" y="-131.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> 800C</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge13" class="edge">
+<ns0:title>7695512219301:c-&gt;7695512219385:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-dasharray="5,2" d="M846.9,-149.52C849.56,-150.58 852.21,-151.59 854.82,-152.5 897.05,-167.32 945.92,-179.26 984.42,-187.52" />
+<ns0:polygon fill="#98a2ad" stroke="#98a2ad" points="983.98,-191.01 994.49,-189.65 985.43,-184.16 983.98,-191.01" />
+<ns0:g id="a_edge13-label"><ns0:a ns1:title="(empty)">
+<ns0:text text-anchor="middle" x="920.82" y="-191.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> S205 H2 Crudo</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge20" class="edge">
+<ns0:title>7695512219301:c-&gt;7695513072376:w</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-dasharray="5,2" d="M847.22,-128.5C896.34,-128.5 978.28,-128.5 1048.82,-128.5" />
+<ns0:g id="a_edge20-label"><ns0:a ns1:title="(empty)">
+<ns0:text text-anchor="middle" x="920.82" y="-132.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> S206 O2 Coproducto</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge3" class="edge">
+<ns0:title>7695512219385:c-&gt;7695512219280:c</ns0:title>
+<ns0:path fill="none" stroke="#f1777f" stroke-dasharray="5,2" d="M994.82,-210.7C992.12,-211.01 989.44,-211.28 986.82,-211.5 928.36,-216.41 913.48,-211.82 854.82,-211.5 693.48,-210.61 650.83,-234.85 491.82,-207.5 422.4,-195.56 346.27,-167.06 296.82,-146.34" />
+<ns0:polygon fill="#f1777f" stroke="#f1777f" points="298.18,-143.12 287.61,-142.44 295.45,-149.56 298.18,-143.12" />
+<ns0:g id="a_edge3-label"><ns0:a ns1:title="(empty)">
+<ns0:text text-anchor="middle" x="691.82" y="-239.3" font-family="Arial" font-size="14.00" fill="#f1777f"> S210 Condensado</ns0:text>
+<ns0:text text-anchor="middle" x="691.82" y="-224.3" font-family="Arial" font-size="14.00" fill="#f1777f"> SOEC</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge17" class="edge">
+<ns0:title>7695512219385:c-&gt;7695512813169:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-dasharray="5,2" d="M1111.21,-199.9C1151.22,-199.84 1205.82,-200.47 1253.82,-203.5 1269.41,-204.49 1286.22,-206.1 1301.81,-207.83" />
+<ns0:polygon fill="#98a2ad" stroke="#98a2ad" points="1301.52,-211.32 1311.85,-208.98 1302.31,-204.36 1301.52,-211.32" />
+<ns0:g id="a_edge17-label"><ns0:a ns1:title="(empty)">
+<ns0:text text-anchor="middle" x="1186.32" y="-207.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> S209 H2 Seco</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge4" class="edge">
+<ns0:title>7695512813169:e-&gt;7695512219490:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-dasharray="5,2" d="M1462.64,-215.5C1492.52,-215.5 1525.63,-215.5 1553.57,-215.5" />
+<ns0:polygon fill="#98a2ad" stroke="#98a2ad" points="1553.61,-219 1563.61,-215.5 1553.61,-212 1553.61,-219" />
+<ns0:g id="a_edge4-label"><ns0:a ns1:title="(empty)">
+<ns0:text text-anchor="middle" x="1513.14" y="-234.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> S301 Syngas</ns0:text>
+<ns0:text text-anchor="middle" x="1513.14" y="-219.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> Fresco</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge7" class="edge">
+<ns0:title>7695512219490:c-&gt;7695512813229:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-dasharray="5,2" d="M1674.15,-215.5C1715.44,-215.5 1772.2,-215.5 1814.76,-215.5" />
+<ns0:polygon fill="#98a2ad" stroke="#98a2ad" points="1814.98,-219 1824.98,-215.5 1814.98,-212 1814.98,-219" />
+<ns0:g id="a_edge7-label"><ns0:a ns1:title="(empty)">
+<ns0:text text-anchor="middle" x="1724.55" y="-234.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> S303 Syngas</ns0:text>
+<ns0:text text-anchor="middle" x="1724.55" y="-219.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> 75bar</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge5" class="edge">
+<ns0:title>7695512813229:e-&gt;7695512219511:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-dasharray="5,2" d="M1975.87,-215.5C1994.87,-215.5 1970.8,-187.29 1983.87,-173.5 2013.01,-142.74 2060.82,-133.02 2098.33,-130.56" />
+<ns0:polygon fill="#98a2ad" stroke="#98a2ad" points="2098.8,-134.04 2108.61,-130.04 2098.45,-127.05 2098.8,-134.04" />
+<ns0:g id="a_edge5-label"><ns0:a ns1:title="(empty)">
+<ns0:text text-anchor="middle" x="2042.37" y="-177.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> S401 Alim Reactor</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge6" class="edge">
+<ns0:title>7695512219511:c-&gt;7695512219532:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-dasharray="5,2" d="M2201.13,-129.37C2230.24,-128 2268.06,-126.21 2297.87,-124.81" />
+<ns0:polygon fill="#98a2ad" stroke="#98a2ad" points="2298.23,-128.3 2308.06,-124.33 2297.9,-121.3 2298.23,-128.3" />
+<ns0:g id="a_edge6-label"><ns0:a ns1:title="(empty)">
+<ns0:text text-anchor="middle" x="2253.37" y="-148.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> S402 Efluente</ns0:text>
+<ns0:text text-anchor="middle" x="2253.37" y="-133.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> Reactor</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge8" class="edge">
+<ns0:title>7695512219532:c-&gt;7695512219553:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-dasharray="5,2" d="M2387.61,-124.08C2422.05,-125.48 2472.86,-127.55 2512.08,-129.15" />
+<ns0:polygon fill="#98a2ad" stroke="#98a2ad" points="2512.17,-132.65 2522.3,-129.56 2512.46,-125.66 2512.17,-132.65" />
+<ns0:g id="a_edge8-label"><ns0:a ns1:title="(empty)">
+<ns0:text text-anchor="middle" x="2448.87" y="-133.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> S503 Gas Flash</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge19" class="edge">
+<ns0:title>7695512219532:c-&gt;7695512219595:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-dasharray="5,2" d="M2375.46,-100.94C2382.5,-95.81 2390.26,-90.63 2397.87,-86.5 2429.39,-69.38 2466.38,-54.77 2497.97,-43.76" />
+<ns0:polygon fill="#98a2ad" stroke="#98a2ad" points="2499.26,-47.01 2507.58,-40.46 2496.99,-40.39 2499.26,-47.01" />
+<ns0:g id="a_edge19-label"><ns0:a ns1:title="(empty)">
+<ns0:text text-anchor="middle" x="2448.87" y="-105.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> S502 Crudo</ns0:text>
+<ns0:text text-anchor="middle" x="2448.87" y="-90.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> Liquido</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge18" class="edge">
+<ns0:title>7695512219553:c-&gt;7695512813249:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-dasharray="5,2" d="M2619.44,-138.47C2652.34,-144.34 2696.89,-154.34 2742.2,-173.63" />
+<ns0:polygon fill="#98a2ad" stroke="#98a2ad" points="2741.01,-176.93 2751.57,-177.76 2743.83,-170.53 2741.01,-176.93" />
+<ns0:g id="a_edge18-label"><ns0:a ns1:title="(empty)">
+<ns0:text text-anchor="middle" x="2692.37" y="-177.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> S504 Pre Comp</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge12" class="edge">
+<ns0:title>7695512219553:c-&gt;7695512219574:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-dasharray="5,2" d="M2616.62,-109.95C2624.84,-106.86 2633.48,-104.17 2641.87,-102.5 2673.98,-96.11 2710.34,-95.87 2740.65,-97.53" />
+<ns0:polygon fill="#98a2ad" stroke="#98a2ad" points="2740.48,-101.03 2750.68,-98.17 2740.92,-94.04 2740.48,-101.03" />
+<ns0:g id="a_edge12-label"><ns0:a ns1:title="(empty)">
+<ns0:text text-anchor="middle" x="2692.37" y="-121.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> S505 Purga</ns0:text>
+<ns0:text text-anchor="middle" x="2692.37" y="-106.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> Gas</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>7695512813249:c-&gt;7695512813229:c</ns0:title>
+<ns0:path fill="none" stroke="#f1777f" stroke-dasharray="5,2" d="M2751.49,-216.5C2704.07,-216.5 2633.41,-216.5 2571.87,-216.5 2153.87,-216.5 2153.87,-216.5 2153.87,-216.5 2097.99,-216.5 2035.79,-216.29 1984.46,-216.07" />
+<ns0:polygon fill="#f1777f" stroke="#f1777f" points="1984.37,-212.57 1974.35,-216.02 1984.33,-219.57 1984.37,-212.57" />
+<ns0:g id="a_edge1-label"><ns0:a ns1:title="(empty)">
+<ns0:text text-anchor="middle" x="2347.87" y="-235.3" font-family="Arial" font-size="14.00" fill="#f1777f"> S504 Reciclo</ns0:text>
+<ns0:text text-anchor="middle" x="2347.87" y="-220.3" font-family="Arial" font-size="14.00" fill="#f1777f"> Syngas</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge15" class="edge">
+<ns0:title>7695512219574:c-&gt;7695513071992:w</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-dasharray="5,2" d="M2862.87,-104.5C2890.87,-104.5 2925.43,-104.5 2956.37,-104.5" />
+<ns0:g id="a_edge15-label"><ns0:a ns1:title="(empty)">
+<ns0:text text-anchor="middle" x="2908.87" y="-123.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> S506 Purga</ns0:text>
+<ns0:text text-anchor="middle" x="2908.87" y="-108.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> Expandida</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>7695512219595:c-&gt;7695512219280:c</ns0:title>
+<ns0:path fill="none" stroke="#f1777f" stroke-dasharray="5,2" d="M2507.62,-12.41C2463.42,-6.74 2402.63,-0.5 2348.87,-0.5 557.82,-0.5 557.82,-0.5 557.82,-0.5 455.07,-0.5 345.44,-57.83 286.65,-93.89" />
+<ns0:polygon fill="#f1777f" stroke="#f1777f" points="284.65,-91.01 278.01,-99.27 288.35,-96.96 284.65,-91.01" />
+<ns0:g id="a_edge2-label"><ns0:a ns1:title="(empty)">
+<ns0:text text-anchor="middle" x="1513.14" y="-19.3" font-family="Arial" font-size="14.00" fill="#f1777f"> S605 Reciclo</ns0:text>
+<ns0:text text-anchor="middle" x="1513.14" y="-4.3" font-family="Arial" font-size="14.00" fill="#f1777f"> ZLD</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge14" class="edge">
+<ns0:title>7695512219595:c-&gt;7695513071980:w</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-dasharray="5,2" d="M2634.12,-21.5C2680.62,-21.5 2745.72,-21.5 2802.87,-21.5" />
+<ns0:g id="a_edge14-label"><ns0:a ns1:title="(empty)">
+<ns0:text text-anchor="middle" x="2692.37" y="-40.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> S604 eMetanol</ns0:text>
+<ns0:text text-anchor="middle" x="2692.37" y="-25.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> Grado AA</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge11" class="edge">
+<ns0:title>7695515321828:e-&gt;7695512813169:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" d="M1059.82,-263.5C1149.63,-263.5 1252.65,-242.46 1312.01,-228.24" />
+<ns0:g id="a_edge11-label"><ns0:a ns1:title="Temperature: 298.15 K&#10;Pressure: 2e+06 Pa&#10;Liquid flow: 120 kmol/hr">
+<ns0:text text-anchor="middle" x="1186.32" y="-263.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> S101 CO2 Capturado</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge16" class="edge">
+<ns0:title>7695515321852:e-&gt;7695512219280:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-width="2.2" d="M11,-122.5C73.4,-122.5 145.31,-122.5 191.97,-122.5" />
+<ns0:g id="a_edge16-label"><ns0:a ns1:title="Temperature: 298.15 K&#10;Pressure: 101325 Pa&#10;Liquid flow: 512 kmol/hr">
+<ns0:text text-anchor="middle" x="76.5" y="-126.3" font-family="Arial" font-size="14.00" fill="#e5e5e5"> S201 Agua Fresca</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node1" class="node">
+<ns0:title>7695512219280</ns0:title>
+<ns0:g id="a_node1"><ns0:a ns1:title="No capital costs or utilities">
+<ns0:polygon fill="#555f69" stroke="transparent" points="342.73,-122.5 192.25,-176.48 192.25,-68.52 342.73,-122.5" />
+<ns0:text text-anchor="middle" x="242.41" y="-126.3" font-family="Arial" font-size="14.00" fill="white">MIX_201</ns0:text>
+<ns0:text text-anchor="middle" x="242.41" y="-111.3" font-family="Arial" font-size="14.00" fill="white">Mixer</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>7695512219259</ns0:title>
+<ns0:g id="a_node2"><ns0:a ns1:title="No capital costs or utilities">
+<ns0:ellipse fill="#555f69" stroke="transparent" cx="558.82" cy="-122.5" rx="67" ry="67" />
+<ns0:text text-anchor="middle" x="558.82" y="-126.3" font-family="Arial" font-size="14.00" fill="white">E_202</ns0:text>
+<ns0:text text-anchor="middle" x="558.82" y="-111.3" font-family="Arial" font-size="14.00" fill="white">Heat exchanger</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>7695512219301</ns0:title>
+<ns0:g id="a_node3"><ns0:a ns1:title="No capital costs or utilities">
+<ns0:polygon fill="#555f69" stroke="transparent" points="846.82,-150 757.82,-150 757.82,-107 846.82,-107 846.82,-150" />
+<ns0:text text-anchor="middle" x="802.32" y="-132.3" font-family="Arial" font-size="14.00" fill="white">EL_101</ns0:text>
+<ns0:text text-anchor="middle" x="802.32" y="-117.3" font-family="Arial" font-size="14.00" fill="white">SOECStack</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node4" class="node">
+<ns0:title>7695512219385</ns0:title>
+<ns0:g id="a_node4"><ns0:a ns1:title="No capital costs or utilities">
+<ns0:polygon fill="#555f69" stroke="transparent" points="1110.82,-222 994.82,-222 994.82,-179 1110.82,-179 1110.82,-222" />
+<ns0:text text-anchor="middle" x="1052.82" y="-204.3" font-family="Arial" font-size="14.00" fill="white">V_201</ns0:text>
+<ns0:text text-anchor="middle" x="1052.82" y="-189.3" font-family="Arial" font-size="14.00" fill="white">Knockout SOEC</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node5" class="node">
+<ns0:title>7695512813169</ns0:title>
+<ns0:g id="a_node5"><ns0:a ns1:title="No capital costs or utilities">
+<ns0:polygon fill="#555f69" stroke="transparent" points="1462.55,-215.5 1312.07,-269.48 1312.07,-161.52 1462.55,-215.5" />
+<ns0:text text-anchor="middle" x="1362.23" y="-219.3" font-family="Arial" font-size="14.00" fill="white">MIX_301</ns0:text>
+<ns0:text text-anchor="middle" x="1362.23" y="-204.3" font-family="Arial" font-size="14.00" fill="white">Mixer</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node6" class="node">
+<ns0:title>7695512219490</ns0:title>
+<ns0:g id="a_node6"><ns0:a ns1:title="No capital costs or utilities">
+<ns0:polygon fill="#555f69" stroke="transparent" points="1674.25,-183.96 1674.25,-247.04 1563.43,-269.5 1563.43,-161.5 1674.25,-183.96" />
+<ns0:text text-anchor="middle" x="1618.84" y="-219.3" font-family="Arial" font-size="14.00" fill="white">C_301</ns0:text>
+<ns0:text text-anchor="middle" x="1618.84" y="-204.3" font-family="Arial" font-size="14.00" fill="white">Compressor</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node7" class="node">
+<ns0:title>7695512813229</ns0:title>
+<ns0:g id="a_node7"><ns0:a ns1:title="No capital costs or utilities">
+<ns0:polygon fill="#555f69" stroke="transparent" points="1975.78,-215.5 1825.3,-269.48 1825.3,-161.52 1975.78,-215.5" />
+<ns0:text text-anchor="middle" x="1875.46" y="-219.3" font-family="Arial" font-size="14.00" fill="white">MIX_401</ns0:text>
+<ns0:text text-anchor="middle" x="1875.46" y="-204.3" font-family="Arial" font-size="14.00" fill="white">Mixer</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node8" class="node">
+<ns0:title>7695512219511</ns0:title>
+<ns0:g id="a_node8"><ns0:a ns1:title="No capital costs or utilities">
+<ns0:polygon fill="#555f69" stroke="transparent" points="2200.87,-153 2108.87,-153 2108.87,-110 2200.87,-110 2200.87,-153" />
+<ns0:text text-anchor="middle" x="2154.87" y="-135.3" font-family="Arial" font-size="14.00" fill="white">R_401</ns0:text>
+<ns0:text text-anchor="middle" x="2154.87" y="-120.3" font-family="Arial" font-size="14.00" fill="white">Lurgi reactor</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node9" class="node">
+<ns0:title>7695512219532</ns0:title>
+<ns0:g id="a_node9"><ns0:a ns1:title="No capital costs or utilities">
+<ns0:polygon fill="#555f69" stroke="transparent" points="2387.37,-144 2308.37,-144 2308.37,-101 2387.37,-101 2387.37,-144" />
+<ns0:text text-anchor="middle" x="2347.87" y="-126.3" font-family="Arial" font-size="14.00" fill="white">V_501</ns0:text>
+<ns0:text text-anchor="middle" x="2347.87" y="-111.3" font-family="Arial" font-size="14.00" fill="white">Flash loop</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node10" class="node">
+<ns0:title>7695512219553</ns0:title>
+<ns0:g id="a_node10"><ns0:a ns1:title="No capital costs or utilities">
+<ns0:polygon fill="#555f69" stroke="transparent" points="2619.37,-153 2522.37,-153 2522.37,-110 2619.37,-110 2619.37,-153" />
+<ns0:text text-anchor="middle" x="2570.87" y="-135.3" font-family="Arial" font-size="14.00" fill="white">SPLIT_501</ns0:text>
+<ns0:text text-anchor="middle" x="2570.87" y="-120.3" font-family="Arial" font-size="14.00" fill="white">Splitter purga</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node11" class="node">
+<ns0:title>7695512813249</ns0:title>
+<ns0:g id="a_node11"><ns0:a ns1:title="No capital costs or utilities">
+<ns0:polygon fill="#555f69" stroke="transparent" points="2862.28,-184.96 2862.28,-248.04 2751.45,-270.5 2751.45,-162.5 2862.28,-184.96" />
+<ns0:text text-anchor="middle" x="2806.87" y="-220.3" font-family="Arial" font-size="14.00" fill="white">C_501</ns0:text>
+<ns0:text text-anchor="middle" x="2806.87" y="-205.3" font-family="Arial" font-size="14.00" fill="white">Compressor</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node12" class="node">
+<ns0:title>7695512219574</ns0:title>
+<ns0:g id="a_node12"><ns0:a ns1:title="No capital costs or utilities">
+<ns0:polygon fill="#555f69" stroke="transparent" points="2862.87,-126 2750.87,-126 2750.87,-83 2862.87,-83 2862.87,-126" />
+<ns0:text text-anchor="middle" x="2806.87" y="-108.3" font-family="Arial" font-size="14.00" fill="white">X_501</ns0:text>
+<ns0:text text-anchor="middle" x="2806.87" y="-93.3" font-family="Arial" font-size="14.00" fill="white">Turbo expander</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node13" class="node">
+<ns0:title>7695512219595</ns0:title>
+<ns0:g id="a_node13"><ns0:a ns1:title="No capital costs or utilities">
+<ns0:polygon fill="#555f69" stroke="transparent" points="2633.87,-43 2507.87,-43 2507.87,0 2633.87,0 2633.87,-43" />
+<ns0:text text-anchor="middle" x="2570.87" y="-25.3" font-family="Arial" font-size="14.00" fill="white">T_601</ns0:text>
+<ns0:text text-anchor="middle" x="2570.87" y="-10.3" font-family="Arial" font-size="14.00" fill="white">Distillation column</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node14" class="node">
+<ns0:title>7695515321828</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="1052.82,-269 1047.32,-263.5 1052.82,-258 1058.32,-263.5 1052.82,-269" />
+</ns0:g>
+
+<ns0:g id="node15" class="node">
+<ns0:title>7695513071980</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="2812.37,-21.5 2804.12,-28.5 2804.12,-14.5 2812.37,-21.5" />
+</ns0:g>
+
+<ns0:g id="node16" class="node">
+<ns0:title>7695513071992</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="2965.87,-104.5 2957.62,-111.5 2957.62,-97.5 2965.87,-104.5" />
+</ns0:g>
+
+<ns0:g id="node17" class="node">
+<ns0:title>7695515321852</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="5.5,-128 0,-122.5 5.5,-117 11,-122.5 5.5,-128" />
+</ns0:g>
+
+<ns0:g id="node18" class="node">
+<ns0:title>7695513072376</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="1058.32,-128.5 1050.07,-135.5 1050.07,-121.5 1058.32,-128.5" />
+</ns0:g>
+</ns0:g>
+</ns0:svg>

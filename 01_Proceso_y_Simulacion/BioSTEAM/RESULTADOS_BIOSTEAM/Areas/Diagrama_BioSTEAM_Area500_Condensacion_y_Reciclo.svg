@@ -1,0 +1,160 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="1272pt" height="217pt" viewBox="0.00 0.00 1272.06 217.00">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 213)">
+<ns0:title>%3</ns0:title>
+<ns0:polygon fill="white" stroke="transparent" points="-4,4 -4,-213 1268.06,-213 1268.06,4 -4,4" />
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>7702310612713:c-&gt;7702310501465:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-width="2.2" d="M181.39,-42C206.6,-42 243.15,-42 276.06,-42" />
+<ns0:polygon fill="#98a2ad" stroke="#98a2ad" stroke-width="2.2" points="276.14,-45.5 286.14,-42 276.14,-38.5 276.14,-45.5" />
+<ns0:g id="a_edge2-label"><ns0:a ns1:title="Temperature: 311.15 K&#10;Pressure: 7.4e+06 Pa&#10;Gas flow: 1.92e+03 kmol/hr">
+<ns0:text text-anchor="middle" x="233.71" y="-60.8" font-family="Arial" font-size="14.00"> S501 Efluente</ns0:text>
+<ns0:text text-anchor="middle" x="233.71" y="-45.8" font-family="Arial" font-size="14.00"> Enfriado 38C</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge3" class="edge">
+<ns0:title>7702310501465:c-&gt;7702310501444:w</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-width="2.2" d="M401.5,-63.51C441.88,-80.4 502.8,-101.46 559.96,-103.79" />
+<ns0:polygon fill="#98a2ad" stroke="#98a2ad" stroke-width="2.2" points="560.14,-107.29 570.21,-104 560.28,-100.29 560.14,-107.29" />
+<ns0:g id="a_edge3-label"><ns0:a ns1:title="Temperature: 311.15 K&#10;Pressure: 7.4e+06 Pa&#10;Gas flow: 1.69e+03 kmol/hr">
+<ns0:text text-anchor="middle" x="496.21" y="-121.8" font-family="Arial" font-size="14.00"> S502 Gas Separador</ns0:text>
+<ns0:text text-anchor="middle" x="496.21" y="-106.8" font-family="Arial" font-size="14.00"> AltaP</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge7" class="edge">
+<ns0:title>7702310501465:c-&gt;7702310513728:w</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" d="M411.65,-20.45C417.84,-18.68 424.11,-17.14 430.21,-16 541.6,4.79 571.69,-7 685,-7" />
+<ns0:g id="a_edge7-label"><ns0:a ns1:title="Temperature: 311.15 K&#10;Pressure: 7.4e+06 Pa&#10;Liquid flow: 226 kmol/hr">
+<ns0:text text-anchor="middle" x="496.21" y="-34.8" font-family="Arial" font-size="14.00"> S507 Metanol</ns0:text>
+<ns0:text text-anchor="middle" x="496.21" y="-19.8" font-family="Arial" font-size="14.00"> Crudo 74bar</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge4" class="edge">
+<ns0:title>7702310501444:c-&gt;7702310612853:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-width="1.6" d="M748.48,-112.71C796.69,-119.89 866.37,-130.27 924.64,-138.95" />
+<ns0:polygon fill="#98a2ad" stroke="#98a2ad" stroke-width="1.6" points="924.23,-142.42 934.63,-140.43 925.26,-135.5 924.23,-142.42" />
+<ns0:g id="a_edge4-label"><ns0:a ns1:title="Temperature: 311.15 K&#10;Pressure: 7.4e+06 Pa&#10;Gas flow: 1.62e+03 kmol/hr">
+<ns0:text text-anchor="middle" x="871.3" y="-156.8" font-family="Arial" font-size="14.00"> S504 Reciclo</ns0:text>
+<ns0:text text-anchor="middle" x="871.3" y="-141.8" font-family="Arial" font-size="14.00"> Syngas PreComp</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge8" class="edge">
+<ns0:title>7702310501444:c-&gt;7702310501486:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" d="M748.48,-93.58C805.3,-83.46 891.93,-68.03 954.56,-56.87" />
+<ns0:polygon fill="#98a2ad" stroke="#98a2ad" points="955.56,-60.25 964.79,-55.05 954.33,-53.36 955.56,-60.25" />
+<ns0:g id="a_edge8-label"><ns0:a ns1:title="Temperature: 311.15 K&#10;Pressure: 7.4e+06 Pa&#10;Gas flow: 67.7 kmol/hr">
+<ns0:text text-anchor="middle" x="871.3" y="-98.8" font-family="Arial" font-size="14.00"> S505 Purga</ns0:text>
+<ns0:text text-anchor="middle" x="871.3" y="-83.8" font-family="Arial" font-size="14.00"> Gaseosa</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge5" class="edge">
+<ns0:title>7702310612853:c-&gt;7702310513764:w</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-width="1.6" d="M1132.23,-155C1170.4,-155 1214.53,-155 1254.56,-155" />
+<ns0:g id="a_edge5-label"><ns0:a ns1:title="Temperature: 312.79 K&#10;Pressure: 7.5e+06 Pa&#10;Gas flow: 1.62e+03 kmol/hr">
+<ns0:text text-anchor="middle" x="1192.56" y="-173.8" font-family="Arial" font-size="14.00"> S504 Reciclo</ns0:text>
+<ns0:text text-anchor="middle" x="1192.56" y="-158.8" font-family="Arial" font-size="14.00"> Syngas 75bar</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge6" class="edge">
+<ns0:title>7702310501486:c-&gt;7702310513776:w</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" d="M1102.36,-43C1145.87,-43 1203.54,-43 1254.56,-43" />
+<ns0:g id="a_edge6-label"><ns0:a ns1:title="Temperature: 298.15 K&#10;Pressure: 125000 Pa&#10;Gas flow: 67.7 kmol/hr">
+<ns0:text text-anchor="middle" x="1192.56" y="-62.8" font-family="Arial" font-size="14.00"> S506 Gas Purga</ns0:text>
+<ns0:text text-anchor="middle" x="1192.56" y="-47.8" font-family="Arial" font-size="14.00"> Expandido</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>7702310513692:e-&gt;7702310612713:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-width="2.2" d="M11,-42C47.3,-42 89,-42 116.79,-42" />
+<ns0:g id="a_edge1-label"><ns0:a ns1:title="Temperature: 518.15 K&#10;Pressure: 7.4e+06 Pa&#10;Gas flow: 1.92e+03 kmol/hr">
+<ns0:text text-anchor="middle" x="64" y="-60.8" font-family="Arial" font-size="14.00"> S402 Efluente</ns0:text>
+<ns0:text text-anchor="middle" x="64" y="-45.8" font-family="Arial" font-size="14.00"> Reactor 75bar</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node1" class="node">
+<ns0:title>7702310612713</ns0:title>
+<ns0:g id="a_node1"><ns0:a ns1:title="Cooling duty: -1.3e+04 MJ/hr&#10;Utility cost: 64.9 USD/hr&#10;Purchase cost: 38,521 USD&#10;Installed equipment cost: 99,646 USD">
+<ns0:ellipse fill="#60c1cf" stroke="transparent" cx="149.1" cy="-42" rx="32.21" ry="32.21" />
+<ns0:text text-anchor="middle" x="149.1" y="-45.8" font-family="Arial" font-size="14.00" fill="white">E_501</ns0:text>
+<ns0:text text-anchor="middle" x="149.1" y="-30.8" font-family="Arial" font-size="14.00" fill="white">Cooling</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>7702310501465</ns0:title>
+<ns0:g id="a_node2"><ns0:a ns1:title="No capital costs or utilities">
+<ns0:polygon fill="#555f69" stroke="transparent" points="422.21,-63.5 286.21,-63.5 286.21,-20.5 422.21,-20.5 422.21,-63.5" />
+<ns0:text text-anchor="middle" x="354.21" y="-45.8" font-family="Arial" font-size="14.00" fill="white">V_501</ns0:text>
+<ns0:text text-anchor="middle" x="354.21" y="-30.8" font-family="Arial" font-size="14.00" fill="white">Flash separator unit</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>7702310501444</ns0:title>
+<ns0:g id="a_node3"><ns0:a ns1:title="No capital costs or utilities">
+<ns0:polygon fill="#555f69" stroke="transparent" points="570.41,-104 748.3,-50.02 748.3,-157.98 570.41,-104" />
+<ns0:text text-anchor="middle" x="689" y="-107.8" font-family="Arial" font-size="14.00" fill="white">SPLIT_501</ns0:text>
+<ns0:text text-anchor="middle" x="689" y="-92.8" font-family="Arial" font-size="14.00" fill="white">Splitter</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node4" class="node">
+<ns0:title>7702310612853</ns0:title>
+<ns0:g id="a_node4"><ns0:a ns1:title="Electricity consumption: 34.5 kW&#10;Electricity production: 34.5 kW&#10;Heating duty: 0.0406 MJ/hr&#10;Utility cost: 0.0004 USD/hr&#10;Purchase cost: 121,991 USD&#10;Installed equipment cost: 243,982 USD">
+<ns0:polygon fill="#555f69" stroke="transparent" points="1132.2,-123.46 1132.2,-186.54 934.66,-209 934.66,-101 1132.2,-123.46" />
+<ns0:text text-anchor="middle" x="1033.43" y="-158.8" font-family="Arial" font-size="14.00" fill="white">C_501</ns0:text>
+<ns0:text text-anchor="middle" x="1033.43" y="-143.8" font-family="Arial" font-size="14.00" fill="white">Isentropic compressor</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node5" class="node">
+<ns0:title>7702310501486</ns0:title>
+<ns0:g id="a_node5"><ns0:a ns1:title="No capital costs or utilities">
+<ns0:polygon fill="#555f69" stroke="transparent" points="1101.93,-64.5 964.93,-64.5 964.93,-21.5 1101.93,-21.5 1101.93,-64.5" />
+<ns0:text text-anchor="middle" x="1033.43" y="-46.8" font-family="Arial" font-size="14.00" fill="white">EXP_501</ns0:text>
+<ns0:text text-anchor="middle" x="1033.43" y="-31.8" font-family="Arial" font-size="14.00" fill="white">Turbo expander unit</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node6" class="node">
+<ns0:title>7702310513692</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="5.5,-47.5 0,-42 5.5,-36.5 11,-42 5.5,-47.5" />
+</ns0:g>
+
+<ns0:g id="node7" class="node">
+<ns0:title>7702310513764</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="1264.06,-155 1255.81,-162 1255.81,-148 1264.06,-155" />
+</ns0:g>
+
+<ns0:g id="node8" class="node">
+<ns0:title>7702310513776</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="1264.06,-43 1255.81,-50 1255.81,-36 1264.06,-43" />
+</ns0:g>
+
+<ns0:g id="node9" class="node">
+<ns0:title>7702310513728</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="694.5,-7 686.25,-14 686.25,0 694.5,-7" />
+</ns0:g>
+</ns0:g>
+</ns0:svg>

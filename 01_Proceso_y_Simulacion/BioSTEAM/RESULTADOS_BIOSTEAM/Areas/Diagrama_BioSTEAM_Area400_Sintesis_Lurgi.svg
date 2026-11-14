@@ -1,0 +1,105 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="838pt" height="127pt" viewBox="0.00 0.00 838.21 126.74">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 122.74)">
+<ns0:title>%3</ns0:title>
+<ns0:polygon fill="white" stroke="transparent" points="-4,4 -4,-122.74 834.21,-122.74 834.21,4 -4,4" />
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>7702310612813:e-&gt;7702310612793:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-width="1.6" d="M315.82,-53.74C346.16,-53.74 380.35,-53.74 406.63,-53.74" />
+<ns0:polygon fill="#98a2ad" stroke="#98a2ad" stroke-width="1.6" points="406.65,-57.24 416.65,-53.74 406.65,-50.24 406.65,-57.24" />
+<ns0:g id="a_edge2-label"><ns0:a ns1:title="Temperature: 407.37 K&#10;Pressure: 7.5e+06 Pa&#10;Gas flow: 2.15e+03 kmol/hr">
+<ns0:text text-anchor="middle" x="366.32" y="-87.54" font-family="Arial" font-size="14.00"> S401 Syngas</ns0:text>
+<ns0:text text-anchor="middle" x="366.32" y="-72.54" font-family="Arial" font-size="14.00"> Alimentacion</ns0:text>
+<ns0:text text-anchor="middle" x="366.32" y="-57.54" font-family="Arial" font-size="14.00"> Reactor</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge3" class="edge">
+<ns0:title>7702310612793:c-&gt;7702310501402:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-width="1.6" d="M485.32,-53.74C512.3,-53.74 551.2,-53.74 584.82,-53.74" />
+<ns0:polygon fill="#98a2ad" stroke="#98a2ad" stroke-width="1.6" points="585.06,-57.24 595.06,-53.74 585.06,-50.24 585.06,-57.24" />
+<ns0:g id="a_edge3-label"><ns0:a ns1:title="Temperature: 483.15 K&#10;Pressure: 7.5e+06 Pa&#10;Gas flow: 2.15e+03 kmol/hr">
+<ns0:text text-anchor="middle" x="540.21" y="-87.54" font-family="Arial" font-size="14.00"> S401B Syngas</ns0:text>
+<ns0:text text-anchor="middle" x="540.21" y="-72.54" font-family="Arial" font-size="14.00"> Precalentado</ns0:text>
+<ns0:text text-anchor="middle" x="540.21" y="-57.54" font-family="Arial" font-size="14.00"> 210C</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge4" class="edge">
+<ns0:title>7702310501402:c-&gt;7702310569960:w</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-width="1.6" d="M714.52,-53.74C746.01,-53.74 785.48,-53.74 820.71,-53.74" />
+<ns0:g id="a_edge4-label"><ns0:a ns1:title="Temperature: 518.15 K&#10;Pressure: 7.4e+06 Pa&#10;Gas flow: 1.94e+03 kmol/hr">
+<ns0:text text-anchor="middle" x="766.71" y="-72.54" font-family="Arial" font-size="14.00"> S402 Efluente</ns0:text>
+<ns0:text text-anchor="middle" x="766.71" y="-57.54" font-family="Arial" font-size="14.00"> Reactor 245C</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>7702310569924:e-&gt;7702310612813:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" d="M11,-89.74C64.26,-89.74 124.17,-77.63 165.1,-67.45" />
+<ns0:g id="a_edge1-label"><ns0:a ns1:title="Temperature: 544.15 K&#10;Pressure: 7.5e+06 Pa&#10;Gas flow: 751 kmol/hr">
+<ns0:text text-anchor="middle" x="63" y="-107.54" font-family="Arial" font-size="14.00"> S303 Syngas</ns0:text>
+<ns0:text text-anchor="middle" x="63" y="-92.54" font-family="Arial" font-size="14.00"> Fresco 75bar</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge5" class="edge">
+<ns0:title>7702310569780:e-&gt;7702310612813:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" d="M11,-18.74C14.98,-18.74 15.13,-15.65 19,-14.74 57.06,-5.75 68.48,-7.96 107,-14.74 126.54,-18.18 147.2,-24.88 165.13,-31.77" />
+<ns0:g id="a_edge5-label"><ns0:a ns1:title="Temperature: 333.15 K&#10;Pressure: 7.5e+06 Pa&#10;Gas flow: 1.4e+03 kmol/hr">
+<ns0:text text-anchor="middle" x="63" y="-33.54" font-family="Arial" font-size="14.00"> S504 Reciclo</ns0:text>
+<ns0:text text-anchor="middle" x="63" y="-18.54" font-family="Arial" font-size="14.00"> Syngas 75bar</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node1" class="node">
+<ns0:title>7702310612813</ns0:title>
+<ns0:g id="a_node1"><ns0:a ns1:title="No capital costs or utilities">
+<ns0:polygon fill="#555f69" stroke="transparent" points="315.73,-53.74 165.25,-107.72 165.25,0.24 315.73,-53.74" />
+<ns0:text text-anchor="middle" x="215.41" y="-57.54" font-family="Arial" font-size="14.00" fill="white">MIX_401</ns0:text>
+<ns0:text text-anchor="middle" x="215.41" y="-42.54" font-family="Arial" font-size="14.00" fill="white">Mixer</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>7702310612793</ns0:title>
+<ns0:g id="a_node2"><ns0:a ns1:title="Heating duty: 6.08e+03 MJ/hr&#10;Utility cost: 59.9 USD/hr&#10;Purchase cost: 35,972 USD&#10;Installed equipment cost: 92,723 USD">
+<ns0:ellipse fill="#ed5a6a" stroke="transparent" cx="451.02" cy="-53.74" rx="34.4" ry="34.4" />
+<ns0:text text-anchor="middle" x="451.02" y="-57.54" font-family="Arial" font-size="14.00" fill="white">E_502A</ns0:text>
+<ns0:text text-anchor="middle" x="451.02" y="-42.54" font-family="Arial" font-size="14.00" fill="white">Heating</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>7702310501402</ns0:title>
+<ns0:g id="a_node3"><ns0:a ns1:title="No capital costs or utilities">
+<ns0:polygon fill="#555f69" stroke="transparent" points="714.21,-75.24 595.21,-75.24 595.21,-32.24 714.21,-32.24 714.21,-75.24" />
+<ns0:text text-anchor="middle" x="654.71" y="-57.54" font-family="Arial" font-size="14.00" fill="white">R_401</ns0:text>
+<ns0:text text-anchor="middle" x="654.71" y="-42.54" font-family="Arial" font-size="14.00" fill="white">Reactor lurgi unit</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node4" class="node">
+<ns0:title>7702310569924</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="5.5,-95.24 0,-89.74 5.5,-84.24 11,-89.74 5.5,-95.24" />
+</ns0:g>
+
+<ns0:g id="node5" class="node">
+<ns0:title>7702310569960</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="830.21,-53.74 821.96,-60.74 821.96,-46.74 830.21,-53.74" />
+</ns0:g>
+
+<ns0:g id="node6" class="node">
+<ns0:title>7702310569780</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="5.5,-24.24 0,-18.74 5.5,-13.24 11,-18.74 5.5,-24.24" />
+</ns0:g>
+</ns0:g>
+</ns0:svg>

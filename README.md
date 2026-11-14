@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Solvanta Logo](02_Fuentes_Ingenieria_y_Diagramas/Recursos_Graficos/logo_solvanta_clean.png)
+![Solvanta Logo](02_Ingenieria_y_Diagramas/Recursos_Graficos/logo_solvanta_clean.png)
 
 ### Licitación Internacional RFP-CCM-EM-001
 **Planta de Producción de e-Metanol Grado Químico AA (30,000 t/año) a partir de CO2 Capturado y H2 Verde (Celdas SOEC)**
@@ -10,7 +10,7 @@
 [![CI/CD Autocontrol](https://github.com/Karoc/RFP-CCM-EM-001/actions/workflows/gestion_autocontrol.yml/badge.svg)](https://github.com/Karoc/RFP-CCM-EM-001/actions)
 [![Deliverables](https://img.shields.io/badge/Entregables-26%20Finales%20PDF-0B2545?style=flat&logo=adobeacrobatreader)](03_Entregables_Finales/)
 [![Governance](https://img.shields.io/badge/Gobernanza-RACI%20Completa-134074?style=flat)](00_Gestion_Proyecto/Matriz_RACI/MATRIZ_RACI_GENERAL.md)
-[![Stack](https://img.shields.io/badge/Stack-Python%20%7C%20DWSIM%20%7C%20Plant%203D%20%7C%20LaTeX-0077B6?style=flat)](01_Fuentes_Proceso_y_Simulacion/)
+[![Stack](https://img.shields.io/badge/Stack-Python%20%7C%20DWSIM%20%7C%20Plant%203D%20%7C%20LaTeX-0077B6?style=flat)](01_Proceso_y_Simulacion/)
 [![Status](https://img.shields.io/badge/Auditor%C3%ADa-100%25%20Conforme-2D6A4F?style=flat)](INFORME_AUDITORIA_FINAL.md)
 
 </div>
@@ -110,12 +110,12 @@ La trazabilidad de todas las actividades del proyecto se encuentra documentada e
 │   ├── Matriz_RACI/                # RACI general e individuales
 │   ├── Plantillas/                 # Formatos y plantillas estandarizadas
 │   └── Referencias_y_Bases/        # Bases técnicas de licitación y normativas
-├── 01_Fuentes_Proceso_y_Simulacion/# Fuentes técnicas computacionales y de modelado
+├── 01_Proceso_y_Simulacion/        # Fuentes técnicas computacionales y de modelado
 │   ├── BioSTEAM/                   # Scripts y notebooks de evaluación tecno-económica
 │   ├── DWSIM/                      # Archivos de simulación rigurosa (.dwxmz, .dwxml)
 │   ├── Memoria_Tecnica/            # Memorias descriptivas de cálculo en LaTeX
 │   └── Python/                     # Scripts de optimización termodinámica y SOEC
-├── 02_Fuentes_Ingenieria_y_Diagramas/ # Fuentes CAD, diagramas y documentos LaTeX
+├── 02_Ingenieria_y_Diagramas/      # Fuentes CAD, diagramas y documentos LaTeX
 │   ├── BFD/                        # Diagramas de bloques de proceso
 │   ├── Cartel_PyDay/               # Código fuente LaTeX del póster científico
 │   ├── DFP_PFD/                    # Diagramas de flujo de proceso

@@ -1,0 +1,578 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[paperwidth=90cm, paperheight=130cm, margin=1.2cm, top=1.0cm, bottom=1.0cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\graphicspath{{figuras/}{figuras/soec_optimizacion/}{../figuras/}{../figuras/soec_optimizacion/}{./}}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% --- PALETA DE COLORES INSTITUCIONAL BUAP & SOLVANTA ---
+\definecolor{primaryblue}{HTML}{002B49}
+\definecolor{secondaryblue}{HTML}{0070BA}
+\definecolor{accentteal}{HTML}{00A3BF}
+\definecolor{pyyellow}{HTML}{FFD43B}
+\definecolor{pyblue}{HTML}{306998}
+\definecolor{darkslate}{HTML}{1E293B}
+\definecolor{lightbg}{HTML}{F8FAFC}
+\definecolor{tablerowgray}{HTML}{F1F5F9}
+\definecolor{alertred}{HTML}{C53030}
+\definecolor{warngold}{HTML}{D97706}
+\definecolor{warnbg}{HTML}{FFFBEB}
+\definecolor{successgreen}{HTML}{059669}
+\definecolor{successbg}{HTML}{ECFDF5}
+
+% --- ESTILO DE CÓDIGO PYTHON PARA CARTEL (90x130 cm) ---
+\lstdefinestyle{pydaycode}{
+    language=Python,
+    backgroundcolor=\color{lightbg},
+    basicstyle=\ttfamily\fontsize{13.2}{15.8}\selectfont\color{darkslate},
+    keywordstyle=\color{secondaryblue}\bfseries,
+    stringstyle=\color{successgreen},
+    commentstyle=\color{gray}\itshape,
+    numbers=left,
+    numberstyle=\footnotesize\color{gray},
+    numbersep=8pt,
+    frame=single,
+    rulecolor=\color{secondaryblue!50},
+    xleftmargin=14pt,
+    framexleftmargin=8pt,
+    aboveskip=3pt,
+    belowskip=3pt,
+    breaklines=true,
+    showstringspaces=false,
+    morekeywords={self, math, ims1, oms1, oms2, FARADAY, R_GAS, T_REF, E_ACT_C, E_ACT_A, E_OHM, J_LIMIT_REF, TARGET_STEAM_CONVERSION}
+}
+\lstset{style=pydaycode}
+
+\lstdefinestyle{biosteamcode}{
+    language=Python,
+    backgroundcolor=\color{lightbg},
+    basicstyle=\ttfamily\fontsize{12.2}{14.8}\selectfont\color{darkslate},
+    keywordstyle=\color{secondaryblue}\bfseries,
+    stringstyle=\color{successgreen},
+    commentstyle=\color{gray}\itshape,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=5pt,
+    frame=single,
+    rulecolor=\color{secondaryblue!40},
+    xleftmargin=10pt,
+    framexleftmargin=5pt,
+    aboveskip=2pt,
+    belowskip=2pt,
+    breaklines=true,
+    showstringspaces=false,
+    morekeywords={self, math, bst, FARADAY, ETA_FARADAY, AREA_CELDA_CM2, ETA_RECTIFICADOR}
+}
+
+% --- CAJAS DE ÁREAS DEL CARTEL ---
+\newtcolorbox{posterbox}[2][secondaryblue]{
+    enhanced,
+    colback=white,
+    colframe=#1,
+    boxrule=2.5pt,
+    arc=5pt,
+    top=7pt,
+    bottom=5pt,
+    left=12pt,
+    right=12pt,
+    colbacktitle=#1,
+    coltitle=white,
+    fonttitle=\fontsize{20}{24}\selectfont\bfseries,
+    title={#2},
+    attach boxed title to top left={xshift=14pt, yshift*=-13pt},
+    boxed title style={arc=3pt, boxrule=0pt, top=5pt, bottom=5pt, left=12pt, right=12pt},
+    drop fuzzy shadow
+}
+
+\newtcolorbox{reservedbox}[1]{
+    enhanced,
+    colback=warnbg,
+    colframe=warngold,
+    boxrule=3.5pt,
+    borderline={2.8pt}{4pt}{warngold, dashed},
+    arc=6pt,
+    top=16pt,
+    bottom=14pt,
+    left=16pt,
+    right=16pt,
+    colbacktitle=warngold,
+    coltitle=white,
+    fonttitle=\fontsize{22}{26}\selectfont\bfseries,
+    title={#1},
+    attach boxed title to top left={xshift=14pt, yshift*=-15pt},
+    boxed title style={arc=4pt, boxrule=0pt, top=8pt, bottom=8pt, left=14pt, right=14pt}
+}
+
+\begin{document}
+
+% ==============================================================================
+% ENCABEZADO DEL CARTEL (BANNER SUPERIOR BUAP - FIQ - SOLVANTA)
+% ==============================================================================
+\begin{tcolorbox}[
+    enhanced,
+    colback=primaryblue,
+    colframe=accentteal,
+    boxrule=4pt,
+    arc=8pt,
+    top=16pt,
+    bottom=16pt,
+    left=22pt,
+    right=22pt
+]
+    \begin{minipage}[c]{0.13\linewidth}
+        \centering
+        \includegraphics[width=0.95\linewidth]{logo_buap_completo_blanco.png}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.72\linewidth}
+        \centering
+        {\color{pyyellow}\fontsize{28}{34}\selectfont\bfseries BENEMÉRITA UNIVERSIDAD AUTÓNOMA DE PUEBLA}\\[6pt]
+        {\color{accentteal!35!white}\fontsize{20}{24}\selectfont\bfseries FACULTAD DE INGENIERÍA QUÍMICA $\;\bullet\;$ PYDAY: CELEBRANDO LA PROGRAMACIÓN}\\[12pt]
+        {\color{white}\fontsize{31}{37}\selectfont\bfseries Integración Electroquímica SOEC en DWSIM, Optimización Multiescala y Modelado Tecno-Económico en BioSTEAM para Producción de e-Metanol (30,000 t/año)}\\[14pt]
+        % Logo Solvanta pequeño al lado del consorcio
+        \begin{tikzpicture}[baseline=-0.35ex]
+            \node[fill=white, draw=pyyellow, line width=1.2pt, rounded corners=3pt, inner sep=2.5pt] {
+                \includegraphics[height=1.35cm]{logo_empresa.png}
+            };
+        \end{tikzpicture}%
+        \hspace{10pt}%
+        {\color{accentteal!40!white}\fontsize{20}{24}\selectfont\bfseries Consorcio Solvanta Engineering Solutions S.A. de C.V. $\;|\;$ Licitación RFP-CCM-EM-001}\\[8pt]
+        {\color{white}\fontsize{19}{23}\selectfont \textbf{Integrantes:} Ing. Karol Paola Camacho López $\;\cdot\;$ Ing. Grecia Figueroa Rincón $\quad|\quad$ \textbf{Cátedra:} Dr. Jesús Andrés Arzola Flores}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.11\linewidth}
+        \centering
+        \begin{tcolorbox}[enhanced, colback=white, colframe=pyyellow, boxrule=2.5pt, arc=6pt, boxsep=4pt, width=0.92\linewidth]
+            \centering
+            \includegraphics[width=0.92\linewidth]{logo_fiq_buap.png}
+        \end{tcolorbox}
+    \end{minipage}
+\end{tcolorbox}
+
+\vspace{0.14cm}
+
+% ==============================================================================
+% CUERPO PRINCIPAL EN 2 COLUMNAS (FORMATO VERTICAL 90 x 130 cm)
+% ==============================================================================
+\noindent
+% ------------------------------------------------------------------------------
+% COLUMNA 1 (IZQUIERDA - 49.0%): ÁREAS 1, 2 Y 3
+% ------------------------------------------------------------------------------
+\begin{minipage}[t]{0.49\linewidth}
+    \vspace{0pt}
+
+    % ÁREA 1
+    \begin{posterbox}[primaryblue]{1. Reto de Ingeniería y Arquitectura en Python}
+        \fontsize{16}{20}\selectfont
+        Los simuladores secuenciales-modulares como \textbf{DWSIM} carecen de bloques nativos para celdas de electrólisis de óxido sólido (\textbf{SOEC}) de alta temperatura y su acoplamiento térmico con reactores catalíticos de síntesis de metanol (\texttt{R-401}). Para diseñar y optimizar una planta de \textbf{30,000 t/año de e-metanol Grado AA}, se desarrolló el paquete modular \texttt{soec\_optimization/} en Python:
+
+        \vspace{8pt}
+        \begin{tcolorbox}[colback=tablerowgray, colframe=primaryblue!40, boxrule=1.5pt, arc=4pt, top=8pt, bottom=8pt]
+            \fontsize{15}{19.5}\selectfont
+            \textbf{\color{primaryblue}Arquitectura Computacional del Proyecto (\texttt{soec\_optimization/}):}
+            \begin{enumerate}[leftmargin=*, itemsep=4pt, topsep=4pt]
+                \item \textbf{Termodinámica y Cinética (\texttt{thermodynamics.py}, \texttt{kinetics.py}):} Polinomios NIST Shomate, potencial de Nernst presurizado, Butler-Volmer simétrico ($\operatorname{arsinh}$) y conductividad iónica YSZ vía Arrhenius.
+                \item \textbf{Auditoría Física (\texttt{concentration.py}):} Detección de bloqueo difusional ($j \ge j_{\text{limit}}$) eliminando recortes artificiales.
+                \item \textbf{Inyección Automatizada (\texttt{dwsim\_interface.py}):} Inserción directa del script IronPython en el árbol XML del archivo \texttt{.dwxml} de DWSIM v10.
+                \item \textbf{Optimización y Costeo (\texttt{optimizer.py} + \texttt{BioSTEAM}):} Minimización de $SEC_{\text{AC}}$, $LCOH$ y $MPSP$.
+            \end{enumerate}
+        \end{tcolorbox}
+    \end{posterbox}
+
+    \vspace{0.18cm}
+
+    % ÁREA 2
+    \begin{posterbox}[secondaryblue]{2. Código Electroquímico SOEC e Integración en DWSIM}
+        \fontsize{15.5}{19.5}\selectfont
+        \textbf{1. Termodinámica Rigurosa NIST Shomate y Potencial de Nernst:}\\
+        Sustituye la correlación lineal preliminar ($\Delta G^\circ = 246543 - 54.08T$) que sobreestimaba $E^\circ_{\text{rev}}$ en \textbf{+24.8 mV}, acoplando el término de presión anódica ($20\text{ bar}$):
+\begin{lstlisting}
+def calcular_termodinamica_nist(T_k):
+    t = T_k / 1000.0
+    # Polinomios de Shomate (NIST WebBook) para H2(g), O2(g) y H2O(g)
+    h_h2 = 18.563*t + 6.128*t**2 - 0.953*t**3 + 0.067*t**4 - 1.978/t - 1.147
+    s_h2 = 18.563*math.log(t) + 12.257*t - 1.430*t**2 + 0.089*t**3 - 0.989/t**2 + 156.288
+    # ... [Evaluacion homologa exacta para O2 y H2O] ...
+    delta_h0 = (h_h2 + 0.5 * h_o2 - h_h2o) * 1000.0
+    delta_g0 = delta_h0 - T_k * (s_h2 + 0.5 * s_o2 - s_h2o)
+    return delta_g0 / (2.0 * FARADAY), delta_h0 / (2.0 * FARADAY) # E_rev_std, V_tn
+
+def calcular_nernst(e_rev_std, T_k, P_pa, y_h2o, y_h2, y_o2=1.0):
+    term_comp = math.log((max(y_h2, 1e-6) * math.sqrt(y_o2)) / max(y_h2o, 1e-6))
+    term_pres = 0.5 * math.log(P_pa / P_STD) # P_cat se cancela en y_H2/y_H2O
+    return e_rev_std + (R_GAS * T_k / (2.0 * FARADAY)) * (term_comp + term_pres)
+\end{lstlisting}
+
+        \textbf{2. Cinética Butler-Volmer, ASR y Erradicación del Recorte Numérico:}\\
+        Se eliminó el recorte artificial \texttt{if ratio >= 1.0: ratio = 0.999} que ocultaba el bloqueo por transporte de masa, penalizando rigurosamente diseños con $j \ge j_{\text{limit}}(T, y_{\text{H}_2\text{O}})$:
+\begin{lstlisting}
+def calcular_sobrepotenciales(j, T_k, y_h2o_medio):
+    # Activacion: Inversion analitica exacta de Butler-Volmer con math.asinh
+    j0_c = J0_C_REF * math.exp(-(E_ACT_C / R_GAS) * (1.0/T_k - 1.0/T_REF))
+    j0_a = J0_A_REF * math.exp(-(E_ACT_A / R_GAS) * (1.0/T_k - 1.0/T_REF))
+    vt = R_GAS * T_k / (0.5 * FARADAY)
+    eta_act = vt * (math.asinh(j / (2.0 * j0_c)) + math.asinh(j / (2.0 * j0_a)))
+    # Ohmico: Ley de Arrhenius para electrolito ceramico YSZ
+    asr = ASR_REF * math.exp((E_OHM / R_GAS) * (1.0/T_k - 1.0/T_REF))
+    eta_ohm = j * asr
+    # Concentracion: Limite difusivo dependiente de T y fraccion molar de vapor
+    j_lim = J_LIMIT_REF * ((T_k / T_REF)**1.5) * (max(y_h2o_medio, 1e-4) / 0.585)
+    if j >= j_lim:
+        return None, False # Rechaza disenos fisicamente inviables
+    eta_conc = -(R_GAS * T_k / (2.0 * FARADAY)) * math.log(1.0 - j / j_lim)
+    return (eta_act + eta_ohm + eta_conc), True
+\end{lstlisting}
+
+        \textbf{3. Interfaz API DWSIM (\texttt{ims1}/\texttt{oms1}/\texttt{oms2}) e Inyector XML:}\\
+        Acopla la Ley de Faraday con las corrientes del flowsheet en DWSIM v10:
+\begin{lstlisting}
+# Ley de Faraday para conversion objetivo de vapor (70.26%) en EL-201
+n_h2_prod = flujo_molar_h2o_in * TARGET_STEAM_CONVERSION
+i_celda = (n_h2_prod * 2.0 * FARADAY) / (ETA_FARADAY * N_TOTAL_CELLS)
+v_celda = e_nernst + eta_act + eta_ohm + eta_conc
+potencia_ac_kw = (v_celda * i_celda * N_TOTAL_CELLS / 1000.0) / ETA_INVERTER
+
+# Actualizacion directa de corrientes de salida en DWSIM (S-207 Catodo / S-206 Anodo)
+flujo_catodico.ClearAllProps()
+flujo_catodico.SetMolarFlow(n_h2_out + n_h2o_out)
+flujo_catodico.SetTemperature(T_out); flujo_catodico.SetPressure(P_in * 0.97)
+flujo_catodico.Calculate()
+\end{lstlisting}
+
+        \vspace{6pt}
+        \centering
+        \includegraphics[width=0.84\linewidth]{03_voltaje_polarizacion_desglose.png}\\[4pt]
+        {\large\textbf{Figura 1.} Curva de polarización $V-j$ y desglose de sobrepotenciales ($E_{\text{Nernst}}, \eta_{\text{act}}, \eta_{\text{ohm}}, \eta_{\text{conc}}$) frente al voltaje termoneutro $V_{\text{tn}}$.}
+    \end{posterbox}
+
+    \vspace{0.18cm}
+
+    % ÁREA 3
+    \begin{posterbox}[accentteal!85!black]{3. Cálculos por Equipo para Convergencia y Estado Óptimo}
+        \fontsize{14.8}{19}\selectfont
+        Para lograr convergencia numérica en DWSIM y minimizar el consumo energético de la planta, se resolvieron los modelos de diseño de cada equipo crítico:
+
+        \vspace{8pt}
+        \renewcommand{\arraystretch}{1.65}
+        \setlength{\tabcolsep}{6pt}
+        \begin{tabularx}{\linewidth}{>{\bfseries\color{primaryblue}}p{3.6cm} >{\raggedright\arraybackslash}p{6.0cm} X >{\raggedright\arraybackslash}p{5.8cm}}
+            \toprule
+            \rowcolor{primaryblue}
+            \textbf{\color{white}Equipo (Tag)} & \textbf{\color{white}Ecuación Gobernante} & \textbf{\color{white}Justificación de Convergencia} & \textbf{\color{white}Punto Óptimo Alcanzado} \\
+            \midrule
+            \texttt{EL-201}\newline Stacks SOEC & $I_{\text{cel}} = \frac{\dot{n}_{\text{H}_2}\cdot 2F}{\eta_F N_{\text{tot}}}$\newline $V_{\text{cel}} = E_{\text{N}} + \sum\eta_k$ & Operar a $800^\circ\text{C}$ abate el $ASR$ un $-47\%$ y evita el límite difusivo ($j \ll j_{\text{lim}}$). & \textbf{800 °C, 20 bar, 0.480 A/cm²}\newline 198,000 celdas ($200\text{ cm}^2$)\newline $V_{\text{cel}} = 1.1828\text{ V}$, \textbf{38.07 MW\textsubscript{AC}} \\
+            \rowcolor{tablerowgray}
+            \texttt{E-202}\newline Calentador Eléc. & $\dot{Q} = \dot{m}\int_{212.4}^{800} C_p\,dT$\newline $A = \dot{Q}/q''_{\text{máx}}$ ($2.8\text{ W/cm}^2$) & Eleva el vapor saturado de $212.4^\circ\text{C}$ a $800^\circ\text{C}$ ahorrando $6.03\text{ MW}$ en el SOEC. & $\dot{Q} = \mathbf{5,248.4\text{ kW}}$\newline $P_{\text{eléc}} = \mathbf{5,328.4\text{ kWe}}$\newline $A = \mathbf{187.4\text{ m}^2}$ (Incoloy 800H) \\
+            \texttt{R-401 / R-401-S}\newline Reactor Lurgi BWR & $N_{\text{tub}} = \frac{V_{\text{cat}}}{L(\pi d_i^2/4)}$\newline $\dot{m}_{\text{vap}} = \frac{|\dot{Q}_{\text{coraza}}|}{\lambda_{\text{vap}}(20\text{ bar})}$ & Remueve el calor exotérmico evitando \textit{hot-spots} ($<260^\circ\text{C}$) y genera el 100\% del vapor para SOEC. & \textbf{2,126 tubos} ($V_{\text{cat}} = 11.51\text{ m}^3$)\newline $\dot{Q} = \mathbf{-12,335.4\text{ kW}}$\newline \textbf{16,244.9 kg/h} vapor a $20\text{ bar}$ \\
+            \rowcolor{tablerowgray}
+            \texttt{C-301 / SPLIT-501}\newline Compresión y Bucle & $M = \frac{y_{\text{H}_2}-y_{\text{CO}_2}}{y_{\text{CO}}+y_{\text{CO}_2}} = 2.05$\newline $f_{\text{purga}} = 4.0\%$ & La purga del $4\%$ evita acumulación de $\text{CH}_4/\text{N}_2$ que divergía la presión del lazo a $>85\text{ bar}$. & Reciclo \textbf{96\%} / Purga \textbf{4\%}\newline \texttt{C-301}: \textbf{1,316.7 kWe}\newline \texttt{EXP-501}: \textbf{-437.8 kWe} (gen.) \\
+            \texttt{T-601}\newline Destilación AA & FUG + O'Connell:\newline $N_{\text{real}} = \frac{24}{0.70} = 34$ platos & Asegura convergencia del método \textit{Inside-Out} al 80\% de inundación de Fair. & \textbf{34 platos} ($D=1.2\text{ m}, H=20\text{ m}$)\newline $R/D = 1.50$, \textbf{99.89\% wt MeOH}\newline (\textbf{3,788.65 kg/h} = 30.3 kt/año) \\
+            \bottomrule
+        \end{tabularx}
+        \vspace{4pt}
+        {\large\textbf{Tabla 1.} Ecuaciones de dimensionamiento y condiciones óptimas para convergencia del proceso.}
+    \end{posterbox}
+
+    \vspace{0.25cm}
+
+    % RECUADRO DE CONCLUSIÓN (COLUMNA 1)
+    \begin{posterbox}[accentteal!90!black]{Conclusión: La Programación en la Ingeniería Química}
+        \fontsize{15}{19.5}\selectfont
+        \begin{tcolorbox}[
+            enhanced,
+            colback=primaryblue,
+            colframe=pyyellow,
+            boxrule=3pt,
+            arc=6pt,
+            top=48pt,
+            bottom=48pt,
+            left=22pt,
+            right=22pt
+        ]
+            \color{white}
+            {\color{pyyellow}\fontsize{25}{30}\selectfont\bfseries Adecuación de la Realidad Física a la Simulación Computacional:}\\[16pt]
+            {\fontsize{19}{27.5}\selectfont
+            La programación en Python amplía las capacidades del análisis de procesos al superar las restricciones de las bibliotecas comerciales de simulación.\\[14pt]
+            Cuando un equipo industrial (como las celdas de electrólisis SOEC de alta temperatura) \textbf{existe físicamente pero no se encuentra en las bases de datos de simuladores como DWSIM o BioSTEAM}, es posible modelarlo rigurosamente mediante primeros principios termodinámicos, electroquímicos y de transporte.\\[14pt]
+            Esta capacidad de \textbf{adecuar la realidad física a las herramientas de simulación} permite integrar balances de materia y energía no estándar, optimizar servicios auxiliares y formular \textbf{propuestas de diseño más sólidas, eficientes y técnicamente viables} en proyectos industriales.}
+        \end{tcolorbox}
+    \end{posterbox}
+
+\end{minipage}%
+\hfill
+% ------------------------------------------------------------------------------
+% COLUMNA 2 (DERECHA - 49.0%): ÁREAS 4, 5 (BIOSTEAM), 6 (DTI v1.0) Y 7
+% ------------------------------------------------------------------------------
+\begin{minipage}[t]{0.49\linewidth}
+    \vspace{0pt}
+
+    % ÁREA 4
+    \begin{posterbox}[primaryblue]{4. Análisis de Sensibilidad Multivariable (SOEC y Planta)}
+        \fontsize{14.8}{18.8}\selectfont
+        Se programó un estudio en tres niveles en \texttt{sensitivity.py}: sensibilidad univariada (\textbf{OAT}), Diseño de Experimentos por \textbf{Hipercubo Latino (LHS, 100 corridas: 93 factibles / 7 rechazadas por $j \ge j_{\text{lim}}$)} y \textbf{Método de Efectos Elementales de Morris} (15 trayectorias):
+
+        \vspace{8pt}
+        \renewcommand{\arraystretch}{1.36}
+        \setlength{\tabcolsep}{6pt}
+        \begin{tabularx}{\linewidth}{c l c c c c X}
+            \toprule
+            \rowcolor{primaryblue}
+            \textbf{\color{white}Rank} & \textbf{\color{white}Parámetro} & \textbf{\color{white}Rango} & \textbf{\color{white}$\mu^*$ ($SEC$)} & \textbf{\color{white}$\sigma$ (No lin.)} & \textbf{\color{white}Score} & \textbf{\color{white}Efecto Físico Dominante} \\
+            \midrule
+            \textbf{1°} & \textbf{Temperatura ($T$)} & $700-850^\circ\text{C}$ & \textbf{12.445} & \textbf{5.035} & \textbf{100.0} & Cae $ASR$ exponencialmente ($-13.8\%$ en $SEC_{\text{AC}}$). \\
+            \rowcolor{tablerowgray}
+            \textbf{2°} & \textbf{Densidad Corr. ($j$)} & $0.20-0.90\text{ A/cm}^2$ & \textbf{9.252} & \textbf{4.858} & \textbf{74.3} & Compromiso operacional entre OPEX eléctrico y área CAPEX. \\
+            \textbf{3°} & \textbf{ASR Ref. ($ASR_0$)} & $0.15-0.35\ \Omega\text{cm}^2$ & \textbf{1.854} & \textbf{1.021} & \textbf{14.9} & Define la pendiente óhmica de la celda cerámica. \\
+            \rowcolor{tablerowgray}
+            \textbf{4°} & \textbf{Presión ($P$)} & $1-30\text{ bar}$ & \textbf{0.942} & \textbf{0.219} & \textbf{7.6} & $+65\text{ mV}$ en Nernst, pero ahorra 2 etapas en \texttt{C-301}. \\
+            \textbf{5°} & \textbf{Conversión ($X$)} & $50-85\%$ & \textbf{0.608} & \textbf{0.171} & \textbf{4.9} & Si $X > 75\%$ se dispara $\eta_{\text{conc}}$ en salida catódica. \\
+            \rowcolor{tablerowgray}
+            \textbf{6°} & \textbf{Área Celda ($A_{\text{cel}}$)} & $100-250\text{ cm}^2$ & \textbf{0.009} & \textbf{0.013} & \textbf{0.1} & Efecto intensivo nulo a $j$ fija ($200\text{ cm}^2$ comercial). \\
+            \bottomrule
+        \end{tabularx}
+        \vspace{4pt}
+        {\large\textbf{Tabla 2.} Ranking global de sensibilidad por el Método de Morris sobre el consumo específico ($SEC_{\text{AC}}$).}
+
+        \vspace{6pt}
+        \begin{minipage}[c]{0.49\linewidth}
+            \centering
+            \includegraphics[height=11.4cm, width=0.95\linewidth, keepaspectratio]{09_heatmap_temperatura_densidad_corriente.png}\\
+            {\large\textbf{Figura 2.} Mapa de calor $T$ vs. $j$ para $SEC_{\text{AC}}$.}
+        \end{minipage}%
+        \hfill
+        \begin{minipage}[c]{0.49\linewidth}
+            \centering
+            \includegraphics[height=11.4cm, width=0.95\linewidth, keepaspectratio]{grafica_sensibilidad_purga.png}\\
+            {\large\textbf{Figura 3.} Sensibilidad de purga del bucle (óptimo 4\%).}
+        \end{minipage}
+    \end{posterbox}
+
+    \vspace{0.18cm}
+
+    % ÁREA 5: PROGRAMACIÓN DE UNIDADES NO NATIVAS EN BIOSTEAM
+    \begin{posterbox}[secondaryblue]{5. Programación en BioSTEAM: Creación de Unidades No Nativas (\texttt{bst.Unit})}
+        \fontsize{14.5}{18.5}\selectfont
+        \textbf{¿Cómo programar un equipo que NO existe en la biblioteca estándar de BioSTEAM?}\\
+        Aunque el paquete \textbf{BioSTEAM} cuenta con módulos para destilación, separadores flash y bombas, carece de celdas de electrólisis de alta temperatura (\textbf{SOEC}) y reactores catalíticos multitubulares enfriados por agua en ebullición (\textbf{Lurgi BWR}). Para modelarlos con total rigor físico, se aprovecha la arquitectura orientada a objetos (OOP) de Python mediante la \textbf{subclasificación de la clase abstracta \texttt{bst.Unit}}:
+
+        \vspace{6pt}
+        \begin{tcolorbox}[colback=tablerowgray, colframe=secondaryblue!50, boxrule=1.5pt, arc=4pt, top=6pt, bottom=6pt]
+            \fontsize{13.5}{17}\selectfont
+            \textbf{\color{primaryblue}Patrón Arquitectónico del Ciclo de Vida de \texttt{bst.Unit}:}
+            \begin{enumerate}[leftmargin=*, itemsep=2.5pt, topsep=2pt]
+                \item \textbf{Metadatos de Topología (\texttt{\_N\_ins}, \texttt{\_N\_outs}, \texttt{\_units}):} Declaran el número de puertos de entrada/salida y el diccionario de unidades para inspección en tiempo de ejecución.
+                \item \textbf{Balance de Materia y Energía (\texttt{\_run()}):} Resuelve el avance químico/electroquímico en estado estacionario. Lee corrientes de \texttt{self.ins}, calcula la termodinámica y actualiza en sitio los objetos \texttt{bst.Stream} en \texttt{self.outs} ($T, P, \text{fase}, \dot{n}_i$).
+                \item \textbf{Dimensionamiento Físico y Servicios (\texttt{\_design()}):} Calcula la geometría (área activa, celdas, tubos) y registra el consumo eléctrico en \texttt{self.power\_utility} y térmico en \texttt{self.add\_heat\_utility()}.
+            \end{enumerate}
+        \end{tcolorbox}
+
+        \vspace{4pt}
+        \textbf{Implementación Real del Electrolizador SOEC (\texttt{SOECElectrolyzer}):}
+\begin{lstlisting}[style=biosteamcode]
+import biosteam as bst
+
+class SOECElectrolyzer(bst.Unit):
+    """Subclase de bst.Unit para electrolisis SOEC de vapor a 800 C y 20 bar."""
+    _N_ins = 1   # [0]: Vapor de agua sobrecalentado (desde E-202)
+    _N_outs = 2  # [0]: Mezcla catodica (H2 + H2O), [1]: Oxigeno puro anodico
+    _units = {'Potencia AC': 'kW', 'Voltaje celda': 'V', 'Celdas': 'celdas'}
+
+    def __init__(self, ID='', ins=None, outs=(), thermo=None,
+                 T_op_k=1073.15, P_op_pa=2.0e6, j_op=0.480, X_steam=0.7026):
+        super().__init__(ID, ins, outs, thermo)
+        self.T_op = T_op_k; self.P_op = P_op_pa; self.j = j_op; self.X = X_steam
+
+    def _run(self):
+        feed = self.ins[0]; h2_mix, o2_pure = self.outs
+        n_h2 = feed.imol['Water'] * self.X  # Ley de Faraday
+        h2_mix.empty(); o2_pure.empty()
+        h2_mix.imol['Hydrogen'] = n_h2; h2_mix.imol['Water'] = feed.imol['Water'] - n_h2
+        h2_mix.T = o2_pure.T = self.T_op; h2_mix.P = o2_pure.P = self.P_op
+        h2_mix.phase = o2_pure.phase = 'g'; o2_pure.imol['Oxygen'] = 0.5 * n_h2
+
+    def _design(self):
+        D = self.design_results; feed = self.ins[0]
+        n_h2_s = (feed.imol['Water'] * self.X * 1000.0) / 3600.0
+        I_tot = (n_h2_s * 2.0 * FARADAY) / ETA_FARADAY
+        V_cel = calcular_voltaje_soec(self.j, self.T_op, self.P_op)
+        P_ac_kw = (V_cel * I_tot / 1000.0) / ETA_RECTIFICADOR
+        self.power_utility(P_ac_kw)  # Registro nativo en utilidades electricas
+        D['Potencia AC'] = P_ac_kw; D['Voltaje celda'] = V_cel
+        D['Celdas'] = int(math.ceil(I_tot / (self.j * AREA_CELDA_CM2)))
+\end{lstlisting}
+
+        \vspace{6pt}
+        \textbf{Aspectos Técnicos de Programación y Conexión en el Flowsheet:}
+        \begin{itemize}[leftmargin=*, itemsep=2.5pt, topsep=2pt]
+            \item \textbf{Herencia Transparente:} Al heredar de \texttt{bst.Unit}, la unidad se interconecta naturalmente con objetos \texttt{bst.Stream} y participa en los balances globales del flowsheet (\texttt{bst.Flowsheet}).
+            \item \textbf{Convergencia de Reciclos:} La actualización exacta de flujos y fases en \texttt{\_run()} permite que el solucionador de Wegstein resuelva los bucles cerrados de la planta sin bloqueos numéricos.
+            \item \textbf{Encapsulamiento y Trazabilidad:} Toda la física interna queda resuelta en los métodos de clase, dejando un diagrama de flujo limpio, modular y extensible.
+        \end{itemize}
+    \end{posterbox}
+
+    \vspace{0.18cm}
+
+    % ÁREA 6: DTI v1.0
+    \begin{posterbox}[secondaryblue]{6. Ingeniería Consolidada en el DTI v1.0 y Salvaguardas SIS}
+        \fontsize{14.5}{18.5}\selectfont
+        Los parámetros óptimos calculados en Python se congelaron en el \textbf{Diagrama de Tubería e Instrumentación (\texttt{DTI v1.0})}. A partir de la auditoría de 4 nodos en el estudio \textbf{HAZOP (IEC 61882)}, se diseñaron lazos de control avanzado (cascada estequiométrica \texttt{AIC-401 $\to$ FIC-401} para sostener $M=2.05$) y \textbf{4 Interlocks del Sistema Instrumentado de Seguridad (SIS)}:
+
+        \vspace{6pt}
+        \begin{minipage}[c]{0.45\linewidth}
+            \centering
+            \begin{tcolorbox}[colback=white, colframe=primaryblue!50, boxrule=1.5pt, arc=3pt, boxsep=2pt]
+                \includegraphics[height=11.2cm, width=\linewidth, keepaspectratio]{Solvanta_DTI_v1.pdf}
+            \end{tcolorbox}
+            {\large\textbf{Figura 4.} Plano P\&ID congelado (\texttt{Solvanta\_DTI\_v1.pdf}).}
+        \end{minipage}%
+        \hfill
+        \begin{minipage}[c]{0.53\linewidth}
+            \renewcommand{\arraystretch}{1.48}
+            \setlength{\tabcolsep}{5pt}
+            \fontsize{14}{17.5}\selectfont
+            \begin{tabularx}{\linewidth}{>{\bfseries\color{alertred}}c l X}
+                \toprule
+                \rowcolor{primaryblue}
+                \textbf{\color{white}SIS} & \textbf{\color{white}Disparo (2oo3)} & \textbf{\color{white}Acción Automática en DTI v1.0} \\
+                \midrule
+                I-01 & $T_{\text{R-401}} > 260^\circ\text{C}$\newline (\texttt{TSHH-401}) & Cierra \texttt{SDV-301} en $<2\text{ s}$ y abre reciclo frío anti-\textit{runaway}. \\
+                \rowcolor{tablerowgray}
+                I-02 & $P_{\text{bucle}} > 78.5\text{ bar}$\newline (\texttt{PSHH-501}) & Dispara \texttt{C-301/501}, abre \textit{anti-surge} y alivia en \texttt{PSV-501}. \\
+                I-03 & $|\Delta P_{\text{SOEC}}| > 0.4\text{ bar}$\newline (\texttt{PDAHH-201}) & Corta energía DC en $<50\text{ ms}$, abre \texttt{PDCV-201} e inunda con $\text{N}_2$. \\
+                \rowcolor{tablerowgray}
+                I-04 & Nivel \texttt{LALL-501}\newline en \texttt{V-501} & Cierra \texttt{SDV-501} en $<1\text{ s}$ evitando \textit{gas blow-by} a \texttt{V-601} (LP). \\
+                \bottomrule
+            \end{tabularx}
+            \vspace{4pt}
+            {\large\textbf{Tabla 3.} Matriz Causa-Efecto de Interlocks SIS en DTI v1.0.}
+        \end{minipage}
+    \end{posterbox}
+
+    \vspace{0.18cm}
+
+    % ÁREA 7: RESULTADOS FINALES
+    \begin{posterbox}[primaryblue]{7. Resultados Globales de Optimización (Escenario D Óptimo)}
+        \fontsize{14.5}{18.5}\selectfont
+        El optimizador multiobjetivo evaluó 4 escenarios técnico-económicos, seleccionando el \textbf{Escenario D} ($800^\circ\text{C}$, $20\text{ bar}$, $0.480\text{ A/cm}^2$) al minimizar simultáneamente el consumo eléctrico y el costo nivelado de hidrógeno ($LCOH$):
+
+        \vspace{8pt}
+        \renewcommand{\arraystretch}{1.42}
+        \setlength{\tabcolsep}{5pt}
+        \begin{tabularx}{\linewidth}{X c c c >{\columncolor{successbg}\bfseries}c >{\bfseries\color{successgreen!80!black}}c}
+            \toprule
+            \rowcolor{primaryblue}
+            \textbf{\color{white}Indicador Técnico-Económico} & \textbf{\color{white}Esc. A (Base)} & \textbf{\color{white}Esc. B (Mín SEC)} & \textbf{\color{white}Esc. C (Ind.)} & \textbf{\color{white}Esc. D (Óptimo)} & \textbf{\color{white}$\Delta$ (D vs. A)} \\
+            \midrule
+            Temperatura / Presión & $750^\circ\text{C} / 20\text{ bar}$ & $825^\circ\text{C} / 20\text{ bar}$ & $780^\circ\text{C} / 20\text{ bar}$ & 800 °C / 20 bar & $+50^\circ\text{C}$ \\
+            \rowcolor{tablerowgray}
+            Densidad de Corriente ($j$) & $0.508\text{ A/cm}^2$ & $0.300\text{ A/cm}^2$ & $0.449\text{ A/cm}^2$ & 0.480 A/cm² & $-5.5\%$ \\
+            Celdas Totales ($A_{\text{celda}}$) & $249,600$ ($150$) & $281,750$ ($225$) & $211,500$ ($200$) & 198,000 (200 cm²) & $-20.7\%$ celdas \\
+            \rowcolor{tablerowgray}
+            Voltaje de Celda ($V_{\text{celda}}$) & $1.3630\text{ V}$ & $1.0790\text{ V}$ & $1.2139\text{ V}$ & 1.1828 V & $-13.2\%$ \\
+            Consumo Específico ($SEC_{\text{AC}}$) & $38.13\text{ kWh/kg}$ & $30.03\text{ kWh/kg}$ & $33.96\text{ kWh/kg}$ & 32.92 kWh/kg H\textsubscript{2} & $-13.66\%$ \\
+            \rowcolor{tablerowgray}
+            \textbf{Potencia AC SOEC \texttt{EL-201} ($1,315\text{ kg/h}$)} & $44.10\text{ MW}$ & $34.73\text{ MW}$ & $39.27\text{ MW}$ & 38.07 MW\textsubscript{AC} (36.74 DC) & $-6.03\text{ MW}$ ($-13.7\%$) \\
+            \textbf{Potencia Neta (\texttt{EL-201} + \texttt{E-202})} & $48.90\text{ MW}$ & $40.21\text{ MW}$ & $44.31\text{ MW}$ & 43.32 MW\textsubscript{AC} & $-5.58\text{ MW}$ ($-11.4\%$) \\
+            \rowcolor{tablerowgray}
+            \textbf{Costo Nivelado $LCOH$ / $LCOM$} & $\$3.55/\text{kg}$ & $\$3.42/\text{kg}$ & $\$3.36/\text{kg}$ & \$3.18 /kg (\$657.2/t) & $-10.4\%$ ($-\$75.3/\text{t}$) \\
+            \bottomrule
+        \end{tabularx}
+        \vspace{4pt}
+        {\large\textbf{Tabla 4.} Comparativa integral de los 4 escenarios de diseño en escala de planta completa DWSIM ($30,000\text{ t/año}$ e-Metanol).}
+
+        \vspace{8pt}
+        \renewcommand{\arraystretch}{1.34}
+        \setlength{\tabcolsep}{5pt}
+        \begin{tabularx}{\linewidth}{l c c X}
+            \toprule
+            \rowcolor{secondaryblue}
+            \textbf{\color{white}Componente de Potencial (Escenario D)} & \textbf{\color{white}Voltaje (V)} & \textbf{\color{white}Fracción} & \textbf{\color{white}Interpretación Física a $800^\circ\text{C}$ y $0.480\text{ A/cm}^2$} \\
+            \midrule
+            Potencial Reversible de Nernst ($E_{\text{Nernst}}$) & $1.0056\text{ V}$ & $85.02\%$ & Termodinámica NIST Shomate ($E^\circ_{\text{rev}} = 0.951\text{ V}$) a $20\text{ bar}$. \\
+            \rowcolor{tablerowgray}
+            Sobrepotencial de Activación ($\eta_{\text{act,c}} + \eta_{\text{act,a}}$) & $0.1119\text{ V}$ & $9.46\%$ & Cátodo Ni-YSZ ($0.0475\text{ V}$) + Ánodo LSCF ($0.0644\text{ V}$). \\
+            Sobrepotencial Óhmico ($\eta_{\text{ohm}} = j\cdot ASR$) & $0.0557\text{ V}$ & $4.71\%$ & $ASR(800^\circ\text{C}) = 0.1161\ \Omega\cdot\text{cm}^2$ ($-47.2\%$ vs. $750^\circ\text{C}$). \\
+            \rowcolor{tablerowgray}
+            Sobrepotencial de Concentración ($\eta_{\text{conc}}$) & $0.0096\text{ V}$ & $0.81\%$ & Opera al $18.8\%$ de $j_{\text{lim}} = 2.551\text{ A/cm}^2$ (sin riesgo difusivo). \\
+            \textbf{Voltaje Total por Celda ($V_{\text{celda}} < V_{\text{tn}} = 1.287\text{ V}$)} & \textbf{1.1828 V} & \textbf{100.0\%} & \textbf{Régimen endotérmico acoplado al vapor de \texttt{R-401-S}.} \\
+            \bottomrule
+        \end{tabularx}
+        \vspace{4pt}
+        {\large\textbf{Tabla 5.} Desglose de potenciales de celda en el punto óptimo de operación.}
+
+        \vspace{6pt}
+        \begin{minipage}[c]{0.49\linewidth}
+            \centering
+            \includegraphics[height=11.2cm, width=0.95\linewidth, keepaspectratio]{11_comparacion_cuatro_escenarios.png}\\
+            {\large\textbf{Figura 5.} Comparación de los 4 escenarios SOEC.}
+        \end{minipage}%
+        \hfill
+        \begin{minipage}[c]{0.49\linewidth}
+            \centering
+            \includegraphics[height=11.2cm, width=0.95\linewidth, keepaspectratio]{12_pareto_sec_vs_lcoh_superficie.png}\\
+            {\large\textbf{Figura 6.} Frente de Pareto $SEC_{\text{AC}}$ vs. $LCOH$ y área.}
+        \end{minipage}
+    \end{posterbox}
+
+\end{minipage}
+
+\vspace{0.25cm}
+
+% ==============================================================================
+% PIE DE PÁGINA (REFERENCIAS BIBLIOGRÁFICAS)
+% ==============================================================================
+\begin{tcolorbox}[
+    enhanced,
+    colback=primaryblue,
+    colframe=pyyellow,
+    boxrule=3.5pt,
+    arc=8pt,
+    top=16pt,
+    bottom=16pt,
+    left=22pt,
+    right=22pt
+]
+    {\color{pyyellow}\fontsize{19}{24}\selectfont\bfseries REFERENCIAS BIBLIOGRÁFICAS}\\[8pt]
+    \fontsize{13.5}{17.2}\selectfont\color{white}
+    \begin{minipage}[t]{0.495\linewidth}
+        \hangindent=18pt \hangafter=1
+        1. Chase, M. W. (1998). \textit{NIST-JANAF thermochemical tables} (4th ed.). American Institute of Physics for National Institute of Standards and Technology.\\[6pt]
+        \hangindent=18pt \hangafter=1
+        2. Cortés-Peña, Y., Kumar, D., Astudillo, C., \& Guest, J. S. (2020). BioSTEAM: A fast and flexible platform for the design, simulation, and techno-economic analysis of biorefineries. \textit{ACS Sustainable Chemistry \& Engineering}, 8(8), 3302--3310. https://doi.org/10.1021/acssuschemeng.9b07040\\[6pt]
+        \hangindent=18pt \hangafter=1
+        3. Ergun, S. (1952). Fluid flow through packed columns. \textit{Chemical Engineering Progress}, 48(2), 89--94.\\[6pt]
+        \hangindent=18pt \hangafter=1
+        4. Medeiros, D. L. (2024). \textit{DWSIM: Chemical process simulator} (Version 10.0) [Software]. DWSIM Software. https://dwsim.org\\[6pt]
+        \hangindent=18pt \hangafter=1
+        5. Prosser, J. P., James, R., Murphy, F., \& Casteel, R. (2024). Techno-economic analysis of solid oxide electrolysis systems for gigawatt-scale hydrogen production. \textit{International Journal of Hydrogen Energy}, 50, 680--692. https://doi.org/10.1016/j.ijhydene.2023.07.084
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.495\linewidth}
+        \hangindent=18pt \hangafter=1
+        6. Turton, R., Bailie, R. C., Whiting, W. B., Shaeiwitz, J. A., \& Bhattacharyya, D. (2018). \textit{Analysis, synthesis, and design of chemical processes} (5th ed.). Prentice Hall.\\[6pt]
+        \hangindent=18pt \hangafter=1
+        7. U.S. Department of Energy. (2024). \textit{Record 24005: Clean hydrogen production cost scenarios and technology benchmarks}. Fuel Cell Technologies Office.\\[6pt]
+        \hangindent=18pt \hangafter=1
+        8. Van Rossum, G., \& Drake, F. L. (2009). \textit{Python 3 reference manual}. CreateSpace. https://www.python.org\\[6pt]
+        \hangindent=18pt \hangafter=1
+        9. Vanden Bussche, K. M., \& Froment, G. F. (1996). A steady-state kinetic model for synthesis of methanol from $\text{CO}$ and $\text{CO}_2$ over a $\text{Cu/ZnO/Al}_2\text{O}_3$ catalyst. \textit{Journal of Catalysis}, 161(1), 1--10. https://doi.org/10.1006/jcat.1996.0156\\[6pt]
+        \hangindent=18pt \hangafter=1
+        10. Virtanen, P., Gommers, R., Oliphant, T. E., Haberland, M., Reddy, T., Cournapeau, D., ... \& SciPy 1.0 Contributors. (2020). SciPy 1.0: Fundamental algorithms for scientific computing in Python. \textit{Nature Methods}, 17(3), 261--272. https://doi.org/10.1038/s41592-019-0686-2
+    \end{minipage}
+\end{tcolorbox}
+
+\end{document}

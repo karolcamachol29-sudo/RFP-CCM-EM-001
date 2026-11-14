@@ -1,0 +1,75 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="484pt" height="118pt" viewBox="0.00 0.00 484.00 117.55">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 113.55)">
+<ns0:title>%3</ns0:title>
+<ns0:polygon fill="white" stroke="transparent" points="-4,4 -4,-113.55 480,-113.55 480,4 -4,4" />
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>7702310501654:c-&gt;7702308260904:w</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-width="2.2" d="M341.65,-66.06C379.7,-73.75 425.06,-80.55 466.5,-80.55" />
+<ns0:g id="a_edge2-label"><ns0:a ns1:title="Temperature: 518.15 K&#10;Pressure: 7.49082e+06 Pa&#10;Gas flow: 1.62e+03 kmol/hr">
+<ns0:text text-anchor="middle" x="412.5" y="-98.35" font-family="Arial" font-size="14.00"> S402 Efluente</ns0:text>
+<ns0:text text-anchor="middle" x="412.5" y="-83.35" font-family="Arial" font-size="14.00"> Reactor</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge4" class="edge">
+<ns0:title>7702310501654:c-&gt;7702308260916:w</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" d="M305.81,-22.99C324.94,-15.95 347.12,-9.05 368,-5.55 407.01,0.99 418.23,2.28 457,-5.55 461.49,-6.46 461.92,-9.55 466.5,-9.55" />
+<ns0:g id="a_edge4-label"><ns0:a ns1:title="Temperature: 485.55 K&#10;Pressure: 2e+06 Pa&#10;Gas flow: 198 kmol/hr">
+<ns0:text text-anchor="middle" x="412.5" y="-24.35" font-family="Arial" font-size="14.00"> S204 Vapor</ns0:text>
+<ns0:text text-anchor="middle" x="412.5" y="-9.35" font-family="Arial" font-size="14.00"> Generado</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>7702308260880:e-&gt;7702310501654:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-width="2.2" d="M11,-72.55C56.04,-72.55 105.49,-67.7 147.88,-62.04" />
+<ns0:g id="a_edge1-label"><ns0:a ns1:title="Temperature: 518.15 K&#10;Pressure: 7.5e+06 Pa&#10;Gas flow: 1.86e+03 kmol/hr">
+<ns0:text text-anchor="middle" x="79.5" y="-90.35" font-family="Arial" font-size="14.00"> S401 Syngas</ns0:text>
+<ns0:text text-anchor="middle" x="79.5" y="-75.35" font-family="Arial" font-size="14.00"> Reactor</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge3" class="edge">
+<ns0:title>7702308260892:e-&gt;7702310501654:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" d="M11,-16.55C56.04,-16.55 105.49,-21.4 147.88,-27.06" />
+<ns0:g id="a_edge3-label"><ns0:a ns1:title="Temperature: 485.55 K&#10;Pressure: 2e+06 Pa&#10;Liquid flow: 198 kmol/hr">
+<ns0:text text-anchor="middle" x="79.5" y="-29.35" font-family="Arial" font-size="14.00"> S203 Agua Caldera</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node1" class="node">
+<ns0:title>7702310501654</ns0:title>
+<ns0:g id="a_node1"><ns0:a ns1:title="Purchase cost: 695,726 USD&#10;Installed equipment cost: 4,189,888 USD">
+<ns0:polygon fill="#555f69" stroke="transparent" points="360,-66.05 148,-66.05 148,-23.05 360,-23.05 360,-66.05" />
+<ns0:text text-anchor="middle" x="254" y="-48.35" font-family="Arial" font-size="14.00" fill="white">R401</ns0:text>
+<ns0:text text-anchor="middle" x="254" y="-33.35" font-family="Arial" font-size="14.00" fill="white">Multitubular boiling water reactor</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>7702308260880</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="5.5,-78.05 0,-72.55 5.5,-67.05 11,-72.55 5.5,-78.05" />
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>7702308260904</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="476,-80.55 467.75,-87.55 467.75,-73.55 476,-80.55" />
+</ns0:g>
+
+<ns0:g id="node4" class="node">
+<ns0:title>7702308260892</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="5.5,-22.05 0,-16.55 5.5,-11.05 11,-16.55 5.5,-22.05" />
+</ns0:g>
+
+<ns0:g id="node5" class="node">
+<ns0:title>7702308260916</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="476,-9.55 467.75,-16.55 467.75,-2.55 476,-9.55" />
+</ns0:g>
+</ns0:g>
+</ns0:svg>

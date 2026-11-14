@@ -1,0 +1,149 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,top=1.8cm,bottom=1.8cm,left=1.5cm,right=1.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{xltabular}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{caption}
+\captionsetup[table]{name=Cuadro,labelfont=bf,textfont=bf,skip=4pt}
+
+\definecolor{navyblue}{RGB}{26, 79, 124}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small\color{navyblue}\textbf{Solvanta Engineering Solutions} | DPyPQ}
+\rhead{\small Documento Oficial TC-01 -- Tablas de Corrientes de Materia}
+\cfoot{\small Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+
+\begin{center}
+{\large \textbf{SOLVANTA ENGINEERING SOLUTIONS S.A. DE C.V.}}\\[0.15cm]
+{\Large \textbf{\color{navyblue} DOCUMENTO TC-01: TABLAS DE CORRIENTES DE MATERIA ESTANDARIZADAS}}\\[0.1cm]
+{\small Planta de Producción de e-Metanol ($30\,000\text{ t/año}$) | Caso Base Definitivo DWSIM v1 ($513.0\text{ kmol/h }\text{H}_2\text{O}$ / $121.0\text{ kmol/h }\text{CO}_2$)}
+\end{center}
+
+\vspace{0.1cm}
+\noindent\textbf{Notas Generales de Ingeniería:}
+\begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \item Los datos han sido extraídos de forma directa y rigurosa de la simulación convergida en \texttt{DWSIM v10.2.4} con paquete \textbf{PRSV2-VL}.
+    \item La planta opera $8\,000\text{ h/año}$ en régimen continuo, con una entrega en báscula de $\mathbf{3\,788.65\text{ kg/h}}$ ($\mathbf{30\,309.20\text{ t/año}}$) de e-metanol con pureza comercial de $\mathbf{99.807\%\text{ mol}}$ ($\mathbf{99.891\%\text{ masa}}$), superando la meta de la licitación RFP-CCM-EM-001.
+\end{itemize}
+
+\vspace{0.2cm}
+\begin{xltabular}{\textwidth}{l >{\raggedright\arraybackslash}X c r r r r c}
+\caption{\textbf{TC-01A. Tabla maestra de corrientes de materia del proceso Solvanta (Valores exactos simulador DWSIM v1).}} \label{tab:tc01a} \\
+\toprule
+\textbf{ID} & \textbf{Descripción de Tubería / Proceso} & \textbf{Fase} & \textbf{T ($^\circ$C)} & \textbf{P (bar)} & \textbf{$\dot{m}$ (kg/h)} & \textbf{$\dot{n}$ (kmol/h)} & \textbf{Frac. Vap.} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{ID} & \textbf{Descripción de Tubería / Proceso} & \textbf{Fase} & \textbf{T ($^\circ$C)} & \textbf{P (bar)} & \textbf{$\dot{m}$ (kg/h)} & \textbf{$\dot{n}$ (kmol/h)} & \textbf{Frac. Vap.} \\
+\midrule
+\endhead
+\bottomrule
+\multicolumn{8}{r}{\footnotesize\textit{Continúa en la siguiente página\dots}} \\
+\endfoot
+\bottomrule
+\endlastfoot
+\texttt{S-101} & Alim. $\text{CO}_2$ captura externa & Vapor & 25.0 & 20.00 & 5\,274.34 & 121.000 & 1.00 \\
+\texttt{S-201} & Agua make-up fresca de red & Líquido & 25.0 & 20.00 & 9\,241.84 & 513.000 & 0.00 \\
+\texttt{S-202} & Retorno agua tratada ZLD & Líquido & 59.2 & 20.00 & 7\,003.86 & 388.768 & 0.00 \\
+\texttt{S-203} & Agua combinada a caldera & Líquido & 39.8 & 20.00 & 16\,244.88 & 901.722 & 0.00 \\
+\texttt{S-204} & Vapor saturado $20\text{ bar}$ & Vapor & 220.0 & 20.00 & 16\,244.88 & 901.722 & 1.00 \\
+\texttt{S-205} & Vapor sobrecalentado $800^\circ\text{C}$ a SOEC & Vapor & 800.0 & 20.00 & 16\,244.88 & 901.722 & 1.00 \\
+\texttt{S-206} & Oxígeno puro SOEC & Vapor & 31.0 & 19.40 & 10\,098.76 & 315.598 & 1.00 \\
+\texttt{S-207} & Efluente húmedo SOEC & Vapor & 800.0 & 19.40 & 6\,145.79 & 901.712 & 1.00 \\
+\texttt{S-208} & Efluente SOEC enfriado & Bifásica & 38.0 & 19.40 & 6\,145.79 & 901.712 & 0.70 \\
+\texttt{S-209} & Hidrógeno verde puro seco & Vapor & 38.0 & 19.40 & 1\,314.77 & 633.548 & 1.00 \\
+\texttt{S-210} & Condensado SOEC no disoc. & Líquido & 38.0 & 19.40 & 4\,831.02 & 268.165 & 0.00 \\
+\texttt{S-301} & Syngas fresco combinado & Vapor & 32.9 & 19.40 & 6\,589.11 & 754.548 & 1.00 \\
+\texttt{S-302} & Syngas precalentado a succión & Vapor & 71.7 & 19.40 & 6\,589.11 & 754.548 & 1.00 \\
+\texttt{S-303} & Syngas comprimido $75\text{ bar}$ & Vapor & 271.0 & 75.00 & 6\,589.11 & 754.548 & 1.00 \\
+\texttt{S-401} & Alim. total a reactor \texttt{R-401} & Vapor & 83.2 & 75.00 & 21\,308.08 & 7\,387.096 & 1.00 \\
+\texttt{S-402} & Efluente síntesis metanol & Vapor & 245.0 & 75.00 & 21\,308.08 & 7\,149.098 & 1.00 \\
+\texttt{S-402\_LIQ} & Líquido condensado reactor & Líquido & 245.0 & 75.00 & --- & --- & 0.00 \\
+\texttt{S-403} & Efluente economizado & Vapor & 224.6 & 75.00 & 21\,308.08 & 7\,149.098 & 1.00 \\
+\texttt{S-404} & Efluente condensado bifásico & Bifásica & 38.0 & 75.00 & 21\,308.08 & 7\,149.098 & 0.97 \\
+\texttt{S-501} & Gas domo flash HP & Vapor & 38.0 & 75.00 & 15\,339.75 & 6\,909.568 & 1.00 \\
+\texttt{S-502} & Gas reciclo sobrecalentado & Vapor & 60.0 & 75.00 & 15\,339.75 & 6\,909.568 & 1.00 \\
+\texttt{S-503} & Gas de reciclo $96\%$ & Vapor & 60.0 & 75.00 & 14\,726.16 & 6\,633.185 & 1.00 \\
+\texttt{S-504} & Reciclo presurizado retorno & Vapor & 60.0 & 75.00 & 14\,723.29 & 6\,634.492 & 1.00 \\
+\texttt{S-504\_OUT} & Reciclo impulsado soplador & Vapor & 60.0 & 75.00 & 14\,726.16 & 6\,633.185 & 1.00 \\
+\texttt{S-505} & Gas purga continua $4\%$ & Vapor & 60.0 & 75.00 & 613.59 & 276.383 & 1.00 \\
+\texttt{S-506} & Purga venteo expandida & Bifásica & -138.6 & 1.10 & 613.59 & 276.383 & 1.00 \\
+\texttt{S-507} & Metanol crudo líquido HP & Líquido & 38.0 & 75.00 & 5\,968.39 & 239.530 & 0.00 \\
+\texttt{S-601} & Venteo gases ligeros LP & Bifásica & 38.0 & 75.00 & 6.57 & 0.556 & 0.91 \\
+\texttt{S-602} & Metanol crudo a destilación & Líquido & 38.0 & 75.00 & 5\,961.82 & 238.975 & 0.00 \\
+\texttt{S-603} & Destilado vapor domo torre & Líquido & 68.5 & 1.20 & 3\,788.65 & 118.341 & 0.00 \\
+\textbf{\texttt{S-604}} & \textbf{e-Metanol Grado AA Comercial} & Líquido & 35.0 & 1.10 & \textbf{3\,788.65} & \textbf{118.341} & 0.00 \\
+\texttt{S-605} & Agua residual fondos torre & Líquido & 103.9 & 1.25 & 2\,173.40 & 120.634 & 0.00 \\
+\texttt{S-801} & Agua residual combinada ZLD & Líquido & 58.9 & 1.25 & 7\,004.41 & 388.798 & 0.00 \\
+\texttt{S-802} & Agua clarificada ZLD & Líquido & 58.9 & 1.25 & 7\,004.41 & 388.798 & 0.00 \\
+\texttt{S-803} & Agua impulsada retorno ZLD & Líquido & 59.2 & 20.00 & 7\,004.41 & 388.798 & 0.00 \\
+\texttt{S-804} & Purga lodos salinos ZLD & Líquido & 58.9 & 1.25 & --- & --- & 0.00 \\
+\end{xltabular}
+
+\clearpage
+\begin{xltabular}{\textwidth}{l *{7}{>{\centering\arraybackslash}X}}
+\caption{\textbf{TC-01B. Composición química detallada por corriente (Fracciones molares exactas $x_i$ DWSIM v1).}} \label{tab:tc01b} \\
+\toprule
+\textbf{ID Corriente} & \textbf{$x_{\text{CO}_2}$} & \textbf{$x_{\text{CO}}$} & \textbf{$x_{\text{H}_2}$} & \textbf{$x_{\text{H}_2\text{O}}$} & \textbf{$x_{\text{MeOH}}$} & \textbf{$x_{\text{O}_2}$} & \textbf{$\sum x_i$} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{ID Corriente} & \textbf{$x_{\text{CO}_2}$} & \textbf{$x_{\text{CO}}$} & \textbf{$x_{\text{H}_2}$} & \textbf{$x_{\text{H}_2\text{O}}$} & \textbf{$x_{\text{MeOH}}$} & \textbf{$x_{\text{O}_2}$} & \textbf{$\sum x_i$} \\
+\midrule
+\endhead
+\bottomrule
+\multicolumn{8}{r}{\footnotesize\textit{Continúa en la siguiente página\dots}} \\
+\endfoot
+\bottomrule
+\endlastfoot
+\texttt{S-101} & 0.9900 & 0.0000 & 0.0100 & 0.0000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-201} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-202} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-203} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-204} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-205} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-206} & 0.0000 & 0.0000 & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 1.0000 \\
+\texttt{S-207} & 0.0000 & 0.0000 & 0.7000 & 0.3000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-208} & 0.0000 & 0.0000 & 0.7000 & 0.3000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-209} & 0.0000 & 0.0000 & 0.9963 & 0.0037 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-210} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-301} & 0.1588 & 0.0000 & 0.8381 & 0.0031 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-302} & 0.1588 & 0.0000 & 0.8381 & 0.0031 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-303} & 0.1588 & 0.0000 & 0.8381 & 0.0031 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-401} & 0.0183 & 0.0000 & 0.9776 & 0.0016 & 0.0025 & 0.0000 & 1.0000 \\
+\texttt{S-402} & 0.0023 & 0.0000 & 0.9603 & 0.0183 & 0.0192 & 0.0000 & 1.0000 \\
+\texttt{S-402\_LIQ} & 0.0000 & 0.0000 & 0.0000 & 0.0000 & 0.0000 & 0.0000 & 0.0000 \\
+\texttt{S-403} & 0.0023 & 0.0000 & 0.9603 & 0.0183 & 0.0192 & 0.0000 & 1.0000 \\
+\texttt{S-404} & 0.0023 & 0.0000 & 0.9603 & 0.0183 & 0.0192 & 0.0000 & 1.0000 \\
+\texttt{S-501} & 0.0023 & 0.0000 & 0.9935 & 0.0014 & 0.0028 & 0.0000 & 1.0000 \\
+\texttt{S-502} & 0.0023 & 0.0000 & 0.9935 & 0.0014 & 0.0028 & 0.0000 & 1.0000 \\
+\texttt{S-503} & 0.0023 & 0.0000 & 0.9935 & 0.0014 & 0.0028 & 0.0000 & 1.0000 \\
+\texttt{S-504} & 0.0023 & 0.0000 & 0.9935 & 0.0014 & 0.0028 & 0.0000 & 1.0000 \\
+\texttt{S-504\_OUT} & 0.0023 & 0.0000 & 0.9935 & 0.0014 & 0.0028 & 0.0000 & 1.0000 \\
+\texttt{S-505} & 0.0023 & 0.0000 & 0.9935 & 0.0014 & 0.0028 & 0.0000 & 1.0000 \\
+\texttt{S-506} & 0.0023 & 0.0000 & 0.9935 & 0.0014 & 0.0028 & 0.0000 & 1.0000 \\
+\texttt{S-507} & 0.0004 & 0.0000 & 0.0017 & 0.5046 & 0.4933 & 0.0000 & 1.0000 \\
+\texttt{S-601} & 0.1729 & 0.0000 & 0.7420 & 0.0000 & 0.0850 & 0.0000 & 1.0000 \\
+\texttt{S-602} & 0.0000 & 0.0000 & 0.0000 & 0.5058 & 0.4942 & 0.0000 & 1.0000 \\
+\texttt{S-603} & 0.0000 & 0.0000 & 0.0000 & 0.0019 & 0.9981 & 0.0000 & 1.0000 \\
+\textbf{\texttt{S-604}} & 0.0000 & 0.0000 & 0.0000 & 0.0019 & \textbf{0.9981} & 0.0000 & \textbf{1.0000} \\
+\texttt{S-605} & 0.0000 & 0.0000 & 0.0000 & 0.9999 & 0.0001 & 0.0000 & 1.0000 \\
+\texttt{S-801} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-802} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-803} & 0.0000 & 0.0000 & 0.0000 & 1.0000 & 0.0000 & 0.0000 & 1.0000 \\
+\texttt{S-804} & 0.0000 & 0.0000 & 0.0180 & 0.9819 & 0.0001 & 0.0000 & 1.0000 \\
+\end{xltabular}
+
+\end{document}

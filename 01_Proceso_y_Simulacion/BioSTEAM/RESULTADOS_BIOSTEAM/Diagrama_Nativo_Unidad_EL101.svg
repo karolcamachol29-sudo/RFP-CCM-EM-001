@@ -1,0 +1,61 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="346pt" height="118pt" viewBox="0.00 0.00 346.00 118.46">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 114.46)">
+<ns0:title>%3</ns0:title>
+<ns0:polygon fill="white" stroke="transparent" points="-4,4 -4,-114.46 342,-114.46 342,4 -4,4" />
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>7702310501591:c-&gt;7702315613224:w</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" d="M228.18,-65.88C258.16,-74.01 294.84,-81.46 328.5,-81.46" />
+<ns0:g id="a_edge2-label"><ns0:a ns1:title="Temperature: 1073.2 K&#10;Pressure: 1.94e+06 Pa&#10;Gas flow: 902 kmol/hr">
+<ns0:text text-anchor="middle" x="277.5" y="-99.26" font-family="Arial" font-size="14.00"> S207 Catodo</ns0:text>
+<ns0:text text-anchor="middle" x="277.5" y="-84.26" font-family="Arial" font-size="14.00"> H2 H2O</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge3" class="edge">
+<ns0:title>7702310501591:c-&gt;7702310537964:w</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-width="1.6" d="M196.95,-23.77C208.64,-16.81 222.4,-10 236,-6.46 271.7,2.81 282.84,0.84 319,-6.46 323.49,-7.37 323.92,-10.46 328.5,-10.46" />
+<ns0:g id="a_edge3-label"><ns0:a ns1:title="Temperature: 1073.2 K&#10;Pressure: 1.94e+06 Pa&#10;Gas flow: 316 kmol/hr">
+<ns0:text text-anchor="middle" x="277.5" y="-25.26" font-family="Arial" font-size="14.00"> S206 Anodo</ns0:text>
+<ns0:text text-anchor="middle" x="277.5" y="-10.26" font-family="Arial" font-size="14.00"> O2</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>7702316233524:e-&gt;7702310501591:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" stroke-width="2.2" d="M11,-45.46C40.88,-45.46 74.05,-45.46 101.84,-45.46" />
+<ns0:g id="a_edge1-label"><ns0:a ns1:title="Temperature: 1073.2 K&#10;Pressure: 2e+06 Pa&#10;Gas flow: 902 kmol/hr">
+<ns0:text text-anchor="middle" x="56.5" y="-64.26" font-family="Arial" font-size="14.00"> S205 Vapor</ns0:text>
+<ns0:text text-anchor="middle" x="56.5" y="-49.26" font-family="Arial" font-size="14.00"> 800C</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node1" class="node">
+<ns0:title>7702310501591</ns0:title>
+<ns0:g id="a_node1"><ns0:a ns1:title="Electricity consumption: 4.26e+04 kW&#10;Utility cost: 1.71e+03 USD/hr&#10;Purchase cost: 23,279,181 USD&#10;Installed equipment cost: 31,394,909 USD">
+<ns0:polygon fill="#555f69" stroke="transparent" points="228,-66.96 102,-66.96 102,-23.96 228,-23.96 228,-66.96" />
+<ns0:text text-anchor="middle" x="165" y="-49.26" font-family="Arial" font-size="14.00" fill="white">EL101</ns0:text>
+<ns0:text text-anchor="middle" x="165" y="-34.26" font-family="Arial" font-size="14.00" fill="white">SOECElectrolyzer</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>7702316233524</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="5.5,-50.96 0,-45.46 5.5,-39.96 11,-45.46 5.5,-50.96" />
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>7702315613224</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="338,-81.46 329.75,-88.46 329.75,-74.46 338,-81.46" />
+</ns0:g>
+
+<ns0:g id="node4" class="node">
+<ns0:title>7702310537964</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="338,-10.46 329.75,-17.46 329.75,-3.46 338,-10.46" />
+</ns0:g>
+</ns0:g>
+</ns0:svg>

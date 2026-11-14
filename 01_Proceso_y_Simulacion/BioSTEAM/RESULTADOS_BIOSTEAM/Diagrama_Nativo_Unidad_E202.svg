@@ -1,0 +1,46 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.w3.org/1999/xlink" width="366pt" height="60pt" viewBox="0.00 0.00 366.00 59.50">
+<ns0:g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 55.5)">
+<ns0:title>%3</ns0:title>
+<ns0:polygon fill="white" stroke="transparent" points="-4,4 -4,-55.5 362,-55.5 362,4 -4,4" />
+
+<ns0:g id="edge2" class="edge">
+<ns0:title>7702310501675:c-&gt;7702315613236:w</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" d="M256.33,-21.5C285.21,-21.5 318.37,-21.5 348.5,-21.5" />
+<ns0:g id="a_edge2-label"><ns0:a ns1:title="Temperature: 1073.2 K&#10;Pressure: 2e+06 Pa&#10;Gas flow: 902 kmol/hr">
+<ns0:text text-anchor="middle" x="301.5" y="-40.3" font-family="Arial" font-size="14.00"> S205 Vapor</ns0:text>
+<ns0:text text-anchor="middle" x="301.5" y="-25.3" font-family="Arial" font-size="14.00"> 800C Out</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="edge1" class="edge">
+<ns0:title>7702310569192:e-&gt;7702310501675:c</ns0:title>
+<ns0:path fill="none" stroke="#98a2ad" d="M11,-21.5C40.72,-21.5 73.41,-21.5 101.93,-21.5" />
+<ns0:g id="a_edge1-label"><ns0:a ns1:title="Temperature: 493.15 K&#10;Pressure: 2e+06 Pa&#10;Gas flow: 902 kmol/hr">
+<ns0:text text-anchor="middle" x="56.5" y="-40.3" font-family="Arial" font-size="14.00"> S204 Vapor</ns0:text>
+<ns0:text text-anchor="middle" x="56.5" y="-25.3" font-family="Arial" font-size="14.00"> 220C</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node1" class="node">
+<ns0:title>7702310501675</ns0:title>
+<ns0:g id="a_node1"><ns0:a ns1:title="Electricity consumption: 5.69e+03 kW&#10;Utility cost: 228 USD/hr&#10;Purchase cost: 464,244 USD&#10;Installed equipment cost: 1,355,294 USD">
+<ns0:polygon fill="#555f69" stroke="transparent" points="256,-43 102,-43 102,0 256,0 256,-43" />
+<ns0:text text-anchor="middle" x="179" y="-25.3" font-family="Arial" font-size="14.00" fill="white">E202</ns0:text>
+<ns0:text text-anchor="middle" x="179" y="-10.3" font-family="Arial" font-size="14.00" fill="white">Electric process heater</ns0:text>
+</ns0:a>
+</ns0:g>
+</ns0:g>
+
+<ns0:g id="node2" class="node">
+<ns0:title>7702310569192</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="5.5,-27 0,-21.5 5.5,-16 11,-21.5 5.5,-27" />
+</ns0:g>
+
+<ns0:g id="node3" class="node">
+<ns0:title>7702315613236</ns0:title>
+<ns0:polygon fill="#f98f60" stroke="#98a2ad" points="358,-21.5 349.75,-28.5 349.75,-14.5 358,-21.5" />
+</ns0:g>
+</ns0:g>
+</ns0:svg>
