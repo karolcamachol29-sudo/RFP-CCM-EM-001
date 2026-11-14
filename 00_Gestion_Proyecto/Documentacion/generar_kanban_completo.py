@@ -113,7 +113,8 @@ for it in done:
 
 """
 
-with open('/home/karoc/Documentos/Antigravity/Proyecto Licitacion/Github/RFP-CCM-EM-001/KANBAN.md', 'w', encoding='utf-8') as f:
+repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+with open(os.path.join(repo_root, 'KANBAN.md'), 'w', encoding='utf-8') as f:
     f.write(kanban_md)
 
 print("Updated KANBAN.md successfully with all 45 cards and full metadata!")

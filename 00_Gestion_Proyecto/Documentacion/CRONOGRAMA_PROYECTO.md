@@ -108,7 +108,9 @@ gantt
     
     section Fase Final: Cierre Licitación
     EF Informe Final Consolidado Licitación :active, ef, 2026-11-10, 2026-11-14
-```
+
+---
+
 
 ---
 
@@ -116,12 +118,10 @@ gantt
 
 A continuación se detalla cada sección y componente técnico de los documentos, identificando con precisión quirúrgica el entregable, el contenido elaborado, el integrante que lo desarrolló y el cargo oficial bajo el cual actuó:
 
-```
-====================================================================================================
-ENTREGABLE E0 — ACTA CONSTITUTIVA E IDENTIDAD CORPORATIVA SOLVANTA
-Archivo Oficial: 03_Entregables_Finales/E0_Constitucion/E0_DOC_ActaConstitutiva_v1.0.pdf
-Periodo: 2026-08-14 al 2026-08-17 | Duración Total: 4 días
-====================================================================================================
+### ENTREGABLE E0 — ACTA CONSTITUTIVA E IDENTIDAD CORPORATIVA SOLVANTA
+- **Archivo Oficial:** `03_Entregables_Finales/E0_Constitucion/E0_DOC_ActaConstitutiva_v1.0.pdf`
+- **Periodo:** 2026-08-14 al 2026-08-17 | Duración Total: 4 días
+
 * SECCIÓN 1: Constitución Social, Marco Estatutario, Gobernanza y Representación Legal
   - Responsable: Karol Paola Camacho López (@Karoc)
   - Cargo Aplicado: Dirección del Proyecto
@@ -143,11 +143,11 @@ Periodo: 2026-08-14 al 2026-08-17 | Duración Total: 4 días
   - Rol RACI: R (Responsible) | A: @Karoc
   - Contenido: Política de Cero Accidentes, directrices SEMARNAT/STPS y distribución presupuestaria societaria.
 
-====================================================================================================
+---
 ENTREGABLE E1.1 — BASES DE DISEÑO PRELIMINARES Y MARCO NORMATIVO (NB-01)
 Archivo Oficial: 03_Entregables_Finales/E1_Bases_y_Verificacion/E1.1_DOC_BasesDiseno_v1.0.pdf
 Periodo: 2026-08-17 al 2026-08-25 | Duración Total: 9 días
-====================================================================================================
+---
 * SECCIÓN 1: Marco Normativo Ambiental, Normas Oficiales Mexicanas y Estándares Internacionales
   - Responsable: Grecia Figueroa Rincón (@Cho0bb)
   - Cargo Aplicado: Especialista en Seguridad, Salud y Medio Ambiente (HSE)
@@ -169,11 +169,11 @@ Periodo: 2026-08-17 al 2026-08-25 | Duración Total: 9 días
   - Rol RACI: R (Responsible) / A (Accountable)
   - Contenido: Integración documental, verificación contra términos de referencia de la licitación y visto bueno final.
 
-====================================================================================================
+---
 ENTREGABLE E1.2 — SIMULACIÓN EN DWSIM Y BALANCES DE MATERIA Y ENERGÍA
 Archivo Oficial: 03_Entregables_Finales/E1_Bases_y_Verificacion/E1.2_DOC_ReporteSimulacion_v1.0.pdf
 Periodo: 2026-08-18 al 2026-08-25 | Duración Total: 8 días
-====================================================================================================
+---
 * SECCIÓN 1: Flowsheet en DWSIM, Modelado de Corrientes y Algoritmo de Convergencia de Reciclos
   - Responsable: Paulina Mota Macip (@paulina145)
   - Cargo Aplicado: Simulación
@@ -195,11 +195,11 @@ Periodo: 2026-08-18 al 2026-08-25 | Duración Total: 8 días
   - Rol RACI: R (Responsible) / A (Accountable)
   - Contenido: Modelado de sensibilidad termodinámica en Python (LHS), validación cruzada y emisión formal.
 
-====================================================================================================
+---
 ENTREGABLE E1.3 — DIAGRAMACIÓN TÉCNICA DE PROCESOS (BFD Y PFD EN PLANT 3D)
 Archivo Oficial: 03_Entregables_Finales/E1_Bases_y_Verificacion/E1.3_DOC_EspecificacionDiagramas_v1.0.pdf
 Periodo: 2026-08-19 al 2026-08-24 | Duración Total: 6 días
-====================================================================================================
+---
 * SECCIÓN 1: Diagramado de Bloques de Proceso (BFD) y PFD Preliminar en AutoCAD Plant 3D 2025
   - Responsable: Gildardo Ocaña Barrales (@GildardoOca25)
   - Cargo Aplicado: DTI / P&ID / Ingeniería de Procesos
@@ -221,11 +221,11 @@ Periodo: 2026-08-19 al 2026-08-24 | Duración Total: 6 días
   - Rol RACI: R (Responsible) / A (Accountable)
   - Contenido: Inspección de membretes, revisión de legibilidad a escala de ingeniería y validación documental.
 
-====================================================================================================
+---
 ENTREGABLE E1.3.1 — PROPUESTA PRELIMINAR DE EQUIPOS DE PROCESO (EQ-01)
 Archivo Oficial: 03_Entregables_Finales/E1_Bases_y_Verificacion/E1.3.1_DOC_PropuestaEquipos_v1.0.pdf
 Periodo: 2026-08-26 al 2026-08-28 | Duración Total: 3 días
-====================================================================================================
+---
 * SECCIÓN 1: Dimensionamiento Analítico de Recipientes a Presión, Reactores e Intercambiadores
   - Responsable: Gildardo Ocaña Barrales (@GildardoOca25)
   - Cargo Aplicado: Ingeniería de Procesos
@@ -247,11 +247,11 @@ Periodo: 2026-08-26 al 2026-08-28 | Duración Total: 3 días
   - Rol RACI: R (Responsible) / A (Accountable)
   - Contenido: Programación del generador de tablas en Python, estandarización de etiquetas y consolidación.
 
-====================================================================================================
+---
 ENTREGABLE E1.4 — VIDEO PITCH TÉCNICO DEL PROYECTO SOLVANTA (4 SEGMENTOS DE GRABACIÓN)
 Archivo Oficial: 03_Entregables_Finales/E1_Bases_y_Verificacion/E1.4_VID_EnlacePitch_v1.0.pdf
 Periodo: 2026-08-20 al 2026-08-26 | Duración Total: 7 días
-====================================================================================================
+---
 * SEGMENTO 1: Introducción Ejecutiva, Propuesta de Valor del Consorcio y Optimización en Python
   - Responsable: Karol Paola Camacho López (@Karoc)
   - Cargo Aplicado: Dirección del Proyecto / Ingeniera de Optimización Python
@@ -278,11 +278,11 @@ Periodo: 2026-08-20 al 2026-08-26 | Duración Total: 7 días
   - Rol RACI: R (Responsible) / A (Accountable)
   - Contenido: Montaje multicámara, exportación a 1080p, alojamiento seguro en Google Drive y ficha foliada E1.4.
 
-====================================================================================================
+---
 ENTREGABLE RT-01 — REVISIÓN TÉCNICA 01: DEFENSA DE BASES DE DISEÑO (AR-01)
 Archivo Oficial: 03_Entregables_Finales/E3_Revisiones_Tecnicas_y_Difusion/RT-01_DOC_PresentacionDiapositivas_v1.0.pdf
 Periodo: 2026-08-25 al 2026-08-28 | Duración Total: 4 días
-====================================================================================================
+---
 * DIAPOSITIVAS 1 a 3: Apertura Ejecutiva, Misión del Consorcio Solvanta y Objetivos Licitatorios
   - Responsable: Karol Paola Camacho López (@Karoc)
   - Cargo Aplicado: Dirección del Proyecto
@@ -304,11 +304,11 @@ Periodo: 2026-08-25 al 2026-08-28 | Duración Total: 4 días
   - Rol RACI: R (Responsible) | A: @Karoc
   - Contenido: Ventajas ambientales de la ruta e-metanol, atención a preguntas del sínodo evaluador y cierre.
 
-====================================================================================================
+---
 ENTREGABLE MP-00 — COMPENDIO DE MATRICES PONDERADAS DE SELECCIÓN TECNOLÓGICA (MP-01 A MP-05)
 Archivo Oficial: 03_Entregables_Finales/... / MP-00_DOC_CompendioMatricesPonderadas_v1.0.pdf
 Periodo: 2026-09-01 al 2026-09-10 | Duración Total: 10 días
-====================================================================================================
+---
 * MATRIZ MP-01: Selección de Tecnología de Electrólisis (AEL vs PEM vs SOEC)
   - Responsable: Karol Paola Camacho López (@Karoc) & Grecia Figueroa Rincón (@Cho0bb)
   - Cargos: Ingeniera de Optimización Python / Evaluación Económica
@@ -339,11 +339,11 @@ Periodo: 2026-09-01 al 2026-09-10 | Duración Total: 10 días
   - Cargo Aplicado: Dirección del Proyecto
   - Rol RACI: R / A
 
-====================================================================================================
+---
 ENTREGABLE E1.5 — VERIFICACIÓN TERMODINÁMICA DEL PROCESO (VTP-01)
 Archivo Oficial: 03_Entregables_Finales/E1_Bases_y_Verificacion/E1.5_DOC_ActividadVTP_v1.0.pdf
 Periodo: 2026-09-10 al 2026-09-21 | Duración Total: 12 días
-====================================================================================================
+---
 * SECCIÓN 1: Reporte Comparativo Termodinámico Peng-Robinson vs NRTL y Envolventes de Fase
   - Responsable: Paulina Mota Macip (@paulina145)
   - Cargo Aplicado: Simulación
@@ -365,11 +365,11 @@ Periodo: 2026-09-10 al 2026-09-21 | Duración Total: 12 días
   - Rol RACI: R (Responsible) / A (Accountable)
   - Contenido: Algoritmo de validación de balances en Python, diagramación vectorial y compilación documental.
 
-====================================================================================================
+---
 ENTREGABLE E1.6 — MATRIZ INTEGRAL DE ASPECTOS E IMPACTOS AMBIENTALES (AC-AMB-01)
 Archivo Oficial: 03_Entregables_Finales/E1_Bases_y_Verificacion/E1.6_DOC_MatrizAmbiental_v1.0.pdf
 Periodo: 2026-09-17 al 2026-09-21 | Duración Total: 5 días
-====================================================================================================
+---
 * SECCIÓN 1: Metodología Leopold/Conesa, Identificación de Aspectos Ambientales y Evaluación de Severidad
   - Responsable: Grecia Figueroa Rincón (@Cho0bb)
   - Cargo Aplicado: Especialista en Seguridad, Salud y Medio Ambiente (HSE)
@@ -391,11 +391,11 @@ Periodo: 2026-09-17 al 2026-09-21 | Duración Total: 5 días
   - Rol RACI: R (Responsible) / A (Accountable)
   - Contenido: Revisión de métricas de captura biogénica de CO2 y aprobación final de la matriz foliada.
 
-====================================================================================================
+---
 ENTREGABLE E2.1 — LISTA MAESTRA DE EQUIPOS (LE-01) Y DFP V1 ACTUALIZADO
 Archivo Oficial: 03_Entregables_Finales/E2_Ingenieria_Basica_y_Control/E2.1_DOC_ListaEquipos_v1.0.pdf
 Periodo: 2026-09-17 al 2026-09-24 | Duración Total: 8 días
-====================================================================================================
+---
 * SECCIÓN 1: Catálogo Mecánico de 28 Equipos, Dimensiones Geométricas y Hojas de Datos LE-01
   - Responsable: Gildardo Ocaña Barrales (@GildardoOca25)
   - Cargo Aplicado: Ingeniería de Procesos
@@ -417,11 +417,11 @@ Periodo: 2026-09-17 al 2026-09-24 | Duración Total: 8 días
   - Rol RACI: R (Responsible) / A (Accountable)
   - Contenido: Scripts de cotejo automático DWSIM vs LaTeX, estandarización de etiquetas y liberación.
 
-====================================================================================================
+---
 ENTREGABLE RT-02 — REVISIÓN TÉCNICA 02: SIMULACIÓN DWSIM, EQUIPOS Y CONTROL
 Archivo Oficial: 03_Entregables_Finales/E3_Revisiones_Tecnicas_y_Difusion/RT-02_DOC_PresentacionDiapositivas_v1.0.pdf
 Periodo: 2026-09-24 al 2026-09-28 | Duración Total: 5 días
-====================================================================================================
+---
 * DIAPOSITIVAS 1 a 5: Introducción de Avance, Arquitectura de Síntesis y Optimización Global
   - Responsable: Karol Paola Camacho López (@Karoc)
   - Cargo Aplicado: Dirección del Proyecto / Ingeniera de Optimización Python
@@ -443,12 +443,12 @@ Periodo: 2026-09-24 al 2026-09-28 | Duración Total: 5 días
   - Rol RACI: R (Responsible) | A: @Karoc
   - Contenido: Mitigación de impactos ambientales, evaluación de toxicidad y respuestas técnicas al jurado.
 
-====================================================================================================
+---
 ENTREGABLE E2.2 — VIDEO OFICIAL DE LA REVISIÓN TÉCNICA 02 (RT-02 EN CANVA)
 Archivo Oficial: 03_Entregables_Finales/E2_Ingenieria_Basica_y_Control/E2.2_VID_EnlaceRevisionTecnica02_v1.0.pdf
 Enlace Canva: https://canva.link/3zrbczmgiyx7lkj
 Periodo: 2026-09-24 al 2026-09-28 | Duración Total: 5 días
-====================================================================================================
+---
 * SEGMENTO 1: Apertura Ejecutiva, Reciclos y Dirección General (2.0 min)
   - Responsable: Karol Paola Camacho López (@Karoc)
   - Cargo Aplicado: Dirección del Proyecto / Ingeniera de Optimización Python
@@ -475,11 +475,11 @@ Periodo: 2026-09-24 al 2026-09-28 | Duración Total: 5 días
   - Rol RACI: R (Responsible) / A (Accountable)
   - Contenido: Montaje en Canva Video, control de calidad, emisión de ficha con marca de agua institucional.
 
-====================================================================================================
+---
 ENTREGABLE FC-01 — FILOSOFÍA DE CONTROL DEL PROCESO
 Archivo Oficial: 03_Entregables_Finales/E2_Ingenieria_Basica_y_Control/FC-01_DOC_FilosofiaControl_v1.0.pdf
 Periodo: 2026-10-01 al 2026-10-08 | Duración Total: 8 días
-====================================================================================================
+---
 * SECCIÓN 1: Arquitectura Jerárquica de Control, Bucles Reguladores PID y Lazos en Cascada
   - Responsable: Paulina Mota Macip (@paulina145)
   - Cargo Aplicado: Instrumentación y Control / Simulación
@@ -501,11 +501,11 @@ Periodo: 2026-10-01 al 2026-10-08 | Duración Total: 8 días
   - Rol RACI: R (Responsible) / A (Accountable)
   - Contenido: Simulación de sintonía en lazos críticos, verificación documental y autorización del informe.
 
-====================================================================================================
+---
 ENTREGABLE AC-HAZOP-01 — EXPEDIENTE DE SEGURIDAD OPERATIVA HAZOP Y MATRIZ CAUSA-EFECTO (MCE-01)
 Archivo Oficial: 03_Entregables_Finales/E2_Ingenieria_Basica_y_Control/AC-HAZOP-01_DOC_ExpedienteHAZOP_v1.0.pdf
 Periodo: 2026-10-08 al 2026-10-19 | Duración Total: 12 días
-====================================================================================================
+---
 * SECCIÓN 1: Metodología de Nodos, Palabras Guía, Identificación de Desviaciones y Matriz MCE-01
   - Responsable: Grecia Figueroa Rincón (@Cho0bb)
   - Cargo Aplicado: Especialista en Seguridad, Salud y Medio Ambiente (HSE)
@@ -527,11 +527,11 @@ Periodo: 2026-10-08 al 2026-10-19 | Duración Total: 12 días
   - Rol RACI: R (Responsible) / A (Accountable)
   - Contenido: Consolidación de 34 acciones de mitigación, jerarquización de riesgos y aprobación del expediente.
 
-====================================================================================================
+---
 ENTREGABLE PIB-01 — PAQUETE DE INGENIERÍA BÁSICA DEL PROCESO
 Archivo Oficial: 03_Entregables_Finales/E2_Ingenieria_Basica_y_Control/PIB-01_DOC_ExpedienteIngenieriaBasica_v1.0.pdf
 Periodo: 2026-10-20 al 2026-10-28 | Duración Total: 9 días
-====================================================================================================
+---
 * SECCIÓN 1: Memorias de Cálculo de Procesos, Balances de Materia/Energía Integrados y Planos DTI v1
   - Responsable: Gildardo Ocaña Barrales (@GildardoOca25)
   - Cargo Aplicado: Ingeniería de Procesos / DTI y P&ID
@@ -553,11 +553,11 @@ Periodo: 2026-10-20 al 2026-10-28 | Duración Total: 9 días
   - Rol RACI: R (Responsible) / A (Accountable)
   - Contenido: Compilación de 47 páginas en LaTeX, verificación cruzada de ecuaciones y visto bueno de ingeniería.
 
-====================================================================================================
+---
 ENTREGABLES E4.1 A E4.7 — SUITE DE AUDITORÍAS TÉCNICAS BIOSTEAM, CAPEX/OPEX Y OPTIMIZACIÓN SOEC
 Archivos Oficiales: 03_Entregables_Finales/E4_Auditorias_y_Optimizacion/E4.1 a E4.7 (*.pdf)
 Periodo: 2026-10-28 al 2026-11-05 | Duración Total: 9 días
-====================================================================================================
+---
 * E4.1 — RPT Auditoría Económica Integral BioSTEAM
   - Responsable: Grecia Figueroa Rincón (@Cho0bb) & Karol Paola Camacho López (@Karoc)
   - Cargos: Evaluación Económica / Ingeniera de Optimización Python
@@ -594,11 +594,11 @@ Periodo: 2026-10-28 al 2026-11-05 | Duración Total: 9 días
   - Rol RACI: R: @Karoc, @paulina145 | A: @Karoc | C: Consorcio
   - Contenido: Batería de 12 pruebas unitarias automatizadas con `pytest`, validación de curvas polarización I-V.
 
-====================================================================================================
+---
 ENTREGABLE DIF-01 — CARTEL OFICIAL DE DIFUSIÓN TÉCNICA PYDAY BUAP (*EXCEPCIÓN EXCLUSIVA*)
 Archivo Oficial: 03_Entregables_Finales/E3_Revisiones_Tecnicas_y_Difusion/DIF-01_DOC_CartelPyDay_v1.0.pdf
 Periodo: 2026-11-03 al 2026-11-06 | Duración Total: 4 días
-====================================================================================================
+---
 * PARTE 1: Modelado Matemático en Python, Visualización de Datos, Algoritmos SOEC y Diseño Gráfico
   - Responsable: Karol Paola Camacho López (@Karoc)
   - Cargo Aplicado: Dirección del Proyecto / Ingeniera de Optimización Python
@@ -613,11 +613,11 @@ Periodo: 2026-11-03 al 2026-11-06 | Duración Total: 4 días
   - Gildardo Ocaña Barrales y Paulina Mota Macip no participaron en la elaboración del cartel conforme
     a la directriz expresa de la gerencia técnica del proyecto [Rol RACI: I (Informed)].
 
-====================================================================================================
+---
 ENTREGABLE RT-03 — REVISIÓN TÉCNICA 03: DEFENSA FINAL DE INGENIERÍA BÁSICA Y GUÍA MAESTRA
 Archivo Oficial: 03_Entregables_Finales/E3_Revisiones_Tecnicas_y_Difusion/RT-03_DOC_PresentacionDiapositivas_v1.0.pdf
 Periodo: 2026-11-01 al 2026-11-14 | Duración Total: 14 días
-====================================================================================================
+---
 * DIAPOSITIVAS 1 a 4: Visión Ejecutiva de Cierre, Alcance Contractual y Maduración del Consorcio
   - Responsable: Karol Paola Camacho López (@Karoc)
   - Cargo Aplicado: Dirección del Proyecto
@@ -644,12 +644,12 @@ Periodo: 2026-11-01 al 2026-11-14 | Duración Total: 14 días
   - Rol RACI: R (Responsible) / A (Accountable)
   - Contenido: Defensa del modelo electroquímico en Python, ventaja competitiva de Solvanta y cierre.
 
-====================================================================================================
+---
 ENTREGABLE E3.1 — VIDEO OFICIAL DE LA REVISIÓN TÉCNICA 03 (RT-03 EN CANVA)
 Archivo Oficial: 03_Entregables_Finales/E3_Revisiones_Tecnicas_y_Difusion/E3.1_VID_EnlaceRevisionTecnica03_v1.0.pdf
 Enlace Canva: https://canva.link/tmv6f1e2ydf5ofr
 Periodo: 2026-11-01 al 2026-11-14 | Duración Total: 14 días
-====================================================================================================
+---
 * SEGMENTO 1: Visión Directiva, Estrategia y Optimización SOEC en Python (3.5 min)
   - Responsable: Karol Paola Camacho López (@Karoc)
   - Cargo Aplicado: Dirección del Proyecto / Ingeniera de Optimización Python
@@ -676,11 +676,11 @@ Periodo: 2026-11-01 al 2026-11-14 | Duración Total: 14 días
   - Rol RACI: R (Responsible) / A (Accountable)
   - Contenido: Edición técnica en Canva, renderizado en alta definición, verificación de enlace y ficha con marca de agua.
 
-====================================================================================================
+---
 ENTREGABLE EF — INFORME FINAL CONSOLIDADO DE LICITACIÓN (EXPEDIENTE MAESTRO DE CIERRE)
 Archivo Oficial: 03_Entregables_Finales/EF_Informe_Final/ (En proceso de compilación formal)
 Periodo: 2026-11-10 al 2026-11-14 | Duración Total: 5 días
-====================================================================================================
+---
 * TOMO I: Bases de Diseño, Capacidad y Filosofía General del Consorcio
   - Responsable: Karol Paola Camacho López (@Karoc)
   - Cargo Aplicado: Dirección del Proyecto
@@ -710,7 +710,9 @@ Periodo: 2026-11-10 al 2026-11-14 | Duración Total: 5 días
   - Responsable: Karol Paola Camacho López (@Karoc)
   - Cargo Aplicado: Dirección del Proyecto
   - Rol RACI: R / A
-```
+
+---
+
 
 ---
 

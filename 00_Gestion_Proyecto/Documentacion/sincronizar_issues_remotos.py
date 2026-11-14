@@ -612,7 +612,7 @@ TASKS_DEF = [
 ]
 
 def main():
-    repo_dir = "/home/karoc/Documentos/Antigravity/Proyecto Licitacion/Github/RFP-CCM-EM-001"
+    repo_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
     os.chdir(repo_dir)
 
     print("=== OBTENIENDO ISSUES EXISTENTES EN GITHUB ===")
