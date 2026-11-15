@@ -29,7 +29,7 @@
 | **E1.2** | Simulación DWSIM & Reporte de Balances | @paulina145 | 2 Files (`.dwxmz`, `.pdf`) | `01_Proceso_y_Simulacion/DWSIM/`, `03_Entregables_Finales/` | 2026-08-25 | ✅ Done |
 | **E1.3** | Diagramación (BFD, PFD, DTI) en Plant 3D | @GildardoOca25 | 2 Files (`.dwg`, `.pdf`) | `02_Ingenieria_y_Diagramas/`, `03_Entregables_Finales/` | 2026-08-24 | ✅ Done |
 | **E1.3.1** | Propuesta preliminar de equipos y parámetros de diseño (EQ-01) | @Karoc | 1 File (`.pdf`) | `03_Entregables_Finales/` | 2026-08-28 | ⏳ In Progress |
-| **E1.4** | Video Pitch del Proyecto | @Karoc | 1 File (`.txt` enlace Drive) | `03_Entregables_Finales/` | 2026-08-25 | ⏳ In Progress |
+| **E1.4** | Video Pitch del Proyecto | @Karoc | 1 File (Ficha Oficial en PDF) | `03_Entregables_Finales/E1_Bases_y_Verificacion/` | 2026-08-25 | ✅ Done |
 | **E1.5** | Verificación de Simulación, Tablas (TC-01/TE-01) y PFD (VTP-01) | @Karoc | 3 Files (`.pdf`) | `03_Entregables_Finales/E1/`, `02_Ingenieria_y_Diagramas/` | 2026-09-14 | ✅ Done |
 | **E1.6** | Matriz Integral de Aspectos, Impactos y Requisitos Ambientales (AC-AMB-01) | @Cho0bb | 2 Files (`.pdf`, `.xlsx`) | `03_Entregables_Finales/E1/` | 2026-09-21 | ✅ Done |
 | **E2.1** | Lista Maestra de Equipos, Sensibilidades y DFP v1 (LE-01) | @Karoc | 3 Files (`.pdf`, `.tex`) | `03_Entregables_Finales/E2/` | 2026-09-21 | ✅ Done |
@@ -93,7 +93,7 @@
   - **Asignado a:** @Karoc (Karol Paola Camacho López)
   - **Roles RACI:** R: @Karoc | A: @Karoc | C: @paulina145, @GildardoOca25 | I: @Cho0bb
   - **Archivos Requeridos (1):**
-    - [ ] Archivo TXT Enlace: `03_Entregables_Finales/E1.4_VID_EnlacePitch_v1.0.txt`
+    - [x] Ficha Oficial Foliada en PDF con Marca de Agua: `03_Entregables_Finales/E1_Bases_y_Verificacion/E1.4_VID_EnlacePitch_v1.0.pdf`
   - **Estado:** ⏳ In Progress
 
 - [x] **[E1.5] Verificación de Simulación, Tablas TC-01/TE-01 y PFD Oficial (VTP-01)**

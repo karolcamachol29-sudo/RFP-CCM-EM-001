@@ -528,7 +528,7 @@ TASKS_DEF = [
         "end": "2026-11-14",
         "labels": "DOC",
         "done": True,
-        "evidencia": "00_Gestion_Proyecto/Documentacion/ENLACES_REVISION.txt"
+        "evidencia": "00_Gestion_Proyecto/Documentacion/ENLACES_REVISION.pdf"
     },
     # --- EF ---
     {

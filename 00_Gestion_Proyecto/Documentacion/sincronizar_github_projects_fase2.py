@@ -672,7 +672,7 @@ ACTIVIDADES_PROYECTO = [
         "fecha_fin": "2026-11-14",
         "duracion_dias": 1,
         "tipo_fecha": "Verificada",
-        "evidencia": "00_Gestion_Proyecto/Documentacion/ENLACES_REVISION.txt",
+        "evidencia": "00_Gestion_Proyecto/Documentacion/ENLACES_REVISION.pdf",
         "issue_number": 54,
         "issue_url": "https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/issues/54"
     },
