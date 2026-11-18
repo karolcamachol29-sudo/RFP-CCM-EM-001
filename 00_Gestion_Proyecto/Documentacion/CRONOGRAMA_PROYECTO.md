@@ -58,7 +58,7 @@ Para garantizar la máxima rigurosidad, trazabilidad histórica y auditoría té
 | **DIF-01**| Cartel Oficial PyDay (*Excepción Exclusiva*)| 2026-11-03 | 2026-11-06 | **Verificada** | **4 días** | 3.0 d | 0.0 d | 0.5 d | 0.5 d | Karol Camacho & Grecia Figueroa |
 | **RT-03** | Revisión Técnica 03: Guía Maestra y Diap. | 2026-11-01 | 2026-11-14 | **Verificada** | **14 días**| 8.0 d | 2.0 d | 2.0 d | 2.0 d | Todo el Consorcio (4 Expositores) |
 | **E3.1** | Video Oficial Revisión Técnica 03 (RT-03 Canva)| 2026-11-01 | 2026-11-14 | **Verificada** | **14 días**| 8.0 d | 2.0 d | 2.0 d | 2.0 d | Todo el Consorcio (4 Expositores) |
-| **EF** | Informe Final Consolidado de Licitación | 2026-11-10 | 2026-11-14 | **Verificada** | **5 días** | 3.5 d | 0.5 d | 0.5 d | 0.5 d | Karol Camacho & Todo el Consorcio |
+| **EF** | Portafolio Final Integrador FIQ-BUAP | 2026-11-17 | 2026-11-23 | **Oficial Vinculante** | **6 días** | 4.0 d | 0.5 d | 1.0 d | 0.5 d | Karol Camacho & Todo el Consorcio |
 
 ---
 

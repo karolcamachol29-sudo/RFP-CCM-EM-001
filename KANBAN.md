@@ -2,7 +2,7 @@
 **Proyecto:** Planta de Producción de e-Metanol Grado Químico AA (30,000 t/año)  
 **Consorcio:** Solvanta Engineering Solutions S.A. de C.V.  
 **Licitación:** RFP-CCM-EM-001 (FIQ - BUAP / DPyPQ)  
-**Fecha de Actualización:** 14 de Noviembre de 2026  
+**Fecha de Actualización:** 17 de Noviembre de 2026  
 **Responsable de Seguimiento:** Karol Paola Camacho López (@Karoc) — Dirección del Proyecto  
 
 > **Integrantes del Consorcio y Doble Cargo Oficial:**  
@@ -23,71 +23,71 @@
 
 ---
 
-## ⏳ 3. En proceso (In Progress)
+## ⏳ 3. En proceso (In Progress) — Sprint Final Portafolio FIQ-BUAP (Entrega: 23/11/2026)
 
-- [/] **[EF] Consolidación del Expediente y Cierre Licitatorio** ([#30](https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/issues/30))
-  - **Entregable Relacionado:** `EF`
-  - **Responsable Asignado:** @Karoc (Karol Paola Camacho López)
-  - **Cargo Desempeñado:** Dirección del Proyecto y Especialidades Técnicas
-  - **Integrantes Participantes:** @Karoc, @GildardoOca25, @paulina145, @Cho0bb
-  - **Roles RACI:** R: @Karoc, @GildardoOca25, @paulina145, @Cho0bb | A: @Karoc | C: Consorcio | I: BUAP / DPyPQ
-  - **Fecha de Inicio:** 2026-11-10 | **Fecha de Fin:** 2026-11-14 | **Tipo de Fecha:** Verificada
-  - **Duración:** 5 días
-  - **Evidencia / Archivo:** `03_Entregables_Finales/EF_Informe_Final/`
-  - **Estado:** ⏳ En proceso
-
-- [/] **[EF-T1] Tomo I: Bases de Diseño, Capacidad y Gobernanza** ([#55](https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/issues/55))
-  - **Entregable Relacionado:** `EF-T1`
+- [/] **[EF] Consolidación del Portafolio Final FIQ-BUAP — Expediente Maestro y Cierre Licitatorio** ([#30](https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/issues/30))
+  - **Entregable Relacionado:** `EF: Portafolio Final Integrador (10 Capítulos)`
   - **Responsable Asignado:** @Karoc (Karol Paola Camacho López)
   - **Cargo Desempeñado:** Dirección del Proyecto
+  - **Integrantes Participantes:** Todo el consorcio (@Karoc, @GildardoOca25, @paulina145, @Cho0bb)
+  - **Roles RACI:** R: @Karoc, @GildardoOca25, @paulina145, @Cho0bb | A: @Karoc | C: Consorcio | I: BUAP / DPyPQ
+  - **Fecha de Inicio:** 2026-11-17 | **Fecha de Fin:** 2026-11-23 | **Tipo de Fecha:** Oficial Vinculante
+  - **Duración:** 6 días
+  - **Evidencia / Archivo:** `03_Entregables_Finales/EF_Informe_Final/Portafolio_Final_Solvanta.pdf`
+  - **Estado:** ⏳ En proceso (compilación de capítulos interactivos y verificación cruzada)
+
+- [/] **[EF-WP1] Dirección, Bases de Diseño, Gobernanza y Consolidación (Cap. 1, 7.1, 10 y Resumen)** ([#55](https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/issues/55))
+  - **Entregable Relacionado:** `EF-WP1: Resumen Ejecutivo, Cap. 1, Cap. 7.1 y Cap. 10`
+  - **Responsable Asignado:** @Karoc (Karol Paola Camacho López)
+  - **Cargo Desempeñado:** Dirección del Proyecto / Optimización Python
   - **Integrantes Participantes:** @Karoc
-  - **Roles RACI:** R: @Karoc | A: @Karoc | C: Consorcio | I: BUAP
-  - **Fecha de Inicio:** 2026-11-10 | **Fecha de Fin:** 2026-11-14 | **Tipo de Fecha:** Verificada
+  - **Roles RACI:** R: @Karoc | A: @Karoc | C: Consorcio | I: BUAP / DPyPQ
+  - **Fecha de Inicio:** 2026-11-17 | **Fecha de Fin:** 2026-11-22 | **Tipo de Fecha:** Planificada
   - **Duración:** 5 días
   - **Evidencia / Archivo:** `03_Entregables_Finales/EF_Informe_Final/`
   - **Estado:** ⏳ En proceso
 
-- [/] **[EF-T2] Tomo II: Ingeniería de Procesos, Diagramas (BFD/PFD/DTI) y LE-01** ([#56](https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/issues/56))
-  - **Entregable Relacionado:** `EF-T2`
+- [/] **[EF-WP2] Ingeniería de Procesos y Diagramación CAD (Cap. 2, 3.1, 4.2, 6.1-6.2 Planos y AG-01)** ([#56](https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/issues/56))
+  - **Entregable Relacionado:** `EF-WP2: Cap. 2, Cap. 3.1, Cap. 4.2, Cap. 6.1-6.2 y AG-01`
   - **Responsable Asignado:** @GildardoOca25 (Gildardo Ocaña Barrales)
-  - **Cargo Desempeñado:** Ingeniería de Procesos / DTI y P&ID
+  - **Cargo Desempeñado:** Gerente de Ingeniería de Procesos / DTI y P&ID
   - **Integrantes Participantes:** @GildardoOca25
-  - **Roles RACI:** R: @GildardoOca25 | A: @Karoc | C: Consorcio | I: BUAP
-  - **Fecha de Inicio:** 2026-11-11 | **Fecha de Fin:** 2026-11-14 | **Tipo de Fecha:** Verificada
+  - **Roles RACI:** R: @GildardoOca25 | A: @Karoc | C: Consorcio | I: BUAP / DPyPQ
+  - **Fecha de Inicio:** 2026-11-17 | **Fecha de Fin:** 2026-11-21 | **Tipo de Fecha:** Planificada
   - **Duración:** 4 días
-  - **Evidencia / Archivo:** `03_Entregables_Finales/EF_Informe_Final/`
+  - **Evidencia / Archivo:** `03_Entregables_Finales/EF_Informe_Final/` (Planos PDF y DWG)
   - **Estado:** ⏳ En proceso
 
-- [/] **[EF-T3] Tomo III: Balances DWSIM y Filosofía de Control Automático** ([#57](https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/issues/57))
-  - **Entregable Relacionado:** `EF-T3`
+- [/] **[EF-WP3] Simulación DWSIM, Balances, Servicios y Filosofía de Control (Cap. 3, 4.1, 4.3, 6.1)** ([#57](https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/issues/57))
+  - **Entregable Relacionado:** `EF-WP3: Cap. 3, Cap. 4.1, Cap. 4.3 y Cap. 6.1`
   - **Responsable Asignado:** @paulina145 (Paulina Mota Macip)
   - **Cargo Desempeñado:** Simulación / Instrumentación y Control
   - **Integrantes Participantes:** @paulina145
-  - **Roles RACI:** R: @paulina145 | A: @Karoc | C: Consorcio | I: BUAP
-  - **Fecha de Inicio:** 2026-11-11 | **Fecha de Fin:** 2026-11-14 | **Tipo de Fecha:** Verificada
+  - **Roles RACI:** R: @paulina145 | A: @Karoc | C: Consorcio | I: BUAP / DPyPQ
+  - **Fecha de Inicio:** 2026-11-17 | **Fecha de Fin:** 2026-11-21 | **Tipo de Fecha:** Planificada
   - **Duración:** 4 días
-  - **Evidencia / Archivo:** `03_Entregables_Finales/EF_Informe_Final/`
+  - **Evidencia / Archivo:** `03_Entregables_Finales/EF_Informe_Final/` (Tablas TC-01/TE-01 y DWSIM v2)
   - **Estado:** ⏳ En proceso
 
-- [/] **[EF-T4] Tomo IV: Expediente HAZOP, Matriz Ambiental y Evaluación Financiera** ([#58](https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/issues/58))
-  - **Entregable Relacionado:** `EF-T4`
+- [/] **[EF-WP4] Seguridad HSE, HAZOP, BioSTEAM y Evaluación Tecnoeconómica (Cap. 5, 6.2, 8, 9)** ([#58](https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/issues/58))
+  - **Entregable Relacionado:** `EF-WP4: Cap. 5, Cap. 6.2, Cap. 8 y Cap. 9`
   - **Responsable Asignado:** @Cho0bb (Grecia Figueroa Rincón)
   - **Cargo Desempeñado:** Especialista en Seguridad HSE / Evaluación Económica
   - **Integrantes Participantes:** @Cho0bb
-  - **Roles RACI:** R: @Cho0bb | A: @Karoc | C: Consorcio | I: BUAP
-  - **Fecha de Inicio:** 2026-11-11 | **Fecha de Fin:** 2026-11-14 | **Tipo de Fecha:** Verificada
+  - **Roles RACI:** R: @Cho0bb | A: @Karoc | C: Consorcio | I: BUAP / DPyPQ
+  - **Fecha de Inicio:** 2026-11-17 | **Fecha de Fin:** 2026-11-21 | **Tipo de Fecha:** Planificada
   - **Duración:** 4 días
-  - **Evidencia / Archivo:** `03_Entregables_Finales/EF_Informe_Final/`
+  - **Evidencia / Archivo:** `03_Entregables_Finales/EF_Informe_Final/` (AC-AMB-01, HAZOP, BioSTEAM, TEA)
   - **Estado:** ⏳ En proceso
 
-- [/] **[EF-T5] Tomo V: Optimización Tecnológica SOEC y Auditorías Python** ([#59](https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/issues/59))
-  - **Entregable Relacionado:** `EF-T5`
+- [/] **[EF-WP5] Modelado SOEC, Controladores en Python y Verificación Cruzada (Cap. 6.3, 10)** ([#59](https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/issues/59))
+  - **Entregable Relacionado:** `EF-WP5: Cap. 6.3, Cap. 10 y Protocolo de Verificación Cruzada`
   - **Responsable Asignado:** @Karoc (Karol Paola Camacho López)
   - **Cargo Desempeñado:** Ingeniera de Optimización Python / Dirección
   - **Integrantes Participantes:** @Karoc
-  - **Roles RACI:** R: @Karoc | A: @Karoc | C: Consorcio | I: BUAP
-  - **Fecha de Inicio:** 2026-11-12 | **Fecha de Fin:** 2026-11-14 | **Tipo de Fecha:** Verificada
-  - **Duración:** 3 días
+  - **Roles RACI:** R: @Karoc | A: @Karoc | C: Consorcio | I: BUAP / DPyPQ
+  - **Fecha de Inicio:** 2026-11-17 | **Fecha de Fin:** 2026-11-22 | **Tipo de Fecha:** Planificada
+  - **Duración:** 5 días
   - **Evidencia / Archivo:** `03_Entregables_Finales/EF_Informe_Final/`
   - **Estado:** ⏳ En proceso
 

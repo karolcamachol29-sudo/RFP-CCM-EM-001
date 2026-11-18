@@ -1,0 +1,982 @@
+% Portafolio final | FIQ-BUAP
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{lmodern}
+\else
+  \usepackage{fontspec}
+  \IfFontExistsTF{Libertinus Serif}
+    {\setmainfont{Libertinus Serif}}{\setmainfont{Latin Modern Roman}}
+  \IfFontExistsTF{Libertinus Sans}
+    {\setsansfont{Libertinus Sans}}{\setsansfont{Latin Modern Sans}}
+\fi
+\usepackage{babel}
+\babelprovide[main,import]{spanish}
+\usepackage[margin=0.78in,top=0.83in,bottom=0.82in,
+            headheight=17pt,headsep=11pt,footskip=27pt]{geometry}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{array,tabularx,longtable,booktabs,caption}
+\usepackage{enumitem}
+\usepackage{titlesec,fancyhdr,lastpage,pdflscape}
+\usepackage{tcolorbox}
+\usepackage{etoolbox,xparse}
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+\definecolor{Grafito}{HTML}{293333}
+\definecolor{Terracota}{HTML}{C8715B}
+\definecolor{Enlace}{HTML}{8E3C2D}
+\definecolor{Arena}{HTML}{FAF4EC}
+\definecolor{Tinta}{HTML}{232B2B}
+\definecolor{Gris}{HTML}{526060}
+\definecolor{Papel}{HTML}{F5F7F6}
+\definecolor{Separador}{HTML}{D7DEDB}
+
+\hypersetup{unicode,colorlinks=true,linkcolor=Enlace,urlcolor=Enlace,
+  citecolor=Enlace,pdfstartview=FitH,bookmarksopen=true,bookmarksopenlevel=1}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.36em}
+\setlength{\emergencystretch}{2em}
+\setlength{\LTpre}{6pt}
+\setlength{\LTpost}{7pt}
+\setlist[itemize]{leftmargin=1.35em,itemsep=2pt,topsep=3pt}
+\renewcommand{\arraystretch}{1.21}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\setcounter{tocdepth}{1}
+\raggedbottom
+
+% A. DATOS DEL EQUIPO
+\newcommand{\Institucion}{Benemérita Universidad Autónoma de Puebla}
+\newcommand{\Facultad}{Facultad de Ingeniería Química}
+\newcommand{\Asignatura}{Diseño de Procesos y Productos Químicos}
+\newcommand{\Docente}{Dr. Jesús Andrés Arzola Flores}
+\newcommand{\Proyecto}{Planta de Producción de e-Metanol Grado Químico AA (30,000 t/año)}
+\newcommand{\Firma}{Solvanta Engineering Solutions S.A. de C.V.}
+\newcommand{\SiglasFirma}{Solvanta}
+\newcommand{\FechaConformacion}{17/08/2026}
+\newcommand{\Grupo}{1}
+\newcommand{\Periodo}{Otoño 2026}
+\newcommand{\FechaFinal}{23/11/2026}
+\newcommand{\Revision}{Rev.\ 1.0}
+\newcommand{\LogoEmpresa}{logo-empresa.png} % También admite PNG o JPG.
+
+% Cada línea agrega un integrante a la tabla de portada.
+\newcommand{\IntegrantesFirma}{%
+  {Karol Paola Camacho López} & Directora de Proyecto / Optimización (Python) & Dirección ejecutiva, control documental, optimización SOEC y notebooks \\
+  {Gildardo Ocaña Barrales} & Gerente de Procesos / DTI y P\&ID & Diagramación en Plant 3D (BFD/DFP/DTI), dimensionamiento y arreglo general \\
+  {Paulina Mota Macip} & Ing. de Simulación (DWSIM) / Control & Modelado riguroso DWSIM, balances, tablas de proceso (TC/TE) y filosofía de control \\
+  {Grecia Figueroa Rincón} & Especialista en HSE / Evaluación Económica & Evaluación ambiental (AC-AMB-01), HAZOP/SST, modelo BioSTEAM y evaluación financiera \\
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\bfseries\color{Grafito} FIQ · BUAP}
+\fancyhead[R]{\small\sffamily\color{Gris}\Asignatura}
+\fancyfoot[L]{\small\sffamily\color{Grafito}\Docente}
+\fancyfoot[C]{\small\sffamily\hyperref[nav:inicio]{Índice}}
+\fancyfoot[R]{\small\sffamily\bfseries\color{Grafito}Página~\thepage\ de~\pageref*{LastPage}}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0.35pt}
+\titleformat{\section}{\sffamily\LARGE\bfseries\color{Grafito}}
+  {\textcolor{Enlace}{\thesection}}{0.65em}{}
+\titleformat{\subsection}{\sffamily\large\bfseries\color{Grafito}}
+  {\thesubsection}{0.65em}{}
+\titlespacing*{\section}{0pt}{0pt}{10pt}
+\titlespacing*{\subsection}{0pt}{9pt}{2pt}
+
+\newcommand{\Completar}[1]{\textcolor{Gris}{\textit{[#1]}}}
+\newcommand{\Guia}[2]{%
+  \begin{tcolorbox}[colback=Arena,colframe=Terracota,boxrule=0.35pt,
+    leftrule=2pt,arc=0pt,left=7pt,right=7pt,
+    top=4pt,bottom=4pt,before skip=5pt,after skip=5pt]
+    {\sffamily\small\bfseries\color{Grafito}#1}\par #2
+  \end{tcolorbox}}
+\newcommand{\EncTabla}[1]{\textcolor{white}{\sffamily\small\bfseries #1}}
+\newcommand{\CabeceraTabla}{\rowcolor{Grafito}}
+\newcommand{\Capitulo}[4]{%
+  \clearpage\section{#1}\label{#2}%
+  \noindent{\sffamily\small
+    \hyperref[#3]{\(\leftarrow\) Anterior}\enspace\textcolor{Gris}{|}
+    \enspace\hyperref[nav:inicio]{Índice}\enspace\textcolor{Gris}{|}
+    \enspace\hyperref[sec:catalogo]{Registro de evidencias}%
+    \enspace\textcolor{Gris}{|}\enspace
+    \hyperref[#4]{Siguiente \(\rightarrow\)}}\par\smallskip}
+\newcommand{\Cierre}[2]{%
+  \Guia{Decisión y transferencia al siguiente capítulo}{%
+    \Completar{Enuncien la decisión, sus límites y el dato o documento
+    vigente que entregan para la siguiente etapa.}
+    Continúen en \hyperref[#1]{#2}.}}
+
+% B. REGISTRO CENTRAL DE EVIDENCIAS
+\newcommand{\ListaEvidencias}{}
+\newcommand{\Registrar}[6]{%
+  \csdef{evnombre:#1}{#2}\csdef{evcap:#1}{#3}%
+  \csdef{evcarpeta:#1}{#4}\csdef{evrev:#1}{#5}\csdef{evfecha:#1}{#6}%
+  \gappto\ListaEvidencias{\FilaEvidencia{#1}}}
+\NewDocumentCommand{\URL}{m v}{\csgdef{evurl:#1}{#2}}
+\newcommand{\NombreEv}[1]{\csuse{evnombre:#1}}
+\newcommand{\Ficha}[1]{\hyperlink{ev:#1}{\textsf{\textbf{#1}}}}
+\newcommand{\AlCapitulo}[1]{\hyperref[\csuse{evcap:#1}]{§\,\ref*{\csuse{evcap:#1}}}}
+\newcommand{\Abrir}[3][URL pendiente]{%
+  \ifcsdef{evurl:#2}{\href{\csuse{evurl:#2}}{#3}}
+    {\textcolor{Gris}{\textit{#1}}}}
+\newcommand{\Acceso}[1]{%
+  \par\noindent{\small\Ficha{#1}\enspace\NombreEv{#1}\enspace
+  \textcolor{Gris}{|}\enspace\Abrir{#1}{Abrir evidencia}}\par}
+\newcommand{\AccesoRaiz}{%
+  \ifcsdef{evurl:DRIVE}{\href{\csuse{evurl:DRIVE}}{Carpeta raíz de Drive}}
+  {\hyperref[sec:drive]{Carpeta de Drive · configurar enlace}}}
+
+% Incluya una vista legible en Overleaf. El archivo original y su proyecto
+% editable se enlazan desde Drive. Es posible compilar sin las vistas.
+\newcommand{\Plano}[4]{%
+  \par\smallskip
+  \begin{minipage}{\linewidth}
+  \centering
+  \IfFileExists{#1}{%
+    \includegraphics[width=\linewidth,height=93mm,keepaspectratio]{#1}}{%
+    \begin{tcolorbox}[colback=Papel,colframe=Separador,arc=0pt,
+      boxrule=0.35pt,halign=center,top=4pt,bottom=4pt]
+      \small\sffamily\color{Gris}Insertar vista legible de #2
+    \end{tcolorbox}}%
+  \captionof{figure}{#2}\label{#3}%
+  {\small\Ficha{#4}\enspace\Abrir{#4}{Abrir plano en Drive}\par}
+  \end{minipage}\par
+}
+\captionsetup{font=small,labelfont={sf,bf},skip=4pt,hypcap=false}
+
+% 01-Firma-y-bases · cap:bases
+\Registrar{E0}{Conformación de la firma de ingeniería}{cap:bases}{01-Firma-y-bases}{v1.0}{17/08/2026}
+\Registrar{RFP}{Solicitud de propuesta}{cap:bases}{01-Firma-y-bases}{v1.0}{14/08/2026}
+\Registrar{BD-PRE-01}{Bases preliminares de diseño}{cap:bases}{01-Firma-y-bases}{v1.0}{25/08/2026}
+\Registrar{A2.1}{Matriz de bases de diseño}{cap:bases}{01-Firma-y-bases}{v1.0}{25/08/2026}
+\Registrar{NB-01}{Notebook de balance estequiométrico}{cap:bases}{01-Firma-y-bases}{v1.0}{25/08/2026}
+\Registrar{NB01-COLAB}{Apertura del notebook NB-01 en Colab}{cap:bases}{01-Firma-y-bases}{v1.0}{25/08/2026}
+\Registrar{NB01-INSUMOS}{Datos y auxiliares de NB-01}{cap:bases}{01-Firma-y-bases}{v1.0}{25/08/2026}
+
+% 01-Firma-y-bases · cap:conceptual
+\Registrar{AR-01}{Revisión de la propuesta conceptual}{cap:conceptual}{01-Firma-y-bases}{v1.0}{28/08/2026}
+\Registrar{EQ-01}{Propuesta preliminar de equipos}{cap:conceptual}{01-Firma-y-bases}{v1.0}{28/08/2026}
+\Registrar{E1}{Bases de diseño consolidadas}{cap:conceptual}{01-Firma-y-bases}{v1.0}{04/09/2026}
+
+% 03-AutoCAD-Plant3D · cap:conceptual
+\Registrar{DB-V0}{DB/BFD v0 en PDF}{cap:conceptual}{03-AutoCAD-Plant3D}{v0.0}{24/08/2026}
+\Registrar{DB-V0-CAD}{Proyecto completo de Plant 3D que respalda DB/BFD v0}{cap:conceptual}{03-AutoCAD-Plant3D}{v0.0}{24/08/2026}
+
+% 02-DWSIM · cap:dwsim
+\Registrar{DWSIM-V0}{DWSIM v0, paquete editable completo}{cap:dwsim}{02-DWSIM}{v0.0}{25/08/2026}
+\Registrar{DWSIM-V1}{DWSIM v1, paquete editable completo}{cap:dwsim}{02-DWSIM}{v1.0}{11/09/2026}
+\Registrar{SIM-01}{Reporte de simulación y verificación v0–v1}{cap:dwsim}{02-DWSIM}{v1.0}{11/09/2026}
+\Registrar{BALANCES}{Memorias de materia, energía, reacción y separación}{cap:dwsim}{02-DWSIM}{v1.0}{11/09/2026}
+\Registrar{SENS-TEC}{Resultados de sensibilidad técnica}{cap:dwsim}{02-DWSIM}{v1.0}{14/09/2026}
+
+% 03-AutoCAD-Plant3D · cap:dwsim
+\Registrar{DB-V1}{DB/BFD v1 en PDF}{cap:dwsim}{03-AutoCAD-Plant3D}{v1.0}{04/09/2026}
+\Registrar{DB-V1-CAD}{Proyecto completo de Plant 3D que respalda DB/BFD v1}{cap:dwsim}{03-AutoCAD-Plant3D}{v1.0}{04/09/2026}
+
+% 02-DWSIM · cap:integrado
+\Registrar{DWSIM-V2}{DWSIM v2, paquete del caso base integrado}{cap:integrado}{02-DWSIM}{v2.0}{28/09/2026}
+\Registrar{VTP-01}{Verificación técnica del proceso}{cap:integrado}{02-DWSIM}{v1.0}{21/09/2026}
+\Registrar{TC-01}{Tabla de corrientes de materia}{cap:integrado}{02-DWSIM}{v1.0}{21/09/2026}
+\Registrar{TE-01}{Tabla de cargas térmicas, potencias y energía}{cap:integrado}{02-DWSIM}{v1.0}{21/09/2026}
+\Registrar{LE-01}{Lista maestra de equipos y variables de diseño}{cap:integrado}{02-DWSIM}{v1.0}{24/09/2026}
+\Registrar{HD-EQUIPOS}{Hojas de datos de equipos}{cap:integrado}{02-DWSIM}{v1.0}{24/09/2026}
+\Registrar{SERVICIOS}{Balance de servicios e integración energética}{cap:integrado}{02-DWSIM}{v1.0}{05/10/2026}
+
+% 03-AutoCAD-Plant3D · cap:integrado
+\Registrar{DFP-V0}{DFP/PFD v0 en PDF}{cap:integrado}{03-AutoCAD-Plant3D}{v0.0}{21/09/2026}
+\Registrar{DFP-V0-CAD}{Proyecto completo de Plant 3D que respalda DFP v0}{cap:integrado}{03-AutoCAD-Plant3D}{v0.0}{21/09/2026}
+\Registrar{DFP-V1}{DFP/PFD v1 en PDF}{cap:integrado}{03-AutoCAD-Plant3D}{v1.0}{24/09/2026}
+\Registrar{DFP-V1-CAD}{Proyecto completo de Plant 3D que respalda DFP v1}{cap:integrado}{03-AutoCAD-Plant3D}{v1.0}{24/09/2026}
+
+% 04-Ambiente-y-SST · cap:ambiente
+\Registrar{AC-AMB-01}{Matriz integrada de aspectos ambientales}{cap:ambiente}{04-Ambiente-y-SST}{v1.0}{21/09/2026}
+\Registrar{AC-SST-01}{Expediente de seguridad y salud en el trabajo}{cap:ambiente}{04-Ambiente-y-SST}{v1.0}{08/10/2026}
+\Registrar{SST-A}{Identificación y valoración del riesgo inicial}{cap:ambiente}{04-Ambiente-y-SST}{v1.0}{08/10/2026}
+\Registrar{SST-B}{Requisitos normativos y controles}{cap:ambiente}{04-Ambiente-y-SST}{v1.0}{08/10/2026}
+\Registrar{SST-C}{Riesgo residual y decisiones}{cap:ambiente}{04-Ambiente-y-SST}{v1.0}{08/10/2026}
+
+% 05-Control-y-HAZOP · cap:control
+\Registrar{FC-01}{Filosofía de control y matriz maestra}{cap:control}{05-Control-y-HAZOP}{v1.0}{08/10/2026}
+\Registrar{AC-HAZOP-01}{Estudio HAZOP por nodos y acciones}{cap:control}{05-Control-y-HAZOP}{v1.0}{19/10/2026}
+\Registrar{HZ-A}{Formato HZ-A}{cap:control}{05-Control-y-HAZOP}{v1.0}{19/10/2026}
+\Registrar{HZ-B}{Formato HZ-B}{cap:control}{05-Control-y-HAZOP}{v1.0}{19/10/2026}
+\Registrar{MCE-01}{Matriz causa–efecto}{cap:control}{05-Control-y-HAZOP}{v1.0}{19/10/2026}
+\Registrar{CTRL-IPYNB}{Notebook ejecutado de controladores en Python}{cap:control}{05-Control-y-HAZOP}{v1.0}{28/10/2026}
+\Registrar{CTRL-COLAB}{Apertura del notebook de controladores en Colab}{cap:control}{05-Control-y-HAZOP}{v1.0}{28/10/2026}
+\Registrar{CTRL-INSUMOS}{Datos, scripts auxiliares y versiones de bibliotecas}{cap:control}{05-Control-y-HAZOP}{v1.0}{28/10/2026}
+\Registrar{RT-03-CTRL}{Correspondencia de lazos, TAG, escenarios y métricas}{cap:control}{05-Control-y-HAZOP}{v1.0}{28/10/2026}
+
+% 03-AutoCAD-Plant3D · cap:control
+\Registrar{DTI-V0}{DTI/P\&ID v0 en PDF}{cap:control}{03-AutoCAD-Plant3D}{v0.0}{08/10/2026}
+\Registrar{DTI-V0-CAD}{Proyecto completo de Plant 3D que respalda DTI v0}{cap:control}{03-AutoCAD-Plant3D}{v0.0}{08/10/2026}
+\Registrar{DTI-V1}{DTI/P\&ID v1 en PDF}{cap:control}{03-AutoCAD-Plant3D}{v1.0}{19/10/2026}
+\Registrar{DTI-V1-CAD}{Proyecto completo de Plant 3D que respalda DTI v1}{cap:control}{03-AutoCAD-Plant3D}{v1.0}{19/10/2026}
+
+% 06-PIB · cap:pib
+\Registrar{PIB-01}{Paquete de ingeniería básica y memoria}{cap:pib}{06-PIB}{v1.0}{28/10/2026}
+\Registrar{F-PIB-01}{Bases consolidadas}{cap:pib}{06-PIB}{v1.0}{28/10/2026}
+\Registrar{F-PIB-02}{Inventario técnico de equipos}{cap:pib}{06-PIB}{v1.0}{28/10/2026}
+\Registrar{F-PIB-03}{Balance de recursos, servicios y salidas}{cap:pib}{06-PIB}{v1.0}{28/10/2026}
+\Registrar{F-PIB-04}{Pendientes y verificación}{cap:pib}{06-PIB}{v1.0}{28/10/2026}
+\Registrar{AG-01}{Arreglo general}{cap:pib}{06-PIB}{v1.0}{28/10/2026}
+\Registrar{HAZOP-RES}{Resumen del HAZOP incorporado al PIB}{cap:pib}{06-PIB}{v1.0}{28/10/2026}
+
+% 07-BioSTEAM-y-economia · cap:costos
+\Registrar{BIOSTEAM}{Notebook ejecutado de BioSTEAM}{cap:costos}{07-BioSTEAM-y-economia}{v1.0}{05/11/2026}
+\Registrar{BIO-COLAB}{Apertura del notebook de BioSTEAM en Colab}{cap:costos}{07-BioSTEAM-y-economia}{v1.0}{05/11/2026}
+\Registrar{BIO-INSUMOS}{Datos, módulos, dependencias y versión de bibliotecas}{cap:costos}{07-BioSTEAM-y-economia}{v1.0}{05/11/2026}
+\Registrar{RT-03-MAP}{Comparación DWSIM–BioSTEAM}{cap:costos}{07-BioSTEAM-y-economia}{v1.0}{05/11/2026}
+\Registrar{RT-03-FE}{Fuentes y bases para el costeo}{cap:costos}{07-BioSTEAM-y-economia}{v1.0}{05/11/2026}
+\Registrar{RT-03-CAPEX}{Memoria y tabla de inversión por equipo y total}{cap:costos}{07-BioSTEAM-y-economia}{v1.0}{05/11/2026}
+\Registrar{RT-03-OPEX}{Memoria y tabla de costos fijos y variables}{cap:costos}{07-BioSTEAM-y-economia}{v1.0}{05/11/2026}
+
+% 07-BioSTEAM-y-economia · cap:tea
+\Registrar{TEA}{Modelo y memoria de evaluación tecnoeconómica}{cap:tea}{07-BioSTEAM-y-economia}{v1.0}{14/11/2026}
+\Registrar{FLUJO-CAJA}{Flujo de caja editable e indicadores}{cap:tea}{07-BioSTEAM-y-economia}{v1.0}{14/11/2026}
+\Registrar{SENS-ECO}{Escenarios, sensibilidad y resultados reproducibles}{cap:tea}{07-BioSTEAM-y-economia}{v1.0}{14/11/2026}
+
+% 08-Revisiones-tecnicas · cap:tea
+\Registrar{PITCH}{Presentación o video de la propuesta final}{cap:tea}{08-Revisiones-tecnicas}{v1.0}{20/11/2026}
+
+% 08-Revisiones-tecnicas · sec:registro
+\Registrar{RT-01}{Carpeta y expediente de la revisión técnica 1}{sec:registro}{08-Revisiones-tecnicas}{v1.0}{28/08/2026}
+\Registrar{RT01-MATERIAL}{Presentación o evidencia solicitada en RT-01}{sec:registro}{08-Revisiones-tecnicas}{v1.0}{28/08/2026}
+\Registrar{RT01-OBS}{Retroalimentación y acciones de RT-01}{sec:registro}{08-Revisiones-tecnicas}{v1.0}{28/08/2026}
+\Registrar{RT-02}{Carpeta y expediente de la revisión técnica 2}{sec:registro}{08-Revisiones-tecnicas}{v1.0}{28/09/2026}
+\Registrar{RT02-MATERIAL}{Presentación editable y material de RT-02}{sec:registro}{08-Revisiones-tecnicas}{v1.0}{28/09/2026}
+\Registrar{RT02-VIDEO}{Video de RT-02}{sec:registro}{08-Revisiones-tecnicas}{v1.0}{28/09/2026}
+\Registrar{RT02-OBS}{Retroalimentación y acciones de RT-02}{sec:registro}{08-Revisiones-tecnicas}{v1.0}{28/09/2026}
+\Registrar{RT-03}{Carpeta y expediente de la revisión técnica 3}{sec:registro}{08-Revisiones-tecnicas}{v1.0}{14/11/2026}
+\Registrar{RT03-MATERIAL}{Presentación editable y material de RT-03}{sec:registro}{08-Revisiones-tecnicas}{v1.0}{14/11/2026}
+\Registrar{RT03-VIDEO}{Video de RT-03}{sec:registro}{08-Revisiones-tecnicas}{v1.0}{14/11/2026}
+\Registrar{RT-03-RO}{Registro de observaciones, acciones y cierres}{sec:registro}{08-Revisiones-tecnicas}{v1.0}{14/11/2026}
+
+% 00-Portafolio · sec:registro
+\Registrar{EF}{Paquete final con PDF, código LaTeX y recursos}{sec:registro}{00-Portafolio}{Rev. 1.0}{23/11/2026}
+
+% C. CALENDARIO Y GANTT
+\newcommand{\AgendaPrimera}{%
+  \Evento{E0}{Firma de ingeniería}{1}{1}{1}{17/08/2026}{—}{E}
+  \Evento{RFP}{Requisitos de la propuesta}{1}{1}{1}{20/08/2026}{E0}{E}
+  \Evento{A2.1}{Matriz de bases de diseño}{2}{2}{2}{25/08/2026}{RFP}{E}
+  \Evento{NB-01}{Balance estequiométrico}{2}{2}{2}{25/08/2026}{A2.1}{E}
+  \Evento{DB-V0}{DB/BFD v0 y proyecto CAD}{2}{2}{2}{24/08/2026}{NB-01}{E}
+  \Evento{BD-PRE-01}{Bases preliminares}{2}{2}{2}{25/08/2026}{DB-V0}{E}
+  \Evento{AR-01}{Revisión conceptual}{2}{2}{2}{28/08/2026}{BD-PRE-01}{E}
+  \Evento{EQ-01}{Propuesta de equipos}{3}{3}{3}{28/08/2026}{AR-01}{E}
+  \Evento{DWSIM-V0}{Simulación exploratoria}{3}{3}{3}{01/09/2026}{EQ-01}{E}
+  \Evento{DB-V1}{DB/BFD v1 y proyecto CAD}{3}{3}{3}{04/09/2026}{DWSIM-V0}{E}
+  \Evento{E1}{Bases consolidadas}{2}{3}{3}{04/09/2026}{DB-V1}{E}
+  \Evento{SIM-01}{Verificación de DWSIM v1}{3}{4}{4}{11/09/2026}{DWSIM-V0}{E}
+  \Evento{DWSIM-V1}{Caso verificado de DWSIM}{4}{4}{4}{11/09/2026}{SIM-01}{E}
+  \Evento{SENS-TEC}{Sensibilidad técnica}{4}{4}{4}{14/09/2026}{DWSIM-V1}{E}
+  \Evento{VTP-01}{Verificación técnica}{5}{5}{5}{21/09/2026}{DWSIM-V1}{E}
+  \Evento{TC-01}{Corrientes de materia}{5}{5}{5}{21/09/2026}{VTP-01}{E}
+  \Evento{TE-01}{Cargas y potencias}{5}{5}{5}{21/09/2026}{VTP-01}{E}
+  \Evento{DFP-V0}{DFP v0 y proyecto CAD}{5}{5}{5}{21/09/2026}{TC-01}{E}
+  \Evento{LE-01}{Equipos y hojas de datos}{5}{6}{6}{24/09/2026}{DFP-V0}{E}
+  \Evento{DFP-V1}{DFP v1 y proyecto CAD}{6}{6}{6}{24/09/2026}{LE-01}{E}
+  \Evento{RT-01}{Revisión técnica 1}{6}{6}{6}{28/08/2026}{—}{R}
+}
+\newcommand{\AgendaSegunda}{%
+  \Evento{DWSIM-V2}{Caso base integrado}{6}{7}{7}{28/09/2026}{DFP-V1}{E}
+  \Evento{SERVICIOS}{Servicios e integración energética}{7}{8}{8}{05/10/2026}{DWSIM-V2}{E}
+  \Evento{AC-AMB-01}{Aspectos ambientales}{8}{9}{9}{21/09/2026}{DFP-V1}{E}
+  \Evento{RT-02}{Revisión técnica 2}{9}{9}{9}{28/09/2026}{AC-AMB-01}{R}
+  \Evento{AC-SST-01}{Seguridad y salud en el trabajo}{9}{10}{10}{08/10/2026}{AC-AMB-01}{E}
+  \Evento{FC-01}{Filosofía de control}{10}{11}{11}{08/10/2026}{AC-SST-01}{E}
+  \Evento{DTI-V0}{DTI v0 y proyecto CAD}{11}{11}{11}{08/10/2026}{FC-01}{E}
+  \Evento{AC-HAZOP-01}{HAZOP por nodos}{11}{12}{12}{19/10/2026}{DTI-V0}{E}
+  \Evento{MCE-01}{Matriz causa–efecto}{12}{12}{12}{19/10/2026}{AC-HAZOP-01}{E}
+  \Evento{DTI-V1}{DTI v1 y proyecto CAD}{12}{12}{12}{19/10/2026}{MCE-01}{E}
+  \Evento{CTRL-IPYNB}{Notebook de controladores}{11}{13}{13}{28/10/2026}{DTI-V1}{E}
+  \Evento{PIB-01}{Paquete y formatos de ingeniería básica}{12}{13}{13}{28/10/2026}{DTI-V1}{E}
+  \Evento{BIOSTEAM}{Modelo BioSTEAM verificado}{13}{14}{14}{05/11/2026}{PIB-01}{E}
+  \Evento{RT-03-CAPEX}{CAPEX y bases de costeo}{14}{14}{14}{05/11/2026}{BIOSTEAM}{E}
+  \Evento{RT-03-OPEX}{OPEX fijo y variable}{14}{14}{14}{05/11/2026}{BIOSTEAM}{E}
+  \Evento{RT-03}{Revisión técnica 3}{14}{14}{14}{14/11/2026}{RT-03-OPEX}{R}
+  \Evento{TEA}{Indicadores y flujo de caja}{14}{15}{15}{17/11/2026}{RT-03-OPEX}{E}
+  \Evento{SENS-ECO}{Sensibilidad y escenarios económicos}{15}{15}{15}{18/11/2026}{TEA}{E}
+  \Evento{PITCH}{Propuesta y defensa final}{15}{16}{16}{20/11/2026}{TEA}{E}
+  \Evento{EF}{Portafolio final y archivos fuente}{15}{16}{16}{\FechaFinal}{PITCH}{E}
+}
+
+\newcommand{\Agenda}{\AgendaPrimera\AgendaSegunda}
+
+\newcommand{\VinculoCalendario}[1]{\hyperlink{cal:#1}{\textsf{#1}}}
+\newcommand{\CapturarHito}[8]{%
+  \csgdef{hitoev:#1}{#1}\csgdef{semanahito:#1}{#5}}
+\begingroup\let\Evento\CapturarHito\Agenda\endgroup
+% Asocie los archivos auxiliares al hito que gobierna su entrega.
+\newcommand{\AsociarHito}[2]{\csdef{hitoev:#1}{#2}}
+\AsociarHito{NB01-COLAB}{NB-01}
+\AsociarHito{NB01-INSUMOS}{NB-01}
+\AsociarHito{DB-V0-CAD}{DB-V0}
+\AsociarHito{DB-V1-CAD}{DB-V1}
+\AsociarHito{BALANCES}{SIM-01}
+\AsociarHito{HD-EQUIPOS}{LE-01}
+\AsociarHito{DFP-V0-CAD}{DFP-V0}
+\AsociarHito{DFP-V1-CAD}{DFP-V1}
+\AsociarHito{SST-A}{AC-SST-01}
+\AsociarHito{SST-B}{AC-SST-01}
+\AsociarHito{SST-C}{AC-SST-01}
+\AsociarHito{DTI-V0-CAD}{DTI-V0}
+\AsociarHito{DTI-V1-CAD}{DTI-V1}
+\AsociarHito{HZ-A}{AC-HAZOP-01}
+\AsociarHito{HZ-B}{AC-HAZOP-01}
+\AsociarHito{CTRL-COLAB}{CTRL-IPYNB}
+\AsociarHito{CTRL-INSUMOS}{CTRL-IPYNB}
+\AsociarHito{RT-03-CTRL}{CTRL-IPYNB}
+\AsociarHito{F-PIB-01}{PIB-01}
+\AsociarHito{F-PIB-02}{PIB-01}
+\AsociarHito{F-PIB-03}{PIB-01}
+\AsociarHito{F-PIB-04}{PIB-01}
+\AsociarHito{AG-01}{PIB-01}
+\AsociarHito{HAZOP-RES}{PIB-01}
+\AsociarHito{BIO-COLAB}{BIOSTEAM}
+\AsociarHito{BIO-INSUMOS}{BIOSTEAM}
+\AsociarHito{RT-03-MAP}{BIOSTEAM}
+\AsociarHito{RT-03-FE}{RT-03-CAPEX}
+\AsociarHito{FLUJO-CAJA}{TEA}
+\AsociarHito{RT01-MATERIAL}{RT-01}
+\AsociarHito{RT01-OBS}{RT-01}
+\AsociarHito{RT02-MATERIAL}{RT-02}
+\AsociarHito{RT02-VIDEO}{RT-02}
+\AsociarHito{RT02-OBS}{RT-02}
+\AsociarHito{RT03-MATERIAL}{RT-03}
+\AsociarHito{RT03-VIDEO}{RT-03}
+\AsociarHito{RT-03-RO}{RT-03}
+\newcommand{\SemanaEvidencia}[1]{%
+  \ifcsdef{hitoev:#1}{\hyperlink{cal:\csuse{hitoev:#1}}{%
+    S\csuse{semanahito:\csuse{hitoev:#1}}}}{}}
+\newcommand{\Antecedente}[1]{%
+  \ifcsdef{evnombre:#1}{\VinculoCalendario{#1}}{#1}}
+\newcommand{\FilaCalendario}[8]{%
+  \hypertarget{cal:#1}{\Ficha{#1}} &
+  #2\enspace\AlCapitulo{#1} &
+  S#5 &
+  #6 &
+  \Antecedente{#7} &
+  \hyperlink{gantt:#1}{Gantt}\enspace\Abrir[Pend.]{#1}{Drive}\\\hline
+}
+\newcommand{\CeldaGantt}[6]{%
+  \ifnum#1=#4\relax
+    \cellcolor{Enlace}\hyperlink{ev:#6}{\textcolor{white}{\sffamily\bfseries#5}}%
+  \else
+    \ifnum#1<#2\relax\else
+      \ifnum#1>#3\relax\else\cellcolor{Terracota!32!white}\fi
+    \fi
+  \fi
+  \rule{0pt}{1.45ex}%
+}
+\newcommand{\FilaGantt}[8]{%
+  \hypertarget{gantt:#1}{\VinculoCalendario{#1}}\enspace #2 &
+  \Antecedente{#7} &
+  \CeldaGantt{1}{#3}{#4}{#5}{#8}{#1}&\CeldaGantt{2}{#3}{#4}{#5}{#8}{#1}&
+  \CeldaGantt{3}{#3}{#4}{#5}{#8}{#1}&\CeldaGantt{4}{#3}{#4}{#5}{#8}{#1}&
+  \CeldaGantt{5}{#3}{#4}{#5}{#8}{#1}&\CeldaGantt{6}{#3}{#4}{#5}{#8}{#1}&
+  \CeldaGantt{7}{#3}{#4}{#5}{#8}{#1}&\CeldaGantt{8}{#3}{#4}{#5}{#8}{#1}&
+  \CeldaGantt{9}{#3}{#4}{#5}{#8}{#1}&\CeldaGantt{10}{#3}{#4}{#5}{#8}{#1}&
+  \CeldaGantt{11}{#3}{#4}{#5}{#8}{#1}&\CeldaGantt{12}{#3}{#4}{#5}{#8}{#1}&
+  \CeldaGantt{13}{#3}{#4}{#5}{#8}{#1}&\CeldaGantt{14}{#3}{#4}{#5}{#8}{#1}&
+  \CeldaGantt{15}{#3}{#4}{#5}{#8}{#1}&\CeldaGantt{16}{#3}{#4}{#5}{#8}{#1}\\\hline
+}
+\newcommand{\FilaEvidencia}[1]{%
+  \hypertarget{ev:#1}{\textsf{\textbf{#1}}} &
+  \NombreEv{#1}\par{\footnotesize\color{Gris}\csuse{evcarpeta:#1}} &
+  \csuse{evrev:#1}\par\csuse{evfecha:#1} &
+  \AlCapitulo{#1}\par\SemanaEvidencia{#1} &
+  \Abrir{#1}{Abrir archivo}\\\hline
+}
+
+\begin{document}
+\color{Tinta}
+\pagenumbering{arabic}
+\hypersetup{pdftitle={Portafolio final de Diseño de Procesos y Productos Químicos},
+            pdfauthor={\Firma},pdfsubject={Expediente de ingeniería y evaluación tecnoeconómica}}
+
+% PORTADA
+\thispagestyle{empty}
+\pdfbookmark[0]{Portada}{portada}
+{\sffamily\small\bfseries\color{Grafito}
+  \Institucion\par \Facultad\par}
+\vspace{5mm}
+{\color{Terracota}\rule{\linewidth}{1.5pt}}\par
+\vspace{13mm}
+\begin{minipage}[c]{0.65\linewidth}
+  {\sffamily\small\bfseries\color{Enlace}\Asignatura\par}
+  \vspace{4mm}
+  {\sffamily\bfseries\fontsize{30}{33}\selectfont\color{Grafito}
+    Portafolio final\par}
+  \vspace{4mm}
+  {\sffamily\Large\bfseries\Proyecto\par}
+  \vspace{2mm}
+  {\sffamily\large\Firma\par}
+  {\sffamily\small\color{Gris}\SiglasFirma\enspace|\enspace
+    Conformación \FechaConformacion\par}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.28\linewidth}
+  \centering
+  \IfFileExists{\LogoEmpresa}{%
+    \includegraphics[width=\linewidth,height=35mm,keepaspectratio]{\LogoEmpresa}
+  }{%
+    \begin{tcolorbox}[height=35mm,colback=Papel,colframe=Separador,
+      boxrule=0.55pt,arc=0pt,valign=center,halign=center]
+      {\sffamily\small\color{Gris}Logotipo de la firma}
+    \end{tcolorbox}}
+\end{minipage}
+
+\vspace{8mm}
+{\sffamily\large\bfseries\color{Grafito}Conformación de la firma de ingeniería\par}
+\begin{tabularx}{\linewidth}{@{}Y Y Y@{}}
+\CabeceraTabla \EncTabla{Integrante} & \EncTabla{Cargo} & \EncTabla{Responsabilidad}\\
+\IntegrantesFirma
+\bottomrule
+\end{tabularx}\par
+{\small Acta y datos completos de constitución \Ficha{E0}\enspace
+\Abrir{E0}{Abrir acta en Drive}.}
+
+\vfill
+\begin{tcolorbox}[colback=Arena,colframe=Terracota,boxrule=0.4pt,
+  leftrule=2pt,arc=0pt]
+  {\sffamily\bfseries\Docente\par}
+  {\sffamily\small Sección \Grupo\enspace|\enspace Periodo \Periodo\par
+    Entrega \FechaFinal\enspace|\enspace Revisión \Revision\par}
+\end{tcolorbox}
+{\sffamily\small\hyperref[nav:inicio]{Abrir índice \(\rightarrow\)}
+  \enspace|\enspace\AccesoRaiz}
+
+% PRELIMINARES
+\clearpage
+\phantomsection\label{nav:inicio}
+\pdfbookmark[0]{Inicio e índice}{inicio}
+{\sffamily\LARGE\bfseries\color{Grafito}Inicio e índice\par}
+{\sffamily\small
+  \hyperref[nav:calendario]{Calendario}\enspace|\enspace
+  \hyperref[nav:gantt]{Gantt}\enspace|\enspace
+  \hyperref[nav:rt]{Revisiones técnicas}\enspace|\enspace
+  \hyperref[sec:drive]{Carpeta y estructura de Drive}\enspace|\enspace
+  \AccesoRaiz\par}
+\Guia{Resumen ejecutivo}{%
+  \Completar{Sinteticen el alcance, capacidad, pureza, ruta de proceso,
+  decisión de diseño, CAPEX, OPEX, VAN, TIR y precio mínimo de venta.
+  Cierren con la viabilidad del caso base y su principal incertidumbre.}
+  Enlacen aquí los resultados en
+  \hyperref[cap:costos]{CAPEX y OPEX} y \hyperref[cap:tea]{evaluación tecnoeconómica}.}
+\noindent\textbf{Control documental}\par
+\begin{tabularx}{\linewidth}{@{}p{.20\linewidth}p{.22\linewidth}Y@{}}
+\CabeceraTabla \EncTabla{Revisión} & \EncTabla{Fecha} & \EncTabla{Cambio, origen y sección}\\
+\Revision & \FechaFinal & \Completar{Identifiquen el cambio y enlacen la revisión o evidencia.}\\
+\bottomrule
+\end{tabularx}
+\renewcommand{\contentsname}{Contenido}
+\tableofcontents
+
+% CALENDARIO
+\clearpage
+\phantomsection\label{nav:calendario}
+\addcontentsline{toc}{section}{Calendario de entregas}
+{\sffamily\LARGE\bfseries\color{Grafito}Calendario de entregas\par}
+{\sffamily\small \hyperref[nav:inicio]{Índice}\enspace|\enspace
+  \hyperref[nav:gantt]{Gantt}\enspace|\enspace
+  \hyperref[nav:rt]{Revisiones técnicas}\par}
+La planeación se expresa en semanas del curso. Completen las fechas y horas
+oficiales y ajusten las semanas orientativas de RT-01, RT-02 y RT-03 en
+la sección C del código fuente. Las dos vistas se actualizan juntas.
+Cada código abre su ficha. El símbolo § abre el capítulo correspondiente.
+
+\begingroup\small\setlength{\tabcolsep}{3.5pt}
+\arrayrulecolor{Separador}\setlength{\arrayrulewidth}{0.3pt}
+\let\Evento\FilaCalendario
+\begin{longtable}{@{}L{.118\linewidth}L{.295\linewidth}L{.059\linewidth}
+                      L{.14\linewidth}L{.152\linewidth}L{.14\linewidth}@{}}
+\CabeceraTabla \EncTabla{Código} & \EncTabla{Entregable} & \EncTabla{Sem.} &
+\EncTabla{Fecha y hora} & \EncTabla{Antecedente} & \EncTabla{Accesos}\\
+\endfirsthead
+\CabeceraTabla \EncTabla{Código} & \EncTabla{Entregable} & \EncTabla{Sem.} &
+\EncTabla{Fecha y hora} & \EncTabla{Antecedente} & \EncTabla{Accesos}\\
+\endhead
+\Agenda
+\end{longtable}
+\endgroup
+
+% GANTT
+\newcommand{\TablaGantt}[1]{%
+  \par\smallskip\begingroup
+  \small\setlength{\tabcolsep}{2.7pt}\setlength{\parskip}{0pt}%
+  \arrayrulecolor{Separador}\setlength{\arrayrulewidth}{0.3pt}%
+  \renewcommand{\arraystretch}{1}%
+  \let\Evento\FilaGantt
+  {\centering
+  \begin{tabular}{@{}L{.310\linewidth}L{.096\linewidth}
+    *{16}{>{\centering\arraybackslash}p{.025\linewidth}}@{}}
+  \CabeceraTabla \EncTabla{Entregable} & \EncTabla{Antecedente} &
+  \EncTabla{1}&\EncTabla{2}&\EncTabla{3}&\EncTabla{4}&
+  \EncTabla{5}&\EncTabla{6}&\EncTabla{7}&\EncTabla{8}&
+  \EncTabla{9}&\EncTabla{10}&\EncTabla{11}&\EncTabla{12}&
+  \EncTabla{13}&\EncTabla{14}&\EncTabla{15}&\EncTabla{16}\\
+  #1
+  \end{tabular}\par}
+  \endgroup
+}
+\newcommand{\PieGantt}{%
+  \vfill\noindent\begin{minipage}{\linewidth}
+    \setlength{\parskip}{0pt}%
+    {\color{Separador}\rule{\linewidth}{0.4pt}}\par
+    {\small\sffamily\color{Grafito}
+      \Docente\hfill\hyperref[nav:inicio]{Índice}\hfill
+      \textbf{Página~\thepage\ de~\pageref*{LastPage}}}\par
+  \end{minipage}\par}
+\newcommand{\GuiaGantt}{%
+  {\small\sffamily
+    \hyperref[nav:calendario]{Calendario}\enspace|\enspace
+    \hyperref[nav:rt]{Revisiones técnicas}\par}
+  {\small Franja clara: elaboración. \textbf{E}: entrega. \textbf{R}: revisión.
+    El código abre el calendario y el marcador abre la ficha de evidencia.\par}}
+\begin{landscape}
+\thispagestyle{empty}
+\enlargethispage{31pt}
+\phantomsection\label{nav:gantt}
+\addcontentsline{toc}{section}{Gantt de elaboración y entrega}
+{\sffamily\LARGE\bfseries\color{Grafito}Gantt de elaboración y entrega\par}
+\GuiaGantt
+\TablaGantt{\AgendaPrimera}
+\PieGantt
+
+\newpage
+\thispagestyle{empty}
+\enlargethispage{31pt}
+{\sffamily\LARGE\bfseries\color{Grafito}Gantt de elaboración y entrega · continuación\par}
+\GuiaGantt
+\TablaGantt{\AgendaSegunda}
+\PieGantt
+\end{landscape}
+
+
+\Capitulo{Firma de ingeniería, alcance y bases preliminares}
+  {cap:bases}{nav:calendario}{cap:conceptual}
+\subsection{Identidad de la firma y requisitos}
+\Completar{Presenten la firma, su organización, sus responsabilidades y
+el encargo de la RFP. Definan los límites técnicos, las corrientes de
+entrada y salida y las exclusiones acordadas con el cliente.}
+\Acceso{E0}
+\Acceso{RFP}
+\subsection{Matriz de bases y balance preliminar}\label{sec:bases-matriz}
+\Completar{Fijen la base de cálculo, capacidad, pureza, horas de operación,
+especificaciones, restricciones y supuestos. Incluyan las reacciones
+balanceadas, el consumo teórico de reactivos y la producción estimada.
+Para electrólisis, documenten agua, electricidad, H\textsubscript{2}
+y O\textsubscript{2} sobre la misma base.}\par
+\begin{tabularx}{\linewidth}{@{}Y Y Y Y@{}}
+\CabeceraTabla \EncTabla{Requisito o variable} & \EncTabla{Valor y unidad} &
+  \EncTabla{Tipo y fuente} & \EncTabla{Uso en el diseño}\\
+\Completar{Variable} & \Completar{Valor} &
+  \Completar{Requisito o supuesto} & \Completar{Decisión asociada}\\
+\bottomrule
+\end{tabularx}
+\Acceso{BD-PRE-01}
+\Acceso{A2.1}
+\Acceso{NB-01}
+\Acceso{NB01-COLAB}
+\Acceso{NB01-INSUMOS}
+\Guia{Discusión de las bases}{%
+  \Completar{Relacionen una exigencia de la RFP con un resultado de NB-01.
+  Evalúen el efecto de modificar el supuesto más sensible e indiquen qué
+  restricciones deberá respetar el diseño conceptual.}}
+\Cierre{cap:conceptual}{Diseño conceptual y equipos}
+
+\Capitulo{Diseño conceptual y selección preliminar de equipos}
+  {cap:conceptual}{cap:bases}{cap:dwsim}
+\subsection{Traducción de las bases al diagrama de bloques}
+Partan de la \hyperref[sec:bases-matriz]{matriz de bases y el balance
+preliminar}. \Completar{Justifiquen el orden de los bloques y ubiquen
+alimentaciones, producto, subproductos, reciclos y purgas que apliquen.}
+\Plano{db-bfd-v0.pdf}{DB/BFD v0}{fig:dbv0}{DB-V0}
+\Acceso{DB-V0-CAD}
+\subsection{Revisión conceptual y propuesta de equipos}
+\Completar{Registren las preguntas y observaciones de AR-01. Vinculen
+bloque, TAG, equipo, función, variable por determinar y método para
+calcularla en EQ-01. Identifiquen los supuestos que se consolidan en E1.}
+\Acceso{AR-01}
+\Acceso{EQ-01}
+\Acceso{E1}
+\Guia{Discusión de las alternativas}{%
+  \Completar{Contrasten la configuración preliminar con la alternativa
+  que discutieron. Expliquen qué observación de AR-01 cambió la selección
+  o el orden de un bloque, qué sustenta el cambio y qué falta verificar.}}
+\Cierre{cap:dwsim}{Simulación en DWSIM}
+
+\Capitulo{Simulación y verificación en DWSIM}
+  {cap:dwsim}{cap:conceptual}{cap:integrado}
+\subsection{Caso exploratorio y cambio de BFD}
+Partan del \hyperref[fig:dbv0]{DB/BFD v0} y de \Ficha{EQ-01}.\par
+\Completar{Identifiquen el entorno, los componentes, el paquete
+termodinámico y las especificaciones de los equipos. Expliquen qué
+hallazgos de v0 motivaron cambios en el diagrama de bloques.}
+\Acceso{DWSIM-V0}
+\Plano{db-bfd-v1.pdf}{DB/BFD v1}{fig:dbv1}{DB-V1}
+\Acceso{DB-V1-CAD}
+\subsection{SIM-01 y caso verificado}\label{sec:sim-verif}
+\Completar{Documenten reacción, separación, reciclo, purga, convergencia
+y cierres de materia y energía. Comparen capacidad, pureza y variables
+críticas con E1. Muestren rangos y resultados de sensibilidad técnica.}
+\begin{tabularx}{\linewidth}{@{}Y Y Y Y@{}}
+\CabeceraTabla \EncTabla{Variable y unidad} & \EncTabla{v0} &
+\EncTabla{v1 y desviación} & \EncTabla{Criterio y juicio}\\
+\Completar{Variable} & \Completar{Valor} & \Completar{Valor y cambio}
+  & \Completar{Base o tolerancia}\\
+\bottomrule
+\end{tabularx}
+\Acceso{DWSIM-V1}
+\Acceso{SIM-01}
+\Acceso{BALANCES}
+\Acceso{SENS-TEC}
+\Guia{Discusión de los resultados de simulación}{%
+  \Completar{Interpreten un cambio entre v0 y v1. Justifiquen si surge
+  de la configuración, del paquete termodinámico o de los supuestos.
+  Expliquen qué resultados permiten elegir las condiciones para el caso integrado.}}
+\Cierre{cap:integrado}{Proceso integrado, tablas y servicios}
+
+\Capitulo{Proceso integrado, DFP, equipos y servicios}
+  {cap:integrado}{cap:dwsim}{cap:ambiente}
+\subsection{Caso de referencia y tablas de ingeniería}\label{sec:tablas-proceso}
+Del \hyperref[sec:sim-verif]{caso verificado} obtengan un caso integrado.
+\Completar{Identifiquen la versión y la condición de operación usada
+para emitir el DFP. Registren caudal, composición, temperatura, presión
+y fase en TC-01. En TE-01, registren cargas y potencias con unidades,
+signos y equipo asociado. Contrasten los resultados con VTP-01.}
+\Acceso{DWSIM-V2}
+\Acceso{VTP-01}
+\Acceso{TC-01}
+\Acceso{TE-01}
+\subsection{Emisión del DFP y consolidación de equipos}
+\Completar{Identifiquen los cambios entre DFP v0 y v1. Relacionen los
+TAG del plano con LE-01 y las hojas de datos. Indiquen cantidad,
+función, tipo, parámetro de tamaño y origen de cada dato.}
+\Acceso{DFP-V0}
+\Acceso{DFP-V0-CAD}
+\Plano{dfp-v1.pdf}{DFP/PFD v1}{fig:dfpv1}{DFP-V1}
+\Acceso{DFP-V1-CAD}
+\Acceso{LE-01}
+\Acceso{HD-EQUIPOS}
+\subsection{Servicios e integración energética}\label{sec:servicios}
+\Completar{Cuantifiquen demandas y recuperación de calor, cuando
+corresponda. Relacionen TE-01 con el consumo externo y con las condiciones
+de referencia que se usarán en F-PIB-03.}
+\Acceso{SERVICIOS}
+\Guia{Discusión de diseño y consumo}{%
+  \Completar{Expliquen cómo un resultado del caso integrado cambió
+  una especificación de equipo o un servicio. Comparen las alternativas
+  evaluadas y justifiquen el caso transferido a ambiente y control.}}
+\Cierre{cap:ambiente}{Ambiente y seguridad laboral}
+
+\Capitulo{Aspectos ambientales y seguridad y salud en el trabajo}
+  {cap:ambiente}{cap:integrado}{cap:control}
+\subsection{Evaluación ambiental integrada}\label{sec:amb-matriz}
+Usen el \hyperref[fig:dfpv1]{DFP vigente} y el
+\hyperref[sec:servicios]{balance de servicios}.
+\Completar{Sinteticen la matriz única AC-AMB-01 con aspecto, impacto,
+significancia, medida de control, normatividad y requisito concreto.
+Identifiquen la etapa, corriente o TAG de los aspectos prioritarios.}
+\Acceso{AC-AMB-01}
+{\small \hyperref[nav:rt02]{Consultar RT-02 y sus observaciones}.}
+\subsection{Peligros, requisitos y controles}
+\Completar{Vinculen los formatos A, B y C por identificador de escenario.
+Documenten el peligro, riesgo inicial, requisito aplicable, controles,
+riesgo residual y decisión. Enlacen el DFP o el equipo afectado.}
+\Acceso{AC-SST-01}
+\Acceso{SST-A}
+\Acceso{SST-B}
+\Acceso{SST-C}
+\begin{tabularx}{\linewidth}{@{}Y Y Y@{}}
+\CabeceraTabla \EncTabla{Aspecto o escenario} & \EncTabla{Evidencia y criterio} &
+\EncTabla{Control y capítulo afectado}\\
+\Completar{ID, TAG y corriente} & \Completar{Fila, requisito y medida} &
+  \Completar{Decisión y enlace interno}\\
+\bottomrule
+\end{tabularx}
+\Guia{Discusión ambiental y de SST}{%
+  \Completar{Expliquen cuál es el aspecto más significativo y cuál es
+  el escenario prioritario. Analicen cómo el control propuesto modifica
+  el riesgo o el impacto y qué hallazgo se incorpora al diseño o a FC-01.}}
+\Cierre{cap:control}{Control, HAZOP y DTI}
+
+\Capitulo{Filosofía de control, HAZOP y DTI}
+  {cap:control}{cap:ambiente}{cap:pib}
+\subsection{Filosofía de control y representación preliminar}
+Recuperen los \hyperref[cap:ambiente]{hallazgos de ambiente y SST}
+y el \hyperref[fig:dfpv1]{DFP vigente}.
+\Completar{Definan por equipo la variable controlada, consigna o
+intervalo, elemento final, perturbación, respuesta, alarmas, interbloqueos
+y TAG con su fuente. Expliquen las interacciones relevantes entre lazos.}
+\Acceso{FC-01}
+\Acceso{DTI-V0}
+\Acceso{DTI-V0-CAD}
+\subsection{HAZOP, matriz causa--efecto y revisión del DTI}\label{sec:hazop}
+\Completar{Expliquen cómo se eligieron los nodos, las desviaciones,
+causas, consecuencias, salvaguardas y acciones. Vinculen escenarios,
+TAG, condiciones de activación y cambios de plano.}
+\Acceso{AC-HAZOP-01}
+\Acceso{HZ-A}
+\Acceso{HZ-B}
+\Acceso{MCE-01}
+\Plano{dti-v1.pdf}{DTI/P\&ID v1}{fig:dtiv1}{DTI-V1}
+\Acceso{DTI-V1-CAD}
+\subsection{Pruebas de los controladores}\label{sec:ctrl}
+\Completar{Indiquen los lazos programados, ecuaciones, parámetros de
+sintonía, pruebas, gráficas, métricas y conclusiones. Identifiquen la
+condición del modelo y el TAG que corresponde a cada lazo.}
+\Acceso{CTRL-IPYNB}
+\Acceso{CTRL-COLAB}
+\Acceso{CTRL-INSUMOS}
+\Acceso{RT-03-CTRL}
+\Guia{Discusión de la respuesta operativa y las salvaguardas}{%
+  \Completar{Sigan un escenario desde el riesgo hasta su acción en la
+  matriz causa--efecto y su TAG en el DTI. Expliquen qué prueba y métrica
+  del notebook sustentan la estrategia de control y bajo qué límites.}}
+\Cierre{cap:pib}{Paquete de ingeniería básica}
+
+\Capitulo{Paquete de ingeniería básica}
+  {cap:pib}{cap:control}{cap:costos}
+\subsection{Bases, equipos, recursos y verificación}\label{sec:pib-formatos}
+Consoliden \hyperref[sec:tablas-proceso]{las tablas de ingeniería},
+\hyperref[sec:servicios]{los servicios}, \hyperref[sec:hazop]{el HAZOP}
+y \hyperref[fig:dtiv1]{el DTI vigente} en el PIB-01.
+\Acceso{PIB-01}
+\begin{tabularx}{\linewidth}{@{}p{.19\linewidth}Y Y@{}}
+\CabeceraTabla \EncTabla{Formato} & \EncTabla{Contenido que se discute} &
+  \EncTabla{Uso posterior}\\
+\Ficha{F-PIB-01} & Capacidad, producción, horas y límites de diseño. &
+  Base del modelo económico y de la producción vendible.\\
+\Ficha{F-PIB-02} & Inventario por TAG, cantidad y variable de tamaño. &
+  Cálculo del CAPEX por equipo.\\
+\Ficha{F-PIB-03} & Recursos, servicios y salidas por hora y por año. &
+  OPEX variable e ingresos.\\
+\Ficha{F-PIB-04} & Pendientes, responsables y evidencia de cierre. &
+  Supuestos por verificar y sensibilidad.\\
+\bottomrule
+\end{tabularx}
+\Acceso{F-PIB-01}
+\Acceso{F-PIB-02}
+\Acceso{F-PIB-03}
+\Acceso{F-PIB-04}
+\subsection{Arreglo general y soportes}
+\Completar{Presenten las decisiones de implantación y enlacen la
+memoria, el caso base de DWSIM, los planos y las acciones prioritarias.}
+\Acceso{AG-01}
+\Acceso{HAZOP-RES}
+{\small \hyperref[fig:dtiv1]{DTI v1}\enspace|\enspace
+\Ficha{DWSIM-V2}\enspace|\enspace\Ficha{TC-01}\enspace|\enspace\Ficha{TE-01}.}
+\Guia{Discusión de la consolidación}{%
+  \Completar{Sigan el origen de un parámetro de tamaño y de un consumo.
+  Identifiquen el dato pendiente de mayor efecto económico y justifiquen
+  cómo lo representarán en el análisis siguiente.}}
+\Cierre{cap:costos}{BioSTEAM, CAPEX y OPEX}
+
+\Capitulo{BioSTEAM y estimación de CAPEX y OPEX}
+  {cap:costos}{cap:pib}{cap:tea}
+\subsection{Modelo reproducible y comparación con DWSIM}
+Partan del \hyperref[sec:pib-formatos]{PIB-01} y del caso
+\Ficha{DWSIM-V2}. \Completar{Describan el entorno, insumos y
+alcance de BioSTEAM. Comparen valores de referencia y resultados
+con unidades, desviación y justificación. Documenten aproximaciones,
+equipos omitidos del modelo y correcciones por fuera de la simulación.}
+\Acceso{BIOSTEAM}
+\Acceso{BIO-COLAB}
+\Acceso{BIO-INSUMOS}
+\Acceso{RT-03-MAP}
+{\small \hyperref[nav:rt03]{Consultar RT-03 y sus observaciones}.}
+\subsection{Inversión}\label{sec:capex}
+\Completar{Definan moneda, año monetario, capacidad, horas y límites.
+Por TAG indiquen tamaño, cantidad, método y fuente, compra e instalación.
+Si usaron Turton/CAPCOST, especifiquen correlación, coeficientes, unidades
+y validez. Cuando aplique, muestren el escalamiento y la actualización
+por CEPCI. Reconcilien inversión fija, capital de trabajo e inversión total.
+Verifiquen la contabilización única de instalación e instrumentación.}
+\Acceso{RT-03-FE}
+\Acceso{RT-03-CAPEX}
+\subsection{Costos operativos}\label{sec:opex}
+\Completar{Vinculen F-PIB-03 con consumos, precios, bases y fuentes.
+Reporten OPEX fijo, variable, total y costo unitario. Para e-metanol,
+especifiquen el costeo de CO\textsubscript{2} y H\textsubscript{2}.
+Cuando la electrólisis forme parte de la planta, relacionen el costeo
+del hidrógeno con el agua, la electricidad y los otros insumos considerados.}
+\Acceso{RT-03-OPEX}
+\begin{tabularx}{\linewidth}{@{}Y Y Y Y@{}}
+\CabeceraTabla \EncTabla{Partida} & \EncTabla{Base y unidad} &
+\EncTabla{Costo y año} & \EncTabla{Origen y cálculo}\\
+\Completar{TAG o consumo} & \Completar{Tamaño o flujo} &
+  \Completar{Valor} & \Completar{Fila de PIB y memoria}\\
+\bottomrule
+\end{tabularx}
+\Guia{Discusión del costeo y sus límites}{%
+  \Completar{Justifiquen cómo se trató la diferencia más relevante
+  entre los modelos. Identifiquen el equipo que domina el CAPEX y el
+  insumo que domina el OPEX. Expliquen qué supuesto merece sensibilidad.}}
+\Cierre{cap:tea}{Evaluación tecnoeconómica}
+
+\Capitulo{Evaluación tecnoeconómica y propuesta final}
+  {cap:tea}{cap:costos}{sec:registro}
+\subsection{Flujo de caja, supuestos y resultados}\label{sec:flujo}
+Integren la \hyperref[sec:capex]{inversión} y los
+\hyperref[sec:opex]{costos operativos} del capítulo anterior.
+\Completar{Declaren vida del proyecto, tasa de descuento, calendario de
+inversión y arranque, producción vendible, precio de venta, depreciación,
+impuestos y recuperación de capital de trabajo, según apliquen.
+Muestren cómo los datos técnicos se convierten en partidas anuales.}
+\Acceso{TEA}
+\Acceso{FLUJO-CAJA}
+\begin{tabularx}{\linewidth}{@{}p{.33\linewidth}Y Y@{}}
+\CabeceraTabla \EncTabla{Indicador} & \EncTabla{Resultado y unidad} &
+  \EncTabla{Criterio e interpretación}\\
+VAN o VPN & \Completar{Resultado} & \Completar{Tasa y horizonte}\\
+TIR & \Completar{Resultado} & \Completar{Tasa de referencia}\\
+Periodo de recuperación & \Completar{Años} & \Completar{Simple o descontado}\\
+Precio mínimo de venta & \Completar{Moneda por unidad} &
+  \Completar{Precio con VAN igual a cero}\\
+\bottomrule
+\end{tabularx}
+\subsection{Sensibilidad y propuesta técnico-económica}
+\Completar{Definan caso base, rangos y escenarios. Incorporen resultados
+y gráficas. Comparen el precio mínimo de venta con el precio del escenario
+y distingan su significado del costo unitario de producción.}
+\Acceso{SENS-ECO}
+\Acceso{PITCH}
+\Guia{Discusión y recomendación de la firma}{%
+  \Completar{Concluyan si se cumplen las especificaciones y si el caso
+  resulta viable. Describan el escenario que cambiaría la decisión,
+  el supuesto más incierto y la verificación necesaria para avanzar.}}
+\Cierre{sec:registro}{Revisiones, evidencias y anexos}
+
+\Capitulo{Revisiones técnicas, evidencias y anexos}
+  {sec:registro}{cap:tea}{sec:documentacion}
+\subsection{Revisiones técnicas}\label{nav:rt}
+\begin{itemize}
+  \item \hyperref[nav:rt01]{RT-01 · Primer corte técnico}
+  \item \hyperref[nav:rt02]{RT-02 · Avances hasta AC-AMB-01}
+  \item \hyperref[nav:rt03]{RT-03 · Expediente acumulado, BioSTEAM y costos}
+\end{itemize}
+
+\subsubsection*{RT-01 · Primer corte técnico}
+\phantomsection\label{nav:rt01}
+\Completar{Registren el alcance asignado, versión presentada y fecha.
+Vinculen cada observación con el capítulo donde se atendió.}
+\Acceso{RT-01}
+\Acceso{RT01-MATERIAL}
+\Acceso{RT01-OBS}
+{\small \hyperlink{cal:RT-01}{Ver fecha en el calendario}.}
+
+\subsubsection*{RT-02 · Avances hasta AC-AMB-01}
+\phantomsection\label{nav:rt02}
+\Completar{Indiquen qué observaciones modificaron las tablas, el DFP,
+la matriz ambiental o la justificación de decisiones.}
+\Acceso{RT-02}
+\Acceso{RT02-MATERIAL}
+\Acceso{RT02-VIDEO}
+\Acceso{RT02-OBS}
+{\small \hyperlink{cal:RT-02}{Ver fecha}\enspace|\enspace
+\hyperref[sec:amb-matriz]{Discusión de AC-AMB-01}.}
+
+\subsubsection*{RT-03 · Expediente acumulado, BioSTEAM y CAPEX/OPEX}
+\phantomsection\label{nav:rt03}
+\Completar{Señalen las observaciones sobre el expediente, los controladores,
+la comparación de simuladores y las tablas de costos. Enlacen las evidencias
+de cierre y las limitaciones que se trasladaron a la evaluación económica.}
+\Acceso{RT-03}
+\Acceso{RT03-MATERIAL}
+\Acceso{RT03-VIDEO}
+\Acceso{RT-03-RO}
+{\small \hyperlink{cal:RT-03}{Ver fecha}\enspace|\enspace
+\hyperref[sec:ctrl]{Controladores}\enspace|\enspace
+\hyperref[cap:costos]{BioSTEAM y costos}.}
+
+\subsubsection*{Registro de cierre}
+\begin{tabularx}{\linewidth}{@{}p{.105\linewidth}Y Y Y@{}}
+\CabeceraTabla \EncTabla{Corte} & \EncTabla{Observación y responsable} &
+\EncTabla{Acción y estado} & \EncTabla{Evidencia y apartado}\\
+\Completar{RT} & \Completar{Hallazgo} & \Completar{Cambio y fecha} &
+  \Completar{Ficha y referencia interna}\\
+\bottomrule
+\end{tabularx}
+\Guia{Discusión de la evolución del proyecto}{%
+  \Completar{Identifiquen una decisión técnica que cambió con la
+  retroalimentación, comparen las versiones anterior y posterior y
+  expliquen por qué el cambio mejoró la propuesta o qué queda pendiente.}}
+
+\subsection{Carpeta de Drive y condiciones de verificación}\label{sec:drive}
+{\sffamily\bfseries\AccesoRaiz}\par
+\Completar{Identifiquen la carpeta por equipo, proyecto y periodo. En el
+registro indiquen las revisiones y fechas reales. Comprueben que quien
+evaluará el portafolio puede abrir las rutas con su cuenta autorizada.}
+
+\begin{tabularx}{\linewidth}{@{}p{.36\linewidth}Y@{}}
+\CabeceraTabla \EncTabla{Subcarpeta} & \EncTabla{Contenido}\\
+\texttt{00-Portafolio} & PDF final, código LaTeX, figuras y recursos.\\
+\texttt{01-Firma-y-bases} & RFP, bases, notebooks preliminares y revisiones de concepto.\\
+\texttt{02-DWSIM} & Subcarpetas \texttt{v0}, \texttt{v1} y \texttt{v2} con cada caso,
+  auxiliares, exportaciones y un inventario.\\
+\texttt{03-AutoCAD-Plant3D} & Subcarpetas \texttt{DB-BFD}, \texttt{DFP} y
+  \texttt{DTI}, con PDF y proyecto completo para cada revisión emitida.\\
+\texttt{04-Ambiente-y-SST} & Matriz ambiental y formatos de SST.\\
+\texttt{05-Control-y-HAZOP} & FC-01, matrices, notebook y auxiliares.\\
+\texttt{06-PIB} & Cuatro formatos, memoria, AG-01 y soportes.\\
+\texttt{07-BioSTEAM-y-economia} & Notebook, datos, memorias, costos y flujo de caja.\\
+\texttt{08-Revisiones-tecnicas} & Subcarpetas para RT-01, RT-02, RT-03 y pitch.\\
+\bottomrule
+\end{tabularx}
+
+\begin{itemize}
+  \item \textbf{DWSIM.} Guarden, por versión, el archivo de simulación
+  y todos los archivos que la acompañan. Identifiquen la versión del software,
+  el punto de entrada del caso, dependencias y archivos de respaldo o exportación.
+  \item \textbf{Plant 3D.} Conserven un proyecto completo por revisión emitida,
+  con sus carpetas y archivos de configuración, dibujos y referencias utilizadas.
+  Si un paquete contiene varios planos, vinculen cada plano a ese mismo
+  paquete y preserven su revisión. Comprueben que abre desde una copia del paquete.
+  \item \textbf{Colab.} Conserven el \texttt{.ipynb} ejecutado, insumos,
+  auxiliares y versiones. Enlacen esa copia en Drive y su apertura en Colab.
+  \item \textbf{Complementarios.} Registren toda memoria, fuente, hoja de datos
+  o archivo usado en la discusión. Se pueden agregar filas en la sección B
+  del código y enlaces a ellas en el capítulo correspondiente.
+\end{itemize}
+\Acceso{EF}
+
+\subsection{Registro maestro de archivos}\label{sec:catalogo}
+El código de cada evidencia es el mismo que se usa en sus referencias.
+La columna Cap./S enlaza al lugar donde se interpreta el archivo y a
+la entrega que le corresponde en el calendario.
+Una raya indica que falta completar la revisión o fecha.
+
+\begingroup\small\setlength{\tabcolsep}{4pt}
+\arrayrulecolor{Separador}\setlength{\arrayrulewidth}{0.3pt}
+\begin{longtable}{@{}L{.174\linewidth}L{.383\linewidth}L{.136\linewidth}
+                     L{.085\linewidth}L{.142\linewidth}@{}}
+\CabeceraTabla \EncTabla{Código} & \EncTabla{Evidencia y carpeta} &
+\EncTabla{Rev. y fecha} & \EncTabla{Cap./S} & \EncTabla{Acceso}\\
+\endfirsthead
+\CabeceraTabla \EncTabla{Código} & \EncTabla{Evidencia y carpeta} &
+\EncTabla{Rev. y fecha} & \EncTabla{Cap./S} & \EncTabla{Acceso}\\
+\endhead
+\ListaEvidencias
+\end{longtable}
+\endgroup
+
+\subsection{Referencias y cierre del expediente}\label{sec:referencias}
+\Completar{Inserten las referencias citadas. Incluyan fuentes de
+propiedades, correlaciones, precios, índices, normatividad y versiones
+del software, con fecha de consulta cuando corresponda.}
+\Guia{Verificación cruzada antes de entregar}{%
+  Desde una \Ficha{LE-01}, sigan el TAG al \hyperref[fig:dfpv1]{DFP},
+  a \Ficha{F-PIB-02}, al \hyperref[sec:capex]{CAPEX} y al
+  \hyperref[sec:flujo]{flujo de caja}. Desde \Ficha{TE-01}, sigan un
+  consumo a \Ficha{F-PIB-03}, al \hyperref[sec:opex]{OPEX} y al mismo
+  flujo. Prueben los enlaces de todas las revisiones y las versiones emitidas.
+  Contrasten la lista de verificación del curso con este expediente.}
+
+\end{document}
