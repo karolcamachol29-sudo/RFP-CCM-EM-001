@@ -6,9 +6,9 @@
 **Responsable de Seguimiento:** Karol Paola Camacho López (@Karoc) — Dirección del Proyecto  
 
 > **Integrantes del Consorcio y Doble Cargo Oficial:**  
-> 👑 **@Karoc** (Karol Paola Camacho López): 1. Dirección del Proyecto | 2. Ingeniera de Optimización de Procesos (Python)  
+> 👑 **@Karoc** (Karol Paola Camacho López): 1. Dirección del Proyecto | 2. Simulación de Procesos (DWSIM)  
 > ⚙️ **@GildardoOca25** (Gildardo Ocaña Barrales): 1. Ingeniería de Procesos | 2. DTI / P&ID  
-> 🧪 **@paulina145** (Paulina Mota Macip): 1. Simulación | 2. Instrumentación y Control  
+> 🧪 **@paulina145** (Paulina Mota Macip): 1. Automatización y Controladores en Python | 2. Instrumentación y Control  
 > 💰 **@Cho0bb** (Grecia Figueroa Rincón): 1. Especialista en Seguridad, Salud y Medio Ambiente (HSE) | 2. Evaluación Económica  
 
 ---
@@ -58,12 +58,12 @@
   - **Evidencia / Archivo:** `03_Entregables_Finales/EF_Informe_Final/` (Planos PDF y DWG)
   - **Estado:** ⏳ En proceso
 
-- [/] **[EF-WP3] Simulación DWSIM, Balances, Servicios y Filosofía de Control (Cap. 3, 4.1, 4.3, 6.1)** ([#57](https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/issues/57))
-  - **Entregable Relacionado:** `EF-WP3: Cap. 3, Cap. 4.1, Cap. 4.3 y Cap. 6.1`
-  - **Responsable Asignado:** @paulina145 (Paulina Mota Macip)
-  - **Cargo Desempeñado:** Simulación / Instrumentación y Control
-  - **Integrantes Participantes:** @paulina145
-  - **Roles RACI:** R: @paulina145 | A: @Karoc | C: Consorcio | I: BUAP / DPyPQ
+- [/] **[EF-WP3] Simulación DWSIM, Balances de Materia/Energía, Tablas y Servicios (Cap. 3, 4.1, 4.3)** ([#57](https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/issues/57))
+  - **Entregable Relacionado:** `EF-WP3: Cap. 3, Cap. 4.1 y Cap. 4.3`
+  - **Responsable Asignado:** @Karoc (Karol Paola Camacho López)
+  - **Cargo Desempeñado:** Simulación de Procesos (DWSIM) / Dirección del Proyecto
+  - **Integrantes Participantes:** @Karoc
+  - **Roles RACI:** R: @Karoc | A: @Karoc | C: Consorcio | I: BUAP / DPyPQ
   - **Fecha de Inicio:** 2026-11-17 | **Fecha de Fin:** 2026-11-21 | **Tipo de Fecha:** Planificada
   - **Duración:** 4 días
   - **Evidencia / Archivo:** `03_Entregables_Finales/EF_Informe_Final/` (Tablas TC-01/TE-01 y DWSIM v2)
@@ -80,15 +80,15 @@
   - **Evidencia / Archivo:** `03_Entregables_Finales/EF_Informe_Final/` (AC-AMB-01, HAZOP, BioSTEAM, TEA)
   - **Estado:** ⏳ En proceso
 
-- [/] **[EF-WP5] Modelado SOEC, Controladores en Python y Verificación Cruzada (Cap. 6.3, 10)** ([#59](https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/issues/59))
-  - **Entregable Relacionado:** `EF-WP5: Cap. 6.3, Cap. 10 y Protocolo de Verificación Cruzada`
-  - **Responsable Asignado:** @Karoc (Karol Paola Camacho López)
-  - **Cargo Desempeñado:** Ingeniera de Optimización Python / Dirección
-  - **Integrantes Participantes:** @Karoc
-  - **Roles RACI:** R: @Karoc | A: @Karoc | C: Consorcio | I: BUAP / DPyPQ
-  - **Fecha de Inicio:** 2026-11-17 | **Fecha de Fin:** 2026-11-22 | **Tipo de Fecha:** Planificada
-  - **Duración:** 5 días
-  - **Evidencia / Archivo:** `03_Entregables_Finales/EF_Informe_Final/`
+- [/] **[EF-WP5] Filosofía de Control y Controladores en Python (Cap. 6.1, 6.3)** ([#59](https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/issues/59))
+  - **Entregable Relacionado:** `EF-WP5: Cap. 6.1 y Cap. 6.3`
+  - **Responsable Asignado:** @paulina145 (Paulina Mota Macip)
+  - **Cargo Desempeñado:** Automatización en Python / Instrumentación y Control
+  - **Integrantes Participantes:** @paulina145
+  - **Roles RACI:** R: @paulina145 | A: @Karoc | C: Consorcio | I: BUAP / DPyPQ
+  - **Fecha de Inicio:** 2026-11-17 | **Fecha de Fin:** 2026-11-21 | **Tipo de Fecha:** Planificada
+  - **Duración:** 4 días
+  - **Evidencia / Archivo:** `03_Entregables_Finales/EF_Informe_Final/` (Notebooks Python y FC-01)
   - **Estado:** ⏳ En proceso
 
 ---
