@@ -214,10 +214,10 @@
     {\textcolor{Gris}{\textit{#1}}}}
 \newcommand{\Acceso}[1]{%
   \par\noindent{\small\Ficha{#1}\enspace\NombreEv{#1}\enspace
-  \textcolor{Gris}{|}\enspace\Abrir{#1}{Abrir evidencia}}\par}
+  \textcolor{Gris}{|}\enspace\Abrir{#1}{Ver evidencia}}\par}
 \newcommand{\AccesoRaiz}{%
-  \ifcsdef{evurl:DRIVE}{\href{\csuse{evurl:DRIVE}}{Carpeta raíz de Drive}}
-  {\hyperref[sec:drive]{Carpeta de Drive · configurar enlace}}}
+  \ifcsdef{evurl:DRIVE}{\href{\csuse{evurl:DRIVE}}{Ver repositorio/carpeta maestra}}
+  {\hyperref[sec:drive]{Ver repositorio · configurar enlace}}}
 
 % Incluya una vista legible en Overleaf. El archivo original y su proyecto
 % editable se enlazan desde Drive. Es posible compilar sin las vistas.
@@ -232,7 +232,7 @@
       \small\sffamily\color{Gris}Insertar vista legible de #2
     \end{tcolorbox}}%
   \captionof{figure}{#2}\label{#3}%
-  {\small\Ficha{#4}\enspace\Abrir{#4}{Abrir plano en Drive}\par}
+  {\small\Ficha{#4}\enspace\Abrir{#4}{Ver plano}\par}
   \end{minipage}\par
 }
 \captionsetup{font=small,labelfont={sf,bf},skip=4pt,hypcap=false}
@@ -357,35 +357,35 @@
   \Evento{RFP}{Requisitos de la propuesta}{1}{1}{1}{20/08/2026}{E0}{E}
   \Evento{A2.1}{Matriz de bases de diseño}{2}{2}{2}{25/08/2026}{RFP}{E}
   \Evento{NB-01}{Balance estequiométrico}{2}{2}{2}{25/08/2026}{A2.1}{E}
-  \Evento{DB-V0}{DB/BFD v0 y proyecto CAD}{2}{2}{2}{24/08/2026}{NB-01}{E}
+  \Evento{DB-V0}{DB/BFD v0 preliminar y CAD}{2}{2}{2}{24/08/2026}{NB-01}{E}
   \Evento{BD-PRE-01}{Bases preliminares}{2}{2}{2}{25/08/2026}{DB-V0}{E}
-  \Evento{AR-01}{Revisión conceptual}{2}{2}{2}{28/08/2026}{BD-PRE-01}{E}
-  \Evento{EQ-01}{Propuesta de equipos}{3}{3}{3}{28/08/2026}{AR-01}{E}
-  \Evento{DWSIM-V0}{Simulación exploratoria}{3}{3}{3}{01/09/2026}{EQ-01}{E}
-  \Evento{DB-V1}{DB/BFD v1 y proyecto CAD}{3}{3}{3}{04/09/2026}{DWSIM-V0}{E}
-  \Evento{E1}{Bases consolidadas}{2}{3}{3}{04/09/2026}{DB-V1}{E}
+  \Evento{AR-01}{Revisión conceptual de bases}{2}{2}{2}{28/08/2026}{BD-PRE-01}{E}
+  \Evento{EQ-01}{Propuesta preliminar de equipos}{3}{3}{3}{28/08/2026}{AR-01}{E}
+  \Evento{DWSIM-V0}{Simulación exploratoria v0}{3}{3}{3}{01/09/2026}{EQ-01}{E}
+  \Evento{DB-V1}{DB/BFD v1 (rev.\ v0 $\rightarrow$ v1)}{3}{3}{3}{04/09/2026}{DWSIM-V0}{R}
+  \Evento{E1}{Bases consolidadas (rev.\ E1.1)}{2}{3}{3}{04/09/2026}{DB-V1}{R}
   \Evento{SIM-01}{Verificación de DWSIM v1}{3}{4}{4}{11/09/2026}{DWSIM-V0}{E}
-  \Evento{DWSIM-V1}{Caso verificado de DWSIM}{4}{4}{4}{11/09/2026}{SIM-01}{E}
+  \Evento{DWSIM-V1}{DWSIM v1 (rev.\ v0 $\rightarrow$ v1)}{4}{4}{4}{11/09/2026}{SIM-01}{R}
   \Evento{SENS-TEC}{Sensibilidad técnica}{4}{4}{4}{14/09/2026}{DWSIM-V1}{E}
-  \Evento{VTP-01}{Verificación técnica}{5}{5}{5}{21/09/2026}{DWSIM-V1}{E}
+  \Evento{VTP-01}{Verificación técnica (rev.\ v0.1 $\rightarrow$ v1.0)}{5}{5}{5}{21/09/2026}{DWSIM-V1}{R}
   \Evento{TC-01}{Corrientes de materia}{5}{5}{5}{21/09/2026}{VTP-01}{E}
   \Evento{TE-01}{Cargas y potencias}{5}{5}{5}{21/09/2026}{VTP-01}{E}
-  \Evento{DFP-V0}{DFP v0 y proyecto CAD}{5}{5}{5}{21/09/2026}{TC-01}{E}
+  \Evento{DFP-V0}{DFP v0 preliminar y CAD}{5}{5}{5}{21/09/2026}{TC-01}{E}
   \Evento{LE-01}{Equipos y hojas de datos}{5}{6}{6}{24/09/2026}{DFP-V0}{E}
-  \Evento{DFP-V1}{DFP v1 y proyecto CAD}{6}{6}{6}{24/09/2026}{LE-01}{E}
+  \Evento{DFP-V1}{DFP v1 (rev.\ v0 $\rightarrow$ v1)}{6}{6}{6}{24/09/2026}{LE-01}{R}
   \Evento{RT-01}{Revisión técnica 1}{6}{6}{6}{28/08/2026}{—}{R}
 }
 \newcommand{\AgendaSegunda}{%
-  \Evento{DWSIM-V2}{Caso base integrado}{6}{7}{7}{28/09/2026}{DFP-V1}{E}
+  \Evento{DWSIM-V2}{DWSIM v2 (rev.\ v1 $\rightarrow$ v2)}{6}{7}{7}{28/09/2026}{DFP-V1}{R}
   \Evento{SERVICIOS}{Servicios e integración energética}{7}{8}{8}{05/10/2026}{DWSIM-V2}{E}
   \Evento{AC-AMB-01}{Aspectos ambientales}{8}{9}{9}{21/09/2026}{DFP-V1}{E}
   \Evento{RT-02}{Revisión técnica 2}{9}{9}{9}{28/09/2026}{AC-AMB-01}{R}
   \Evento{AC-SST-01}{Seguridad y salud en el trabajo}{9}{10}{10}{08/10/2026}{AC-AMB-01}{E}
   \Evento{FC-01}{Filosofía de control}{10}{11}{11}{08/10/2026}{AC-SST-01}{E}
-  \Evento{DTI-V0}{DTI v0 y proyecto CAD}{11}{11}{11}{08/10/2026}{FC-01}{E}
+  \Evento{DTI-V0}{DTI v0 preliminar (v0.1/v0.2)}{11}{11}{11}{08/10/2026}{FC-01}{E}
   \Evento{AC-HAZOP-01}{HAZOP por nodos}{11}{12}{12}{19/10/2026}{DTI-V0}{E}
-  \Evento{MCE-01}{Matriz causa–efecto}{12}{12}{12}{19/10/2026}{AC-HAZOP-01}{E}
-  \Evento{DTI-V1}{DTI v1 y proyecto CAD}{12}{12}{12}{19/10/2026}{MCE-01}{E}
+  \Evento{MCE-01}{Matriz causa–efecto (rev.\ 1.0)}{12}{12}{12}{19/10/2026}{AC-HAZOP-01}{R}
+  \Evento{DTI-V1}{DTI v1 (rev.\ v0.2 $\rightarrow$ v1.0)}{12}{12}{12}{19/10/2026}{MCE-01}{R}
   \Evento{CTRL-IPYNB}{Notebook de controladores}{11}{13}{13}{28/10/2026}{DTI-V1}{E}
   \Evento{PIB-01}{Paquete y formatos de ingeniería básica}{12}{13}{13}{28/10/2026}{DTI-V1}{E}
   \Evento{BIOSTEAM}{Modelo BioSTEAM verificado}{13}{14}{14}{05/11/2026}{PIB-01}{E}
@@ -395,7 +395,7 @@
   \Evento{TEA}{Indicadores y flujo de caja}{14}{15}{15}{17/11/2026}{RT-03-OPEX}{E}
   \Evento{SENS-ECO}{Sensibilidad y escenarios económicos}{15}{15}{15}{18/11/2026}{TEA}{E}
   \Evento{PITCH}{Propuesta y defensa final}{15}{16}{16}{20/11/2026}{TEA}{E}
-  \Evento{EF}{Portafolio final y archivos fuente}{15}{16}{16}{\FechaFinal}{PITCH}{E}
+  \Evento{EF}{Portafolio final (rev.\ 1.0)}{15}{16}{16}{\FechaFinal}{PITCH}{R}
 }
 
 \newcommand{\Agenda}{\AgendaPrimera\AgendaSegunda}
@@ -454,7 +454,7 @@
   S#5 &
   #6 &
   \Antecedente{#7} &
-  \hyperlink{gantt:#1}{Gantt}\enspace\Abrir[Pend.]{#1}{Drive}\\\hline
+  \hyperlink{gantt:#1}{Gantt}\enspace\Abrir[Pend.]{#1}{Ver}\\\hline
 }
 \newcommand{\CeldaGantt}[6]{%
   \ifnum#1=#4\relax
@@ -483,7 +483,7 @@
   \NombreEv{#1}\par{\footnotesize\color{Gris}\csuse{evcarpeta:#1}} &
   \csuse{evrev:#1}\par\csuse{evfecha:#1} &
   \AlCapitulo{#1}\par\SemanaEvidencia{#1} &
-  \Abrir{#1}{Abrir archivo}\\\hline
+  \Abrir{#1}{Ver}\\\hline
 }
 
 \begin{document}
@@ -531,7 +531,7 @@
 \bottomrule
 \end{tabularx}\par
 {\small Acta y datos completos de constitución \Ficha{E0}\enspace
-\Abrir{E0}{Abrir acta en Drive}.}
+\Abrir{E0}{Ver acta}.}
 
 \vfill
 \begin{tcolorbox}[colback=Arena,colframe=Terracota,boxrule=0.4pt,
@@ -552,7 +552,7 @@
   \hyperref[nav:calendario]{Calendario}\enspace|\enspace
   \hyperref[nav:gantt]{Gantt}\enspace|\enspace
   \hyperref[nav:rt]{Revisiones técnicas}\enspace|\enspace
-  \hyperref[sec:drive]{Carpeta y estructura de Drive}\enspace|\enspace
+  \hyperref[sec:drive]{Ver estructura del repositorio}\enspace|\enspace
   \AccesoRaiz\par}
 \Guia{Resumen ejecutivo}{%
   El consorcio \textbf{\Firma} presenta ante la convocante Circular Carbon México y el sínodo de la FIQ--BUAP la propuesta técnico-económica definitiva para la \textbf{\Proyecto}. El alcance de suministro abarca la ingeniería básica integral para una capacidad nominal de \textbf{30\,000 t/año} de e-metanol grado químico AA (pureza obtenida en simulación rigurosa: \textbf{99.891\% masa} / 99.807\% mol, contenido residual de agua $\le 0.10\%$ masa bajo norma ASTM D1152), operando en régimen continuo de \textbf{8\,000 h/año} con una entrega en báscula de \textbf{3\,788.65 kg/h}.
@@ -630,8 +630,7 @@ Cada código abre su ficha. El símbolo § abre el capítulo correspondiente.
   {\small\sffamily
     \hyperref[nav:calendario]{Calendario}\enspace|\enspace
     \hyperref[nav:rt]{Revisiones técnicas}\par}
-  {\small Franja clara: elaboración. \textbf{E}: entrega. \textbf{R}: revisión.
-    El código abre el calendario y el marcador abre la ficha de evidencia.\par}}
+  {\small Franja clara: periodo de elaboración. \textbf{E}: entrega de versión inicial. \textbf{R}: revisión por cambio de versión de documento (p.~ej.\ de v0 a v1 o v0.1 a v0.2/v1.0). El código abre el calendario y el marcador abre la ficha de evidencia.\par}}
 \begin{landscape}
 \thispagestyle{empty}
 \enlargethispage{31pt}
@@ -2171,7 +2170,7 @@ RT-03 & Consistencia metodológica CAPEX/OPEX y blindaje de lazos de control. (R
   
   En el corte RT-01, el suministro de vapor a $800^\circ\mbox{C}$ dependía de calentadores eléctricos externos de alto consumo; tras la retroalimentación de RT-02 y la integración verificada en DWSIM v2, se recuperaron $12\,335.36\mbox{ kW}$ de calor exotérmico de síntesis. Esta mejora redujo la demanda de energía externa en un $41.8\%$ y redujo el costo nivelado de producción en más de \$85 USD/t de e-metanol, consolidando la superioridad técnica y la viabilidad económica sustentada en RT-03.}
 
-\subsection{Carpeta de Drive y condiciones de verificación}\label{sec:drive}
+\subsection{Repositorio y condiciones de verificación}\label{sec:drive}
 {\sffamily\bfseries\AccesoRaiz}\par
 El repositorio institucional y la carpeta maestra de evidencias en la nube de la firma \textbf{\Firma} se encuentran alojados en Google Drive bajo la ruta pública compartida:
 \begin{center}
