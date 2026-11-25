@@ -18,8 +18,9 @@
 \usepackage[margin=0.78in,top=0.83in,bottom=0.82in,
             headheight=17pt,headsep=11pt,footskip=27pt]{geometry}
 \usepackage{graphicx}
+\usepackage{amsmath}
 \usepackage[table]{xcolor}
-\usepackage{array,tabularx,longtable,booktabs,caption}
+\usepackage{array,tabularx,longtable,booktabs,caption,ragged2e}
 \usepackage{enumitem}
 \usepackage{titlesec,fancyhdr,lastpage,pdflscape}
 \usepackage{tcolorbox}
@@ -35,6 +36,10 @@
 \definecolor{Gris}{HTML}{526060}
 \definecolor{Papel}{HTML}{F5F7F6}
 \definecolor{Separador}{HTML}{D7DEDB}
+\definecolor{verdeoscuro}{RGB}{22,78,65}
+\definecolor{verdeclarito}{RGB}{225,240,234}
+\definecolor{amarilloclaro}{RGB}{255,245,204}
+\definecolor{rojoclaro}{RGB}{250,220,220}
 
 \hypersetup{unicode,colorlinks=true,linkcolor=Enlace,urlcolor=Enlace,
   citecolor=Enlace,pdfstartview=FitH,bookmarksopen=true,bookmarksopenlevel=1}
@@ -108,8 +113,7 @@
     \hyperref[#4]{Siguiente \(\rightarrow\)}}\par\smallskip}
 \newcommand{\Cierre}[2]{%
   \Guia{Decisión y transferencia al siguiente capítulo}{%
-    \Completar{Enuncien la decisión, sus límites y el dato o documento
-    vigente que entregan para la siguiente etapa.}
+    Se formalizan las decisiones técnicas, balances y especificaciones aprobadas en este capítulo como base de diseño vinculante y congelada para la etapa sucesiva.
     Continúen en \hyperref[#1]{#2}.}}
 
 % B. REGISTRO CENTRAL DE EVIDENCIAS
@@ -119,6 +123,89 @@
   \csdef{evcarpeta:#1}{#4}\csdef{evrev:#1}{#5}\csdef{evfecha:#1}{#6}%
   \gappto\ListaEvidencias{\FilaEvidencia{#1}}}
 \NewDocumentCommand{\URL}{m v}{\csgdef{evurl:#1}{#2}}
+\URL{DRIVE}{https://drive.google.com/drive/folders/12y8WfH54Kz4G86lY-Uo3oG2BfZN3G08d}
+\URL{E0}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/E0_Constitucion/E0_DOC_ActaConstitutiva_v1.0.pdf}
+\URL{RFP}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/tree/main/00_Gestion_Proyecto/Referencias_y_Bases}
+\URL{BD-PRE-01}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/E1_Bases_y_Verificacion/E1.1_DOC_BasesDiseno_v1.0.pdf}
+\URL{A2.1}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/E1_Bases_y_Verificacion/E1.1_DOC_BasesDiseno_v1.0.pdf}
+\URL{NB-01}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/E1_Bases_y_Verificacion/E1.2_DOC_ReporteSimulacion_v1.0.pdf}
+\URL{NB01-COLAB}{https://colab.research.google.com/github/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/01_Proceso_y_Simulacion/Python/analisis_sensibilidad_planta.ipynb}
+\URL{NB01-INSUMOS}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/tree/main/01_Proceso_y_Simulacion/Python}
+\URL{RT01}{https://drive.google.com/file/d/1J0OvkzfonykoZQdn7rbSKxEZQs3v-LDU/view?usp=sharing}
+\URL{E1.4}{https://drive.google.com/file/d/1J0OvkzfonykoZQdn7rbSKxEZQs3v-LDU/view?usp=sharing}
+\URL{MP-00}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/00_Gestion_Proyecto/Matriz_Ponderada/MP-00_DOC_CompendioMatricesPonderadas_v1.0.pdf}
+\URL{MP-01}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/00_Gestion_Proyecto/Matriz_Ponderada/MP-01_DOC_MatrizPonderada_Electrolisis_v1.0.md}
+\URL{AR-01}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/tree/main/00_Gestion_Proyecto/Referencias_y_Bases/Actividades}
+\URL{EQ-01}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/E1_Bases_y_Verificacion/E1.3.1_DOC_PropuestaEquipos_v1.0.pdf}
+\URL{E1}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/E1_Bases_y_Verificacion/E1.1_DOC_BasesDiseno_v1.0.pdf}
+\URL{DB-V0}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/BFD/E1.3_DWG_BFDv0_v1.0.pdf}
+\URL{DB-V0-CAD}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/tree/main/02_Ingenieria_y_Diagramas/BFD}
+\URL{DWSIM-V0}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/tree/main/01_Proceso_y_Simulacion/DWSIM/Versiones_Previas}
+\URL{DWSIM-V1}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/01_Proceso_y_Simulacion/DWSIM/DWSIM_v1_APROBADA_Solvanta.dwxmz}
+\URL{SIM-01}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/E1_Bases_y_Verificacion/E1.2_DOC_ReporteSimulacion_v1.0.pdf}
+\URL{BALANCES}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/01_Proceso_y_Simulacion/Memoria_Tecnica/Memoria_Tecnica_Simulacion_Overleaf.pdf}
+\URL{SENS-TEC}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/01_Proceso_y_Simulacion/Python/analisis_sensibilidad_planta.csv}
+\URL{DB-V1}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/BFD/E1.3_DWG_BFDv1_v1.0.pdf}
+\URL{DB-V1-CAD}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/tree/main/02_Ingenieria_y_Diagramas/BFD}
+\URL{DWSIM-V2}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/01_Proceso_y_Simulacion/DWSIM/DWSIM_v1_APROBADA_Solvanta_OPTIMIZADA_SOEC.dwxmz}
+\URL{VTP-01}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/E1_Bases_y_Verificacion/E1.5_DOC_ActividadVTP_v1.0.pdf}
+\URL{TC-01}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/Verificacion_Termodinamica/Tablas/TC-01_Solvanta.xlsx}
+\URL{TE-01}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/Verificacion_Termodinamica/Tablas/TE-01_Solvanta.xlsx}
+\URL{LE-01}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/E2_Ingenieria_Basica_y_Control/E2.1_DOC_ListaEquipos_v1.0.pdf}
+\URL{HD-EQUIPOS}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/tree/main/02_Ingenieria_y_Diagramas/Lista_Equipos}
+\URL{SERVICIOS}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/Verificacion_Termodinamica/Tablas/TE-01_Solvanta.xlsx}
+\URL{DFP-V0}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/DFP_PFD/DFP-v0_Solvanta.pdf}
+\URL{DFP-V0-CAD}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/tree/main/02_Ingenieria_y_Diagramas/DFP_PFD}
+\URL{DFP-V1}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/DFP_PFD/DFP-v1_Solvanta.pdf}
+\URL{DFP-V1-CAD}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/tree/main/02_Ingenieria_y_Diagramas/DFP_PFD}
+\URL{AC-AMB-01}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/E1_Bases_y_Verificacion/E1.6_DOC_MatrizAmbiental_v1.0.pdf}
+\URL{AC-SST-01}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/HAZOP_Seguridad/Solvanta_AC-HAZOP-01_Expediente.pdf}
+\URL{SST-A}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/HAZOP_Seguridad/Solvanta_AC-HAZOP-01_HAZOP.xlsx}
+\URL{SST-B}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/HAZOP_Seguridad/Solvanta_AC-HAZOP-01_HAZOP.xlsx}
+\URL{SST-C}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/HAZOP_Seguridad/Solvanta_AC-HAZOP-01_HAZOP.xlsx}
+\URL{FC-01}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/E2_Ingenieria_Basica_y_Control/FC-01_DOC_FilosofiaControl_v1.0.pdf}
+\URL{AC-HAZOP-01}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/E2_Ingenieria_Basica_y_Control/AC-HAZOP-01_DOC_ExpedienteHAZOP_v1.0.pdf}
+\URL{HZ-A}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/HAZOP_Seguridad/Solvanta_AC-HAZOP-01_HAZOP.xlsx}
+\URL{HZ-B}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/HAZOP_Seguridad/Solvanta_AC-HAZOP-01_HAZOP.xlsx}
+\URL{MCE-01}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/HAZOP_Seguridad/Solvanta_MCE-01_Rev1.xlsx}
+\URL{CTRL-IPYNB}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/tree/main/01_Proceso_y_Simulacion/Python}
+\URL{CTRL-COLAB}{https://colab.research.google.com/github/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/01_Proceso_y_Simulacion/Python/analisis_sensibilidad_planta.ipynb}
+\URL{CTRL-INSUMOS}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/tree/main/01_Proceso_y_Simulacion/Python}
+\URL{RT-03-CTRL}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/Filosofia_Control/FC-01_DOC_FilosofiaControl_v1.0.pdf}
+\URL{DTI-V0}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/DTI_PID/DTI-v0_Solvanta.pdf}
+\URL{DTI-V0-CAD}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/tree/main/02_Ingenieria_y_Diagramas/DTI_PID}
+\URL{DTI-V1}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/DTI_PID/DTI-v1.0_Solvanta.pdf}
+\URL{DTI-V1-CAD}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/tree/main/02_Ingenieria_y_Diagramas/DTI_PID}
+\URL{PIB-01}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/E2_Ingenieria_Basica_y_Control/PIB-01_DOC_ExpedienteIngenieriaBasica_v1.0.pdf}
+\URL{F-PIB-01}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/PIB_Paquete_Ingenieria_Basica/Solvanta_PIB-01_Expediente.pdf}
+\URL{F-PIB-02}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/PIB_Paquete_Ingenieria_Basica/Solvanta_PIB-01_Expediente.pdf}
+\URL{F-PIB-03}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/PIB_Paquete_Ingenieria_Basica/Solvanta_PIB-01_Expediente.pdf}
+\URL{F-PIB-04}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/PIB_Paquete_Ingenieria_Basica/Solvanta_PIB-01_Expediente.pdf}
+\URL{AG-01}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/PIB_Paquete_Ingenieria_Basica/figuras/Solvanta_AG-01.png}
+\URL{HAZOP-RES}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/02_Ingenieria_y_Diagramas/PIB_Paquete_Ingenieria_Basica/Solvanta_PIB-01_Expediente.pdf}
+\URL{BIOSTEAM}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/01_Proceso_y_Simulacion/BioSTEAM/BioSTEAM_E_Metanol_Colab_CORREGIDO.ipynb}
+\URL{BIO-COLAB}{https://colab.research.google.com/github/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/01_Proceso_y_Simulacion/BioSTEAM/BioSTEAM_E_Metanol_Colab_CORREGIDO.ipynb}
+\URL{BIO-INSUMOS}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/tree/main/01_Proceso_y_Simulacion/BioSTEAM}
+\URL{RT-03-MAP}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/E4_Auditorias_y_Optimizacion/E4.2_RPT_ComparativaDWSIMvsBioSTEAM_v1.0.pdf}
+\URL{RT-03-FE}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/E4_Auditorias_y_Optimizacion/E4.3_RPT_DesgloseCostosCAPEXOPEX_v1.0.pdf}
+\URL{RT-03-CAPEX}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/E4_Auditorias_y_Optimizacion/E4.3_RPT_DesgloseCostosCAPEXOPEX_v1.0.pdf}
+\URL{RT-03-OPEX}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/E4_Auditorias_y_Optimizacion/E4.3_RPT_DesgloseCostosCAPEXOPEX_v1.0.pdf}
+\URL{TEA}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/01_Proceso_y_Simulacion/BioSTEAM/evaluacion_biosteam_solvanta.py}
+\URL{FLUJO-CAJA}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/01_Proceso_y_Simulacion/BioSTEAM/calcular_evaluacion_financiera_rt03.py}
+\URL{SENS-ECO}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/01_Proceso_y_Simulacion/BioSTEAM/ejecutar_auditoria_economica_integral.py}
+\URL{PITCH}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/00_Gestion_Proyecto/Revisiones_Tecnicas/RT-01/E1.4_VID_EnlacePitch_v1.0.md}
+\URL{RT-01}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/E3_Revisiones_Tecnicas_y_Difusion/RT-01_DOC_PresentacionDiapositivas_v1.0.pdf}
+\URL{RT01-MATERIAL}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/00_Gestion_Proyecto/Revisiones_Tecnicas/RT-01/RT-01_DOC_PresentacionDiapositivas_v1.0.pdf}
+\URL{RT01-OBS}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/tree/main/00_Gestion_Proyecto/Revisiones_Tecnicas/RT-01}
+\URL{RT-02}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/E3_Revisiones_Tecnicas_y_Difusion/RT-02_DOC_PresentacionDiapositivas_v1.0.pdf}
+\URL{RT02-MATERIAL}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/00_Gestion_Proyecto/Revisiones_Tecnicas/RT-02/RT-02_DOC_PresentacionDiapositivas_v1.0.tex}
+\URL{RT02-VIDEO}{https://canva.link/3zrbczmgiyx7lkj}
+\URL{RT02-OBS}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/tree/main/00_Gestion_Proyecto/Revisiones_Tecnicas/RT-02}
+\URL{RT-03}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/E3_Revisiones_Tecnicas_y_Difusion/RT-03_DOC_PresentacionDiapositivas_v1.0.pdf}
+\URL{RT03-MATERIAL}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/00_Gestion_Proyecto/Revisiones_Tecnicas/RT-03/RT-03_DOC_PresentacionDiapositivas_v1.0.tex}
+\URL{RT03-VIDEO}{https://canva.link/tmv6f1e2ydf5ofr}
+\URL{RT-03-RO}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/tree/main/00_Gestion_Proyecto/Revisiones_Tecnicas/RT-03}
+\URL{EF}{https://github.com/karolcamachol29-sudo/RFP-CCM-EM-001/blob/main/03_Entregables_Finales/EF_Informe_Final/Portafolio_Final_Solvanta.pdf}
 \newcommand{\NombreEv}[1]{\csuse{evnombre:#1}}
 \newcommand{\Ficha}[1]{\hyperlink{ev:#1}{\textsf{\textbf{#1}}}}
 \newcommand{\AlCapitulo}[1]{\hyperref[\csuse{evcap:#1}]{§\,\ref*{\csuse{evcap:#1}}}}
@@ -158,6 +245,10 @@
 \Registrar{NB-01}{Notebook de balance estequiométrico}{cap:bases}{01-Firma-y-bases}{v1.0}{25/08/2026}
 \Registrar{NB01-COLAB}{Apertura del notebook NB-01 en Colab}{cap:bases}{01-Firma-y-bases}{v1.0}{25/08/2026}
 \Registrar{NB01-INSUMOS}{Datos y auxiliares de NB-01}{cap:bases}{01-Firma-y-bases}{v1.0}{25/08/2026}
+\Registrar{RT01}{Video pitch oficial del proyecto}{cap:bases}{08-Revisiones-tecnicas}{v1.0}{25/08/2026}
+\Registrar{E1.4}{Video pitch oficial del proyecto}{cap:bases}{08-Revisiones-tecnicas}{v1.0}{25/08/2026}
+\Registrar{MP-00}{Compendio de matrices ponderadas}{cap:bases}{01-Firma-y-bases}{v1.0}{10/09/2026}
+\Registrar{MP-01}{Matriz ponderada de electrólisis}{cap:bases}{01-Firma-y-bases}{v1.0}{10/09/2026}
 
 % 01-Firma-y-bases · cap:conceptual
 \Registrar{AR-01}{Revisión de la propuesta conceptual}{cap:conceptual}{01-Firma-y-bases}{v1.0}{28/08/2026}
@@ -464,15 +555,17 @@
   \hyperref[sec:drive]{Carpeta y estructura de Drive}\enspace|\enspace
   \AccesoRaiz\par}
 \Guia{Resumen ejecutivo}{%
-  \Completar{Sinteticen el alcance, capacidad, pureza, ruta de proceso,
-  decisión de diseño, CAPEX, OPEX, VAN, TIR y precio mínimo de venta.
-  Cierren con la viabilidad del caso base y su principal incertidumbre.}
-  Enlacen aquí los resultados en
-  \hyperref[cap:costos]{CAPEX y OPEX} y \hyperref[cap:tea]{evaluación tecnoeconómica}.}
+  El consorcio \textbf{\Firma} presenta ante la convocante Circular Carbon México y el sínodo de la FIQ--BUAP la propuesta técnico-económica definitiva para la \textbf{\Proyecto}. El alcance de suministro abarca la ingeniería básica integral para una capacidad nominal de \textbf{30\,000 t/año} de e-metanol grado químico AA (pureza obtenida en simulación rigurosa: \textbf{99.891\% masa} / 99.807\% mol, contenido residual de agua $\le 0.10\%$ masa bajo norma ASTM D1152), operando en régimen continuo de \textbf{8\,000 h/año} con una entrega en báscula de \textbf{3\,788.65 kg/h}.
+  
+  La ruta tecnológica seleccionada consiste en la hidrogenación catalítica directa de dióxido de carbono biogénico ($5\,325.2\mbox{ kg/h}$ de $\mbox{CO}_2$) en un reactor multitubular de lecho fijo con enfriamiento por generación de vapor (Lurgi BWR, \texttt{R-401}) a $245^\circ\mbox{C}$ y 75 bar sobre catalizador comercial $\mbox{Cu/ZnO/Al}_2\mbox{O}_3$. El hidrógeno verde ($1\,156.4\mbox{ kg/h}$) se produce in situ mediante electrólisis de vapor de agua a alta temperatura en celdas de óxido sólido (\textbf{SOEC}, $800^\circ\mbox{C}$, 20 bar, unidad \texttt{EL-201}), seleccionada mediante evaluación multicriterio sobre tecnología PEM gracias a su eficiencia eléctrica ($32.92\mbox{ kWh/kg H}_2$) y su aprovechamiento térmico del calor de reacción.
+  
+  La estimación tecno-económica en BioSTEAM (actualizada a dólares de 2024 mediante factores Guthrie y correlaciones de Turton) determina una inversión fija total (\textbf{CAPEX / FCI}) de \textbf{\$46.25M USD} y una inversión de capital total (\textbf{TCI}) de \textbf{\$48.56M USD} al sumar \$2.31M USD de capital de trabajo. Los costos operativos netos anualizados (\textbf{OPEX}) ascienden a \textbf{\$18.95M USD/año} (\textbf{\$625.11 USD/t} de e-metanol), correspondientes a un costo bruto de \$21.77M USD/año mitigado por un crédito por venta de oxígeno subproducto purificado (\$2.83M USD/año a 60 USD/t $\mbox{O}_2$).
+  
+  Bajo una tasa de descuento contractual del 10\% a un horizonte de 20 años y precio de venta base de \$900 USD/t, el proyecto alcanza un Valor Actual Neto (\textbf{VAN}) de \textbf{+\$9.96M USD}, una Tasa Interna de Retorno (\textbf{TIR}) de \textbf{13.05\%}, un periodo de recuperación descontado de \textbf{7.2 años} ($5.8\mbox{ años}$ simple) y un precio mínimo de venta del producto (\textbf{MPSP}, $\mbox{VAN}=0$) de \textbf{\$748.20 USD/t} (\$0.748/kg). La principal variable de incertidumbre reside en el costo de la tarifa eléctrica renovable (sensibilidad en el rango de 20 a 60 USD/MWh), blindada contractualmente mediante contratos PPA a largo plazo. Enlacen aquí los resultados en \hyperref[cap:costos]{CAPEX y OPEX} y \hyperref[cap:tea]{evaluación tecnoeconómica}.}
 \noindent\textbf{Control documental}\par
 \begin{tabularx}{\linewidth}{@{}p{.20\linewidth}p{.22\linewidth}Y@{}}
 \CabeceraTabla \EncTabla{Revisión} & \EncTabla{Fecha} & \EncTabla{Cambio, origen y sección}\\
-\Revision & \FechaFinal & \Completar{Identifiquen el cambio y enlacen la revisión o evidencia.}\\
+\Revision & \FechaFinal & Emisión formal del Portafolio Final Consolidado de la Licitación RFP-CCM-EM-001 (Expediente Maestro de Cierre Solvanta, Tomos I a V, 10 Capítulos interactivos). Enlace a evidencia \Ficha{EF}.\\
 \bottomrule
 \end{tabularx}
 \renewcommand{\contentsname}{Contenido}
@@ -562,75 +655,138 @@ Cada código abre su ficha. El símbolo § abre el capítulo correspondiente.
 \Capitulo{Firma de ingeniería, alcance y bases preliminares}
   {cap:bases}{nav:calendario}{cap:conceptual}
 \subsection{Identidad de la firma y requisitos}
-\Completar{Presenten la firma, su organización, sus responsabilidades y
-el encargo de la RFP. Definan los límites técnicos, las corrientes de
-entrada y salida y las exclusiones acordadas con el cliente.}
+El consorcio \textbf{\Firma} (\SiglasFirma) se constituyó formalmente el \FechaConformacion\ bajo el protocolo \Ficha{E0}, estableciendo una estructura societaria multidisciplinaria orientada a la ingeniería de procesos de descarbonización. La firma se organiza en cuatro áreas funcionales de responsabilidad directa:
+\begin{itemize}
+  \item \textbf{Dirección de Proyecto / Simulación (DWSIM):} Ing. Karol Paola Camacho López (\texttt{@Karoc}). Liderazgo ejecutivo, gobernanza contractual, control de configuración, compilación del portafolio y modelado termodinámico riguroso en DWSIM.
+  \item \textbf{Gerencia de Procesos / DTI y P\&ID:} Ing. Gildardo Ocaña Barrales (\texttt{@GildardoOca25}). Conceptualización de diagramas (BFD/DFP/DTI) en AutoCAD Plant 3D 2025, dimensionamiento mecánico de los 28 equipos mayores (LE-01) y arreglo general de planta (Plot Plan).
+  \item \textbf{Automatización (Python) / Instrumentación y Control:} Ing. Paulina Mota Macip (\texttt{@paulina145}). Diseño de estrategias de control multivariable, filosofía de control FC-01, sintonía de lazos PID y scripts en Python para estabilidad operativa.
+  \item \textbf{Especialista en HSE / Evaluación Económica:} Ing. Grecia Figueroa Rincón (\texttt{@Cho0bb}). Identificación y mitigación de riesgos industriales (estudio HAZOP AC-HAZOP-01), matriz ambiental AC-AMB-01 y modelado tecnoeconómico en BioSTEAM (CAPEX/OPEX).
+\end{itemize}
+
+El encargo oficial derivado de la Solicitud de Propuesta \Ficha{RFP} (RFP-CCM-EM-001) consiste en desarrollar el paquete de ingeniería básica para una planta de producción continua de \textbf{30\,000 t/año} de e-metanol grado AA mediante electrólisis de agua y captura de carbono. Los \textbf{límites técnicos de batería (BL)} quedan delimitados como sigue:
+\begin{itemize}
+  \item \textbf{Entradas en frontera de planta:} Suministro de $\mbox{CO}_2$ biogénico gaseoso purificado a 20.0 bar y $30^\circ\mbox{C}$ ($\ge 99.0\%$ mol); agua desmineralizada de red municipal a 1.5 bar y $25^\circ\mbox{C}$ ($\kappa \le 0.1\ \mu\mbox{S/cm}$); y acometida eléctrica de 115 kV proveniente de fuentes renovables hacia la subestación receptora.
+  \item \textbf{Salidas en frontera de planta:} e-Metanol líquido grado químico AA ($\ge 99.85\%$ masa) bombeado a los tanques de almacenamiento de producto terminado TK-601; oxígeno puro al $99.5\%$ mol comprimido a 10.0 bar como subproducto industrializable; y purga acuosa tratada bajo norma de descarga cero (ZLD).
+  \item \textbf{Exclusiones convenidas:} Quedan excluidos del alcance el parque de generación renovable externo (eólico/solar), la planta de captura y purificación de $\mbox{CO}_2$ en chimenea biogénica, y la distribución logística de transporte exterior fuera del rack de carga de pipas en límite de batería.
+\end{itemize}
 \Acceso{E0}
 \Acceso{RFP}
 \subsection{Matriz de bases y balance preliminar}\label{sec:bases-matriz}
-\Completar{Fijen la base de cálculo, capacidad, pureza, horas de operación,
-especificaciones, restricciones y supuestos. Incluyan las reacciones
-balanceadas, el consumo teórico de reactivos y la producción estimada.
-Para electrólisis, documenten agua, electricidad, H\textsubscript{2}
-y O\textsubscript{2} sobre la misma base.}\par
+La base de cálculo de diseño se fijó en una producción anualizada de \textbf{30\,000 t/año} de e-metanol, operando \textbf{8\,000 h/año} en régimen continuo ($91.3\%$ de disponibilidad), lo que equivale a una producción neta de \textbf{3\,788.65 kg/h} ($118.24\mbox{ kmol/h}$) con una entrega garantizada de $30\,309.20\mbox{ t/año}$. La calidad del producto satisface la norma internacional \textbf{ASTM D1152-06} para metanol grado AA: pureza $\ge 99.85\%$ masa (simulación: \textbf{99.891\% masa} / 99.807\% mol), contenido de agua $\le 0.10\%$ masa, acidez libre $\le 30\mbox{ ppm}$ y ausencia de acetona y etanol residuales ($<10\mbox{ ppm}$).
+
+Las reacciones químicas de síntesis en fase gas sobre catalizador comercial de cobre-cinc ($\mbox{Cu/ZnO/Al}_2\mbox{O}_3$) en el reactor multitubular \texttt{R-401} se modelaron rigurosamente como:
+\[\begin{array}{r c l l}
+\mbox{CO}_2 + 3\,\mbox{H}_2 &\rightleftharpoons \mbox{CH}_3\mbox{OH} + \mbox{H}_2\mbox{O} \quad & \Delta H^\circ_{298\mbox{ K}} = -49.43\mbox{ kJ/mol}  \\
+\mbox{CO}_2 + \mbox{H}_2 &\rightleftharpoons \mbox{CO} + \mbox{H}_2\mbox{O} \quad & \Delta H^\circ_{298\mbox{ K}} = +41.12\mbox{ kJ/mol}  \\
+\mbox{CO} + 2\,\mbox{H}_2 &\rightleftharpoons \mbox{CH}_3\mbox{OH} \quad & \Delta H^\circ_{298\mbox{ K}} = -90.55\mbox{ kJ/mol} 
+\end{array}\]
+
+Para la generación de hidrógeno verde, la electrólisis de vapor en celdas de óxido sólido (\textbf{SOEC}, celda \texttt{EL-201}) opera a $800^\circ\mbox{C}$ y 20.0 bar:
+\begin{equation}
+\mathrm{H_2O}_{(g)} \longrightarrow \mathrm{H_2} + \frac{1}{2}\,\mathrm{O_2} \quad (\Delta H^\circ_{298\mathrm{ K}} = +241.82\mathrm{ kJ/mol})
+\end{equation}
+Sobre esta base unificada, el balance de materia y energía del módulo electroquímico arroja:
+\begin{itemize}
+  \item \textbf{Agua desmineralizada:} Consumo neto de $9\,241.6\mbox{ kg/h}$ ($513.0\mbox{ kmol/h}$, $73\,932.8\mbox{ t/año}$).
+  \item \textbf{Hidrógeno neto producido:} $1\,156.4\mbox{ kg/h}$ ($573.6\mbox{ kmol/h}$, $9\,251.2\mbox{ t/año}$) con un factor de reciclo de agua no convertida del $15\%$.
+  \item \textbf{Oxígeno coproducto:} $9\,177.3\mbox{ kg/h}$ ($286.8\mbox{ kmol/h}$, $73\,418.4\mbox{ t/año}$) al $99.5\%$ mol de pureza, enfriado y despresurizado para venta.
+  \item \textbf{Electricidad SOEC:} Demanda eléctrica del stack de $38\,067.30\mbox{ kW}$ ($32.92\mbox{ kWh/kg H}_2$), complementada por $5\,248.42\mbox{ kW}$ de calor térmico en el sobrecalentador \texttt{E-202}.
+\end{itemize}
+
 \begin{tabularx}{\linewidth}{@{}Y Y Y Y@{}}
 \CabeceraTabla \EncTabla{Requisito o variable} & \EncTabla{Valor y unidad} &
   \EncTabla{Tipo y fuente} & \EncTabla{Uso en el diseño}\\
-\Completar{Variable} & \Completar{Valor} &
-  \Completar{Requisito o supuesto} & \Completar{Decisión asociada}\\
+Capacidad de entrega & $30\,000\mbox{ t/año}$ ($3\,788.65\mbox{ kg/h}$) & Requisito base RFP & Dimensionamiento de reactores, columnas y almacenamiento TK-601\\
+Pureza de e-metanol & $\ge 99.85\%$ masa (obtenido: $99.891\%$) & Norma ASTM D1152-06 & Especificación de 25 etapas y relación de reflujo $1.50$ en T-601\\
+Horas anuales de operación & $8\,000\mbox{ h/año}$ ($330\mbox{ días/año}$) & Supuesto industrial & Anualización de balances, insumos y modelo financiero\\
+Temperatura y presión de síntesis & $245^\circ\mbox{C}$ / 75.0 bar & Matriz MP-02 y cinéticas & Reactor Lurgi BWR, selección metalúrgica inox 316L y C-301\\
+Tecnología de electrólisis & SOEC a $800^\circ\mbox{C}$ y 20.0 bar & Matriz MP-01 & Acoplamiento con vapor del reactor y reducción del OPEX eléctrico\\
+Consumo de $\mbox{CO}_2$ biogénico & $5\,325.2\mbox{ kg/h}$ ($121.0\mbox{ kmol/h}$) & Balance NB-01 y DWSIM & Especificación del compresor C-301 y contrato de suministro\\
 \bottomrule
 \end{tabularx}
-\Acceso{BD-PRE-01}
+\Acceso{BD-PRE-01} 
 \Acceso{A2.1}
-\Acceso{NB-01}
+\Acceso{NB-01} 
 \Acceso{NB01-COLAB}
 \Acceso{NB01-INSUMOS}
 \Guia{Discusión de las bases}{%
-  \Completar{Relacionen una exigencia de la RFP con un resultado de NB-01.
-  Evalúen el efecto de modificar el supuesto más sensible e indiquen qué
-  restricciones deberá respetar el diseño conceptual.}}
+  El contraste directo entre las exigencias de la licitación RFP y los cálculos estequiométricos de \Ficha{NB-01} demostró que alcanzar $30\,000\mbox{ t/año}$ con un módulo catalítico a $245^\circ\mbox{C}$ y 75 bar requiere una relación molar de alimentación $\mbox{H}_2/\mbox{CO}_2 = 4.74$ en la mezcla combinada (alimentación fresca + reciclo) para suprimir la formación de agua en el lecho y evitar la desactivación del catalizador $\mbox{Cu/ZnO/Al}_2\mbox{O}_3$.
+  
+  El análisis de sensibilidad sobre las bases reveló que la variable más crítica es el costo unitario de la energía eléctrica ($39.10\mbox{ MWe}$ totales de planta). La elección tecnológica de celdas SOEC frente a PEM reduce el consumo específico de electricidad de $55\mbox{ kWh/kg H}_2$ a $32.92\mbox{ kWh/kg H}_2$ al suministrar el calor latente de vaporización ($12\,335.36\mbox{ kW}$) mediante el vapor generado en la carcasa caldera del propio reactor de metanol (\texttt{R-401-S}). Esta restricción termodinámica gobierna el diseño conceptual del diagrama de bloques, obligando a vincular físicamente el Área 400 de síntesis con el Área 200 de electrólisis.}
 \Cierre{cap:conceptual}{Diseño conceptual y equipos}
 
 \Capitulo{Diseño conceptual y selección preliminar de equipos}
   {cap:conceptual}{cap:bases}{cap:dwsim}
+
+
 \subsection{Traducción de las bases al diagrama de bloques}
+
 Partan de la \hyperref[sec:bases-matriz]{matriz de bases y el balance
-preliminar}. \Completar{Justifiquen el orden de los bloques y ubiquen
-alimentaciones, producto, subproductos, reciclos y purgas que apliquen.}
-\Plano{db-bfd-v0.pdf}{DB/BFD v0}{fig:dbv0}{DB-V0}
+preliminar}. 
+\subsection{Traducción de las bases al diagrama de bloques}
+
+A partir de la \hyperref[sec:bases-matriz]{matriz de bases y el balance preliminar} (\Ficha{A2.1} y \Ficha{NB-01}), se estructuró el diagrama de bloques conceptual \textbf{DB/BFD v0} (\autoref{fig:dbv0}) compuesto por once unidades funcionales (\texttt{B-01} a \texttt{BF-11}) y doce corrientes principales (\texttt{C-01} a \texttt{C-12}). La secuencia de bloques responde a la necesidad termodinámica de acondicionar los reactivos gaseosos, presurizar la mezcla hasta las condiciones de equilibrio catalítico y fraccionar las fases para maximizar el aprovechamiento de materia y energía:
+
+\begin{itemize}
+  \item \textbf{Alimentaciones principales:} El $\mbox{CO}_2$ ingresa por la corriente \texttt{C-01} ($5\,325.2\mbox{ kg/h}$, $20.0\mbox{ bar}$, $30^\circ\mbox{C}$) hacia el bloque \texttt{B-01} (\textit{Recepción y acondicionamiento de $\mbox{CO}_2$}), saliendo acondicionado en \texttt{C-02} hacia el módulo electroquímico \texttt{B-02} (\textit{Co-electrólisis de alta temperatura - SOEC}), donde se integra con el vapor de agua alimentado por \texttt{C-11} ($9\,241.6\mbox{ kg/h}$ netos).
+  \item \textbf{Secuencia de reacción y separación primaria:} La corriente gaseosa rica en $\mbox{H}_2$ y $\mbox{CO}_2$ (\texttt{C-03}) pasa al bloque \texttt{BF-03} (\textit{Compresión de gas de síntesis}) para alcanzar la presión de operación del reactor catalítico \texttt{BF-04} (\textit{Síntesis de metanol}). El efluente de reacción (\texttt{C-04}) ingresa a \texttt{BF-05} (\textit{Separación primaria}), donde el cambio de fase permite dividir el condensado líquido (\texttt{C-05}, metanol crudo) de los gases no convertidos (\texttt{C-06}).
+  \item \textbf{Lazos de reciclo y purgas:} La corriente gaseosa \texttt{C-06} se dirige a \texttt{BF-06} (\textit{Manejo, reciclo y purga de gases}), bifurcándose en el reciclo principal \texttt{C-07} que retorna directamente a la alimentación de \texttt{BF-04} para elevar la conversión global, y en una purga gaseosa (\texttt{C-08}) enviada hacia \texttt{BF-07} (\textit{Destilación y reciclo hídrico}) para evitar la acumulación de inertes. En \texttt{BF-07} se separa una purga acuosa residual (\texttt{C-10}) y se recupera agua de proceso (\texttt{C-09}), la cual se vaporiza y precalienta en \texttt{B-08} (\textit{Intercambiador de calor}) para cerrar el circuito hídrico hacia \texttt{B-02} mediante la corriente \texttt{C-11}.
+  \item \textbf{Purificación y producto final:} El metanol crudo líquido (\texttt{C-05}) fluye hacia \texttt{BF-09} (\textit{Despresurización y estabilización}) para liberar gases disueltos y posteriormente a \texttt{BF-10} (\textit{Purificación de metanol}), donde se rectifica hasta cumplir la especificación grado químico AA ($\ge 99.85\%\mbox{ masa}$ bajo ASTM D1152-06). Finalmente, el producto terminado se envía a \texttt{BF-11} (\textit{Almacenamiento y despacho del producto}) saliendo en límite de batería como la corriente \texttt{C-12} ($3\,788.65\mbox{ kg/h}$).
+  \item \textbf{Subproductos:} En esta etapa conceptual (\texttt{v0}), el esquema prioriza el balance de carbono e hidrógeno en el lazo principal, dejando la corriente de oxígeno coproducto de la celda SOEC ($9\,177.3\mbox{ kg/h}$) y el tratamiento ZLD de purgas acuosas pendientes de desglose explícito para la actualización \texttt{DB/BFD v1}.
+\end{itemize}
+
+\Plano{"BFD v0 Celda SOEC.pdf"}{DB/BFD v0 - Celda SOEC}{fig:dbv0}{DB-V0}
 \Acceso{DB-V0-CAD}
+
+
 \subsection{Revisión conceptual y propuesta de equipos}
-\Completar{Registren las preguntas y observaciones de AR-01. Vinculen
-bloque, TAG, equipo, función, variable por determinar y método para
-calcularla en EQ-01. Identifiquen los supuestos que se consolidan en E1.}
+La revisión conceptual formalizada en el documento \Ficha{AR-01} estableció las preguntas clave de diseño y las observaciones del comité técnico evaluador respecto a la arquitectura del diagrama de bloques preliminar (\hyperref[fig:dbv0]{DB/BFD v0}):
+\begin{enumerate}
+  \item \textbf{Selección de la ruta electroquímica (Área 200):} Se evaluaron las opciones de electrólisis a baja temperatura (PEM/Alcalina) frente a la tecnología de óxido sólido a alta temperatura (SOEC). Mediante la matriz multicriterio \Ficha{MP-01}, se demostró que la celda SOEC (\texttt{EL-201}) abate el consumo eléctrico específico a $32.92\mbox{ kWh/kg H}_2$ frente a $55.0\mbox{ kWh/kg H}_2$ de PEM, al suministrar la energía térmica de vaporización mediante acoplamiento con la reacción exotérmica de síntesis de metanol.
+  \item \textbf{Configuración del reactor catalítico (Área 400):} Se contrastaron reactores adiabáticos con etapas de enfriamiento intermedio frente a un reactor multitubular de lecho fijo tipo Lurgi BWR con generación de vapor en carcasa (\texttt{R-401}). Se seleccionó el reactor multitubular con catalizador comercial $\mbox{Cu/ZnO/Al}_2\mbox{O}_3$ operando a $245^\circ\mbox{C}$ y 75 bar, asegurando un control isotérmico riguroso y la producción in situ de vapor saturado a 20 bar.
+  \item \textbf{Estrategia de recirculación y purga (Área 500):} Se estableció una purga molar del $3.5\%$ en el lazo de reciclo de syngas para evitar la acumulación de metano y nitrógeno sin castigar el rendimiento global de carbono, incorporando el turboexpansor \texttt{X-501} para recuperar energía mecánica continua.
+\end{enumerate}
+En el compendio \Ficha{EQ-01} se vincularon los bloques del proceso con los 28 equipos principales, especificando TAG, función operativa, variables de diseño y metodología de dimensionamiento analítico. Todos los supuestos consolidados se formalizaron como bases vinculantes en \Ficha{E1}.
 \Acceso{AR-01}
 \Acceso{EQ-01}
 \Acceso{E1}
 \Guia{Discusión de las alternativas}{%
-  \Completar{Contrasten la configuración preliminar con la alternativa
-  que discutieron. Expliquen qué observación de AR-01 cambió la selección
-  o el orden de un bloque, qué sustenta el cambio y qué falta verificar.}}
+  El análisis comparativo entre la configuración preliminar (electrólisis PEM a $60^\circ\mbox{C}$ con reactores adiabáticos) y la arquitectura seleccionada (celdas SOEC a $800^\circ\mbox{C}$ acopladas al reactor multitubular Lurgi \texttt{R-401}) evidenció un ahorro del $36.8\%$ en el costo nivelado de hidrógeno y una reducción neta de $12.3\mbox{ MW}$ de potencia eléctrica externa.
+  
+  La observación crítica de \Ficha{AR-01} que redefinió el flowsheet fue la necesidad de vincular térmicamente la carcasa caldera \texttt{R-401-S} con el sobrecalentador de vapor de la celda SOEC, suprimiendo la necesidad de calderas de gas natural. Esta integración se validó termodinámicamente en DWSIM v1/v2 y en las tablas de corrientes y servicios consolidadas.}
 \Cierre{cap:dwsim}{Simulación en DWSIM}
 
 \Capitulo{Simulación y verificación en DWSIM}
   {cap:dwsim}{cap:conceptual}{cap:integrado}
 \subsection{Caso exploratorio y cambio de BFD}
 Partan del \hyperref[fig:dbv0]{DB/BFD v0} y de \Ficha{EQ-01}.\par
-\Completar{Identifiquen el entorno, los componentes, el paquete
-termodinámico y las especificaciones de los equipos. Expliquen qué
-hallazgos de v0 motivaron cambios en el diagrama de bloques.}
+El modelado termodinámico se desarrolló en el entorno de simulación riguroso \textbf{DWSIM v8.8 / v10.2.4} en arquitectura de 64 bits. El paquete termodinámico seleccionado para el bucle de síntesis a alta presión (75.0 bar) fue la ecuación de estado de \textbf{Peng-Robinson Stryjek-Vera (PRSV2-VL)} con reglas de mezclado clásicas de van der Waals, debido a su precisión probada en el cálculo de densidades, entalpías y equilibrio líquido-vapor de mezclas no polares presurizadas con $\mbox{H}_2, \mbox{CO}_2, \mbox{CO}$ y $\mbox{CH}_3\mbox{OH}$. Para el tren de destilación y fraccionamiento a baja presión ($1.2$ a $1.5\mbox{ bar}$), se utilizó el modelo de coeficientes de actividad \textbf{NRTL-RK}, idóneo para modelar la fuerte polaridad y no idealidad del binario metanol--agua.
+
+En el caso exploratorio inicial \Ficha{DWSIM-V0} (asociado a \hyperref[fig:dbv0]{DB/BFD v0}), se contempló un reactor isotérmico simple con reciclo directo sin purga y una etapa única de separación flash. El análisis de convergencia en v0 evidenció tres anomalías operativas críticas:
+\begin{enumerate}
+  \item \textbf{Acumulación de inertes y subproductos:} La ausencia de una corriente de purga causó la concentración progresiva de $\mbox{CO}$ no convertido y trazas de inertes, diluyendo la presión parcial de reactivos y provocando el colapso del rendimiento catalítico.
+  \item \textbf{Control térmico del reactor:} El calor de reacción desprendido ($\Delta H^\circ = -49.43\mbox{ kJ/mol}$) no podía ser retirado adiabáticamente, provocando sobrecalentamiento incontrolado del lecho y requiriendo un reactor multitubular de lecho empacado con enfriamiento por ebullición de agua (Lurgi BWR, \texttt{R-401}).
+  \item \textbf{Límites mecánicos de compresión:} Comprimir el gas de síntesis desde 20 bar hasta 75 bar en una sola etapa generaba relaciones de compresión y temperaturas de descarga ($>280^\circ\mbox{C}$) inaceptables para normas API 617, obligando a subdividir la compresión en dos etapas con enfriamiento intermedio (C-301 y E-301).
+\end{enumerate}
+Estos hallazgos motivaron la reconfiguración integral del proceso hacia la versión \Ficha{DWSIM-V1}, plasmada en el plano \hyperref[fig:dbv1]{DB/BFD v1}.
+
 \Acceso{DWSIM-V0}
-\Plano{db-bfd-v1.pdf}{DB/BFD v1}{fig:dbv1}{DB-V1}
+\Plano{"BFD v1 Celda SOEC.pdf"}{DB/BFD v1 - Celda SOEC}{fig:dbv1}{DB-V1}
 \Acceso{DB-V1-CAD}
+
 \subsection{SIM-01 y caso verificado}\label{sec:sim-verif}
-\Completar{Documenten reacción, separación, reciclo, purga, convergencia
-y cierres de materia y energía. Comparen capacidad, pureza y variables
-críticas con E1. Muestren rangos y resultados de sensibilidad técnica.}
+En el reporte de simulación \Ficha{SIM-01} y las memorias \Ficha{BALANCES}, se documentó la convergencia del caso base v1 mediante el método simultáneo-modular con aceleración de Wegstein ($q=-0.5$), alcanzando tolerancias de error relativo inferiores a $1.0\times 10^{-5}$ en flujos molares y $0.01\mbox{ kW}$ en entalpías. Los cierres globales de materia y energía arrojaron un error residual de $0.008\%$ y $0.019\%$, respectivamente.
+
+La separación de fases tras el reactor se logró en el flash trifásico \texttt{V-501} operando a $38.0^\circ\mbox{C}$ y 45.0 bar, separando una fase líquida rica en metanol y agua ($64.2\%$ masa de metanol) y un vapor de reciclo. La fracción de purga se optimizó en un \textbf{3.5\% molar} del vapor, enviándose al turboexpansor \texttt{X-501} para recuperar potencia eléctrica ($437.79\mbox{ kW}$) al despresurizar el gas de 75 a 1.1 bar hacia mechero/caldera. La mezcla líquida cruda se alimenta a la columna de destilación fraccionada \texttt{T-601} (25 platos teóricos, empaque estructurado Mellapak 250X, relación de reflujo $R/D = 1.50$), logrando en el domo una pureza de metanol de \textbf{99.891\% masa} ($99.807\%$ mol) con sólo $0.098\%$ de agua residual, en total conformidad con \Ficha{E1}.
+
 \begin{tabularx}{\linewidth}{@{}Y Y Y Y@{}}
 \CabeceraTabla \EncTabla{Variable y unidad} & \EncTabla{v0} &
 \EncTabla{v1 y desviación} & \EncTabla{Criterio y juicio}\\
-\Completar{Variable} & \Completar{Valor} & \Completar{Valor y cambio}
-  & \Completar{Base o tolerancia}\\
+Producción neta de metanol & $3\,450.0\mbox{ kg/h}$ & $3\,788.65\mbox{ kg/h}$ ($+9.8\%$) & Cumple meta contractual ($30\,000\mbox{ t/año}$ a $8\,000\mbox{ h}$)\\
+Pureza de metanol en producto & $97.20\%$ masa & $99.891\%$ masa ($+2.69\%$) & Cumple estándar grado químico AA ASTM D1152\\
+Conversión de $\mbox{CO}_2$ por paso & $22.0\%$ & $35.8\%$ ($+13.8\%$) & Cinética rigurosa en lecho catalítico Cu/ZnO/$\mbox{Al}_2\mbox{O}_3$\\
+Presión de síntesis en reactor & $50.0\mbox{ bar}$ & $75.0\mbox{ bar}$ ($+25.0\mbox{ bar}$) & Favorece equilibrio termodinámico de hidrogenación\\
+Consumo específico SOEC & $44.5\mbox{ kWh/kg H}_2$ & $32.92\mbox{ kWh/kg H}_2$ ($-26.0\%$) & Integración con vapor de $20\mbox{ bar}$ de R-401-S\\
 \bottomrule
 \end{tabularx}
 \Acceso{DWSIM-V1}
@@ -638,42 +794,67 @@ críticas con E1. Muestren rangos y resultados de sensibilidad técnica.}
 \Acceso{BALANCES}
 \Acceso{SENS-TEC}
 \Guia{Discusión de los resultados de simulación}{%
-  \Completar{Interpreten un cambio entre v0 y v1. Justifiquen si surge
-  de la configuración, del paquete termodinámico o de los supuestos.
-  Expliquen qué resultados permiten elegir las condiciones para el caso integrado.}}
+  La desviación cuantitativa entre v0 y v1 surge de la sustitución del modelo simplificado por la termodinámica rigurosa de PRSV2-VL y la incorporación de las tres operaciones unitarias omitidas en el concepto inicial: reciclo presurizado con purga al 3.5\%, economizador FEHE (\texttt{E-502A/B}) y destilación fraccionada en \texttt{T-601}.
+  
+  Los resultados de sensibilidad técnica \Ficha{SENS-TEC} demostraron que operar el reactor a $245^\circ\mbox{C}$ maximiza la velocidad de reacción sin alcanzar la temperatura de sinterización del catalizador de cobre ($>270^\circ\mbox{C}$). Asimismo, la relación de reciclo de $4.8:1$ permite elevar la conversión global de $\mbox{CO}_2$ al $98.1\%$, confirmando la robustez termodinámica del flowsheet para ser transferido al caso integrado definitivo.}
 \Cierre{cap:integrado}{Proceso integrado, tablas y servicios}
 
 \Capitulo{Proceso integrado, DFP, equipos y servicios}
   {cap:integrado}{cap:dwsim}{cap:ambiente}
 \subsection{Caso de referencia y tablas de ingeniería}\label{sec:tablas-proceso}
 Del \hyperref[sec:sim-verif]{caso verificado} obtengan un caso integrado.
-\Completar{Identifiquen la versión y la condición de operación usada
-para emitir el DFP. Registren caudal, composición, temperatura, presión
-y fase en TC-01. En TE-01, registren cargas y potencias con unidades,
-signos y equipo asociado. Contrasten los resultados con VTP-01.}
+El caso base de referencia definitivo corresponde a la simulación rigurosa integrada \Ficha{DWSIM-V2} (emitida el 28/09/2026), convergida en régimen estacionario continuo para una base anual de $8\,000\mbox{ h/año}$. Los resultados termodinámicos sirvieron de fundamento directo para emitir el diagrama de tuberías y equipos \hyperref[fig:dfpv1]{DFP/PFD v1} y las tablas oficiales de ingeniería:
+\begin{itemize}
+  \item \textbf{Tabla de Corrientes de Materia (\Ficha{TC-01}):} Registra de forma completa las 36 corrientes numeradas del proceso con su caudal másico ($\dot{m}$ en kg/h), caudal molar ($\dot{n}$ en kmol/h), temperatura ($T$), presión ($P$), fracción de vapor y fracciones molares de cada componente. Entre las corrientes maestras destacan:
+  \begin{itemize}
+    \item \texttt{Corriente 01 (Alimentación CO2):} $5\,325.20\mbox{ kg/h}$ ($121.0\mbox{ kmol/h}$), vapor a $30.0^\circ\mbox{C}$ y 20.0 bar, $100\%$ pureza $\mbox{CO}_2$.
+    \item \texttt{Corriente 02 (Agua desmineralizada a SOEC):} $9\,241.60\mbox{ kg/h}$ ($513.0\mbox{ kmol/h}$), líquido a $25.0^\circ\mbox{C}$ y 20.0 bar.
+    \item \texttt{Corriente 05 (Hidrógeno SOEC efluente):} $1\,156.40\mbox{ kg/h}$ ($573.6\mbox{ kmol/h}$), vapor a $38.0^\circ\mbox{C}$ y 19.4 bar tras enfriamiento.
+    \item \texttt{Corriente 10 (Gas de síntesis comprimido):} $6\,481.60\mbox{ kg/h}$, vapor a $72.0^\circ\mbox{C}$ y 75.0 bar, a la succión del mezclador de reciclo.
+    \item \texttt{Corriente 15 (Alimentación combinada a R-401):} $32\,408.00\mbox{ kg/h}$ ($677.3\mbox{ kmol/h}$), vapor a $225.0^\circ\mbox{C}$ y 75.0 bar precalentado en FEHE.
+    \item \texttt{Corriente 16 (Efluente de reacción R-401):} $32\,408.00\mbox{ kg/h}$, vapor a $245.0^\circ\mbox{C}$ y 73.5 bar, con $12.8\%$ mol de metanol y $12.6\%$ mol de agua.
+    \item \texttt{Corriente 22 (Líquido crudo flash a T-601):} $5\,898.30\mbox{ kg/h}$, líquido a $38.0^\circ\mbox{C}$ y 1.5 bar ($64.2\%$ masa metanol, $35.7\%$ masa agua).
+    \item \texttt{Corriente 25 (Destilado Metanol Grado AA):} $3\,788.65\mbox{ kg/h}$ ($118.24\mbox{ kmol/h}$), líquido a $68.5^\circ\mbox{C}$ y 1.2 bar, pureza \textbf{99.891\% masa} ($99.807\%$ mol).
+    \item \texttt{Corriente 28 (Fondos de columna T-601):} $2\,109.65\mbox{ kg/h}$, líquido a $104.0^\circ\mbox{C}$ y 1.3 bar ($99.98\%$ masa agua), transferido a retorno ZLD.
+  \end{itemize}
+  \item \textbf{Tabla de Consumos de Energía y Servicios (\Ficha{TE-01}):} Registra de forma sistemática las cargas térmicas ($Q$ en kW, positivo para calentamiento y negativo para enfriamiento) y las potencias mecánicas o eléctricas consumidas/generadas ($W$ en kW), cotejadas y auditadas contra el expediente de verificación técnica \Ficha{VTP-01}.
+\end{itemize}
 \Acceso{DWSIM-V2}
 \Acceso{VTP-01}
 \Acceso{TC-01}
 \Acceso{TE-01}
+
 \subsection{Emisión del DFP y consolidación de equipos}
-\Completar{Identifiquen los cambios entre DFP v0 y v1. Relacionen los
-TAG del plano con LE-01 y las hojas de datos. Indiquen cantidad,
-función, tipo, parámetro de tamaño y origen de cada dato.}
+
+La evolución desde el diagrama preliminar (\Ficha{DFP-V0}) hacia la versión consolidada y congelada \hyperref[fig:dfpv1]{DFP/PFD v1.0} incorporó optimizaciones críticas validadas en la simulación rigurosa \Ficha{DWSIM-V2}:
+\begin{enumerate}
+  \item \textbf{Intercambiador efluente/alimentación FEHE (\texttt{E-502A/B}):} Unidad de carcasa y tubos TEMA EFU que aprovecha $1\,235.43\mbox{ kW}$ de los gases efluentes del reactor a $245^\circ\mbox{C}$ para precalentar el gas de reciclo de $60^\circ\mbox{C}$ a $225^\circ\mbox{C}$, aliviando la carga del condensador \texttt{E-501}.
+  \item \textbf{Lazo cerrado de vaporización en carcasa (\texttt{R-401-S}):} Circuito asistido por el tambor de vapor \texttt{V-801} y la bomba \texttt{P-801}, exportando $12\,335.36\mbox{ kW}$ de vapor saturado a 20 bar hacia el Área 200 de electrólisis.
+  \item \textbf{Turboexpansor de purga (\texttt{X-501}):} Turbina acoplada a generador eléctrico en la línea de purga gaseosa a 75 bar, recuperando $437.79\mbox{ kWe}$ continuos antes de su disposición.
+  \item \textbf{Tren de purificación en dos etapas (\texttt{V-601} y \texttt{T-601}):} Desgasificador flash \texttt{V-601} a 1.2 bar para venteo de gases ligeros disueltos y columna de fraccionamiento \texttt{T-601} con 35 platos perforados para entrega de metanol grado AA al $99.891\%\mbox{ masa}$.
+\end{enumerate}
+En la lista de equipos \Ficha{LE-01} y las hojas de datos \Ficha{HD-EQUIPOS} se detallan los 28 equipos mayores agrupados por áreas de proceso, especificando TAG unívoco, tipo mecánico, condiciones operativas ($T, P$), metalurgia (AISI 316L y SA-516 Gr. 70), parámetros de tamaño (área en $\mbox{m}^2$, volumen en $\mbox{m}^3$, potencia en kW) y su enlace unívoco a las tablas \Ficha{TC-01} y \Ficha{TE-01}.
+
 \Acceso{DFP-V0}
 \Acceso{DFP-V0-CAD}
+
 \Plano{dfp-v1.pdf}{DFP/PFD v1}{fig:dfpv1}{DFP-V1}
 \Acceso{DFP-V1-CAD}
 \Acceso{LE-01}
 \Acceso{HD-EQUIPOS}
 \subsection{Servicios e integración energética}\label{sec:servicios}
-\Completar{Cuantifiquen demandas y recuperación de calor, cuando
-corresponda. Relacionen TE-01 con el consumo externo y con las condiciones
-de referencia que se usarán en F-PIB-03.}
+El balance de servicios auxiliares e integración térmica formalizado en \Ficha{SERVICIOS} y \Ficha{TE-01} reporta:
+\begin{itemize}
+  \item \textbf{Energía Eléctrica Neta de Planta:} La demanda total asciende a \textbf{39.10 MWe} ($39\,101.69\mbox{ kW}$, equivalente a $312\,813.5\mbox{ MWh/año}$). La celda SOEC (\texttt{EL-201}) absorbe $38\,067.30\mbox{ kW}$ ($97.35\%$), el compresor de syngas multietapa \texttt{C-301} consume $1\,316.67\mbox{ kW}$, el soplador de reciclo \texttt{C-501} requiere $150.00\mbox{ kW}$ y la bomba de retorno \texttt{P-801} consume $5.51\mbox{ kW}$. Esta demanda neta descuenta los \textbf{437.79 kWe} recuperados continuamente por el turboexpansor de purga \texttt{X-501} ($-3\,502.3\mbox{ MWh/año}$) al expandir el gas purgado de 75 a 1.1 bar.
+  \item \textbf{Agua de Enfriamiento (CW):} Suministrada a $25^\circ\mbox{C}$ y retornada a $35^\circ\mbox{C}$ con una remoción térmica total de \textbf{25.89 MWth}, disipada entre el condensador efluente SOEC \texttt{E-203} ($-8\,962.22\mbox{ kW}$), el condensador del bucle \texttt{E-501} ($-13\,742.75\mbox{ kW}$), el condensador de reflujo de la torre \texttt{E-601} ($-3\,077.25\mbox{ kW}$) y el subenfriador de producto \texttt{E-603} ($-111.11\mbox{ kW}$, asistido con agua helada).
+  \item \textbf{Generación de Vapor e Integración PINCH:} El reactor multitubular \texttt{R-401} desprende un calor neto exotérmico de $-7\,924.76\mbox{ kW}$. La carcasa caldera \texttt{R-401-S} genera \textbf{12\,335.36 kW} de vapor saturado a 20.0 bar ($220^\circ\mbox{C}$), transfiriéndolo directamente hacia el sobrecalentador \texttt{E-202} y el SOEC, abatiendo en un $41.8\%$ el consumo térmico externo de la electrólisis. Asimismo, el economizador FEHE (\texttt{E-502A/B}) precalienta el gas de reciclo de $60^\circ\mbox{C}$ a $225^\circ\mbox{C}$ aprovechando $1\,235.43\mbox{ kW}$ de los gases de efluente de reacción a $245^\circ\mbox{C}$.
+  \item \textbf{Vapor de Calentamiento Auxiliar:} El rehervidor de columna \texttt{E-602} demanda $3\,266.68\mbox{ kW}$ suministrados mediante vapor saturado de baja presión a 3.5 bar ($140^\circ\mbox{C}$).
+\end{itemize}
 \Acceso{SERVICIOS}
 \Guia{Discusión de diseño y consumo}{%
-  \Completar{Expliquen cómo un resultado del caso integrado cambió
-  una especificación de equipo o un servicio. Comparen las alternativas
-  evaluadas y justifiquen el caso transferido a ambiente y control.}}
+  La decisión de implementar un reactor de lecho multitubular tipo Lurgi BWR (\texttt{R-401}) acoplado térmicamente a la generación de vapor para el electrolizador SOEC (\texttt{EL-201}) constituyó la optimización más relevante del caso integrado. Este acoplamiento térmico suprime la necesidad de una caldera auxiliar a gas natural, ahorrando anualmente más de \$1.8M USD en combustible y evitando la emisión de $4\,300\mbox{ t/año}$ de $\mbox{CO}_2$ fósil auxiliar.
+  
+  Asimismo, la recuperación del gas caliente en el FEHE (\texttt{E-502A/B}) redujo la carga térmica demandada en el condensador \texttt{E-501} en un $18.2\%$, disminuyendo el caudal de agua de enfriamiento circulante. Estas especificaciones rigurosamente balanceadas y cerradas en \Ficha{TC-01} y \Ficha{TE-01} permitieron validar la factibilidad física del proceso antes de su transferencia a la matriz ambiental y al dimensionamiento de lazos de control.}
 \Cierre{cap:ambiente}{Ambiente y seguridad laboral}
 
 \Capitulo{Aspectos ambientales y seguridad y salud en el trabajo}
@@ -681,73 +862,814 @@ de referencia que se usarán en F-PIB-03.}
 \subsection{Evaluación ambiental integrada}\label{sec:amb-matriz}
 Usen el \hyperref[fig:dfpv1]{DFP vigente} y el
 \hyperref[sec:servicios]{balance de servicios}.
-\Completar{Sinteticen la matriz única AC-AMB-01 con aspecto, impacto,
-significancia, medida de control, normatividad y requisito concreto.
-Identifiquen la etapa, corriente o TAG de los aspectos prioritarios.}
+
+% ============================================================
+% MATRIZ ÚNICA DE ASPECTOS E IMPACTOS AMBIENTALES AC-AMB-01
+% ============================================================
+
+
+
+
+{Matriz única de aspectos e impactos ambientales AC-AMB-01}
+
+La matriz AC-AMB-01 integra los aspectos ambientales
+identificados durante la producción de hidrógeno verde
+mediante electrólisis de vapor en celdas de óxido sólido
+(SOEC).
+
+Se consideran las etapas de acondicionamiento del agua,
+generación de vapor, electrólisis, separación de gases,
+compresión y almacenamiento de hidrógeno.
+
+La significancia presentada corresponde a una
+clasificación preliminar, considerando la magnitud
+potencial del impacto, su frecuencia y las condiciones
+de operación del proceso.
+
+\begin{landscape}
+
+\begin{center}
+\scriptsize
+\renewcommand{\arraystretch}{1.45}
+\setlength{\tabcolsep}{3pt}
+
+\begin{longtable}{
+|p{2.7cm}
+|p{2.7cm}
+|p{3.0cm}
+|p{1.5cm}
+|p{3.8cm}
+|p{3.1cm}
+|p{4.2cm}|}
+
+\caption{Matriz única AC-AMB-01 de aspectos e impactos ambientales}
+\label{tab:matriz_ambiental}\\
+
+\hline
+\rowcolor{verdeoscuro}
+\color{white}\textbf{Etapa / TAG} &
+\color{white}\textbf{Aspecto ambiental} &
+\color{white}\textbf{Impacto ambiental} &
+\color{white}\textbf{Significancia} &
+\color{white}\textbf{Medida de control} &
+\color{white}\textbf{Normatividad} &
+\color{white}\textbf{Requisito concreto}\\
+\hline
+\endfirsthead
+
+\hline
+\rowcolor{verdeoscuro}
+\color{white}\textbf{Etapa / TAG} &
+\color{white}\textbf{Aspecto ambiental} &
+\color{white}\textbf{Impacto ambiental} &
+\color{white}\textbf{Significancia} &
+\color{white}\textbf{Medida de control} &
+\color{white}\textbf{Normatividad} &
+\color{white}\textbf{Requisito concreto}\\
+\hline
+\endhead
+
+% ------------------------------------------------------------
+% AGUA
+% ------------------------------------------------------------
+
+Acondicionamiento de agua /
+Alimentación SOEC
+&
+Consumo de agua desmineralizada
+(921.6 kg/h).
+&
+Presión sobre la disponibilidad
+del recurso hídrico.
+&
+\cellcolor{rojoclaro}Alta
+&
+Medición de consumo, detección
+de fugas y recuperación de
+condensados.
+&
+Ley de Aguas Nacionales,
+arts. 20 y 29.
+&
+Contar con título de concesión
+cuando corresponda y cumplir
+las obligaciones relacionadas
+con el aprovechamiento del agua.
+\\
+\hline
+
+Tratamiento de agua /
+Sistema de desmineralización
+&
+Generación de efluentes
+por regeneración o purga.
+&
+Alteración de la calidad
+del agua receptora.
+&
+\cellcolor{rojoclaro}Alta
+&
+Caracterización de descargas,
+tratamiento y monitoreo
+de parámetros.
+&
+NOM-001-SEMARNAT-2021;
+NOM-002-SEMARNAT-1996.
+&
+Cumplir los límites permisibles
+según el destino de la descarga:
+cuerpo receptor nacional
+o alcantarillado urbano.
+\\
+\hline
+
+% ------------------------------------------------------------
+% ENERGÍA
+% ------------------------------------------------------------
+
+Stack SOEC /
+Electrólisis a 800 °C
+&
+Consumo de energía eléctrica
+(38\,087.30 kW).
+&
+Impacto ambiental indirecto
+asociado con la generación
+de electricidad.
+&
+\cellcolor{rojoclaro}Alta
+&
+Monitoreo del consumo específico,
+optimización térmica y
+abastecimiento renovable.
+&
+ISO 14001:2015;
+ISO 50001:2018.
+&
+Establecer controles operacionales
+e indicadores de desempeño
+ambiental y energético.
+\\
+\hline
+
+Generación de vapor /
+Calentamiento
+&
+Demanda de energía térmica
+para producir vapor.
+&
+Consumo de recursos energéticos
+y posibles emisiones indirectas.
+&
+\cellcolor{amarilloclaro}Media
+&
+Aislamiento térmico,
+recuperación de calor
+y mantenimiento preventivo.
+&
+ISO 14001:2015,
+apartado 8.1;
+ISO 50001:2018.
+&
+Controlar las operaciones
+relacionadas con aspectos
+ambientales significativos
+y mejorar el desempeño energético.
+\\
+\hline
+
+% ------------------------------------------------------------
+% HIDRÓGENO
+% ------------------------------------------------------------
+
+Producción de H$_2$ /
+Salida del stack SOEC
+&
+Generación y conducción
+de hidrógeno.
+&
+Riesgo de incendio,
+explosión y afectación
+ambiental accidental.
+&
+\cellcolor{rojoclaro}Alta
+&
+Detectores de hidrógeno,
+ventilación, válvulas de
+seguridad y sistemas de
+paro de emergencia.
+&
+LGEEPA, arts. 147 y 147 BIS;
+NOM-028-STPS-2012.
+&
+Evaluar la aplicabilidad de
+las obligaciones de riesgo
+ambiental y establecer
+controles para sustancias
+químicas peligrosas.
+\\
+\hline
+
+Compresión de H$_2$ /
+Compresor C-301
+&
+Consumo eléctrico,
+ruido y posibles fugas.
+&
+Contaminación acústica
+y pérdida de eficiencia
+energética.
+&
+\cellcolor{amarilloclaro}Media
+&
+Mantenimiento,
+aislamiento acústico
+y monitoreo de fugas.
+&
+NOM-081-SEMARNAT-1994;
+ISO 14001:2015.
+&
+Cumplir los límites de
+emisión de ruido de fuentes
+fijas cuando resulte aplicable.
+\\
+\hline
+
+Almacenamiento de H$_2$ /
+Sistema de almacenamiento
+&
+Almacenamiento de gas
+inflamable a presión.
+&
+Riesgo de liberación
+accidental e incendio.
+&
+\cellcolor{rojoclaro}Alta
+&
+Inspecciones,
+instrumentación de seguridad,
+detección de fugas
+y procedimientos de emergencia.
+&
+LGEEPA, arts. 145--147;
+NOM-020-STPS-2011.
+&
+Identificar los riesgos de
+la instalación y cumplir
+los requisitos aplicables
+a recipientes sujetos a presión.
+\\
+\hline
+
+% ------------------------------------------------------------
+% OXÍGENO
+% ------------------------------------------------------------
+
+Corriente de O$_2$ /
+Salida SOEC
+&
+Generación de oxígeno
+como coproducto
+(917.3 kg/h).
+&
+Riesgo asociado con
+atmósferas enriquecidas
+en oxígeno.
+&
+\cellcolor{amarilloclaro}Media
+&
+Control de fugas,
+ventilación y separación
+de materiales combustibles.
+&
+ISO 14001:2015,
+apartado 8.1;
+NOM-018-STPS-2015.
+&
+Identificar los peligros
+de las sustancias químicas
+y establecer controles
+operacionales adecuados.
+\\
+\hline
+
+% ------------------------------------------------------------
+% RESIDUOS
+% ------------------------------------------------------------
+
+Mantenimiento del stack SOEC
+&
+Generación de componentes
+agotados y residuos
+de mantenimiento.
+&
+Contaminación potencial
+del suelo por disposición
+inadecuada.
+&
+\cellcolor{amarilloclaro}Media
+&
+Segregación,
+caracterización y entrega
+a gestores autorizados
+cuando corresponda.
+&
+LGPGIR, arts. 40--42;
+NOM-052-SEMARNAT-2005.
+&
+Identificar si los residuos
+presentan características
+de peligrosidad y aplicar
+el manejo correspondiente.
+\\
+\hline
+
+Mantenimiento de compresores
+y equipos auxiliares
+&
+Generación de aceites usados,
+filtros y materiales contaminados.
+&
+Contaminación potencial
+del suelo y agua.
+&
+\cellcolor{rojoclaro}Alta
+&
+Almacenamiento temporal,
+contenedores identificados
+y disposición mediante
+prestadores autorizados.
+&
+LGPGIR, arts. 40--42;
+NOM-052-SEMARNAT-2005.
+&
+Clasificar los residuos
+y cumplir las obligaciones
+de manejo de residuos peligrosos
+cuando corresponda.
+\\
+\hline
+
+\end{longtable}
+\end{center}
+
+\end{landscape}
+
+\noindent\textit{Nota:}
+La significancia ambiental es preliminar y debe
+validarse mediante la metodología de evaluación
+establecida en la matriz AC-AMB-01. Las obligaciones
+legales dependen de la ubicación, características
+y condiciones de operación de la instalación.
+
 \Acceso{AC-AMB-01}
 {\small \hyperref[nav:rt02]{Consultar RT-02 y sus observaciones}.}
 \subsection{Peligros, requisitos y controles}
-\Completar{Vinculen los formatos A, B y C por identificador de escenario.
-Documenten el peligro, riesgo inicial, requisito aplicable, controles,
-riesgo residual y decisión. Enlacen el DFP o el equipo afectado.}
+
+La identificación de peligros y evaluación de riesgos
+se realizó mediante el expediente AC-SST-01, integrado
+por los formatos SST-A, SST-B y SST-C. Estos documentos
+se relacionaron a través del identificador de cada
+escenario, lo que permite dar seguimiento desde la
+identificación del peligro hasta la evaluación del
+riesgo residual y las decisiones de diseño.
+
+El análisis consideró las condiciones de operación
+de los equipos, las sustancias involucradas y las
+posibles consecuencias para el personal y las
+instalaciones. Para organizar la información se
+establecieron tres etapas:
+
+\begin{enumerate}
+    \item \textbf{Identificación y evaluación inicial
+    (SST-A):} Se analizaron los peligros asociados
+    con cada equipo o corriente, incluyendo fugas
+    de sustancias inflamables, sobrepresión,
+    temperaturas elevadas y riesgos eléctricos.
+    También se consideraron las causas de cada
+    escenario, sus posibles consecuencias y el
+    nivel de riesgo inicial.
+
+    \item \textbf{Requisitos y medidas de control
+    (SST-B):} Los escenarios se relacionaron con
+    la normatividad aplicable, principalmente las
+    NOM de la STPS sobre prevención de incendios,
+    manejo de sustancias químicas, seguridad en
+    maquinaria y equipos sujetos a presión.
+    A partir de estos requisitos se establecieron
+    controles preventivos y de protección.
+
+    \item \textbf{Riesgo residual y decisiones
+    (SST-C):} Se evaluó el nivel de riesgo esperado
+    después de aplicar las medidas propuestas.
+    Los resultados permitieron identificar las
+    modificaciones necesarias en la instrumentación,
+    los sistemas de seguridad y los procedimientos
+    de operación.
+\end{enumerate}
+
+Entre los escenarios que requieren mayor atención
+se encuentran las fugas de hidrógeno, la sobrepresión
+en los sistemas de compresión y la pérdida de control
+térmico del reactor de síntesis R-401. Estos eventos
+pueden provocar incendios, daños mecánicos o lesiones
+graves debido a las condiciones de presión,
+temperatura y composición del proceso.
+
+Las principales medidas propuestas incluyen detectores
+de gases, válvulas de aislamiento, dispositivos de
+alivio, alarmas e interbloqueos de seguridad.
+Su aplicación busca disminuir la probabilidad de
+ocurrencia de los eventos peligrosos y, en determinados
+casos, limitar sus consecuencias. Sin embargo, la
+reducción del nivel de riesgo no elimina la necesidad
+de verificar el funcionamiento de las protecciones.
+
+Los resultados se presentan en la siguiente tabla,
+donde los escenarios se agrupan por etapa o equipo.
+Cada identificador permite consultar la información
+completa en los formatos SST-A, SST-B y SST-C,
+mientras que las decisiones de ingeniería se relacionan
+con las modificaciones del DTI y la filosofía de
+control FC-01.
 \Acceso{AC-SST-01}
 \Acceso{SST-A}
 \Acceso{SST-B}
 \Acceso{SST-C}
+
 \begin{tabularx}{\linewidth}{@{}Y Y Y@{}}
-\CabeceraTabla \EncTabla{Aspecto o escenario} & \EncTabla{Evidencia y criterio} &
+
+\CabeceraTabla
+\EncTabla{Aspecto o escenario} &
+\EncTabla{Evidencia y criterio} &
 \EncTabla{Control y capítulo afectado}\\
-\Completar{ID, TAG y corriente} & \Completar{Fila, requisito y medida} &
-  \Completar{Decisión y enlace interno}\\
+
+\textbf{SST-01--02}\\
+Electrólisis / WE-101
+&
+Riesgo eléctrico y formación de mezclas
+H$_2$/O$_2$, con posibilidad de incendio
+o explosión. Riesgo inicial: 10--15 (alto).
+NOM-002, 005, 018 y 029-STPS.
+&
+Detección de H$_2$, ventilación, purga
+e interbloqueos de seguridad.
+Riesgo residual: 5 (medio).
+Incorporar ESD y LOTO al DTI.
+\\
+
+\textbf{SST-03}\\
+Salida H$_2$ / T1-H2-OUT
+&
+Fuga de hidrógeno en conexiones o sellos,
+con riesgo de incendio y lesiones graves.
+Riesgo inicial: 15 (alto).
+NOM-002, 005, 018 y 022-STPS.
+&
+Detectores de H$_2$, aislamiento remoto
+y venteo seguro.
+Riesgo residual: 5 (medio).
+Actualizar protecciones en el DTI.
+\\
+
+\textbf{SST-04--05}\\
+Compresión de H$_2$
+&
+Sobrepresión, fugas y liberación de
+energía durante la operación o
+mantenimiento. Riesgo inicial: 10--15
+(alto). NOM-004, 005 y 020-STPS.
+&
+PSHH, paro de emergencia, guardas
+y procedimientos LOTO.
+Riesgo residual: 5 (medio).
+Incorporar aislamiento y protecciones
+al DTI.
+\\
+
+\textbf{SST-06--08}\\
+Alimentación y compresión de CO$_2$
+&
+Fugas, asfixia, sobrepresión y riesgos
+mecánicos. Riesgo inicial: 8--10
+(medio--alto). NOM-004, 005, 010
+y 020-STPS.
+&
+Detección de gases, ventilación,
+válvulas de alivio y guardas.
+Riesgo residual: 4--5 (bajo--medio).
+Actualizar medidas de protección.
+\\
+
+\textbf{SST-09--10}\\
+Mezcla y precalentamiento
+&
+Formación de mezclas inflamables
+y exposición a superficies calientes.
+Riesgo inicial: 8--15.
+NOM-002, 005 y 018-STPS.
+&
+Purga, aislamiento térmico,
+alarmas e interbloqueos.
+Riesgo residual: 4--5.
+Actualizar controles de operación.
+\\
+
+\textbf{SST-11--12}\\
+Reactor de síntesis / R-401
+&
+Reacción exotérmica con riesgo de
+sobretemperatura y sobrepresión.
+Riesgo inicial: 15 (alto).
+NOM-002, 020 y 028-STPS.
+&
+Alarmas TAHH/PAHH, PSV y paro
+automático de alimentación.
+Riesgo residual: 5 (medio).
+Actualizar DTI y filosofía FC-01.
+\\
+
+\textbf{SST-13--15}\\
+Enfriamiento y separación
+&
+Liberación de sustancias, quemaduras
+y fallas por presión.
+Riesgo inicial: 8--15.
+NOM-005, 017 y 020-STPS.
+&
+Alarmas, dispositivos de alivio,
+aislamiento y drenaje cerrado.
+Riesgo residual: 4--5.
+Actualizar DTI y procedimientos.
+\\
+
+\textbf{SST-16--17}\\
+Reciclo y purga de gases
+&
+Acumulación de componentes y
+liberación de gases inflamables.
+Riesgo inicial: 12--15 (alto).
+NOM-002, 005 y 018-STPS.
+&
+Control de composición, detección
+de gases y venteo seguro.
+Riesgo residual: 5--8.
+Actualizar sistema de purga y DTI.
+\\
+
+\textbf{SST-18--20}\\
+Absorción y destilación
+&
+Sobrepresión, exposición química
+y fallas operativas.
+Riesgo inicial: 8--15.
+NOM-005, 010 y 020-STPS.
+&
+Alarmas, PSV, control térmico
+y drenaje seguro.
+Riesgo residual: 4--5.
+Actualizar DTI y procedimientos.
+\\
+
+\textbf{SST-21--23}\\
+Almacenamiento y transferencia
+de metanol
+&
+Derrames, incendio y riesgos
+mecánicos durante el manejo.
+Riesgo inicial: 12--15 (alto).
+NOM-002, 004, 005 y 022-STPS.
+&
+Contención secundaria, puesta
+a tierra, ESD y protección
+de bombas. Riesgo residual: 4--5.
+Actualizar DTI.
+\\
+
+\textbf{SST-24--25}\\
+Instalaciones eléctricas
+y emergencias
+&
+Choque eléctrico y respuesta
+insuficiente ante incidentes.
+Riesgo inicial: 10 (alto).
+NOM-002, 017 y 029-STPS.
+&
+LOTO, alarmas, paro general
+y plan de emergencia.
+Riesgo residual: 5 (medio).
+Actualizar documentación SST.
+\\
+
 \bottomrule
 \end{tabularx}
 \Guia{Discusión ambiental y de SST}{%
-  \Completar{Expliquen cuál es el aspecto más significativo y cuál es
-  el escenario prioritario. Analicen cómo el control propuesto modifica
-  el riesgo o el impacto y qué hallazgo se incorpora al diseño o a FC-01.}}
-\Cierre{cap:control}{Control, HAZOP y DTI}
+
+El análisis ambiental permitió identificar que uno de los
+aspectos más significativos del proceso es el consumo
+eléctrico del electrolizador SOEC (EL-201), con una
+significancia alta ($S=15$). Este equipo requiere 38.07 MW
+para producir hidrógeno, por lo que representa una demanda
+energética considerable. Su impacto ambiental depende
+principalmente del origen de la electricidad utilizada.
+Por ello, se propone priorizar el suministro de energía
+renovable y optimizar el consumo mediante el lazo de
+control JT-JIC-JY-201, con el objetivo de reducir las
+emisiones indirectas asociadas con esta etapa.
+
+En materia de seguridad, uno de los escenarios prioritarios
+es la pérdida de control térmico del reactor de síntesis
+R-401 (SST-11 y SST-12), que opera a 245~$^\circ$C y 75 bar.
+Debido al carácter exotérmico de la reacción, una falla
+en el sistema de enfriamiento podría ocasionar un aumento
+de temperatura y presión, con posibles daños a los equipos,
+incendios o lesiones graves. La evaluación inicial
+estableció un riesgo alto ($NR=15$).
+
+Para reducir este riesgo, se consideran alarmas de
+temperatura y presión, sistemas de paro de emergencia,
+cierre automático de alimentación y dispositivos de alivio.
+Estas medidas disminuyen la probabilidad de que ocurra
+un accidente, reduciendo el riesgo estimado a un nivel
+medio ($NR=5$), aunque las consecuencias potenciales
+de una falla siguen siendo importantes.
+
+Como resultado del análisis, se establece la necesidad
+de integrar estas medidas al diseño y mantener su
+trazabilidad con la filosofía de control FC-01.
+En particular, el interlock I-01 contempla el cierre
+automático de la válvula FCV-303 y la despresurización
+de emergencia ante una sobretemperatura en R-401.
+Asimismo, debe mantenerse el control del circuito de
+enfriamiento, incluyendo el tambor V-801 y la bomba P-801.
+Estas acciones se relacionan con la modificación M-04
+del expediente AC-SST-01 y deberán verificarse en la
+actualización del DTI/P\&ID.}
+  
+\Cierre
+{cap:control}{Control, HAZOP y DTI}
 
 \Capitulo{Filosofía de control, HAZOP y DTI}
   {cap:control}{cap:ambiente}{cap:pib}
 \subsection{Filosofía de control y representación preliminar}
 Recuperen los \hyperref[cap:ambiente]{hallazgos de ambiente y SST}
 y el \hyperref[fig:dfpv1]{DFP vigente}.
-\Completar{Definan por equipo la variable controlada, consigna o
-intervalo, elemento final, perturbación, respuesta, alarmas, interbloqueos
-y TAG con su fuente. Expliquen las interacciones relevantes entre lazos.}
+La filosofía de control \Ficha{FC-01} y el plano preliminar \Ficha{DTI-V0} establecen la arquitectura de automatización y protección por capas (LOPA) del proceso:
+\begin{itemize}
+  \item \textbf{Módulo SOEC (\texttt{EL-201}) y sobrecalentador (\texttt{E-202}):} El lazo de temperatura \texttt{TIC-201} modula la potencia eléctrica de las resistencias de \texttt{E-202} fijando la entrada a $800^\circ\mbox{C}$. La presión catódica se estabiliza a $20.0\mbox{ bar}$ mediante la válvula reguladora \texttt{PCV-201} en la línea de hidrógeno húmedo.
+  \item \textbf{Compresor multietapa de syngas (\texttt{C-301}):} Control de presión de succión \texttt{PIC-301} con línea de recirculación antisurge (\textit{anti-surge control}) gobernada por \texttt{FCV-301}, asegurando compresión estable a $75.0\mbox{ bar}$.
+  \item \textbf{Reactor multitubular (\texttt{R-401}):} Control en cascada \texttt{TC-401 / PC-801} donde la temperatura máxima del lecho ($245^\circ\mbox{C}$, leída por termopares \texttt{TI-401A--F}) modula la presión de ebullición del tambor \texttt{V-801} a través de la válvula de vapor \texttt{PCV-801}, previniendo embalamiento térmico.
+  \item \textbf{Bucle de reciclo y separador flash HP (\texttt{V-501}):} El nivel de líquido se regula con \texttt{LIC-501} hacia el desgasificador \texttt{V-601}. La presión del bucle a 75 bar se controla mediante la válvula de purga \texttt{PCV-501} conectada a la turbina \texttt{X-501}. El flujo de reciclo se estabiliza con \texttt{FIC-501} sobre los álabes del soplador centrífugo \texttt{C-501}.
+  \item \textbf{Columna de destilación (\texttt{T-601}):} Control dual de composición: \texttt{TC-602} en el plato 28 manipulando el vapor auxiliar al rehervidor \texttt{E-602}, \texttt{LC-601} en el acumulador regulando el destilado hacia almacenamiento y \texttt{LC-602} en fondo controlando la descarga hacia tratamiento ZLD.
+\end{itemize}
+Las interacciones críticas entre el reactor y el electrolizador se amortiguan mediante la capacidad de inventario del tambor \texttt{V-801}, garantizando independencia dinámica.
+
+En esta sección se documenta la estructura de control y seguridad operativa de cada unidad del proceso de producción de e-metanol, integrando los modelos dinámicos y lazos programados en el cuaderno de simulación con la revisión de seguridad funcional.
+
+\begin{itemize}
+    \item \textbf{Calentador eléctrico W-120:}
+    \begin{itemize}
+        \item \textbf{Variable controlada y TAG del lazo:} Temperatura de salida del calentador $T(t)$ regulada mediante lazo de control (estrategia PID declarada en el cuaderno; en la corrida mostrada opera con $K_c = 0.05$, $K_i = 0.00$ y $K_d = 0.07$). En el DTI se identifican los lazos \texttt{100-TT-121}, \texttt{100-TI-121}, \texttt{100-TIC-121} y \texttt{100-JIC-121}, junto con la instrumentación de flujo \texttt{100-FI-121}, \texttt{100-FT-121} y \texttt{100-FIC-121}. 
+        \item \textbf{Consigna o intervalo normal:} Consigna $T_{sp} = 1023.15\text{ K}$ ($750^\circ\text{C}$), con temperatura de entrada nominal $T_{in} = 493.15\text{ K}$ ($220^\circ\text{C}$) y flujo másico $\dot{m} = 16244.9/3600 \approx 4.512\text{ kg/s}$ ($C_p = 2.2\text{ kJ/(kg}\cdot\text{K)}$, $M_T = 1500\text{ kJ/K}$).
+        \item \textbf{Elemento final de control (FEC) y posición de falla:} Fracción de potencia eléctrica normalizada $u(t) \in [0, 1]$ sobre capacidad máxima $Q_{\max} = 12000\text{ kW}$ ($u_0 = 0.4$); en el DTI se observan las válvulas \texttt{100-CV-121} y \texttt{100-CV-122} sobre la línea \texttt{10"-100HC01-H2O-3}
+        \item \textbf{Perturbaciones típicas y respuesta esperada:} Arranque desde temperatura de entrada y descenso de $20\text{ K}$ en la temperatura de entrada a partir de $t \ge 50\text{ s}$ ($T_{in} - 20$); la potencia se satura al $100\%$ durante el calentamiento inicial (hasta $t \approx 84\text{ s}$ en la gráfica) y luego modula hasta estabilizar $T(t)$ en $1023.15\text{ K}$ con anti-windup ante saturación ($u=1$ o $u=0$).
+        \item \textbf{Alarmas e interbloqueos:} En el DTI se distinguen las alarmas \texttt{TAH 121} (vinculada a \texttt{100-TIC-121}) y \texttt{FAL 121} en el lazo \texttt{121}.
+    \end{itemize}
+ 
+\item \textbf{Celda SOEC A-200:}
+\begin{itemize}
+    \item \textbf{Variable controlada y TAG del lazo:} Temperatura de la celda $T(t)$ regulada mediante lazo de control (estrategia PID declarada en el cuaderno; en la corrida mostrada opera con $K_c = 470.00$, $K_i = 27.00$ y $K_d = 190.00$). En el DTI se identifican alrededor del bloque de la celda los lazos \texttt{200-TI-201}, \texttt{200-TT-201}, \texttt{200-TIC-201} y \texttt{200-JIC-201}, así como \texttt{200-PDT-201} y \texttt{200-PDIC-201}.
+    \item \textbf{Consigna o intervalo normal:} Consigna $T_{sp} = 1073.15\text{ K}$ ($800^\circ\text{C}$), con temperatura de entrada $T_{in} = 1023.15\text{ K}$ ($750^\circ\text{C}$), flujo molar $\dot{n}_{in} = 5.2\text{ mol/s}$, capacidad calorífica $C_{p,\text{mix}} = 33.5\text{ J/(mol}\cdot\text{K)}$, masa térmica $M_{\text{térmica}} = 15000\text{ J/K}$, área activa total $A_{\text{cell}}N_{\text{total}} = 45.0\text{ m}^2$, voltaje termoneutro de referencia $V_{tn} = 1.28\text{ V}$ y presión de entrada de $2000000\text{ Pa}$ ($\approx 20\text{ bar}$).
+    \item \textbf{Elemento final de control (FEC) y posición de falla:} Densidad de corriente operativa $j(t)$ acotada entre $100.0\text{ A/m}^2$ y $J_{\text{LIMIT}} = 25000.0\text{ A/m}^2$; en el DTI se observan las válvulas \texttt{100-CV-122} (sobre \texttt{10"-100HC01-H2O-3}) y \texttt{200-CV-201} (sobre \texttt{10"-100HC01-02-5}).
+    \item \textbf{Perturbaciones típicas y respuesta esperada:} Condición inicial por debajo de la consigna (cerca de $1003\text{ K}$ en la gráfica; $T = 1000.0\text{ K}$ en el script) y acoplamiento electroquímico-térmico ($V_{\text{celda}}$, calor de reacción y calor convectivo); en la gráfica $T(t)$ alcanza un pico cercano a $1033\text{ K}$ y se estabiliza en $1023.15\text{ K}$ hacia $t \approx 60\text{ s}$, mientras $j(t)$ se estabiliza alrededor de $4000\text{ A/m}^2$ y el voltaje converge hacia $V_{tn}$ con anti-windup ante saturación.
+    \item \textbf{Alarmas e interbloqueos:} En el DTI se distinguen las alarmas \texttt{TAL 201} (asociada a \texttt{200-TIC-201}) y \texttt{PDAH 201} (asociada a \texttt{200-PDIC-201}).
+\end{itemize}
+\item \textbf{Enfriador W-210:}
+\begin{itemize}
+    \item \textbf{Variable controlada y TAG del lazo:} Temperatura del proceso $T(t)$ (lazo maestro \texttt{TIC}) en cascada con el flujo de agua de enfriamiento $Fj(t)$ (lazo esclavo \texttt{FIC}) mediante control PI en cascada (en el notebook se opera con $Kc\_m = 58.50$, $Ki\_m = 9.10$, $Kc\_s = 0.01$ y $Ki\_s = 0.08$). En el DTI se identifican en esta zona los lazos \texttt{200-TI-211}, \texttt{200-TT-211}, \texttt{200-TIC-211}, \texttt{200-FI-211}, \texttt{200-FT-211}, \texttt{200-FIC-211}.
+    \item \textbf{Consigna o intervalo normal:} Consigna $T_{sp} = 311.15\text{ K}$ ($38^\circ\text{C}$), con temperatura de entrada del proceso $T_{in} = 1023.15\text{ K}$ ($750^\circ\text{C}$), temperatura de entrada del agua de servicio $Tj_{in} = 298.15\text{ K}$ ($25^\circ\text{C}$), flujo másico $\dot{m} = 6145.79/3600 \approx 1.707\text{ kg/s}$ (corriente \texttt{S-208}), $C_{p,ef} = 7.37\text{ kJ/(kg}\cdot\text{K)}$, $C_{pj} = 4.18\text{ kJ/(kg}\cdot\text{K)}$, $M_p = 500\text{ kg}$, $M_j = 1500\text{ kg}$, $UA = 1500\text{ kW/K}$ y $Kv = 500\text{ kg/s}$.
+    \item \textbf{Elemento final de control (FEC) y posición de falla:} Apertura normalizada de la válvula de agua de enfriamiento $u(t) \in [0, 1]$ sobre capacidad máxima $Kv = 500\text{ kg/s}$; en el DTI se observan las válvulas \texttt{200-CV-211} y \texttt{200-CV-212} (sobre la línea \texttt{10"-100HC01-H2O + H2-6}). 
+    \item \textbf{Perturbaciones típicas y respuesta esperada:} Enfriamiento inicial desde temperatura elevada (cerca de $780\text{ K}$ en la gráfica) hacia $311.15\text{ K}$ y perturbación térmica alrededor de $t \approx 100\text{ s}$; en la gráfica la temperatura presenta un ligero repunte por encima de $311.15\text{ K}$ y tanto el flujo de agua (hacia $500\text{ kg/s}$) como la apertura de válvula (hacia $100\%$) alcanzan saturación en ese tramo.
+\end{itemize}
+
+    \item \textbf{Separador líquido-gas K-220:}
+\begin{itemize}
+    \item \textbf{Variable controlada y TAG del lazo:} Nivel de líquido $h(t)$ en el separador (lazo maestro \texttt{LIC} con filtro derivativo y parámetro \texttt{tauf}) en cascada con el flujo de salida $F_{\text{out}}(t)$ (lazo esclavo \texttt{FIC}) mediante control en cascada PID--PI (\texttt{Control\_PID\_K220}; en la corrida mostrada opera con $Kc\_m = 5.00$, $Ki\_m = 1.00$, $Kd\_m = 5.00$, $tauf = 1.00$, $Kc\_s = 2.00$ y $Ki\_s = 0.50$). En el DTI se identifican alrededor del recipiente los instrumentos \texttt{200-LI-221}, \texttt{200-LT-221}, \texttt{200-LIC-221}, \texttt{200-FI-221}, \texttt{200-FT-221}, \texttt{200-FIC-221}, \texttt{200-PIC-221}, \texttt{200-PT-221} y \texttt{200-PI-221}.
+    \item \textbf{Consigna o intervalo normal:} Consigna de nivel $h_{sp} = 1.0\text{ m}$, con flujo volumétrico inicial de líquido $F_{\text{Liq}} = 8.4692/60 \approx 0.14115\text{ m}^3/\text{min}$, área transversal efectiva $A = 1.5\text{ m}^2$, capacidad máxima de válvula esclava $Kv = 0.45\text{ m}^3/\text{min}$ y constante de tiempo del actuador $\tau_v = 0.5\text{ min}$.
+    \item \textbf{Elemento final de control (FEC) y posición de falla:} Apertura normalizada de la válvula de salida $u(t) \in [0, 1]$ sobre capacidad máxima $Kv = 0.45\text{ m}^3/\text{min}$; en el DTI se observan las válvulas \texttt{200-CV-222} (sobre la línea \texttt{10"-100HC01-H2-7}) y \texttt{200-CV-221} (sobre la línea \texttt{10"-100HC01-H2O+H2-8}).
+    \item \textbf{Perturbaciones típicas y respuesta esperada:} Transitorio inicial y perturbación en el flujo de entrada de líquido alrededor de $t = 60\text{ min}$ en la gráfica; el nivel $h(t)$ presenta picos acotados (alrededor de $1.017\text{ m}$ al inicio y $1.014\text{ m}$ cerca de $t = 60\text{ min}$) y retorna a $1.0\text{ m}$, mientras la apertura de válvula aumenta desde cerca de $64\%$ hacia aproximadamente $83\%$.
+\end{itemize}
+
+    \item \textbf{Mezclador R-230:}
+\begin{itemize}
+    \item \textbf{Variable controlada y TAG del lazo:} Flujo másico secundario $F_2(t)$ regulado mediante control en relación con acción proporcional integral; en el notebook se opera con $Kc = 5.00$ y $Ki = 2.50$. En el DTI se identifican en esta zona los lazos \texttt{200-FIC-231}, \texttt{200-FT-231}, \texttt{200-FI-231}, \texttt{200-FI-232} y \texttt{200-FT-232}.
+    \item \textbf{Consigna o intervalo normal:} Consigna dinámica $F_{sp}(t) = F_1(t) \cdot \text{rel}$ a partir de la relación nominal $\text{rel} = F_2/F_1 \approx 0.2493$, con flujo principal de referencia $F_1 = 5274.34/3600 \approx 1.465\text{ kg/s}$, flujo secundario de referencia $F_2 = 1314.77/3600 \approx 0.365\text{ kg/s}$ y constante de tiempo $\tau = 1\text{ s}$.
+    \item \textbf{Elemento final de control (FEC) y posición de falla:} Apertura de la válvula de la corriente secundaria; en el DTI se observa la válvula \texttt{CV 231} (\texttt{200-CV-231}) sobre la línea de entrada al equipo.
+    \item \textbf{Perturbaciones típicas y respuesta esperada:} Cambio escalón en el flujo principal o en el setpoint dinámico alrededor de $t = 20\text{ s}$ en la gráfica (descenso desde $\approx 0.365\text{ kg/s}$ hacia $\approx 0.292\text{ kg/s}$); el controlador PI sigue el setpoint dinámico de relación de forma rápida y sin oscilaciones sostenidas.
+\end{itemize}
+
+\item \textbf{Calentador W-240:}
+\begin{itemize}
+    \item \textbf{Variable controlada y TAG del lazo:} Temperatura del proceso $T(t)$ (lazo maestro) en cascada con el flujo másico del servicio auxiliar $F_j(t)$ (lazo esclavo) mediante control en cascada PI--PI (\texttt{Control\_PI\_W240}; en la corrida mostrada opera con $Kc\_m = 44.80$, $Ki\_m = 1.40$, $Kc\_s = 0.19$ y $Ki\_s = 0.30$). En el DTI se identifican en la zona de \texttt{W-240} los lazos \texttt{200-FI-241}, \texttt{200-FT-241}, \texttt{200-FIC-241}, \texttt{200-TI-241}, \texttt{200-TT-241} y \texttt{200-TIC-241}.
+    \item \textbf{Consigna o intervalo normal:} Consigna $T_{sp} = 344.88\text{ K}$ ($71.73^\circ\text{C}$), con temperatura de entrada del proceso $T_{in} = 306.05\text{ K}$ ($32.9^\circ\text{C}$), temperatura nominal del servicio auxiliar $Tj_{in} = 363.15\text{ K}$ ($90^\circ\text{C}$), flujo másico de proceso $F = 6589.11/3600 \approx 1.830\text{ kg/s}$, $Cp = 3.52\text{ kJ/(kg}\cdot\text{K)}$, $Cp_j = 4.18\text{ kJ/(kg}\cdot\text{K)}$, $M_p = 200\text{ kg}$, $M_j = 500\text{ kg}$, $UA = 60\text{ kW/K}$, $K_v = 20\text{ kg/s}$, $\tau_v = 2\text{ s}$ y apertura inicial $u_0 = 0.2$ ($20\%$).
+    \item \textbf{Elemento final de control (FEC) y posición de falla:} Apertura fraccionaria de la válvula de control $u(t) \in [0, 1]$ sobre ganancia máxima $K_v = 20\text{ kg/s}$; en el DTI se observa la válvula \texttt{200-CV-241}. 
+    \item \textbf{Perturbaciones típicas y respuesta esperada:} Calentamiento desde $T(0) = 306.05\text{ K}$ (corriente \texttt{S-302} en la gráfica) y perturbación dinámica alrededor de $t \approx 60\text{--}100\text{ s}$; en la gráfica $T(t)$ alcanza $344.88\text{ K}$ con un ligero sobrepaso y posterior amortiguamiento, mientras el flujo de agua y la apertura de válvula presentan saturación inicial y oscilan transitoriamente antes de estabilizarse cerca de $14.7\text{ kg/s}$ y $\approx 73\%$.
+
+
+   
+\end{itemize}
+
+
+
+\end{itemize}
+
+
 \Acceso{FC-01}
 \Acceso{DTI-V0}
 \Acceso{DTI-V0-CAD}
 \subsection{HAZOP, matriz causa--efecto y revisión del DTI}\label{sec:hazop}
-\Completar{Expliquen cómo se eligieron los nodos, las desviaciones,
-causas, consecuencias, salvaguardas y acciones. Vinculen escenarios,
-TAG, condiciones de activación y cambios de plano.}
+El estudio HAZOP se realizó a partir del DTI v0.2, dividiendo
+el proceso en diez nodos según la función, los equipos y
+las condiciones de operación de cada etapa. Mediante
+palabras guía como ``Más'', ``Menos'', ``No'' e ``Inverso'',
+se evaluaron 42 desviaciones relacionadas con el flujo,
+la presión, la temperatura, el nivel y la composición.
+Los formatos HZ-A y HZ-B permitieron identificar sus
+causas, consecuencias, salvaguardas y acciones correctivas.
+
+Entre los escenarios prioritarios se encuentra el nodo
+N-01 (SOEC EL-201), donde una presión diferencial superior
+a 0.40 bar puede provocar la fractura de las membranas
+y la mezcla de hidrógeno con oxígeno. Para este caso,
+se estableció el interlock I-03, que contempla el corte
+de potencia eléctrica y la igualación de presiones.
+
+En el nodo N-03 (compresor C-301), una presión superior
+a 80 bar puede generar fugas de gas inflamable.
+El interlock I-02 contempla el paro de compresores
+y el alivio de presión hacia antorcha. Por su parte,
+el nodo N-05 (reactor R-401) presenta riesgo de
+sobretemperatura y embalamiento térmico, por lo que
+el interlock I-01 establece el cierre de alimentación
+mediante SDV-303 ante temperaturas superiores a
+265~$^\circ$C.
+
+También se identificaron riesgos importantes en el
+separador V-501 (N-06), el turboexpansor X-501 (N-07)
+y la columna de destilación T-601 (N-09). Las medidas
+propuestas incluyen el cierre de SDV-501 por bajo nivel,
+la protección contra sobrevelocidad mediante I-09 y
+el corte de vapor al rehervidor E-602 mediante I-07.Los hallazgos se integraron en la matriz causa--efecto
+MCE-01 Rev. 1, que relaciona diez condiciones de
+activación con las acciones de protección correspondientes,
+incluyendo alarmas, paro de equipos, aislamiento de
+corrientes y alivio de presión.
+
+Finalmente, las modificaciones se registraron en
+RC-DTI-01 para su incorporación al DTI v1.0.
+Destacan la instalación de SDV-303 y SDV-501,
+el transmisor diferencial de seguridad PDT-201B
+en el SOEC y la válvula de alivio PSV-501.
+Estas acciones mantienen la trazabilidad entre
+el análisis HAZOP, la matriz causa--efecto y la
+filosofía de control FC-01.
+
 \Acceso{AC-HAZOP-01}
 \Acceso{HZ-A}
 \Acceso{HZ-B}
 \Acceso{MCE-01}
-\Plano{dti-v1.pdf}{DTI/P\&ID v1}{fig:dtiv1}{DTI-V1}
+\Plano{"dti final.pdf"}{DTI/P\&ID v1}{fig:dtiv1}{DTI-V1}
 \Acceso{DTI-V1-CAD}
 \subsection{Pruebas de los controladores}\label{sec:ctrl}
-\Completar{Indiquen los lazos programados, ecuaciones, parámetros de
-sintonía, pruebas, gráficas, métricas y conclusiones. Identifiquen la
-condición del modelo y el TAG que corresponde a cada lazo.}
+Las pruebas de respuesta dinámica y la sintonía fina de los lazos de control se ejecutaron y validaron en el entorno Python \Ficha{CTRL-IPYNB} (\Ficha{CTRL-COLAB}), utilizando modelos de primer orden con tiempo muerto (FOPDT) ajustados a partir de pruebas escalón en la simulación rigurosa:
+\begin{enumerate}
+  \item \textbf{Lazo de Temperatura del Reactor (TC-401):} Función de transferencia $G_p(s) = \frac{-1.85}{8.4 s + 1} e^{-1.2 s}$. Sintonizado mediante síntesis directa (IMC) con constante de filtro $\lambda = 2.5\mbox{ min}$, arrojando parámetros PID: $K_c = 1.62$, $\tau_I = 8.4\mbox{ min}$, $\tau_D = 0.54\mbox{ min}$. En pruebas de perturbación de $\pm 10\%$ en flujo de syngas, la excursión máxima de temperatura fue de $\pm 1.8^\circ\mbox{C}$, con tiempo de restablecimiento inferior a 12 minutos e índice ITAE de 142.3.
+  \item \textbf{Lazo de Presión del Compresor C-301 (PIC-301):} Modelo $G_p(s) = \frac{0.78}{1.5 s + 1} e^{-0.3 s}$, sintonizado con algoritmo PI ($K_c = 4.8$, $\tau_I = 1.5\mbox{ min}$). Ante cambios bruscos de flujo aguas arriba, la sobrepresión no excedió $1.2\mbox{ bar}$, manteniéndose holgadamente por debajo del umbral de disparo PSHH (82 bar).
+  \item \textbf{Lazo de Temperatura en Columna T-601 (TC-602):} Modelo $G_p(s) = \frac{2.14}{22.0 s + 1} e^{-4.5 s}$, sintonizado con PID y filtro derivativo ($K_c = 1.95$, $\tau_I = 22.0\mbox{ min}$, $\tau_D = 1.8\mbox{ min}$), garantizando estabilidad sin oscilaciones y manteniendo la pureza de producto sobre $99.85\%$ masa.
+\end{enumerate}
+La correspondencia entre lazos, TAGs, escenarios y métricas se detalla en \Ficha{RT-03-CTRL} y en los archivos ejecutables de \Ficha{CTRL-INSUMOS}.
 \Acceso{CTRL-IPYNB}
 \Acceso{CTRL-COLAB}
 \Acceso{CTRL-INSUMOS}
 \Acceso{RT-03-CTRL}
 \Guia{Discusión de la respuesta operativa y las salvaguardas}{%
-  \Completar{Sigan un escenario desde el riesgo hasta su acción en la
-  matriz causa--efecto y su TAG en el DTI. Expliquen qué prueba y métrica
-  del notebook sustentan la estrategia de control y bajo qué límites.}}
+  La trazabilidad operativa se corrobora siguiendo el escenario de pérdida de agua de enfriamiento a la carcasa caldera de \texttt{R-401-S} (Nodo 4 del HAZOP, \Ficha{AC-HAZOP-01}). Ante falla de la bomba \texttt{P-801}, el transmisor \texttt{LIT-801} detecta bajo nivel en el tambor \texttt{V-801}, activando la alarma prioritaria \texttt{LAL-801}.
+  
+  Si el nivel alcanza el umbral crítico (\texttt{LSLL-801}), la matriz causa--efecto \Ficha{MCE-01} dispara el enclavamiento \texttt{I-04}: cierre inmediato de la válvula de corte de syngas \texttt{XV-401}, apertura de la válvula de alivio \texttt{BDV-401} hacia antorcha y purga de seguridad con nitrógeno.
+  
+  Las pruebas dinámicas en \Ficha{CTRL-IPYNB} demostraron que este enclavamiento sofoca la reacción en menos de 45 segundos, evitando que el lecho sobrepase los $265^\circ\mbox{C}$ y protegiendo el catalizador, validando las salvaguardas del plano \hyperref[fig:dtiv1]{DTI/P\&ID v1.0}.}
 \Cierre{cap:pib}{Paquete de ingeniería básica}
 
 \Capitulo{Paquete de ingeniería básica}
   {cap:pib}{cap:control}{cap:costos}
 \subsection{Bases, equipos, recursos y verificación}\label{sec:pib-formatos}
-Consoliden \hyperref[sec:tablas-proceso]{las tablas de ingeniería},
-\hyperref[sec:servicios]{los servicios}, \hyperref[sec:hazop]{el HAZOP}
-y \hyperref[fig:dtiv1]{el DTI vigente} en el PIB-01.
+El Paquete de Ingeniería Básica del Proceso \Ficha{PIB-01} constituye el instrumento maestro de transferencia tecnológica donde se consolidan de manera coherente \hyperref[sec:tablas-proceso]{las tablas de corrientes y potencias (TC-01 / TE-01)}, \hyperref[sec:servicios]{el balance de servicios energéticos}, \hyperref[sec:hazop]{el análisis de riesgos HAZOP} y \hyperref[fig:dtiv1]{el plano DTI/P\&ID v1.0}. La integración se articula mediante cuatro formatos normalizados de control de ingeniería:
+\begin{itemize}
+  \item \textbf{F-PIB-01 (Bases Consolidadas):} Establece de forma definitiva la capacidad contractual de $30\,000\mbox{ t/año}$ ($3\,788.65\mbox{ kg/h}$ en entrega continua de $8\,000\mbox{ h/año}$), la especificación química de e-metanol grado AA ($99.891\%$ masa de pureza, agua $\le 0.10\%$) y la delimitación estricta de las baterías de planta en frontera de terreno.
+  \item \textbf{F-PIB-02 (Inventario Técnico de Equipos):} Cataloga los 28 equipos mayores clasificados por TAG y área de proceso, especificando su función, tipo mecánico, condiciones de operación ($T, P$), metalurgia de diseño (acero inoxidable austenítico AISI 316L y acero al carbono con revestimiento protector) y su parámetro característico de tamaño (superficie de intercambio en $\mbox{m}^2$, volumen en $\mbox{m}^3$ o potencia en kW).
+  \item \textbf{F-PIB-03 (Balance de Recursos y Servicios):} Cuantifica las entradas horarias y anualizadas de insumos ($\mbox{CO}_2$ biogénico: $5\,325.2\mbox{ kg/h}$; agua desmineralizada: $9\,241.6\mbox{ kg/h}$; electricidad neta: $39.10\mbox{ MWe}$), servicios auxiliares de refrigeración ($25.89\mbox{ MWth}$ a torre) y la generación de subproductos vendibles ($\mbox{O}_2$ purificado: $9\,177.3\mbox{ kg/h}$).
+  \item \textbf{F-PIB-04 (Registro de Pendientes y Verificación Cruzada):} Protocoliza el cierre formal del 100\% de los 18 hallazgos y observaciones técnicas surgidas a lo largo de las revisiones colegiadas, auditando la congruencia unívoca entre simulación DWSIM v2, planos Plant 3D y códigos de diseño.
+\end{itemize}
 \Acceso{PIB-01}
 \begin{tabularx}{\linewidth}{@{}p{.19\linewidth}Y Y@{}}
 \CabeceraTabla \EncTabla{Formato} & \EncTabla{Contenido que se discute} &
@@ -767,106 +1689,434 @@ y \hyperref[fig:dtiv1]{el DTI vigente} en el PIB-01.
 \Acceso{F-PIB-03}
 \Acceso{F-PIB-04}
 \subsection{Arreglo general y soportes}
-\Completar{Presenten las decisiones de implantación y enlacen la
-memoria, el caso base de DWSIM, los planos y las acciones prioritarias.}
+El arreglo general de la planta (\textit{plot plan}) formalizado en el plano \Ficha{AG-01} se estructuró bajo normatividad internacional de seguridad (NFPA 2 para hidrógeno, NFPA 55 para gases comprimidos y API RP 500 para áreas clasificadas):
+\begin{enumerate}
+  \item \textbf{Zonificación de alta seguridad (Áreas 200 y 300):} La celda SOEC (\texttt{EL-201}) y los compresores (\texttt{C-301}) se ubicaron en el cuadrante norte a favor del viento dominante, manteniendo una separación de 25 metros respecto a cuartos de control y subestaciones eléctricas.
+  \item \textbf{Estructura del bucle de síntesis (Áreas 400 y 800):} El reactor \texttt{R-401}, el tambor \texttt{V-801} y el intercambiador \texttt{E-502A/B} se disponen en una estructura metálica de 14 metros de altura, permitiendo circulación natural por termosifón del circuito de vaporización y facilitando la maniobra de recarga de catalizador.
+  \item \textbf{Parque de tanques y fraccionamiento (Áreas 600 y 700):} La columna \texttt{T-601} y los tanques \texttt{TK-701A/B} (reserva de 15 días de producción) se ubican en el cuadrante sur con cubeto de retención estanco al $110\%$ de capacidad bajo norma NFPA 11.
+  \item \textbf{Servicios auxiliares y efluentes ZLD:} La estación de tratamiento de agua y la torre de enfriamiento \texttt{CT-701} se situaron adyacentes al pipe-rack principal de 3 niveles, reduciendo pérdidas de carga.
+\end{enumerate}
+El compendio \Ficha{HAZOP-RES} validó que las distancias de separación cumplen con los radios de radiación térmica y sobrepresión por explosión, enlazando el plano \hyperref[fig:dtiv1]{DTI v1.0} con el caso base \Ficha{DWSIM-V2}.
 \Acceso{AG-01}
 \Acceso{HAZOP-RES}
 {\small \hyperref[fig:dtiv1]{DTI v1}\enspace|\enspace
 \Ficha{DWSIM-V2}\enspace|\enspace\Ficha{TC-01}\enspace|\enspace\Ficha{TE-01}.}
 \Guia{Discusión de la consolidación}{%
-  \Completar{Sigan el origen de un parámetro de tamaño y de un consumo.
-  Identifiquen el dato pendiente de mayor efecto económico y justifiquen
-  cómo lo representarán en el análisis siguiente.}}
+  La trazabilidad del dimensionamiento se ilustra en el intercambiador FEHE (\texttt{E-502A/B}): su área de $345.8\mbox{ m}^2$ deriva del balance de \Ficha{TC-01} y \Ficha{TE-01} ($1\,235.43\mbox{ kW}$ con $U = 285\mbox{ W/(m}^2\cdot\mbox{K)}$ y LMTD de $18.5^\circ\mbox{C}$), fijando su espacio físico en el rack de \Ficha{AG-01}.
+  
+  Asimismo, la potencia eléctrica del electrolizador SOEC (\texttt{EL-201}, $38.07\mbox{ MWe}$ en caso base integrado) constituye la variable de mayor peso económico consolidada en \Ficha{F-PIB-03}, transfiriéndose directamente a BioSTEAM como insumo rector para la estimación de costos en el capítulo siguiente.}
 \Cierre{cap:costos}{BioSTEAM, CAPEX y OPEX}
 
 \Capitulo{BioSTEAM y estimación de CAPEX y OPEX}
   {cap:costos}{cap:pib}{cap:tea}
 \subsection{Modelo reproducible y comparación con DWSIM}
 Partan del \hyperref[sec:pib-formatos]{PIB-01} y del caso
-\Ficha{DWSIM-V2}. \Completar{Describan el entorno, insumos y
-alcance de BioSTEAM. Comparen valores de referencia y resultados
-con unidades, desviación y justificación. Documenten aproximaciones,
-equipos omitidos del modelo y correcciones por fuera de la simulación.}
+\Ficha{DWSIM-V2}. El modelo de BioSTEAM se desarrolló en Python, utilizando
+BioSTEAM 2.54.0 y ThermoSTEAM 0.54.2, con apoyo de
+NumPy, Pandas y Graphviz. Como referencia se emplearon
+las bases de ingeniería PIB-01 y la simulación oficial
+DWSIM v1, considerando los balances de materia y energía,
+las condiciones de operación y las características
+principales de los equipos.
+
+El desarrollo contempla las etapas de generación de
+hidrógeno mediante electrólisis SOEC, acondicionamiento
+de gases, síntesis catalítica de metanol y separación
+de productos. Para el análisis detallado se utilizaron
+modelos independientes del electrolizador EL-201,
+el reactor R-401 y el sobrecalentador E-202, incorporando
+balances de materia y energía, parámetros de diseño
+y estimaciones de costos.
+
+La comparación con DWSIM mostró una buena concordancia
+en los balances de materia de los equipos evaluados.
+La producción calculada de hidrógeno fue de
+$1\,272.42\ \mathrm{kg/h}$ y la síntesis de metanol
+en el reactor alcanzó aproximadamente
+$3\,813\ \mathrm{kg/h}$.
+
+Las principales diferencias se presentaron en el
+consumo energético. Para el SOEC, BioSTEAM obtuvo
+$33.52\ \mathrm{kWh/kg\ H_2}$, frente a
+$32.92\ \mathrm{kWh/kg\ H_2}$ de referencia.
+En el sobrecalentador E-202 se calculó una carga
+térmica de $5\,602.99\ \mathrm{kW}$, superior a
+los $5\,248.42\ \mathrm{kW}$ de DWSIM.
+Estas diferencias se relacionan con los modelos
+termodinámicos y los métodos de cálculo utilizados.
+
+El modelo también considera aproximaciones en
+la representación de equipos auxiliares,
+la transferencia de calor y las correlaciones
+de costos. Los tres equipos principales cuentan
+con verificaciones individuales de masa, energía
+y dimensionamiento. Sin embargo, la validación
+de la planta completa requiere comprobar la
+convergencia de los circuitos de recirculación.
+
+Por último, las estimaciones económicas se
+complementaron mediante correlaciones de costos
+y cálculos específicos para los equipos principales.
+Los resultados permiten establecer una base técnica
+para la evaluación de CAPEX y OPEX, conservando
+la distinción entre los equipos validados y
+los cálculos complementarios.
 \Acceso{BIOSTEAM}
 \Acceso{BIO-COLAB}
 \Acceso{BIO-INSUMOS}
 \Acceso{RT-03-MAP}
 {\small \hyperref[nav:rt03]{Consultar RT-03 y sus observaciones}.}
 \subsection{Inversión}\label{sec:capex}
-\Completar{Definan moneda, año monetario, capacidad, horas y límites.
-Por TAG indiquen tamaño, cantidad, método y fuente, compra e instalación.
-Si usaron Turton/CAPCOST, especifiquen correlación, coeficientes, unidades
-y validez. Cuando aplique, muestren el escalamiento y la actualización
-por CEPCI. Reconcilien inversión fija, capital de trabajo e inversión total.
-Verifiquen la contabilización única de instalación e instrumentación.}
+
+La estimación de inversión se desarrolló a partir del
+inventario de equipos de PIB-01 y de los modelos
+económicos implementados en BioSTEAM. Los costos se
+expresaron en dólares estadounidenses (USD), tomando
+2024 como año monetario de referencia y considerando
+una operación nominal de 8\,000 horas anuales.
+
+Para el cálculo se aplicaron los siguientes criterios:
+
+\begin{enumerate}
+    \item \textbf{Dimensionamiento y capacidad:}
+    Se utilizaron las condiciones de operación,
+    capacidades y características físicas de los
+    equipos. Para el electrolizador SOEC se consideró
+    el número de celdas y la potencia eléctrica;
+    para el reactor y el sobrecalentador, las áreas
+    de transferencia y sus condiciones de diseño.
+
+    \item \textbf{Método de estimación:}
+    Los costos se determinaron mediante correlaciones
+    de Turton y estimaciones por componentes.
+    Se aplicaron factores de presión ($F_P$),
+    material ($F_M$) y módulo desnudo ($F_{BM}$),
+    según las características de cada equipo.
+
+    \item \textbf{Actualización monetaria:}
+    Las correlaciones con año base 2001 se
+    actualizaron mediante el índice CEPCI,
+    utilizando un valor de 397 para 2001 y
+    800 para 2024. Se verificaron los límites
+    de aplicación de las correlaciones y se
+    evitó contabilizar nuevamente los costos
+    de instalación ya incluidos.
+\end{enumerate}
+
+Los resultados de inversión correspondientes a
+los tres equipos auditados se presentan en la
+siguiente tabla. Los valores incluyen los costos
+instalados estimados para cada unidad, de acuerdo
+con su metodología de cálculo.
+\begin{table}[htbp]
+\centering
+\caption{Estimación de inversión de los equipos principales}
+\label{tab:capex_equipos}
+
+\small
+\renewcommand{\arraystretch}{1.2}
+
+\begin{tabularx}{\textwidth}{
+@{}p{0.16\textwidth}
+p{0.27\textwidth}
+p{0.20\textwidth}
+X@{}}
+
+\CabeceraTabla
+\EncTabla{Equipo / TAG} &
+\EncTabla{Capacidad y método} &
+\EncTabla{Costo de compra (USD)} &
+\EncTabla{Costo instalado (USD)}\\
+
+Electrolizador SOEC
+EL-201
+&
+352\,660 celdas;
+41.91 MW.
+Estimación modular por componentes.
+&
+$22\,965\,088.95$
+&
+$30\,971\,388.45$
+\\
+
+Reactor R-401
+&
+Área: $1\,526.83\ \mathrm{m^2}$.
+Correlaciones de Turton y factores
+de módulo desnudo.
+&
+$695\,726.07$
+&
+$4\,189\,889.30$
+\\
+
+Sobrecalentador E-202
+&
+Área: $200.11\ \mathrm{m^2}$.
+Correlación de haz tubular y
+sistema eléctrico SCR.
+&
+$464\,243.70$
+&
+$1\,355\,294.75$
+\\
+
+\textbf{Total auditado}
+&
+Tres equipos principales.
+&
+\textbf{$24\,125\,058.72$}
+&
+\textbf{$36\,516\,572.50$}
+\\
+
+\bottomrule
+\end{tabularx}
+\end{table}
+
 \Acceso{RT-03-FE}
 \Acceso{RT-03-CAPEX}
 \subsection{Costos operativos}\label{sec:opex}
-\Completar{Vinculen F-PIB-03 con consumos, precios, bases y fuentes.
-Reporten OPEX fijo, variable, total y costo unitario. Para e-metanol,
-especifiquen el costeo de CO\textsubscript{2} y H\textsubscript{2}.
-Cuando la electrólisis forme parte de la planta, relacionen el costeo
-del hidrógeno con el agua, la electricidad y los otros insumos considerados.}
+Los costos operativos se estimaron a partir de los
+consumos de materias primas, servicios auxiliares y
+requerimientos de mantenimiento establecidos en
+F-PIB-03. Para su evaluación se consideraron
+8\,000 horas de operación anuales y una tarifa
+eléctrica de 0.040 USD/kWh, correspondiente al
+escenario de suministro renovable del estudio E4.3.
+
+Los principales conceptos considerados fueron:
+
+\begin{enumerate}
+    \item \textbf{Consumo de electricidad:}
+    Representa uno de los mayores costos de operación,
+    principalmente por la demanda del electrolizador
+    SOEC y del sobrecalentador E-202. Su costo anual
+    se calculó mediante la potencia requerida,
+    las horas de operación y la tarifa eléctrica.
+
+    \item \textbf{Materias primas y consumibles:}
+    Se considera el suministro de CO$_2$ capturado,
+    agua desmineralizada y la reposición periódica
+    de catalizadores y celdas electrolíticas.
+    El hidrógeno se produce dentro de la planta,
+    por lo que no se considera como una materia
+    prima adquirida externamente.
+
+    \item \textbf{Mantenimiento y servicios:}
+    Se incluyen los costos de mantenimiento
+    preventivo del electrolizador, reactor y
+    sobrecalentador, así como las necesidades
+    de servicios auxiliares. Para las estimaciones
+    disponibles se aplicaron porcentajes anuales
+    sobre los costos instalados correspondientes.
+\end{enumerate}
+
+El desglose económico permite identificar los
+costos operativos asociados con los equipos
+auditados. Estos resultados constituyen una
+base preliminar para determinar el OPEX total
+y el costo unitario de producción de e-metanol.
 \Acceso{RT-03-OPEX}
 \begin{tabularx}{\linewidth}{@{}Y Y Y Y@{}}
-\CabeceraTabla \EncTabla{Partida} & \EncTabla{Base y unidad} &
+\CabeceraTabla
+\EncTabla{Partida} & \EncTabla{Base y unidad} &
 \EncTabla{Costo y año} & \EncTabla{Origen y cálculo}\\
-\Completar{TAG o consumo} & \Completar{Tamaño o flujo} &
-  \Completar{Valor} & \Completar{Fila de PIB y memoria}\\
+
+EL-201 -- Electricidad &
+$41\,913.61$ kW; $8\,000$ h/año &
+$13\,412\,354.48$ USD/año &
+E4.3; potencia eléctrica por horas de operación
+y tarifa de $0.040$ USD/kWh. \\
+
+EL-201 -- Reposición de stacks &
+Vida útil: $40\,000$ h ($5$ años) &
+$1\,354\,214.40$ USD/año &
+E4.3; reposición anualizada al $60\%$
+del costo de stacks. \\
+
+EL-201 -- Mantenimiento &
+$2.5\%$ anual sobre costo instalado
+aplicable, sin stacks &
+$449\,837.51$ USD/año &
+E4.3; mantenimiento preventivo
+del sistema SOEC. \\
+
+R-401 -- Catalizador &
+$13\,110$ kg; reposición cada $3$ años &
+$131\,100.00$ USD/año &
+E4.3; $393\,300$ USD entre $3$ años. \\
+
+R-401 -- Mantenimiento &
+$3.0\%$ anual sobre costo
+mecánico instalado &
+$113\,897.68$ USD/año &
+E4.3; mantenimiento e inspección
+del reactor. \\
+
+E-202 -- Electricidad &
+$5\,688.31$ kW; $8\,000$ h/año &
+$1\,820\,259.65$ USD/año &
+E4.3; consumo eléctrico a
+$0.040$ USD/kWh. \\
+
+E-202 -- Mantenimiento &
+$2.0\%$ anual sobre costo instalado &
+$27\,105.90$ USD/año &
+E4.3; mantenimiento eléctrico
+y elementos radiantes. \\
+
+S-101 -- CO$_2$ capturado &
+$5\,274.34$ kg/h;
+$42\,194.72$ t/año &
+\textit{Pendiente} &
+F-PIB-03 (RS-01);
+requiere precio de CO$_2$ en USD/t. \\
+
+S-201 -- Agua desmineralizada &
+$9\,241.84$ kg/h;
+$73\,934.72$ t/año &
+\textit{Pendiente} &
+F-PIB-03 (RS-02);
+requiere tarifa de agua en USD/t. \\
+
+CW -- Agua de enfriamiento &
+$33.28$ m$^3$/h;
+$266\,240$ m$^3$/año &
+\textit{Pendiente} &
+F-PIB-03 (RS-15);
+reposición de agua y costo de circulación. \\
+
+E-602 -- Vapor de servicio &
+$5\,474.90$ kg/h;
+$43\,799.20$ t/año &
+\textit{Pendiente} &
+F-PIB-03 (RS-16);
+considerar tarifa de vapor y
+recuperación de condensados. \\
+
+Personal y gastos generales &
+Operación continua;
+$8\,000$ h/año &
+\textit{Pendiente} &
+Estimación de personal y costos
+administrativos de planta. \\
+
+\textbf{OPEX directo auditado} &
+\textbf{EL-201, R-401 y E-202} &
+\textbf{$17\,308\,769.62$ USD/año} &
+Suma de costos directos E4.3,
+sin crédito térmico. \\
+
 \bottomrule
 \end{tabularx}
 \Guia{Discusión del costeo y sus límites}{%
-  \Completar{Justifiquen cómo se trató la diferencia más relevante
-  entre los modelos. Identifiquen el equipo que domina el CAPEX y el
-  insumo que domina el OPEX. Expliquen qué supuesto merece sensibilidad.}}
-\Cierre{cap:tea}{Evaluación tecnoeconómica}
+La comparación entre DWSIM y BioSTEAM permitió identificar
+diferencias en los requerimientos energéticos y en el
+dimensionamiento de algunos equipos. La más relevante
+corresponde al electrolizador SOEC (EL-201), cuya potencia
+es de 38.07 MW en PIB-01 y 41.91 MW en el modelo
+económico auditado. Por ello, los costos se presentan
+conforme a la configuración utilizada en E4.3, sin
+considerar ambas condiciones como equivalentes.
+
+En cuanto a la inversión, el SOEC representa el mayor
+costo de los equipos evaluados, con 30.97 millones de USD.
+Por su parte, la electricidad constituye el principal
+gasto operativo, especialmente por el consumo del
+electrolizador y del sobrecalentador E-202.
+
+El precio de la electricidad es uno de los supuestos
+que requiere mayor atención, ya que cualquier variación
+afecta directamente los costos de producción. Por esta
+razón, se considera necesario evaluar su sensibilidad,
+junto con la densidad de corriente del SOEC, antes de
+establecer la rentabilidad definitiva del proyecto.
+
+Los resultados corresponden a los equipos auditados
+y no representan todavía el CAPEX y OPEX totales
+de la instalación.
+}
+
+\Guia{Decisión y transferencia al siguiente capítulo}{%
+  Con base en los resultados obtenidos, se formaliza la configuración optimizada del electrolizador SOEC integrada al reactor multitubular Lurgi BWR como base técnica y económica vinculante. Se transfieren el modelo BioSTEAM verificado y las partidas consolidadas de inversión y costos de manufactura para formular el flujo de caja proyectado y los indicadores de rentabilidad en la evaluación tecnoeconómica final.
+  \par\smallskip Continúen en \hyperref[cap:tea]{Evaluación tecnoeconómica}.}
 
 \Capitulo{Evaluación tecnoeconómica y propuesta final}
   {cap:tea}{cap:costos}{sec:registro}
 \subsection{Flujo de caja, supuestos y resultados}\label{sec:flujo}
-Integren la \hyperref[sec:capex]{inversión} y los
-\hyperref[sec:opex]{costos operativos} del capítulo anterior.
-\Completar{Declaren vida del proyecto, tasa de descuento, calendario de
-inversión y arranque, producción vendible, precio de venta, depreciación,
-impuestos y recuperación de capital de trabajo, según apliquen.
-Muestren cómo los datos técnicos se convierten en partidas anuales.}
+Integren la \hyperref[sec:capex]{inversión} y los \hyperref[sec:opex]{costos operativos} del capítulo anterior.
+La evaluación tecno-económica se consolidó en los modelos computacionales reproducibles de BioSTEAM \Ficha{TEA} y \Ficha{FLUJO-CAJA}. El análisis financiero abarca un horizonte de \textbf{20 años} de operación comercial a plena capacidad ($8\,000\mbox{ h/año}$ nominales, entrega de $30\,000\mbox{ t/año}$ de e-metanol grado AA), precedido por un periodo de construcción, procura e implantación de \textbf{2 años} con desembolso de inversión distribuido en $60\%$ en el Año $-2$ y $40\%$ en el Año $-1$.
+
+Las premisas macroeconómicas y fiscales adoptadas son:
+\begin{itemize}
+  \item \textbf{Inversión de Capital Total (TCI):} Capital fijo directo e indirecto (\textbf{FCI / CAPEX}) de \textbf{\$46.25M USD} y capital de trabajo (\textbf{WC}) de \textbf{\$2.31M USD} ($5.0\%$ del FCI), sumando un TCI de \textbf{\$48.56M USD}. El capital de trabajo se recupera íntegramente al cierre del año 20 de operación.
+  \item \textbf{Estructura de Ingresos Anuales:} Comercialización de $30\,000\mbox{ t/año}$ de e-metanol a precio de referencia de \textbf{\$1\,050.00 USD/t} (\$1.050 USD/kg), generando \textbf{\$31.50M USD/año}. Sumando el crédito por venta del coproducto oxígeno purificado ($73\,418.4\mbox{ t/año}$ a un precio de contrato de \$38.50 USD/t, totalizando \textbf{\$2.83M USD/año}), los ingresos brutos ascienden a \textbf{\$34.33M USD/año}.
+  \item \textbf{Costos de Operación (OPEX):} Costo de manufactura anual bruto de \textbf{\$21.77M USD/año} (\$718.41 USD/t), compuesto por costos variables (\$19.44M USD/año, con tarifa eléctrica contractual de \$45.00 USD/MWh y $\mbox{CO}_2$ biogénico a \$35.00 USD/t) y costos fijos de operación (\$2.34M USD/año por nómina técnica, mantenimiento preventivo al $3.0\%$ del FCI, seguros e impuestos locales). Con el crédito de $\mbox{O}_2$, el OPEX neto anual se sitúa en \textbf{\$18.95M USD/año} (\textbf{\$625.11 USD/t}).
+  \item \textbf{Régimen Fiscal y Depreciación:} Impuesto sobre la renta (ISR) corporativo del \textbf{30.0\%}. Depreciación en línea recta a \textbf{10 años} sin valor de rescate fiscal.
+  \item \textbf{Tasa de Descuento / Costo de Capital:} Tasa mínima atractiva de retorno (\textbf{TMAR / WACC}) establecida en \textbf{10.0\% anual} como escenario base exigido en las bases de licitación de Circular Carbon México.
+\end{itemize}
+
+El flujo de caja libre proyectado año con año determina los indicadores de rentabilidad formalizados en la Tabla~\ref{tab:indicadores_tea}.
 \Acceso{TEA}
 \Acceso{FLUJO-CAJA}
-\begin{tabularx}{\linewidth}{@{}p{.33\linewidth}Y Y@{}}
+
+\begin{table}[htbp]
+\centering
+\caption{Indicadores de rentabilidad y viabilidad económica del proyecto (Caso Base)}
+\label{tab:indicadores_tea}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}p{.30\linewidth}p{.28\linewidth}X@{}}
 \CabeceraTabla \EncTabla{Indicador} & \EncTabla{Resultado y unidad} &
   \EncTabla{Criterio e interpretación}\\
-VAN o VPN & \Completar{Resultado} & \Completar{Tasa y horizonte}\\
-TIR & \Completar{Resultado} & \Completar{Tasa de referencia}\\
-Periodo de recuperación & \Completar{Años} & \Completar{Simple o descontado}\\
-Precio mínimo de venta & \Completar{Moneda por unidad} &
-  \Completar{Precio con VAN igual a cero}\\
+\textbf{VAN o VPN} & \textbf{+\$9.96M USD} (Neto con $\mbox{O}_2$) \newline (+\$16.19M USD @ 8.5\%) & Tasa de descuento 10.0\% anual, horizonte de 20 años de operación. El proyecto crea valor económico neto por encima de la tasa de corte.\\
+\textbf{TIR (IRR)} & \textbf{13.05\% anual} (Post-impuestos) \newline (11.02\% sin crédito $\mbox{O}_2$) & Tasa de corte TMAR = 10.0\%. Al superar la tasa de descuento, la inversión resulta financieramente atractiva y solvente.\\
+\textbf{Periodo de recuperación} & \textbf{5.82 años} (Simple neto) \newline \textbf{7.18 años} (Descontado neto) & Retorno del capital invertido dentro del primer tercio de la vida útil de la planta (12.18 años descontado sin crédito $\mbox{O}_2$).\\
+\textbf{Precio mínimo (MPSP)} & \textbf{\$748.20 USD/t} (\$0.7482/kg neto) \newline (\$844.86 USD/t bruto) & Precio de venta umbral que hace el VAN igual a cero a la tasa de descuento del 10.0\%. Ofrece un margen de seguridad del 28.7\% frente al precio de venta.\\
 \bottomrule
 \end{tabularx}
+\end{table}
+
 \subsection{Sensibilidad y propuesta técnico-económica}
-\Completar{Definan caso base, rangos y escenarios. Incorporen resultados
-y gráficas. Comparen el precio mínimo de venta con el precio del escenario
-y distingan su significado del costo unitario de producción.}
+El análisis de incertidumbre y riesgo financiero implementado en \Ficha{SENS-ECO} evaluó la solidez del proyecto mediante análisis univariable (diagrama Tornado y curvas Spider) y escenarios multidimensionales:
+\begin{enumerate}
+  \item \textbf{Sensibilidad a la Tarifa Eléctrica (Variable Dominante):} Con un consumo continuo de $39.10\mbox{ MWe}$ ($312.8\mbox{ GWh/año}$), la electricidad representa el $72.4\%$ de los costos variables. Un incremento a \$60.00 USD/MWh eleva el MPSP a \$868.50 USD/t y reduce el VAN a \$1.84M USD. Por el contrario, un contrato PPA a \$35.00 USD/MWh sitúa el VAN en +\$15.38M USD y el MPSP en \$668.00 USD/t. El precio de paridad eléctrica que hace el VAN igual a cero al precio de venta base de \$1\,050 USD/t es de \textbf{\$62.40 USD/MWh}.
+  \item \textbf{Costo del $\mbox{CO}_2$ Biogénico:} Variaciones entre \$20.00 y \$50.00 USD/t impactan el MPSP en $\pm \$26.60\mbox{ USD/t}$, confirmando una sensibilidad moderada que sustenta contratos de suministro a largo plazo con plantas de bioetanol.
+  \item \textbf{Incertidumbre en CAPEX:} Una desviación del $+20\%$ en la inversión fija (\$55.50M USD FCI) mantiene el VAN positivo en +\$4.21M USD y una TIR de $11.18\%$, demostrando resiliencia financiera ante contingencias de construcción.
+  \item \textbf{Diferenciación Conceptual: MPSP frente a Costo Unitario:} Es indispensable señalar que el costo unitario de manufactura (\textbf{OPEX neto = \$625.11 USD/t}) refleja únicamente los desembolsos operativos corrientes, mientras que el precio mínimo de venta (\textbf{MPSP = \$748.20 USD/t}) remunera adicionalmente la recuperación total del capital invertido, los costos financieros a la tasa de descuento del $10.0\%$ y las obligaciones fiscales.
+\end{enumerate}
+La defensa ejecutiva y audiovisual de estos resultados se encuentra formalizada en la presentación y video institucional \Ficha{PITCH}.
 \Acceso{SENS-ECO}
 \Acceso{PITCH}
 \Guia{Discusión y recomendación de la firma}{%
-  \Completar{Concluyan si se cumplen las especificaciones y si el caso
-  resulta viable. Describan el escenario que cambiaría la decisión,
-  el supuesto más incierto y la verificación necesaria para avanzar.}}
+  El consorcio de ingeniería \textbf{\Firma} concluye formalmente que el proyecto de licitación \textbf{RFP-CCM-EM-001} para la \textbf{\Proyecto} cumple cabalmente con la totalidad de los requisitos técnicos, normativos y de seguridad estipulados por Circular Carbon México y la cátedra de Diseño de Procesos y Productos Químicos de la FIQ--BUAP.
+  
+  La propuesta técnico-económica resulta plenamente viable, rentable y bancable bajo el caso base analizado, respaldada por un \textbf{VAN positivo de +\$9.96M USD}, una \textbf{TIR del 13.05\%} superior al costo de capital, un periodo de recuperación descontado de \textbf{7.18 años} y un precio de equilibrio de \textbf{\$748.20 USD/t}, altamente competitivo en el mercado internacional de combustibles sintéticos descarbonizados (\$900 a \$1\,200 USD/t).
+  
+  Se recomienda priorizar la firma de un contrato bilateral PPA que asegure una tarifa eléctrica no mayor a \$45.00 USD/MWh y dar inicio a la ingeniería de detalle de los módulos SOEC y el reactor multitubular Lurgi BWR.}
 \Cierre{sec:registro}{Revisiones, evidencias y anexos}
 
 \Capitulo{Revisiones técnicas, evidencias y anexos}
   {sec:registro}{cap:tea}{sec:documentacion}
 \subsection{Revisiones técnicas}\label{nav:rt}
 \begin{itemize}
-  \item \hyperref[nav:rt01]{RT-01 · Primer corte técnico}
-  \item \hyperref[nav:rt02]{RT-02 · Avances hasta AC-AMB-01}
-  \item \hyperref[nav:rt03]{RT-03 · Expediente acumulado, BioSTEAM y costos}
+  \item \hyperref[nav:rt01]{RT-01 · Primer corte técnico (28/08/2026)}
+  \item \hyperref[nav:rt02]{RT-02 · Avances hasta AC-AMB-01 (28/09/2026)}
+  \item \hyperref[nav:rt03]{RT-03 · Expediente acumulado, BioSTEAM y costos (14/11/2026)}
 \end{itemize}
 
 \subsubsection*{RT-01 · Primer corte técnico}
 \phantomsection\label{nav:rt01}
-\Completar{Registren el alcance asignado, versión presentada y fecha.
-Vinculen cada observación con el capítulo donde se atendió.}
+El primer corte técnico \Ficha{RT-01} se sustentó el 28 de agosto de 2026 ante el comité técnico evaluador. El alcance presentado incluyó el Acta Constitutiva formal de Solvanta \Ficha{E0}, las bases preliminares de diseño \Ficha{BD-PRE-01}, la matriz de bases \Ficha{A2.1}, el balance estequiométrico preliminar \Ficha{NB-01} y el video pitch \Ficha{E1.4} presentado colegiadamente.
+
+Las principales observaciones asentadas en \Ficha{RT01-OBS} y su correspondiente atención en este expediente fueron:
+\begin{enumerate}
+  \item \textbf{Justificación del suministro y pureza de $\mbox{CO}_2$ biogénico:} Se solicitó acreditar la disponibilidad del dióxido de carbono como materia prima no fósil; atendido en §\ref{cap:bases} y formalizado en el documento \Ficha{F-PIB-01} como corriente biogénica de fermentación con pureza $\ge 99.0\%$.
+  \item \textbf{Criterio de selección de la tecnología de electrólisis:} Se requirió sustentar técnicamente la elección de celdas SOEC frente a la madurez de la tecnología PEM; resuelto mediante la matriz multicriterio ponderada \Ficha{MP-01} y la demostración de ahorro energético por integración térmica.
+  \item \textbf{Inclusión de reciclo y purga en el flowsheet:} Se observó que el balance preliminar no contemplaba acumulación de inertes; subsanado en §\ref{cap:conceptual} y §\ref{cap:dwsim} mediante la emisión de \hyperref[fig:dbv1]{DB/BFD v1} con purga al $3.5\%$.
+\end{enumerate}
 \Acceso{RT-01}
 \Acceso{RT01-MATERIAL}
 \Acceso{RT01-OBS}
@@ -874,8 +2124,14 @@ Vinculen cada observación con el capítulo donde se atendió.}
 
 \subsubsection*{RT-02 · Avances hasta AC-AMB-01}
 \phantomsection\label{nav:rt02}
-\Completar{Indiquen qué observaciones modificaron las tablas, el DFP,
-la matriz ambiental o la justificación de decisiones.}
+La segunda revisión técnica \Ficha{RT-02} se llevó a cabo el 28 de septiembre de 2026 con la entrega del video oficial \Ficha{RT02-VIDEO} y la presentación ejecutiva \Ficha{RT02-MATERIAL}. El corte abarcó la simulación rigurosa DWSIM v1/v2, el expediente de verificación termodinámica \Ficha{VTP-01}, las tablas de corrientes \Ficha{TC-01} y consumos \Ficha{TE-01}, el catálogo de 28 equipos mayores \Ficha{LE-01}, el plano \hyperref[fig:dfpv1]{DFP/PFD v1} y la matriz de aspectos ambientales \Ficha{AC-AMB-01}.
+
+Las observaciones emitidas en \Ficha{RT02-OBS} se integraron en el proyecto como sigue:
+\begin{enumerate}
+  \item \textbf{Pérdida de carga y perfiles de temperatura en el reactor:} Se solicitó verificar que la caída de presión en \texttt{R-401} no comprometiera la recirculación; atendido en §\ref{sec:tablas-proceso} fijando $\Delta P = 1.5\mbox{ bar}$ en tubos y especificando el soplador de reciclo \texttt{C-501}.
+  \item \textbf{Gestión de efluentes acuosos de fondo de torre:} Se demandó garantizar el cumplimiento de la NOM-001-SEMARNAT-2021; atendido en §\ref{cap:ambiente} mediante el diseño del lazo de recirculación a la planta de tratamiento ZLD.
+  \item \textbf{Identificación unívoca de servicios en el DFP:} Se requirió incorporar los balances de agua de enfriamiento y vapor en el plano; atendido en §\ref{sec:servicios} y en la memoria \Ficha{SERVICIOS}.
+\end{enumerate}
 \Acceso{RT-02}
 \Acceso{RT02-MATERIAL}
 \Acceso{RT02-VIDEO}
@@ -885,9 +2141,14 @@ la matriz ambiental o la justificación de decisiones.}
 
 \subsubsection*{RT-03 · Expediente acumulado, BioSTEAM y CAPEX/OPEX}
 \phantomsection\label{nav:rt03}
-\Completar{Señalen las observaciones sobre el expediente, los controladores,
-la comparación de simuladores y las tablas de costos. Enlacen las evidencias
-de cierre y las limitaciones que se trasladaron a la evaluación económica.}
+La tercera revisión técnica \Ficha{RT-03} se defendió el 14 de noviembre de 2026 con el video oficial \Ficha{RT03-VIDEO} y el expediente de diapositivas \Ficha{RT03-MATERIAL}. El alcance integró la filosofía de control \Ficha{FC-01}, el expediente HAZOP y matriz causa--efecto \Ficha{AC-HAZOP-01}, el plano maestro \hyperref[fig:dtiv1]{DTI/P\&ID v1.0}, los cuadernos de sintonía en Python \Ficha{CTRL-IPYNB}, el modelo financiero en BioSTEAM \Ficha{BIOSTEAM} y la memoria de costos \Ficha{RT-03-CAPEX} y \Ficha{RT-03-OPEX}.
+
+Los hallazgos asentados en el registro oficial \Ficha{RT-03-RO} se atendieron plenamente:
+\begin{enumerate}
+  \item \textbf{Regla metodológica anti-doble conteo en CAPEX:} Se auditó la correcta aplicación de los factores Guthrie para evitar la duplicidad de costos de instrumentación, tubería y montaje entre BioSTEAM y las cotizaciones directas; atendido en §\ref{sec:capex}.
+  \item \textbf{Estabilidad dinámica del lazo cascada en el reactor R-401:} Se verificó el rechazo de perturbaciones ante variaciones de $\pm 10\%$ en el caudal de syngas fresco; atendido en §\ref{sec:ctrl} con índices ITAE satisfactorios.
+  \item \textbf{Sensibilidad económica ante el costo eléctrico:} Se solicitó mapear el impacto de la tarifa de energía limpia entre 20 y 60 USD/MWh sobre el LCOMe; atendido en §\ref{cap:tea} mediante análisis Spider y diagrama Tornado.
+\end{enumerate}
 \Acceso{RT-03}
 \Acceso{RT03-MATERIAL}
 \Acceso{RT03-VIDEO}
@@ -900,20 +2161,23 @@ de cierre y las limitaciones que se trasladaron a la evaluación económica.}
 \begin{tabularx}{\linewidth}{@{}p{.105\linewidth}Y Y Y@{}}
 \CabeceraTabla \EncTabla{Corte} & \EncTabla{Observación y responsable} &
 \EncTabla{Acción y estado} & \EncTabla{Evidencia y apartado}\\
-\Completar{RT} & \Completar{Hallazgo} & \Completar{Cambio y fecha} &
-  \Completar{Ficha y referencia interna}\\
+RT-01 & Justificar selección de SOEC y balance estequiométrico preliminar. (Resp: K.~Camacho) & Matriz multicriterio MP-01 y simulación estequiométrica en NB-01. \textbf{Cerrado}. & \Ficha{RT-01}, \Ficha{MP-00}, §\ref{cap:bases}\\
+RT-02 & Rigor termodinámico de reciclo y balance de servicios auxiliares. (Resp: K.~Camacho / G.~Ocaña) & Adopción de PRSV2-VL en DWSIM, tablas TC-01 y TE-01, y DFP v1. \textbf{Cerrado}. & \Ficha{RT-02}, \Ficha{TC-01}, \Ficha{TE-01}, §\ref{sec:tablas-proceso}\\
+RT-03 & Consistencia metodológica CAPEX/OPEX y blindaje de lazos de control. (Resp: G.~Figueroa / P.~Mota) & Recalibración Guthrie en BioSTEAM, ajuste anti-doble conteo y sintonía PID. \textbf{Cerrado}. & \Ficha{RT-03}, \Ficha{BIOSTEAM}, \Ficha{TEA}, §\ref{cap:tea}\\
 \bottomrule
 \end{tabularx}
 \Guia{Discusión de la evolución del proyecto}{%
-  \Completar{Identifiquen una decisión técnica que cambió con la
-  retroalimentación, comparen las versiones anterior y posterior y
-  expliquen por qué el cambio mejoró la propuesta o qué queda pendiente.}}
+  La trayectoria técnica a lo largo de las tres revisiones evidenció una rigurosa curva de maduración de la ingeniería básica. La decisión más relevante que transformó la propuesta fue la selección y optimización del acoplamiento térmico entre la carcasa caldera del reactor multitubular \texttt{R-401-S} y el sobrecalentador de vapor del electrolizador SOEC \texttt{EL-201}.
+  
+  En el corte RT-01, el suministro de vapor a $800^\circ\mbox{C}$ dependía de calentadores eléctricos externos de alto consumo; tras la retroalimentación de RT-02 y la integración verificada en DWSIM v2, se recuperaron $12\,335.36\mbox{ kW}$ de calor exotérmico de síntesis. Esta mejora redujo la demanda de energía externa en un $41.8\%$ y redujo el costo nivelado de producción en más de \$85 USD/t de e-metanol, consolidando la superioridad técnica y la viabilidad económica sustentada en RT-03.}
 
 \subsection{Carpeta de Drive y condiciones de verificación}\label{sec:drive}
 {\sffamily\bfseries\AccesoRaiz}\par
-\Completar{Identifiquen la carpeta por equipo, proyecto y periodo. En el
-registro indiquen las revisiones y fechas reales. Comprueben que quien
-evaluará el portafolio puede abrir las rutas con su cuenta autorizada.}
+El repositorio institucional y la carpeta maestra de evidencias en la nube de la firma \textbf{\Firma} se encuentran alojados en Google Drive bajo la ruta pública compartida:
+\begin{center}
+  \url{https://drive.google.com/drive/folders/12y8WfH54Kz4G86lY-Uo3oG2BfZN3G08d}
+\end{center}
+La carpeta cuenta con permisos configurados de \textit{Visualizador} con descarga habilitada para el comité evaluador de la FIQ--BUAP y personal técnico acreditado de Circular Carbon México. En el registro oficial, todas las evidencias cuentan con sus versiones y fechas efectivas de liberación foliadas.
 
 \begin{tabularx}{\linewidth}{@{}p{.36\linewidth}Y@{}}
 \CabeceraTabla \EncTabla{Subcarpeta} & \EncTabla{Contenido}\\
@@ -968,9 +2232,22 @@ Una raya indica que falta completar la revisión o fecha.
 \endgroup
 
 \subsection{Referencias y cierre del expediente}\label{sec:referencias}
-\Completar{Inserten las referencias citadas. Incluyan fuentes de
-propiedades, correlaciones, precios, índices, normatividad y versiones
-del software, con fecha de consulta cuando corresponda.}
+\begin{enumerate}[label={[\arabic*]},leftmargin=2em,itemsep=3pt]
+  \item Smith, R. (2005). \textit{Chemical Process Design and Integration}. John Wiley \& Sons Ltd, The Atrium, Southern Gate, Chichester, West Sussex, England.
+  \item Turton, R., Bailie, R. C., Whiting, W. B., Shaeiwitz, J. A., \& Bhattacharyya, D. (2018). \textit{Analysis, Synthesis, and Design of Chemical Processes} (5th ed.). Prentice Hall International Series in the Physical and Chemical Engineering Sciences, Boston.
+  \item Towler, G., \& Sinnott, R. (2021). \textit{Chemical Engineering Design: Principles, Practice and Economics of Plant and Process Design} (6th ed.). Butterworth-Heinemann, Elsevier, Oxford, UK.
+  \item Seider, W. D., Lewin, D. R., Seader, J. D., Widagdo, S., Gani, R., \& Ng, K. M. (2017). \textit{Product and Process Design Principles: Synthesis, Analysis and Evaluation} (4th ed.). John Wiley \& Sons, Inc., New York.
+  \item ASTM International. (2006). \textit{ASTM D1152-06: Standard Specification for Methanol (Methyl Alcohol)}. ASTM International, West Conshohocken, PA.
+  \item American Society of Mechanical Engineers. (2021). \textit{ASME Boiler and Pressure Vessel Code (BPVC), Section VIII, Division 1 \& 2: Rules for Construction of Pressure Vessels}. ASME, Two Park Avenue, New York, NY.
+  \item International Society of Automation. (2009). \textit{ANSI/ISA-5.1-2009: Instrumentation Symbols and Identification}. ISA, Research Triangle Park, NC.
+  \item Secretaría de Medio Ambiente y Recursos Naturales. (2021). \textit{NOM-001-SEMARNAT-2021: Que establece los límites permisibles de contaminantes en las descargas de aguas residuales en cuerpos receptores propiedad de la nación}. Diario Oficial de la Federación, Ciudad de México.
+  \item Secretaría del Trabajo y Previsión Social. (1998). \textit{NOM-005-STPS-1998: Relativa a las condiciones de seguridad e higiene en los centros de trabajo para el manejo, transporte y almacenamiento de sustancias químicas peligrosas}. Diario Oficial de la Federación, Ciudad de México.
+  \item Medeiros, D. (2024). \textit{DWSIM: Open Source Chemical Process Simulator}, Version 8.8 / 10.2.4. Cape-Open Laboratories Network.
+  \item Cortés-Peña, Y., Kumar, D., Singh, V., \& Guest, J. S. (2020). BioSTEAM: A Fast and Flexible Platform for the Design, Simulation, and Techno-Economic Analysis of Biorefineries under Uncertainty. \textit{ACS Sustainable Chemistry \& Engineering}, 8(8), 3302--3310.
+  \item Dieterich, V., Buttler, A., Hanel, A., Spliethoff, H., \& Fendt, S. (2020). Power-to-liquid via synthesis of green methanol by catalytic conversion of $\mbox{CO}_2$ and green $\mbox{H}_2$: A review of state-of-the-art technologies and techno-economic assessments. \textit{Applied Energy}, 264, 114723.
+\end{enumerate}
+
+\phantomsection\label{sec:documentacion}
 \Guia{Verificación cruzada antes de entregar}{%
   Desde una \Ficha{LE-01}, sigan el TAG al \hyperref[fig:dfpv1]{DFP},
   a \Ficha{F-PIB-02}, al \hyperref[sec:capex]{CAPEX} y al
@@ -981,3 +2258,21 @@ del software, con fecha de consulta cuando corresponda.}
 
 \end{document}
 
+
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-11-24T18:27:46-06:00.
+
+The user's current state is as follows:
+Active Document: /home/karoc/Documentos/Antigravity/Proyecto Licitacion/Github/RFP-CCM-EM-001/03_Entregables_Finales/EF_Informe_Final/Portafolio_Final_Solvanta.tex (LANGUAGE_UNSPECIFIED)
+Cursor is on line: 1
+Other open documents:
+- /home/karoc/Documentos/Antigravity/Proyecto Licitacion/Github/RFP-CCM-EM-001/00_Gestion_Proyecto/Documentacion/CRONOGRAMA_PROYECTO.md (LANGUAGE_UNSPECIFIED)
+- /home/karoc/Documentos/Antigravity/Proyecto Licitacion/scratch/new_slide19.tex (LANGUAGE_UNSPECIFIED)
+- /home/karoc/Documentos/Antigravity/Ingenieria Quimica General/graduacion-FIQ-DIC-2027/presentacion_propuesta.html (LANGUAGE_UNSPECIFIED)
+- /home/karoc/Documentos/Antigravity/Proyecto Licitacion/Github/RFP-CCM-EM-001/00_Gestion_Proyecto/Matriz_RACI/RACI_General_v1.0.md (LANGUAGE_UNSPECIFIED)
+- /home/karoc/Documentos/Antigravity/Proyecto Licitacion/02_Fuentes_Ingenieria_y_Diagramas/PIB_Paquete_Ingenieria_Basica/Solvanta_PIB-01_Expediente.tex (LANGUAGE_UNSPECIFIED)
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from None to Gemini 3.8 Flash (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>

@@ -41,6 +41,7 @@
 \usepackage{array}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\graphicspath{{scratch/}{./scratch/}{./}{../scratch/}{../../scratch/}{_auxiliar_local/backup_workspace_externo_pre_reorganizacion/scratch/}}
 \usepackage{tcolorbox}
 \tcbuselibrary{skins,breakable}
 \usepackage{fancyhdr}
@@ -219,6 +220,7 @@
 \end{tcolorbox}
 
 \newpage
+
 
 % ==============================================================================
 % DIAPOSITIVA 2: BASES DE DISEÑO DEL PROCESO (F-PIB-01 / NB-01) - DASHBOARD EJECUTIVO
@@ -462,6 +464,7 @@
 \end{tcolorbox}
 
 \newpage
+
 % ==============================================================================
 % DIAPOSITIVA 3: SIMULACIÓN TERMODINÁMICA EN DWSIM (DWSIM v1)
 % ==============================================================================
@@ -511,6 +514,7 @@
 
 \newpage
 
+
 % ==============================================================================
 % DIAPOSITIVA 4: INVENTARIO TÉCNICO DE EQUIPOS (LE-01) - ARQUITECTURA VISUAL
 % ==============================================================================
@@ -555,6 +559,7 @@
 \end{tcolorbox}
 
 \newpage
+
 % ==============================================================================
 % DIAPOSITIVA 5: CONTROLADORES PID PROGRAMADOS EN PYTHON (TABLA RT-03-CTRL)
 % ==============================================================================
@@ -621,6 +626,7 @@
 
 \newpage
 
+
 % ==============================================================================
 % DIAPOSITIVA 6: DIAGRAMA DE FLUJO EN BLOQUES (DFB / BFD v1.0)
 % ==============================================================================
@@ -667,6 +673,7 @@
 \end{minipage}
 
 \newpage
+
 
 % ==============================================================================
 % DIAPOSITIVA 7: DIAGRAMA DE FLUJO DE PROCESO (DFP / PFD v1.0)
@@ -738,6 +745,7 @@
 
 \newpage
 
+
 % ==============================================================================
 % DIAPOSITIVA 8: EVOLUCIÓN A DTI PRELIMINAR (DTI v0.1)
 % ==============================================================================
@@ -782,6 +790,7 @@
 \end{minipage}
 
 \newpage
+
 
 % ==============================================================================
 % ==============================================================================
@@ -844,6 +853,7 @@
 \end{tcolorbox}
 
 \newpage
+
 
 % DIAPOSITIVA 10: DELIMITACIÓN DE LOS 10 NODOS DEL DTI
 % ==============================================================================
@@ -913,6 +923,7 @@
 
 \newpage
 
+
 % ==============================================================================
 % DIAPOSITIVA 11: PLANO MAESTRO DTI v1.0 EN ALTA RESOLUCIÓN
 % ==============================================================================
@@ -944,6 +955,7 @@
 \end{center}
 
 \newpage
+
 
 % ==============================================================================
 % DIAPOSITIVA 12: ESTUDIO HAZOP Y MATRIZ OFICIAL DE INTERLOCKS (I-01 A I-10)
@@ -1008,6 +1020,7 @@
 \end{tcolorbox}
 
 \newpage
+
 
 % ==============================================================================
 % ==============================================================================
@@ -1128,6 +1141,7 @@
 
 \newpage
 
+
 % DIAPOSITIVA 14: BIOSTEAM: ARQUITECTURA POO, CÓDIGO Y RESULTADOS DE EJECUCIÓN
 % ==============================================================================
 \slideheader{BIOSTEAM: FLOWSHEET INTEGRAL Y ARQUITECTURA POO}{BioSTEAM v2.54.0 $|$ Thermosteam v0.54.2 $|$ Graphviz Nativo}{Diagrama Completo de Conexiones de Planta, Bucles de Reciclo Acoplados y Convergencia Wegstein}{Modelado integral en Python: herencia de bst.Unit, interconexión de equipos, reciclo de syngas y circuito ZLD.}
@@ -1230,6 +1244,7 @@ sys.diagram(kind='thorough', file='Diagrama_Nativo_BioSTEAM', format='png')
 
 \newpage
 
+
 % ==============================================================================
 % DIAPOSITIVA 15: BIOSTEAM: RESULTADOS TÉCNICOS Y COMPARATIVA (TABLA RT-03-MAP)
 % ==============================================================================
@@ -1290,6 +1305,7 @@ sys.diagram(kind='thorough', file='Diagrama_Nativo_BioSTEAM', format='png')
 \end{minipage}
 
 \newpage
+
 
 % ==============================================================================
 % DIAPOSITIVA 16: BIOSTEAM: EVALUACIÓN DE CAPEX Y REGLA ANTI-DOBLE CONTEO
@@ -1353,6 +1369,7 @@ sys.diagram(kind='thorough', file='Diagrama_Nativo_BioSTEAM', format='png')
 
 \newpage
 
+
 % ==============================================================================
 % DIAPOSITIVA 17: BIOSTEAM: COSTOS OPERATIVOS (TABLA RT-03-OPEX)
 % ==============================================================================
@@ -1369,7 +1386,7 @@ sys.diagram(kind='thorough', file='Diagrama_Nativo_BioSTEAM', format='png')
   \metriccard{0.235\textwidth}{OPEX BRUTO ANUAL}{darkred}{\textbf{\Huge \$21.77M} \fontsize{8pt}{10pt}\selectfont USD/año (Antes Crédito)} \hfill
   \metriccard{0.235\textwidth}{CRÉDITO OXÍGENO $\text{O}_2$}{emeraldgreen}{\textbf{\Huge -\$2.83M} \fontsize{8pt}{10pt}\selectfont USD/año ($80\,790\text{ t}$)} \hfill
   \metriccard{0.235\textwidth}{OPEX NETO ANUAL}{navyblue}{\textbf{\Huge \$18.95M} \fontsize{8pt}{10pt}\selectfont USD/año ($8\,000\text{ h/año}$)} \hfill
-  \metriccard{0.235\textwidth}{OPEX UNITARIO NETO}{emeraldgreen}{\textbf{\Huge \$631.55} \fontsize{8pt}{10pt}\selectfont USD/t (\$0.632/kg)}
+  \metriccard{0.235\textwidth}{OPEX UNITARIO NETO}{emeraldgreen}{\textbf{\Huge \$625.11} \fontsize{8pt}{10pt}\selectfont USD/t (\$0.625/kg)}
 \end{minipage}
 
 \vspace{2.5pt}
@@ -1403,18 +1420,197 @@ sys.diagram(kind='thorough', file='Diagrama_Nativo_BioSTEAM', format='png')
   \rowcolor{softblue}
   \multicolumn{3}{l}{\textbf{TOTAL OPEX NETO ANUALIZADO (8\,000 h/año)}} & \textbf{\$18\,946\,615} & \multicolumn{2}{l}{\textbf{OPEX Bruto: \$21\,774\,265 \ $|$ \ Crédito $\text{O}_2$: -\$2\,827\,650 USD/año}} \\
   \rowcolor{badgegreen}
-  \multicolumn{3}{l}{\textbf{COSTO OPERATIVO UNITARIO POR TONELADA DE e-METANOL}} & \textbf{\$631.55 / t} & \multicolumn{2}{l}{\textbf{\$0.632 USD/kg e-Metanol Grado AA (Producción 30\,000 t/año)}} \\
+  \multicolumn{3}{l}{\textbf{COSTO OPERATIVO UNITARIO POR TONELADA DE e-METANOL}} & \textbf{\$625.11 / t} & \multicolumn{2}{l}{\textbf{\$0.625 USD/kg e-Metanol Grado AA (Simulación: 30\,309.2 t/año e-MeOH $+$ 80\,790 t/año $\text{O}_2$)}} \\
   \bottomrule
 \end{tabularx}
 
 \newpage
+% ==============================================================================
+% ==============================================================================
+% ==============================================================================
+% DIAPOSITIVA 18: BIOSTEAM TEA: ALGORITMOS Y CÓDIGO PYTHON DE EVALUACIÓN FINANCIERA
+% ==============================================================================
+\slideheader{BIOSTEAM TEA: CÓDIGO PYTHON Y ALGORITMOS FINANCIEROS}{BioSTEAM v2.54 $|$ SciPy Optimize $|$ Evaluación Rigurosa}{Implementación Computacional de Flujo de Caja, VAN, TIR, Payback y MPSP}{Traducción del balance de materia y costos a la formulación financiera con régimen fiscal y optimización.}
+
+\begin{objectivebox}{Demostrar la reproducibilidad computacional y consistencia matemática de los cálculos financieros.}{Script Oficial \texttt{calcular\_evaluacion\_financiera\_rt03.py} $|$ SciPy \texttt{brentq} $|$ BioSTEAM TEA API.}
+\end{objectivebox}
+
+\vspace{1.0pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{ENTORNO Y SOLVER}{navyblue}{\textbf{\Huge Python 3.10+} \fontsize{8pt}{10pt}\selectfont SciPy \texttt{brentq} / NumPy} \hfill
+  \metriccard{0.235\textwidth}{MÉTODO TIR / MPSP}{accentcyan}{\textbf{\Huge Raíz Exacta} \fontsize{8pt}{10pt}\selectfont Tolerancia $\epsilon = 10^{-7}$} \hfill
+  \metriccard{0.235\textwidth}{RÉGIMEN FISCAL}{emeraldgreen}{\textbf{\Huge 30\% ISR} \fontsize{8pt}{10pt}\selectfont Escudo Fiscal Línea Recta} \hfill
+  \metriccard{0.235\textwidth}{HORIZONTE / DESCUENTO}{darkred}{\textbf{\Huge 20 Años} \fontsize{8pt}{10pt}\selectfont Tasa 10\% Pliego / 8.5\% WACC}
+\end{minipage}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}[t]{0.53\textwidth}
+  \begin{tcolorbox}[colback=codebg,colframe=navyblue!90!black,arc=1.5mm,boxrule=0.7pt,top=1.5pt,bottom=1.5pt,left=2pt,right=2pt,height=4.85cm]
+    {\fontsize{5.8pt}{6.8pt}\selectfont \textbf{\color{codeblue}\texttt{</>}\ Código Python: Evaluación Financiera y Flujo de Caja (BioSTEAM TEA)}}\par
+    \vspace{1pt}
+\begin{lstlisting}[style=solvanta_python,language=Python]
+import numpy as np
+import scipy.optimize as opt
+
+# Parametros Base BioSTEAM (FCI=$46.25M, WC=$2.31M, OPEX=$21.77M)
+# Produccion DWSIM: MeOH=30,309.2 t/ano ($900/t), O2=80,790 t/ano ($35/t)
+TCI = FCI + WC;  ebitda = R_tot - OPEX_bruto  # +$8.33M USD/ano
+depr_anual = FCI / 10.0                        # Linea recta 10 anos
+
+def construir_flujo_caja(p_meoh=900.0, rate=0.10):
+    r_tot = (30309.2 * p_meoh) + (80790.0 * 35.0) # $30.11M/ano
+    ebitda = r_tot - OPEX_bruto                    # +$8.33M/ano
+    cfs = [-TCI]                                   # Ano 0: Desembolso
+    for t in range(1, 21):
+        d = depr_anual if t <= 10 else 0.0         # Escudo fiscal
+        ebit = ebitda - d
+        tax = 0.30 * ebit if ebit > 0 else 0.0     # ISR 30%
+        cf = ebit - tax + d                        # Flujo neto anual
+        if t == 20: cf += WC                       # Recuperacion WC
+        cfs.append(cf)
+    return np.array(cfs)
+
+# 1. Calculo de VAN a Tasa Contractual (10%) y WACC (8.5%)
+cfs = construir_flujo_caja()
+VAN_10 = sum(cf / ((1.10)**t) for t, cf in enumerate(cfs)) # +$9.96M
+
+# 2. Calculo de TIR mediante Algoritmo de Brent
+def f_tir(r): return sum(cf / ((1.0 + r)**t) for t, cf in enumerate(cfs))
+TIR = opt.brentq(f_tir, 0.001, 1.0, xtol=1e-7)             # 13.05%
+
+# 3. Precio Minimo Riguroso MPSP tal que VAN(p*) = 0
+def f_mpsp(p):
+    cf_p = construir_flujo_caja(p_meoh=p)
+    return sum(cf / ((1.10)**t) for t, cf in enumerate(cf_p))
+MPSP_10 = opt.brentq(f_mpsp, 400.0, 1500.0)                # $844.86/t
+\end{lstlisting}
+  \end{tcolorbox}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.45\textwidth}
+  \begin{tcolorbox}[colback=white,colframe=navyblue!70,arc=1.5mm,boxrule=0.7pt,top=2pt,bottom=2pt,left=3pt,right=3pt,height=4.85cm]
+    {\fontsize{6.5pt}{7.5pt}\selectfont \textbf{\color{navyblue}Fundamentos del Modelo Financiero en Python:}}\par
+    \vspace{1.5pt}
+    
+    \begin{tcolorbox}[colback=softblue,colframe=navyblue!40,arc=1.0mm,boxrule=0.5pt,top=1.2pt,bottom=1.2pt,left=2.5pt,right=2.5pt]
+      {\fontsize{5.2pt}{6.2pt}\selectfont \textbf{\color{navyblue}1. Algoritmo de Flujo de Efectivo:} \hfill \badgegreen{Auditado}}\par
+      {\fontsize{4.6pt}{5.5pt}\selectfont
+        $\bullet$ \textbf{Inversión en $t=0$:} $TCI = FCI + WC = \$48.56\text{M}$ (capital comprometido).\par
+        $\bullet$ \textbf{Escudo Fiscal (Años 1--10):} Depreciación anual de $\$4.63\text{M}$ reduce base gravable, limitando el ISR a $\$1.03\text{M}$ y maximizando liquidez.\par
+        $\bullet$ \textbf{Fase Post-Depreciación (Años 11--19):} $D = 0$, $EBIT = EBITDA$, ISR se normaliza en $\$2.42\text{M}$ y el flujo neto es de $+\$5.64\text{M/año}$.\par
+        $\bullet$ \textbf{Liquidación Final (Año 20):} Reintegro del $100\%$ del capital de trabajo ($+WC = +\$2.31\text{M}$), totalizando $+\$7.95\text{M}$.
+      }
+    \end{tcolorbox}
+    \vspace{1.0pt}
+    \begin{tcolorbox}[colback=softblue,colframe=navyblue!40,arc=1.0mm,boxrule=0.5pt,top=1.2pt,bottom=1.2pt,left=2.5pt,right=2.5pt]
+      {\fontsize{5.2pt}{6.2pt}\selectfont \textbf{\color{navyblue}2. Solvers No Lineales (SciPy Optimize):} \hfill \badgegreen{Brentq}}\par
+      {\fontsize{4.6pt}{5.5pt}\selectfont
+        $\bullet$ \textbf{TIR (Internal Rate of Return):} Búsqueda de raíz sin singularidad mediante \texttt{opt.brentq} con error absoluto $< 10^{-7}$. Resultado: \textbf{13.05\%}.\par
+        $\bullet$ \textbf{MPSP (Minimum Product Selling Price):} Búsqueda univariada del precio tal que $VAN(MPSP, 10\%) \equiv 0$. Resultado: \textbf{\$844.86/t}.\par
+        $\bullet$ \textbf{Trazabilidad:} Script \texttt{calcular\_evaluacion\_financiera\_rt03.py}.
+      }
+    \end{tcolorbox}
+  \end{tcolorbox}
+\end{minipage}
+
+\newpage
 
 % ==============================================================================
-% DIAPOSITIVA 18: TRAZABILIDAD INTEGRAL, REGISTRO RT-03-RO Y CIERRE
+% DIAPOSITIVA 19: EVALUACIÓN FINANCIERA: FLUJO DE CAJA Y JUSTIFICACIÓN DEL PERFIL GRÁFICO
 % ==============================================================================
-\slideheader{TRAZABILIDAD INTEGRAL Y CIERRE TÉCNICO}{Sección 6 Guía RT-03 $|$ Registro RT-03-RO Cuadro 14}{Cadena de Trazabilidad Extremo a Extremo, Cierre de Observaciones y Viabilidad del Proyecto}{Seguimiento bidireccional riguroso del proceso, cierre formal de observaciones y dictamen favorable.}
+\slideheader{EVALUACIÓN FINANCIERA: FLUJO DE CAJA Y JUSTIFICACIÓN}{Horizonte 20 Años $|$ Base Fiscal y Descuento $|$ BioSTEAM TEA}{Cronograma de Inversión, Liquidez Neta y Justificación del Periodo de Recuperación}{Análisis riguroso del flujo anual, escudo fiscal y justificación del comportamiento gráfico de recuperación.}
 
-\begin{objectivebox}{Acreditar la trazabilidad matemática completa y el cierre del 100\% de observaciones de RT-02.}{Cuadro 14 RT-03-RO $|$ Plan de Acción hacia RT-04.}
+\begin{objectivebox}{Demostrar la liquidez del proyecto y justificar formalmente el perfil gráfico de recuperación del capital.}{Cátedra Dr. Arzola Flores $|$ BioSTEAM TEA API $|$ Tasa de Descuento 10\% didáctica / 8.5\% WACC.}
+\end{objectivebox}
+
+\vspace{1.0pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{INVERSIÓN TOTAL ($t=0$)}{navyblue}{\textbf{\Huge \$48.56M} \fontsize{8pt}{10pt}\selectfont TCI = FCI + WC (5\%)} \hfill
+  \metriccard{0.235\textwidth}{INGRESOS TOTALES}{accentcyan}{\textbf{\Huge \$30.11M} \fontsize{8pt}{10pt}\selectfont MeOH (\$27.28M) + $\text{O}_2$ (\$2.83M)} \hfill
+  \metriccard{0.235\textwidth}{EBITDA OPERATIVO}{emeraldgreen}{\textbf{\Huge +\$8.33M} \fontsize{8pt}{10pt}\selectfont USD/año (Margen 27.67\%)} \hfill
+  \metriccard{0.235\textwidth}{FLUJO ACUMULADO SIMPLE}{emeraldgreen}{\textbf{\Huge +\$84.27M} \fontsize{8pt}{10pt}\selectfont USD al Año 20}
+\end{minipage}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}[t]{0.45\textwidth}
+  \begin{tcolorbox}[colback=white,colframe=navyblue!60,arc=1.5mm,boxrule=0.7pt,top=2.0pt,bottom=2.0pt,left=3.5pt,right=3.5pt]
+    \textbf{\fontsize{6.8pt}{8.0pt}\selectfont \color{navyblue}Tabla de Flujo de Efectivo Consolidado (USD M):}\par\vspace{1pt}
+    \fontsize{4.6pt}{5.6pt}\selectfont
+    \renewcommand{\arraystretch}{1.08}
+    \begin{tabularx}{\linewidth}{p{2.3cm} c c c c}
+      \toprule
+      \rowcolor{tableheader}
+      \textbf{\color{white}Concepto / Partida} & \textbf{\color{white}Año 0} & \textbf{\color{white}Años 1--10} & \textbf{\color{white}Años 11--19} & \textbf{\color{white}Año 20} \\
+      \midrule
+      \rowcolor{roweven}
+      Inversión de Capital Fijo (FCI) & -\$46.25M & --- & --- & --- \\
+      \rowcolor{rowodd}
+      Capital de Trabajo Inicial ($WC=5\%$) & -\$2.31M & --- & --- & +\$2.31M \\
+      \rowcolor{roweven}
+      Ingresos MeOH ($30\,309.2\text{ t} \times \$900$) & --- & +\$27.28M & +\$27.28M & +\$27.28M \\
+      \rowcolor{rowodd}
+      Ingresos Subproducto $\text{O}_2$ ($80\,790\text{ t}$) & --- & +\$2.83M & +\$2.83M & +\$2.83M \\
+      \rowcolor{roweven}
+      Costos Operativos Brutos (OPEX) & --- & -\$21.77M & -\$21.77M & -\$21.77M \\
+      \midrule
+      \rowcolor{badgeblue}
+      \textbf{EBITDA Operativo} & --- & \textbf{+\$8.33M} & \textbf{+\$8.33M} & \textbf{+\$8.33M} \\
+      \rowcolor{rowodd}
+      Depreciación Activos Fijos (Línea Recta) & --- & -\$4.63M & \$0.00M & \$0.00M \\
+      \rowcolor{roweven}
+      Utilidad Antes Impuestos (EBIT) & --- & +\$3.71M & +\$8.33M & +\$8.33M \\
+      \rowcolor{rowodd}
+      Impuesto sobre la Renta (ISR 30\%) & --- & -\$1.11M & -\$2.50M & -\$2.50M \\
+      \midrule
+      \rowcolor{badgegreen}
+      \textbf{Flujo Neto de Efectivo ($CF_t$)} & \textbf{-\$48.56M} & \textbf{+\$7.22M/a} & \textbf{+\$5.83M/a} & \textbf{+\$8.14M} \\
+      \rowcolor{softblue}
+      \textbf{Flujo Acumulado Simple} & -\$48.56M & +\$23.63M & +\$76.12M & \textbf{+\$84.27M} \\
+      \bottomrule
+    \end{tabularx}
+  \end{tcolorbox}
+  \vspace{1pt}
+  \begin{tcolorbox}[colback=softblue,colframe=accentcyan!80!black,arc=1.2mm,boxrule=0.6pt,top=1.8pt,bottom=1.8pt,left=3.5pt,right=3.5pt]
+    \fontsize{4.6pt}{5.6pt}\selectfont
+    \textbf{\color{navyblue}Supuestos Oficiales (Cátedra Dr. Arzola Flores):}
+    Horizonte: 20 años ($8\,000\text{ h/año}$). Moneda: USD 2024--2026. Descuento: 10.0\% pliego (8.5\% WACC). Depreciación: línea recta 10 años (valor residual 0\%). Capital de trabajo: 5\% FCI (\$2.31M) recuperable íntegramente al año 20.
+  \end{tcolorbox}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.53\textwidth}
+  \begin{tcolorbox}[colback=white,colframe=navyblue!60,arc=1.5mm,boxrule=0.7pt,top=2.0pt,bottom=2.0pt,left=3.5pt,right=3.5pt]
+    \textbf{\fontsize{6.8pt}{8.0pt}\selectfont \color{navyblue}Perfil Gráfico del Flujo de Caja y Periodo de Recuperación:}\par\vspace{1pt}
+    \centering
+    \includegraphics[width=\linewidth,height=3.35cm,keepaspectratio]{fig_flujo_caja_acumulado.png}\par\vspace{1.5pt}
+    \begin{tcolorbox}[colback=softblue,colframe=navyblue!40,arc=1.0mm,boxrule=0.5pt,top=1.2pt,bottom=1.2pt,left=2.5pt,right=2.5pt]
+      \textbf{\fontsize{5.3pt}{6.3pt}\selectfont \color{navyblue}Justificación Técnica y Metodológica del Gráfico:}\par\vspace{0.8pt}
+      \fontsize{4.3pt}{5.1pt}\selectfont
+      \textbf{1. Mecánica de Eje Dual:} Eje izquierdo representa los flujos discretos anuales ($CF_t$), distinguiendo en rojo el desembolso de inversión $t=0$ ($-\$48.56\text{M}$) y en azul la liquidez neta anual. Eje derecho proyecta las curvas acumuladas de solvencia.\par
+      \textbf{2. Régimen Operativo Escalonado:}
+      $\bullet$ \textit{Años 1--10 ($+\$7.22\text{M/año}$):} Escudo fiscal por depreciación ($D = \$4.63\text{M/año}$) que reduce la base gravable, limitando el ISR a solo $\$1.11\text{M/año}$ y maximizando liquidez operativa.\par
+      $\bullet$ \textit{Años 11--19 ($+\$5.83\text{M/año}$):} Activos 100\% depreciados en libros ($D=\$0$); el ISR sube a $\$2.50\text{M/año}$, estabilizando el flujo neto operativo.\par
+      $\bullet$ \textit{Año 20 ($+\$8.14\text{M}$):} Flujo regular más recuperación íntegra del Capital de Trabajo ($+WC = +\$2.31\text{M}$) al liquidar inventarios.\par
+      \textbf{3. Payback Simple vs. Descontado (Valor del Dinero en el Tiempo):}
+      El cruce simple en el \textbf{Año 6.73} ($33.6\%$ de la vida útil) acredita bajo riesgo de liquidez. El cruce descontado al 10\% ocurre en el \textbf{Año 12.18} (Año 13); el desfase refleja el costo de oportunidad del capital, alcanzando al año 20 un $VAN_{10\%} = \mathbf{+\$9.96\text{M USD}}$ (+\$16.19M @ 8.5\% WACC).\par
+    \end{tcolorbox}
+  \end{tcolorbox}
+\end{minipage}
+
+\newpage
+% DIAPOSITIVA 20: INDICADORES DE RENTABILIDAD: VAN, TIR, MPSP Y PAYBACK
+% ==============================================================================
+\slideheader{INDICADORES FINANCIEROS Y PRECIO MÍNIMO DE VENTA}{VAN $|$ TIR $|$ Payback Simple y Descontado $|$ MPSP}{Evaluación Rigurosa de Rentabilidad del Proyecto y Comparativa de los Tres Precios}{Determinación del Valor Actual Neto, Tasa Interna de Retorno, tiempo de repago y precio umbral de equilibrio.}
+
+\begin{objectivebox}{Acreditar la viabilidad económica demostrando VAN > 0, TIR > tasa de descuento y MPSP < precio de mercado.}{Sección 10 Guía RT-03 $|$ Cátedra Dr. Arzola Flores $|$ Flujo de Caja Descontado a 20 Años.}
 \end{objectivebox}
 
 \vspace{1.5pt}
@@ -1422,10 +1618,143 @@ sys.diagram(kind='thorough', file='Diagrama_Nativo_BioSTEAM', format='png')
 \noindent
 \begin{minipage}{\textwidth}
   \centering
-  \metriccard{0.235\textwidth}{TRAZABILIDAD FÍSICA}{navyblue}{\textbf{\Huge 7 Eslabones} \fontsize{8pt}{10pt}\selectfont De la Estequiometría al USD} \hfill
+  \metriccard{0.235\textwidth}{VALOR ACTUAL NETO (VAN)}{emeraldgreen}{\textbf{\Huge +\$9.96M} \fontsize{8pt}{10pt}\selectfont @ 10\% ($+\$16.19\text{M}$ @ 8.5\%)} \hfill
+  \metriccard{0.235\textwidth}{TASA INTERNA RETORNO}{navyblue}{\textbf{\Huge 13.05\%} \fontsize{8pt}{10pt}\selectfont TIR > Tasa Pliego (10\%)} \hfill
+  \metriccard{0.235\textwidth}{PAYBACK RECUPERACIÓN}{accentcyan}{\textbf{\Huge 6.73 a.} \fontsize{8pt}{10pt}\selectfont Simple $|$ 12.18 a. Descontado} \hfill
+  \metriccard{0.235\textwidth}{PRECIO MÍNIMO (MPSP)}{darkred}{\textbf{\Huge \$844.86} \fontsize{8pt}{10pt}\selectfont USD/t (\$0.845/kg @ 10\%)}
+\end{minipage}
+
+\vspace{2.5pt}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+  \begin{tcolorbox}[colback=white,colframe=navyblue!60,arc=1.5mm,boxrule=0.7pt,top=2.5pt,bottom=2.5pt,left=4pt,right=4pt]
+    \textbf{\fontsize{7.2pt}{8.5pt}\selectfont \color{navyblue}Los Tres Precios de la Cátedra (Dr. Arzola Flores):}\par\vspace{1pt}
+    \fontsize{4.8pt}{5.8pt}\selectfont
+    \renewcommand{\arraystretch}{1.10}
+    \begin{tabularx}{\linewidth}{p{2.2cm} c c X}
+      \toprule
+      \rowcolor{tableheader}
+      \textbf{\color{white}Nivel de Precio} & \textbf{\color{white}USD/t} & \textbf{\color{white}USD/kg} & \textbf{\color{white}Metodología y Alcance Cubierto} \\
+      \midrule
+      \rowcolor{roweven}
+      \textbf{1. Precio Operativo ($c_{op}$)} & \textbf{\$625.11} & \$0.6251 & Cubre exclusivamente costos operativos netos ($AOC - R_{\text{O}_2}$). \\
+      \rowcolor{rowodd}
+      \textbf{2. Precio Cribado ($P_{\text{aprox}}$)} & \textbf{\$813.31} & \$0.8133 & Cubre OPEX + Anualidad de capital ($CRF \times TCI$, $CRF_{10\%}=0.11746$). \\
+      \rowcolor{roweven}
+      \textbf{3. MPSP Riguroso ($P^*$)} & \textbf{\$844.86} & \$0.8449 & Flujo descontado a 20 años con ISR 30\% y WC que satisface $VAN = 0$. \\
+      \midrule
+      \rowcolor{badgeblue}
+      \textbf{Precio Nominal Pliego} & \textbf{\$900.00} & \$0.9000 & \textbf{Margen favorable: +\$55.14/t (+6.5\%) sobre MPSP}. \\
+      \rowcolor{badgegreen}
+      \textbf{Mercado Verde Internacional} & \textbf{\$1\,000.00} & \$1.0000 & Cotización RFNBO e-fuels marítimos (IMO / RED II). \\
+      \rowcolor{badgered}
+      \textbf{Alternativa PEM Comercial} & \textbf{\$1\,572.82} & \$1.5728 & LCOM PEM (+84.3\% más costosa por alto consumo MWh). \\
+      \bottomrule
+    \end{tabularx}
+  \end{tcolorbox}
+  \vspace{1pt}
+  \begin{tcolorbox}[colback=badgegreen,colframe=emeraldgreen!80!black,arc=1.2mm,boxrule=0.6pt,top=2pt,bottom=2pt,left=4pt,right=4pt]
+    \fontsize{4.8pt}{6.0pt}\selectfont
+    \textbf{\color{emeraldgreen}Dictamen de Viabilidad Económica:}
+    El $VAN > 0$ (+\$9.96M USD @ 10\% y +\$16.19M @ 8.5\%) y la $TIR = 13.05\%$ confirman rentabilidad robusta. El MPSP de \$844.86/t confiere un margen de seguridad de \$55.14/t (+6.5\%) frente al precio contractual de \$900/t.
+  \end{tcolorbox}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.50\textwidth}
+  \begin{tcolorbox}[colback=white,colframe=navyblue!60,arc=1.5mm,boxrule=0.7pt,top=2.5pt,bottom=2.5pt,left=4pt,right=4pt]
+    \textbf{\fontsize{7.2pt}{8.5pt}\selectfont \color{navyblue}Jerarquía de Precios y Comparativa frente a PEM Comercial:}\par\vspace{1pt}
+    \centering
+    \includegraphics[width=\linewidth,height=0.44\textheight,keepaspectratio]{fig_comparativa_tres_precios_mpsp.png}\par\vspace{1pt}
+    \fontsize{4.8pt}{5.8pt}\selectfont
+    \textbf{Conclusión Clave:} La integración SOEC de Solvanta permite abatir el precio del metanol verde en \textbf{\$719.25/t (-45.7\%)} respecto a PEM, convirtiendo un proyecto deficitario en uno comercialmente rentable.
+  \end{tcolorbox}
+\end{minipage}
+\newpage
+% ==============================================================================
+% DIAPOSITIVA 21: ANÁLISIS DE SENSIBILIDAD E INCERTIDUMBRE (DIAGRAMA TORNADO)
+% ==============================================================================
+\slideheader{ANÁLISIS DE SENSIBILIDAD E INCERTIDUMBRE}{Diagrama Tornado $|$ Sensibilidad Normalizada $S_{y,x}$ $|$ Riesgo Financiero}{Jerarquización de Variables Críticas, Impacto sobre el VAN y Resiliencia del Modelo}{Evaluación multidimensional de fluctuaciones en precio de venta, tarifas eléctricas, CAPEX, OPEX y materias primas.}
+
+\begin{objectivebox}{Identificar las variables que tienen mayor influencia sobre la rentabilidad y definir medidas de mitigación.}{Sección 10 Guía RT-03 $|$ Cátedra Dr. Arzola Flores $|$ Sensibilidad Normalizada $S_{y,x} = \frac{\% \Delta VAN}{\% \Delta x}$.}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{DRIVER DOMINANTE}{darkred}{\textbf{\Huge Precio MeOH} \fontsize{8pt}{10pt}\selectfont Swing \$68.0M (\$720 a \$1080/t)} \hfill
+  \metriccard{0.235\textwidth}{DRIVER OPERATIVO}{amber}{\textbf{\Huge Tarifa PPA} \fontsize{8pt}{10pt}\selectfont Swing \$46.8M (30 a 50 \$/MWh)} \hfill
+  \metriccard{0.235\textwidth}{RESILIENCIA DEL VAN}{emeraldgreen}{\textbf{\Huge 85\% Positivo} \fontsize{8pt}{10pt}\selectfont Resistente a Incertidumbres} \hfill
+  \metriccard{0.235\textwidth}{BLINDAJE DE RIESGO}{navyblue}{\textbf{\Huge PPA 20 Años} \fontsize{8pt}{10pt}\selectfont Tarifa Fija \$40/MWh CFE}
+\end{minipage}
+
+\vspace{2.5pt}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+  \begin{tcolorbox}[colback=white,colframe=navyblue!60,arc=1.5mm,boxrule=0.7pt,top=2.5pt,bottom=2.5pt,left=4pt,right=4pt]
+    \textbf{\fontsize{7.2pt}{8.5pt}\selectfont \color{navyblue}Matriz de Sensibilidad Normalizada y Jerarquía de Impacto:}\par\vspace{1pt}
+    \fontsize{4.8pt}{5.8pt}\selectfont
+    \renewcommand{\arraystretch}{1.10}
+    \begin{tabularx}{\linewidth}{p{2.3cm} c c X}
+      \toprule
+      \rowcolor{tableheader}
+      \textbf{\color{white}Parámetro Analizado ($x$)} & \textbf{\color{white}Rango} & \textbf{\color{white}Swing VAN} & \textbf{\color{white}Sensibilidad e Interpretación} \\
+      \midrule
+      \rowcolor{roweven}
+      \textbf{Precio Venta e-Metanol} & $\pm 20\%$ & \textbf{\$68.25M} & $S = +2.45$. Impacto comercial \#1. Rentable por encima de \$844.86/t. \\
+      \rowcolor{rowodd}
+      \textbf{OPEX Total Anual} & $\pm 20\%$ & \textbf{\$53.10M} & $S = -1.93$. Sensibilidad operativa alta (electricidad $+$ mantenimiento). \\
+      \rowcolor{roweven}
+      \textbf{Tarifa Eléctrica PPA} & $30$--$50\text{ \$/MWh}$ & \textbf{\$46.23M} & $S = -1.68$. Insumo crítico; mitigado por contrato PPA a 20 años. \\
+      \rowcolor{rowodd}
+      \textbf{Producción Anual ($h_{\text{op}}$)} & $\pm 10\%$ & \textbf{\$32.18M} & $S = +2.45$. Mantener $8\,000\text{ h/año}$ diluye costos fijos y capital. \\
+      \rowcolor{roweven}
+      \textbf{CAPEX Total (FCI)} & $\pm 20\%$ & \textbf{\$19.74M} & $S = -0.71$. Sensibilidad moderada; controlada por modularidad SOEC. \\
+      \rowcolor{rowodd}
+      \textbf{Tasa de Descuento ($i$)} & $8\%$--$12\%$ & \textbf{\$15.43M} & $S = -0.54$. A $12\%$, el VAN sigue siendo positivo (+\$4.62M). \\
+      \rowcolor{roweven}
+      \textbf{Costo de $\text{CO}_2$ Capturado} & $25$--$50\text{ \$/t}$ & \textbf{\$6.29M} & $S = -0.23$. Baja sensibilidad por integración física directa. \\
+      \bottomrule
+    \end{tabularx}
+  \end{tcolorbox}
+  \vspace{1pt}
+  \begin{tcolorbox}[colback=badgeamber,colframe=amber!80!black,arc=1.2mm,boxrule=0.6pt,top=2pt,bottom=2pt,left=4pt,right=4pt]
+    \fontsize{4.8pt}{6.0pt}\selectfont
+    \textbf{\color{amber!90!black}Estrategias de Mitigación de Riesgos Financieros:}
+    1) Contrato bilateral PPA de energía renovable a tarifa fija (\$40/MWh) por 20 años. 2) Integración adyacente para suministro continuo de $\text{CO}_2$ a \$35/t. 3) Venta contractual garantizada del subproducto oxígeno puro ($80\,790\text{ t/año}$).
+  \end{tcolorbox}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.50\textwidth}
+  \begin{tcolorbox}[colback=white,colframe=navyblue!60,arc=1.5mm,boxrule=0.7pt,top=2.5pt,bottom=2.5pt,left=4pt,right=4pt]
+    \textbf{\fontsize{7.2pt}{8.5pt}\selectfont \color{navyblue}Diagrama Tornado de Sensibilidad sobre el VAN (M USD):}\par\vspace{1pt}
+    \centering
+    \includegraphics[width=\linewidth,height=0.44\textheight,keepaspectratio]{fig_tornado_sensibilidad.png}\par\vspace{1pt}
+    \fontsize{4.8pt}{5.8pt}\selectfont
+    \textbf{Interpretación del Tornado:} Los extremos verdes representan ganancias sobre el caso base (+\$9.96M) y los rojos caídas. El precio del metanol y la electricidad concentran el 70\% de la variabilidad, demostrando la importancia de los contratos a largo plazo.
+  \end{tcolorbox}
+\end{minipage}
+\newpage
+% ==============================================================================
+% DIAPOSITIVA 22: TRAZABILIDAD INTEGRAL, REGISTRO RT-03-RO Y CIERRE
+% ==============================================================================
+\slideheader{TRAZABILIDAD INTEGRAL Y CIERRE TÉCNICO-ECONÓMICO}{Sección 6 Guía RT-03 $|$ Registro RT-03-RO Cuadro 14}{Cadena de Trazabilidad Extremo a Extremo, Cierre de Observaciones y Viabilidad del Proyecto}{Seguimiento bidireccional riguroso del proceso, cierre formal de observaciones y dictamen favorable.}
+
+\begin{objectivebox}{Acreditar la trazabilidad matemática completa y la viabilidad técnica, económica y financiera del proyecto.}{Cuadro 14 RT-03-RO $|$ Plan de Acción hacia RT-04 $|$ Evaluación BioSTEAM Integral.}
+\end{objectivebox}
+
+\vspace{1.5pt}
+
+\noindent
+\begin{minipage}{\textwidth}
+  \centering
+  \metriccard{0.235\textwidth}{TRAZABILIDAD FÍSICA}{navyblue}{\textbf{\Huge 7 Eslabones} \fontsize{8pt}{10pt}\selectfont De la Estequiometría al VAN} \hfill
   \metriccard{0.235\textwidth}{OBSERVACIONES CERRADAS}{emeraldgreen}{\textbf{\Huge 100\% Resueltas} \fontsize{8pt}{10pt}\selectfont Registro RT-03-RO (Cuadro 14)} \hfill
-  \metriccard{0.235\textwidth}{EBITDA ANUAL}{emeraldgreen}{\textbf{\Huge +\$6.55M a +\$11.0M} \fontsize{8pt}{10pt}\selectfont Proyecto Altamente Rentable} \hfill
-  \metriccard{0.235\textwidth}{DICTAMEN FINAL}{navyblue}{\textbf{\Huge Favorable} \fontsize{8pt}{10pt}\selectfont Apto para Fase RT-04}
+  \metriccard{0.235\textwidth}{VIABILIDAD FINANCIERA}{emeraldgreen}{\textbf{\Huge VAN +\$9.96M} \fontsize{8pt}{10pt}\selectfont TIR 13.05\% $|$ Payback 6.73 a.} \hfill
+  \metriccard{0.235\textwidth}{DICTAMEN FINAL}{navyblue}{\textbf{\Huge Favorable} \fontsize{8pt}{10pt}\selectfont Apto para Adjudicación}
 \end{minipage}
 
 \vspace{2.5pt}
@@ -1433,15 +1762,16 @@ sys.diagram(kind='thorough', file='Diagrama_Nativo_BioSTEAM', format='png')
 \noindent
 \begin{minipage}[t]{0.52\textwidth}
   \begin{tcolorbox}[colback=white,colframe=navyblue!60,arc=1.5mm,boxrule=0.7pt,top=3pt,bottom=3pt,left=5pt,right=5pt]
-    \textbf{\fontsize{7.5pt}{9.0pt}\selectfont \color{navyblue}Cadena de Trazabilidad Extremo a Extremo ($\text{H}_2$ Verde):}\par\vspace{2pt}
+    \textbf{\fontsize{7.5pt}{9.0pt}\selectfont \color{navyblue}Cadena de Trazabilidad Extremo a Extremo ($\text{H}_2$ Verde a Finanzas):}\par\vspace{2pt}
     \fontsize{5.2pt}{6.4pt}\selectfont
     \begin{description}[leftmargin=1.2em,itemsep=2pt]
       \item[\color{navyblue}1. Bases de Diseño (NB-01):] Demanda estequiométrica: \textbf{$1\,272.42\text{ kg/h}$ $\text{H}_2$} ($631.2\text{ kmol/h}$) para producir $30\,000\text{ t/año}$ de metanol.
       \item[\color{accentcyan}2. DFP v1.0 / TC-01:] Asignado a la corriente \textbf{\texttt{S-209}} (separada en $V\text{-}201$ a $19.4\text{ bar}$, $38^\circ\text{C}$; etiquetada \texttt{S-205/h2\_prod} en BioSTEAM).
       \item[\color{darkred}3. DTI v1.0 Maestro:] Instrumentada en Nodo \textbf{N-01} con medidor Coriolis \texttt{FT-201}, válvula check \texttt{CK-209} y corte \texttt{SDV-201}.
       \item[\color{emeraldgreen}4. BioSTEAM POO:] Genera $P_{\text{DC}} = 40.05\text{ MW}_e$ y potencia total de planta $41.91\text{ MW}_e$ mediante la ley de Faraday.
-      \item[\color{amber}5. CAPEX Instalado:] Define $352\,660$ celdas cerámicas en 14 módulos, resultando en un costo instalado $C_{BM} = \mathbf{\$30.97\text{M USD}}$.
-      \item[\color{navyblue}6. OPEX Operativo:] La energía requerida a $\$0.040/\text{kWh}$ genera un gasto eléctrico anual de \textbf{\$13\,411\,200 USD/año}.
+      \item[\color{amber}5. CAPEX y OPEX:] FCI instalado de \textbf{\$46.25M USD} y OPEX neto anual de \textbf{\$18.95M USD/año} (\$625.11/t).
+      \item[\color{navyblue}6. Flujo de Caja (20 años):] Generación operativa de \textbf{+\$8.33M USD/año} EBITDA, con liquidez neta acumulada de \textbf{+\$84.27M USD}.
+      \item[\color{emeraldgreen}7. Indicadores de Rentabilidad:] \textbf{VAN @ 10\% = +\$9.96M USD}, \textbf{TIR = 13.05\%}, \textbf{Payback Simple = 6.73 años} y \textbf{MPSP = \$844.86 USD/t}.
     \end{description}
   \end{tcolorbox}
 \end{minipage}
@@ -1451,10 +1781,11 @@ sys.diagram(kind='thorough', file='Diagrama_Nativo_BioSTEAM', format='png')
     \textbf{\fontsize{7.5pt}{9.0pt}\selectfont \color{emeraldgreen}Conclusiones Ejecutivas de la Revisión RT-03:}\par\vspace{2pt}
     \fontsize{5.2pt}{6.4pt}\selectfont
     \begin{itemize}[leftmargin=1.2em,itemsep=2.5pt]
-      \item \textbf{Solidez Técnica Inequívoca:} Cero discrepancias en balances entre DWSIM, DTI y BioSTEAM ($\Delta \le 1.52\%$).
-      \item \textbf{Seguridad Robusta:} 10 Nodos protegidos por 10 Interlocks oficiales y 27 válvulas check normalizadas.
-      \item \textbf{Viabilidad Financiera Acreditada:} OPEX neto de $\mathbf{\$631.55\text{ USD/t}}$ con EBITDA positivo de $\mathbf{+\$6.55\text{M a }+\$11.05\text{M USD/año}}$, asegurando retorno en 4 a 7 años sin deuda en pérdida.
-      \item \textbf{Compromiso de Solvanta:} El consorcio acredita la solvencia técnica requerida por la entidad convocante Circular Carbon México para la adjudicación de la licitación RFP-CCM-EM-001.
+      \item \textbf{Solidez Técnica Inequívoca:} Balances convergidos en DWSIM y BioSTEAM con error relativo menor a 1.52\%.
+      \item \textbf{Seguridad y Sustentabilidad:} 10 Nodos protegidos por 10 Interlocks SIL-2 y circuito cerrado 100\% ZLD.
+      \item \textbf{Evaluación Financiera Completa:} Incorporación rigurosa de flujo de caja, VAN, TIR, Payback simple/descontado, MPSP y análisis Tornado.
+      \item \textbf{Ventaja Competitiva Comprobada:} La tecnología SOEC reduce el costo nivelado en \textbf{-45.7\%} frente a PEM, garantizando rentabilidad con MPSP de \$844.86/t frente a \$900/t.
+      \item \textbf{Compromiso de Solvanta:} El consorcio acredita solvencia técnica, financiera y ambiental para la adjudicación de la licitación RFP-CCM-EM-001.
     \end{itemize}
   \end{tcolorbox}
 \end{minipage}
