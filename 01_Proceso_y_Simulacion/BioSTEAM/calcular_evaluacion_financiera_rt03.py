@@ -635,21 +635,17 @@ def imprimir_reporte_completo():
 # PUNTO DE ENTRADA PRINCIPAL
 # ======================================================================================
 if __name__ == '__main__':
-    # Directorios donde se sincronizan los gráficos
+    # Directorio donde se sincronizan los graficos
+    ruta_base = os.path.dirname(os.path.abspath(__file__))
+    ruta_repo = os.path.abspath(os.path.join(ruta_base, '..', '..'))
     directorios_destino = [
-        'scratch',
-        '_auxiliar_local/scratch',
-        '_auxiliar_local/backup_workspace_externo_pre_reorganizacion/scratch',
-        'Github/RFP-CCM-EM-001/00_Gestion_Proyecto/Revisiones_Tecnicas/RT-03',
-        'Github/RFP-CCM-EM-001/00_Gestion_Proyecto/Revisiones_Tecnicas/RT-03/scratch',
-        os.path.expanduser('~/.gemini/antigravity/brain/d8d73685-9158-40b4-a3db-c17e92aca804'),
-        os.path.expanduser('~/.gemini/antigravity/brain/d8d73685-9158-40b4-a3db-c17e92aca804/scratch')
+        os.path.join(ruta_repo, '00_Gestion_Proyecto', 'Revisiones_Tecnicas', 'RT-03')
     ]
     
     # 1. Imprimir resultados y validar consistencia
     imprimir_reporte_completo()
     
-    # 2. Generar y exportar figuras de alta resolución
-    print("\nGenerando figuras de alta resolución (300 DPI)...")
+    # 2. Generar y exportar figuras de alta resolucion
+    print("\nGenerando figuras de alta resolucion (300 DPI)...")
     exportar_figuras(directorios_destino)
-    print("\n¡Evaluación técnico-económica y financiera ejecutada con éxito!")
+    print("\nEvaluacion tecnico-economica y financiera ejecutada con exito.")

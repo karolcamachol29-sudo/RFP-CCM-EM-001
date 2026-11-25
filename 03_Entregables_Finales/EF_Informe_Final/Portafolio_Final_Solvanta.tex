@@ -352,6 +352,50 @@
 \Registrar{EF}{Paquete final con PDF, código LaTeX y recursos}{sec:registro}{00-Portafolio}{Rev. 1.0}{23/11/2026}
 
 % C. CALENDARIO Y GANTT
+\newcommand{\GanttHito}[3]{\csgdef{gantthito:#1:#2}{#3}}
+
+% Registro de revisiones por cambio de version y cortes tecnicos
+\GanttHito{E0}{6}{R}
+\GanttHito{RFP}{3}{R}
+\GanttHito{A2.1}{3}{R}
+\GanttHito{NB-01}{4}{R}
+\GanttHito{DB-V0}{3}{R}
+\GanttHito{BD-PRE-01}{3}{R}
+\GanttHito{AR-01}{6}{R}
+\GanttHito{EQ-01}{6}{R}
+\GanttHito{DWSIM-V0}{4}{R}
+\GanttHito{DWSIM-V0}{7}{R}
+\GanttHito{DB-V1}{6}{R}
+\GanttHito{E1}{6}{R}
+\GanttHito{SIM-01}{7}{R}
+\GanttHito{DWSIM-V1}{7}{R}
+\GanttHito{SENS-TEC}{7}{R}
+\GanttHito{VTP-01}{7}{R}
+\GanttHito{TC-01}{7}{R}
+\GanttHito{TE-01}{7}{R}
+\GanttHito{DFP-V0}{6}{R}
+\GanttHito{LE-01}{12}{R}
+\GanttHito{DFP-V1}{9}{R}
+
+\GanttHito{DWSIM-V2}{9}{R}
+\GanttHito{SERVICIOS}{9}{R}
+\GanttHito{AC-AMB-01}{10}{R}
+\GanttHito{AC-SST-01}{12}{R}
+\GanttHito{FC-01}{13}{R}
+\GanttHito{DTI-V0}{12}{R}
+\GanttHito{AC-HAZOP-01}{13}{R}
+\GanttHito{MCE-01}{13}{R}
+\GanttHito{DTI-V1}{14}{R}
+\GanttHito{CTRL-IPYNB}{14}{R}
+\GanttHito{PIB-01}{14}{R}
+\GanttHito{BIOSTEAM}{15}{R}
+\GanttHito{RT-03-CAPEX}{15}{R}
+\GanttHito{RT-03-OPEX}{15}{R}
+\GanttHito{TEA}{16}{R}
+\GanttHito{SENS-ECO}{16}{R}
+\GanttHito{PITCH}{16}{R}
+\GanttHito{EF}{16}{R}
+
 \newcommand{\AgendaPrimera}{%
   \Evento{E0}{Firma de ingeniería}{1}{1}{1}{17/08/2026}{—}{E}
   \Evento{RFP}{Requisitos de la propuesta}{1}{1}{1}{20/08/2026}{E0}{E}
@@ -362,21 +406,21 @@
   \Evento{AR-01}{Revisión conceptual de bases}{2}{2}{2}{28/08/2026}{BD-PRE-01}{E}
   \Evento{EQ-01}{Propuesta preliminar de equipos}{3}{3}{3}{28/08/2026}{AR-01}{E}
   \Evento{DWSIM-V0}{Simulación exploratoria v0}{3}{3}{3}{01/09/2026}{EQ-01}{E}
-  \Evento{DB-V1}{DB/BFD v1 (rev.\ v0 $\rightarrow$ v1)}{3}{3}{3}{04/09/2026}{DWSIM-V0}{R}
-  \Evento{E1}{Bases consolidadas (rev.\ E1.1)}{2}{3}{3}{04/09/2026}{DB-V1}{R}
+  \Evento{DB-V1}{DB/BFD v1 (rev.\ v0 $\rightarrow$ v1)}{3}{3}{3}{04/09/2026}{DWSIM-V0}{E}
+  \Evento{E1}{Bases consolidadas (rev.\ E1.1)}{2}{3}{3}{04/09/2026}{DB-V1}{E}
   \Evento{SIM-01}{Verificación de DWSIM v1}{3}{4}{4}{11/09/2026}{DWSIM-V0}{E}
-  \Evento{DWSIM-V1}{DWSIM v1 (rev.\ v0 $\rightarrow$ v1)}{4}{4}{4}{11/09/2026}{SIM-01}{R}
+  \Evento{DWSIM-V1}{DWSIM v1 (rev.\ v0 $\rightarrow$ v1)}{4}{4}{4}{11/09/2026}{SIM-01}{E}
   \Evento{SENS-TEC}{Sensibilidad técnica}{4}{4}{4}{14/09/2026}{DWSIM-V1}{E}
-  \Evento{VTP-01}{Verificación técnica (rev.\ v0.1 $\rightarrow$ v1.0)}{5}{5}{5}{21/09/2026}{DWSIM-V1}{R}
+  \Evento{VTP-01}{Verificación técnica (rev.\ v0.1 $\rightarrow$ v1.0)}{5}{5}{5}{21/09/2026}{DWSIM-V1}{E}
   \Evento{TC-01}{Corrientes de materia}{5}{5}{5}{21/09/2026}{VTP-01}{E}
   \Evento{TE-01}{Cargas y potencias}{5}{5}{5}{21/09/2026}{VTP-01}{E}
   \Evento{DFP-V0}{DFP v0 preliminar y CAD}{5}{5}{5}{21/09/2026}{TC-01}{E}
   \Evento{LE-01}{Equipos y hojas de datos}{5}{6}{6}{24/09/2026}{DFP-V0}{E}
-  \Evento{DFP-V1}{DFP v1 (rev.\ v0 $\rightarrow$ v1)}{6}{6}{6}{24/09/2026}{LE-01}{R}
+  \Evento{DFP-V1}{DFP v1 (rev.\ v0 $\rightarrow$ v1)}{6}{6}{6}{24/09/2026}{LE-01}{E}
   \Evento{RT-01}{Revisión técnica 1}{6}{6}{6}{28/08/2026}{—}{R}
 }
 \newcommand{\AgendaSegunda}{%
-  \Evento{DWSIM-V2}{DWSIM v2 (rev.\ v1 $\rightarrow$ v2)}{6}{7}{7}{28/09/2026}{DFP-V1}{R}
+  \Evento{DWSIM-V2}{DWSIM v2 (rev.\ v1 $\rightarrow$ v2)}{6}{7}{7}{28/09/2026}{DFP-V1}{E}
   \Evento{SERVICIOS}{Servicios e integración energética}{7}{8}{8}{05/10/2026}{DWSIM-V2}{E}
   \Evento{AC-AMB-01}{Aspectos ambientales}{8}{9}{9}{21/09/2026}{DFP-V1}{E}
   \Evento{RT-02}{Revisión técnica 2}{9}{9}{9}{28/09/2026}{AC-AMB-01}{R}
@@ -384,8 +428,8 @@
   \Evento{FC-01}{Filosofía de control}{10}{11}{11}{08/10/2026}{AC-SST-01}{E}
   \Evento{DTI-V0}{DTI v0 preliminar (v0.1/v0.2)}{11}{11}{11}{08/10/2026}{FC-01}{E}
   \Evento{AC-HAZOP-01}{HAZOP por nodos}{11}{12}{12}{19/10/2026}{DTI-V0}{E}
-  \Evento{MCE-01}{Matriz causa–efecto (rev.\ 1.0)}{12}{12}{12}{19/10/2026}{AC-HAZOP-01}{R}
-  \Evento{DTI-V1}{DTI v1 (rev.\ v0.2 $\rightarrow$ v1.0)}{12}{12}{12}{19/10/2026}{MCE-01}{R}
+  \Evento{MCE-01}{Matriz causa–efecto (rev.\ 1.0)}{12}{12}{12}{19/10/2026}{AC-HAZOP-01}{E}
+  \Evento{DTI-V1}{DTI v1 (rev.\ v0.2 $\rightarrow$ v1.0)}{12}{12}{12}{19/10/2026}{MCE-01}{E}
   \Evento{CTRL-IPYNB}{Notebook de controladores}{11}{13}{13}{28/10/2026}{DTI-V1}{E}
   \Evento{PIB-01}{Paquete y formatos de ingeniería básica}{12}{13}{13}{28/10/2026}{DTI-V1}{E}
   \Evento{BIOSTEAM}{Modelo BioSTEAM verificado}{13}{14}{14}{05/11/2026}{PIB-01}{E}
@@ -395,7 +439,7 @@
   \Evento{TEA}{Indicadores y flujo de caja}{14}{15}{15}{17/11/2026}{RT-03-OPEX}{E}
   \Evento{SENS-ECO}{Sensibilidad y escenarios económicos}{15}{15}{15}{18/11/2026}{TEA}{E}
   \Evento{PITCH}{Propuesta y defensa final}{15}{16}{16}{20/11/2026}{TEA}{E}
-  \Evento{EF}{Portafolio final (rev.\ 1.0)}{15}{16}{16}{\FechaFinal}{PITCH}{R}
+  \Evento{EF}{Portafolio final (rev.\ 1.0)}{15}{16}{15}{\FechaFinal}{PITCH}{E}
 }
 
 \newcommand{\Agenda}{\AgendaPrimera\AgendaSegunda}
@@ -457,13 +501,17 @@
   \hyperlink{gantt:#1}{Gantt}\enspace\Abrir[Pend.]{#1}{Ver}\\\hline
 }
 \newcommand{\CeldaGantt}[6]{%
-  \ifnum#1=#4\relax
-    \cellcolor{Enlace}\hyperlink{ev:#6}{\textcolor{white}{\sffamily\bfseries#5}}%
-  \else
-    \ifnum#1<#2\relax\else
-      \ifnum#1>#3\relax\else\cellcolor{Terracota!32!white}\fi
+  \ifcsdef{gantthito:#6:#1}{%
+    \cellcolor{Enlace}\hyperlink{ev:#6}{\textcolor{white}{\sffamily\bfseries\csuse{gantthito:#6:#1}}}%
+  }{%
+    \ifnum#1=#4\relax
+      \cellcolor{Enlace}\hyperlink{ev:#6}{\textcolor{white}{\sffamily\bfseries#5}}%
+    \else
+      \ifnum#1<#2\relax\else
+        \ifnum#1>#3\relax\else\cellcolor{Terracota!32!white}\fi
+      \fi
     \fi
-  \fi
+  }%
   \rule{0pt}{1.45ex}%
 }
 \newcommand{\FilaGantt}[8]{%
@@ -563,8 +611,12 @@
   
   Bajo una tasa de descuento contractual del 10\% a un horizonte de 20 años y precio de venta base de \$900 USD/t, el proyecto alcanza un Valor Actual Neto (\textbf{VAN}) de \textbf{+\$9.96M USD}, una Tasa Interna de Retorno (\textbf{TIR}) de \textbf{13.05\%}, un periodo de recuperación descontado de \textbf{7.2 años} ($5.8\mbox{ años}$ simple) y un precio mínimo de venta del producto (\textbf{MPSP}, $\mbox{VAN}=0$) de \textbf{\$748.20 USD/t} (\$0.748/kg). La principal variable de incertidumbre reside en el costo de la tarifa eléctrica renovable (sensibilidad en el rango de 20 a 60 USD/MWh), blindada contractualmente mediante contratos PPA a largo plazo. Enlacen aquí los resultados en \hyperref[cap:costos]{CAPEX y OPEX} y \hyperref[cap:tea]{evaluación tecnoeconómica}.}
 \noindent\textbf{Control documental}\par
-\begin{tabularx}{\linewidth}{@{}p{.20\linewidth}p{.22\linewidth}Y@{}}
+\begin{tabularx}{\linewidth}{@{}p{.16\linewidth}p{.18\linewidth}Y@{}}
 \CabeceraTabla \EncTabla{Revisión} & \EncTabla{Fecha} & \EncTabla{Cambio, origen y sección}\\
+Rev.\ 0.1 & 17/08/2026 & Constitución formal de la firma Solvanta y estructuración de bases de diseño preliminares. §\ref{cap:bases}.\\
+Rev.\ 0.2 & 28/08/2026 & Corte RT-01: Verificación estequiométrica, dimensionamiento de equipos y BFD v1. §\ref{cap:conceptual}.\\
+Rev.\ 0.3 & 28/09/2026 & Corte RT-02: Simulación rigurosa DWSIM v2, integración térmica SOEC y DFP v1. §\ref{cap:integrado}.\\
+Rev.\ 0.4 & 14/11/2026 & Corte RT-03: Filosofía de control FC-01, análisis HAZOP, DTI v1.0 y modelo BioSTEAM. §\ref{cap:control}.\\
 \Revision & \FechaFinal & Emisión formal del Portafolio Final Consolidado de la Licitación RFP-CCM-EM-001 (Expediente Maestro de Cierre Solvanta, Tomos I a V, 10 Capítulos interactivos). Enlace a evidencia \Ficha{EF}.\\
 \bottomrule
 \end{tabularx}
@@ -630,7 +682,7 @@ Cada código abre su ficha. El símbolo § abre el capítulo correspondiente.
   {\small\sffamily
     \hyperref[nav:calendario]{Calendario}\enspace|\enspace
     \hyperref[nav:rt]{Revisiones técnicas}\par}
-  {\small Franja clara: periodo de elaboración. \textbf{E}: entrega de versión inicial. \textbf{R}: revisión por cambio de versión de documento (p.~ej.\ de v0 a v1 o v0.1 a v0.2/v1.0). El código abre el calendario y el marcador abre la ficha de evidencia.\par}}
+  {\small Franja clara: periodo de elaboración. \textbf{E}: entrega de versión inicial. \textbf{R}: revisión por cambio de versión o corte técnico. El código abre el calendario y el marcador abre la ficha de evidencia.\par}}
 \begin{landscape}
 \thispagestyle{empty}
 \enlargethispage{31pt}
@@ -2256,22 +2308,3 @@ Una raya indica que falta completar la revisión o fecha.
   Contrasten la lista de verificación del curso con este expediente.}
 
 \end{document}
-
-
-</USER_REQUEST>
-<ADDITIONAL_METADATA>
-The current local time is: 2026-11-24T18:27:46-06:00.
-
-The user's current state is as follows:
-Active Document: /home/karoc/Documentos/Antigravity/Proyecto Licitacion/Github/RFP-CCM-EM-001/03_Entregables_Finales/EF_Informe_Final/Portafolio_Final_Solvanta.tex (LANGUAGE_UNSPECIFIED)
-Cursor is on line: 1
-Other open documents:
-- /home/karoc/Documentos/Antigravity/Proyecto Licitacion/Github/RFP-CCM-EM-001/00_Gestion_Proyecto/Documentacion/CRONOGRAMA_PROYECTO.md (LANGUAGE_UNSPECIFIED)
-- /home/karoc/Documentos/Antigravity/Proyecto Licitacion/scratch/new_slide19.tex (LANGUAGE_UNSPECIFIED)
-- /home/karoc/Documentos/Antigravity/Ingenieria Quimica General/graduacion-FIQ-DIC-2027/presentacion_propuesta.html (LANGUAGE_UNSPECIFIED)
-- /home/karoc/Documentos/Antigravity/Proyecto Licitacion/Github/RFP-CCM-EM-001/00_Gestion_Proyecto/Matriz_RACI/RACI_General_v1.0.md (LANGUAGE_UNSPECIFIED)
-- /home/karoc/Documentos/Antigravity/Proyecto Licitacion/02_Fuentes_Ingenieria_y_Diagramas/PIB_Paquete_Ingenieria_Basica/Solvanta_PIB-01_Expediente.tex (LANGUAGE_UNSPECIFIED)
-</ADDITIONAL_METADATA>
-<USER_SETTINGS_CHANGE>
-The user changed setting `Model Selection` from None to Gemini 3.8 Flash (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
-</USER_SETTINGS_CHANGE>
